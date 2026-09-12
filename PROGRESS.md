@@ -41,3 +41,5 @@ Incremento del control de entrega: recorrido completo de chunks GLB y lista expl
 
 ## INFRA-005-LEARNING-004
 Corrección del usuario convertida en evento L2 y preflight AGENTS. Objetivo de remediación y criterios por problema dentro de PLAN existente. Difusión por hilo #7; adopción externa pendiente, sin nuevos agentes ni watchers.
+
+VISUAL-005: graphical Godot capture qualified here after resolving absolute xkbcomp dependency and importing cold-clone assets. See evidence/visual-display-qualified.json and visual-display-runbook.md. CPU llvmpipe only; existing capture repositions player. Capture exit code can hide script errors: inspect log and fresh PNG.

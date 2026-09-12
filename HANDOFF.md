@@ -41,3 +41,5 @@ Se rechazaban mal las entregas GLB con cabecera válida y chunks posteriores tru
 
 ## Aprendizaje y definición de remediación
 Recuperar LRN-EXO-20260912-OWNER-ADMISSION. Se supera la propuesta de recuperar Khepri por iniciativa del integrador: corresponde al owner salvo necesidad explícita de integración. Automatización pausada. Próxima unidad compartida autorizable: reproducir y resolver visualización Godot de una escena existente aquí; conservar diagnóstico, captura y límites. Consultar contrato de remediación en PLAN.json. Acuses de agentes se incorporan a sus entregas habituales; no se presume aprendizaje universal.
+
+VISUAL-005: graphical Godot capture qualified here after resolving absolute xkbcomp dependency and importing cold-clone assets. See evidence/visual-display-qualified.json and visual-display-runbook.md. CPU llvmpipe only; existing capture repositions player. Capture exit code can hide script errors: inspect log and fresh PNG.

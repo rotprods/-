@@ -1,10 +1,10 @@
 {
   "project": "EXOVANT 2950",
-  "checkpoint": "INFRA-005-LEARNING-004",
+  "checkpoint": "INFRA-005-VISUAL-005",
   "date": "2026-09-12",
   "global_goal": "Original 3D interplanetary soulslike based on the existing twelve-world preproduction plan",
   "current_wave": "Bounded GLB delivery container regression repair",
-  "status": "LEARNING_PERSISTED_ADOPTION_PENDING",
+  "status": "LOCAL_CPU_VISUAL_CAPTURE_QUALIFIED",
   "engine": "Godot 4.7.2.stable.official.ed1daf0bf",
   "production_engine_decision": "Unreal remains the plan's principal candidate; Godot is the executable prototype, not an irreversible replacement",
   "authority": [
@@ -52,7 +52,7 @@
     "All world source binaries recovered locally"
   ],
   "next_workunit": "EXO-004",
-  "next_action": "Diagnosticar visualización Godot de escena existente como problema compartido. Owners aplican aprendizaje en su próximo handoff; integrador no repite recuperación de assets sin entrega o bloqueo concreto.",
+  "next_action": "Usar captura visual cualificada para una entrega lista; exigir PNG nuevo y log sin errores. Mejorar control de captura para que rechace scripts fallidos. No repetir producción del owner.",
   "evidence": [
     "evidence/gauntlet.json",
     "evidence/state-tests.json",
@@ -196,7 +196,7 @@
     "Sylva supplier/consumer boundary acknowledgement",
     "World-branch Blend/GLB recovery and native/human art gates"
   ],
-  "last_run": "_project_intelligence/runs/INFRA-005-LEARNING-004/closeout.json",
+  "last_run": "_project_intelligence/runs/INFRA-005-VISUAL-005/closeout.json",
   "fleet": {
     "registry": "ops/fleet/registry.json",
     "coordination_issue": "https://github.com/rotprods/-/issues/7",
