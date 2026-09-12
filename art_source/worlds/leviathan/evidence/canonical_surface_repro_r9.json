@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "project": "EXOVANT 2950",
+  "world_id": "leviathan",
+  "claim_id": "CLM-W10-WORLD-LEVIATHAN-001",
+  "agent_id": "AGENT-LEVIATHAN-10",
+  "primary": {
+    "project_id": "2577a7b6-ebd7-4d31-a645-620e4b73a95d",
+    "revision": 9,
+    "operation": "leviathan-r9-canonical-evaluated-surface-fingerprint",
+    "sha256": "6c06329ff60fe34383394bece0c80f66bb9e4486793712854e462c3af8eea26a",
+    "payload_bytes": 24470443,
+    "objects": 381,
+    "materials": 18
+  },
+  "cold": {
+    "project_id": "37a931c7-f2e6-46bc-9be0-26077e5de1c1",
+    "revision": 7,
+    "operation": "leviathan-cold-r7-canonical-evaluated-surface-fingerprint",
+    "sha256": "6c06329ff60fe34383394bece0c80f66bb9e4486793712854e462c3af8eea26a",
+    "payload_bytes": 24470443,
+    "objects": 381,
+    "materials": 18
+  },
+  "match": true,
+  "criterion": "Order-invariant evaluated world-space triangles with UV per corner, face material, smoothing and evaluated normal; modifiers included. Cameras/lights/material-node parameters and non-geometry object state included. Provider hf_id and mesh vertex/face/datablock identity are not treated as render semantics.",
+  "reclassification": {
+    "previous_preliminary_label": "OPEN_RAW_PRIMITIVE_REALIZATION_DRIFT",
+    "final_label": "RESOLVED_INTERNAL_INDEX_ORDER_VARIANCE",
+    "reason": "Sample suspects and complete evaluated scene prove identical surface/UV/material output while only internal primitive vertex/face indexing differs.",
+    "visual_geometry_difference": false,
+    "uv_surface_difference": false,
+    "material_difference": false,
+    "modifier_result_difference": false
+  },
+  "gate_truth": {
+    "canonical_evaluated_surface_reproducibility": true,
+    "bit_exact_blender_datablock_serialization": false,
+    "bit_exact_datablock_serialization_required_for_art_gate": false,
+    "engine_import_pass": false,
+    "direct_art_review_pass": false
+  }
+}
