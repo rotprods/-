@@ -1,144 +1,62 @@
 # VANTA CP5 — Material / Trim / Decal Foundation
 
 **World:** VANTA  
-**Latest validated revision:** 8  
-**Truth level:** `LOCALLY_VALIDATED_MATERIAL_FOUNDATION` — not engine-material-qualified and not final-art approved.
+**Latest validated revision:** 9  
+**Truth level:** `NATIVE_MATERIAL_BINDING_PRESENT_VISUAL_EQUIVALENCE_OPEN` — Godot imports the material-bound surfaces, but PBR appearance equivalence and target-hardware cost are not yet qualified.
 
-## Revision 7 — packed PBR role materials
+## Material foundation
 
-The initial CP5 packing path failed validation and committed nothing. The replacement pipeline writes backing PNGs, reloads them and packs them into the `.blend` before accepting the mutation.
+Revision 7 established nine packed 512×512 maps for steel, ferric rust and union-yellow (`BC`, `ORM`, `N`). Revision 8 added packed `TRIM_A` (`BC/ORM/N`), packed `DECAL_A`, four representative decal cards and neutral/Vanta-light calibration boards.
 
-`vanta-cp5-pbr-textures-002` produced nine packed 512×512 maps:
+Revision-8 local QA remains valid:
 
-- `T_VAN_CP5_STEEL_{BC,ORM,N}`
-- `T_VAN_CP5_RUST_{BC,ORM,N}`
-- `T_VAN_CP5_YELLOW_{BC,ORM,N}`
+- 13/13 CP5 images packed;
+- BC/decal use sRGB; ORM/normal use Non-Color;
+- 147 representative CP4 meshes use the upgraded material roles;
+- 0 missing UVs;
+- CP4 transform and zero-gap assembly regressions: 0.
 
-Material roles upgraded in place:
+## Revision 9 portability change
 
-- `M_VAN_CP4_STEEL`
-- `M_VAN_CP4_RUST`
-- `M_VAN_CP4_UNION_YELLOW`
+The two CP4 test-yard AREA lights that Blender's glTF exporter reported as unsupported were converted to POINT lights. Revision-9 export no longer reports the AREA-light warning.
 
-Conventions:
+The exporter **still reports** that multiple image-texture nodes participate in some PBR/trim materials and that glTF sampler behavior may follow the first image node. This remains a real visual-portability blocker and is not treated as cosmetic log noise.
 
-- BC = sRGB base color;
-- ORM = Non-Color, `R=AO`, `G=roughness`, `B=metallic`;
-- N = Non-Color tangent normal.
+## Godot 4.7.2 native material-binding receipt
 
-Coverage:
+Revision-9 GLB SHA256: `d4cb8154802e7713b9887328431bd27dfdbc6ba6bec07e790fd0b99befef3258`.
 
-- 147 CP4 render meshes use these three material roles;
-- 147/147 have UVs;
-- missing UV count = 0.
+GitHub Actions run `34720473947` imported the exact GLB into pinned Godot 4.7.2 and instantiated it as a PackedScene. After `_colonly` collision conversion, the visual scene contained:
 
-Revision 7 source:
+- 691 `MeshInstance3D`;
+- 691 mesh surfaces;
+- **691 surfaces with an active material**;
+- seven critical visual names preserved;
+- 13 GLB images embedded at transport level.
 
-- `.blend` 7,557,149 B · etag `593e9b598b8c83ab8aa9866456648f28`
-- GLB 5,429,352 B · etag `3e86b6ae502410d6c629d2e82d3561ed`
+This is strong evidence that material resources bind natively in Godot. It does **not** prove that Blender and Godot produce equivalent color, roughness, metallic, normal intensity, mip behavior or decal appearance.
 
-## Revision 8 — first trim sheet + decal atlas
+## Current CP5 disposition
 
-`vanta-cp5-trim-decal-001` added:
-
-### Trim A
-
-- `T_VAN_CP5_TRIM_A_BC`
-- `T_VAN_CP5_TRIM_A_ORM`
-- `T_VAN_CP5_TRIM_A_N`
-- `M_VAN_CP5_TRIM_A`
-
-Current proof bands:
-
-- U 0.00–0.30: rolled steel;
-- U 0.30–0.55: ferric rust;
-- U 0.55–0.80: union-yellow paint;
-- U 0.80–1.00: detail band.
-
-### Decal Atlas A
-
-- `T_VAN_CP5_DECAL_A`
-- `M_VAN_CP5_DECAL_A`
-
-2×2 proof quadrants:
-
-1. industrial hazard stripe;
-2. cyan polarity/field glyph;
-3. worker ownership bands;
-4. impact ring and radial cracks.
-
-Representative cards are placed on the storm shelter, magnetic anchor, crane and drydock rib.
-
-### Calibration scene
-
-- 12 CP5 calibration objects;
-- neutral board and Vanta-light board;
-- cameras `CAM_CP5_NEUTRAL_BOARD` and `CAM_CP5_VANTA_BOARD`;
-- neutral and warm/cyan motivated-light pairs.
-
-Revision 8 source:
-
-- `.blend` 8,168,427 B · etag `251f6d510f8ae6c5250bae10c8ee5a61`
-- GLB 5,990,788 B · etag `a3cfe2daf6a1005e35db478e3f4ec51d`
-
-## Revision-8 QA
-
-`vanta-rev8-final-audit-001` passes:
-
-- scene: 832 objects / 711 meshes / 20 materials / 25 collections / 12 cameras / 15 lights;
-- **13/13 CP5 images packed**;
-- every CP5 image is 512×512;
-- BC/decal images use sRGB;
-- ORM/normal images use Non-Color;
-- 147 textured CP4 meshes;
-- zero UV misses;
-- no regression of the CP4 parent-transform fix;
-- no regression of the CP4 zero-gap test yard.
-
-Neutral-board render execution proof:
-
-- `vanta_cp5_neutral_board.png`
-- artifact `a2438a37035038ca58e40a4ff27176d7`
-- 640×480
-- 244,743 B
-
-This is render evidence, **not** visual/aesthetic approval.
-
-## Known export blockers / warnings
-
-GLB generation succeeds but is not yet an engine-material PASS:
-
-- Blender glTF reports that multiple image texture nodes participate in some PBR/trim materials and sampler behavior may follow the first image node;
-- Blender glTF reports unsupported AREA lights from the test yard.
-
-Therefore:
-
-- GLB existence = `implemented`;
-- correct target-engine PBR binding = `unqualified`;
-- target-engine light equivalence = `unqualified`.
-
-## CP5 disposition
-
-**Implemented + locally validated:**
+**Implemented / native binding validated:**
 
 - packed deterministic PBR foundation for steel/rust/yellow;
 - packed first trim family;
 - packed first decal atlas;
-- UV coverage on the representative CP4 slice;
-- neutral/Vanta calibration geometry and cameras;
-- isolated render execution.
+- UV coverage on the representative slice;
+- material resources bound to all 691 imported visual surfaces in Godot 4.7.2;
+- AREA-light export blocker removed from the QA yard.
 
 **Open:**
 
 - direct visual/art-direction approval;
-- production texel-density normalization;
-- weld/frost/grease families beyond current proof atlas;
-- mip/compression policy on target engine;
-- target-engine PBR import/binding verification;
-- close/mid/far material review in engine;
-- target-hardware memory/GPU cost;
+- Blender↔Godot visual-equivalence captures under controlled exposure;
+- resolution/texel-density normalization beyond the 512² proof system;
+- mip/compression policy;
+- explicit verification of ORM/sampler semantics implicated by the current glTF warning;
+- weld/frost/grease families beyond the proof atlas;
+- close/mid/far material review;
+- target-hardware texture residency, draw, memory and GPU cost;
 - propagation to the wider 327-target registry.
 
-**Next gate:** qualify material import semantics in the target engine and run close/mid/far + collision/performance review on the CP4 vertical slice before mass propagation.
-
-Evidence: `art_source/vanta/evidence/remote_blender_rev8.json`.
+Evidence authority: `art_source/vanta/evidence/godot_rev9_native_qualification.json`.
