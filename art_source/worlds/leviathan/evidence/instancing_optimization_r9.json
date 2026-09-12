@@ -26,9 +26,9 @@
     "glb_bytes_before": 8492516,
     "glb_bytes_after": 6603972,
     "glb_size_reduction_percent": 22.2,
-    "render_equivalent_fingerprint_before": "d8b3912446104a1892fc6c759c490f9a77633e2c7d0612d817714baf8af6c19d",
-    "render_equivalent_fingerprint_after": "d8b3912446104a1892fc6c759c490f9a77633e2c7d0612d817714baf8af6c19d",
-    "render_equivalent_match": true,
+    "order_sensitive_object_fingerprint_before": "d8b3912446104a1892fc6c759c490f9a77633e2c7d0612d817714baf8af6c19d",
+    "order_sensitive_object_fingerprint_after": "d8b3912446104a1892fc6c759c490f9a77633e2c7d0612d817714baf8af6c19d",
+    "primary_r8_to_r9_match": true,
     "objects": 381,
     "curves": 92
   },
@@ -42,34 +42,32 @@
     "mesh_datablocks_removed": 133,
     "objects_relinked": 133,
     "groups_applied": 32,
-    "render_equivalent_fingerprint_after": "9ab4a14e144a790c7732d944b625168f05bce958de05d613ee4d1cb642c78547",
-    "matches_primary": false
+    "order_sensitive_object_fingerprint_after": "9ab4a14e144a790c7732d944b625168f05bce958de05d613ee4d1cb642c78547"
   },
-  "drift_classification": {
-    "status": "OPEN_RAW_PRIMITIVE_REALIZATION_DRIFT",
-    "high_level_semantic_rebuild_previously_matched": true,
-    "strict_raw_mesh_uv_rebuild_match": false,
-    "exact_families_confirmed_matching_at_1mm_audit": ["R1_HERO", "R1_BASE", "COLLISION"],
-    "families_with_raw_mesh_uv_drift": ["R2_HERO", "R2_BASE", "R3_HERO", "R3_BASE", "MACRO_OTHER"],
-    "observed_behavior": "Transforms, material assignments, metadata, mesh vertex/polygon counts and nominal dimensions match on sampled suspects; local primitive vertex/UV realization differs.",
-    "sample_suspects": [
-      "R2_ALGA_NODE_00",
-      "R2_ALGA_NODE_01",
-      "R2_HGP_CONTACT_PAD_2",
-      "R2_HGP_CONTACT_PAD_3",
-      "R3_HSV_ACTUATOR_0_3",
-      "R3_HSV_ACTUATOR_1_0",
-      "R3_HSV_ACTUATOR_2_0"
-    ],
-    "next_fix": "Replace or canonicalize affected context-dependent primitive construction in versioned generators; do not normalize or replace unrelated geometry blindly."
+  "canonical_surface_replay": {
+    "receipt": "art_source/worlds/leviathan/evidence/canonical_surface_repro_r9.json",
+    "criterion": "order-invariant evaluated world-space triangles + UV per corner + face material + smoothing + evaluated normal; modifiers included; cameras/lights/material nodes included",
+    "primary_sha256": "6c06329ff60fe34383394bece0c80f66bb9e4486793712854e462c3af8eea26a",
+    "cold_sha256": "6c06329ff60fe34383394bece0c80f66bb9e4486793712854e462c3af8eea26a",
+    "match": true
+  },
+  "variance_reclassification": {
+    "preliminary_label": "OPEN_RAW_PRIMITIVE_REALIZATION_DRIFT",
+    "final_label": "RESOLVED_INTERNAL_INDEX_ORDER_VARIANCE",
+    "explanation": "The earlier strict hash included primitive vertex/face indexing order. Suspect objects and the complete evaluated scene have identical order-invariant surface geometry, UV mapping, materials and modifier output. The difference is internal mesh indexing/datablock realization, not visual geometry.",
+    "requires_art_shape_rebuild": false,
+    "requires_generator_rewrite_for_visual_reproducibility": false,
+    "optimizer_v2_opportunity": "Use order-invariant local surface signatures so cold replay can share equivalent datablocks despite different primitive index order."
   },
   "gate_truth": {
     "primary_structural_optimization_pass": true,
-    "primary_visual_equivalence_by_object_geometry_uv_material_fingerprint": true,
-    "cold_raw_mesh_reproducibility_pass": false,
+    "primary_r8_to_r9_visual_surface_equivalence": true,
+    "canonical_evaluated_surface_reproducibility_primary_vs_cold": true,
+    "bit_exact_blender_mesh_index_serialization": false,
+    "bit_exact_blender_mesh_index_serialization_required": false,
     "runtime_performance_pass": false,
     "engine_import_pass": false,
     "art_review_pass": false
   },
-  "status": "PRIMARY_OPTIMIZATION_ACCEPTED_COLD_STRICT_REPRODUCIBILITY_OPEN"
+  "status": "PRIMARY_OPTIMIZATION_ACCEPTED_CANONICAL_SURFACE_REPLAY_PASS"
 }
