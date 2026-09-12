@@ -98,3 +98,56 @@ Khepri envió el primer acuse de productor en issue #7, comentario `5648289971`,
 El probe de esta sesión observó cuota equivalente a 8 CPU, límite de 20 GiB y ausencia de dispositivos GPU expuestos. Godot portátil funciona para pruebas headless. Los remotos Blender son escenas independientes con guard de operación; su existencia no prueba capacidad ilimitada ni un proceso permanente. No se compra GPU ni se inicia otro servicio para este harness.
 
 Si hay rate limit, conservar operación/cola y aplicar backoff; no reintentos rápidos. Mem es un espejo secundario pendiente y no bloquea arte ni código. CI sin runner/pasos ejecutados es ENV_BLOCKED, no fallo del juego ni permiso para un rerun ciego. La telemetría declara cobertura parcial de llamadas instrumentadas.
+
+## Ubicación de assets y aplicaciones
+
+Contrato MR-EXO-001 en PLAN; distingue reglas definidas de mecanismos ejecutados. Cumplimiento externo parcial, no enforcement universal.
+
+### Dónde vive cada entrega
+
+- GitHub `rotprods/-`: autoridad de código, generadores, manifiestos, claims y recibos. Respetar las rutas existentes `art_source/<kit>/`, `art_source/worlds/<world>/` y `production/...`; no renombrar mundos de otros owners para uniformar carpetas.
+- Fuente artística en trabajo: proyecto Blender remoto identificado por claim + project ID + revisión. Es fuente de producción, pero no respaldo independiente.
+- Checkpoint binario: `.blend`, GLB, texturas y dependencias en su rama Git cuando el transporte lo soporte, como Terra; en otro caso bundle persistente en la carpeta Drive EXOVANT existente con ID estable, hashes y recibo versionado en Git. No activar LFS nuevo ni almacenamiento de pago sin decisión aplicable.
+- Runtime: solamente exports aceptados en las rutas de assets del juego; no importar toda la producción ni depender de Drive/Higgsfield en ejecución.
+- Scratch/descargas locales/cachés: copias de trabajo, nunca única persistencia.
+- Un paquete debe ser independiente del proveedor: fuente reabierta en Blender, GLB importado, recursos externos incluidos/resueltos, licencias y atribuciones registradas para material de terceros. Hash y tamaño no prueban editabilidad ni calidad.
+- Nombre recomendado para nuevos bundles: `EXOVANT_<claim>_<revision>_<source-sha>.zip`; conservar nombres/IDs existentes cuando ya son estables. No usar enlaces firmados expirables como localizador duradero.
+- Recibo mínimo: asset IDs, owner/claim/epoch, commit fuente, proyecto/revisión, archivo/ruta o Drive ID, SHA256 y bytes por archivo, versión Blender/exportador/motor, dependencias/licencias, pruebas y resultado, fecha, limitaciones. Cada owner entrega; el integrador revisa el checkpoint sin reconstruir producción por iniciativa propia.
+
+### Función concreta de las superficies
+
+| Superficie | Función en EXOVANT | Estado/condición |
+|---|---|---|
+| GitHub | Código, PR, manifests, recibos, learning/hub y releases del juego | Autoridad existente |
+| Linear | Tareas/dependencias y bloqueos por IDs existentes | Proyección; enlazar SHA, no duplicar backlog |
+| Google Drive | Bundles duraderos, dossier y previews por checkpoint | Proyección/backup; descarga y hash antes de declarar restore |
+| rot.knowledge | Índice a aprendizajes/protocolos canónicos | No duplicar eventos del juego |
+| game-dev-mcp-hub | Políticas, adaptadores y rutas autorizadas de herramientas | Código de MCP no equivale a servicio conectado |
+| Higgsfield/Blender remoto | Modelado con escenas exclusivas, export, render de revisión | Reconciliar operación/revisión antes de mutar; costes nuevos requieren presupuesto |
+| Godot + Mesa local | Runtime prototipo, importación, física y captura CPU | Capacidad demostrada; no benchmark GPU |
+| Mac + Blender | Edición interactiva, Metal, revisión y medición gráfica | Pendiente cualificación real |
+| Unreal | Evaluación de motor en escena equivalente EXO-012 | Candidato; no migración automática ni MCP en cuarentena |
+| Mem | Enlace de recuperación mediante nota estable | Espejo opcional, rate limit pendiente, sin ráfagas |
+| Adobe | Retoque y preparación de texturas/decals cuando haya tarea | Opcional, pipeline aún no cualificado |
+| Figma | UI/HUD, flujos y tokens si se admite trabajo de interfaz | Opcional; export versionado y validación en motor |
+| Canva | Dossiers y presentaciones de revisión | Opcional; no autoridad de modelos ni backlog |
+| Notion/Airtable | Vista de revisión si aporta necesidad concreta | Inactivos para este flujo; no segundo STATE/catálogo editable |
+| Todoist/TickTick/Structured/Calendar/24-7 | Compromisos humanos concretos de pruebas | Bajo demanda, no copiar cada tarea de Linear |
+| Slack/email | Comunicación solicitada a personas | No envío automático ni campañas por esta autorización |
+| PostHog | Analítica de pruebas futuras, con diseño explícito | No dependencia del runtime offline ni telemetría añadida aquí |
+| n8n/OpenClaw/Ollama/Qdrant | Automatización o búsqueda local si resuelve bloqueo medido | No instalar como paso obligatorio; respetar host/políticas |
+| HubSpot/Klaviyo/Resend/Stripe | Comercialización futura | Fuera de producción técnica actual; sin campañas/cobros |
+| Supabase/Vercel/Sites | Portal/build distribution si hay producto web aprobado | No necesarios para fabricar/ejecutar assets offline |
+| Hugging Face/buscadores | Investigación de recursos y licencias por tarea | No descarga masiva ni entrenamiento/cómputo de pago |
+
+Esta matriz asigna funciones; no certifica conexión ni uso de todas las aplicaciones. Las demás apps quedan sin activar hasta tener tarea, owner, permisos, entrada/salida y beneficio verificable. Más conectores no implica mejor producción. Las credenciales permanecen en los mecanismos de autenticación, nunca en manifests o prompts.
+
+### Integridad, adopción y coste
+
+Antes de un push, refrescar y comprobar el manifiesto en el checkout exacto, revisar el diff y guard de scope. Al combinar ramas, regenerar sobre el árbol combinado; no elegir el manifiesto de un productor por conveniencia. No debilitar ni regenerar el manifest en CI para hacer verde una entrega inconsistente.
+
+Un fallo de continuidad no prueba fallo de geometría; tampoco permite afirmar que Godot pasó cuando su paso fue omitido. Detener nuevos reintentos del mismo problema sin un cambio causal verificado. Después de seis fallos, revisar mecanismo/arquitectura antes de seguir publicando.
+
+El informe por entrega debe separar contrato declarado, prueba ejecutada y adopción observada. No deducir todos los agentes activos/cumplidores desde ramas o JSON. Un conflicto de escritor congela solamente el ámbito afectado hasta reconciliar; no operar proyectos de otros owners. Una sesión sin acuse no obtiene autoridad por antigüedad.
+
+La próxima unidad integradora es una entrega corregida y recuperada, no conectar cuarenta aplicaciones. Usar issue #7 para deltas y acuses ordinarios; Linear/Drive por checkpoint. Mantener automatización pausada y telemetría con cobertura parcial. La evaluación de hardware puede comenzar con Terra aislada; la migración completa de producción exige el inventario y los respaldos aceptados.
