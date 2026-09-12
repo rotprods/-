@@ -5,100 +5,106 @@ SESSION: 20260912T2123+0200-NACRE-01
 CLAIM: CLM-NACRE-WORLD-MACRO-001
 BRANCH: art/world-nacre-001
 BASE MAIN AT CLAIM: 4c2fa044080004609ea6df45f34b2a784536507a
-CURRENT MAIN OBSERVED: f78bfdc8bd7b2f6ab52b45d39babcc1589ab3918
+LAST MAIN MERGED NON-FORCE: 70fda70cd2120d38fba94e6a66e554e564c6c471
 FLEET EPOCH: 1
 FLEET STATUS OBSERVED: reserved; producer ACK published; integrator transition pending
 COORDINATION ACK: issue #7 comment 5648339684
 DRAFT PR: #17
-REMOTE PROJECT: a49fc6f3-fedb-40a5-913f-10a08debb0e1
-REMOTE REVISION: 3
-NORTH STAR: Deliver a recoverable Nacre planetary-foundation package whose shell-city/archive-network identity is legible at kilometre scale without inventing planetary canon, then qualify it through human art + native runtime gates before DONE.
+PRIMARY REMOTE PROJECT: a49fc6f3-fedb-40a5-913f-10a08debb0e1 @ revision 4
+CLEAN REPLAY PROJECT: 4750e054-b063-4ab8-afc9-214462f36128 @ revision 1
+NORTH STAR: deliver a recoverable, semantically reproducible Nacre planetary-foundation package without inventing planetary canon; do not claim DONE before human art + native runtime gates.
 
 DONE:
-- Repository authority, Nacre canon and verified Blender/GLB pipeline recovered.
-- Collision audit performed; Umbra race detected and abandoned without writes.
-- Atomic macro-foundation ownership persisted and imported into fleet registry.
-- Producer ACK `5648339684` published with exact path, project and five interface IDs.
-- Physical planet vs playable area vs rendered blockout scales explicitly separated; radius/diameter remain UNKNOWN.
-- Deterministic generator added: `art_source/nacre_world_macro/build_macro.py`.
-- Manifest advanced to revision 3 and `qa-r3.yaml` persisted.
-- Blender revision 3 built and GLB exported.
-- Revision-2 structural defect identified: bridges ran center-to-center through archive chamber volumes.
-- R3 rebuilt all archive bridge links surface-to-surface and added docking sockets, service rings, suspension/load-path tendons and shell growth strata.
-- R3 geometry gauntlet: 10/10 links checked, +3.0 m deck clearance at both endpoints, 0 penetrations, 0 non-unit scales, 0 zero-dimension objects.
-- R3 scene: 97 meshes, 30 curves, 130 total objects; portable lighting remains only two SUN sources.
-- Perspective/side/top revision-2 visual evidence generated plus a revision-3 structural hero preview.
-- Draft PR #17 remains isolated from runtime/global state and intentionally unmerged.
+- Repository/canon/pipeline/fleet authority recovered.
+- Nacre atomic macro-foundation claim established; producer ACK published with exact paths/project/asset IDs.
+- Branch resynced to `main@70fda70...` using a two-parent merge + non-force ref update; compare confirmed `behind_by=0` and isolated Nacre-only diff.
+- Planetary physical scale remains separate from authored/rendered representation; radius/diameter intentionally UNKNOWN.
+- Macro scene has shell envelope, inner pearl lining, 7 archive chambers, surface-to-surface bridges/spines, 21 docking sockets, 7 service rings, 7 shell load-path tendons, 5 growth strata, bounded translucent plates, human/100m gauges, camera and binary SUN lights.
+- R3 corrected center-to-center bridge penetration defect; 10/10 archive links now terminate outside chambers.
+- Versioned generator exists at `art_source/nacre_world_macro/build_macro.py`.
+- Cold replay exposed Blender 5.2 collection-membership incompatibility; generator fixed in commit `6be51b785b53c38e071461212254a81e601c8518`.
+- Clean Blender replay succeeded from revision 0: 97 meshes, 30 curves, `SUN_MNEME_A/B`.
+- Historical R3 vs replay semantic drift detected rather than hidden; drift traced to implicit legacy shell resolutions/rib/belt geometry/plate naming.
+- Primary project rebuilt as revision 4 from corrected generator, making the versioned generator explicit authority for reversible macro blockout geometry.
+- Primary R4 and independent cold replay semantic SHA256 match exactly: `48742ba2dc253a626fb807799a55e2c83f2e87f437cf761b66522bac7ba88787`.
+- R4 QA PASS: 130 objects; 97 meshes; 30 curves; 10/10 bridges checked; 2.9999–3.0m endpoint clearance; 0 penetrations; 0 non-unit scales; 0 degenerate dimensions.
+- R4 `.blend` + GLB provider receipts resolved; QA receipt persisted at `qa-r4.yaml`.
 
 IN PROGRESS:
-- `NACRE/MACRO/008`: visual QA is in REVIEW. Evidence exists; human/direct creative approval has not been inferred.
-- `NACRE/MACRO/009`: source/export receipt exists remotely, but native fleet delivery requires recovered local `.blend` + GLB and a Godot receipt tied to the exact GLB bytes/hash.
-- Fleet `reserved -> active` transition remains owned by integrator against current registry digest.
-- PR #17 still requires current-main reconciliation/guard before delivery.
+- Human/direct visual review remains OPEN; generated renders are evidence, not approval.
+- Producer claim remains fleet `reserved`; integrator must apply ACK against current registry digest to promote `active`.
+- Native Godot delivery/import/collision/LOD/perf remain unresolved.
 
-BLOCKED / OPEN GATES:
-- `GATE-ART`: human/direct visual approval OPEN.
-- Godot import/scale/material test OPEN.
-- Collision/traversal OPEN.
-- LOD/HLOD/streaming OPEN.
-- Performance target-hardware gate OPEN.
-- Fleet native binary delivery OPEN because this producer connector cannot persist the remote binary source/export into the Git checkout directly.
-- Planetary radius/diameter and final authored area remain UNKNOWN intentionally.
+ENV_BLOCKED:
+- Attempted native delivery on isolated execution container.
+- `git clone` could not resolve `github.com` in that environment.
+- Exact provider binary could not cross the safe-download boundary into the same container.
+- No Godot import occurred and no `fleet_control.py delivery` receipt was fabricated.
+- Treat this as environment/transit blocker, NOT asset FAIL and NOT Godot PASS.
 
-FILES MODIFIED / CREATED:
+FILES OWNED / MODIFIED:
 - `art_source/coordination/CLM-NACRE-WORLD-MACRO-001.md`
-- `art_source/nacre_world_macro/manifest.yaml`
 - `art_source/nacre_world_macro/HANDOFF.md`
 - `art_source/nacre_world_macro/build_macro.py`
+- `art_source/nacre_world_macro/manifest.yaml`
 - `art_source/nacre_world_macro/qa-r3.yaml`
+- `art_source/nacre_world_macro/qa-r4.yaml`
 
-PUBLISHED ASSET / INTERFACE IDS:
+PUBLISHED INTERFACE IDS:
 - `NACRE-MACRO-SHELL-001`
 - `NACRE-MACRO-LINING-001`
 - `NACRE-ARCHIVE-NET-001`
 - `NACRE-BRIDGE-NET-001`
 - `NACRE-SCALE-REF-001`
 
-REMOTE ASSET RECEIPTS — REVISION 3:
-- `.blend`: 2,913,059 bytes; etag `2b5398f1c4bd906874e827daad64428b`.
-- GLB: 3,090,440 bytes; etag `6ccb564c4ada071aeca2270db804ba87`.
-- R3 preview: `nacre_r3_structural_hero.png`, 640×360, artifact `a5c7c5699ab993db11fb4d5903fb5504`.
-- R2 multiview: hero `587ff0728c5d116a7d82f4955b2431b2`; side `4350ec483a9d546c390adc22ca6b1f1c`; top `beb5812d5e3e3dae9d43647a92fe5144`.
+PRIMARY R4 RECEIPTS:
+- Blender project: `a49fc6f3-fedb-40a5-913f-10a08debb0e1`, revision 4.
+- `.blend`: 3,500,059 bytes / etag `a365ae84492f4142d949c1033636b092`.
+- GLB: 3,828,832 bytes / etag `0b6dee01664cb91aae1a4b332e8ae163`.
+- Semantic digest: `48742ba2dc253a626fb807799a55e2c83f2e87f437cf761b66522bac7ba88787`.
+- Preview: `nacre_r4_canonical_hero.png`, 640×360, artifact `24642ce8001df31f7c50875e79c07c9d`.
 
-TESTS / OPERATIONS:
-- `nacre-macro-build-v1`: failed before commit; missing World datablock; revision 0 retained.
-- `nacre-macro-build-v1b`: failed before commit; Blender 5.2 collection API mismatch; revision 0 retained.
-- `nacre-macro-build-v1c`: PASS -> revision 1.
-- `nacre-portability-fix-r2`: PASS -> revision 2; unsupported AREA light removed.
-- `nacre-final-qa-r2`: PASS geometry/export checkpoint.
-- `nacre-art-review-multiview-r2`: PASS evidence generation; hero/side/top views.
-- `nacre-structural-bridge-fix-r3`: PASS -> revision 3.
-- `nacre-qa-r3-geometry-render`: PASS structural geometry + export + preview.
+CLEAN REPLAY RECEIPTS:
+- Project `4750e054-b063-4ab8-afc9-214462f36128`, revision 1.
+- 97 meshes / 30 curves / two SUN lights.
+- `.blend`: 3,497,824 bytes / etag `7f6a1db325b7cee3692051b289590791`.
+- GLB: 3,828,216 bytes / etag `9eb39213129f2e5b8bf150765df4c693`.
+- Semantic digest matches primary R4 exactly. Byte identity is intentionally not the reproducibility criterion.
+
+IMPORTANT OPERATIONS:
+- `nacre-macro-build-v1` — noncommitting fail: missing World datablock.
+- `nacre-macro-build-v1b` — noncommitting fail: Blender collection API mismatch.
+- `nacre-macro-build-v1c` — revision 1.
+- `nacre-portability-fix-r2` — revision 2; removed unsupported AREA light.
+- `nacre-structural-bridge-fix-r3` — revision 3; bridge/docking/load-path correction.
+- `nacre-qa-r3-geometry-render` — R3 structural PASS.
+- `nacre-r3-generator-api-probe` — exposed versioned-generator collection membership TypeError.
+- `nacre-r3-clean-replay-fixed-generator` — clean replay PASS.
+- `nacre-r3-semantic-digest-primary/replay` — exposed historical R3 drift.
+- `nacre-r4-generator-canonicalization` — revision 4 generated from corrected source.
+- `nacre-r4-canonical-qa` — semantic match + geometry QA PASS.
 
 DECISIONS:
-- `Flu In` / `Flow In` exact repo method not found: `PIPELINE_METHOD_NOT_FOUND`.
-- Verified route remains Higgsfield 3D Jutsu `bpy` / Blender 5.2 -> `.blend` + GLB -> Godot prototype.
-- 1400 m shell target, 184 m archive core and exact archive placements remain reversible blockout PROPOSALS.
-- Bridge decks must terminate on chamber surfaces; docking sockets may intentionally overlap the shell locally as physical joints.
-- Shell growth strata encode manufacturing/evolution history; random greeble/scratch noise remains prohibited.
-- Producer never self-transitions fleet registry or overwrites shared global state.
+- `PIPELINE_METHOD_NOT_FOUND` for exact “Flu In / Flow In”; use verified Blender 5.2 / GLB route.
+- Versioned generator is the explicit authority for reversible macro proposal geometry from R4 onward.
+- Semantic scene equivalence, not serialized byte identity, is the reproducibility criterion at this blockout tier.
+- No random greeble/noise; growth strata and structural supports require causal purpose.
+- Producer does not self-edit global fleet registry/STATE/PLAN.
 
-DEPENDENCIES:
-- Canon: `design/EXOVANT_BIBLIA.md`, `design/EXOVANT_DATA.json`.
-- Fleet: `main:docs/FLEET_COORDINATION.md`, `main:ops/fleet/registry.json`, issue #7.
-- Runtime qualification: Godot prototype/gates; later EXO-012 production-engine decision remains separate.
-
-RISKS:
-- Human visual review may reject silhouette/composition even though geometry QA is green.
-- Macro suspension/tendon layout is still a blockout hypothesis and may need art/engineering refinement.
-- Runtime cost is not inferred from raw mesh count; modifiers/exported triangle count and draw/material cost still need native measurement.
-- PR #17 must not be merged as DONE merely because GitHub reports it mergeable.
+OPEN GATES:
+- Human `GATE-ART`.
+- Integrator fleet ACK transition.
+- Exact GLB Godot import/material/scale (currently ENV_BLOCKED on available local surface).
+- Collision/traversal.
+- LOD/HLOD/streaming.
+- Target-hardware performance.
+- Fleet native delivery with source/export/native receipt co-located.
 
 NEXT 3 ACTIONS:
-1. Integrator applies producer ACK `5648339684` to the current fleet digest, reconciles exact owned path + five asset IDs and resyncs PR #17 without force.
-2. Recover/generate revision-3 `.blend` + GLB in a clean delivery checkout, persist binaries or qualified hashes, import exact GLB into Godot and create native receipt + explicit collision proxy strategy.
-3. Run human art review on r3 perspective/orthographic evidence; if approved, tackle LOD/HLOD/streaming and target-performance qualification. If rejected, turn each visual defect into an atomic R4 fix.
+1. Integrator reconciles ACK `5648339684` against current fleet digest and promotes/updates Nacre reservation paths + asset IDs without force.
+2. On a host with repo + provider binary transport, recover exact R4 GLB/.blend, import GLB into Godot 4.7.2, create collision strategy/native receipt and run fleet delivery + asset/native gates.
+3. Run human creative-director review on R4; convert every rejected silhouette/composition/material issue into atomic R5 tasks, otherwise proceed to LOD/HLOD/streaming/performance qualification.
 
 CLAIM STATUS: KEEP / IN_PROGRESS
 
-Recovery rule: read current `main` fleet protocol/registry first, then this claim + manifest + `qa-r3.yaml`, then inspect remote project revision 3 or rebuild with `build_macro.py`. Do not restart world design and do not invent planetary radius/diameter.
+RECOVERY: read latest main fleet protocol/registry first; then claim + manifest + qa-r4; inspect primary revision 4 or rebuild from `build_macro.py`; compare semantic digest against `48742ba2dc253a626fb807799a55e2c83f2e87f437cf761b66522bac7ba88787`. Never infer planetary radius/diameter from this blockout.
