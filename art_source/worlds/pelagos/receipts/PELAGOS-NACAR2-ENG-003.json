@@ -1,0 +1,84 @@
+{
+  "schema_version": 1,
+  "checkpoint": "PELAGOS-NACAR2-ENG-003",
+  "task_id": "PEL/VEH/010",
+  "asset_id": "PEL-VEH-NACAR2",
+  "world_id": "pelagos",
+  "claim_id": "CLM-PEL-WORLD-001",
+  "agent_id": "AGENT-PELAGOS-01",
+  "remote_3d": {
+    "project_id": "39930c08-62bb-4034-b35d-70d0ce51c9d9",
+    "engineering_revision": 3,
+    "parenting_fix_revision": 4,
+    "metadata_reconciliation_revision": 5,
+    "build_operation": "pelagos.nacar2.engineering.v1",
+    "structural_query": "pelagos.nacar2.verify.r3",
+    "parent_debug_query": "pelagos.nacar2.parentdebug.r4",
+    "settled_bounds_query": "pelagos.nacar2.bounds.r4",
+    "parenting_fix_operation": "pelagos.nacar2.parentfix.v1",
+    "metadata_operation": "pelagos.nacar2.metadatafix.v1"
+  },
+  "engineering_build": {
+    "geometry_objects": 53,
+    "mesh_count": 51,
+    "curve_count": 2,
+    "raw_mesh_triangle_estimate_rev3": 19640,
+    "functional_roles_missing": 0,
+    "moving_pivots": 6,
+    "parented_moving_parts": 18,
+    "hatch_clear_diameter_m": 1.25,
+    "collision_proxy_count": 3,
+    "collision_proxies_hidden_from_render": true,
+    "energy_storage": "UNKNOWN_NOT_MODELED",
+    "pressure_rating": "UNKNOWN",
+    "runtime_water_physics": "BLOCKED_RUNTIME_INTERFACE"
+  },
+  "dimensions": {
+    "status": "PROPOSAL_MEASURED_BLOCKOUT",
+    "cruise_envelope_m": [15.65, 10.8, 7.35],
+    "rigid_docking_envelope_m": [15.65, 7.64, 6.41],
+    "pressure_hull_length_m": 9.4,
+    "pressure_hull_diameter_m": 4.7,
+    "docking_requirement": "fold_or_neutralize_lateral_and_vertical_control_surfaces"
+  },
+  "defect_history": [
+    {
+      "id": "PEL-N2-BUG-001",
+      "severity": "P0_BLOCKOUT_INTEGRITY",
+      "symptom": "parented mobile parts produced a scene envelope of roughly 269 x 371 m",
+      "mechanism": "objects were created at world coordinates and parented without preserving world transform; their local translation was interpreted again under parent space",
+      "first_fix": "matrix_parent_inverse applied",
+      "first_fix_result": "world transforms corrected, but same-operation bbox receipt was stale before dependency-graph settle",
+      "verification": "settled query at revision 4 measured 15.65 x 10.8 x 7.35 m",
+      "generator_control": "parent_keep_world() now explicitly caches/restores matrix_world while setting parent and parent inverse"
+    }
+  ],
+  "qa": {
+    "asset_ids": "PASS",
+    "unit_scales": "PASS",
+    "material_assignment": "PASS_BLOCKOUT",
+    "required_functional_roles": "PASS",
+    "moving_part_parenting": "PASS_AFTER_DEFECT_FIX",
+    "render_collision_separation": "PASS_STRUCTURE",
+    "dimension_consistency": "PASS_AFTER_SETTLED_REMEASUREMENT",
+    "visual_art_review": "PENDING",
+    "uv": "NOT_RUN",
+    "pbr": "BLOCKOUT_ONLY",
+    "lod": "NOT_RUN",
+    "hydrodynamics": "NOT_RUN",
+    "pressure_certification": "NOT_RUN_UNKNOWN_TARGET",
+    "engine_import": "NOT_RUN",
+    "runtime_physics": "NOT_RUN",
+    "performance": "NOT_RUN"
+  },
+  "artifacts": {
+    "revision_4_blend": {"size_bytes": 7630005, "etag": "e3aa060df23b09f75df39bc98a8a6c1b"},
+    "revision_4_glb": {"size_bytes": 6507276, "etag": "e83859b13caf75f6a916578981626692"},
+    "revision_4_render": {"name": "pelagos_nacar2_engineering_v002_parentfix.png", "artifact_id": "5b91d749ca65f2c36c0c78adaa83a74e", "size_bytes": 893737, "width": 1280, "height": 720, "etag": "7d7e4053b5bc237ad42b22338ba88150"},
+    "revision_5_blend": {"size_bytes": 7631605, "etag": "8478a12dd940a0d89b31675b19690748"},
+    "revision_5_glb": {"size_bytes": 6507636, "etag": "73f883282edab9ddea96466911e79183"}
+  },
+  "source_script": "art_source/worlds/pelagos/scripts/build_nacar2_engineering_v1.py",
+  "task_status": "IN_PROGRESS",
+  "reason_not_done": "Vehicle DoD still requires anatomy/manufacturing refinement, UV/PBR, LOD, animation validation, hydrodynamics/runtime physics, engine import, collision test, profiling and art review."
+}
