@@ -1,115 +1,88 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "project": "EXOVANT 2950",
   "world_id": "khepri",
-  "scope": "world-macro/planetary-foundation",
   "claim_id": "CLM-KHEPRI-WMACRO-001",
-  "agent_id": "AGENT-KHEPRI-WMACRO-001",
-  "branch": "art/world-khepri-001",
-  "base_main_sha": "4c2fa044080004609ea6df45f34b2a784536507a",
-  "blender_project_id": "040f0c45-83a7-483c-9ee7-1e31c640a587",
-  "blender_revision": 2,
-  "status": "STRUCTURALLY_VALIDATED_BLOCKOUT",
-  "pipeline": "Higgsfield 3D Jutsu / Blender 5.2.0 LTS / bpy / GLB",
-  "build": {
-    "operation": "khepri.wmacro.generate.r1.fix1",
-    "revision_after": 1,
-    "result": {
-      "objects": 77,
-      "materials": 5,
-      "cell_size_m": [6400.0, 4800.0],
-      "planet_radius_m_proposal": 5224000.0,
-      "gravity_g_canon": 0.63
-    },
-    "artifact_sizes_bytes": {
-      "blend": 1529116,
-      "glb": 781376
-    }
+  "status": "LOCALLY_VALIDATED_BLOCKOUT",
+  "master_project_id": "040f0c45-83a7-483c-9ee7-1e31c640a587",
+  "master_revision": 3,
+  "scene_sequence": 0,
+  "validated_at": "2026-09-12T21:38:15Z",
+  "validator_operation": "khepri.validator.r3",
+  "structural_and_machine_visual_pass": true,
+  "checks": {
+    "required_objects_present": true,
+    "metric_units": true,
+    "duplicate_object_names_zero": true,
+    "duplicate_asset_ids_zero": true,
+    "nonfinite_transforms_zero": true,
+    "negative_scale_zero": true,
+    "nonunit_mesh_scale_zero": true,
+    "terrain_xy_exact": true,
+    "human_scale_exact": true,
+    "heliostat_panels_instanced": true,
+    "heliostat_masts_instanced": true,
+    "claim_metadata_matches": true,
+    "world_metadata_matches": true,
+    "overview_lens_contract": true,
+    "overview_clip_contract": true,
+    "overview_all_route_anchors_in_frame": true,
+    "overview_all_route_anchors_within_clip": true,
+    "gameplay_clip_contract": true,
+    "human_guide_visible_in_gameplay_camera": true,
+    "human_guide_readable_projected_scale": true,
+    "semantic_cold_rebuild": true
   },
-  "optimization": {
-    "operation": "khepri.wmacro.optimize.r2",
-    "revision_after": 2,
-    "mechanism": "32 identical heliostat mast mesh datablocks were replaced by one shared mesh datablock",
-    "before": {
-      "mast_objects": 32,
-      "mast_unique_meshes": 32,
-      "blend_bytes": 1529116,
-      "glb_bytes": 781376
+  "metrics": {
+    "objects": 77,
+    "mesh_datablocks": 6,
+    "materials": 5,
+    "curves": 1,
+    "unique_mesh_vertices": 5697,
+    "unique_mesh_triangles": 11092,
+    "terrain_dimensions_m": [6400.0, 4800.0, 228.805],
+    "human_guide_height_m": 1.85,
+    "overview_camera": {
+      "lens_mm": 32.0,
+      "clip_end_m": 12000.0,
+      "anchors": {
+        "KHP_WM_ROUTE_SHADE": {"ndc": [0.0692, 0.3707, 4650.6699], "distance_m": 5182.04},
+        "KHP_WM_ROUTE_GLASS_SEA": {"ndc": [0.4568, 0.4214, 5384.5415], "distance_m": 5397.55},
+        "KHP_WM_ROUTE_CRUCIBLE": {"ndc": [0.6752, 0.5525, 6239.9146], "distance_m": 6363.34},
+        "KHP_WM_ROUTE_RAKHET": {"ndc": [0.6208, 0.6512, 7986.2783], "distance_m": 8095.8}
+      }
     },
-    "after": {
-      "mast_objects": 32,
-      "mast_unique_meshes": 1,
-      "blend_bytes": 1357562,
-      "glb_bytes": 702900
-    }
+    "gameplay_camera": {
+      "lens_mm": 38.0,
+      "clip_end_m": 8000.0,
+      "human_guide_ndc_bbox": [0.4896, 0.603, 0.5105, 0.7206],
+      "human_guide_projected_height_px_at_720p": 84.7
+    },
+    "semantic_sha256": "7d80db30181cde1bded58d357384095c07cce0d2ca65e1b728b841aa93b252ca"
   },
-  "qa": {
-    "operation": "khepri.wmacro.qa.r2.fix1",
-    "revision_inspected": 2,
-    "passed": true,
-    "checks": {
-      "units_metric_scale_1": true,
-      "duplicate_object_names_zero": true,
-      "duplicate_asset_ids_zero": true,
-      "nonfinite_transforms_zero": true,
-      "negative_scale_zero": true,
-      "nonunit_mesh_scale_zero": true,
-      "terrain_xy_6400x4800_m": true,
-      "human_scale_1_85_m": true,
-      "heliostat_panels_shared_mesh": true,
-      "heliostat_masts_shared_mesh": true,
-      "claim_metadata_matches": true,
-      "world_metadata_matches": true
-    },
-    "metrics": {
-      "objects": 77,
-      "mesh_datablocks": 6,
-      "materials": 5,
-      "curves": 1,
-      "unique_mesh_vertices": 5697,
-      "unique_mesh_triangles": 11092,
-      "terrain_dimensions_m": [6400.0, 4800.0, 228.805],
-      "terrain_z_range_m": [-132.96, 95.845],
-      "human_guide_height_m": 1.85,
-      "heliostat_panel_objects": 32,
-      "heliostat_panel_unique_meshes": 1,
-      "heliostat_mast_objects": 32,
-      "heliostat_mast_unique_meshes": 1,
-      "route_anchor_segment_distances_m": [2125.99, 1783.94, 1838.65]
-    }
+  "artifacts": {
+    "blend": {"revision": 3, "bytes": 1357838, "etag": "3ffea751fa6b48b11fb86d80507c016a"},
+    "glb": {"revision": 3, "bytes": 703040, "etag": "06690127aa85172b5caa64f98c1441ab"}
   },
-  "recorded_failures": [
-    {
-      "operation": "khepri.wmacro.generate.r1",
-      "classification": "GENERATOR_DEFECT",
-      "cause": "empty 3D Jutsu scene had no World datablock; generator dereferenced scene.world.color",
-      "effect": "no revision committed",
-      "fix": "create KHP_WM_WORLD when scene.world is None",
-      "fix_commit": "13fd3a81b43db4589b2ba7359858bcfa79a5628b"
-    },
-    {
-      "operation": "khepri.wmacro.qa.r2",
-      "classification": "QA_TOOL_DEFECT",
-      "cause": "invalid Python generator-expression syntax in height audit",
-      "effect": "query failed; Blender revision unchanged",
-      "fix": "separate min/max generator expressions",
-      "fixed_operation": "khepri.wmacro.qa.r2.fix1"
-    }
+  "defects_fixed_this_wave": [
+    "Default 1000 m camera clip range invalid for kilometre-scale macro scene",
+    "Human scale guide outside gameplay validation frame"
   ],
-  "visual_evidence": {
-    "revision_1_overview_artifact": "035e2230991745f7e50a3ea2d1e6f779",
-    "revision_1_gameplay_artifact": "39254569736c3aa1da0416a678fe8530",
-    "inspection_status": "BLOCKED_IN_AGENT_RUNTIME",
-    "blocker": "artifact URLs cannot be downloaded into the analysis container because this session has no DNS/network path to the signed object store",
-    "human_preview_available": true
-  },
+  "open_gates": [
+    "HUMAN_VISUAL_REVIEW",
+    "BINARY_PERSISTENCE_TRANSPORT",
+    "PRODUCER_BRANCH_RECONCILIATION_AND_CI",
+    "ENGINE_IMPORT_COLLISION_AND_STREAMING",
+    "TARGET_GPU_PERFORMANCE"
+  ],
   "explicit_nonclaims": [
-    "artistic approval",
+    "human artistic approval",
+    "final PBR material approval",
     "engine integration",
     "collision approval",
-    "GPU performance qualification",
-    "AAA/AAAA final quality",
-    "final Khepri physical radius canon",
-    "full world completion"
+    "target GPU performance",
+    "AAA/AAAA finish",
+    "final planet radius canon",
+    "full KHEPRI completion"
   ]
 }
