@@ -50,6 +50,29 @@ def remote(project="project-alpha", *, revision=3, sequence=7, operation=None):
 
 
 class FleetReservations(unittest.TestCase):
+    def test_world_metadata_shards_allow_declared_world_only(self):
+        c = claim(world="Sylva Prime")
+        c["paths"] = ["production/manifests/sylva/macro/",
+                      "production/receipts/sylva/macro.json"]
+        fleet.validate(registry(c))
+
+    def test_world_metadata_shards_reject_parent_other_world_and_escape(self):
+        for path in ("production/manifests/", "production/receipts/",
+                     "production/manifests/nacre/", "production/receipts/sylva",
+                     "production/manifests/sylva/../nacre/"):
+            c = claim(world="sylva")
+            c["paths"] = [path]
+            with self.subTest(path=path), self.assertRaises(fleet.FleetError):
+                fleet.validate(registry(c))
+
+    def test_same_world_metadata_shards_still_detect_path_collisions(self):
+        a = claim(world="sylva", facet="art/macro")
+        b = claim("beta", world="sylva", facet="art/roots")
+        a["paths"] = ["production/manifests/sylva/"]
+        b["paths"] = ["production/manifests/sylva/roots/"]
+        with self.assertRaisesRegex(fleet.FleetError, "path"):
+            fleet.validate(registry(a, b))
+
     def test_world_aliases_share_one_semantic_namespace(self):
         for a, b in (("Ares IX", "ares"), ("sylva_prime", "Sylva"),
                      ("Aurora Veil", "aurora"), ("Elysium Null", "elysium")):

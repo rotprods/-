@@ -301,7 +301,9 @@
         "GATE-ASSET"
       ],
       "evidence": [
-        "evidence/visual-display-qualified.json"
+        "evidence/fleet-ack-reconciliation-007.json",
+        "evidence/gates/INFRA-005-GATE-CONTROL.json",
+        "evidence/gates/INFRA-005-GATE-NATIVE.json"
       ],
       "estimate_person_hours": null,
       "estimate_status": "actual time not retroactively invented",
@@ -310,7 +312,7 @@
         "First scheduled execution from main has not been observed",
         "Mem routing note pending provider rate limit; optional mirror, not a product blocker"
       ],
-      "closeout": "_project_intelligence/runs/INFRA-005-VISUAL-005/closeout.json",
+      "closeout": "_project_intelligence/runs/INFRA-005-REMEDIATION-007/closeout.json",
       "checkpoint_note": "GLB delivery container regression repair; checkpoint only. ADOPTION-002 source remains unrecovered; producer adoption and Mac qualification remain pending."
     },
     {
@@ -833,7 +835,74 @@
       }
     ],
     "acceptance": "No marcar resuelto un problema por documentarlo; blocked/deferred no equivalen a fixed. Campaña completa conserva gates G-RELEASE.",
-    "first_frontier": "Diagnóstico visual Godot compartido con escena existente, sin rehacer assets.",
-    "adoption": "Owners report learning_id, claim, commit and applied evidence in next normal handoff; missing ACK remains pending."
+    "first_frontier": "Un integrador admite una entrega lista, acuerda paths con owner, corrige su manifest drift y verifica un paquete binario recuperable. Reutilizar Terra/Vanta si sus recibos exactos aplican; no rehacer su modelado.",
+    "adoption": "Owners report learning_id, claim, commit and applied evidence in next normal handoff; missing ACK remains pending.",
+    "migration_readiness": {
+      "id": "MR-EXO-001",
+      "status": "planned",
+      "parent_goals": [
+        "G-OPS",
+        "G-TECH"
+      ],
+      "preserves": "NS-EXO",
+      "goal": "Trasladar un checkpoint recuperable al Mac sin perder fuentes, duplicar propietarios ni promover entregas sin pruebas.",
+      "north_star": "Un operador nuevo restaura cada entrega admitida desde almacenamiento duradero, identifica su owner y abre el proyecto sin depender del chat ni de una URL temporal.",
+      "scope": "Cierre de entregas y continuidad para migración; no cierre de campaña ni certificación artística global.",
+      "migration_modes": {
+        "host_qualification": "Permitida en checkout aislado antes del cierre de todos los mundos; no cambia autoridad ni ownership.",
+        "production_handoff": "Exige los gates de cada entrega incluida y un inventario de lo pendiente; no afirmar migración completa si quedan fuentes sin respaldo."
+      },
+      "subgoals": [
+        {
+          "id": "MR-OWN",
+          "owner": "integrator + each_owner",
+          "status": "partial",
+          "done_when": "Cada entrega admitida tiene owner, claim, epoch, rutas y proyecto remoto actuales sin conflicto. Los ACK se reconciliaron con evidencia; un registro reserved no se presenta como active.",
+          "evidence": "evidence/fleet-ack-reconciliation-007.json"
+        },
+        {
+          "id": "MR-ASSET",
+          "owner": "each_owner",
+          "status": "pending",
+          "done_when": "100% de entregas incluidas tienen fuente Blender, GLB, texturas/dependencias y recibo con hashes en ubicación persistente; descarga independiente y reapertura probadas. URLs de proveedor y generadores solos no satisfacen el gate."
+        },
+        {
+          "id": "MR-CI",
+          "owner": "integrator + affected_owner",
+          "status": "pending",
+          "done_when": "Manifiesto exacto del árbol de entrega/integración y gates relevantes aprobados en SHA final. Sin runner es ENV_BLOCKED. No reintentos ciegos ni refrescar manifiesto dentro de CI para ocultar drift."
+        },
+        {
+          "id": "MR-HANDOFF",
+          "owner": "integrator",
+          "status": "pending",
+          "done_when": "Un checkpoint identifica cada entrega incluida/excluida, SHA, pruebas, defecto pendiente, responsable y próxima acción. Restauración independiente del paquete migrado aprobada."
+        },
+        {
+          "id": "MR-MAC",
+          "owner": "qualified_host_operator",
+          "status": "pending",
+          "done_when": "Inventario real, Blender/dispositivo gráfico, importación del juego y escena representativa medidos. No tocar servicios existentes. No equivalencia GPU inferida desde CPU."
+        }
+      ],
+      "sequence": [
+        "MR-OWN",
+        "MR-ASSET + MR-CI por entrega",
+        "MR-HANDOFF",
+        "MR-MAC para producción; cualificación aislada puede adelantarse"
+      ],
+      "done": "Todos los gates requeridos del checkpoint migrado pasan; toda exclusión es visible y conserva owner. No declarar todos los mundos respaldados por un único paquete probado.",
+      "first_frontier": "Un integrador admite una entrega lista, acuerda paths con owner, corrige su manifest drift y verifica un paquete binario recuperable. Reutilizar Terra/Vanta si sus recibos exactos aplican; no rehacer su modelado.",
+      "schedule": "Por dependencias y entregas, sin fecha inventada; reevaluar capacidad tras primera recuperación real en Mac.",
+      "unknowns": [
+        "Número de workers vivos",
+        "Durabilidad/retención real de cada export remoto",
+        "Cobertura de backups de mundos",
+        "Capacidad efectiva del Mac",
+        "Adopción externa del harness"
+      ],
+      "surface_contract": "docs/FLEET_COORDINATION.md#ubicación-de-assets-y-aplicaciones",
+      "automation": "Permanece pausada; no nuevos workers por este contrato."
+    }
   }
 }
