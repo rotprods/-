@@ -3,135 +3,169 @@
 **Agent:** `AGENT-SYLVA-MACRO-01`  
 **Session:** `20260912-SYLVA-MACRO-001`  
 **Branch:** `art/world-sylva-prime-macro-001`  
-**Remote Blender:** `05dce898-753d-4ff6-a4b0-31757dc868d8` @ revision `4`  
-**State:** `IN_PROGRESS / VERIFIED R4 CHECKPOINT`
+**Primary remote Blender:** `05dce898-753d-4ff6-a4b0-31757dc868d8` @ revision `5`  
+**State:** `IN_PROGRESS / VERIFIED R5 CHECKPOINT`
 
 ## Scope boundary
 
 Owned here:
 - km-scale local terrain foundation;
 - canonical region anchors and spatial relationships;
-- macro diagnostic root topology placement;
+- diagnostic macro-root topology placement;
 - macro traversal corridors;
 - streaming metadata/envelopes;
 - macro collision proxies;
-- typed sockets that consume the neural-root kit owned by `CLM-SYLVA-PROC-NROOT-001`.
+- typed sockets consuming `CLM-SYLVA-PROC-NROOT-001`;
+- Cámara de VESPER macro encounter-layout envelope;
+- L0/L1 planetary-scale decision package, but **not canon promotion**.
 
 Explicitly not owned:
-- reusable meso neural-root modules;
+- reusable meso neural-root modules (PR #6);
 - final VESPER;
-- NPCs;
-- fauna/vegetation species assets;
+- NPC/fauna/vegetation production assets;
 - final architecture/interiors;
-- gameplay/quest/runtime code.
+- gameplay/quest/runtime code;
+- final engine/performance decision.
 
-## Coverage
+## Current coverage
 
-| Task | Priority | State | Receipt |
+| Task | Priority | State | Evidence |
 |---|---|---|---|
-| SYLVA/MACRO/001 Evidence pack | P0 | DONE | claim + draft PR #3 |
-| SYLVA/MACRO/002 Coordinate/scale contract | P0 | DONE | Blender metadata + World Bible |
-| SYLVA/MACRO/003 World-bible delta | P0 | DONE | `WORLD_BIBLE_MACRO.md` |
-| SYLVA/MACRO/004 Macro terrain | P0 | DONE (BLOCKOUT) | Blender r4 + generator |
-| SYLVA/MACRO/005 Structural root topology | P0 | REVIEW | 6 primary + 8 secondary diagnostic roots; reusable kit delegated to PR #6 |
-| SYLVA/MACRO/006 Puerto del Injerto | P1 | REVIEW | regional foundation + collision + two typed kit sockets |
-| SYLVA/MACRO/007 Bosque de las Frases | P1 | REVIEW | 3 route families + collision + three typed kit sockets |
-| SYLVA/MACRO/008 Cámara de VESPER envelope | P1 | REVIEW | boss-space envelope + collision + three typed kit sockets; no final boss |
-| SYLVA/MACRO/009 Streaming / traversal / collision interfaces | P0 | DONE (INTERFACE) | r4: 16 cells + 3 region envelopes + 8 collision proxies |
-| SYLVA/MACRO/010 Export + handoff | P0 | IN_PROGRESS | `.blend` + GLB r4 + manifests/receipt; engine/human gates pending |
+| Evidence / authority / claim | P0 | DONE | claim + PR #3 + issue #7 + ROT-117 |
+| Metric coordinate contract | P0 | DONE | Blender metadata / World Bible |
+| Macro terrain | P0 | DONE_BLOCKOUT | r5 source lineage |
+| Structural macro-root topology | P0 | REVIEW | 6 primary + 8 secondary diagnostic roots; meso kit delegated |
+| Puerto del Injerto foundation | P1 | REVIEW | blockout + collision + provider sockets |
+| Bosque de las Frases foundation | P1 | REVIEW | 3 route languages + collision + provider sockets |
+| Cámara de VESPER macro layout | P0 | **PASS_BLOCKOUT_R5** | three terraces + two wide connectors + separate collision |
+| Streaming interface | P0 | DONE_PROPOSAL | 16 × 3 km L3 cells + 3 regional envelopes |
+| Root-kit interface | P0 | PASS | 8 typed sockets / 0 provider meshes copied |
+| GLB pre-import contract | P0 | PASS_SELFTEST | r5 validator 7/7 synthetic adversarial cases |
+| Binary recovery / engine import | P0 | ENV_BLOCKED | `qa/ENGINE_IMPORT_ENV_BLOCKER.json` |
+| Human art review | P0 | PENDING | interactive r5 scene available |
+| LOD/HLOD / target performance | P1 | BLOCKED | engine + hardware unresolved |
 
-## R4 scene receipts
+## R5 scene receipts
 
-- **136 objects** total.
-- **84 mesh objects**.
-- **8 curve objects**.
-- **~15,840 blockout triangles**.
-- Local terrain bounds remain **12,000 × 12,000 m**, classified `PROPOSAL`.
-- 6 primary + 8 secondary **diagnostic** macro roots.
-- 4 diagnostic traversal route guides.
-- 16 L3 streaming cells, each **3,000 m** square (`PROPOSAL`, backend `ENGINE_TBD`).
-- 3 L4 hero-zone envelopes: Puerto 1,200 m, Bosque 1,700 m, VESPER 1,200 m (`PROPOSAL`).
-- 8 typed sockets consuming provider IDs from `CLM-SYLVA-PROC-NROOT-001`.
-- 8 macro collision objects including a 289-vertex / 256-face low-res terrain collision mesh.
-- Provider meshes copied into this claim: **0**.
-- Invalid provider sockets: **0**.
-- Non-unit-scale mesh/curve objects: **0**.
-- Non-`SYLVA_` objects: **0**.
-- Final-scope violations: **0**.
+Remote project `05dce898-753d-4ff6-a4b0-31757dc868d8`, revision 5:
 
-## Remote artifacts
+- **148 objects**;
+- **95 mesh objects**;
+- **8 curves**;
+- **~18,240 blockout triangles**;
+- local authored terrain **12,000 × 12,000 m** (`PROPOSAL`, never planet size);
+- 6 primary + 8 secondary diagnostic macro roots;
+- 4 macro traversal guides, total guide length **7,927.391 m**;
+- 16 proposed L3 streaming cells at 3 km;
+- 3 proposed L4 regional envelopes;
+- 8 typed root-kit sockets;
+- **12** macro collision nodes total;
+- non-unit scales: **0**;
+- non-`SYLVA_` objects: **0**;
+- provider root-kit meshes copied: **0**;
+- final VESPER meshes: **0**.
 
-- `.blend` r4: **2,097,180 bytes**, etag `4470d8530489f327fb2d3c33c31e983d`.
-- GLB r4: **1,074,844 bytes**, etag `f793339fd893d9829a84a43d21141054`.
-- Export completed without the prior unsupported `AREA`-light warning.
+### Cámara de VESPER r5 canon correction
 
-## Visual-signal QA
+The previous single circular proxy arena was removed. Required macro layout now exists:
 
-The original direct `Render Result` pixel validator produced a false zero and is rejected as a validator.
+- `SYLVA_VESPER_Terrace_00_ENTRY`: 116 m diameter, z −246 m;
+- `SYLVA_VESPER_Terrace_01_MIDDLE`: 124 m diameter, z −216 m;
+- `SYLVA_VESPER_Terrace_02_UPPER`: 112 m diameter, z −184 m;
+- Connector 00: 142.215 m, 12.178°, 18 m visual / 16 m collision width;
+- Connector 01: 145.685 m, 12.689°, 18 m visual / 16 m collision width;
+- both connectors: `precision_jump_required=false`.
 
-Independent file-backed smoke on `SYLVA_CAM_Puerto`:
-- resolution: 320×180;
-- PNG bytes: 72,450;
-- mean RGB: ~0.07998;
-- variance: ~0.00392;
-- max RGB: ~0.9882;
+Receipt: `qa/R5_VESPER_CANON_LAYOUT.json`.
+
+## Remote artifacts r5
+
+- `.blend`: **2,290,409 bytes**, etag `2ccbc1ec2ffd854ae83b5cee197d16de`.
+- GLB: **1,215,672 bytes**, etag `9c288dd826d7cbc3331b849dda1590e5`.
+- VESPER r5 review PNG artifact: `33a52a26511ad4a5e38646eb55cb23a9`.
+- GLB export completed without unsupported-light warnings.
+
+## Visual signal QA
+
+File-backed VESPER r5 smoke, 320×180:
+- PNG: 81,344 bytes;
+- mean RGB: ~0.21138;
+- variance: ~0.02917;
+- max RGB: ~0.59216;
 - result: `PASS_NONBLANK`.
 
-This proves image signal exists. It **does not** approve composition or final art.
+This proves image signal only. `GATE-ART` remains pending human review.
 
-## Progress metrics
+## GLB contract r5
 
-These are maturity estimates for this **atomic macro claim only**, not global EXOVANT progress.
+`validate_glb_contract.py` now requires:
+- 3 VESPER terrace nodes;
+- 2 VESPER connector nodes;
+- 5 VESPER collision nodes;
+- 12 `SYLVA_COL_*` nodes total;
+- no legacy `SYLVA_VESPER_ProxyArenaFloor` / `SYLVA_COL_VESPER_ArenaFloor`.
 
-- Macro/blockout family coverage: **100%** of declared macro families represented.
-- Modeling maturity: **45%** — foundation/blockout; no final terrain sculpt/surface pass.
-- Materials maturity: **10%** — diagnostic/lookdev only.
-- Optimization maturity: **25%** — streaming/collision interfaces exist; LOD/HLOD and target profiling pending.
-- Integration maturity: **35%** — portable GLB + provider sockets; engine import not run.
-- QA maturity: **60%** — technical r4 QA passes; human art, engine traversal/collision and GPU performance remain open.
+Adversarial synthetic gauntlet: **7/7 PASS**, including rejection of a simulated r4 single-floor arena export. The actual r5 GLB still requires byte recovery and execution of the validator against its exact SHA-256.
+
+## Traversal scale finding
+
+The four diagnostic route guides total **7.927 km**. Current prototype movement is 6 m/s on foot, 3 m/s guarding and 20 m/s in its generic vehicle state. Canon also specifies Sylva's `Vela de Ceniza con agarres de canopy`.
+
+Interpretation: do **not** automatically compress the macro world. Future pacing should distinguish local pedestrian loops from macro vehicle/transit corridors and be validated in engine.
+
+## Planetary-scale decision package
+
+Physical radius/diameter remain unapproved canon. A reversible ADR now exists:
+- `ADR-001_PLANETARY_SCALE_PROPOSAL.md`
+- `planetary_scale_options.json`
+
+Recommended proposal only: `SYL_SCALE_C_BROAD_BIOGENIC`, 1.20 R⊕, preserving the documented 1.12 g target under a spherical bulk approximation. `canonicalized=false`.
+
+A separate orbital Blender project was created **empty only**:
+`c796230b-0463-4e17-9446-2e746c5c4933` @ revision 0.
+
+It must remain unmodified until the fleet integrator adds that project ID to the active reservation. Generator exists but has not been executed: `generate_orbital_scale_proposal_c.py`.
+
+## Fleet governance
+
+- Branch incorporated `main@f78bfdc8bd7b2f6ab52b45d39babcc1589ab3918` via one-way sync PR #19.
+- Producer ACK epoch 1 posted to issue #7: comment `5648367024`.
+- Additional empty orbital project registration request: comment `5648418266`.
+- Latest readback still showed the producer claim as `reserved` / `ack:null`; producer must not mutate `ops/fleet/registry.json`.
+- Requested registry path expansion for macro manifest/r5 delivery receipts is still awaiting integrator publication.
+
+## Open P0
+
+1. Integrator readback: claim active ACK + path expansion + orbital project ID.
+2. Recover exact r5 `.blend` + GLB into a delivery checkout.
+3. Run r5 GLB validator on exact recovered bytes and bind SHA-256.
+4. Import into pinned Godot 4.7.2/current executable runtime.
+5. Traverse Puerto → Bosque → all three VESPER terraces with normal controls/collision.
+6. Human art-direction review.
+7. Explicit creative decision before promoting any planetary radius.
 
 ## Gates
 
 | Gate | State |
 |---|---|
-| CANON | PASS with planetary radius/diameter `UNKNOWN_BLOCKED` |
-| OWNERSHIP | PASS — PR #6 boundary explicit; no provider meshes copied |
-| GEOMETRY / NAMESPACE / SCALE | PASS blockout |
+| CANON regional layout | PASS_BLOCKOUT |
+| PLANETARY SIZE | PROPOSAL_PENDING_DECISION |
+| OWNERSHIP / SHARD | PASS_LOCAL; FLEET ACK READBACK PENDING |
+| GEOMETRY / NAMESPACE / SCALE | PASS_BLOCKOUT_R5 |
+| VESPER THREE-TERRACE LAYOUT | PASS_BLOCKOUT_R5 |
 | STREAMING INTERFACE | PASS_PROPOSAL |
 | ROOT-KIT SOCKET CONTRACT | PASS |
 | COLLISION PROXY PRESENCE | PASS_BLOCKOUT |
+| GLB CONTRACT LOGIC | PASS_SELFTEST_7_OF_7 |
 | EXPORT | PASS_REMOTE_GLB |
 | EDITABLE SOURCE | PASS_REMOTE_BLEND |
+| BINARY RECOVERY | ENV_BLOCKED |
 | ART | PENDING_HUMAN_REVIEW |
 | ENGINE IMPORT | NOT_RUN |
 | GAMEPLAY TRAVERSAL / COLLISION | NOT_RUN |
 | LOD/HLOD | NOT_IMPLEMENTED |
 | PERFORMANCE | BLOCKED_TARGET_HARDWARE |
 
-## Open P0
-
-1. Import r4 GLB into the current executable engine path.
-2. Instantiate/split render vs `SYLVA_COL_*` collision geometry and validate naming contract.
-3. Traverse Puerto → Bosque → VESPER with the real controller; log clearance/camera failures.
-4. Human art-direction review of macro silhouettes and route readability.
-5. Keep planetary radius/diameter blocked until an explicit ADR/canon decision.
-
-## Open P1
-
-1. Consume actual PR #6 root modules at typed sockets after provider branch is ready for integration; do not recreate them here.
-2. Revise regional envelopes from measured gameplay/streaming results rather than intuition.
-3. Establish HLOD/vista strategy after engine + target hardware are qualified.
-
-## Persistent outputs
-
-- `art_source/worlds/sylva_prime/macro/generate_sylva_macro.py`
-- `art_source/worlds/sylva_prime/macro/add_sylva_macro_interfaces.py`
-- `production/manifests/sylva/macro/SYL_MACRO_FOUNDATION_001.yaml`
-- `production/receipts/sylva/CLM-SYLVA-MACRO-001-R4.yaml`
-- `art_source/worlds/sylva_prime/macro/WORLD_BIBLE_MACRO.md`
-- `art_source/worlds/sylva_prime/macro/validation.json` (r3 historical validation)
-- `art_source/worlds/sylva_prime/macro/HANDOFF.md`
-
 ## Claim
 
-`KEEP / CHECKPOINT` — technical macro foundation is materially advanced, but P0 engine/human gates remain open. Do not mark DONE or merge as final world art.
+`KEEP / CHECKPOINT` — materially advanced and technically coherent, but not DONE and not merge-ready as final world art.
