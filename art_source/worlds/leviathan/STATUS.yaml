@@ -6,9 +6,10 @@ session_id: ART-LEVIATHAN-001-20260912T2123+0200
 branch: art/world-leviathan-001
 status: IN_PROGRESS
 claim_status: KEEP
-remote_blender_revision: 7
+remote_blender_revision: 8
 remote_project_id: 2577a7b6-ebd7-4d31-a645-620e4b73a95d
 cold_rebuild_project_id: 37a931c7-f2e6-46bc-9be0-26077e5de1c1
+cold_rebuild_revision: 6
 fleet:
   registry_main_observed: f78bfdc8bd7b2f6ab52b45d39babcc1589ab3918
   registry_state: reserved
@@ -35,7 +36,7 @@ metrics:
     wave1_region_blockouts_present: 3
     wave1_region_blockouts_total: 3
     blockout_presence_percent: 100
-    representative_detail_microsets: 2
+    representative_detail_microsets: 3
     representative_detail_assets:
       - LEV-ARCH-001
       - LEV-INF-002
@@ -43,17 +44,22 @@ metrics:
       - LEV-INF-005
       - LEV-ECO-001
       - LEV-ECO-004
+      - LEV-RGN-003
+      - LEV-ENV-002
+      - LEV-ENV-003
     final_asset_completion_percent: 0
     note: representative detail is not production-finished modeling
   materials:
-    portable_material_roles_present: 16
+    portable_material_roles_present: 18
     new_puerto_roles: [HUM_MAT_BRUSHED_METAL, HUM_MAT_SEAL_RUBBER]
     new_jardines_roles: [LEV_MAT_MUCOSA_WET, LEV_MAT_NECROTIC, LEV_MAT_ALGA_PRESSURE]
+    new_soma_roles: [LEV_MAT_PRESSURE_LUMEN, LEV_MAT_FIBROUS_TENDON]
     final_calibrated_texture_completion_percent: 0
   optimization:
     puerto_microset_native_mesh_triangles_measured: 13380
     jardines_microset_evaluated_triangles_measured: 21644
-    jardines_cost_method: mesh plus evaluated curve tessellation
+    soma_microset_evaluated_triangles_measured: 34308
+    cost_method: mesh plus evaluated curve tessellation where curves exist
     hard_budget_status: UNSET_UNTIL_RUNTIME_AND_TARGET_HARDWARE_QUALIFIED
     final_completion_percent: 0
   integration:
@@ -61,9 +67,9 @@ metrics:
     foundation_receipts_total: 5
     percent: 60
     passed:
-      - editable Blender revision exists
-      - portable GLB export exists
-      - deterministic semantic cold rebuild exists for master, Puerto and Jardines stages
+      - editable Blender revisions exist
+      - portable GLB exports exist
+      - deterministic semantic cold rebuild exists for master + Puerto + Jardines + SOMA stages
     open:
       - production-engine import/instantiate
       - runtime collision/traversal smoke test
@@ -76,6 +82,8 @@ metrics:
       - master deterministic semantic rebuild
       - Puerto staged deterministic semantic rebuild
       - Jardines staged deterministic semantic rebuild
+      - SOMA staged deterministic semantic rebuild
+      - SOMA actual evaluated geometry radius gate 28.3m < 29m
       - fleet main continuity push CI green
     partial_or_open: [B_ART, C_REALISM, E_UV, F_MATERIALS, H_PERFORMANCE, I_LOD, J_COLLISION runtime, L_ENGINE, M_VISUAL_REGRESSION]
 
@@ -101,8 +109,13 @@ completed:
   - deterministic Puerto staged cold rebuild
   - Jardines representative-detail lymph-channel/algae/gardener microset
   - Jardines truth metadata corrected from measured envelopes
-  - deterministic Jardines staged cold rebuild with exact whole-scene semantic fingerprint
+  - deterministic Jardines staged cold rebuild
   - Jardines evaluated geometry cost profile including curve tessellation
+  - SOMA v1 rejected at source preflight before execution because contraction envelope could exceed chamber radius
+  - SOMA encounter v2 built with bridges/refuge valves/contraction telegraph/regulator cradle while final boss proxy remained non-final
+  - SOMA evaluated-vertex radius gate PASS at 28.3m with 0.7m clearance to canonical 29m
+  - deterministic SOMA staged cold rebuild exact whole-scene semantic match
+  - SOMA evaluated geometry cost profile 34,308 triangles
   - producer ACK and Jardines ACK delta published to issue #7
   - old manifest-sharding blocker issue #13 closed after green fleet-harness main
 
@@ -135,19 +148,19 @@ resolved_blockers:
 
 risks:
   - direct pixel-level art inspection remains unavailable in this producer runtime
-  - current SOMA remains combat-scale proxy, not final anatomy
-  - Puerto/Jardines representative geometry lacks final UV/baked PBR/LOD/engine import
-  - gardener rig and final appendage collision are intentionally not qualified
+  - SOMA final anatomy/rig remains blocked despite representative encounter environment
+  - Puerto/Jardines/SOMA representative geometry lacks final UV/baked PBR/LOD/engine import
+  - gardener rig/final appendage collision are intentionally not qualified
   - no target-hardware performance budget exists
   - physical planet scale is intentionally unresolved
   - fleet registry still awaits integrator transition reserved -> active
 
 next:
-  - establish a representative Cámara de SOMA environment/encounter microset without unblocking final SOMA anatomy
+  - resync fleet registry and publish SOMA ACK delta
   - qualify runtime import path once exact GLB bytes and engine coexist in one execution environment
   - perform direct art review when image/scene inspection surface is available
   - continue PBR/UV/LOD only after runtime path and art direction are qualified
   - split specialist claims only after issue-7 preflight and current world-owner coordination
   - resolve/ADR L0 planet scale before orbital representation
 
-last_heartbeat: 2026-09-12T22:34:00+02:00
+last_heartbeat: 2026-09-12T22:45:00+02:00
