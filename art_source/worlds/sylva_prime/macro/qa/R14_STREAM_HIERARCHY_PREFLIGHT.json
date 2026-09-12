@@ -1,0 +1,77 @@
+{
+  "schema_version": 1,
+  "claim": "CLM-SYLVA-MACRO-001",
+  "source_revision": 13,
+  "target_contract": "SYLVA_STREAM_HIERARCHY_R14",
+  "status": "PRECHECK_PASS_NOT_EXECUTED_WRITER_FENCED",
+  "writer_fence_id": "SYLVA-MACRO-WRITER-EPOCH-2-20260912",
+  "fleet_readback": {
+    "status": "reserved",
+    "ack": null,
+    "registered_project_ids": ["05dce898-753d-4ff6-a4b0-31757dc868d8"]
+  },
+  "read_only_remote_preflight": {
+    "operation_id": "sylva-r13-r14-hierarchy-preflight",
+    "revision_before": 13,
+    "revision_after": null,
+    "scene_sequence_after": 0,
+    "spatial_objects_with_membership": 147,
+    "cross_l2_objects": 19,
+    "l2_unique_object_counts": {
+      "L2_X0Y0": 48,
+      "L2_X0Y1": 26,
+      "L2_X1Y0": 17,
+      "L2_X1Y1": 87
+    },
+    "l2_membership_slot_counts": {
+      "L2_X0Y0": 58,
+      "L2_X0Y1": 27,
+      "L2_X1Y0": 19,
+      "L2_X1Y1": 99
+    }
+  },
+  "static_validator": {
+    "validator": "validate_stream_hierarchy_r14.py",
+    "equivalent_logic_executed": true,
+    "passed": true,
+    "errors": [],
+    "l2_count": 4,
+    "l3_partition_count": 16,
+    "hero_count": 3,
+    "bosque_l2_count": 4
+  },
+  "hero_residency": {
+    "PUERTO": {
+      "core_radius_m_proposal": 550,
+      "core_cells": ["X0Y1", "X1Y1"],
+      "core_l2": ["L2_X0Y0"]
+    },
+    "BOSQUE": {
+      "core_radius_m_proposal": 200,
+      "core_cells": ["X1Y1", "X1Y2", "X2Y1", "X2Y2"],
+      "core_l2": ["L2_X0Y0", "L2_X0Y1", "L2_X1Y0", "L2_X1Y1"],
+      "finding": "GLOBAL_L2_JUNCTION; use residency overlay, do not move geography"
+    },
+    "VESPER": {
+      "core_radius_m_proposal": 400,
+      "core_cells": ["X2Y2", "X3Y2"],
+      "core_l2": ["L2_X1Y1"]
+    }
+  },
+  "four_l2_crossing_hotspots": [
+    "SYLVA_BOSQUE_Route0_RootR",
+    "SYLVA_COL_ROUTE_01",
+    "SYLVA_ROOT_PRIMARY_R02",
+    "SYLVA_ROOT_PRIMARY_R04",
+    "SYLVA_ROOT_PRIMARY_R05",
+    "SYLVA_TRAV_PathGuide_01"
+  ],
+  "execution_artifacts_ready": [
+    "art_source/worlds/sylva_prime/macro/STREAM_HIERARCHY_R14_PROPOSAL.json",
+    "art_source/worlds/sylva_prime/macro/build_stream_hierarchy_r14.py",
+    "art_source/worlds/sylva_prime/macro/validate_stream_hierarchy_r14.py"
+  ],
+  "execution_allowed": false,
+  "unblock_condition": "Published fleet registry transitions this claim to active with current owner ACK and single-writer epoch is established.",
+  "truth": "This receipt validates the proposed hierarchy only. Blender remains accepted revision 13."
+}
