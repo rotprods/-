@@ -1,5 +1,5 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "project": "EXOVANT 2950",
   "world_id": "leviathan",
   "claim_id": "CLM-W10-WORLD-LEVIATHAN-001",
@@ -9,15 +9,13 @@
     "revision": 10,
     "mesh_objects": 260,
     "mesh_datablocks": 98,
-    "object_triangle_instances": 94916,
-    "operation": "leviathan-r10-lod-feasibility-error-curves-v2"
+    "object_triangle_instances": 94916
   },
   "method": {
     "simplifier": "temporary Blender Decimate COLLAPSE modifier",
-    "ratios": [0.75, 0.5, 0.25],
     "evaluation": "fresh depsgraph for every temporary modifier",
     "error": "bidirectional approximate nearest-surface distance from vertices + triangle centroids against opposite BVH",
-    "normalization": "max and RMS distance divided by original world-space bounding-box diagonal",
+    "normalization": "max and RMS world-space distance divided by original world-space bounding-box diagonal",
     "mutation": "query-only; no LOD geometry committed"
   },
   "rejected_probe": {
@@ -34,24 +32,62 @@
     "actual_ratio": 0.5,
     "status": "PASS"
   },
-  "representatives": [
-    {"name":"L2_RIB_-260","original_triangles":2304,"bbox_diag_m":105.411962,"ratio_75":{"triangles":1728,"max_error_m":0.048388,"rms_error_m":0.0139,"max_error_pct_diag":0.045903,"rms_error_pct_diag":0.013186},"ratio_50":{"triangles":1152,"max_error_m":0.099153,"rms_error_m":0.034311,"max_error_pct_diag":0.094062,"rms_error_pct_diag":0.032549},"ratio_25":{"triangles":576,"max_error_m":0.266546,"rms_error_m":0.092995,"max_error_pct_diag":0.252861,"rms_error_pct_diag":0.08822}},
-    {"name":"R1_SCAR_RING","original_triangles":2304,"bbox_diag_m":179.941657,"ratio_75":{"triangles":1728,"max_error_m":0.082613,"rms_error_m":0.023764,"max_error_pct_diag":0.045911,"rms_error_pct_diag":0.013207},"ratio_50":{"triangles":1152,"max_error_m":0.167164,"rms_error_m":0.05791,"max_error_pct_diag":0.092899,"rms_error_pct_diag":0.032183},"ratio_25":{"triangles":576,"max_error_m":0.483616,"rms_error_m":0.162937,"max_error_pct_diag":0.268763,"rms_error_pct_diag":0.09055}},
-    {"name":"SOMA_PROXY_NOT_FINAL","original_triangles":2208,"bbox_diag_m":32.588362,"ratio_75":{"triangles":1656,"max_error_m":0.020823,"rms_error_m":0.004618,"max_error_pct_diag":0.063898,"rms_error_pct_diag":0.014171},"ratio_50":{"triangles":1104,"max_error_m":0.043629,"rms_error_m":0.015891,"max_error_pct_diag":0.133879,"rms_error_pct_diag":0.048764},"ratio_25":{"triangles":552,"max_error_m":0.105933,"rms_error_m":0.040762,"max_error_pct_diag":0.325063,"rms_error_pct_diag":0.12508}},
-    {"name":"R1_HLV_OUTER_FRAME","original_triangles":1728,"bbox_diag_m":21.177368,"ratio_75":{"triangles":1296,"max_error_m":0.01159,"rms_error_m":0.003042,"max_error_pct_diag":0.054726,"rms_error_pct_diag":0.014365},"ratio_50":{"triangles":864,"max_error_m":0.02129,"rms_error_m":0.00698,"max_error_pct_diag":0.100533,"rms_error_pct_diag":0.032958},"ratio_25":{"triangles":432,"max_error_m":0.096347,"rms_error_m":0.025978,"max_error_pct_diag":0.454952,"rms_error_pct_diag":0.122667}},
-    {"name":"R3_HRC_REGULATOR_RING","original_triangles":1536,"bbox_diag_m":30.782674,"ratio_75":{"triangles":1152,"max_error_m":0.020791,"rms_error_m":0.005729,"max_error_pct_diag":0.067542,"rms_error_pct_diag":0.01861},"ratio_50":{"triangles":768,"max_error_m":0.042085,"rms_error_m":0.013269,"max_error_pct_diag":0.136716,"rms_error_pct_diag":0.043105},"ratio_25":{"triangles":384,"max_error_m":0.080532,"rms_error_m":0.026429,"max_error_pct_diag":0.261615,"rms_error_pct_diag":0.085858}},
-    {"name":"R2_BALLENA_LINFA_PROXY","original_triangles":1520,"bbox_diag_m":39.752181,"ratio_75":{"triangles":1140,"max_error_m":0.023334,"rms_error_m":0.004892,"max_error_pct_diag":0.058699,"rms_error_pct_diag":0.012307},"ratio_50":{"triangles":760,"max_error_m":0.054477,"rms_error_m":0.019598,"max_error_pct_diag":0.137042,"rms_error_pct_diag":0.0493},"ratio_25":{"triangles":380,"max_error_m":0.113116,"rms_error_m":0.051826,"max_error_pct_diag":0.284552,"rms_error_pct_diag":0.130372}},
-    {"name":"R2_HGP_DIGESTIVE_SAC","original_triangles":1224,"bbox_diag_m":3.190486,"ratio_75":{"triangles":918,"max_error_m":0.002478,"rms_error_m":0.00063,"max_error_pct_diag":0.077675,"rms_error_pct_diag":0.019744},"ratio_50":{"triangles":612,"max_error_m":0.006943,"rms_error_m":0.00261,"max_error_pct_diag":0.217625,"rms_error_pct_diag":0.081806},"ratio_25":{"triangles":306,"max_error_m":0.015282,"rms_error_m":0.006257,"max_error_pct_diag":0.478997,"rms_error_pct_diag":0.196109}},
-    {"name":"R3_HCM_MEMBRANE_0","original_triangles":960,"bbox_diag_m":26.53935,"ratio_75":{"triangles":720,"max_error_m":0.031882,"rms_error_m":0.00885,"max_error_pct_diag":0.120131,"rms_error_pct_diag":0.033348},"ratio_50":{"triangles":480,"max_error_m":0.063033,"rms_error_m":0.02544,"max_error_pct_diag":0.237508,"rms_error_pct_diag":0.095859},"ratio_25":{"triangles":240,"max_error_m":0.150323,"rms_error_m":0.062104,"max_error_pct_diag":0.566417,"rms_error_pct_diag":0.234009}},
-    {"name":"R2_HLC_CARTILAGE_RIB_0","original_triangles":800,"bbox_diag_m":9.89237,"ratio_75":{"triangles":600,"max_error_m":0.01586,"rms_error_m":0.004704,"max_error_pct_diag":0.160323,"rms_error_pct_diag":0.04755},"ratio_50":{"triangles":400,"max_error_m":0.03157,"rms_error_m":0.010331,"max_error_pct_diag":0.319139,"rms_error_pct_diag":0.104436},"ratio_25":{"triangles":200,"max_error_m":0.073321,"rms_error_m":0.026536,"max_error_pct_diag":0.741186,"rms_error_pct_diag":0.268249}}
-  ],
-  "observations": {
-    "ratio_75_max_error_pct_diag_range": [0.045903, 0.160323],
-    "ratio_50_max_error_pct_diag_range": [0.092899, 0.319139],
-    "ratio_25_max_error_pct_diag_range": [0.252861, 0.741186],
-    "ratio_50_representatives_all_below_0_32_percent_bbox_diag_max_error": true,
-    "ratio_25_representatives_all_below_0_75_percent_bbox_diag_max_error": true,
-    "interpretation": "Representative geometry has meaningful simplification headroom, but geometric BVH error alone is insufficient to approve final LOD ratios."
+  "representative_curves": {
+    "operation": "leviathan-r10-lod-feasibility-error-curves-v2",
+    "ratios": [0.75, 0.5, 0.25],
+    "assets": [
+      {"name":"L2_RIB_-260","orig_tris":2304,"ratio_75":{"tris":1728,"max_error_pct_diag":0.045903,"rms_error_pct_diag":0.013186},"ratio_50":{"tris":1152,"max_error_pct_diag":0.094062,"rms_error_pct_diag":0.032549},"ratio_25":{"tris":576,"max_error_pct_diag":0.252861,"rms_error_pct_diag":0.08822}},
+      {"name":"R1_SCAR_RING","orig_tris":2304,"ratio_75":{"tris":1728,"max_error_pct_diag":0.045911,"rms_error_pct_diag":0.013207},"ratio_50":{"tris":1152,"max_error_pct_diag":0.092899,"rms_error_pct_diag":0.032183},"ratio_25":{"tris":576,"max_error_pct_diag":0.268763,"rms_error_pct_diag":0.09055}},
+      {"name":"SOMA_PROXY_NOT_FINAL","orig_tris":2208,"ratio_75":{"tris":1656,"max_error_pct_diag":0.063898,"rms_error_pct_diag":0.014171},"ratio_50":{"tris":1104,"max_error_pct_diag":0.133879,"rms_error_pct_diag":0.048764},"ratio_25":{"tris":552,"max_error_pct_diag":0.325063,"rms_error_pct_diag":0.12508}},
+      {"name":"R1_HLV_OUTER_FRAME","orig_tris":1728,"ratio_75":{"tris":1296,"max_error_pct_diag":0.054726,"rms_error_pct_diag":0.014365},"ratio_50":{"tris":864,"max_error_pct_diag":0.100533,"rms_error_pct_diag":0.032958},"ratio_25":{"tris":432,"max_error_pct_diag":0.454952,"rms_error_pct_diag":0.122667}},
+      {"name":"R3_HRC_REGULATOR_RING","orig_tris":1536,"ratio_75":{"tris":1152,"max_error_pct_diag":0.067542,"rms_error_pct_diag":0.01861},"ratio_50":{"tris":768,"max_error_pct_diag":0.136716,"rms_error_pct_diag":0.043105},"ratio_25":{"tris":384,"max_error_pct_diag":0.261615,"rms_error_pct_diag":0.085858}},
+      {"name":"R2_BALLENA_LINFA_PROXY","orig_tris":1520,"ratio_75":{"tris":1140,"max_error_pct_diag":0.058699,"rms_error_pct_diag":0.012307},"ratio_50":{"tris":760,"max_error_pct_diag":0.137042,"rms_error_pct_diag":0.0493},"ratio_25":{"tris":380,"max_error_pct_diag":0.284552,"rms_error_pct_diag":0.130372}},
+      {"name":"R2_HGP_DIGESTIVE_SAC","orig_tris":1224,"ratio_75":{"tris":918,"max_error_pct_diag":0.077675,"rms_error_pct_diag":0.019744},"ratio_50":{"tris":612,"max_error_pct_diag":0.217625,"rms_error_pct_diag":0.081806},"ratio_25":{"tris":306,"max_error_pct_diag":0.478997,"rms_error_pct_diag":0.196109}},
+      {"name":"R3_HCM_MEMBRANE_0","orig_tris":960,"ratio_75":{"tris":720,"max_error_pct_diag":0.120131,"rms_error_pct_diag":0.033348},"ratio_50":{"tris":480,"max_error_pct_diag":0.237508,"rms_error_pct_diag":0.095859},"ratio_25":{"tris":240,"max_error_pct_diag":0.566417,"rms_error_pct_diag":0.234009}},
+      {"name":"R2_HLC_CARTILAGE_RIB_0","orig_tris":800,"ratio_75":{"tris":600,"max_error_pct_diag":0.160323,"rms_error_pct_diag":0.04755},"ratio_50":{"tris":400,"max_error_pct_diag":0.319139,"rms_error_pct_diag":0.104436},"ratio_25":{"tris":200,"max_error_pct_diag":0.741186,"rms_error_pct_diag":0.268249}}
+    ],
+    "observed_ranges": {
+      "ratio_75_max_error_pct_diag": [0.045903, 0.160323],
+      "ratio_50_max_error_pct_diag": [0.092899, 0.319139],
+      "ratio_25_max_error_pct_diag": [0.252861, 0.741186]
+    }
+  },
+  "full_visual_half_sweep": {
+    "operation": "leviathan-r10-lod-half-full-sweep",
+    "ratio": 0.5,
+    "scope": "one representative per shared visual mesh datablock; non-collision, render-visible, >=100 original triangles",
+    "unique_visual_meshes_tested": 52,
+    "represented_draw_triangles_before": 91132,
+    "represented_draw_triangles_after": 45566,
+    "max_error_pct_diag_distribution": {"min":0.051383,"median":0.319139,"p90":0.721524,"max":0.819912},
+    "rms_error_pct_diag_distribution": {"median":0.104436,"p90":0.269898,"max":0.282251},
+    "family_aggregate": {
+      "JARDINES_HERO":{"unique_meshes":18,"instances":29,"draw_tris_before":16864,"draw_tris_after":8432,"worst_max_error_pct_diag":0.819912},
+      "PUERTO_HERO":{"unique_meshes":6,"instances":12,"draw_tris_before":11040,"draw_tris_after":5520,"worst_max_error_pct_diag":0.721127},
+      "SOMA_HERO":{"unique_meshes":9,"instances":33,"draw_tris_before":26440,"draw_tris_after":13220,"worst_max_error_pct_diag":0.620898},
+      "JARDINES_BASE":{"unique_meshes":4,"instances":19,"draw_tris_before":8048,"draw_tris_after":4024,"worst_max_error_pct_diag":0.614472},
+      "MACRO_OTHER":{"unique_meshes":10,"instances":14,"draw_tris_before":19464,"draw_tris_after":9732,"worst_max_error_pct_diag":0.469344},
+      "SOMA_BASE":{"unique_meshes":3,"instances":3,"draw_tris_before":6816,"draw_tris_after":3408,"worst_max_error_pct_diag":0.133879},
+      "PUERTO_BASE":{"unique_meshes":2,"instances":2,"draw_tris_before":2460,"draw_tris_after":1230,"worst_max_error_pct_diag":0.092899}
+    },
+    "worst_shape_classes": ["pulse-algae root collars", "Puerto valve status nodes", "gardener contact pads", "pulse-algae bulbs", "SOMA regulator pressure bulbs"]
+  },
+  "outlier_refinement": {
+    "operation": "leviathan-r10-lod-outlier-refinement",
+    "ratios": [0.9,0.8,0.7,0.6,0.5],
+    "finding": "small rounded detail needs more conservative ratios than macro rings/shells",
+    "samples": {
+      "R2_HPA_ROOT_COLLAR_4":{"ratio_0_8_max_error_pct_diag":0.268434,"ratio_0_7_max_error_pct_diag":0.424915,"ratio_0_5_max_error_pct_diag":0.819912},
+      "R1_HLV_STATUS_0":{"ratio_0_8_max_error_pct_diag":0.260343,"ratio_0_7_max_error_pct_diag":0.481191,"ratio_0_5_max_error_pct_diag":0.721127},
+      "R2_HGP_CONTACT_PAD_0":{"ratio_0_8_max_error_pct_diag":0.150657,"ratio_0_7_max_error_pct_diag":0.276627,"ratio_0_5_max_error_pct_diag":0.698503},
+      "R2_HPA_BULB_4":{"ratio_0_8_max_error_pct_diag":0.254565,"ratio_0_7_max_error_pct_diag":0.365185,"ratio_0_5_max_error_pct_diag":0.634712},
+      "R3_HRC_PRESSURE_BULB_0":{"ratio_0_8_max_error_pct_diag":0.269394,"ratio_0_7_max_error_pct_diag":0.33562,"ratio_0_5_max_error_pct_diag":0.620898}
+    }
+  },
+  "provisional_production_interpretation": {
+    "macro_and_large_ring_shapes": "50% triangle probe shows low normalized geometric error in tested representatives; viable candidate for later screen-space/art validation, not approved LOD1.",
+    "small_rounded_detail": "80% triangle probe is a better starting candidate than 50% because normalized geometric error grows rapidly below ~70-80% on tested pieces; still not an approved threshold.",
+    "manual_attention": "small hero/status/ecology silhouettes and final animated anatomy should not inherit one global decimate ratio."
   },
   "non_claims": {
     "final_lod_thresholds": false,
