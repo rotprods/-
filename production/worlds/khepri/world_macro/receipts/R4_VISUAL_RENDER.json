@@ -1,0 +1,44 @@
+{
+  "claim_id": "CLM-KHEPRI-WMACRO-001",
+  "world_id": "khepri",
+  "master_project_id": "040f0c45-83a7-483c-9ee7-1e31c640a587",
+  "source_revision": 4,
+  "operation": "khepri.visual.r4.gauntlet",
+  "status": "RENDERED_NOT_HUMAN_ART_APPROVED",
+  "render_engine": "BLENDER_EEVEE",
+  "resolution": [1280, 720],
+  "route_contract": "R4_TERRAIN_CONFORMING",
+  "route_points": 576,
+  "artifacts": {
+    "overview": {
+      "id": "6526469581c767eb9e18ca73de270031",
+      "name": "khepri-r4-overview.png",
+      "bytes": 700678,
+      "etag": "6e13e707428b8dab35bf7a029f5ab394",
+      "width": 1280,
+      "height": 720,
+      "camera": "KHP_WM_CAM_OVERVIEW",
+      "lens_mm": 32.0,
+      "clip_end_m": 12000.0
+    },
+    "gameplay": {
+      "id": "f07432f0acc50e5ccddab570cbae0f6f",
+      "name": "khepri-r4-gameplay.png",
+      "bytes": 747184,
+      "etag": "2febdea6bb5adc1d88d559f88edf098b",
+      "width": 1280,
+      "height": 720,
+      "camera": "KHP_WM_CAM_GAMEPLAY_SCALE",
+      "lens_mm": 38.0,
+      "clip_end_m": 8000.0
+    }
+  },
+  "machine_visual_gate": "PASS_R3_CONTRACT_RETAINED_IN_R4",
+  "human_gate": "PENDING",
+  "nonclaims": [
+    "No pixel-level artistic approval by this agent runtime",
+    "No final material/lookdev approval",
+    "No engine screenshot approval",
+    "No AAA/AAAA finish claim"
+  ]
+}
