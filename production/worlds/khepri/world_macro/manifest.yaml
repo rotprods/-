@@ -1,0 +1,184 @@
+schema_version: 1
+world_id: khepri
+scope: world_macro/planetary_foundation
+claim_id: CLM-KHEPRI-WMACRO-001
+agent_id: AGENT-KHEPRI-WMACRO-001
+blender_project_id: 040f0c45-83a7-483c-9ee7-1e31c640a587
+blender_revision: 2
+source_generator:
+  - art_source/khepri/world_macro/generate_khepri_world_macro.py
+  - art_source/khepri/world_macro/optimize_khepri_world_macro.py
+validator: art_source/khepri/world_macro/validate_khepri_world_macro.py
+assets:
+  - asset_id: KHP_WM_PLANET_META
+    world_id: khepri
+    region: GLOBAL_KHEPRI
+    category: world_macro
+    subcategory: planetary_metadata
+    name: KHEPRI Planet Metadata Carrier
+    description: Carries documented gravity/temperature plus explicitly proposed physical-scale values and coordinate contract.
+    priority: P0
+    quality_tier: D
+    usage_frequency: global_metadata
+    real_dimensions: none
+    player_distance: not_rendered
+    dependencies: [KHP-ADR-001]
+    owner: AGENT-KHEPRI-WMACRO-001
+    status: REVIEW
+    blend_path: "3D-Jutsu:040f0c45-83a7-483c-9ee7-1e31c640a587@rev2/KHP_WM_PLANET_META"
+    export_path: GLB_extras_metadata
+    material_set: none
+    texture_set: none
+    poly_budget: N_A
+    lod_policy: N_A
+    collision_policy: none
+    rig: none
+    animation_dependency: none
+    physics: metadata_only
+    destructible: false
+    reference_set: [design/EXOVANT_DATA.json, KHP-ADR-001]
+    license: project_original
+    qa_status: STRUCTURAL_PASS
+
+  - asset_id: KHP_WM_ORBITAL_PROXY
+    world_id: khepri
+    region: GLOBAL_KHEPRI
+    category: world_macro
+    subcategory: orbital_representation
+    name: KHEPRI L1 Orbital Proxy 1:20000
+    description: Lightweight reduced-scale planet representation carrying physical-radius proposal as metadata; explicitly non-collision/gameplay.
+    priority: P0
+    quality_tier: D
+    usage_frequency: orbital_vista_validation
+    real_dimensions: "display radius 261.2 m at 1:20000; physical radius proposal 5,224,000 m"
+    player_distance: orbital_only
+    dependencies: [KHP_WM_PLANET_META]
+    owner: AGENT-KHEPRI-WMACRO-001
+    status: REVIEW
+    blend_path: "3D-Jutsu:040f0c45-83a7-483c-9ee7-1e31c640a587@rev2/KHP_WM_L1_ORBITAL_PROXY_1_TO_20000"
+    export_path: preview.glb
+    material_set: KHP_WM_MAT_ORBITAL_PROXY
+    texture_set: none
+    poly_budget: UNQUALIFIED_TARGET_HARDWARE
+    lod_policy: "single blockout proxy; production LOD/HLOD deferred"
+    collision_policy: none
+    rig: none
+    animation_dependency: none
+    physics: none
+    destructible: false
+    reference_set: [KHP-ADR-001]
+    license: project_original
+    qa_status: STRUCTURAL_PASS_ART_PENDING
+
+  - asset_id: KHP_WM_TERRAIN_A
+    world_id: khepri
+    region: MACROCELL_A
+    category: terrain
+    subcategory: macro_elevation
+    name: KHEPRI L2 Representative Macrocell A
+    description: Deterministic low/mid-frequency solar-glass desert terrain used to validate macro scale and route interfaces; not final geology.
+    priority: P0
+    quality_tier: D
+    usage_frequency: representative_macro_cell
+    real_dimensions: "6400 m × 4800 m × 228.805 m vertical range envelope"
+    player_distance: vista_and_macro_navigation
+    dependencies: [KHP_WM_PLANET_META]
+    owner: AGENT-KHEPRI-WMACRO-001
+    status: REVIEW
+    blend_path: "3D-Jutsu:040f0c45-83a7-483c-9ee7-1e31c640a587@rev2/KHP_WM_L2_MACROCELL_A_TERRAIN"
+    export_path: preview.glb
+    material_set: KHP_WM_MAT_SOLAR_GLASS_BLOCKOUT
+    texture_set: none
+    poly_budget: UNQUALIFIED_TARGET_HARDWARE
+    lod_policy: "production tile/streaming/HLOD deferred; current mesh is validation blockout"
+    collision_policy: "none in this claim; future gameplay cell owner must author collision"
+    rig: none
+    animation_dependency: none
+    physics: none
+    destructible: false
+    reference_set: [design/EXOVANT_BIBLIA.md, design/EXOVANT_DATA.json]
+    license: project_original
+    qa_status: STRUCTURAL_PASS_ART_PENDING
+
+  - asset_id: KHP_WM_HELIOSTAT_FOOTPRINTS
+    world_id: khepri
+    region: MACROCELL_A
+    category: infrastructure
+    subcategory: optical_footprints
+    name: Heliostat Field Footprint Family
+    description: 32 mast + 32 panel proxy placements indicating optical-infrastructure scale only; final architecture excluded.
+    priority: P1
+    quality_tier: D
+    usage_frequency: repeated_macro_proxy
+    real_dimensions: "panel proxy 36 m × 2 m × 22 m; mast proxy 36 m tall"
+    player_distance: long_and_mid_distance
+    dependencies: [KHP_WM_TERRAIN_A]
+    owner: AGENT-KHEPRI-WMACRO-001
+    status: REVIEW
+    blend_path: "3D-Jutsu:040f0c45-83a7-483c-9ee7-1e31c640a587@rev2/KHP_WM_30_OPTICAL_FOOTPRINTS"
+    export_path: preview.glb
+    material_set: [KHP_WM_MAT_BRONZE_BLOCKOUT, KHP_WM_MAT_MIRROR_BLOCKOUT]
+    texture_set: none
+    poly_budget: UNQUALIFIED_TARGET_HARDWARE
+    lod_policy: "instanced shared mesh; final architecture owner replaces/consumes footprint"
+    collision_policy: none
+    rig: none
+    animation_dependency: "future solar tracking system"
+    physics: none
+    destructible: false
+    reference_set: [design/EXOVANT_BIBLIA.md]
+    license: project_original
+    qa_status: STRUCTURAL_PASS_ART_PENDING
+
+  - asset_id: KHP_WM_ROUTE_INTERFACES
+    world_id: khepri
+    region: MACROCELL_A
+    category: technical_integration
+    subcategory: route_anchors
+    name: KHEPRI Functional Route Interfaces
+    description: Four empty-object anchors derived from documented mission functions: shade, glass sea, crucible, RA-KHET approach.
+    priority: P0
+    quality_tier: D
+    usage_frequency: cross_domain_interface
+    real_dimensions: none
+    player_distance: N_A
+    dependencies: [KHP_WM_TERRAIN_A]
+    owner: AGENT-KHEPRI-WMACRO-001
+    status: REVIEW
+    blend_path: "3D-Jutsu:040f0c45-83a7-483c-9ee7-1e31c640a587@rev2/KHP_WM_40_ROUTE_INTERFACES"
+    export_path: GLB_extras_metadata
+    material_set: none
+    texture_set: none
+    poly_budget: N_A
+    lod_policy: N_A
+    collision_policy: none
+    rig: none
+    animation_dependency: none
+    physics: none
+    destructible: false
+    reference_set: [Q_KHEPRI_M01, Q_KHEPRI_M02, Q_KHEPRI_M03, Q_KHEPRI_M04]
+    license: project_original
+    qa_status: STRUCTURAL_PASS
+
+measured_scene_metrics_rev2:
+  objects: 77
+  mesh_datablocks: 6
+  materials: 5
+  curves: 1
+  unique_mesh_vertices: 5697
+  unique_mesh_triangles: 11092
+  blend_bytes: 1357562
+  glb_bytes: 702900
+  heliostat_panel_objects: 32
+  heliostat_panel_unique_meshes: 1
+  heliostat_mast_objects: 32
+  heliostat_mast_unique_meshes: 1
+  human_guide_height_m: 1.85
+  route_anchor_segment_distances_m: [2125.99, 1783.94, 1838.65]
+nonclaims:
+  - final game-ready budget
+  - final collision
+  - engine integration
+  - artistic approval
+  - final physical planet canon
+  - complete KHEPRI world
