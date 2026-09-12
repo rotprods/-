@@ -18,8 +18,8 @@ Deliver UMBRA's first production-grade world foundation as an isolated, reproduc
 | W04/PIPE/004 | P0 | Revalidate editable Blender route | W04/CLAIM/002 | dedicated 3D Jutsu project; Blender version, metric units, empty scene and guards observed | DONE |
 | W04/BLK/005 | P1 | Build deterministic twilight-band regional blockout | W04/PIPE/004 | terrain + traversal + reflector + caravan + refuge + NOCTIL destination proxy committed in Blender revision | DONE |
 | W04/QA/006 | P0 | Run structural/scale QA | W04/BLK/005 | object/mesh/material/tri counts measured; scale refs measured; no residual object-scale anomalies or zero-dimension meshes | DONE |
-| W04/ASSET/007 | P1 | Persist master asset/coverage registry | W04/CANON/003 | every Wave-0 family has ID, tier, priority, owner, status, dependency, dimension state, LOD/collision/export state | IN_PROGRESS |
-| W04/GEN/008 | P1 | Persist reproducible Blender generator/source | W04/BLK/005 | script reproduces hierarchy and base blockout logic, uses metre scale, no external absolute asset paths | IN_PROGRESS |
+| W04/ASSET/007 | P1 | Persist master asset/coverage registry | W04/CANON/003 | every Wave-0 family has ID, tier, priority, owner, status, dependency, dimension state, LOD/collision/export state | DONE |
+| W04/GEN/008 | P1 | Persist and independently replay Blender generator/source | W04/BLK/005 | versioned script rebuilt a clean project with the same 96 objects / 85 meshes / 9 materials / 12,204 tris and scale dimensions; no external absolute asset paths | DONE |
 | W04/VIS/009 | P1 | Human/agent visual QA of delivery render | W04/BLK/005 | framing, contacts, silhouette, light hierarchy and art drift inspected; defects converted to tasks | REVIEW |
 | W04/ENG/010 | P0 | Engine import / gameplay camera acceptance | W04/ASSET/007 + engine integration authority | GLB imported in active runtime; scale/material/collision/camera/profile receipt recorded | BLOCKED |
 
