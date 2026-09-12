@@ -6,10 +6,10 @@ session_id: ART-LEVIATHAN-001-20260912T2123+0200
 branch: art/world-leviathan-001
 status: IN_PROGRESS
 claim_status: KEEP
-remote_blender_revision: 9
+remote_blender_revision: 10
 remote_project_id: 2577a7b6-ebd7-4d31-a645-620e4b73a95d
 cold_rebuild_project_id: 37a931c7-f2e6-46bc-9be0-26077e5de1c1
-cold_rebuild_revision: 7
+cold_rebuild_revision: 8
 fleet:
   registry_main_observed: f78bfdc8bd7b2f6ab52b45d39babcc1589ab3918
   registry_state: reserved
@@ -52,33 +52,44 @@ metrics:
     puerto_microset_native_mesh_triangles_measured: 13380
     jardines_microset_evaluated_triangles_measured: 21644
     soma_microset_evaluated_triangles_measured: 34308
-    revision9_instancing:
+    instancing_v2:
+      candidate_groups: 37
+      repeated_objects: 199
       mesh_objects: 260
-      mesh_datablocks_before: 260
-      mesh_datablocks_after: 122
-      datablocks_removed: 138
-      strict_groups_applied: 36
-      blend_size_reduction_percent: 26.9
-      glb_size_reduction_percent: 22.2
-      primary_r8_to_r9_object_fingerprint_match: true
+      mesh_datablocks_r8: 260
+      mesh_datablocks_r10: 98
+      datablocks_removed_total: 162
+      datablock_reduction_percent: 62.3077
+      blend_bytes_r8: 7657188
+      blend_bytes_r10: 4842680
+      blend_reduction_percent: 36.7564
+      glb_bytes_r8: 8492516
+      glb_bytes_r10: 5617124
+      glb_reduction_percent: 33.858
+      primary_cold_same_datablock_count: true
+      primary_cold_same_blend_size: true
       runtime_performance_claimed: false
-      receipt: art_source/worlds/leviathan/evidence/instancing_optimization_r9.json
+      receipt: art_source/worlds/leviathan/evidence/instancing_optimization_r10_v2.json
     hard_budget_status: UNSET_UNTIL_RUNTIME_AND_TARGET_HARDWARE_QUALIFIED
   reproducibility:
-    canonical_evaluated_surface_sha256: 6c06329ff60fe34383394bece0c80f66bb9e4486793712854e462c3af8eea26a
-    primary_revision: 9
-    cold_revision: 7
+    canonical_visual_surface_sha256: 1b9d885f7fd612a30c4fd289bbc79da6b06472b710867e8f63bafa9c87827a5d
+    primary_revision: 10
+    cold_revision: 8
     primary_cold_match: true
-    criterion: "order-invariant evaluated surface incl. modifiers, UVs, face materials, smoothing, normals, cameras, lights and material parameters"
+    primary_r9_to_r10_match: true
+    criterion: "order-invariant evaluated surface incl. modifiers, UVs, face materials, smoothing, normals, cameras, lights and material parameters; optimizer metadata/index/datablock identity excluded"
+    canonical_full_scene_prior_sha256: 6c06329ff60fe34383394bece0c80f66bb9e4486793712854e462c3af8eea26a
     internal_vertex_face_index_order_match_required: false
-    receipt: art_source/worlds/leviathan/evidence/canonical_surface_repro_r9.json
+    evidence:
+      - art_source/worlds/leviathan/evidence/canonical_surface_repro_r9.json
+      - art_source/worlds/leviathan/evidence/instancing_optimization_r10_v2.json
   integration:
     percent: 60
     passed:
       - editable Blender revisions exist
       - portable GLB exports exist
-      - canonical evaluated surface replay matches primary vs cold
-      - primary r8->r9 structural instancing preserves audited visual surface
+      - canonical evaluated visual surface replay matches primary vs cold
+      - order-invariant instancing v2 converges primary/cold to 98 datablocks
     open: [production-engine import/instantiate, runtime collision/traversal smoke test]
   qa:
     full_pass_gates: 4
@@ -87,9 +98,9 @@ metrics:
     full_pass: [A_CANON foundation, D_GEOMETRY representative foundation, G_SCALE foundation, K_EXPORT representative foundation]
     additional_pipeline_passes:
       - canonical evaluated surface reproducibility primary vs cold
+      - order-invariant optimizer v2 deterministic convergence
       - Puerto strict family replay
       - SOMA actual radius gate 28.3m<29m
-      - revision9 instancing visual-surface equivalence
       - UV structural audit zero degenerate/out-of-range coordinates
       - fleet main continuity CI green
       - PR10 Python suite 75/75 green
@@ -109,9 +120,9 @@ completed:
   - exact 58m SOMA chamber / stable-vs-visual collision contract
   - 18 portable material roles
   - UV/PBR/LOD readiness audit and production contract
-  - revision9 safe repeated-mesh instancing optimization on working master
-  - canonical evaluated surface fingerprint exact match primary r9 vs cold r7
-  - preliminary raw drift reclassified as internal vertex/face index-order variance
+  - canonical surface validator corrected false raw-index drift classification
+  - order-invariant instancing v2 reduces 260 mesh datablocks to 98 with exact visual-surface equivalence
+  - independent cold project converges to same 98 datablocks and same visual fingerprint
   - producer ACK + Jardines + SOMA deltas persisted in issue #7
   - PR10 CI isolated to manifest drift after 75 passing tests
   - former manifest issue #13 closed after green fleet-harness main
@@ -133,9 +144,12 @@ resolved_blockers:
   - id: LEV-BLK-008
     former_problem: suspected strict raw primitive mesh/UV reproducibility drift
     resolution: >-
-      Canonical order-invariant evaluated-surface fingerprint is exactly equal between primary r9 and cold r7.
-      Difference was internal Blender primitive vertex/face indexing only, with no surface/UV/material/modifier difference.
-    evidence: art_source/worlds/leviathan/evidence/canonical_surface_repro_r9.json
+      Order-invariant evaluated-surface fingerprint matches exactly primary/cold. Difference was internal
+      vertex/face index ordering only. Optimizer v2 now canonicalizes that variance and both projects converge
+      to the same 98 mesh datablocks.
+    evidence:
+      - art_source/worlds/leviathan/evidence/canonical_surface_repro_r9.json
+      - art_source/worlds/leviathan/evidence/instancing_optimization_r10_v2.json
 
 risks:
   - direct pixel-level art inspection unavailable in this producer runtime despite render artifacts
@@ -144,14 +158,13 @@ risks:
   - no LOD chain or target-hardware performance budget exists
   - physical planet scale unresolved
   - fleet registry awaits integrator transition reserved->active
-  - optimizer v1 is unnecessarily sensitive to primitive indexing in cold replay; v2 should use order-invariant local surface signatures
 
 next:
-  - build optimizer v2 using order-invariant local surface+UV/material signature and replay on primary/cold
   - ingest fleet integrator ACK/active transition when published
   - have integrator regenerate root MANIFEST on PR merge tree; do not rerun known-failing CI blindly
   - execute runtime import only when exact provider GLB and qualified engine coexist
   - direct art review before final PBR/LOD propagation
+  - investigate engine-neutral LOD simplification/error envelopes without claiming final budgets
   - resolve/ADR L0 planet scale before orbital representation
 
-last_heartbeat: 2026-09-12T23:18:00+02:00
+last_heartbeat: 2026-09-12T23:22:00+02:00
