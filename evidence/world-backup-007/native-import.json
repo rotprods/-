@@ -1,0 +1,84 @@
+{
+  "engine": "4.7.2-stable (official)",
+  "passed": true,
+  "rows": [
+    {
+      "collision_shapes": 0,
+      "file": "ares_r1.glb",
+      "meshes": 286,
+      "passed": true
+    },
+    {
+      "collision_shapes": 0,
+      "file": "aurora_r20.glb",
+      "meshes": 642,
+      "passed": true
+    },
+    {
+      "collision_shapes": 0,
+      "file": "elysium_r18.glb",
+      "meshes": 572,
+      "passed": true
+    },
+    {
+      "collision_shapes": 0,
+      "file": "khepri_r4.glb",
+      "meshes": 69,
+      "passed": true
+    },
+    {
+      "collision_shapes": 0,
+      "file": "leviathan_r10.glb",
+      "meshes": 355,
+      "passed": true
+    },
+    {
+      "collision_shapes": 0,
+      "file": "nacre_r4.glb",
+      "meshes": 127,
+      "passed": true
+    },
+    {
+      "collision_shapes": 0,
+      "file": "origin_r2.glb",
+      "meshes": 126,
+      "passed": true
+    },
+    {
+      "collision_shapes": 0,
+      "file": "pelagos_r30.glb",
+      "meshes": 1256,
+      "passed": true
+    },
+    {
+      "collision_shapes": 0,
+      "file": "sylva_macro_r13.glb",
+      "meshes": 133,
+      "passed": true
+    },
+    {
+      "collision_shapes": 0,
+      "file": "sylva_roots_r4.glb",
+      "meshes": 47,
+      "passed": true
+    },
+    {
+      "collision_shapes": 11,
+      "file": "terra_r4.glb",
+      "meshes": 46,
+      "passed": true
+    },
+    {
+      "collision_shapes": 0,
+      "file": "umbra_r2.glb",
+      "meshes": 395,
+      "passed": true
+    },
+    {
+      "collision_shapes": 20,
+      "file": "vanta_r10.glb",
+      "meshes": 691,
+      "passed": true
+    }
+  ]
+}
