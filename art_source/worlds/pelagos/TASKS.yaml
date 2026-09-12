@@ -1,0 +1,237 @@
+schema_version: 1
+world_id: pelagos
+claim_id: CLM-PEL-WORLD-001
+agent_id: AGENT-PELAGOS-01
+session_id: PELAGOS-ART-20260912-A
+north_star: >-
+  Deliver Pelagos as a complete production world with physically causal ocean engineering,
+  distinct mnemonic ecology and game-readable hero content, while every asset retains source,
+  stable identity, measurable scale, exportability, QA evidence and an explicit engine-integration state.
+
+first_10_tasks:
+  - id: PEL/WORLD/001
+    priority: P0
+    objective: Reconstruct repository authority and real Blender workflow before production.
+    owner: AGENT-PELAGOS-01
+    inputs: [AGENTS.md, _project_intelligence/STATE.json, _project_intelligence/PLAN.json, design/EXOVANT_BIBLIA.md, design/EXOVANT_DATA.json, docs/ART_PRODUCTION.md]
+    output: art_source/worlds/pelagos/REPO_EVIDENCE.md
+    dependencies: []
+    status: DONE
+    dod:
+      - repository/default branch/base SHA recorded
+      - canon/art/pipeline/progress/claims authorities classified
+      - approximate Flu In/Flow In name searched without inventing a tool
+      - actual Blender path and version observed
+    evidence:
+      - art_source/worlds/pelagos/REPO_EVIDENCE.md
+      - hf://39930c08-62bb-4034-b35d-70d0ce51c9d9@0
+    blockers: []
+
+  - id: PEL/WORLD/002
+    priority: P0
+    objective: Persist an exclusive atomic Pelagos claim after semantic collision audit.
+    owner: AGENT-PELAGOS-01
+    inputs: [GitHub branches, GitHub PRs, 3D Jutsu project list]
+    output: production/claims/CLM-PEL-WORLD-001.yaml
+    dependencies: [PEL/WORLD/001]
+    status: DONE
+    dod:
+      - world/domain/include/exclude boundaries persisted
+      - Terra/Ares/Khepri/Vanta work excluded
+      - branch and 3D project recorded
+      - heartbeat present
+      - no competing Pelagos branch/PR/project observed at claim time
+    evidence:
+      - production/claims/CLM-PEL-WORLD-001.yaml
+      - commit:befcf83ca5401e459f380ff3045dc8a5fc1d556a
+    blockers: []
+
+  - id: PEL/WORLD/003
+    priority: P0
+    objective: Establish the world production Bible and reversible planet-scale contract.
+    owner: AGENT-PELAGOS-01
+    inputs: [design/EXOVANT_BIBLIA.md, design/EXOVANT_DATA.json]
+    output:
+      - art_source/worlds/pelagos/WORLD_BIBLE.md
+      - art_source/worlds/pelagos/decisions/ADR-PEL-001-PLANET-SCALE.md
+    dependencies: [PEL/WORLD/002]
+    status: DONE
+    dod:
+      - every added fact classified CANON/PROPOSAL/UNKNOWN/etc
+      - 6000 km radius is explicitly reversible proposal, not canon
+      - L0-L5 scale separation documented
+      - art/material/manufacturing/wear/anti-drift rules defined
+      - all canonical Pelagos regions/NPC/ecology/enemy/boss/mission consequences represented
+    evidence:
+      - commit:159505491c2f19d7c4dd3186138d186155dca4d8
+      - commit:f60d00f908655dacc616ba04b1a87f5042162887
+    blockers:
+      - planet radius still requires creative/technical acceptance before becoming canon
+
+  - id: PEL/WORLD/004
+    priority: P0
+    objective: Build a reproducible 2.2 km L3 World Foundation blockout in Blender.
+    owner: AGENT-PELAGOS-01
+    inputs: [PEL/WORLD/003]
+    output: Blender revision PELAGOS-WF-001
+    dependencies: [PEL/WORLD/003]
+    status: REVIEW
+    dod:
+      - bathymetry spans authored master cell
+      - Mercado, Coro and Fosa occupy distinct readable regions
+      - THALASSA arena is 52 m diameter
+      - human/vehicle/creature scale proxies exist
+      - metre scale and unit transforms validated
+      - delivery/game/boss cameras exist
+      - editable blend + GLB + render receipt exist
+      - visual review completed and critical blockout defects corrected
+    evidence:
+      - hf://39930c08-62bb-4034-b35d-70d0ce51c9d9@1
+      - operation:pelagos.foundation.world.v2
+      - operation:pelagos.verify.structure.r1
+      - artifact:pelagos_world_foundation_v001.png
+    blockers:
+      - final visual inspection of published render unavailable through current client path
+
+  - id: PEL/WORLD/005
+    priority: P0
+    objective: Produce the sharded Master Asset List and world coverage mapping.
+    owner: AGENT-PELAGOS-01
+    inputs: [PEL/WORLD/003, PEL/WORLD/004]
+    output: art_source/worlds/pelagos/manifests/ASSET_REGISTRY.yaml
+    dependencies: [PEL/WORLD/003]
+    status: DONE
+    dod:
+      - required world DoD categories mapped
+      - stable asset IDs assigned to P0/P1 production families
+      - quality tier and priority assigned
+      - dimensions are canon/proposal/TBD rather than silently invented
+      - LOD/collision/rig/physics/integration fields present
+      - current Blender blockouts point to exact project/revision where applicable
+    evidence:
+      - commit:ce1f3086accb5b5f0a9ebe5ca90e1cb0ece96ede
+    blockers: []
+
+  - id: PEL/ARCH/006
+    priority: P0
+    objective: Convert Mercado massing into a physically credible modular floating-settlement kit.
+    owner: AGENT-PELAGOS-01
+    inputs: [PEL-MKT-PLAT-A, PEL-MKT-BRIDGE-001, PEL-MKT-MAST-001, PEL-MKT-KEEL-001]
+    output: Mercado modular kit v1 + assembled validation structure
+    dependencies: [PEL/WORLD/004, PEL/WORLD/005]
+    status: IN_PROGRESS
+    dod:
+      - platform structure shows buoyancy/ballast/load path
+      - articulated bridge has joint/maintenance logic
+      - masts and canopy use plausible tension/compression construction
+      - docking/utility/maintenance interfaces fit the same grid
+      - pivots/snapping/module dimensions documented
+      - one real Mercado cluster assembled only from kit modules
+      - close/medium/far cameras reviewed
+      - export audit passes
+    evidence:
+      - hf://39930c08-62bb-4034-b35d-70d0ce51c9d9@1/10_MERCADO_BOYAS
+    blockers: []
+
+  - id: PEL/BIOME/007
+    priority: P0
+    objective: Replace reef silhouette curves with deterministic causal coral-growth foundations.
+    owner: AGENT-PELAGOS-01
+    inputs: [PEL-REEF-SPIRE-001, PEL-ECO-SCRIBE-001, PEL-REEF-NODE-001]
+    output: Bakeable coral growth system + LOD-ready specimen set
+    dependencies: [PEL/WORLD/004, PEL/WORLD/005]
+    status: IN_PROGRESS
+    dod:
+      - branch hierarchy encodes age/load/flow/acoustic-history parameters
+      - no random geometry-noise shortcut
+      - deterministic seed and parameters stored
+      - bake creates clean exportable meshes
+      - specimen family covers young/mature/damaged/recovering states
+      - LOD preserves silhouette and memory-node readability
+      - no duplicated high-density growth outside hero zones
+    evidence:
+      - hf://39930c08-62bb-4034-b35d-70d0ce51c9d9@1/20_CORO_ARRECIFE
+    blockers: []
+
+  - id: PEL/BOSS/008
+    priority: P0
+    objective: Author THALASSA arena and boss form around encounter readability, not beauty-only geometry.
+    owner: AGENT-PELAGOS-01
+    inputs: [PEL-BOSS-ARENA-001, PEL-BOSS-THALASSA-001, canonical phases and attacks]
+    output: Arena v1 + THALASSA anatomy/rig-ready model foundation
+    dependencies: [PEL/WORLD/004, PEL/WORLD/005]
+    status: IN_PROGRESS
+    dod:
+      - 52 m arena dimension maintained
+      - columns physically support line-of-sight response
+      - dry platforms/flood interfaces have plausible drainage/ventilation
+      - boss anatomy distinguishes core/eyes/tentacle roots/extraction interface
+      - three canonical attacks remain legible in silhouette at gameplay camera distance
+      - rig/deformation zones specified before tertiary detail
+      - render collision and gameplay hitboxes are separated
+      - engine encounter prototype still required before DONE
+    evidence:
+      - hf://39930c08-62bb-4034-b35d-70d0ce51c9d9@1/40_THALASSA_ARENA
+    blockers:
+      - gameplay/engine encounter integration belongs to a later cross-discipline gate
+
+  - id: PEL/ECO/009
+    priority: P1
+    objective: Develop the four canonical ecological assets from role/anatomy before surfacing.
+    owner: AGENT-PELAGOS-01
+    inputs: [PEL-ECO-JELLY-001, PEL-ECO-EEL-001, PEL-ECO-BOV-001, PEL-ECO-SCRIBE-001]
+    output: anatomy sheets translated into Blender blockouts + rig plans
+    dependencies: [PEL/WORLD/005, PEL/BIOME/007]
+    status: IN_PROGRESS
+    dod:
+      - each organism has ecological role, locomotion, support/skeleton logic, feeding/sensing mechanism and habitat adaptation
+      - silhouette differs by function rather than ornamental variation
+      - scale documented relative to human and Nácar-2
+      - topology/rig strategy documented before high-frequency detail
+      - hero/standard LOD policy defined
+      - no Earth-animal copy with cosmetic coral added
+    evidence:
+      - hf://39930c08-62bb-4034-b35d-70d0ce51c9d9@1/50_ECOLOGY
+    blockers: []
+
+  - id: PEL/VEH/010
+    priority: P0
+    objective: Turn Nácar-2 from silhouette into a functional water vehicle model.
+    owner: AGENT-PELAGOS-01
+    inputs: [PEL-VEH-NACAR2, WORLD_BIBLE transportation contract]
+    output: Nácar-2 engineering blockout + articulated hero asset foundation
+    dependencies: [PEL/WORLD/005, PEL-MKT-DOCK-001]
+    status: IN_PROGRESS
+    dod:
+      - propulsion, steering, braking/hold, access, cockpit, sensors, cargo and maintenance paths are physically placed
+      - two-seat layout supports solo operation
+      - pressure hull and canopy boundaries are explicit
+      - thrusters/control surfaces/hatch have rig pivots
+      - damage zones are separable
+      - dimensions documented as proposal until art/gameplay approval
+      - collision hull and render mesh are separate
+      - export/import and runtime vehicle physics remain mandatory before final DONE
+    evidence:
+      - hf://39930c08-62bb-4034-b35d-70d0ce51c9d9@1/80_NACAR2
+    blockers:
+      - runtime water/vehicle physics interface not yet qualified
+
+next_wave_backlog:
+  - PEL/MAT/011: marine PBR material library and causal weathering masks
+  - PEL/CHAR/012: Nara hero character anatomy/wardrobe/rig
+  - PEL/CHAR/013: Téa hero character anatomy/wardrobe/rig
+  - PEL/CHAR/014: Damián character production
+  - PEL/ENEMY/015: extraction diver + harpoon/cable mechanical production
+  - PEL/ENEMY/016: polyp guard production
+  - PEL/ENEMY/017: sentinel eel production
+  - PEL/PROP/018: memory custody + hydrophone interactive prop family
+  - PEL/STORY/019: commercial/treaty/reserve world-state variants
+  - PEL/PROC/020: mooring/cable/biofouling deterministic procedural systems
+  - PEL/TECH/021: UV/texel-density/bake validation tooling
+  - PEL/TECH/022: LOD/HLOD/instancing pass after engine qualification
+  - PEL/TECH/023: collision authoring and gameplay-surface audit
+  - PEL/INTEGRATE/024: GLB import/instantiate/material/scale smoke test
+  - PEL/PERF/025: representative scene profiling on qualified target hardware
+  - PEL/QA/026: visual regression pack — orthographic/perspective/wireframe/LOD/context
+  - PEL/QA/027: art drift and anti-CGI review
+  - PEL/WORLD/028: final coverage/waiver audit against World DoD
