@@ -1,0 +1,157 @@
+schema_version: 1
+manifest_id: ORG_ATRIO_STRUCTURAL_KIT_001
+world_id: origin
+world_name: ORIGIN
+region_id: ATRIO-DE-LAS-RUTAS
+world_owner_claim: CLM-ORIGIN-WORLD-001
+claim_id: CLM-ORIGIN-MEGA-ATRIO-001
+owner: AGENT-ORIGIN-WORLD-01
+truth_state: locally_validated_blockout
+branch: art/world-origin-001
+source_generator: art_source/worlds/origin/atrio/origin_atrio.py
+remote_blender:
+  provider: Higgsfield 3D Jutsu
+  project_id: 6e64cd59-f1f6-461f-850c-737d098f1723
+  revision: 2
+  blender_version: 5.2.0 LTS
+  units: metric
+  unit_scale: 1.0
+canon:
+  arena_envelope_diameter_m: 70
+  ring_count: 3
+  regions_context:
+    - Atrio de las Rutas
+    - Archivo de la Primera Herida
+    - Corazon de EXOVANT
+  material_language:
+    - black mineral
+    - living bronze
+    - bounded prior-world material echoes
+  gravity_rule: visual/local changes only until qualified in runtime
+proposals:
+  ring_radii_m: [35.0, 24.0, 13.0]
+  ring_deck_width_m: 5.0
+  bridge_clear_width_m: 4.5
+  route_aperture_clear_width_class_m: 4.0
+  player_reference:
+    height_m: 1.85
+    radius_m: 0.38
+    source: scripts/player.gd
+assets:
+  - asset_id: ORG_ATR_RING_A70
+    class: ring_deck
+    radius_m: 35.0
+    width_m: 5.0
+    segmentation: 3 x 108-degree sectors
+    collision: custom low-poly annular sectors
+    status: BLOCKOUT_V2
+  - asset_id: ORG_ATR_RING_B52
+    class: ring_deck
+    radius_m: 24.0
+    width_m: 5.0
+    segmentation: 3 x 108-degree sectors
+    collision: custom low-poly annular sectors
+    status: BLOCKOUT_V2
+  - asset_id: ORG_ATR_RING_C34
+    class: ring_deck
+    radius_m: 13.0
+    width_m: 5.0
+    segmentation: 3 x 108-degree sectors
+    collision: custom low-poly annular sectors
+    status: BLOCKOUT_V2
+  - asset_id: ORG_ATR_BRIDGE_RADIAL_A
+    class: radial_bridge
+    angle_deg: 0
+    spans: [inner, outer]
+    collision: box proxies
+    status: BLOCKOUT_V2
+  - asset_id: ORG_ATR_BRIDGE_RADIAL_B
+    class: radial_bridge
+    angle_deg: 120
+    spans: [inner, outer]
+    collision: box proxies
+    status: BLOCKOUT_V2
+  - asset_id: ORG_ATR_BRIDGE_RADIAL_C
+    class: radial_bridge
+    angle_deg: 240
+    spans: [inner, outer]
+    collision: box proxies
+    status: BLOCKOUT_V2
+  - asset_id: ORG_ATR_NODE_SAFE
+    class: route_node
+    visual_radius_m: 4.0
+    collision_radius_m: 3.72
+    collision: 12-sided cylinder inside visual boundary
+    status: BLOCKOUT_V2
+  - asset_id: ORG_ATR_NODE_VALVE
+    class: route_node
+    visual_radius_m: 4.0
+    collision_radius_m: 3.72
+    collision: 12-sided cylinder inside visual boundary
+    status: BLOCKOUT_V2
+  - asset_id: ORG_ATR_ROUTE_APERTURE
+    class: route_aperture
+    orientation_deg: 60
+    collision: explicit pylon proxies; opening remains clear
+    status: BLOCKOUT_V2
+  - asset_id: ORG_ATR_SUPPORT_PIER
+    class: structural_support_family
+    primary_count: 9
+    secondary_outer_count: 3
+    contact: datum penetration 0.015-0.020 m after spatial QA fix
+    status: BLOCKOUT_V2
+materials:
+  - ORG_MAT_BlackMineral_Load
+  - ORG_MAT_BlackMineral_Cut
+  - ORG_MAT_LivingBronze_Joint
+  - ORG_MAT_LivingBronze_Deep
+  - ORG_MAT_RouteSurface
+  - ORG_MAT_SafeNode
+  - ORG_MAT_SignalAmber
+  - ORG_MAT_Echo_TERRA
+  - ORG_MAT_Echo_NACRE
+  - ORG_MAT_Echo_VANTA
+metrics:
+  object_count: 132
+  mesh_object_count: 126
+  material_count: 13
+  explicit_collision_proxy_count: 19
+  visible_approx_triangles: 11436
+  production_camera_extents_normalized:
+    xmin: 0.009
+    xmax: 0.942
+    ymin: 0.056
+    ymax: 0.778
+artifacts:
+  blend:
+    size_bytes: 2369786
+    etag: f17892c2acf59a2dc3fffda6379bf88a
+  glb:
+    size_bytes: 2760416
+    etag: 85905d94d8409d2cfcba2a6ab67bed9b
+  preview_png:
+    artifact_id: 8c5f749466f2a4a23d0148758dd4dbf5
+    size_bytes: 782102
+    etag: dc2823afe1bc61d5e778cf6d13009429
+    resolution: [1200, 800]
+quality_gates:
+  scripted_geometry_qa: PASS
+  required_asset_coverage: PASS
+  collision_coverage: PASS
+  support_contact: PASS
+  collision_inside_visual_boundary: PASS
+  production_corner_camera_coverage: PASS
+  glb_export: PASS
+  engine_import: PENDING
+  characterbody_traversal: PENDING
+  target_hardware_performance: PENDING
+  human_art_review: PENDING
+exclusions:
+  - final EXOVANT boss / heart core
+  - final Archive of the First Wound architecture
+  - final Heart of EXOVANT negotiation center
+  - NPCs and fauna
+  - Arca del Retorno
+  - quest/runtime implementation
+  - final textures / UV / LOD policy
+  - target-hardware performance claims

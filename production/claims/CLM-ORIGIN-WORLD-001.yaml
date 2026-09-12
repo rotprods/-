@@ -1,0 +1,63 @@
+claim_id: CLM-ORIGIN-WORLD-001
+agent_id: AGENT-ORIGIN-WORLD-01
+session_id: SES-20260912-ORIGIN-WORLD-001
+claim_type: WORLD_OWNER
+scope_key: world-origin/art-modeling
+world_id: origin
+world_name: ORIGIN
+status: CLAIMED
+priority: P0
+branch: art/world-origin-001
+base_branch: main
+base_sha: 196ef814fdc845ec797979906d01dc25009217c7
+linear_issue: ROT-115
+github_coordination_issue: 14
+created_at: 2026-09-12T21:52:54+02:00
+last_heartbeat: 2026-09-12T21:52:54+02:00
+
+north_star: >-
+  Own ORIGIN art/modeling coordination and ship the final-world visual system as independently
+  reviewable atomic subclaims, preserving the canonical convergence of prior-world materials
+  without collapsing it into generic sci-fi or duplicating other agents' worlds.
+
+canon:
+  realm: EL UMBRAL
+  system: Nexo Exovant
+  faction: El Organismo
+  regions:
+    - Atrio de las Rutas
+    - Archivo de la Primera Herida
+    - Corazon de EXOVANT
+  boss: EXOVANT, el corazon de los caminos
+  gravity: Variable
+  temperature: Indeterminada
+  art_direction: Nexo; mineral negro; bronce vivo; fragments of materials from prior worlds
+  arena: Atrio de 70 m con tres anillos conectados
+
+includes:
+  - world-level art/modeling coordination for ORIGIN
+  - atomic asset-family partitioning and stable ORG_* IDs
+  - macro art bible deltas and interfaces for later subclaims
+  - Blender source / generator / GLB / evidence for owned atomic cells
+
+excludes:
+  - gameplay implementation or quest state
+  - changes to prior worlds owned by other branches
+  - engine migration decisions
+  - claiming previous-world source assets as ORIGIN-owned
+  - changing canonical narrative outcomes
+
+ownership_policy:
+  - every significant production cell must create an ATOMIC_SUBCLAIM before geometry
+  - subclaims require explicit stable asset IDs and exclusions
+  - other agents may work inside ORIGIN only through non-overlapping subclaims coordinated against this owner
+
+preflight:
+  registry_read: https://github.com/rotprods/-/issues/7
+  linear_reservation: ROT-115
+  branch_created_before_geometry: true
+  post_reservation_branch_refetch: true
+  concurrent_origin_reservation_observed: false
+
+initial_atomic_subclaim: CLM-ORIGIN-MEGA-ATRIO-001
+claim_status: KEEP
