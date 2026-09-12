@@ -13,12 +13,13 @@ NORTH STAR: metric-scale, reproducible macro/regional foundation for SYLVA PRIME
 ## CURRENT RESYNC
 
 - Claim base at creation: `4c2fa044080004609ea6df45f34b2a784536507a`.
-- Current `main` observed after wave: `196ef814fdc845ec797979906d01dc25009217c7`.
-- Branch comparison: `diverged`, 8 commits ahead / 1 behind at the comparison checkpoint.
-- New main commit adds mandatory multi-agent world-ownership preflight to `AGENTS.md` and points to coordination issue `#7`.
-- Coordination issue `#7` currently recognizes SYLVA PRIME as `OCCUPIED + SHARDED` by this macro claim plus `CLM-SYLVA-PROC-NROOT-001`.
-- Linear reservation added retroactively under the new protocol: `ROT-117`, project `EXOVANT 2950`, parent `ROT-109`, status `In Progress`, priority `Urgent`.
-- **Do not merge PR #3 until current main is reconciled.**
+- Current ownership-protocol main checkpoint: `196ef814fdc845ec797979906d01dc25009217c7`.
+- Main reconciliation merge commit on this branch: `429af6bf42ba114cdd2e30fd19974d2bd9009ad4`.
+- Post-reconciliation compare: branch `ahead`, 11 ahead / 0 behind, merge-base exactly `196ef814...`.
+- `AGENTS.md` mandatory multi-agent ownership preflight is now present on this branch.
+- Coordination issue `#7` recognizes SYLVA PRIME as `OCCUPIED + SHARDED` by this macro claim plus `CLM-SYLVA-PROC-NROOT-001`.
+- Linear reservation: `ROT-117`, project `EXOVANT 2950`, parent `ROT-109`, status `In Progress`, priority `Urgent`.
+- PR #3 remains draft because art/engine/performance gates are still open, not because of branch divergence.
 
 ## OWNERSHIP RECONCILIATION
 
@@ -64,7 +65,8 @@ Persistent receipts:
 - `Flu In / Flow In` searched; no identifiable repo method found, therefore `PIPELINE_METHOD_NOT_FOUND` rather than guessed.
 - Verified Blender route used: Higgsfield 3D Jutsu + `bpy`, Blender 5.2.0 LTS.
 - Persistent sharded claim created and exposed through draft PR #3.
-- Linear scope `ROT-117` created after ownership protocol promotion.
+- Linear scope `ROT-117` created under the promoted ownership protocol.
+- Current ownership-preflight commit from `main` reconciled into the branch without force push.
 - Dedicated remote Blender project created and advanced to revision 3.
 - 12 km × 12 km **local PROPOSAL** terrain blockout created.
 - Three canonical region foundations created: Puerto del Injerto, Bosque de las Frases, Cámara de VESPER.
@@ -85,14 +87,12 @@ Persistent receipts:
 - Human art review of silhouettes/composition.
 - Engine import/traversal/collision gate.
 - LOD/performance strategy after engine/hardware qualification.
-- Reconcile branch with current `main` ownership-protocol commit before integration.
 
 ## BLOCKED
 
 - `BLOCK-SYLVA-001`: planetary radius/diameter are not defined by current canon. This blocks L0/L1 planet/orbital physical representation, not local regional work.
 - Target GPU/hardware unresolved; no meaningful production performance budget yet.
 - Current client cannot perform visual content inspection of published PNG; only file-level nonblank validation was possible.
-- Merge blocked until branch reconciles current `main` and outstanding art/engine gates.
 
 ## FILES MODIFIED / CREATED
 
@@ -131,6 +131,8 @@ Remote Blender project `05dce898-753d-4ff6-a4b0-31757dc868d8` r3:
 - Editable source: PASS — r3 `.blend` 1,897,056 bytes, etag `ffd2e7ad0ac1f97b5e5908ab3c569394`.
 - PNG file-level smoke: PASS_NONBLANK for Puerto, 160×90, byte range 0–249, variance 254.9406.
 - `Render Result` direct pixel query is rejected as a validator because it produced a false all-zero reading contradicted by the PNG byte decode.
+- Ownership preflight: PASS at checkpoint — issue #7 read, PR/branches reconciled, Linear ROT-117 present, PR #6 boundary accepted.
+- Branch sync: PASS at checkpoint — 0 behind `main` after merge `429af6bf...`.
 - Human `GATE-ART`: PENDING.
 - Engine import/collision/traversal: PENDING.
 - GPU performance: PENDING.
@@ -151,7 +153,6 @@ Remote Blender project `05dce898-753d-4ff6-a4b0-31757dc868d8` r3:
 - Human creative review.
 - Future planetary-scale ADR.
 - Target hardware qualification.
-- Current `main` reconciliation.
 
 ## RISKS
 
@@ -159,12 +160,12 @@ Remote Blender project `05dce898-753d-4ff6-a4b0-31757dc868d8` r3:
 - Diagnostic root guides could become accidental duplicate production assets unless the accepted PR #6 boundary is enforced.
 - 12 km patch must not become accidental planetary canon through reuse.
 - Visual quality has not been human-approved.
-- Branch was created before the ownership-preflight commit landed on `main`; all future waves must re-run issue #7 + branch/PR/Linear preflight first.
+- Ownership can change while agents work; issue #7 + branch/PR/Linear preflight must run again before every significant wave.
 
 ## NEXT 3 ACTIONS
 
-1. Reconcile `art/world-sylva-prime-macro-001` with current `main` (`196ef814...`) and rerun ownership preflight before any further geometry.
+1. Re-run issue #7 + branch/PR/Linear ownership preflight immediately before the next production wave.
 2. Import revision-3 GLB into the current executable engine path and run scale/collision/traversal smoke with the real controller.
 3. Human-review the interactive r3 scene; turn feedback into explicit atomic follow-up claims, consuming PR #6 root modules instead of duplicating them.
 
-CLAIM STATUS: `KEEP / REVIEW BEFORE NEXT WAVE`
+CLAIM STATUS: `KEEP / CHECKPOINT`
