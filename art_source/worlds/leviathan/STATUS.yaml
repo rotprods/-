@@ -1,0 +1,135 @@
+schema_version: 1
+world_id: leviathan
+claim_id: CLM-W10-WORLD-LEVIATHAN-001
+agent_id: AGENT-LEVIATHAN-10
+session_id: ART-LEVIATHAN-001-20260912T2123+0200
+branch: art/world-leviathan-001
+status: IN_PROGRESS
+claim_status: KEEP
+remote_blender_revision: 2
+remote_project_id: 2577a7b6-ebd7-4d31-a645-620e4b73a95d
+
+metrics:
+  first_10_task_completion:
+    done: 2
+    total: 10
+    percent_done: 20
+    review: 8
+    methodology: only DONE counts as complete; REVIEW is not completion
+  asset_category_started_coverage:
+    started_or_in_progress: 9
+    total_world_categories: 20
+    percent: 45
+    methodology: categories in MASTER_ASSET_LIST coverage with evidence beyond TODO
+  modeling:
+    wave1_region_blockouts_present: 3
+    wave1_region_blockouts_total: 3
+    blockout_presence_percent: 100
+    final_asset_completion_percent: 0
+    note: blockout presence is not production-finished modeling
+  materials:
+    wave1_material_roles_present: 11
+    wave1_material_roles_target: 11
+    blockout_role_coverage_percent: 100
+    final_calibrated_texture_completion_percent: 0
+  optimization:
+    final_completion_percent: 0
+    note: no target hardware budget, LOD/HLOD or runtime profile has passed
+  integration:
+    passed_foundation_receipts: 2
+    foundation_receipts_total: 4
+    percent: 50
+    passed:
+      - editable Blender revision exists
+      - portable GLB export exists
+    open:
+      - production-engine import/instantiate
+      - runtime collision/performance smoke test
+  qa:
+    full_pass_gates: 4
+    total_gates: 13
+    percent_full_pass: 31
+    full_pass:
+      - A_CANON foundation
+      - D_GEOMETRY blockout
+      - G_SCALE blockout
+      - K_EXPORT blockout
+    partial_or_open:
+      - B_ART
+      - C_REALISM
+      - E_UV
+      - F_MATERIALS
+      - H_PERFORMANCE
+      - I_LOD
+      - J_COLLISION runtime
+      - L_ENGINE
+      - M_VISUAL_REGRESSION
+
+priority_state:
+  P0_open:
+    - W10/BLEND/003
+    - W10/TECH/007
+    - W10/QA/010
+  P1_open:
+    - W10/REGION/004
+    - W10/REGION/005
+    - W10/REGION/006
+    - W10/MAT/008
+    - W10/ECO/009
+  P2_open:
+    - final NPCs
+    - local vehicle
+    - unbuilt ecology species
+    - interiors/props/wardrobe/equipment decomposition
+  P3_open:
+    - polish/storytelling/decal/destruction breadth after foundations
+
+completed:
+  - repository bootstrap and authority map
+  - multi-agent collision audit
+  - atomic branch and claim persistence
+  - evidence-bound World Bible
+  - master asset/coverage registry
+  - first 10 tasks with DoD
+  - dedicated Blender 5.2 project qualification
+  - master WAVE-1 blockout at metre scale
+  - three canonical region interfaces
+  - stable collision versus visual contraction separation
+  - exact 58 m SOMA arena correction
+  - portable-light export correction
+  - editable .blend and GLB revision-2 receipts
+  - structural/scale/camera QA
+  - revision-2 overview and SOMA render receipts
+
+blocked:
+  - id: LEV-BLK-001
+    decision: physical planet radius/diameter
+    impacts: [L0, L1, orbital representation]
+  - id: LEV-BLK-002
+    decision: final production engine
+    impacts: [final export profile, LOD/HLOD, streaming]
+  - id: LEV-BLK-003
+    decision: target hardware/GPU/preset
+    impacts: [hard geometry, texture and shader budgets, performance QA]
+  - id: LEV-BLK-004
+    decision: final SOMA anatomical/art review
+    impacts: [boss sculpt, topology, materials, rig, animation]
+  - id: LEV-BLK-005
+    decision: final playable-region dimensions
+    impacts: [streaming topology, authored density]
+
+risks:
+  - final pixel-level art review of revision-2 renders is not completed by this agent client
+  - current living tissue is intentionally blockout/proxy, not final hyperreal material/anatomy
+  - no engine import receipt exists for LEVIATHAN yet
+  - no target-hardware performance budget exists
+  - physical planet scale is intentionally unresolved
+
+next:
+  - cold-rerun the versioned Blender generator in a clean project and compare structural receipts
+  - perform direct visual/art review of revision-2 overview and SOMA view, convert findings into fix tasks
+  - qualify a runtime import path and execute scale/material/collision smoke import
+  - split next atomic production claims for final SOMA, character/NPC, ecology and architecture kits after collision audit
+  - resolve/ADR the L0 physical planet scale before orbital representation work
+
+last_heartbeat: 2026-09-12T21:45:00+02:00
