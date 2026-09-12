@@ -5,130 +5,130 @@ Agent: AGENT-3D-NACRE-01
 Session: 20260912T2123+0200-NACRE-01
 Branch: art/world-nacre-001
 Base main SHA at claim: 4c2fa044080004609ea6df45f34b2a784536507a
-Current main observed: f78bfdc8bd7b2f6ab52b45d39babcc1589ab3918
-Heartbeat receipt: 2026-09-12T21:28:30Z
+Last main merged without force: 70fda70cd2120d38fba94e6a66e554e564c6c471
 Fleet epoch: 1
 Fleet state observed: reserved
 Producer ACK: https://github.com/rotprods/-/issues/7#issuecomment-5648339684
 Draft PR: https://github.com/rotprods/-/pull/17
 Remote Blender project: a49fc6f3-fedb-40a5-913f-10a08debb0e1
-Remote Blender revision: 3
+Remote Blender revision: 4
+Clean replay project: 4750e054-b063-4ab8-afc9-214462f36128 @ revision 1
 Manifest: art_source/nacre_world_macro/manifest.yaml
 Generator: art_source/nacre_world_macro/build_macro.py
-QA receipt: art_source/nacre_world_macro/qa-r3.yaml
+Current QA: art_source/nacre_world_macro/qa-r4.yaml
 
 ## Scope key
 
 `NACRE / WORLD_MACRO / PLANETARY_FOUNDATION`
 
 ### Included
-- Canon extraction for Nacre only.
-- Planet/world-scale representation contract and measurable scale-reference scene.
-- Macro shell-city/environment language derived from mineral shells + cultivated archives.
-- Foundational material and macro construction/load-path logic for downstream Nacre cells.
-- One independent remote Blender 5.2 scene plus deterministic generator proving scale, silhouette hierarchy, material separation, structural interfaces and camera readability at blockout level.
-- Nacre-only manifests, task graph, QA receipts and handoff.
+- Nacre canon/evidence extraction for this macro cell.
+- Physical-planet / playable-area / rendered-representation interface without inventing radius.
+- Kilometre-class shell-city macro blockout.
+- Spherical archive chamber network, bridge/docking interfaces and macro load paths.
+- Foundational material roles, shell-growth history and human/100m scale gauges.
+- Deterministic Blender 5.2 generator, remote source/export, QA receipts and cold handoff.
 
 ### Excluded
-- Runtime/gameplay scripts and scenes.
-- Existing Terra portal/reliquary source.
-- Every other world branch/scope.
-- Final MNEMOS model/rig/animation.
-- Final settlements/interiors/hero architecture beyond macro interfaces.
-- Final humanoid/NPC/fauna/vehicle/equipment production.
+- Runtime/gameplay source edits.
+- Other worlds.
+- Final MNEMOS boss, final settlements/interiors/hero architecture, final NPC/fauna/vehicles/equipment.
 - Final collision/LOD/HLOD/streaming implementation.
-- Production-engine decision, Unreal migration or GPU performance claims.
+- Global engine decision / Unreal migration / GPU performance claims.
 - Shared PLAN/STATE/global MANIFEST/graph ownership.
-
-## Collision + fleet audit
-
-The claim was created only after a live branch audit. Umbra appeared during discovery and was abandoned without writes, proving the need for resync-before-claim. During the first Nacre wave, `main` advanced and introduced the fleet harness. Current fleet authority is `docs/FLEET_COORDINATION.md`, `ops/fleet/registry.json` and issue #7.
-
-The fleet registry recognizes this claim as `reserved`, epoch 1, owner `AGENT-3D-NACRE-01`, branch `art/world-nacre-001`, and project `a49fc6f3-fedb-40a5-913f-10a08debb0e1`. Producer ACK `5648339684` publishes the exact owned path directory and five interface IDs. This producer does not self-promote registry status; the integrator owns the `reserved -> active` transition against the current digest.
 
 ## Authority / evidence
 
-DOCUMENTED:
-- World NACRE; Andromeda; system Mneme; faction Casas de Nácar.
-- Boss target: MNEMOS, el archivo encarnado.
-- Fictive stable Mneme A/B binary; mineral shells and cultivated archives; three fictive archive moons.
-- Reference environment: gravity 0.26 g; area temperature 16 °C.
-- Cities grow inside kilometre-scale shells; inhabitants preserve lives in pearls and trade biographies.
+DOCUMENTED from repo:
+- NACRE; Andromeda; Mneme; Casas de Nácar; MNEMOS target.
+- Mneme A/B fictive binary; mineral shells + cultivated archives; reference 0.26 g / 16 °C.
+- Cities grow inside kilometre-scale shells; biographies are preserved/traded in pearls.
 - Archivo de MNEMOS uses spherical archive rooms connected by bridges.
-- Art language: mineral archive vaults, bounded translucent plates, thin bridges, shell friction and spatially displaced voices.
-- Design risk: duplicated scenarios and uncontrolled translucent materials.
-- Current verified art pipeline: `.blend` source -> GLB interchange -> Godot prototype. Godot 4.7.2 is executable prototype; Unreal 5.8 remains an unqualified candidate.
+- Art risk: uncontrolled translucent material versions and duplicated scenarios.
+- Verified art path: `.blend` source -> GLB -> Godot 4.7.2 prototype. Unreal 5.8 remains unqualified production candidate.
 
-`Flu In` / `Flow In` exact method name was searched and not found. Status: `PIPELINE_METHOD_NOT_FOUND`. The executable route used is Higgsfield 3D Jutsu `bpy` / Blender 5.2, preserving `.blend`, GLB, generator and QA receipts.
+UNKNOWN remains UNKNOWN: planetary radius/diameter, atmosphere, hydrology, tectonics, global coordinate origin, final playable area, final triangle/texture budgets, LOD distances and final streaming implementation.
 
-UNKNOWN: planetary radius/diameter, atmosphere, hydrology, tectonics, world coordinate origin, final playable area, final triangle/texture budgets, final LOD distances and final streaming implementation.
+PROPOSAL only: shell target ~1400 m, archive core 184 m, archive placements, bridge widths and 3 m deck/chamber interface clearance.
 
-PROPOSAL only: 1400 m shell target, 184 m archive-core diameter, archive placement, bridge dimensions and 3 m deck-to-chamber clearance. These are reversible blockout interfaces, not canon.
+`Flu In` / `Flow In` exact repo method was not found: `PIPELINE_METHOD_NOT_FOUND`.
 
-## Planet-scale interface
+## Fleet / collision state
 
-- PHYSICAL PLANET SCALE: UNKNOWN.
-- PLAYABLE AUTHORED AREA: UNKNOWN.
-- RENDERED REPRESENTATION: kilometre-class shell-city macro blockout.
-- HERO ASSET SCALE: outside this claim; 1.8 m humans and 100 m pylons exist only as QA gauges.
+The claim was created after a live branch audit; an Umbra race was detected and abandoned without writes. The fleet registry recognizes this Nacre claim as `reserved`, epoch 1. Producer ACK `5648339684` publishes owner, branch, project, exact Nacre directory and five stable interface IDs. No producer-side mutation of the global registry has been performed; `reserved -> active` remains an integrator transaction against the current registry digest.
+
+This branch was resynced against `main@70fda70c...` via a normal two-parent merge commit and non-force ref update. Post-resync compare showed `behind_by: 0` and only owned Nacre files differed from main.
 
 ## Local North Star
 
-Deliver a recoverable Nacre planetary-foundation package recognizable without logos: kilometre-scale mineral-shell architecture containing spherical archival chambers, physically readable bridge/docking/load-path systems and shell growth history, with human scale references, bounded transparency, deterministic naming and portable GLB-compatible materials. No final-quality claim until human art and runtime gates pass.
+Deliver a recoverable, semantically reproducible Nacre macro-foundation whose identity is readable without logos: kilometre-scale mineral shell, archive spheres, surface-connected bridges, docking/maintenance/load paths, shell growth history, bounded transparency and explicit scale gauges. Human art approval and native runtime gates remain separate.
 
-## First 10 tasks
+## Task state
 
-| ID | P | Output | Dependency | Definition of Done | Status |
-|---|---|---|---|---|---|
-| NACRE/MACRO/001 | P0 | Canon/evidence matrix | repo authority | Production-driving statements classified | DONE |
-| NACRE/MACRO/002 | P0 | Collision-safe ownership | 001 | Claim persisted with scope/base/ownership | DONE |
-| NACRE/MACRO/003 | P0 | Planet/playable/render interface | 001 | Unknown planet values not promoted to canon | DONE |
-| NACRE/MACRO/004 | P0 | Coverage matrix | 001,003 | Stable IDs/tier/QA fields exist | DONE |
-| NACRE/MACRO/005 | P1 | Blender macro blockout | 003 | Shell, archives, bridges, camera/lights, scale refs | DONE |
-| NACRE/MACRO/006 | P1 | Material-role pass | 005 | Portable bounded material roles | DONE |
-| NACRE/MACRO/007 | P1 | Manufacturing/structural pass | 005 | Bridge attachment, load paths and maintenance access mechanically legible | DONE_AT_MACRO_BLOCKOUT |
-| NACRE/MACRO/008 | P1 | Visual QA pack | 005-007 | Perspective + orthographic evidence generated; human/direct art judgement recorded | REVIEW |
-| NACRE/MACRO/009 | P1 | GLB + editable source delivery | 005-008 | Revision, GLB/.blend receipts + clean native delivery receipt | IN_PROGRESS |
-| NACRE/MACRO/010 | P1 | Handoff/release decision | 009 | Receipts, blockers, next actions and claim status cold-recoverable | IN_PROGRESS |
+| ID | P | Output | Status |
+|---|---|---|---|
+| NACRE/MACRO/001 | P0 | Canon/evidence matrix | DONE |
+| NACRE/MACRO/002 | P0 | Collision-safe ownership/fleet ACK | DONE_PRODUCER_SIDE |
+| NACRE/MACRO/003 | P0 | Planet/playable/render interface | DONE |
+| NACRE/MACRO/004 | P0 | Coverage/interface IDs | DONE |
+| NACRE/MACRO/005 | P1 | Blender macro blockout | DONE |
+| NACRE/MACRO/006 | P1 | Portable material-role foundation | DONE |
+| NACRE/MACRO/007 | P1 | Macro manufacturing/structural causality | DONE_AT_BLOCKOUT |
+| NACRE/MACRO/008 | P1 | Visual QA evidence + human review | REVIEW — human GATE-ART OPEN |
+| NACRE/MACRO/009 | P1 | Reproducible source/export + native delivery | ENV_BLOCKED at native transport/import |
+| NACRE/MACRO/010 | P1 | Final handoff / claim release decision | IN_PROGRESS |
 
-## Structural Gauntlet R3
+## Gauntlet history
 
-Revision 2 had a real construction defect: archive bridges were generated center-to-center and therefore penetrated archive volumes. Revision 3 replaces the bridge network with surface-to-surface geometry.
+### R2 -> R3 structural correction
+R2 bridge decks were center-to-center and intersected archive volumes. R3 replaced them with surface-to-surface decks/spines and added 21 docking sockets, 7 service rings, 7 suspension/load-path tendons and 5 growth strata. R3 QA checked 10/10 links: ~3 m endpoint clearance, 0 penetrations, 0 non-unit scales, 0 degenerate dimensions.
 
-Operation `nacre-structural-bridge-fix-r3`:
-- removed 22 v2 bridge/spine objects;
-- rebuilt 10 archive links surface-to-surface plus main entry link;
-- added 21 docking sockets;
-- added 7 service rings;
-- added 7 suspension/load-path tendons to the inner shell;
-- added 5 shell growth strata as causal growth-history signals rather than random detail.
+### Cold-replay attack and generator bug
+A fresh Blender project exposed a real versioned-generator bug: Blender 5.2 rejects a `Collection` object in `bpy_prop_collection.__contains__`. Probe `nacre-r3-generator-api-probe` returned `TypeError`. `build_macro.py` was fixed to compare child collection names (`6be51b785b53c38e071461212254a81e601c8518`).
 
-Operation `nacre-qa-r3-geometry-render` verified:
-- 97 mesh objects + 30 curve objects / 130 total scene objects;
-- 10/10 archive bridge links checked;
-- exactly +3.0 m deck clearance at both chamber endpoints;
+The fixed generator rebuilt a clean project to 97 meshes / 30 curves / 2 SUN lights. Initial semantic comparison against historical R3 still differed because R3 inherited older shell resolutions/ribs/belts/plate naming that the generator had never encoded explicitly.
+
+### R4 reproducibility canonicalization
+Rather than preserve implicit historical drift, the reversible macro blockout was rebuilt in the primary project from the corrected versioned generator. Primary revision 4 and independent clean replay now share exact semantic scene digest:
+
+`48742ba2dc253a626fb807799a55e2c83f2e87f437cf761b66522bac7ba88787`
+
+R4 QA:
+- 130 total objects;
+- 97 meshes + 30 curves;
+- 10/10 bridge links checked;
+- endpoint clearance 2.9999–3.0 m;
 - 0 bridge penetrations;
 - 0 non-unit scales;
 - 0 zero-dimension mesh/curve objects;
-- portable lights remain `SUN_MNEME_A` + `SUN_MNEME_B` only;
-- low-resolution revision-3 preview artifact `a5c7c5699ab993db11fb4d5903fb5504`.
+- only `SUN_MNEME_A/B` portable lights;
+- semantic cold-replay match = PASS.
 
-Revision-3 provider receipts:
-- `.blend`: 2,913,059 bytes; etag `2b5398f1c4bd906874e827daad64428b`.
-- GLB: 3,090,440 bytes; etag `6ccb564c4ada071aeca2270db804ba87`.
+R4 remote receipts:
+- `.blend`: 3,500,059 bytes, etag `a365ae84492f4142d949c1033636b092`.
+- GLB: 3,828,832 bytes, etag `0b6dee01664cb91aae1a4b332e8ae163`.
+- hero preview: artifact `24642ce8001df31f7c50875e79c07c9d` (640×360).
 
-Deterministic cold-rebuild source is now versioned at `art_source/nacre_world_macro/build_macro.py`; QA is versioned at `qa-r3.yaml`.
+## Native delivery attempt
+
+Attempted the next required gate rather than assuming it:
+- isolated execution container could not resolve `github.com`, so clean checkout could not be cloned there;
+- the short-lived provider binary could not cross the available safe-download boundary into that container;
+- therefore no Godot import or `fleet_control.py delivery` was executed.
+
+Classification: `ENV_BLOCKED`, not asset FAIL and not runtime PASS.
 
 ## Open gates / blockers
 
-- `GATE-ART`: OPEN for human/direct visual approval. Multi-view evidence exists, but render generation does not itself constitute creative-director approval.
-- Godot import/instantiate/scale/material test: OPEN.
-- Collision authoring/runtime traversal: OPEN.
-- LOD/HLOD/streaming: OPEN pending runtime strategy/budgets.
-- Performance: OPEN pending target hardware and final budget.
-- Fleet native binary delivery receipt: OPEN; local recovered `.blend` + GLB must be bound to a native Godot receipt.
+- Human/direct `GATE-ART`: OPEN. Render evidence is not approval.
+- Fleet integrator transition `reserved -> active`: OPEN outside producer ownership.
+- Godot exact-GLB import/material/scale: ENV_BLOCKED in this execution surface.
+- Collision/traversal: OPEN.
+- LOD/HLOD/streaming: OPEN.
+- Target-hardware performance: OPEN.
+- Fleet native binary delivery: ENV_BLOCKED until exact binaries and repo checkout coexist on an executable host.
 - Planet radius/diameter remains intentionally UNKNOWN.
 
 ## Stop condition
 
-Claim remains `KEEP / IN_PROGRESS`. Macro structural causality is materially improved and geometry QA passes, but the claim is not DONE while human art approval, native delivery/import, collision, LOD/streaming or performance qualification remain open.
+Claim remains `KEEP / IN_PROGRESS`. Geometry, portability and semantic reproducibility are qualified at blockout level; human art, native runtime, collision, LOD/streaming and performance are not. Do not merge/mark DONE as a completed world.
