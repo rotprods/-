@@ -1,60 +1,51 @@
-# UMBRA — Task System
+# UMBRA TASKS — ART-UMBRA-001
 
 Claim: `CLM-W04-WORLD-UMBRA-001`  
-Agent: `AGENT-UMBRA-04`  
-Branch: `art/world-umbra-001`
+Owner: `AGENT-UMBRA-04`  
+Truth state: `WAVE1_PRODUCTION_FOUNDATION / REPRODUCIBLE / NOT FINAL AAAA`
 
-## Local North Star
+## Definition of Done policy
 
-Deliver UMBRA's first production-grade world foundation as an isolated, reproducible 3D stream whose art language, scale, ownership, editable source and validation can be continued by another agent without chat context. Wave 0 succeeds when the blockout and pipeline receipts are real; it does **not** claim final AAA quality.
+A task is `DONE` only when its intended artifact exists, the task-specific validation gate passes, evidence is persisted, and no blocked dependency is being silently substituted with invention. `DONE_WAVE1_FOUNDATION` means the production language/mechanism is implemented and reproducible, but final topology/UV/PBR/LOD/runtime/human-art gates may remain open.
 
-## First 10 tasks
+| ID | Status | Deliverable / DoD |
+|---|---|---|
+| W04/BOOT/001 | DONE | Repository/canon/protocol recovered; authority surfaces identified. |
+| W04/CLAIM/002 | DONE | Exclusive UMBRA claim, branch and ownership file established without duplicate world ownership. |
+| W04/CANON/003 | DONE | Canon separated from proposals; planet radius and NOCTIL unknowns remain explicit blockers. |
+| W04/PIPE/004 | DONE | Blender 5.2 / metric / editable `.blend` + GLB path qualified. |
+| W04/BLK/005 | DONE | Wave-0 1200×700 m reversible testbed and proxy families committed. |
+| W04/QA/006 | DONE | Wave-0 structural QA: scale, dimensions, triangle/material counts, zero degenerate meshes. |
+| W04/ASSET/007 | DONE | UMBRA coverage/asset registry established. |
+| W04/GEN/008 | DONE | Wave-0 clean replay matches source semantically. |
+| W04/VIS/009 | REVIEW | QA renders exist; direct pixel/human art review still not accepted. |
+| W04/CI/010 | DONE | Branch reconciled to `main@ca224a7…`; generated MANIFEST fixed; Gauntlet 34720234976 passed 82/82 + five Godot gates. |
+| W04/TERRAIN/011 | TODO | Derive 3–4 gameplay terrain cell archetypes with traversal/readability rules; no global planet fabrication. |
+| W04/INFRA/012 | DONE_WAVE1_FOUNDATION | Four terrain-seated reflector assemblies now include foundation, anchors, guying, service/power, access, gimbal, backing ribs and actuators; clean replay matches. Final UV/PBR/LOD/runtime pending. |
+| W04/CAR/013 | DONE_WAVE1_FOUNDATION | Five terrain-seated caravans now include torsion rails, bogies, suspension, service bays, cargo interfaces, heat fins, canopy structure and protected beacon; clean replay matches. Final vehicle topology/UV/rig/LOD/runtime pending. |
+| W04/ARCH/014 | IN_PROGRESS | Refuge contact fixed + six feet. Full manufacturing/wind/refuge modular kit still required. |
+| W04/MAT/015 | TODO | Calibrated portable PBR, texture-set/texel-density policy and causal wear masks after runtime target validation. |
+| W04/NOCTIL/016 | BLOCKED_SPEC | Final boss morphology/rig/attacks require design contract. Environmental eclipse destination proxy only. |
+| W04/QUEST/017 | TODO | Map M01–M04 to authored environmental cells, route states, reflector states and evidence beats. |
+| W04/ACCESS/018 | TODO | Low-light/color-vision/combat-telegraph readability scene and acceptance gate. |
+| W04/LOD/019 | BLOCKED_TARGET | LOD/HLOD/collision budgets require qualified runtime/target hardware. |
+| W04/EXPORT/020 | BLOCKED_INTEGRATION | Bounded UMBRA GLB import/traversal/profile receipt requires integration-owner coordination. |
+| W04/OPT/021 | TODO | Convert repeated Wave-1 mechanical primitives to shared data/instances where semantically safe; measure memory/export impact before/after. |
+| W04/VIS/022 | REVIEW | Post-Wave-1 delivery/player-height renders + direct visual defect loop. Do not claim art PASS without image/human inspection. |
+| W04/GEN/023 | DONE | Independent Wave-1 replay: 407 objects, 395 meshes, 35,028 tris, 310 Wave-1 objects, exact contact set and 2,474,196 B GLB. |
+| W04/FLEET/024 | WAIT_INTEGRATOR | Owner ACK is published in issue #7; registry still needs integrator-owned ACK transition/readback. |
 
-| ID | Priority | Objective / Output | Dependency | Definition of Done | Status |
-|---|---|---|---|---|---|
-| W04/BOOT/001 | P0 | Recover repo authority, HEAD, protocols and world canon | repo access | `AGENTS`, STATE, art/world sources read; base SHA recorded; unknowns separated | DONE |
-| W04/CLAIM/002 | P0 | Reserve collision-free UMBRA ownership | W04/BOOT/001 | branch + ownership file persisted; includes/excludes explicit; no UMBRA competing branch observed | DONE |
-| W04/CANON/003 | P0 | Create World Bible with epistemic separation | W04/BOOT/001 | canon, unknowns, proposals, art/realism/manufacturing contracts and world DoD versioned | DONE |
-| W04/PIPE/004 | P0 | Revalidate editable Blender route | W04/CLAIM/002 | dedicated 3D Jutsu project; Blender version, metric units, empty scene and guards observed | DONE |
-| W04/BLK/005 | P1 | Build deterministic twilight-band regional blockout | W04/PIPE/004 | terrain + traversal + reflector + caravan + refuge + NOCTIL destination proxy committed in Blender revision | DONE |
-| W04/QA/006 | P0 | Run structural/scale QA | W04/BLK/005 | object/mesh/material/tri counts measured; scale refs measured; no residual object-scale anomalies or zero-dimension meshes | DONE |
-| W04/ASSET/007 | P1 | Persist master asset/coverage registry | W04/CANON/003 | every Wave-0 family has ID, tier, priority, owner, status, dependency, dimension state, LOD/collision/export state | DONE |
-| W04/GEN/008 | P1 | Persist and independently replay Blender generator/source | W04/BLK/005 | versioned script rebuilt a clean project with the same 96 objects / 85 meshes / 9 materials / 12,204 tris and scale dimensions; no external absolute asset paths | DONE |
-| W04/VIS/009 | P1 | Human/agent visual QA of delivery render | W04/BLK/005 | framing, contacts, silhouette, light hierarchy and art drift inspected; defects converted to tasks | REVIEW |
-| W04/ENG/010 | P0 | Engine import / gameplay camera acceptance | W04/ASSET/007 + engine integration authority | GLB imported in active runtime; scale/material/collision/camera/profile receipt recorded | BLOCKED |
+## Current hard blockers
 
-## Wave 1 queued tasks
+- `BLOCK-W04-001` — physical planet radius/orbital representation absent from canon.
+- `BLOCK-W04-002` — production engine / target GPU / runtime art budgets not qualified for UMBRA.
+- `BLOCK-W04-003` — final NOCTIL morphology/function/rig/attack contract absent.
+- `BLOCK-W04-004` — direct pixel/human art review not yet accepted.
 
-- `W04/TERRAIN/011` — derive 3–4 gameplay terrain cell archetypes from the quest chain without inventing global geology.
-- `W04/INFRA/012` — production reflector kit: foundation, mast, gimbal, mirror, actuator, service ladder/platform, cable/power interface.
-- `W04/CAR/013` — caravan modular kit: chassis, shell, canopy, track/runner, service bay, refuge beacon, cargo interfaces.
-- `W04/ARCH/014` — refuge hub kit with wind-load/manufacturing logic.
-- `W04/MAT/015` — calibrated portable PBR material library and texel-density policy after runtime target validation.
-- `W04/NOCTIL/016` — boss function/anatomy/telegraph interface brief before final creature modeling.
-- `W04/QUEST/017` — environmental asset mapping for Q_UMBRA_M01..M04.
-- `W04/ACCESS/018` — low-light and color-vision readability test scene.
-- `W04/LOD/019` — LOD/collision strategy after engine target budget is empirically qualified.
-- `W04/EXPORT/020` — deterministic export/import smoke test with runtime receipt.
+## Next execution order
 
-## Blocking decisions
-
-### BLOCK-W04-001 — planetary radius
-- decision needed: physical radius/diameter or explicit authoring abstraction.
-- affected scope: orbital representation, curvature, long-distance vistas, absolute world coordinates.
-- why blocking: a fake value would contaminate L0/L1 scale.
-- options: (A) canonize radius; (B) define radius as intentionally abstract until later; (C) adopt a scientifically motivated proposal through ADR.
-- recommended: B for current art production; continue authored local regions in metres.
-- reversible: yes before orbital/world-partition integration.
-- work that can continue: L2–L5 regional production.
-
-### BLOCK-W04-002 — final production engine / GPU budget
-- decision needed: qualified production runtime and hardware targets.
-- affected scope: triangle/material/texture budgets, LOD/HLOD, streaming, shaders, collision profile.
-- current evidence: Godot 4.7.2 is executable prototype; Unreal remains principal production candidate but is not integrated/qualified.
-- recommended: record metrics now, avoid universal hard caps until target qualification.
-- work that can continue: topology discipline, measured counts, portable PBR, proxy collision planning.
-
-### BLOCK-W04-003 — final NOCTIL morphology
-- decision needed: ecological/function/anatomy/rig/attack contract.
-- affected scope: hero boss mesh, rig, animation, hitboxes, arena proportions.
-- current action: maintain destination/environment proxy only.
+1. `W04/ARCH/014` refuge modular kit and wind/manufacturing logic.
+2. `W04/TERRAIN/011` + `W04/QUEST/017`: build quest-linked terrain/environment cells rather than indiscriminate global detail.
+3. `W04/OPT/021`: shared-data optimization with measured receipts.
+4. `W04/VIS/022` + `W04/ACCESS/018`: image/readability Gauntlet.
+5. Coordinate `W04/EXPORT/020`; only then close LOD/collision/profile budgets.
