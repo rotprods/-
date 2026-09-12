@@ -14,63 +14,42 @@ base_branch: main
 base_sha_at_claim: 4c2fa044080004609ea6df45f34b2a784536507a
 main_reconciled_sha: f78bfdc8bd7b2f6ab52b45d39babcc1589ab3918
 reconciliation_commit: 42b549ab3717fbf812945f7ed2b798c00529b81b
-merge_state: SYNCED_WITH_MAIN_AT_CHECKPOINT
 created_at: 2026-09-12T21:10:00+02:00
-last_heartbeat: 2026-09-12T22:24:00+02:00
+last_heartbeat: 2026-09-12T22:32:00+02:00
 linear_issue: ROT-117
 coordination_issue: 7
 draft_pr: 3
 fleet_epoch: 1
 fleet_state_observed: RESERVED_ACK_SENT_PENDING_INTEGRATOR
 fleet_ack_comment: 5648367024
+latest_heartbeat_comment: 5648494825
 
 north_star: >-
   Deliver the metric-scale, reproducible spatial foundation for SYLVA PRIME: canonical regions,
-  macro terrain/root structure, readable traversal corridors, landmark silhouettes and technical
-  interfaces for later terrain, architecture, ecology and encounter teams, without inventing
-  unresolved planetary canon.
+  causal macro terrain/root structure, readable traversal corridors, landmark silhouettes and
+  technical interfaces for later teams, without inventing unresolved planetary canon.
 
 owns:
   - km/regional terrain and root-network topology/placement
-  - local metric coordinate convention for the authored Sylva foundation
+  - local metric coordinate convention
   - Puerto del Injerto regional foundation
   - Bosque de las Frases regional foundation
-  - Camara de VESPER regional foundation and macro encounter-layout envelope only
+  - Camara de VESPER macro encounter/environment foundation
   - macro traversal corridors and landmark silhouettes
   - L2/L3/L4 spatial relationships, streaming envelopes and macro collision interfaces
   - diagnostic macro root/membrane/scaffold proxies
   - typed placement sockets toward provider root-kit assets
-  - Blender source, deterministic generators, portable GLB evidence and offline import contract for macro blockout
-  - reversible L0/L1 planetary-scale proposal artifacts without canon promotion
+  - deterministic Blender source and pre-import QA contracts
+  - reversible L0/L1 planetary-scale decision artifacts without canon promotion
 
 excludes:
-  - reusable meso root module kit and generator; delegated to CLM-SYLVA-PROC-NROOT-001 / PR 6
-  - 8-14 m root straight/curve/rise/fork/arch/buttress/terrace/membrane-anchor production modules
-  - per-module collision proxies for reusable neural-root kit
-  - final VESPER creature/boss model, rig, animation or attacks
-  - final NPC characters: Edda Jun, Siete-en-Uno, Nico Fer
-  - final wildlife or vegetation species assets
-  - final architecture/interior kits beyond macro spatial proxies
-  - final materials/textures beyond diagnostic lookdev materials
-  - gameplay scripts, quests, dialogue or runtime state
+  - reusable meso root modules/generator and per-module collision owned by CLM-SYLVA-PROC-NROOT-001 / PR 6
+  - final VESPER model/rig/animation/attacks
+  - final NPCs, fauna, vegetation, architecture/interiors
+  - final materials/textures and microterrain detail
+  - gameplay/quest/runtime code
   - global engine migration decisions
-  - all other EXOVANT worlds
-
-canonical_sources:
-  - AGENTS.md
-  - _project_intelligence/STATE.json
-  - _project_intelligence/PLAN.json
-  - HANDOFF.md
-  - MEMORY.md
-  - GOALS.md
-  - ROADMAP.md
-  - design/EXOVANT_BIBLIA.md
-  - design/EXOVANT_DATA.json
-  - docs/ART_PRODUCTION.md
-  - docs/FLEET_COORDINATION.md
-  - main:ops/fleet/registry.json
-  - learning/hub/agents/codex-root/chats/exovant-persistence-20260912/events/LRN-EXO-20260912-BLENDER.json
-  - coordination issue 7
+  - other worlds
 
 canon_facts:
   galaxy: ANDROMEDA
@@ -83,22 +62,20 @@ canon_facts:
     - Bosque de las Frases
     - Camara de VESPER
   gameplay_rule: >-
-    The vegetal network shares information with local delay; damaging one root causes a response
-    elsewhere, telegraphed through color, sound and messengers.
+    Vegetal network information propagates with local delay; damaging one root produces a response elsewhere,
+    telegraphed via color, sound and messengers.
   boss_arena_rule: >-
-    Three terraces connected by wide roots; vertical movement is resolved with routes and anchors,
-    not surprise precision jumps.
+    Three terraces connected by wide roots; vertical movement uses routes/anchors rather than surprise precision jumps.
   vehicle: 'Vela de Ceniza con agarres de canopy'
   art_kit: 'Bosque neural: structural roots, membranes, graft scaffolds and layered foliage.'
 
 unknowns:
-  - canonical planetary radius
-  - canonical planetary diameter
+  - canonical planetary radius/diameter
   - global continental layout
-  - exact atmosphere composition and pressure
+  - atmosphere composition/pressure
   - axial parameters
   - total authored surface area
-  - production-engine world-streaming implementation
+  - production-engine world-streaming backend
   - target GPU budgets
 
 planetary_scale_decision_package:
@@ -108,43 +85,19 @@ planetary_scale_decision_package:
   recommended_option: SYL_SCALE_C_BROAD_BIOGENIC
   recommended_radius_earth: 1.20
   recommended_radius_km: 7645.21008
-  recommended_diameter_km: 15290.42016
   recommended_mass_earth: 1.6128
   canonicalized: false
-  promotion_rule: Do not update global canon/state without explicit creative/integrator decision.
-
-blocked_by:
-  - BLOCK-SYLVA-001 creative/integrator decision blocks canonical L0 radius/diameter promotion; local work may continue
-  - BLOCK-SYLVA-002 production engine/target hardware blocks final LOD/HLOD/performance budgets
-  - BLOCK-SYLVA-003 current sandbox network blocks recovered binaries/native import; recorded as ENV_BLOCKED
-
-dependencies:
-  - CLM-SYLVA-PROC-NROOT-001 for reusable meso neural-root modules if macro topology advances to production geometry
-  - future engine target qualification for final streaming/performance gates
-  - creative-director/integrator decision for planetary L0 scale promotion
-  - human art-direction review of Blender r5 blockout
-  - runtime import/collision/traversal test on recovered exact GLB bytes
-
-collision_reconciliation:
-  live_collision: CLM-SYLVA-PROC-NROOT-001
-  temporal_priority: CLM-SYLVA-MACRO-001 older
-  resolution: ACCEPTED_SHARD_BOUNDARY
-  macro_boundary: km/regional topology, placement, anchors, corridors, L2-L4 envelopes, macro collision and typed provider sockets
-  proc_root_boundary: reusable 8-14 m meso modules, callus surfaces, module interfaces, per-module collision proxies
-  provider_meshes_copied_r5: 0
-  pr3_acceptance_comment: 5648304071
-  pr6_acceptance_comment: 5648304564
-  registry_comment: 5648307515
 
 remote_projects:
   local_gameplay_foundation:
     project_id: 05dce898-753d-4ff6-a4b0-31757dc868d8
-    revision: 5
+    revision: 6
     status: SETTLED_VALIDATED_BLOCKOUT
-    blend_size_bytes: 2290409
-    blend_etag: 2ccbc1ec2ffd854ae83b5cee197d16de
-    glb_size_bytes: 1215672
-    glb_etag: 9c288dd826d7cbc3331b849dda1590e5
+    build_status: WAVE1D_BIOGEO_MACRO_TERRAIN_R6
+    blend_size_bytes: 2348647
+    blend_etag: f82350b275ed699a790d7977be3a1ee1
+    glb_size_bytes: 1299444
+    glb_etag: 896ae5e1b86cc5874f008872c05235a7
   orbital_scale_candidate:
     project_id: c796230b-0463-4e17-9446-2e746c5c4933
     revision: 0
@@ -152,40 +105,64 @@ remote_projects:
     registry_request_comment: 5648418266
     mutation_allowed: false
 
-r5_scene_contract:
-  objects: 148
-  mesh_objects: 95
-  curve_objects: 8
-  triangles_estimate: 18240
+r6_scene_contract:
+  terrain_model: R6_BIOGEO_CAUSAL_MACRO_V1
+  render_terrain_vertices: 2401
+  render_terrain_faces: 2304
+  collision_grid: 33x33
+  collision_vertices: 1089
+  collision_faces: 1024
+  render_collision_common_samples: 289
+  render_collision_max_height_delta_m: 0
+  root_bearing_ridges: 6
+  drainage_corridors_proposal: 2
   streaming_cells: 16
   rootkit_sockets: 8
   collision_total: 12
   vesper_terraces: 3
   vesper_connectors: 2
-  obsolete_single_floor_nodes: 0
+  provider_meshes_copied: 0
   final_vesper_meshes: 0
   non_unit_scales: 0
   non_namespace_objects: 0
 
+terrain_slope_measurement_deg:
+  median: 4.939
+  p90: 14.186
+  p95: 20.297
+  max: 51.231
+
 traversal_scale:
   route_guide_total_m: 7927.391
+  route_grades_deg: [2.996, 2.199, 1.484, 15.079]
   prototype_foot_speed_m_s: 6.0
   prototype_guard_speed_m_s: 3.0
   prototype_generic_vehicle_speed_m_s: 20.0
-  interpretation: Separate local pedestrian pacing from macro vehicle/transit corridors; do not auto-compress before engine test.
+  interpretation: >-
+    Separate local pedestrian pacing from macro vehicle/transit corridors; do not auto-compress before engine test.
+
+blocked_by:
+  - BLOCK-SYLVA-001 planetary-scale canon promotion needs creative/integrator decision
+  - BLOCK-SYLVA-002 production engine/target hardware blocks final LOD/HLOD/performance budgets
+  - BLOCK-SYLVA-003 sandbox network blocks recovered binaries/native import; classify ENV_BLOCKED
+  - fleet integrator readback pending for active ACK/path expansion/orbital project registration
+
+dependencies:
+  - CLM-SYLVA-PROC-NROOT-001 for reusable meso neural-root modules
+  - engine host for exact GLB recovery/import/traversal
+  - human art-direction review
 
 receipts:
-  validation_r3: art_source/worlds/sylva_prime/macro/validation.json
-  manifest_r4_historical: production/manifests/sylva/macro/SYL_MACRO_FOUNDATION_001.yaml
-  receipt_r4_historical: production/receipts/sylva/CLM-SYLVA-MACRO-001-R4.yaml
-  receipt_r5: art_source/worlds/sylva_prime/macro/qa/R5_VESPER_CANON_LAYOUT.json
-  import_contract_r5: art_source/worlds/sylva_prime/macro/IMPORT_CONTRACT.md
-  glb_validator_r5: art_source/worlds/sylva_prime/macro/validate_glb_contract.py
+  historical_r3: art_source/worlds/sylva_prime/macro/validation.json
+  historical_r4_manifest: production/manifests/sylva/macro/SYL_MACRO_FOUNDATION_001.yaml
+  historical_r4_receipt: production/receipts/sylva/CLM-SYLVA-MACRO-001-R4.yaml
+  r5_vesper: art_source/worlds/sylva_prime/macro/qa/R5_VESPER_CANON_LAYOUT.json
+  r6_terrain: art_source/worlds/sylva_prime/macro/qa/R6_TERRAIN_CAUSALITY.json
+  import_contract: art_source/worlds/sylva_prime/macro/IMPORT_CONTRACT.md
+  glb_validator: art_source/worlds/sylva_prime/macro/validate_glb_contract.py
   validator_selftest_r5: art_source/worlds/sylva_prime/macro/qa/GLB_CONTRACT_SELFTEST_R5.json
   engine_env_blocker: art_source/worlds/sylva_prime/macro/qa/ENGINE_IMPORT_ENV_BLOCKER.json
   status: art_source/worlds/sylva_prime/macro/STATUS.md
   handoff: art_source/worlds/sylva_prime/macro/HANDOFF.md
-  linear: ROT-117
-  main_sync_compare: branch ahead / 0 behind at f78bfdc8 checkpoint
 
 claim_status: KEEP
