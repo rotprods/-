@@ -1,0 +1,56 @@
+status: REVIEW
+world_id: khepri
+claim_id: CLM-KHEPRI-WMACRO-001
+agent_id: AGENT-KHEPRI-WMACRO-001
+session_id: SESSION-20260912-KHEPRI-001
+branch: art/world-khepri-001
+pr: 8
+base_at_claim: 4c2fa044080004609ea6df45f34b2a784536507a
+latest_main_observed: 196ef814fdc845ec797979906d01dc25009217c7
+blender:
+  project_id: 040f0c45-83a7-483c-9ee7-1e31c640a587
+  revision: 2
+  structural_qa: PASS
+  art_review: PENDING_HUMAN
+  blend_bytes: 1357562
+  glb_bytes: 702900
+ci:
+  pr_run: 34715183868
+  pr_run_status: FAILURE_CONTINUITY_PRE_GODOT
+  main_run: 34715278567
+  main_run_status: FAILURE_CONTINUITY_PRE_GODOT
+  classification: GLOBAL_CI_MANIFEST_RECONCILIATION
+  coordination_owner: INFRA-005-FLEET-001
+  coordination_surface: issue-7
+progress:
+  asset_coverage_percent: 100
+  modeling_percent: 100
+  materials_percent: 25
+  optimization_percent: 100
+  integration_percent: 35
+  qa_percent: 80
+scope_note: "Progress percentages apply only to the atomic world-macro blockout claim."
+completed:
+  - repository_bootstrap
+  - collision_audit_and_claim
+  - planet_scale_adr
+  - world_bible_shard
+  - coverage_matrix
+  - task_contract
+  - deterministic_generator
+  - optimization_pass
+  - structural_validator
+  - blender_revision_2
+  - glb_export
+  - provider_blend_retrieval
+  - provider_glb_retrieval
+blocked:
+  - HUMAN_VISUAL_REVIEW
+  - BINARY_PERSISTENCE_TRANSPORT
+  - GLOBAL_CI_MANIFEST_RECONCILIATION
+next:
+  - "Review final revision 2 visually through interactive 3D Jutsu scene; log defects."
+  - "Consume integrator repair from issue #7 and resync/rebase without racing on MANIFEST.json."
+  - "Use binary-capable integration worker to archive rev2 .blend/GLB, then run repo asset/import gates."
+last_heartbeat: "2026-09-12T19:52:00Z"
+claim_status: KEEP_REVIEW
