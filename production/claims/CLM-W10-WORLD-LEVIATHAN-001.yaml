@@ -5,12 +5,19 @@ scope_key: world-10/leviathan/world-production/master-foundation
 world_id: leviathan
 category: world_production
 subdomain: master_foundation
-status: CLAIMED
+status: IN_PROGRESS
+claim_disposition: KEEP
 base_branch: main
 base_sha: 4c2fa044080004609ea6df45f34b2a784536507a
 branch: art/world-leviathan-001
 created_at: 2026-09-12T21:23:00+02:00
-last_heartbeat: 2026-09-12T21:23:00+02:00
+last_heartbeat: 2026-09-12T21:45:00+02:00
+remote_blender:
+  provider: Higgsfield 3D Jutsu
+  project_id: 2577a7b6-ebd7-4d31-a645-620e4b73a95d
+  revision: 2
+  blender: 5.2.0 LTS
+  units: metric_1BU_1m
 includes:
   - art_source/worlds/leviathan/**
   - leviathan L0-L5 world scale specification and master blockout
@@ -43,8 +50,19 @@ dependencies:
   - design/EXOVANT_DATA.json
   - docs/ART_PRODUCTION.md
   - learning/hub/agents/codex-root/chats/exovant-persistence-20260912/events/LRN-EXO-20260912-BLENDER.json
-blocked_by: []
+blocked_by:
+  - LEV-BLK-001 physical planet radius/diameter for L0/L1
+  - LEV-BLK-002 final production-engine decision
+  - LEV-BLK-003 target hardware budgets
+  - LEV-BLK-004 final SOMA anatomical/art review
+  - LEV-BLK-005 final playable-region dimensions
+receipts:
+  - art_source/worlds/leviathan/WORLD_BIBLE.md
+  - art_source/worlds/leviathan/MASTER_ASSET_LIST.yaml
+  - art_source/worlds/leviathan/TASKS.yaml
+  - art_source/worlds/leviathan/STATUS.yaml
+  - art_source/worlds/leviathan/validation.json
+  - art_source/worlds/leviathan/tools/build_master_scene.py
 claim_state_note: >-
-  WAVE 0 claim only. Physical planet radius, production engine, target hardware budgets,
-  final playable-area dimensions and final SOMA anatomy are not silently inferred; they remain
-  proposal/blocker fields until approved or empirically qualified.
+  WAVE-1 foundation checkpoint exists, but open P0/P1, engine import, performance,
+  direct art review and L0/L1 planet-scale decisions prevent release or DONE.
