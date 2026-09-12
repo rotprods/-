@@ -1,0 +1,153 @@
+{
+  "schema_version": 1,
+  "project": "EXOVANT 2950",
+  "world_id": "leviathan",
+  "claim_id": "CLM-W10-WORLD-LEVIATHAN-001",
+  "checkpoint": "JARDINES_MICROSET_R7",
+  "source_stages": [
+    {
+      "path": "art_source/worlds/leviathan/tools/build_jardines_microset.py",
+      "blob_sha": "b329709afc223685808da62347874ab47c695c8b"
+    },
+    {
+      "path": "art_source/worlds/leviathan/tools/refine_jardines_truth_v2.py",
+      "blob_sha": "d002c960ad28ddf10f8edfe383a092649699c6de"
+    }
+  ],
+  "master": {
+    "project_id": "2577a7b6-ebd7-4d31-a645-620e4b73a95d",
+    "revision": 7,
+    "blend_size_bytes": 6329729,
+    "blend_etag": "c3ef0e9de88564842a74b8816f303730",
+    "glb_size_bytes": 6926688,
+    "glb_etag": "46db7090aaf284473fc505da9003ff30",
+    "scene_objects": 290,
+    "scene_meshes": 215,
+    "scene_materials": 16,
+    "collections": 12,
+    "jardines_microset_objects": 71
+  },
+  "cold_rebuild": {
+    "project_id": "37a931c7-f2e6-46bc-9be0-26077e5de1c1",
+    "revision": 5,
+    "blend_size_bytes": 6329729,
+    "blend_etag": "4449018470e18bb25a5cd085d849e477",
+    "glb_size_bytes": 6937888,
+    "glb_etag": "f1d39b6c4410925b124b4cb7692cce21",
+    "pipeline": "empty scene -> master -> Puerto microset -> Puerto refinement -> Jardines microset -> Jardines truth refinement",
+    "scene_objects": 290,
+    "scene_meshes": 215,
+    "scene_materials": 16,
+    "collections": 12,
+    "jardines_microset_objects": 71
+  },
+  "determinism": {
+    "master_semantic_fingerprint_excluding_provider_hf_id": "1fa569c938fc714fa1668e0c00b45761cec4d15dbd64a3ce5070d87bdd7d23ae",
+    "cold_semantic_fingerprint_excluding_provider_hf_id": "1fa569c938fc714fa1668e0c00b45761cec4d15dbd64a3ce5070d87bdd7d23ae",
+    "semantic_payload_bytes": 78089,
+    "status": "PASS_EXACT_SEMANTIC_MATCH"
+  },
+  "asset_families": {
+    "LEV-INF-005": {
+      "name": "Lymph channel family / representative service crossing",
+      "state": "REPRESENTATIVE_DETAIL_NOT_FINAL",
+      "stable_service_walk_length_m": 34.0,
+      "visual_conduit_measured_envelope_m": [48.151, 11.09, 7.74],
+      "construction_logic": "living pressure conduit supported by cartilage ribs; independent stable gameplay walk",
+      "moving_check_valve_leaves": 4,
+      "collision_authority": "stable service walk only"
+    },
+    "LEV-ECO-004": {
+      "name": "Pulse algae family",
+      "state": "REPRESENTATIVE_VARIANTS_NOT_FINAL",
+      "ecological_function": "pressure and flow indicator",
+      "representative_states": ["young", "mature", "high_pressure"],
+      "variant_count": 6
+    },
+    "LEV-ECO-001": {
+      "name": "Gardener parasite",
+      "state": "REPRESENTATIVE_ANATOMY_NOT_FINAL",
+      "ecological_role": "removes necrotic tissue and returns nutrients; threat emerges through density",
+      "proposed_core_body_length_m": 2.6,
+      "measured_articulated_envelope_m": [5.35, 5.5, 3.37],
+      "locomotion_logic": "six low limbs grip moist channel margins",
+      "feeding_logic": "two cleaning appendages scrape necrotic tissue into a ventral digestive sac",
+      "collision": "CORE_ONLY_STATIC_PROXY_NOT_RIGGED",
+      "final_collision_unblock": "approved rig + locomotion + combat/hit contract"
+    }
+  },
+  "geometry_cost_evaluated": {
+    "method": "mesh objects plus evaluated curve tessellation",
+    "microset_total": {
+      "objects": 71,
+      "source_meshes": 48,
+      "source_curves": 20,
+      "evaluated_vertices": 11090,
+      "evaluated_triangles": 21644,
+      "material_slots": 68
+    },
+    "lymph_channel": {
+      "objects": 22,
+      "source_meshes": 19,
+      "source_curves": 3,
+      "evaluated_vertices": 4666,
+      "evaluated_triangles": 9228
+    },
+    "pulse_algae": {
+      "objects": 18,
+      "source_meshes": 18,
+      "source_curves": 0,
+      "evaluated_vertices": 2964,
+      "evaluated_triangles": 5880
+    },
+    "gardener": {
+      "objects": 28,
+      "source_meshes": 11,
+      "source_curves": 17,
+      "evaluated_vertices": 3460,
+      "evaluated_triangles": 6536
+    },
+    "budget_status": "MEASURED_NO_HARD_BUDGET_UNTIL_RUNTIME_AND_TARGET_HARDWARE_QUALIFIED"
+  },
+  "materials": {
+    "new_roles": [
+      "LEV_MAT_MUCOSA_WET",
+      "LEV_MAT_NECROTIC",
+      "LEV_MAT_ALGA_PRESSURE"
+    ],
+    "final_texture_status": "NOT_FINAL"
+  },
+  "qa": {
+    "required_missing": [],
+    "bad_object_scales": [],
+    "zero_polygon_meshes": [],
+    "degenerate_meshes": [],
+    "materialless_meshes": [],
+    "visual_microset_objects_in_collision_collection": [],
+    "representative_centers_in_inspection_camera": true,
+    "portable_inspection_light": "SPOT",
+    "glb_export": "PASS",
+    "engine_import": "NOT_RUN",
+    "art_review": "REVIEW_REQUIRED"
+  },
+  "truth_refinement": {
+    "revision_before": 6,
+    "revision_after": 7,
+    "shape_changed": false,
+    "corrections": [
+      "2.6 m relabeled from full body length to proposed core-body length",
+      "34 m relabeled as stable service-walk length rather than complete visual-conduit extent",
+      "gardener collision explicitly core-only provisional"
+    ]
+  },
+  "truth": {
+    "world_done": false,
+    "jardines_done": false,
+    "final_rig": false,
+    "final_uv": false,
+    "final_pbr": false,
+    "lod_hlod": false,
+    "runtime_collision": false,
+    "performance_qualified": false
+  }
+}
