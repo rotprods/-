@@ -16,36 +16,20 @@
     "linear_issue": "ROT-114",
     "parent_issue": "ROT-109",
     "scope": "VANTA art/modeling only",
-    "exclusions": [
-      "terra",
-      "ares",
-      "pelagos",
-      "gameplay implementation",
-      "planetary travel framework"
-    ],
-    "integration_policy": "PR only; no force push; reconcile ownership before editing shared assets"
+    "integration_policy": "PR only; no force push; ownership preflight before significant waves"
   },
   "remote_source": {
     "provider": "Higgsfield 3D Jutsu",
     "project_id": "c82188b1-afdc-43f2-828a-5f0e98291f83",
-    "project_url": "https://higgsfield.ai/3d-jutsu/c82188b1-afdc-43f2-828a-5f0e98291f83",
     "blender_version": "5.2.0 LTS",
-    "revision": 4,
-    "editable_blend": {
-      "size_bytes": 7046134,
-      "etag": "7617263dce0f383746d5411614908b17"
-    },
-    "portable_glb": {
-      "size_bytes": 4842424,
-      "etag": "0ed964937085dafbcb717b35aacc5163"
-    }
+    "revision": 8,
+    "editable_blend": {"size_bytes": 8168427, "etag": "251f6d510f8ae6c5250bae10c8ee5a61"},
+    "portable_glb": {"size_bytes": 5990788, "etag": "a3cfe2daf6a1005e35db478e3f4ec51d", "engine_semantics_qualified": false}
   },
   "scale": {
     "unit": "metre",
     "planet_radius_m": 7600000,
     "planet_radius_status": "PROPOSED_NOT_CANON",
-    "planet_diameter_m": 15200000,
-    "planet_diameter_status": "PROPOSED_NOT_CANON",
     "authored_district_m": [24000, 24000],
     "streaming_cell_m": [4000, 4000],
     "streaming_cell_count": 36,
@@ -56,35 +40,14 @@
     "ferrum_height_status": "PRODUCTION_PROPOSAL"
   },
   "regions": [
-    {
-      "id": "port_of_hands",
-      "name": "Puerto de las Manos",
-      "state": "BLOCKOUT_PLUS_CP4_VERTICAL_SLICE"
-    },
-    {
-      "id": "iron_rain",
-      "name": "Lluvia de Hierro",
-      "state": "BLOCKOUT"
-    },
-    {
-      "id": "fallen_ring",
-      "name": "Anillo Caído",
-      "state": "BLOCKOUT"
-    }
+    {"id":"port_of_hands","name":"Puerto de las Manos","state":"BLOCKOUT_PLUS_CP4_CP5_VERTICAL_SLICE"},
+    {"id":"iron_rain","name":"Lluvia de Hierro","state":"BLOCKOUT"},
+    {"id":"fallen_ring","name":"Anillo Caído","state":"BLOCKOUT"}
   ],
   "targets": {
     "npcs": ["Mika Drav", "Ciro Fenn", "Bel Orta"],
-    "enemies": [
-      "Cobrador de astillero",
-      "Enjambre de remaches",
-      "Remolcador automatizado"
-    ],
-    "biota": [
-      "Litófago magnético",
-      "Raya de limaduras",
-      "Cuervo de remache",
-      "Bacteria de escoria"
-    ],
+    "enemies": ["Cobrador de astillero", "Enjambre de remaches", "Remolcador automatizado"],
+    "biota": ["Litófago magnético", "Raya de limaduras", "Cuervo de remache", "Bacteria de escoria"],
     "vehicle": ["Remolcador Drav"],
     "boss": ["FERRUM"]
   },
@@ -92,97 +55,82 @@
     "generator": "art_source/vanta/pipeline/generate_asset_registry.py",
     "target_row_count": 327,
     "rows_are_completion_claims": false,
-    "categories": {
-      "environment": 84,
-      "modular_kit": 61,
-      "props": 61,
-      "characters": 7,
-      "biota": 4,
-      "vehicles": 1,
-      "boss_parts": 43,
-      "vfx": 20,
-      "materials": 16,
-      "decals": 30
-    }
+    "categories": {"environment":84,"modular_kit":61,"props":61,"characters":7,"biota":4,"vehicles":1,"boss_parts":43,"vfx":20,"materials":16,"decals":30}
   },
   "cp4": {
-    "status": "LOCALLY_VALIDATED_GEOMETRY",
-    "representative_microset": [
-      "VAN_KIT_CRANE_A",
-      "VAN_KIT_MAG_ANCHOR_A",
-      "VAN_KIT_DRYDOCK_RIB_A",
-      "VAN_KIT_STORM_SHELTER_A"
-    ],
-    "snap_modules": [
-      "VAN_MOD_FLOOR_4M_A",
-      "VAN_MOD_WALL_SOLID_4M_A",
-      "VAN_MOD_WALL_SERVICE_4M_A",
-      "VAN_MOD_RAIL_4M_A",
-      "VAN_MOD_PIPE_TRAY_4M_A",
-      "VAN_MOD_BRACE_4M_A",
-      "VAN_MOD_STAIR_4M_A",
-      "VAN_MOD_ROOF_4M_A",
-      "VAN_MOD_PILLAR_4M_A",
-      "VAN_MOD_DOOR_4M_A",
-      "VAN_MOD_MAG_RAIL_4M_A",
-      "VAN_MOD_BULKHEAD_8M_A"
-    ],
+    "status": "LOCALLY_VALIDATED_GEOMETRY_AND_BLENDER_ASSEMBLY",
+    "representative_microset": ["VAN_KIT_CRANE_A","VAN_KIT_MAG_ANCHOR_A","VAN_KIT_DRYDOCK_RIB_A","VAN_KIT_STORM_SHELTER_A"],
+    "snap_module_count": 12,
     "snap_socket_count": 48,
+    "render_mesh_count": 206,
     "collision_object_count": 19,
     "lod1_proxy_count": 16,
-    "render_mesh_count": 206,
-    "calibration_object_count": 10,
-    "direct_visual_art_review": "OPEN",
+    "parent_fix_revision": 5,
+    "parented_render_children_fixed": 205,
+    "coordinate_guard_failures": 0,
+    "test_yard_revision": 6,
+    "test_yard_instance_markers": 19,
+    "test_yard_linked_render_meshes": 76,
+    "test_yard_seam_checks": 7,
+    "test_yard_max_gap_m": 0,
     "engine_snap_import": "UNQUALIFIED",
-    "collision_playtest": "UNQUALIFIED",
+    "collision_playtest": "UNQUALIFIED"
+  },
+  "cp5": {
+    "status": "LOCALLY_VALIDATED_MATERIAL_FOUNDATION",
+    "texture_resolution": [512,512],
+    "packed_image_count": 13,
+    "pbr_sets": ["STEEL","RUST","YELLOW"],
+    "maps_per_pbr_set": ["BC","ORM","N"],
+    "trim_family": "TRIM_A",
+    "decal_atlas": "DECAL_A",
+    "textured_cp4_meshes": 147,
+    "textured_uv_missing": 0,
+    "calibration_objects": 12,
+    "decal_cards": 4,
+    "visual_art_review": "OPEN",
+    "engine_material_import": "UNQUALIFIED",
+    "mip_compression": "UNQUALIFIED",
     "performance": "UNQUALIFIED"
+  },
+  "current_scene": {
+    "revision": 8,
+    "objects": 832,
+    "meshes": 711,
+    "materials": 20,
+    "collections": 25,
+    "cameras": 12,
+    "lights": 15,
+    "ferrum_named_parts": 43,
+    "render_evidence": [
+      {"name":"vanta_master_blockout.png","artifact_id":"55e6eec9287c17b69c6c261c0d581781","resolution":[960,540],"revision":2},
+      {"name":"vanta_ferrum_arena.png","artifact_id":"0761e510e83a252022b488bfbccfacb4","resolution":[960,540],"revision":2},
+      {"name":"vanta_cp4_crane_proof.png","artifact_id":"c09519f9702b54ce7595e7803f0a35a5","resolution":[640,480],"revision":3},
+      {"name":"vanta_cp4_test_yard.png","artifact_id":"f2ce32a87e098470ed00328fef4cbbb2","resolution":[640,480],"revision":8},
+      {"name":"vanta_cp5_neutral_board.png","artifact_id":"a2438a37035038ca58e40a4ff27176d7","resolution":[640,480],"revision":8}
+    ]
   },
   "reproducibility": {
     "blockout_generator": "art_source/vanta/pipeline/vanta_blockout.py",
+    "registry_generator": "art_source/vanta/pipeline/generate_asset_registry.py",
     "production_system": "art_source/vanta/VANTA_WORLD_PRODUCTION.md",
     "cp4_status": "art_source/vanta/CP4_STATUS.md",
+    "cp5_status": "art_source/vanta/CP5_STATUS.md",
     "evidence_rev2": "art_source/vanta/evidence/remote_blender_rev2.json",
-    "evidence_rev4": "art_source/vanta/evidence/remote_blender_rev4.json"
+    "evidence_rev4": "art_source/vanta/evidence/remote_blender_rev4.json",
+    "evidence_rev8": "art_source/vanta/evidence/remote_blender_rev8.json"
   },
-  "current_scene": {
-    "revision": 4,
-    "objects": 711,
-    "meshes": 618,
-    "materials": 18,
-    "collections": 21,
-    "cameras": 9,
-    "lights": 9,
-    "ferrum_named_parts": 43,
-    "cp4_tagged_objects": 315,
-    "render_evidence": [
-      {
-        "name": "vanta_master_blockout.png",
-        "artifact_id": "55e6eec9287c17b69c6c261c0d581781",
-        "resolution": [960, 540],
-        "revision": 2
-      },
-      {
-        "name": "vanta_ferrum_arena.png",
-        "artifact_id": "0761e510e83a252022b488bfbccfacb4",
-        "resolution": [960, 540],
-        "revision": 2
-      },
-      {
-        "name": "vanta_cp4_crane_proof.png",
-        "artifact_id": "c09519f9702b54ce7595e7803f0a35a5",
-        "resolution": [640, 480],
-        "revision": 3,
-        "aesthetic_review": "OPEN"
-      }
-    ]
-  },
+  "known_export_warnings": [
+    "glTF multiple-image-texture sampler warning on some PBR/trim materials; engine material semantics not qualified",
+    "glTF unsupported AREA-light warning from Blender test yard; engine light portability not qualified"
+  ],
   "checkpoints": {
     "CP0_ownership_lock": "DONE",
     "CP1_canon_scale_art_direction": "DOCUMENTED_REVIEW_OPEN",
     "CP2_macro_world_blockout": "IMPLEMENTED_GEOMETRY_REVIEW_OPEN",
     "CP3_silhouette_targets": "IMPLEMENTED_GEOMETRY_REVIEW_OPEN",
-    "CP4_modular_construction_kit": "LOCALLY_VALIDATED_GEOMETRY_ENGINE_GATES_OPEN",
-    "CP5_material_trim_decal_system": "CALIBRATION_PRECURSOR_ONLY",
+    "CP4_modular_construction_kit": "LOCALLY_VALIDATED_BLENDER_ENGINE_GATES_OPEN",
+    "CP5_material_trim_decal_system": "FOUNDATION_LOCALLY_VALIDATED_ENGINE_ART_GATES_OPEN",
     "CP6_port_of_hands_final_art": "OPEN",
     "CP7_iron_rain_final_art": "OPEN",
     "CP8_fallen_ring_final_art": "OPEN",
@@ -194,24 +142,22 @@
   "truth": {
     "editable_source_exists": true,
     "portable_glb_exists": true,
-    "macro_scale_locally_validated": true,
-    "cp4_structural_qa_pass": true,
-    "cp4_snap_contract_locally_validated": true,
+    "cp4_parent_transform_defect_fixed": true,
+    "cp4_local_assembly_pass": true,
+    "cp5_pbr_trim_decal_foundation": true,
     "visual_render_created": true,
     "visual_aesthetic_pass": false,
-    "final_hero_assets_complete": false,
     "engine_import_qualified": false,
     "collision_playtest_qualified": false,
     "performance_qualified": false,
+    "final_hero_assets_complete": false,
     "aaa_quality_claim": false
   },
   "next": [
-    "Generate and persist the 327-row registry outputs",
-    "Promote the CP5 calibration precursor into neutral-light and Vanta-light boards",
-    "Author the first trim/decal family for steel, rust, yellow paint, welds, impacts, frost and grease",
-    "Apply CP5 materials to the four CP4 representative assets",
-    "Run deterministic close/mid/far review on the CP4 vertical slice",
-    "Run target-engine snap/import and collision traversal before declaring CP4 globally DONE",
-    "Propagate only after art, engine and performance gates pass"
+    "Qualify PBR/trim/decal material binding in the target engine and eliminate/understand glTF sampler warnings",
+    "Run close/mid/far art review on the representative slice",
+    "Run engine snap/import and collision traversal for the CP4 test yard",
+    "Measure triangle/draw/material/texture/memory/GPU cost on declared target hardware",
+    "Only after those gates pass, propagate the CP4/CP5 system across the wider Vanta registry"
   ]
 }
