@@ -13,3 +13,7 @@
 Defectos resueltos: rampa con escalón que bloqueaba al personaje; parser de JSON corrupto que ensuciaba el gate; daño a través de cobertura; problemas de inferencia de tipos; exposición y barras de vida ilegibles. Los casos ejecutables permanecen en tests.
 
 Siguiente incremento de producto: EXO-004, recorrido completo sin teletransportes y observación de fricción, después controles y orientación. Mantener este hito de persistencia separado de una mejora de jugabilidad: esta ola no añade mundos ni ataques.
+
+## Infraestructura 005 — reparación de descarga
+
+El fallo de GitHub Actions se reprodujo localmente: HTTP 403 del endpoint de descarga. La URL oficial de release 4.7.2 permitió descargar e instalar con hashes coincidentes. Siete pruebas adicionales cubren corrupción, truncado, tamaño y preservación del binario existente. El clon remoto conservó íntegros los 108 archivos y pasó los cuatro gates nativos. CI corregido pendiente de ejecución remota.

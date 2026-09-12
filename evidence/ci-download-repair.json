@@ -1,0 +1,9 @@
+{
+  "issue": "EXO-INFRA-F004",
+  "observed_failure": "HTTP 403 on downloads.godotengine.org via urllib in CI and local bootstrap",
+  "failed_ci": "https://github.com/rotprods/-/actions/runs/34708430695",
+  "fix": "Exact official GitHub release URL, independently matching archive digest; bounded download and atomic no-clobber binary publication",
+  "bootstrap_download_executed": true,
+  "bootstrap_tests": 7,
+  "new_remote_ci": "pending publication"
+}

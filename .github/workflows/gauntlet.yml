@@ -17,7 +17,7 @@ jobs:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
       - name: Verify committed evidence and continuity
         run: |
-          python3 -m unittest discover -s tests -p 'test_governance.py' -v
+          python3 -m unittest discover -s tests -p 'test_*.py' -v
           python3 tools/project_control.py check
       - name: Acquire pinned Godot archive
         run: python3 tools/bootstrap_godot.py --destination .tools
