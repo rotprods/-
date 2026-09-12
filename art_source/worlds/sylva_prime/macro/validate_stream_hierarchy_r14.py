@@ -1,22 +1,22 @@
 #!/usr/bin/env python3
 """Static validator for the fenced SYLVA R14 streaming hierarchy proposal.
 
-Pure stdlib. This validates the proposal before Blender execution:
-- four non-overlapping 6 km L2 supercells cover all 16 L3 cells exactly once;
-- L2 neighbor graphs are symmetric and geometrically correct;
-- hero-core / broad-envelope cell sets exactly match circle-vs-cell intersection;
-- hero L2 sets are derived from cell ownership, not manually drifted;
-- Bosque is explicitly treated as a 4-L2 hero-residency hotspot;
+Pure stdlib. Validates before Blender execution:
+- four 6 km L2 supercells cover all 16 L3 cells exactly once;
+- L2 neighbor graphs are symmetric/geometrically correct;
+- hero-core and broad-envelope L3 cell sets match circle-vs-cell intersection;
+- L2 references are coverage metadata derived from L3 ownership;
+- hero residency is explicitly L3-only, never full-L2 residency;
+- Bosque remains a four-L2 coverage hotspot without moving geography;
 - HLOD remains contract-only while target backend/hardware are unknown.
 
-Passing this validator does NOT mean R14 has been executed in Blender. The writer fence
-must be released by fleet activation before running `build_stream_hierarchy_r14.py`.
+PASS here does not mean R14 executed in Blender. Fleet activation + single-writer ownership
+remain mandatory before `build_stream_hierarchy_r14.py` may run.
 """
 from __future__ import annotations
 
 import argparse
 import json
-import math
 import sys
 from pathlib import Path
 
@@ -26,7 +26,10 @@ CELL_BOUNDS = {
                    -6000 + y * 3000, -3000 + y * 3000)
     for x in range(4) for y in range(4)
 }
-L2_COORDS = {"L2_X0Y0": (0, 0), "L2_X0Y1": (0, 1), "L2_X1Y0": (1, 0), "L2_X1Y1": (1, 1)}
+L2_COORDS = {
+    "L2_X0Y0": (0, 0), "L2_X0Y1": (0, 1),
+    "L2_X1Y0": (1, 0), "L2_X1Y1": (1, 1),
+}
 
 
 def circle_rect(cx: float, cy: float, radius: float, bounds: tuple[float, float, float, float]) -> bool:
@@ -67,6 +70,11 @@ def validate(data: dict) -> dict:
     if len(flattened) != 16 or set(flattened) != ALL_L3 or len(set(flattened)) != 16:
         errors.append("L2_DOES_NOT_PARTITION_L3_EXACTLY_ONCE")
 
+    if data.get("hero_residency_granularity") != "L3_ONLY":
+        errors.append("HERO_RESIDENCY_NOT_L3_ONLY")
+    if data.get("l2_hero_semantics") != "COVERAGE_METADATA_ONLY_NOT_FULL_RESIDENCY":
+        errors.append("L2_HERO_SEMANTICS_AMBIGUOUS")
+
     cell_to_l2 = {cell: name for name, row in l2.items() for cell in row.get("l3_cells", [])}
     heroes = data.get("hero_residency_groups", {})
     for hero_name, row in heroes.items():
@@ -79,20 +87,25 @@ def validate(data: dict) -> dict:
         envelope_radius = float(row.get("region_envelope_radius_m", 0))
         expected_core = sorted(cid for cid, bounds in CELL_BOUNDS.items() if circle_rect(cx, cy, core_radius, bounds))
         expected_envelope = sorted(cid for cid, bounds in CELL_BOUNDS.items() if circle_rect(cx, cy, envelope_radius, bounds))
-        if sorted(row.get("core_cells", [])) != expected_core:
-            errors.append(f"{hero_name}:CORE_CELLS")
+        resident_l3 = sorted(row.get("resident_l3_cells", []))
+        if resident_l3 != expected_core:
+            errors.append(f"{hero_name}:RESIDENT_L3_CELLS")
         if sorted(row.get("region_envelope_cells", [])) != expected_envelope:
             errors.append(f"{hero_name}:ENVELOPE_CELLS")
         derived_core_l2 = sorted({cell_to_l2[c] for c in expected_core})
         derived_env_l2 = sorted({cell_to_l2[c] for c in expected_envelope})
-        if sorted(row.get("core_l2", [])) != derived_core_l2:
-            errors.append(f"{hero_name}:CORE_L2")
-        if sorted(row.get("region_envelope_l2", [])) != derived_env_l2:
-            errors.append(f"{hero_name}:ENVELOPE_L2")
+        if sorted(row.get("l2_coverage", [])) != derived_core_l2:
+            errors.append(f"{hero_name}:L2_COVERAGE")
+        if sorted(row.get("region_envelope_l2_coverage", [])) != derived_env_l2:
+            errors.append(f"{hero_name}:ENVELOPE_L2_COVERAGE")
+        if row.get("l2_full_residency_implied") is not False:
+            errors.append(f"{hero_name}:L2_FULL_RESIDENCY_MUST_BE_FALSE")
 
     bosque = heroes.get("BOSQUE", {})
-    if len(bosque.get("core_l2", [])) != 4 or bosque.get("streaming_hotspot") != "GLOBAL_L2_JUNCTION":
+    if len(bosque.get("l2_coverage", [])) != 4 or bosque.get("streaming_hotspot") != "GLOBAL_L2_JUNCTION":
         errors.append("BOSQUE_HOTSPOT_NOT_EXPLICIT")
+    if len(bosque.get("resident_l3_cells", [])) != 4:
+        errors.append("BOSQUE_L3_RESIDENCY_GROUP_MISMATCH")
 
     hlod = data.get("hlod", {})
     if hlod.get("generation_allowed_now") is not False:
@@ -103,14 +116,16 @@ def validate(data: dict) -> dict:
         errors.append("BACKEND_PREMATURELY_SELECTED")
 
     return {
-        "schema_version": 1,
+        "schema_version": 2,
         "contract": data.get("contract_proposal"),
         "passed": not errors,
         "errors": errors,
         "l2_count": len(l2),
         "l3_partition_count": len(set(flattened)),
         "hero_count": len(heroes),
-        "bosque_l2_count": len(bosque.get("core_l2", [])),
+        "bosque_resident_l3_count": len(bosque.get("resident_l3_cells", [])),
+        "bosque_l2_coverage_count": len(bosque.get("l2_coverage", [])),
+        "l2_full_residency_implied": any(row.get("l2_full_residency_implied") is not False for row in heroes.values()),
         "truth": "Static proposal validation only; no Blender R14 mutation is implied."
     }
 
