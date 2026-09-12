@@ -12,20 +12,20 @@ priority: P0
 branch: art/world-sylva-prime-macro-001
 base_branch: main
 base_sha_at_claim: 4c2fa044080004609ea6df45f34b2a784536507a
-main_reconciled_sha: f78bfdc8bd7b2f6ab52b45d39babcc1589ab3918
-reconciliation_commit: 42b549ab3717fbf812945f7ed2b798c00529b81b
+main_reconciled_sha: 97fb47472a654112779655d4d537851e709f269a
+reconciliation_commit: 1604bd452c6c241155a720d9dc92e6aef73fd717
 fleet_epoch: 1
 fleet_state_observed: RESERVED_ACK_SENT_PENDING_INTEGRATOR
 fleet_ack_comment: 5648367024
 coordination_issue: 7
 linear_issue: ROT-117
 draft_pr: 3
-last_checkpoint_revision: 11
+last_checkpoint_revision: 13
 
 north_star: >-
   Deliver a metre-scale, reproducible SYLVA PRIME macro/regional foundation with causal terrain,
-  readable terrain-aware navigation, canonical region/VESPER composition and explicit interfaces
-  to sharded providers, without inventing unresolved planetary canon or duplicating other agents.
+  readable terrain-aware navigation, canonical region/VESPER composition and scalable spatial
+  partitioning, while preserving provider ownership and unresolved planetary canon boundaries.
 
 owns:
   - km/regional terrain and causal macro topography
@@ -34,6 +34,7 @@ owns:
   - Bosque de las Frases regional foundation
   - Camara de VESPER macro encounter/environment foundation
   - terrain-aware macro navigation centerlines
+  - L3 terrain partition and cross-cell membership metadata
   - macro collision and streaming interfaces
   - diagnostic macro root topology/placement
   - typed consumer sockets and semantic support map for provider root-kit assets
@@ -46,7 +47,7 @@ excludes:
   - final NPC, fauna, vegetation, architecture/interior assets
   - final material/microterrain/foliage polish
   - gameplay, quests, dialogue or shared runtime state
-  - final LOD/HLOD/performance qualification
+  - final HLOD/LOD/performance qualification
   - global engine decisions and other worlds
 
 canon_facts:
@@ -73,13 +74,13 @@ unknowns:
 
 primary_remote:
   project_id: 05dce898-753d-4ff6-a4b0-31757dc868d8
-  revision: 11
-  build_status: WAVE1I_CONTRACT_METADATA_R11
+  revision: 13
+  build_status: WAVE1K_STREAM_MEMBERSHIP_R13
   state: SETTLED_VERIFIED_TECHNICAL_CHECKPOINT
-  blend_size_bytes: 2382689
-  blend_etag: 095b96cc5dfca24bb086ac8b7b315d17
-  glb_size_bytes: 1325280
-  glb_etag: 5da3def12f2919b530bf6b4fc738a0e9
+  blend_size_bytes: 2777367
+  blend_etag: dcb49cece03e111d066cad486ea77c1d
+  glb_size_bytes: 1204308
+  glb_etag: 695fc7907b522dc42d8f09f697b3d99a
 
 orbital_scale_candidate:
   project_id: c796230b-0463-4e17-9446-2e746c5c4933
@@ -88,27 +89,51 @@ orbital_scale_candidate:
   mutation_allowed: false
   registry_request_comment: 5648418266
 
-scene_contract_r11:
+scene_contract_r13:
   terrain_model: R6_BIOGEO_CAUSAL_MACRO_V1
+  terrain_stream_contract: SYLVA_TERRAIN_STREAM_R12
+  stream_membership_contract: SYLVA_STREAM_MEMBERSHIP_R13
   navigation_contract: SYLVA_NAV_R10
   navigation_profile: BALANCED_FOOT_TERRAIN_AWARE_R10
   route_collision_contract: MANIFOLD_RIBBON_R10
   socket_consumer_contract: SYLVA_SOCKET_CONSUMER_V1
   socket_support_map: SYLVA_SOCKET_SUPPORT_MAP_V1
-  objects: 151
-  mesh_objects: 91
+  objects: 182
+  mesh_objects: 121
   curve_objects: 12
-  approximate_triangles: 19928
   streaming_cells: 16
   region_envelopes: 3
+  terrain_render_tiles: 16
+  terrain_collision_tiles: 16
   rootkit_sockets: 8
-  collision_nodes: 12
   vesper_terraces: 3
   vesper_connectors: 2
   provider_meshes_copied: 0
   final_scope_violations: 0
   non_namespace_objects: 0
   non_unit_scales: 0
+
+terrain_streaming_r12:
+  tile_size_m: 3000
+  render_grid_per_tile: 13x13
+  render_vertices_total: 2704
+  render_faces_total: 2304
+  render_shared_seam_points: 285
+  render_max_seam_delta_m: 0
+  collision_grid_per_tile: 9x9
+  collision_vertices_total: 1296
+  collision_faces_total: 1024
+  collision_shared_seam_points: 189
+  collision_max_seam_delta_m: 0
+  monolithic_terrain_retired: true
+
+stream_membership_r13:
+  assigned_spatial_objects: 147
+  outside_local_patch: 0
+  cross_cell_objects: 34
+  max_cells_per_object: 6
+  assignment_method: WORLD_BOUNDS_TO_3KM_L3_CELLS
+  terrain_tile_policy: AUTHORITATIVE_SINGLE_CELL
 
 navigation_r10:
   total_length_m: 8898.294
@@ -149,16 +174,23 @@ planetary_scale_decision:
   recommended_radius_km: 7645.21008
   canonicalized: false
 
+learning_adoption:
+  learning_id: LRN-EXO-20260912-OWNER-ADMISSION
+  source_main: 97fb47472a654112779655d4d537851e709f269a
+  receipt: art_source/worlds/sylva_prime/macro/qa/OWNER_ADMISSION_ADOPTION.json
+  applies_to_this_owner: true
+  universal_adoption_claimed: false
+
 blocked_by:
   - BLOCK-SYLVA-001 planet-scale promotion requires explicit decision and fleet registration for orbital project
-  - BLOCK-SYLVA-002 engine/target hardware blocks final LOD/HLOD/performance budgets
+  - BLOCK-SYLVA-002 engine/target hardware blocks final HLOD/LOD/performance budgets
   - BLOCK-SYLVA-003 sandbox network blocks exact binary recovery/native import; ENV_BLOCKED
   - BLOCK-SYLVA-004 PR6 provider pivot/anchor + valid manifest required before root-kit instantiation
   - fleet integrator ACK/path/project-ID readback remains pending
 
 dependencies:
   - CLM-SYLVA-PROC-NROOT-001 provider readiness
-  - artifact-enabled engine runtime for exact binary import/traversal
+  - artifact-enabled engine runtime for exact binary import/residency/traversal
   - human art-direction review
 
 receipts:
@@ -166,8 +198,8 @@ receipts:
   r6_terrain: art_source/worlds/sylva_prime/macro/qa/R6_TERRAIN_CAUSALITY.json
   r7_rootkit: art_source/worlds/sylva_prime/macro/qa/R7_ROOTKIT_SOCKET_INTEGRATION.json
   r11_navigation: art_source/worlds/sylva_prime/macro/qa/R11_NAVIGATION_AND_ROOTKIT_INTEGRATION.json
-  glb_validator_r10: art_source/worlds/sylva_prime/macro/validate_glb_contract_r10.py
-  validator_selftest_r10: art_source/worlds/sylva_prime/macro/qa/GLB_CONTRACT_SELFTEST_R10.json
+  r13_streaming: art_source/worlds/sylva_prime/macro/qa/R13_STREAMING_WORLD_PARTITION.json
+  glb_validator_current: art_source/worlds/sylva_prime/macro/validate_glb_contract_r13.py
   engine_env_blocker: art_source/worlds/sylva_prime/macro/qa/ENGINE_IMPORT_ENV_BLOCKER.json
   import_contract: art_source/worlds/sylva_prime/macro/IMPORT_CONTRACT.md
   status: art_source/worlds/sylva_prime/macro/STATUS.md
