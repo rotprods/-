@@ -6,37 +6,51 @@ session_id: SESSION-20260912-KHEPRI-001
 branch: art/world-khepri-001
 pr: 8
 base_at_claim: 4c2fa044080004609ea6df45f34b2a784536507a
-latest_main_observed: 196ef814fdc845ec797979906d01dc25009217c7
+latest_main_observed: f78bfdc8bd7b2f6ab52b45d39babcc1589ab3918
+fleet:
+  registry: ops/fleet/registry.json
+  claim_status: active
+  producer_ack: issue-7-comment-5648289971
+  protocol: docs/FLEET_COORDINATION.md
 blender:
-  project_id: 040f0c45-83a7-483c-9ee7-1e31c640a587
-  revision: 2
+  master_project_id: 040f0c45-83a7-483c-9ee7-1e31c640a587
+  master_revision: 2
+  cold_project_id: d13625de-15d1-440b-8345-2c9fbc27d69e
+  cold_revision: 2
   structural_qa: PASS
+  semantic_reproducibility: PASS
+  semantic_sha256: 127b35919b9c385ecabd3143942afe498c108e0e753066ab420c1bc323a40771
   art_review: PENDING_HUMAN
   blend_bytes: 1357562
   glb_bytes: 702900
+visual:
+  render_operation: khepri.visual.r2.gauntlet
+  overview_artifact: 2e1d37433ac3ceee968443e2f784e651
+  gameplay_artifact: db6d33b28ef50daa2a115ebbcb5aea36
+  resolution: [1280, 720]
+  status: RENDERED_NOT_PIXEL_REVIEWED
 ci:
-  pr_run: 34715183868
-  pr_run_status: FAILURE_CONTINUITY_PRE_GODOT
-  main_run: 34715278567
-  main_run_status: FAILURE_CONTINUITY_PRE_GODOT
-  classification: GLOBAL_CI_MANIFEST_RECONCILIATION
-  coordination_owner: INFRA-005-FLEET-001
-  coordination_surface: issue-7
+  historical_pr_run: 34715183868
+  historical_pr_status: FAILURE_OLD_MAIN_CONTINUITY
+  repaired_main_sha: f78bfdc8bd7b2f6ab52b45d39babcc1589ab3918
+  repaired_main_run: 34715800243
+  repaired_main_status: SUCCESS
+  classification: PRODUCER_RECONCILIATION_REQUIRED
 progress:
   asset_coverage_percent: 100
   modeling_percent: 100
   materials_percent: 25
   optimization_percent: 100
-  integration_percent: 35
-  qa_percent: 80
+  integration_percent: 45
+  qa_percent: 90
 scope_note: "Progress percentages apply only to the atomic world-macro blockout claim."
 completed:
   - repository_bootstrap
   - collision_audit_and_claim
+  - fleet_owner_ack_active
   - planet_scale_adr
   - world_bible_shard
   - coverage_matrix
-  - task_contract
   - deterministic_generator
   - optimization_pass
   - structural_validator
@@ -44,13 +58,16 @@ completed:
   - glb_export
   - provider_blend_retrieval
   - provider_glb_retrieval
+  - cold_project_rebuild
+  - semantic_reproducibility_fingerprint
 blocked:
   - HUMAN_VISUAL_REVIEW
   - BINARY_PERSISTENCE_TRANSPORT
-  - GLOBAL_CI_MANIFEST_RECONCILIATION
+in_progress:
+  - RECONCILE_WITH_FLEET_QUALIFIED_MAIN
 next:
-  - "Review final revision 2 visually through interactive 3D Jutsu scene; log defects."
-  - "Consume integrator repair from issue #7 and resync/rebase without racing on MANIFEST.json."
-  - "Use binary-capable integration worker to archive rev2 .blend/GLB, then run repo asset/import gates."
-last_heartbeat: "2026-09-12T19:52:00Z"
+  - "Build a clean combined tree from current main plus only KHEPRI owned paths; regenerate exact MANIFEST and require PR CI SUCCESS."
+  - "Run machine-readable camera/frustum/readability checks while human GATE-ART remains pending."
+  - "After branch reconciliation, continue macro-only terrain/optical interfaces or hand off new KHEPRI domain claims; do not invade final architecture/characters/boss."
+last_heartbeat: "2026-09-12T21:32:30Z"
 claim_status: KEEP_REVIEW
