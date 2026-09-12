@@ -4,7 +4,7 @@
 **Session:** AURORA-20260912T192957Z-001  
 **Claim:** CLM-AURORA-WORLD-001  
 **Branch:** art/world-aurora-veil-001  
-**Remote checkpoint:** 3D Jutsu `d6488148-8547-4ffe-b63d-e5fbec3a339c` revision 5  
+**Remote checkpoint:** 3D Jutsu `d6488148-8547-4ffe-b63d-e5fbec3a339c` revision 7  
 
 ## North Star
 
@@ -16,14 +16,14 @@ Deliver AURORA VEIL as a complete, physically plausible, unmistakable EXOVANT wo
 |---|---|---|---|
 | AUR/WORLD/001 Atomic ownership claim | P0 | DONE | Claim persisted before Blender. Commit `096745b1305ead0e9b5d04ffdd74b1633bdba300`. |
 | AUR/WORLD/002 World Bible + scale ADR | P0 | DONE | `WORLD_BIBLE.md`, `ADR-AUR-001-planet-scale.md`; canon/proposal boundary explicit. |
-| AUR/WORLD/003 L1 orbital representation | P0 | TODO | Separate orbital shell/atmosphere package still required. |
-| AUR/WORLD/004 Macro map + regional anchors | P0 | REVIEW | 3 anchors + 5.2×3.0 km local macro frame exist; global macro/continent representation still incomplete. |
+| AUR/WORLD/003 L1 orbital representation | P0 | REVIEW | Remote rev 7: separate `AUR-PLN-001` shell + `AUR-ATM-001` atmosphere/4 ribbons, 2 canonical station proxies, GLB PASS, no global geography invented, surface camera regression delta 0. Human visual review remains open. |
+| AUR/WORLD/004 Macro map + regional anchors | P0 | REVIEW | 3 anchors + 5.2×3.0 km local macro frame exist; global macro/continent geography intentionally remains UNKNOWN rather than invented. |
 | AUR/TERRAIN/005 Three-region terrain macro | P0 | REVIEW | Low-frequency terrain exists; geology/erosion/traversal refinement and final region tiling pending. |
 | AUR/ARCH/006 Camp observatory/refuge kit | P1 | IN_PROGRESS | 48 m ring, 72 m mast, habitats and sync stations exist as blockout; manufacturing-complete modular kit and assembled proof need production pass. |
 | AUR/TEMPORAL/007 Bounded echo grammar | P0 | IN_PROGRESS | 3 fields, 12 anchors, delayed source/state geometry exist; runtime collision/audio/state schema pending. |
 | AUR/AEON/008 Huerto + 50 m arena | P1 | REVIEW_BLOCKOUT | Canon 50 m arena + 3 sectors + 10 machine trees + AEON blockout exist; final hero design/rig/readability pending. |
 | AUR/ECO/009 Ecology/population lineup | P1 | IN_PROGRESS | Semantic proxies exist for NPC/enemies/fauna/Peregrino; final anatomy/silhouette/art approval pending. |
-| AUR/TECH/010 Export/collision/streaming/QA | P0 | IN_PROGRESS | Blend/GLB export PASS, 4 collision proxies, 27 planning cells, scale QA PASS; engine import/perf/human art gate pending. |
+| AUR/TECH/010 Export/collision/streaming/QA | P0 | IN_PROGRESS | Blend/GLB export PASS through rev 7, 4 collision proxies, 27 planning cells, scale + photometric + surface-regression QA PASS; engine import/perf/human art gate pending. |
 
 ## Stable DoD references
 
@@ -32,7 +32,9 @@ Deliver AURORA VEIL as a complete, physically plausible, unmistakable EXOVANT wo
 - radius only referenced as `PROPOSAL` until accepted;
 - atmosphere/aurora separate;
 - no hero geometry on orbital mesh;
-- coordinate link to local region anchors documented.
+- coordinate link to local region anchors documented;
+- no global geography invented where canon is silent;
+- surface-region visual regression remains unchanged after orbital insertion.
 
 ### AUR/WORLD/004
 - Campamento/Llanura/Huerto stable IDs;
@@ -88,7 +90,7 @@ Deliver AURORA VEIL as a complete, physically plausible, unmistakable EXOVANT wo
 ## Multi-week production backlog
 
 ### WAVE 1 — MACRO WORLD
-- AUR/MAP/011 — global height/biome mask concept from canonical constraints — TODO
+- AUR/MAP/011 — global height/biome mask concept from canonical constraints — DEFERRED_UNTIL_GLOBAL_GEOGRAPHY_DECISION
 - AUR/MAP/012 — Campamento regional terrain pass — IN_PROGRESS
 - AUR/MAP/013 — Llanura regional terrain pass — IN_PROGRESS
 - AUR/MAP/014 — Huerto regional terrain pass — IN_PROGRESS
