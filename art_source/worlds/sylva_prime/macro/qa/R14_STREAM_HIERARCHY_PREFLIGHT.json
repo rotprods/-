@@ -1,5 +1,5 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "claim": "CLM-SYLVA-MACRO-001",
   "source_revision": 13,
   "target_contract": "SYLVA_STREAM_HIERARCHY_R14",
@@ -32,31 +32,49 @@
   },
   "static_validator": {
     "validator": "validate_stream_hierarchy_r14.py",
-    "equivalent_logic_executed": true,
+    "equivalent_logic_executed_after_semantic_v2": true,
     "passed": true,
     "errors": [],
     "l2_count": 4,
     "l3_partition_count": 16,
     "hero_count": 3,
-    "bosque_l2_count": 4
+    "bosque_resident_l3_count": 4,
+    "bosque_l2_coverage_count": 4,
+    "l2_full_residency_implied": false
+  },
+  "residency_semantics": {
+    "hero_residency_granularity": "L3_ONLY",
+    "l2_hero_semantics": "COVERAGE_METADATA_ONLY_NOT_FULL_RESIDENCY",
+    "prefetch_policy_proposal": "ADJACENT_8_PLUS_L3_HERO_RESIDENCY_GROUP"
   },
   "hero_residency": {
     "PUERTO": {
       "core_radius_m_proposal": 550,
-      "core_cells": ["X0Y1", "X1Y1"],
-      "core_l2": ["L2_X0Y0"]
+      "resident_l3_cells": ["X0Y1", "X1Y1"],
+      "l2_coverage": ["L2_X0Y0"]
     },
     "BOSQUE": {
       "core_radius_m_proposal": 200,
-      "core_cells": ["X1Y1", "X1Y2", "X2Y1", "X2Y2"],
-      "core_l2": ["L2_X0Y0", "L2_X0Y1", "L2_X1Y0", "L2_X1Y1"],
-      "finding": "GLOBAL_L2_JUNCTION; use residency overlay, do not move geography"
+      "resident_l3_cells": ["X1Y1", "X1Y2", "X2Y1", "X2Y2"],
+      "l2_coverage": ["L2_X0Y0", "L2_X0Y1", "L2_X1Y0", "L2_X1Y1"],
+      "finding": "GLOBAL_L2_JUNCTION; keep four L3 hero cells resident, do not force four L2 full-residency and do not move geography"
     },
     "VESPER": {
       "core_radius_m_proposal": 400,
-      "core_cells": ["X2Y2", "X3Y2"],
-      "core_l2": ["L2_X1Y1"]
+      "resident_l3_cells": ["X2Y2", "X3Y2"],
+      "l2_coverage": ["L2_X1Y1"]
     }
+  },
+  "relative_complexity": {
+    "receipt": "qa/R14_STREAM_COMPLEXITY_PREFLIGHT.json",
+    "highest_l3_visible_slot_cells": ["X3Y2", "X2Y2", "X0Y1", "X1Y2"],
+    "future_hlod_priority": ["L2_X1Y1", "L2_X0Y0", "L2_X0Y1", "L2_X1Y0"],
+    "hardware_budget_claimed": false
+  },
+  "route_residency": {
+    "receipt": "qa/R14_ROUTE_RESIDENCY_PREFLIGHT.json",
+    "native_test_plan": "NATIVE_STREAM_RESIDENCY_TEST_PLAN.md",
+    "centerline_transition_count": 4
   },
   "four_l2_crossing_hotspots": [
     "SYLVA_BOSQUE_Route0_RootR",
@@ -69,9 +87,10 @@
   "execution_artifacts_ready": [
     "art_source/worlds/sylva_prime/macro/STREAM_HIERARCHY_R14_PROPOSAL.json",
     "art_source/worlds/sylva_prime/macro/build_stream_hierarchy_r14.py",
-    "art_source/worlds/sylva_prime/macro/validate_stream_hierarchy_r14.py"
+    "art_source/worlds/sylva_prime/macro/validate_stream_hierarchy_r14.py",
+    "art_source/worlds/sylva_prime/macro/R14_EXECUTION_GATE.md"
   ],
   "execution_allowed": false,
   "unblock_condition": "Published fleet registry transitions this claim to active with current owner ACK and single-writer epoch is established.",
-  "truth": "This receipt validates the proposed hierarchy only. Blender remains accepted revision 13."
+  "truth": "This receipt validates the R14 proposal only. Blender remains accepted revision 13."
 }
