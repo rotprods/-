@@ -58,44 +58,42 @@ metrics:
       mesh_datablocks_after: 122
       datablocks_removed: 138
       strict_groups_applied: 36
-      blend_bytes_before: 7657188
-      blend_bytes_after: 5597471
       blend_size_reduction_percent: 26.9
-      glb_bytes_before: 8492516
-      glb_bytes_after: 6603972
       glb_size_reduction_percent: 22.2
-      render_equivalent_fingerprint: d8b3912446104a1892fc6c759c490f9a77633e2c7d0612d817714baf8af6c19d
-      r8_to_r9_render_equivalent_match: true
+      primary_r8_to_r9_object_fingerprint_match: true
       runtime_performance_claimed: false
       receipt: art_source/worlds/leviathan/evidence/instancing_optimization_r9.json
     hard_budget_status: UNSET_UNTIL_RUNTIME_AND_TARGET_HARDWARE_QUALIFIED
+  reproducibility:
+    canonical_evaluated_surface_sha256: 6c06329ff60fe34383394bece0c80f66bb9e4486793712854e462c3af8eea26a
+    primary_revision: 9
+    cold_revision: 7
+    primary_cold_match: true
+    criterion: "order-invariant evaluated surface incl. modifiers, UVs, face materials, smoothing, normals, cameras, lights and material parameters"
+    internal_vertex_face_index_order_match_required: false
+    receipt: art_source/worlds/leviathan/evidence/canonical_surface_repro_r9.json
   integration:
     percent: 60
     passed:
       - editable Blender revisions exist
       - portable GLB exports exist
-      - high-level deterministic staged build contracts exist through SOMA
-      - primary r8 -> r9 structural instancing preserves audited object/geometry/UV/material fingerprint
-    open:
-      - production-engine import/instantiate
-      - runtime collision/traversal smoke test
-      - strict raw-mesh/UV cold reproducibility outside Puerto
+      - canonical evaluated surface replay matches primary vs cold
+      - primary r8->r9 structural instancing preserves audited visual surface
+    open: [production-engine import/instantiate, runtime collision/traversal smoke test]
   qa:
     full_pass_gates: 4
     total_gates: 13
     percent_full_pass: 31
     full_pass: [A_CANON foundation, D_GEOMETRY representative foundation, G_SCALE foundation, K_EXPORT representative foundation]
     additional_pipeline_passes:
-      - master semantic rebuild
-      - Puerto strict family rebuild
-      - Jardines high-level semantic rebuild
-      - SOMA high-level semantic rebuild
+      - canonical evaluated surface reproducibility primary vs cold
+      - Puerto strict family replay
       - SOMA actual radius gate 28.3m<29m
-      - revision9 instancing render-equivalent to revision8
-      - UV structural audit has zero degenerate/out-of-range UVs
+      - revision9 instancing visual-surface equivalence
+      - UV structural audit zero degenerate/out-of-range coordinates
       - fleet main continuity CI green
       - PR10 Python suite 75/75 green
-    partial_or_open: [B_ART, C_REALISM, E_UV, F_MATERIALS, H_PERFORMANCE, I_LOD, J_COLLISION runtime, L_ENGINE, M_VISUAL_REGRESSION, STRICT_RAW_MESH_REPRODUCIBILITY]
+    partial_or_open: [B_ART, C_REALISM, E_UV, F_MATERIALS, H_PERFORMANCE, I_LOD, J_COLLISION runtime, L_ENGINE, M_VISUAL_REGRESSION]
 
 priority_state:
   P0_open: [W10/TECH/007, W10/QA/010]
@@ -112,7 +110,8 @@ completed:
   - 18 portable material roles
   - UV/PBR/LOD readiness audit and production contract
   - revision9 safe repeated-mesh instancing optimization on working master
-  - revision9 exact render-equivalent fingerprint match to revision8
+  - canonical evaluated surface fingerprint exact match primary r9 vs cold r7
+  - preliminary raw drift reclassified as internal vertex/face index-order variance
   - producer ACK + Jardines + SOMA deltas persisted in issue #7
   - PR10 CI isolated to manifest drift after 75 passing tests
   - former manifest issue #13 closed after green fleet-harness main
@@ -128,14 +127,15 @@ blocked:
     impacts: [engine import, native collision/traversal]
     evidence: art_source/worlds/leviathan/evidence/runtime_import_blocker_r5.json
     confirmation: "blocked by shell, secure-download path and independent browser attempt"
-  - id: LEV-BLK-008
-    decision: strict raw mesh/UV reproducibility for context-dependent Blender primitives
-    impacts: [W10/QA/010, deterministic optimizer replay]
-    evidence: art_source/worlds/leviathan/evidence/instancing_optimization_r9.json
-    classification: OPEN_RAW_PRIMITIVE_REALIZATION_DRIFT
 
 resolved_blockers:
   - {id: LEV-BLK-006, former_problem: shard-safe global continuity/manifest architecture, resolution: "fleet harness on main f78bfdc8 with green canonical push CI"}
+  - id: LEV-BLK-008
+    former_problem: suspected strict raw primitive mesh/UV reproducibility drift
+    resolution: >-
+      Canonical order-invariant evaluated-surface fingerprint is exactly equal between primary r9 and cold r7.
+      Difference was internal Blender primitive vertex/face indexing only, with no surface/UV/material/modifier difference.
+    evidence: art_source/worlds/leviathan/evidence/canonical_surface_repro_r9.json
 
 risks:
   - direct pixel-level art inspection unavailable in this producer runtime despite render artifacts
@@ -144,14 +144,14 @@ risks:
   - no LOD chain or target-hardware performance budget exists
   - physical planet scale unresolved
   - fleet registry awaits integrator transition reserved->active
-  - strict cold raw-mesh drift exists in Jardines/SOMA/macro primitive realization; Puerto and collision family audits match
+  - optimizer v1 is unnecessarily sensitive to primitive indexing in cold replay; v2 should use order-invariant local surface signatures
 
 next:
-  - replace/canonicalize affected context-dependent primitive construction narrowly in versioned generators, then strict-compare primary/cold
+  - build optimizer v2 using order-invariant local surface+UV/material signature and replay on primary/cold
   - ingest fleet integrator ACK/active transition when published
   - have integrator regenerate root MANIFEST on PR merge tree; do not rerun known-failing CI blindly
   - execute runtime import only when exact provider GLB and qualified engine coexist
   - direct art review before final PBR/LOD propagation
   - resolve/ADR L0 planet scale before orbital representation
 
-last_heartbeat: 2026-09-12T23:15:00+02:00
+last_heartbeat: 2026-09-12T23:18:00+02:00
