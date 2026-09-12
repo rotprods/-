@@ -1,0 +1,233 @@
+extends SceneTree
+## Route driver: reads scene state, but all play uses real InputEvents.
+## Never assigns player/enemy transforms, health, damage, inventory or mission flags.
+const World = preload("res://scenes/main.tscn")
+const SAVE := "user://exovant-test-route.json"
+var world: Node3D
+var passed := 0
+var failed := 0
+var ticks := 0
+var milestones: Array = []
+var phases: Array = []
+var healing_inputs := 0
+var attack_inputs := 0
+var dodge_inputs := 0
+var ended := false
+
+func emit(event: InputEvent) -> void:
+	Input.parse_input_event(event)
+	Input.flush_buffered_events()
+
+func key(code: int, down: bool) -> void:
+	var event := InputEventKey.new()
+	event.physical_keycode = code; event.keycode = code; event.pressed = down
+	emit(event)
+
+func frames(count: int) -> void:
+	for i in range(count):
+		await physics_frame
+		ticks += 1
+		if ticks > 36000 and not ended: fail("Route exceeded total physics-frame budget")
+
+func tap(code: int) -> void:
+	key(code,true)
+	await frames(2)
+	key(code,false)
+	await frames(2)
+
+func attack() -> void:
+	var event := InputEventMouseButton.new()
+	event.button_index = MOUSE_BUTTON_LEFT; event.pressed = true
+	emit(event)
+	await frames(2)
+	event = event.duplicate(); event.pressed = false; emit(event)
+	attack_inputs += 1
+
+func move(direction: Vector3) -> void:
+	var local: Vector3 = direction.rotated(Vector3.UP,-world.player.yaw)
+	for pair in [[JOY_AXIS_LEFT_X,local.x],[JOY_AXIS_LEFT_Y,local.z]]:
+		var event := InputEventJoypadMotion.new()
+		event.device = 0; event.axis = pair[0]; event.axis_value = pair[1]
+		emit(event)
+
+func receipt() -> void:
+	var data := {"suite":"fresh_terra_route","passed":passed,"failed":failed,
+		"physics_frames":ticks,"physics_hz":60,"milestones":milestones,"boss_phases_observed":phases,
+		"attack_inputs":attack_inputs,"dodge_inputs":dodge_inputs,"healing_inputs":healing_inputs,
+		"scope":"Automated scene-aware driver with synthetic InputEvents; no state/health/damage/transform injection. Normal death and save-load relocation are allowed. Not a human playtest or a hardware/feel benchmark."}
+	var out := FileAccess.open("res://evidence/route-tests.json",FileAccess.WRITE)
+	out.store_string(JSON.stringify(data,"  ")); out.close()
+
+func fail(message: String) -> bool:
+	failed += 1; ended = true
+	print("FAIL ",message)
+	milestones.append({"failure":message,"tick":ticks,"position":str(world.player.position) if is_instance_valid(world) else "none"})
+	receipt(); quit(1); return false
+
+func check(condition: bool, message: String) -> bool:
+	if not condition: return fail(message)
+	passed += 1; print("PASS ",message); return true
+
+func mark(id: String) -> void:
+	milestones.append({"id":id,"tick":ticks,"position":str(world.player.position),
+		"health":world.player.health,"stamina":world.player.stamina,"flasks":world.player.flasks,
+		"flags":world.progress.flags.duplicate(),"memories":world.progress.memories})
+	print("ROUTE ",id," ",world.player.position," hp=",world.player.health)
+	receipt()
+
+func menu(prefix: String) -> bool:
+	for i in range(20):
+		var focus := root.gui_get_focus_owner()
+		if focus is Button and focus.text.begins_with(prefix):
+			await tap(KEY_ENTER); return true
+		await tap(KEY_DOWN)
+	return fail("Cannot navigate to menu button: "+prefix)
+
+func nearest_threat(radius: float, include_boss: bool = true) -> Node3D:
+	var found: Node3D
+	for enemy in world.enemies:
+		if enemy.health <= 0: continue
+		if enemy.boss and (not include_boss or not world.progress.flags.get("archive",false)): continue
+		var distance: float = enemy.position.distance_to(world.player.position)
+		if distance < radius: radius = distance; found = enemy
+	return found
+
+func fight(enemy: Node3D) -> bool:
+	var p = world.player
+	if is_instance_valid(p.locked): await tap(KEY_Q)
+	await tap(KEY_Q)
+	var start := ticks
+	while enemy.health > 0 and ticks-start < 12000:
+		if p.position.z > 10 and enemy.position.z < -5: return fail("Unplanned death during combat with "+enemy.enemy_id)
+		if enemy.boss and not phases.has(enemy.phase): phases.append(enemy.phase)
+		var delta: Vector3 = enemy.position-p.position; delta.y = 0
+		var distance := delta.length()
+		if p.health <= 55 and p.flasks > 0 and p.attack_time <= 0 and p.dodge_time <= 0:
+			await tap(KEY_R); healing_inputs += 1
+		var threat_delta: Vector3 = p.position-enemy.attack_target; threat_delta.y = 0
+		if enemy.state == "windup" and threat_delta.length() < enemy.attack_radius+.8:
+			var away := threat_delta.normalized() if threat_delta.length() > .2 else -delta.normalized()
+			move(away)
+			if enemy.timer < .6 and p.dodge_time <= 0 and p.attack_time <= 0 and p.stamina >= 27:
+				await tap(KEY_SPACE); dodge_inputs += 1
+		elif p.stamina < 22:
+			move(-delta.normalized())
+		elif distance > (4.1 if enemy.boss else 2.1):
+			move(delta.normalized())
+		elif p.attack_time <= 0 and p.dodge_time <= 0 and enemy.state != "windup":
+			move(Vector3.ZERO); await attack()
+		else: move(Vector3.ZERO)
+		await frames(4)
+	move(Vector3.ZERO)
+	if is_instance_valid(p.locked): await tap(KEY_Q)
+	if enemy.health > 0: return fail("Combat did not resolve: "+enemy.enemy_id)
+	mark("defeated:"+enemy.enemy_id); return true
+
+func walk(target: Vector3, combat: bool = true, boss_combat: bool = true) -> bool:
+	var start := ticks
+	var anchor: Vector3 = world.player.position
+	var anchor_tick := ticks
+	while ticks-start < 4800:
+		var delta: Vector3 = target-world.player.position; delta.y = 0
+		if delta.length() < .65:
+			move(Vector3.ZERO); await frames(3); return true
+		if combat:
+			var enemy := nearest_threat(11,boss_combat)
+			if enemy != null:
+				move(Vector3.ZERO)
+				if not await fight(enemy): return false
+				anchor = world.player.position; anchor_tick = ticks; continue
+		move(delta.normalized())
+		await frames(4)
+		if ticks-anchor_tick > 180:
+			if world.player.position.distance_to(anchor)<.25: return fail("Route collision blocks target "+str(target))
+			anchor = world.player.position; anchor_tick = ticks
+	return fail("Walk exceeded budget to "+str(target))
+
+func interact(id: String) -> bool:
+	if not check(world.current_interaction().get("id")==id,"Physical reach of "+id): return false
+	await tap(KEY_E); return true
+
+func load_scene() -> void:
+	if is_instance_valid(world):
+		move(Vector3.ZERO); world.queue_free(); await process_frame
+	world = World.instantiate(); root.add_child(world)
+	await frames(4)
+	await menu("Despertar" if world.progress.flags.is_empty() else "Continuar")
+	await frames(15)
+
+func _init() -> void:
+	run.call_deferred()
+
+func run() -> void:
+	Input.ignore_joypad_on_unfocused_application = false
+	for path in [SAVE,"user://exovant-test-route-controls.json"]:
+		for suffix in ["",".tmp",".bak"]: DirAccess.remove_absolute(path+suffix)
+	await load_scene(); mark("fresh_spawn")
+	if not await walk(Vector3(-5,0,16)): return
+	if not await interact("camp"): return
+	if not await walk(Vector3(5,0,15)): return
+	if not await interact("ines"): return
+	if not check(world.progress.flags.get("met_ines",false),"Normal dialogue accepts Ines mission"): return
+	await menu("Iré"); mark("ines")
+	if not await walk(Vector3(0,0,-27)): return
+	if not await walk(Vector3(-9,0,-27.5)): return
+	if not await interact("archive"): return
+	if not check(not world.progress.flags.get("archive",false) and not world.modal_open,"Archive refuses access before water"): return
+	if not await walk(Vector3(0,0,-49.9)): return
+	var atlas = world.enemies[-1]
+	await tap(KEY_Q); await attack(); await frames(40); await tap(KEY_Q)
+	if not check(atlas.health==atlas.max_health and atlas.state=="idle","ATLAS cannot be damaged or activated before archive"): return
+	mark("out_of_order_safe")
+	if not await walk(Vector3(0,0,0)): return
+	if not await walk(Vector3(7,0,-3.3)): return
+	if not await interact("valves"): return
+	for i in range(3):
+		for j in range(i+1):
+			if not await menu("Válvula %d:" % (i+1)): return
+	if not check(world.progress.flags.get("water",false),"Physical menu navigation solves water puzzle"): return
+	mark("water")
+	if not await walk(Vector3(0,0,-27)): return
+	if not await walk(Vector3(-9,0,-27.5)): return
+	if not await interact("archive"): return
+	await menu("Conservar")
+	if not check(world.progress.flags.get("archive",false),"Archive obtained through normal interaction"): return
+	mark("archive")
+	# Let the live boss kill the player; no direct damage/death call or HP assignment.
+	if not await walk(Vector3(0,0,-49),false): return
+	move(Vector3.ZERO)
+	var death_start := ticks
+	var memories: int = world.progress.memories
+	while world.progress.echo.is_empty() and ticks-death_start<1800: await frames(5)
+	if not check(not world.progress.echo.is_empty() and world.progress.echo_value==memories and world.progress.flags.get("archive",false),"Real boss damage causes death while retaining quest and echo"): return
+	mark("death_atlas")
+	if not await walk(Vector3(0,0,-35),true,false): return
+	var echo: Array = world.progress.echo.duplicate()
+	if not await walk(Vector3(echo[0],0,echo[2]),true,false): return
+	await tap(KEY_E)
+	if not check(world.progress.echo.is_empty() and world.progress.memories==memories,"Physical route recovers echo after death"): return
+	mark("echo_recovered")
+	if not await fight(atlas): return
+	if not check(world.progress.flags.get("atlas",false) and phases.has(3),"Combat inputs defeat all three ATLAS phases"): return
+	if not await walk(Vector3(0,0,-54)): return
+	if not await interact("choice"): return
+	await menu("INDUSTRIA")
+	if not check(world.progress.choice=="industria","Outcome chosen through focused UI"): return
+	mark("choice_industria")
+	if not await walk(Vector3(0,0,-83)): return
+	if not await interact("gate"): return
+	if not check(world.modal_open and world.modal_content.get_child(1).text.contains("INDUSTRIA"),"Traversed ramp and portal acknowledges finished Terra"): return
+	await menu("Volver"); mark("portal")
+	var before_reload: Dictionary = world.progress.snapshot()
+	await load_scene()
+	if not check(world.progress.choice=="industria" and world.progress.memories==before_reload.memories and world.enemies[-1].health<=0,"Scene reload recovers outcome/rewards and keeps ATLAS defeated"): return
+	if not await walk(Vector3(0,0,-83)): return
+	if not await interact("gate"): return
+	if not check(world.modal_open and world.modal_content.get_child(1).text.contains("INDUSTRIA") and world.progress.memories==before_reload.memories,"Post-reload route preserves ending without duplicate enemy rewards"): return
+	mark("portal_after_reload")
+	ended = true; receipt()
+	world.queue_free(); await process_frame
+	for path in [SAVE,"user://exovant-test-route-controls.json"]:
+		for suffix in ["",".tmp",".bak"]: DirAccess.remove_absolute(path+suffix)
+	print("ROUTE_COMPLETE ",passed," checks, ",ticks," physics frames")
+	quit(0)

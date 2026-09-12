@@ -1,0 +1,726 @@
+{
+  "schema_version": 1,
+  "status": "planned",
+  "worlds": [
+    {
+      "id": "terra",
+      "name": "TERRA",
+      "status": "planned",
+      "design_source": "design/EXOVANT_DATA.json",
+      "galaxy": "VÍA LÁCTEA",
+      "star": "Sol, estrella G; referencia real con futuro ficticio",
+      "sky": "Observador: costa terrana. Aguja Rota: antiguos satélites confundidos con un asterismo; Mano del Retorno: constelación cultural ficticia.",
+      "gravity": "1,00 g",
+      "rule": "La vegetación conduce impulsos de mantenimiento: cortar una raíz abre una puerta y altera el riego de otra zona. El agua conecta lectura de ecología, acceso y autoridad.",
+      "regions": [
+        "Costa de los Retornados: muelles, viviendas y bosque de sal",
+        "Archivo Abisal: oficinas inundadas y bóvedas de semillas",
+        "Primer Reliquario: jardín industrial, elevador y arena de ATLAS"
+      ],
+      "palette": [
+        "hormigón marino #686F69",
+        "cerámica marfil #C8C1AC",
+        "bronce oxidado #647568",
+        "agua mineral #384F50"
+      ],
+      "shape_language": "Contrafuertes anchos bajo arcos de servicio; canales horizontales abiertos, cámaras de presión verticales y juntas injertadas. La reparación humana de 2950 interrumpe el sistema original con placas atornilladas.",
+      "wear_logic": "Eflorescencia hasta la marca de marea, chorretones bajo pernos, cobre expuesto en agarres, raíces alojadas en juntas húmedas. No repartir corrosión homogénea por toda la superficie.",
+      "lighting": "Sol marítimo lateral, rebote frío del agua y luz ámbar localizada en refugios. El cielo y la niebla conservan contraste de enemigos contra hormigón.",
+      "costume_language": "Capa de trabajo corta, piezas cerámicas reemplazadas, tejido impermeable oscuro y herrajes de bronce. El rango se lee en quién puede ocultar una reparación.",
+      "boss": {
+        "id": "BOSS_terra",
+        "name": "ATLAS, el jardinero orbital",
+        "proposed_height_m": 9.8,
+        "silhouette": "Pelvis de bronce portante, torso cisterna vertical y brazo de poda asimétrico; tres masas separadas por articulaciones amplias. Boquillas, registro de mantenimiento y raíz expuesta tienen función visible.",
+        "arena_source": "Plataforma circular de 48 m, tres brazos de riego, dos pasos laterales y un núcleo central. El bloqueo de cámara se puede trasladar entre torso y herramienta."
+      },
+      "restrictions": [
+        "Colores funcionales del canon: ámbar refugio, cian memoria, bermellón hostilidad, blanco autoridad; además forma y sonido.",
+        "Dimensiones y materialidad propuestas; requieren revisión, importación y medición.",
+        "Cielo y cosmología son datos de dirección, no nuevos planetas o estrellas modelados."
+      ],
+      "prop_brief_names": [
+        "válvula triple de riego",
+        "manómetro de membrana",
+        "cassette de semillas",
+        "acta sellada",
+        "bomba manual",
+        "filtro de sal",
+        "caja de injerto",
+        "lámpara de refugio",
+        "cuenco cerámico reparado",
+        "manguera de presión",
+        "brida de reparación",
+        "contador de agua",
+        "botas de muelle",
+        "banco plegable",
+        "taburete de archivo",
+        "armario estanco",
+        "carrete de cable",
+        "pantalla de turnos",
+        "baliza de marea",
+        "carro de vivero"
+      ]
+    },
+    {
+      "id": "ares",
+      "name": "ARES IX",
+      "status": "planned",
+      "design_source": "design/EXOVANT_DATA.json",
+      "galaxy": "VÍA LÁCTEA",
+      "star": "Sol; Ares IX designa el noveno distrito colonial de Marte",
+      "sky": "Observador: distrito Ares IX. Mandíbula: luces de una refinería orbital; Viuda Roja: dibujo cultural de navegantes, sin coordenadas astronómicas atribuidas.",
+      "gravity": "0,38 g",
+      "rule": "El calor es soporte vital y peligro táctico. Redirigirlo cambia visibilidad, accesos y supervivencia de refugios; cada conducto ofrece lectura térmica previa.",
+      "regions": [
+        "Escarpa del Turno Nueve: pueblo minero y vías de carga",
+        "Pozos de los Durmientes: galerías térmicas con embriones",
+        "Mandíbula del Manto: instalaciones móviles y reactor de MOL-9"
+      ],
+      "palette": [
+        "óxido hematita #793E30",
+        "aislamiento ceniza #A89A87",
+        "acero térmico #33383A",
+        "cobre incandescente #B56A33"
+      ],
+      "shape_language": "Anillos de presión concéntricos, patas de carga trianguladas y galerías apiladas en roca roja estratificada. Las juntas de expansión cuentan dónde cambia la temperatura.",
+      "wear_logic": "Abrasión por polvo en caras expuestas, temple azulado cerca de hornos, grasa protegida en rodamientos y reparaciones con abrazaderas numeradas.",
+      "lighting": "Luz solar pequeña y dura; focos de mantenimiento rasantes y calor naranja confinado a conductos. Toda ruta térmica segura dispone de marcas físicas.",
+      "costume_language": "Abrigos térmicos segmentados, visores contra polvo, botas de baja gravedad con anclaje y placas de identificación de turno.",
+      "boss": {
+        "id": "BOSS_ares",
+        "name": "MOL-9, el devorador de mantos",
+        "proposed_height_m": 14.0,
+        "silhouette": "Cuerpo excavador suspendido sobre seis anclajes; mandíbula de discos en capas, vientre reactor y chimeneas dorsales. El giro de perforación no elimina la lectura del frente.",
+        "arena_source": "Foso industrial de 64 m con pasarelas que sobreviven al cambio de fase; salidas térmicas alternas."
+      },
+      "restrictions": [
+        "Colores funcionales del canon: ámbar refugio, cian memoria, bermellón hostilidad, blanco autoridad; además forma y sonido.",
+        "Dimensiones y materialidad propuestas; requieren revisión, importación y medición.",
+        "Cielo y cosmología son datos de dirección, no nuevos planetas o estrellas modelados."
+      ],
+      "prop_brief_names": [
+        "termómetro de capilar",
+        "cartucho de calefacción",
+        "llave de presión",
+        "filtro antipolvo",
+        "casco de turno",
+        "baliza sísmica",
+        "núcleo de sondeo",
+        "broca agotada",
+        "manta térmica",
+        "incubadora portátil",
+        "placa de turno",
+        "caja de raciones",
+        "bomba de emergencia",
+        "sello de esclusa",
+        "rodamientos",
+        "ventilador de galería",
+        "botella de oxígeno",
+        "trípode topográfico",
+        "mesa de concesión",
+        "taquilla presurizada"
+      ]
+    },
+    {
+      "id": "pelagos",
+      "name": "PELAGOS",
+      "status": "planned",
+      "design_source": "design/EXOVANT_DATA.json",
+      "galaxy": "VÍA LÁCTEA",
+      "star": "Talas, K2 V ficticia",
+      "sky": "Observador: superficie de Pelagos. La Red Vacía y Pez de Tres Ojos son constelaciones culturales locales; cambian bajo refracción acuática.",
+      "gravity": "0,91 g (propuesta revisada)",
+      "rule": "El arrecife almacena sonido; reproducir una secuencia atrae fauna, abre membranas o delata al jugador. La información recogida pertenece a individuos vivos.",
+      "regions": [
+        "Mercado de Boyas: población móvil y ensamblajes flotantes",
+        "Coro del Arrecife: canales que retienen memoria",
+        "Fosa de las Mil Miradas: santuario de THALASSA"
+      ],
+      "palette": [
+        "concha caliza #D7C8B1",
+        "mar profundo #203F4F",
+        "tejido naval #536D71",
+        "coral apagado #B77466"
+      ],
+      "shape_language": "Flotadores ovoides y plataformas articuladas; conchas portantes asimétricas, pasarelas con línea de flotación y membranas acústicas tensadas entre tres apoyos.",
+      "wear_logic": "Costras bajo flotación, fibras saladas en bordes, caucho brillante en zonas de contacto, barniz perdido donde se arrastran cabos.",
+      "lighting": "Cielo cubierto con destellos de superficie; caústicas suaves localizadas, bioluminiscencia baja y siluetas separadas por láminas de agua.",
+      "costume_language": "Tejidos sellados, lastres desmontables, arneses de cuerda y auriculares de hidrófono. Objetos de memoria se llevan en recipientes consentidos, no baterías decorativas.",
+      "boss": {
+        "id": "BOSS_pelagos",
+        "name": "THALASSA, coral de los mil ojos",
+        "proposed_height_m": 12.0,
+        "silhouette": "Colonia de coral con corona radial de ojos-pólipo y tres raíces ancla; torso central macizo, brazos de filamentos separados. Cambia apertura sin convertir toda la arena en transparencia.",
+        "arena_source": "Cámara inundable de 52 m con plataformas de mantenimiento y anclajes; nunca exigir combate preciso en nado libre antes de validarlo."
+      },
+      "restrictions": [
+        "Colores funcionales del canon: ámbar refugio, cian memoria, bermellón hostilidad, blanco autoridad; además forma y sonido.",
+        "Dimensiones y materialidad propuestas; requieren revisión, importación y medición.",
+        "Cielo y cosmología son datos de dirección, no nuevos planetas o estrellas modelados."
+      ],
+      "prop_brief_names": [
+        "hidrófono",
+        "lastre de buzo",
+        "carrete de arpón",
+        "baliza de boya",
+        "caja de membranas",
+        "cesto de coral caído",
+        "filtro salino",
+        "brújula acústica",
+        "cuenco flotante",
+        "red de comercio",
+        "esclusa de muestra",
+        "frasco de consentimiento",
+        "bomba de achique",
+        "concha afinada",
+        "tabla impermeable",
+        "chaleco de flotación",
+        "lámpara sumergible",
+        "amarre articulado",
+        "escotilla de boyas",
+        "camilla anfibia"
+      ]
+    },
+    {
+      "id": "umbra",
+      "name": "UMBRA",
+      "status": "planned",
+      "design_source": "design/EXOVANT_DATA.json",
+      "galaxy": "VÍA LÁCTEA",
+      "star": "Sere, enana roja M4 V ficticia",
+      "sky": "Observador: franja de Umbra. Ojo Quieto y Esposas del Alba son dibujos de la Flotilla; el sol mantiene posición casi fija.",
+      "gravity": "0,81 g",
+      "rule": "Luz y sombra son permisos de navegación además de temperatura. Encender un reflector revela rutas y expone caravanas a vigilancia.",
+      "regions": [
+        "Caravana del Terminador: hogares que siguen corredores térmicos",
+        "Observatorio de los Sin Nombre: antenas y archivos de ciudadanía",
+        "Corona de NOCTIL: gigantesca estación de sombra"
+      ],
+      "palette": [
+        "hielo carbón #293A45",
+        "tela pizarra #50545E",
+        "aluminio opaco #A7AFB2",
+        "luz de reflector #D3C2A0"
+      ],
+      "shape_language": "Caravanas largas y bajas, pies esquí, velas tensadas y reflectores de medio disco; accesos orientados hacia la franja térmica y marcas de rutas borradas parcialmente.",
+      "wear_logic": "Escarcha a sotavento, abrasión en esquís, costuras reparadas, condensación solo en recintos templados y paneles de identidad despegados.",
+      "lighting": "Luz de horizonte casi horizontal; haces recortados por pantallas, relleno del hielo, sin negros que oculten suelo o ventanas de ataque.",
+      "costume_language": "Lonas plegadas como cuellos térmicos, cristales antirreflejo y mapas cosidos; los inspectores usan superficies reflectoras que delatan su orientación.",
+      "boss": {
+        "id": "BOSS_umbra",
+        "name": "NOCTIL, el eclipse viviente",
+        "proposed_height_m": 11.0,
+        "silhouette": "Estructura vertical de tres pantallas de eclipse y un cuerpo estrecho articulado; contrapesos inferiores y corona de reflector. La silueta gira, el suelo permanece visible.",
+        "arena_source": "Anillo de observación de 44 m con pantallas giratorias; el suelo permanece visible y las áreas seguras tienen señal redundante."
+      },
+      "restrictions": [
+        "Colores funcionales del canon: ámbar refugio, cian memoria, bermellón hostilidad, blanco autoridad; además forma y sonido.",
+        "Dimensiones y materialidad propuestas; requieren revisión, importación y medición.",
+        "Cielo y cosmología son datos de dirección, no nuevos planetas o estrellas modelados."
+      ],
+      "prop_brief_names": [
+        "mapa de terminador",
+        "reflector plegable",
+        "cápsula de calor",
+        "sello de ciudadanía",
+        "trineo de carga",
+        "cantimplora aislada",
+        "linterna obturada",
+        "aguja de hielo",
+        "mástil de baliza",
+        "botiquín de caravana",
+        "cortina térmica",
+        "tarjeta de tránsito",
+        "carrete de lona",
+        "brasero sellado",
+        "prismáticos",
+        "placa de reflector",
+        "raqueta térmica",
+        "armario de exilio",
+        "reloj de sombra",
+        "trípode de estrellas"
+      ]
+    },
+    {
+      "id": "sylva",
+      "name": "SYLVA PRIME",
+      "status": "planned",
+      "design_source": "design/EXOVANT_DATA.json",
+      "galaxy": "ANDRÓMEDA",
+      "star": "Dendra, K1 V ficticia en Andrómeda",
+      "sky": "Observador: claro alto de Sylva. Raíz Suspendida y El Huésped dibujan parentescos, no conquistas.",
+      "gravity": "1,12 g (propuesta revisada)",
+      "rule": "La red vegetal comparte información con retraso local. Dañar una raíz produce una respuesta en otra zona, anunciada por color, sonido y mensajeros.",
+      "regions": [
+        "Puerto del Injerto: enclave humano alojado en tejido vivo",
+        "Bosque de las Frases: rutas que responden a señales aprendidas",
+        "Cámara de VESPER: nudo radical bajo una ciudad forestal"
+      ],
+      "palette": [
+        "corteza violeta #594E54",
+        "hoja profunda #365149",
+        "micelio crema #C1BBA6",
+        "injerto terrano #7F8A83"
+      ],
+      "shape_language": "Cargas distribuidas por horquillas vivas, puentes de raíces paralelas y plataformas injertadas con abrazaderas blandas; nodos de comunicación como cámaras huecas.",
+      "wear_logic": "Cicatrices selladas con savia, madera comprimida junto a injertos, herramientas pulidas por uso y crecimiento nuevo con superficie tersa.",
+      "lighting": "Dosel estratificado con claros de luz; señales micelares viajan por zonas discretas. Separar criaturas y fondo mediante valor, no neón generalizado.",
+      "costume_language": "Tejidos vegetales trenzados y placas humanas flotantes en arneses sin clavos en el anfitrión; cada interfaz muestra un límite de contacto.",
+      "boss": {
+        "id": "BOSS_sylva",
+        "name": "VESPER, raíz de todas las voces",
+        "proposed_height_m": 13.0,
+        "silhouette": "Nudo radical con siete cuellos portadores de voces, tres troncos de carga y brazos de raíz que se repliegan hacia terrazas. La masa central deja vacíos para leer los apoyos.",
+        "arena_source": "Tres terrazas conectadas por raíces anchas; el desplazamiento vertical se resuelve con rutas y anclajes, no saltos de precisión sorpresa."
+      },
+      "restrictions": [
+        "Colores funcionales del canon: ámbar refugio, cian memoria, bermellón hostilidad, blanco autoridad; además forma y sonido.",
+        "Dimensiones y materialidad propuestas; requieren revisión, importación y medición.",
+        "Cielo y cosmología son datos de dirección, no nuevos planetas o estrellas modelados."
+      ],
+      "prop_brief_names": [
+        "abrazadera de injerto",
+        "cuenco de savia",
+        "aguja de traducción",
+        "tablilla de gestos",
+        "malla de cultivo",
+        "cesta de esporas",
+        "membrana de ventana",
+        "herramienta sin corte",
+        "férula de raíz",
+        "linterna de hongo",
+        "recipiente de pacto",
+        "cortina de fibras",
+        "banco de crecimiento",
+        "registro de nutrientes",
+        "bota de corteza",
+        "campana hueca",
+        "pulsera de respuesta",
+        "sensor micelar",
+        "marcador de límite",
+        "arnés de emisario"
+      ]
+    },
+    {
+      "id": "khepri",
+      "name": "KHEPRI",
+      "status": "planned",
+      "design_source": "design/EXOVANT_DATA.json",
+      "galaxy": "ANDRÓMEDA",
+      "star": "Sahra, F8 V ficticia en Andrómeda",
+      "sky": "Observador: Khepri al anochecer. Escarabajo Abierto y El Deudor son cartas rituales de navegación.",
+      "gravity": "0,63 g",
+      "rule": "La luz almacena energía y también derechos de uso. Orientar espejos cambia temperatura, puertas y el suministro de barrios.",
+      "regions": [
+        "Ciudad de los Toldos: talleres y deuda energética",
+        "Mar de Cristal: campos de reflexión y rutas de sombra",
+        "Crisol de RAKHET: máquina solar encadenada"
+      ],
+      "palette": [
+        "cerámica arena #BC9872",
+        "bronce seco #8C7046",
+        "sombra índigo #34384F",
+        "vidrio humo #73838D"
+      ],
+      "shape_language": "Toldos radiales entre pilares bajos; espejos inclinados de bordes gruesos y rutas de sombra físicamente continuas. Grandes prismas tienen base y mecanismo de rotación.",
+      "wear_logic": "Abrasión dirigida por viento, esmalte microfisurado por choque térmico, zonas de agarre frías y tela decolorada por caras expuestas.",
+      "lighting": "Sol alto duro con sombras útiles, rebotes cálidos y reflejos confinados. Haz peligroso también tiene emisor orientado y aviso rítmico.",
+      "costume_language": "Placas de sombra separadas del cuerpo, guantes aislantes y velos técnicos cortos; el Sínodo marca energía adeudada en piezas reemplazables.",
+      "boss": {
+        "id": "BOSS_khepri",
+        "name": "RA-KHET, sol encadenado",
+        "proposed_height_m": 10.5,
+        "silhouette": "Escarabajo reactor dentro de seis cadenas de heliostato; escudo dorsal partido, abdomen acumulador y cabeza baja. Pozos de sombra se leen entre brazos solares.",
+        "arena_source": "Hexágono de espejos de 56 m; cuatro pozos de sombra siempre accesibles y plataformas estables."
+      },
+      "restrictions": [
+        "Colores funcionales del canon: ámbar refugio, cian memoria, bermellón hostilidad, blanco autoridad; además forma y sonido.",
+        "Dimensiones y materialidad propuestas; requieren revisión, importación y medición.",
+        "Cielo y cosmología son datos de dirección, no nuevos planetas o estrellas modelados."
+      ],
+      "prop_brief_names": [
+        "prisma de servicio",
+        "contador de deuda",
+        "guante aislante",
+        "panel de espejo",
+        "toldo reparado",
+        "cartucho de sombra",
+        "batería cerámica",
+        "reloj solar",
+        "baliza térmica",
+        "jarra aislada",
+        "pedestal de lente",
+        "afilador de vidrio",
+        "escala de energía",
+        "cajón ventilado",
+        "silla de taller",
+        "arnés de vela",
+        "capucha reflectora",
+        "cuerda de toldo",
+        "cerrojo de barrio",
+        "caja de fusibles"
+      ]
+    },
+    {
+      "id": "nacre",
+      "name": "NACRE",
+      "status": "planned",
+      "design_source": "design/EXOVANT_DATA.json",
+      "galaxy": "ANDRÓMEDA",
+      "star": "Mneme A/B, binaria ficticia estable para la ficción del juego",
+      "sky": "Observador: luna Nacre. Dos Testigos y El Recipiente cambian su importancia según posición de las dos estrellas.",
+      "gravity": "0,26 g",
+      "rule": "Un recuerdo puede existir en varias versiones con procedencia distinta. La autenticidad abre rutas narrativas; copiarlo consume soporte y modifica quién conserva acceso.",
+      "regions": [
+        "Casa de las Copias: mercado de recuerdos restaurados",
+        "Canteras de Concha: bibliotecas que crecen por estratos",
+        "Archivo de MNEMOS: salas esféricas conectadas por puentes"
+      ],
+      "palette": [
+        "concha marfil #D3CCBE",
+        "estrato lavanda #918898",
+        "bronce pálido #8A8065",
+        "tinta mineral #3F4C56"
+      ],
+      "shape_language": "Bóvedas de concha seccionadas, apoyos que muestran estratos y puentes delgados con costillas inferiores. Las versiones documentales ocupan capas separadas físicamente.",
+      "wear_logic": "Bordes de placas pulidos por consulta, pequeñas reparaciones en resina mate, polvo acumulado en estratos retirados y etiquetas reemplazadas conservando el hueco anterior.",
+      "lighting": "Luz suave por aperturas altas; nácar con respuesta angular sobria y memoria cian únicamente en placas activas. Evitar translucencia en todas las paredes.",
+      "costume_language": "Capas cortas con bolsillos planos, protección de manos y soporte de placas junto al torso; duplicaciones aparecen en herramientas de procedencia distinta.",
+      "boss": {
+        "id": "BOSS_nacre",
+        "name": "MNEMOS, el archivo encarnado",
+        "proposed_height_m": 9.0,
+        "silhouette": "Custodio bibliotecario formado por tres bóvedas articuladas y torso de archivo estratificado; manos como atriles móviles. Las versiones comparten anclajes claros.",
+        "arena_source": "Biblioteca circular de 46 m con tres versiones visibles de su estructura; solo una cambia colisión por transición."
+      },
+      "restrictions": [
+        "Colores funcionales del canon: ámbar refugio, cian memoria, bermellón hostilidad, blanco autoridad; además forma y sonido.",
+        "Dimensiones y materialidad propuestas; requieren revisión, importación y medición.",
+        "Cielo y cosmología son datos de dirección, no nuevos planetas o estrellas modelados."
+      ],
+      "prop_brief_names": [
+        "placa de memoria",
+        "atril estratigráfico",
+        "pincel de restauración",
+        "sello de procedencia",
+        "caja de copias",
+        "lente de lectura",
+        "bandeja de concha",
+        "resina de reparación",
+        "guantes de archivo",
+        "candelero frío",
+        "espaciador de capas",
+        "mesa de contradicción",
+        "ficha de préstamo",
+        "libro mineral",
+        "tubo acústico",
+        "estante giratorio",
+        "bolsa de fragmentos",
+        "cuña de cantera",
+        "campana de consulta",
+        "cierre de bóveda"
+      ]
+    },
+    {
+      "id": "vanta",
+      "name": "VANTA",
+      "status": "planned",
+      "design_source": "design/EXOVANT_DATA.json",
+      "galaxy": "ANDRÓMEDA",
+      "star": "Drav, K5 V ficticia en Andrómeda",
+      "sky": "Observador: Vanta. Martillo Quieto y Los Turnos describen posiciones de estaciones, distinguidas de estrellas en el mapa.",
+      "gravity": "1,86 g",
+      "rule": "El magnetismo redistribuye chatarra y abre rutas. Las tormentas se anuncian; el jugador puede anclar equipo o cambiar de corredor.",
+      "regions": [
+        "Puerto de las Manos: sindicato, talleres y cantinas",
+        "Lluvia de Hierro: cauces de chatarra y raíles magnéticos",
+        "Anillo Caído: astillero de FERRUM"
+      ],
+      "palette": [
+        "acero lluvia #424B50",
+        "óxido marrón #795343",
+        "esmalte obrero #A5936C",
+        "imán carbón #262E33"
+      ],
+      "shape_language": "Grúas bajas con contrapesos sobredimensionados, cascos seccionados reutilizados como refugios, carriles magnéticos en suelo y cerchas robustas para 1,86 g.",
+      "wear_logic": "Golpes de carga con dirección, pintura lijada en agarres, soldadura de reparación reciente y escoria alojada donde el campo magnético la retiene.",
+      "lighting": "Cielo de polvo metálico con focos de astillero bajos; arcos de soldadura momentáneos, sin brillos que borren la lluvia de peligro.",
+      "costume_language": "Arneses anchos de carga, botas magnéticas voluminosas, tejidos cortos sin partes que se enganchen; remiendos y turnos visibles como historia laboral.",
+      "boss": {
+        "id": "BOSS_vanta",
+        "name": "FERRUM, coloso de chatarra",
+        "proposed_height_m": 18.0,
+        "silhouette": "Coloso de tres secciones de casco con brazos grúa y piernas anchas de patas estabilizadoras; imanes visibles reúnen cobertura en carriles definidos.",
+        "arena_source": "Astillero de 72 m con carriles de chatarra y zonas ancladas; el jefe cambia cobertura, no la dirección de todos los controles."
+      },
+      "restrictions": [
+        "Colores funcionales del canon: ámbar refugio, cian memoria, bermellón hostilidad, blanco autoridad; además forma y sonido.",
+        "Dimensiones y materialidad propuestas; requieren revisión, importación y medición.",
+        "Cielo y cosmología son datos de dirección, no nuevos planetas o estrellas modelados."
+      ],
+      "prop_brief_names": [
+        "gancho de grúa",
+        "remache de casco",
+        "bota magnética",
+        "placa sindical",
+        "carrete de tensión",
+        "soldador",
+        "careta de taller",
+        "caja de rodamientos",
+        "mesa de cantina",
+        "banco de casco",
+        "mordaza de carga",
+        "imán portátil",
+        "ficha de turno",
+        "termo de trabajo",
+        "palanca de vías",
+        "eslinga",
+        "señal de tormenta",
+        "amortiguador",
+        "casillero de piezas",
+        "medidor de campo"
+      ]
+    },
+    {
+      "id": "aurora",
+      "name": "AURORA VEIL",
+      "status": "planned",
+      "design_source": "design/EXOVANT_DATA.json",
+      "galaxy": "EL UMBRAL",
+      "star": "Velar, estrella ficticia afectada por la Red; comportamiento temporal deliberadamente fantástico",
+      "sky": "Observador: Aurora Veil. La Herida y Reloj Sin Centro son dibujos culturales; el desfase no cambia coordenadas reales en la base científica.",
+      "gravity": "0,94 g",
+      "rule": "Los ecos temporales repiten acciones en áreas pequeñas y durante intervalos limitados. Los estados tienen reglas estables; no se rebobina el mundo entero.",
+      "regions": [
+        "Campamento del Segundo Día: observatorio y refugio",
+        "Llanura de las Repeticiones: eventos locales que se superponen",
+        "Huerto de AEON: máquinas que preservan futuros posibles"
+      ],
+      "palette": [
+        "hierba ceniza #788476",
+        "aluminio antiguo #929A95",
+        "vidrio polar #8196A4",
+        "bronce reloj #8C785A"
+      ],
+      "shape_language": "Observatorios de aros abiertos, campamentos desmontables y relojes con mecanismos visibles. Una misma forma puede duplicarse desplazada, nunca toda la geometría sin presupuesto.",
+      "wear_logic": "Tres edades de uso sobre piezas equivalentes, desgaste correspondiente a cada estado y marcas físicas de fecha para distinguir ecos.",
+      "lighting": "Aurora amplia como luz de fondo; ecos desplazados temporalmente usan contorno y ritmo discretos. La exposición no cambia en cada repetición.",
+      "costume_language": "Capas de campo cortas, relojes de muñeca mecánicos y bolsas de registro con fechas; las duplicaciones son objetos documentados, no clones decorativos.",
+      "boss": {
+        "id": "BOSS_aurora",
+        "name": "AEON, el fruto del mañana",
+        "proposed_height_m": 11.5,
+        "silhouette": "Árbol mecánico de tres aros y cápsulas de fruto suspendidas por brazos robustos; un órgano de reloj central define el pulso y las ramas indican sector de eco.",
+        "arena_source": "Huerto de 50 m con tres sectores de eco, cada uno con un único retraso visible. Línea temporal de arena independiente del guardado global."
+      },
+      "restrictions": [
+        "Colores funcionales del canon: ámbar refugio, cian memoria, bermellón hostilidad, blanco autoridad; además forma y sonido.",
+        "Dimensiones y materialidad propuestas; requieren revisión, importación y medición.",
+        "Cielo y cosmología son datos de dirección, no nuevos planetas o estrellas modelados."
+      ],
+      "prop_brief_names": [
+        "reloj de doble esfera",
+        "registrador de eco",
+        "baliza de intervalo",
+        "trampa de demora",
+        "cuaderno de desfase",
+        "péndulo portátil",
+        "jaula de eclosión",
+        "muestra de hierba",
+        "caja de fecha",
+        "silla de observatorio",
+        "aro de calibración",
+        "lente polar",
+        "mástil de aurora",
+        "camilla de retorno",
+        "placa de promesa",
+        "caja de engranajes",
+        "cronógrafo",
+        "campana de señal",
+        "varilla de medición",
+        "semillero temporal"
+      ]
+    },
+    {
+      "id": "leviathan",
+      "name": "LEVIATHAN",
+      "status": "planned",
+      "design_source": "design/EXOVANT_DATA.json",
+      "galaxy": "EL UMBRAL",
+      "star": "Soma, fuente estelar ficticia vista a través de la Red",
+      "sky": "Observador: membrana exterior. Costillas del Cielo y La Boca son patrones de órganos iluminados.",
+      "gravity": "1,15 g",
+      "rule": "El daño ambiental activa respuesta inmune por regiones. Curar una ruta puede cerrar un atajo industrial y abrir paso orgánico; se comunica antes de confirmar.",
+      "regions": [
+        "Puerto de la Herida: colonos en una zona cicatrizada",
+        "Jardines Inmunes: fauna simbiótica y canales de linfa",
+        "Cámara de SOMA: órgano regulador bajo presión"
+      ],
+      "palette": [
+        "tejido desaturado #8A6C69",
+        "membrana marfil #BCAFA3",
+        "linfa gris verde #657D74",
+        "cerámica médica #CCD1C5"
+      ],
+      "shape_language": "Arcos de tejido abstracto, puentes de fibras tensas, cámaras valvulares y módulos humanos blandos sujetos con suturas anchas. Anatomía funcional sin órganos humanos literales gigantes.",
+      "wear_logic": "Cicatrices estratificadas, tejido nuevo menos opaco, suturas reparadas y cerámica esterilizada con marcas de contacto. El pulso no desplaza sin aviso la colisión transitable.",
+      "lighting": "Luz difusa a través de membranas y lámparas clínicas locales; irrigación visible en nervios anchos, sin un baño rojo que destruya lectura.",
+      "costume_language": "Prendas de compresión, herramientas de diagnóstico y protección de contacto; la comunidad combina textiles habitados con protocolos clínicos.",
+      "boss": {
+        "id": "BOSS_leviathan",
+        "name": "SOMA, el sistema inmune",
+        "proposed_height_m": 12.0,
+        "silhouette": "Órgano regulador sostenido por cuatro raíces musculares, tórax valvular y brazos de membrana en capas; contracciones precedidas por desplazamiento legible.",
+        "arena_source": "Cámara de 58 m con contracciones lentas y puentes biológicos; la pared no debe aplastar sin espacio de escape."
+      },
+      "restrictions": [
+        "Colores funcionales del canon: ámbar refugio, cian memoria, bermellón hostilidad, blanco autoridad; además forma y sonido.",
+        "Dimensiones y materialidad propuestas; requieren revisión, importación y medición.",
+        "Cielo y cosmología son datos de dirección, no nuevos planetas o estrellas modelados."
+      ],
+      "prop_brief_names": [
+        "sutura de anclaje",
+        "válvula de linfa",
+        "diagnóstico de presión",
+        "cápsula de nutriente",
+        "férula flexible",
+        "bandeja clínica",
+        "cortina de membrana",
+        "regulador de pulso",
+        "camilla blanda",
+        "botiquín de injerto",
+        "frasco de muestra",
+        "sensor de cicatriz",
+        "arnés sanitario",
+        "depósito de esterilización",
+        "aguja roma",
+        "linterna médica",
+        "bomba manual",
+        "caja de consentimiento",
+        "taburete de tejido",
+        "filtro inmune"
+      ]
+    },
+    {
+      "id": "elysium",
+      "name": "ELYSIUM NULL",
+      "status": "planned",
+      "design_source": "design/EXOVANT_DATA.json",
+      "galaxy": "EL UMBRAL",
+      "star": "Fuente artificial ficticia, clasificada como luminaria de la Red",
+      "sky": "Observador: arcología de Elysium. Corona Perfecta y La Ausencia son patrones programados por el hábitat.",
+      "gravity": "1,00 g",
+      "rule": "El sistema intenta satisfacer una preferencia antigua y elimina imprevistos. Introducir una anomalía legítima puede abrir una ruta sin combatir.",
+      "regions": [
+        "Avenida del Recibimiento: servicios impecables sin habitantes visibles",
+        "Casas sin Desgaste: viviendas personalizadas por perfiles antiguos",
+        "Jardín de EDEN: centro de control de una perfección impuesta"
+      ],
+      "palette": [
+        "porcelana limpia #DDDCD1",
+        "jardín controlado #8DAB85",
+        "metal oculto #9AA7A7",
+        "sombra crema #A8AAA2"
+      ],
+      "shape_language": "Módulos blancos exactos, jardines repetidos y juntas ocultas; una reparación real, un asiento desplazado o una planta distinta destacan por economía visual.",
+      "wear_logic": "Superficies institucionales sin desgaste exagerado; uso humano auténtico localizado en pomos, asiento favorito, costura y grieta reparada.",
+      "lighting": "Luz diurna uniforme que parece demasiado cómoda, con sombras suficientes para percibir profundidad; anomalías no necesitan neón rojo.",
+      "costume_language": "Uniformes de anfitrión sin herramientas visibles frente a vestuario remendado de habitantes ocultos; las preferencias antiguas aparecen en cortes y accesorios fuera de época.",
+      "boss": {
+        "id": "BOSS_elysium",
+        "name": "EDEN, la perfección hostil",
+        "proposed_height_m": 10.0,
+        "silhouette": "Anfitrión de porcelana sobre cuatro brazos jardineros plegados; una silueta cordial se abre en geometría de contención. Corredores del jardín permanecen distinguibles.",
+        "arena_source": "Jardín geométrico de 48 m cuyos módulos cambian de posición entre ataques; corredores mínimos garantizados."
+      },
+      "restrictions": [
+        "Colores funcionales del canon: ámbar refugio, cian memoria, bermellón hostilidad, blanco autoridad; además forma y sonido.",
+        "Dimensiones y materialidad propuestas; requieren revisión, importación y medición.",
+        "Cielo y cosmología son datos de dirección, no nuevos planetas o estrellas modelados."
+      ],
+      "prop_brief_names": [
+        "taza personalizada",
+        "flor idéntica",
+        "llave de vivienda",
+        "archivo de preferencia",
+        "cojín sin uso",
+        "tijera doméstica",
+        "juguete reparado",
+        "radio desfasada",
+        "zapato usado",
+        "maceta irregular",
+        "placa de bienvenida",
+        "robot de limpieza",
+        "mantel doblado",
+        "marco vacío",
+        "dispensador",
+        "asiento preferido",
+        "cerradura de consentimiento",
+        "lámpara doméstica",
+        "paquete de regalo",
+        "caja de herramientas oculta"
+      ]
+    },
+    {
+      "id": "origin",
+      "name": "ORIGIN",
+      "status": "planned",
+      "design_source": "design/EXOVANT_DATA.json",
+      "galaxy": "EL UMBRAL",
+      "star": "Núcleo de tránsito ficticio; no se etiqueta como estrella natural",
+      "sky": "Observador: plataforma del Nexo. Las constelaciones son aquí diagramas vivos de conexiones; la interfaz diferencia mapa simbólico y cielo.",
+      "gravity": "Variable",
+      "rule": "Los acuerdos previos ofrecen infraestructura tangible: suministros, refugios, ventanas de acceso o interlocutores. El final no suma únicamente puntos de moral.",
+      "regions": [
+        "Atrio de las Rutas: reflejos materiales de decisiones previas",
+        "Archivo de la Primera Herida: origen de la colonización",
+        "Corazón de EXOVANT: arena y centro de negociación final"
+      ],
+      "palette": [
+        "mineral negro #292E34",
+        "bronce vivo #8B8065",
+        "cerámica recordada #C5BCA9",
+        "membrana cian #6D9597"
+      ],
+      "shape_language": "Puentes de mineral negro y costillas de bronce, rutas conectadas por anillos con vacíos claros. Fragmentos de los once mundos aparecen únicamente cuando las decisiones los aportan.",
+      "wear_logic": "Superficies antiguas pulidas por tránsito, fracturas selladas como tejido y reparación humana reciente distinguible de cicatriz de la Red.",
+      "lighting": "Iluminación del tránsito motivada por rutas activas; cielo profundo reservado a grandes vacíos. Cada aliado aporta una zona material coherente, no todos los colores a la vez.",
+      "costume_language": "Mezcla disciplinada de infraestructura colonial y materiales de pactos previos; accesorios de interlocución dejan manos y rostro legibles.",
+      "boss": {
+        "id": "BOSS_origin",
+        "name": "EXOVANT, el corazón de los caminos",
+        "proposed_height_m": 16.0,
+        "silhouette": "Corazón sostenido por tres anillos abiertos y soportes orgánicos; núcleo de rutas accesible, brazos de mantenimiento que citan funciones planetarias sin ensamblar doce jefes enteros.",
+        "arena_source": "Atrio de 70 m con tres anillos conectados. Cambios de gravedad son visuales/locales ensayados; la cámara conserva un horizonte de combate legible."
+      },
+      "restrictions": [
+        "Colores funcionales del canon: ámbar refugio, cian memoria, bermellón hostilidad, blanco autoridad; además forma y sonido.",
+        "Dimensiones y materialidad propuestas; requieren revisión, importación y medición.",
+        "Cielo y cosmología son datos de dirección, no nuevos planetas o estrellas modelados."
+      ],
+      "prop_brief_names": [
+        "sello de tránsito",
+        "fragmento de pacto",
+        "módulo de suministro",
+        "acta de retirada",
+        "baliza de refugio",
+        "llave de ruta",
+        "placa de límites",
+        "cápsula de memoria",
+        "caja de mantenimiento",
+        "relicario de enlace",
+        "medidor de energía",
+        "puente de contacto",
+        "archivo de herida",
+        "emisor de voz",
+        "anclaje de evacuación",
+        "ofrenda de semilla",
+        "pieza de once mundos",
+        "registro de consentimiento",
+        "contador de acceso",
+        "testigo de reparación"
+      ]
+    }
+  ]
+}

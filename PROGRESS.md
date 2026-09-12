@@ -29,3 +29,15 @@ Commit d8fdc7c: CI success, clon limpio con integridad/control/native PASS. Driv
 ## EXO-004-INPUT-001 · Controles y jugabilidad inicial
 
 Implementados movimiento y cámara analógicos, botones de combate, navegación/foco de menús, remapeo persistente y ayudas dinámicas. Corregidos el rechazo de preferencias JSON válidas, la comparación de botones tras recarga y la documentación equivocada de guardia/esquiva. 34 tests Python + 26 estado + 19 integración + 33 input pasan; cinco gates nativos. Recorrido real por inputs desde spawn hasta Inés, sin teletransporte ni avance de estado artificial. UI renderizada en Mesa a 1280×720 y comprobada dentro del viewport; no aprobación artística AAA. EXO-004 permanece en revisión: falta la ruta completa y prueba humana/con mando físico. Mem volvió a limitar solicitudes; cola conserva el tercer intento sin insistir.
+
+
+## EXO-006-ART-001 · isolated art checkpoint, 12 September 2026
+User assigned this agent to remote Blender; gameplay stays with the parallel agent. Branch art/terra-reliquary-kit-001 and PR #1 reserve art_source. External agent acknowledgment has not been observed. Do not replace newer main STATE/PLAN with this branch snapshot blindly.
+
+Original campaign catalog: 318 rows covered, 12 art directions, 21 category contracts, 28 Terra module briefs, all planned. Actual candidate: remote project710b21ea-a09a-4f3c-b3a4-ca446ec58bc8 revision4, editable .blend/GLB, 11 assembly roots, 12 embedded maps, 11 collision sources. Source/art evidence lives in art_source/terra_reliquary_kit/delivery.json and README.md. No runtime scripts/scenes or existing portal changed. Native import/PBR/UV and floor collision probe pass; normal Gauntlet still passes. Renders inspected; no human AAA or GPU gate is claimed.
+
+Failures retained: first render exceeded300000ms, missing presentation UV corrected, close-up faceting corrected, podium contact corrected. Isolated Godot visual capture is blocked by Xvfb listener/display; headless engine works. Telemetry is partial. Mem queue retained without another retry.
+
+Gameplay handoff: EXO-004-ROUTE-002 experimental input driver reached Ines then failed at custodian_0; unclassified cause, not a confirmed gameplay regression. Disabled experiment and world.patch are archived in art_source/coordination. Next gameplay owner investigates route independently.
+
+Next art unit: inspect this candidate with the actual camera on a working display, resolve interaction clearance/texel density/LOD transition and localized wear before expanding the 28-module kit or producing character final topology. The complete twelve-world campaign remains open.

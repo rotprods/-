@@ -1,0 +1,11 @@
+{
+  "task_id": "EXO-004",
+  "outcome": "checkpoint",
+  "evidence": [
+    "evidence/route-tests.json",
+    "art_source/coordination/EXO-004-ROUTE-002/HANDOFF.md"
+  ],
+  "source_digest": "86c64744977a9c92d6c70385005de4d2eb112333542a6d67a65b74dfc47167f6",
+  "next_action": "Gameplay handed to the parallel agent; failed experimental driver at custodian_0 is preserved, not qualified. This agent proceeds with isolated Blender asset production EXO-006.",
+  "executed_at": "2026-09-12T18:59:39.202770+00:00"
+}

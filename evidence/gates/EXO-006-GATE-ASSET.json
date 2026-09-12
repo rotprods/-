@@ -1,0 +1,15 @@
+{
+  "gate_id": "GATE-ASSET",
+  "task_id": "EXO-006",
+  "passed": true,
+  "executed_at": "2026-09-12T19:09:25.889086+00:00",
+  "source_digest": "86c64744977a9c92d6c70385005de4d2eb112333542a6d67a65b74dfc47167f6",
+  "evidence_refs": [
+    "evidence/gates/EXO-006-GATE-ASSET.log"
+  ],
+  "reviewer": "automated-local-runner",
+  "command": [
+    "python3",
+    "tools/asset_audit.py"
+  ]
+}

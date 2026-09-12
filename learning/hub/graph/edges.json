@@ -50,6 +50,31 @@
     "type": "INSTANCE_OF"
   },
   {
+    "from": "LRN-EXO-20260912-ART-INTERCHANGE",
+    "to": "EXO-006-ART-001",
+    "type": "OCCURRED_IN_CHAT"
+  },
+  {
+    "from": "LRN-EXO-20260912-ART-INTERCHANGE",
+    "to": "codex-root",
+    "type": "EXECUTED_BY"
+  },
+  {
+    "from": "LRN-EXO-20260912-ART-INTERCHANGE",
+    "to": "art_source/terra_reliquary_kit/native-asset-check.json",
+    "type": "EVIDENCED_BY"
+  },
+  {
+    "from": "LRN-EXO-20260912-ART-INTERCHANGE",
+    "to": "art_source/terra_reliquary_kit/review-history.json",
+    "type": "EVIDENCED_BY"
+  },
+  {
+    "from": "LRN-EXO-20260912-ART-INTERCHANGE",
+    "to": "asset_interchange_and_visual_acceptance",
+    "type": "INSTANCE_OF"
+  },
+  {
     "from": "LRN-EXO-20260912-CI-BOOTSTRAP-VERIFIED",
     "to": "INFRA-005-CONTRACT",
     "type": "OCCURRED_IN_CHAT"

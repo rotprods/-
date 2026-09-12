@@ -1,0 +1,13 @@
+{
+  "run_id": "EXO-006-ART-001",
+  "task_id": "EXO-006",
+  "base_commit": "4c2fa044080004609ea6df45f34b2a784536507a",
+  "read_set": {
+    "AGENTS.md": "b6a5901c4f9eca7e5a44739be650a2c3d45d58b88fc4973c2f29d34d8bb8cbbc",
+    "MEMORY.md": "eb6bd934f6b73d87fbac5fae472129c81d6f708564a042736c52bc98e69c0698",
+    "HANDOFF.md": "7ccea3bf04ccbbdc789e6c82f3fe25b0874553a8ee70b631a09ded55e3584da2",
+    "_project_intelligence/STATE.json": "c0a89db751efe4be4e734766abe807e71aeee90956eb044a8b509eb476bc2f3f",
+    "_project_intelligence/PLAN.json": "be3999d1f73220fa9d6ac3b07f4f6a1d21fb1f9a11634e2bbe1e46aae46269de"
+  },
+  "started_at": "2026-09-12T19:00:08.514071+00:00"
+}

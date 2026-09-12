@@ -1,0 +1,14 @@
+{
+  "task_id": "EXO-006",
+  "outcome": "checkpoint",
+  "evidence": [
+    "art_source/terra_reliquary_kit/delivery.json",
+    "art_source/terra_reliquary_kit/native-asset-check.json",
+    "art_source/production_catalog/COVERAGE_EVIDENCE.json",
+    "evidence/gates/EXO-006-GATE-CONTROL.json",
+    "evidence/gates/EXO-006-GATE-NATIVE.json"
+  ],
+  "source_digest": "86c64744977a9c92d6c70385005de4d2eb112333542a6d67a65b74dfc47167f6",
+  "next_action": "Art branch PR #1: reconcile with gameplay agent; inspect Terra kit using real game camera, qualify wear/UV/LOD and interaction clearance. Gameplay EXO-004 continues separately; do not overwrite newer STATE/PLAN. Human ART and target GPU gates pending.",
+  "executed_at": "2026-09-12T19:29:01.180562+00:00"
+}

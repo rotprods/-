@@ -1,0 +1,29 @@
+{
+  "approach_floor_ray_hit": true,
+  "collision_shapes": 11,
+  "engine": "4.7.2-stable (official)",
+  "failed": [],
+  "material_surfaces_checked": 46,
+  "mesh_instances": 46,
+  "passed": true,
+  "roots": [
+    "BIO_TERRA_WitnessRoots",
+    "ENV_TERRA_CrownSpine",
+    "ENV_TERRA_Foundation_10x8",
+    "ENV_TERRA_RibPilaster_L",
+    "ENV_TERRA_RibPilaster_R",
+    "ENV_TERRA_SluiceWall_8x4",
+    "KIT_TERRA_SupplyPipe_3m",
+    "PR_TERRA_ArchiveCradle",
+    "PR_TERRA_ResonanceRegulator",
+    "PR_TERRA_RegulatorValve",
+    "PR_TERRA_ServiceConsole"
+  ],
+  "scope": "Actual headless Godot import/instantiation and PBR/UV preservation. No artistic approval, playtest or GPU benchmark.",
+  "textured_material_families": [
+    "MAT_RepairedBronze",
+    "MAT_IvorySaltCeramic",
+    "MAT_GraphiteSteel",
+    "MAT_MarineBasalt"
+  ]
+}

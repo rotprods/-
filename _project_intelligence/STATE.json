@@ -1,10 +1,10 @@
 {
   "project": "EXOVANT 2950",
-  "checkpoint": "EXO-004-INPUT-001",
+  "checkpoint": "EXO-006-ART-001",
   "date": "2026-09-12",
   "global_goal": "Original 3D interplanetary soulslike based on the existing twelve-world preproduction plan",
-  "current_wave": "EXO-004 input, controller navigation and persistent preferences",
-  "status": "PLAYABILITY_INCREMENT_LOCALLY_VALIDATED",
+  "current_wave": "Isolated Blender asset workstream; gameplay remains with parallel agent",
+  "status": "ART_CANDIDATE_CHECKPOINT",
   "engine": "Godot 4.7.2.stable.official.ed1daf0bf",
   "production_engine_decision": "Unreal remains the plan's principal candidate; Godot is the executable prototype, not an irreversible replacement",
   "authority": [
@@ -46,7 +46,7 @@
     "continuous worker availability"
   ],
   "next_workunit": "EXO-004",
-  "next_action": "EXO-004-ROUTE-002: traverse fresh Ines-water-archive-ATLAS-choice-portal route through normal controls; attack out-of-order progression, death and reload; human and physical-controller playtest remain pending.",
+  "next_action": "Art branch PR #1: reconcile with gameplay agent; inspect Terra kit using real game camera, qualify wear/UV/LOD and interaction clearance. Gameplay EXO-004 continues separately; do not overwrite newer STATE/PLAN. Human ART and target GPU gates pending.",
   "evidence": [
     "evidence/gauntlet.json",
     "evidence/state-tests.json",
@@ -155,13 +155,13 @@
     "note": "Fresh extraction without .godot cache; HUD-only adjustment additionally rendered and smoke-tested."
   },
   "source_repository": "https://github.com/rotprods/-",
-  "updated_at": "2026-09-12T18:33:35.269778+00:00",
+  "updated_at": "2026-09-12T19:29:00.949874+00:00",
   "learning": {
     "authority": "learning/hub",
     "scope": "project",
     "authority_level": "L2-persisted",
     "global_enforcement_claimed": false,
-    "event_count": 16,
+    "event_count": 17,
     "verified_events": [
       "LRN-EXO-20260912-CI-BOOTSTRAP-VERIFIED"
     ]
@@ -184,5 +184,14 @@
     "Provider completion record for independent scheduled execution",
     "Production GPU and Unreal qualification"
   ],
-  "last_run": "_project_intelligence/runs/EXO-004-INPUT-001/closeout.json"
+  "last_run": "_project_intelligence/runs/EXO-006-ART-001/closeout.json",
+  "art_workstream": {
+    "branch": "art/terra-reliquary-kit-001",
+    "pr": "https://github.com/rotprods/-/pull/1",
+    "delivery": "art_source/terra_reliquary_kit/delivery.json",
+    "catalog": "art_source/production_catalog/ASSET_MANIFEST.json",
+    "external_agent_acknowledged": false,
+    "runtime_changed": false,
+    "merge_policy": "Reconcile shared STATE/PLAN against newer main; never overwrite gameplay writer"
+  }
 }

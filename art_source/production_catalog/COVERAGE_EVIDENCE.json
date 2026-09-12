@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "checked_at": "2026-09-12T19:18:01.832354+00:00",
+  "gate": "offline_catalog_coverage_and_contracts",
+  "passed": true,
+  "checks": [
+    "exact source IDs/order/name/world/category/quantity/unit/phase/acceptance",
+    "full source and per-row hashes",
+    "21 category profiles and 12 world directions",
+    "dependency references, exceptions and acyclic graph",
+    "family allocations and child names",
+    "28 Terra child briefs and canonical parents",
+    "planned status without artifact/approval claims"
+  ],
+  "rows": 318,
+  "worlds": 12,
+  "categories": {
+    "level": 36,
+    "environment": 13,
+    "props": 13,
+    "biota": 48,
+    "npc": 36,
+    "enemy": 37,
+    "boss": 12,
+    "vfx": 12,
+    "audio": 14,
+    "minigame": 12,
+    "weapon": 24,
+    "vehicle": 10,
+    "armor": 12,
+    "tool": 8,
+    "character": 2,
+    "vegetation": 1,
+    "materials": 2,
+    "animation": 5,
+    "ui": 2,
+    "narrative": 2,
+    "system": 17
+  },
+  "terra_module_briefs": 28,
+  "terra_priority_zero_briefs": 17,
+  "planet_prop_brief_names": 240,
+  "candidate_models_accepted_by_this_gate": 0,
+  "limitations": [
+    "Does not run Blender, inspect geometry or certify AAA quality",
+    "Does not measure hardware performance or complete any human gate",
+    "Only validates this design snapshot; production records are separate"
+  ],
+  "file_sha256": {
+    "ASSET_MANIFEST.json": "f8d4224c0f225c0d9259ef1d0a7cbff2e32182e533d8f6671e4878afb16b72dc",
+    "CATEGORY_PROFILES.json": "05020a6cd0a5bbe4d5cccd3d5a7f544c76316fd810393bb9081c9daea7a175fa",
+    "WORLD_ART_DIRECTION.json": "08473e2b1b8b418fc3a82f4521f435c74ebb8ae8b94e0c069f898bd8bd049e84",
+    "TERRA_MODULES.json": "61aaf854631c1d1c06f45de4fe859e9f7ab2b64d7e80f002d44793affbdec79b"
+  },
+  "errors": []
+}

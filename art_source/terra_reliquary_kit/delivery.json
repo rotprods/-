@@ -1,0 +1,183 @@
+{
+  "run_id": "EXO-006-ART-001",
+  "created_at": "2026-09-12T19:29:00.949874+00:00",
+  "branch": "art/terra-reliquary-kit-001",
+  "base_main": "4c2fa044080004609ea6df45f34b2a784536507a",
+  "source_digest_runtime": "86c64744977a9c92d6c70385005de4d2eb112333542a6d67a65b74dfc47167f6",
+  "remote": {
+    "project_id": "710b21ea-a09a-4f3c-b3a4-ca446ec58bc8",
+    "revision": 4,
+    "mutation_id": "exovant-art001-normals-v4-20260912",
+    "render_operation_id": "exovant-art001-render-v4-20260912",
+    "project_url": "https://higgsfield.ai/3d-jutsu/710b21ea-a09a-4f3c-b3a4-ca446ec58bc8"
+  },
+  "files": {
+    "EXOVANT_Terra_Kit.blend": {
+      "bytes": 6513829,
+      "sha256": "947ef7c7b99ef3d526de66469eb9ce10a1b5a040cbeec7624b654f2ef076128f"
+    },
+    "EXOVANT_Terra_Kit.glb": {
+      "bytes": 7459372,
+      "sha256": "b002bf6cfd02a37fd17de23541c28b2599c4b42f01adc49545056f37ce9a1a58"
+    },
+    "terra-regulator-detail.png": {
+      "bytes": 518513,
+      "sha256": "3f3805be0df3a31391e9217754080fba824b98296a769c77c591cdb8bd32df09"
+    },
+    "terra-kit-final.png": {
+      "bytes": 442788,
+      "sha256": "71983b19500eda36493c9f018868285e582e905bdabbd387b2c77bd0055e8228"
+    },
+    "terra-kit-delivery-v2.png": {
+      "bytes": 442468,
+      "sha256": "590496fa6d6fa9785f33a7debd60f471f991e55ea7ff6d935452d7bf1f785766"
+    }
+  },
+  "assemblies": [
+    {
+      "root": "BIO_TERRA_WitnessRoots",
+      "aabb_dimensions_m_gltf_axes": [
+        7.3784,
+        3.7796,
+        1.7057
+      ],
+      "catalog_parent": "BIO_terra_4",
+      "state": "candidate_locally_validated"
+    },
+    {
+      "root": "ENV_TERRA_CrownSpine",
+      "aabb_dimensions_m_gltf_axes": [
+        2.5,
+        0.7064,
+        0.8585
+      ],
+      "catalog_parent": "KIT_terra",
+      "state": "candidate_locally_validated"
+    },
+    {
+      "root": "ENV_TERRA_Foundation_10x8",
+      "aabb_dimensions_m_gltf_axes": [
+        10.0,
+        0.7,
+        8.95
+      ],
+      "catalog_parent": "KIT_terra",
+      "state": "candidate_locally_validated"
+    },
+    {
+      "root": "ENV_TERRA_RibPilaster_L",
+      "aabb_dimensions_m_gltf_axes": [
+        3.0434,
+        4.9597,
+        1.15
+      ],
+      "catalog_parent": "KIT_terra",
+      "state": "candidate_locally_validated"
+    },
+    {
+      "root": "ENV_TERRA_RibPilaster_R",
+      "aabb_dimensions_m_gltf_axes": [
+        3.0434,
+        4.9597,
+        1.15
+      ],
+      "catalog_parent": "KIT_terra",
+      "state": "candidate_locally_validated"
+    },
+    {
+      "root": "ENV_TERRA_SluiceWall_8x4",
+      "aabb_dimensions_m_gltf_axes": [
+        8.4,
+        3.96,
+        0.715
+      ],
+      "catalog_parent": "KIT_terra",
+      "state": "candidate_locally_validated"
+    },
+    {
+      "root": "KIT_TERRA_SupplyPipe_3m",
+      "aabb_dimensions_m_gltf_axes": [
+        0.36,
+        2.715,
+        1.28
+      ],
+      "catalog_parent": "KIT_terra",
+      "state": "candidate_locally_validated"
+    },
+    {
+      "root": "PR_TERRA_ArchiveCradle",
+      "aabb_dimensions_m_gltf_axes": [
+        1.5,
+        1.381,
+        0.8
+      ],
+      "catalog_parent": "PROPS_terra",
+      "state": "candidate_locally_validated"
+    },
+    {
+      "root": "PR_TERRA_RegulatorValve",
+      "aabb_dimensions_m_gltf_axes": [
+        0.6402,
+        0.6407,
+        0.1613
+      ],
+      "catalog_parent": "MINI_terra",
+      "state": "candidate_locally_validated"
+    },
+    {
+      "root": "PR_TERRA_ResonanceRegulator",
+      "aabb_dimensions_m_gltf_axes": [
+        3.24,
+        3.22,
+        2.24
+      ],
+      "catalog_parent": "MINI_terra",
+      "state": "candidate_locally_validated"
+    },
+    {
+      "root": "PR_TERRA_ServiceConsole",
+      "aabb_dimensions_m_gltf_axes": [
+        1.0,
+        1.207,
+        0.85
+      ],
+      "catalog_parent": "PROPS_terra",
+      "state": "candidate_locally_validated"
+    }
+  ],
+  "counts": {
+    "assembly_roots": 11,
+    "export_meshes_including_collision_and_presentation": 57,
+    "triangles_including_collision_and_presentation": 84926,
+    "native_render_meshes_including_presentation": 46,
+    "collision_shapes": 11,
+    "packed_maps": 12,
+    "pbr_textured_material_families": 4
+  },
+  "validation": {
+    "glb_interchange": "pass",
+    "native_import_and_pbr": "pass",
+    "collision_proxy_import_and_floor_ray": "pass",
+    "blender_delivery_and_closeup_agent_inspection": "pass_with_production_limitations",
+    "godot_visual_capture": "blocked_display",
+    "human_art_approval": "pending",
+    "target_gpu_performance": "pending",
+    "full_gameplay_integration": "pending"
+  },
+  "lod": {
+    "godot_generate_lods": true,
+    "source": ".tools/asset-check/candidate.glb.import observed",
+    "transitions_reviewed": false,
+    "artist_authored_lods": false
+  },
+  "limitations": [
+    "Candidate hard-surface art; AAA/AAAA+ and hyperrealism not certified",
+    "Procedural512px textures require production wear/bake/UV2 work",
+    "Vegetation is geometric study",
+    "Eleven assemblies include symmetric pilaster pair and one wheel, not eleven distinct campaign deliveries",
+    "Presentation/lighting must be removed for gameplay integration",
+    "No changes to runtime scripts/scenes or earlier portal",
+    "Render operation revisionBefore4 is authoritative; result scope caption was inherited from the r3 render script"
+  ],
+  "telemetry_coverage": "partial: instrumented connector and qualify calls only; no total tool count inferred"
+}

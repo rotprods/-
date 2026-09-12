@@ -1,0 +1,39 @@
+test_archive_checksum_rejected (test_bootstrap.Bootstrap.test_archive_checksum_rejected) ... ok
+test_binary_checksum_rejected (test_bootstrap.Bootstrap.test_binary_checksum_rejected) ... ok
+test_existing_foreign_binary_preserved (test_bootstrap.Bootstrap.test_existing_foreign_binary_preserved) ... ok
+test_matching_install_does_not_redownload (test_bootstrap.Bootstrap.test_matching_install_does_not_redownload) ... ok
+test_oversized_download_rejected (test_bootstrap.Bootstrap.test_oversized_download_rejected) ... ok
+test_truncated_download_rejected (test_bootstrap.Bootstrap.test_truncated_download_rejected) ... ok
+test_valid_extract_only_expected_executable (test_bootstrap.Bootstrap.test_valid_extract_only_expected_executable) ... ok
+test_all_twelve_learnings_recoverable (test_governance.Continuity.test_all_twelve_learnings_recoverable) ... ok
+test_dangling_graph_rejected (test_governance.Continuity.test_dangling_graph_rejected) ... ok
+test_duplicate_node_rejected (test_governance.Continuity.test_duplicate_node_rejected) ... ok
+test_event_digest_tampering_detected (test_governance.Continuity.test_event_digest_tampering_detected) ... ok
+test_identical_learning_is_idempotent (test_governance.Continuity.test_identical_learning_is_idempotent) ... ok
+test_learning_rewrite_rejected (test_governance.Continuity.test_learning_rewrite_rejected) ... ok
+test_learning_roundtrip_retrieval (test_governance.Continuity.test_learning_roundtrip_retrieval) ... ok
+test_orphan_rejected (test_governance.Continuity.test_orphan_rejected) ... ok
+test_projection_drift_detected (test_governance.Continuity.test_projection_drift_detected) ... ok
+test_receipt_close_without_bootstrap_rejected (test_governance.Continuity.test_receipt_close_without_bootstrap_rejected) ... ok
+test_source_change_invalidates_digest (test_governance.Continuity.test_source_change_invalidates_digest) ... ok
+test_telemetry_counts_only_recorded_outcomes (test_governance.Continuity.test_telemetry_counts_only_recorded_outcomes) ... ok
+test_terminal_receipt_idempotent_but_conflict_rejected (test_governance.Continuity.test_terminal_receipt_idempotent_but_conflict_rejected) ... ok
+test_unsafe_identity_rejected (test_governance.Continuity.test_unsafe_identity_rejected) ... ok
+test_unverified_L4_rejected (test_governance.Continuity.test_unverified_L4_rejected) ... ok
+test_complete_contract (test_studio.Studio.test_complete_contract) ... ok
+test_dependency_cycle_rejected (test_studio.Studio.test_dependency_cycle_rejected) ... ok
+test_done_requires_all_gates (test_studio.Studio.test_done_requires_all_gates) ... ok
+test_done_without_evidence_rejected (test_studio.Studio.test_done_without_evidence_rejected) ... ok
+test_existing_writer_lock_rejected_without_overwrite (test_studio.Studio.test_existing_writer_lock_rejected_without_overwrite) ... ok
+test_glb_truncation_rejected (test_studio.Studio.test_glb_truncation_rejected) ... ok
+test_multiple_workunits_rejected (test_studio.Studio.test_multiple_workunits_rejected) ... ok
+test_real_asset_inventory (test_studio.Studio.test_real_asset_inventory) ... ok
+test_receipt_from_other_task_or_source_rejected (test_studio.Studio.test_receipt_from_other_task_or_source_rejected) ... ok
+test_receipt_path_escape_rejected (test_studio.Studio.test_receipt_path_escape_rejected) ... ok
+test_uncovered_goal_rejected (test_studio.Studio.test_uncovered_goal_rejected) ... ok
+test_unknown_gate_rejected (test_studio.Studio.test_unknown_gate_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 34 tests in 0.067s
+
+OK

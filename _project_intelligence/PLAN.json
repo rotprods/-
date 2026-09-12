@@ -331,8 +331,8 @@
         "GATE-PLAY"
       ],
       "evidence": [
-        "evidence/gates/EXO-004-GATE-CONTROL.json",
-        "evidence/gates/EXO-004-GATE-NATIVE.json"
+        "evidence/route-tests.json",
+        "art_source/coordination/EXO-004-ROUTE-002/HANDOFF.md"
       ],
       "estimate_person_hours": null,
       "estimate_status": "decompose and estimate when ready; global slice baseline in design WBS",
@@ -349,7 +349,7 @@
         "Human playability and physical controller parity",
         "Sensitivity/invert-Y and accessibility tuning not yet implemented"
       ],
-      "closeout": "_project_intelligence/runs/EXO-004-INPUT-001/closeout.json"
+      "closeout": "_project_intelligence/runs/EXO-004-ROUTE-002/closeout.json"
     },
     {
       "id": "EXO-005",
@@ -386,7 +386,7 @@
         "G-TECH"
       ],
       "depends_on": [],
-      "status": "planned",
+      "status": "in_review",
       "owner_role": "art_director",
       "acceptance": [
         "Retain original source, reduce draw calls/material duplication, UV/texture/LOD as appropriate, explicit collision asset, compare visuals and target performance."
@@ -397,10 +397,17 @@
         "GATE-ASSET",
         "GATE-ART"
       ],
-      "evidence": [],
+      "evidence": [
+        "art_source/terra_reliquary_kit/delivery.json",
+        "art_source/terra_reliquary_kit/native-asset-check.json",
+        "art_source/production_catalog/COVERAGE_EVIDENCE.json",
+        "evidence/gates/EXO-006-GATE-CONTROL.json",
+        "evidence/gates/EXO-006-GATE-NATIVE.json"
+      ],
       "estimate_person_hours": null,
       "estimate_status": "decompose and estimate when ready; global slice baseline in design WBS",
-      "max_failed_iterations": 6
+      "max_failed_iterations": 6,
+      "closeout": "_project_intelligence/runs/EXO-006-ART-001/closeout.json"
     },
     {
       "id": "EXO-007",

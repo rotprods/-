@@ -1,0 +1,866 @@
+{
+  "schema_version": 1,
+  "status": "planned",
+  "scope": "28 briefs de piezas reutilizables; no 28 piezas construidas ni integración automática.",
+  "material_slots_target": {
+    "structural_shared": [
+      "concreto marino",
+      "bronce mantenido",
+      "cerámica marfil",
+      "metal negro"
+    ],
+    "selective": [
+      "elastómero",
+      "vidrio de manómetro",
+      "emisión de estado"
+    ]
+  },
+  "mechanical_rules": [
+    "No hornear volantes, puertas o aguja a la carcasa estática.",
+    "Conservar SOURCE editable y exportación portable; curvas/modificadores pueden convertirse solo en copia EXPORT.",
+    "Manifold y estación son mecanismos distintos; canales entran y salen con un recorrido trazable.",
+    "Separar detalle macro de material micro; desgaste responde a agua/agarre/gravedad.",
+    "Tornillos repetidos comparten malla; medir coste de draw calls del conjunto."
+  ],
+  "modules": [
+    {
+      "id": "TERRA_FLOOR_4M",
+      "parent_catalog_id": "KIT_terra",
+      "name": "Losa costera de mantenimiento",
+      "status": "planned",
+      "dimension_target_m": {
+        "x": 4,
+        "y": 4,
+        "z": 0.25
+      },
+      "dimension_basis": "propuesta ergonómica y retícula; confirmar con jugador 1,85 m y cámara actual",
+      "function": "Base transitable con juntas y drenaje periférico; pivote esquina inferior",
+      "batch_priority": 0,
+      "source_collection": "TERRA_SOURCE",
+      "export_collection": "TERRA_EXPORT",
+      "material_family": "terra_coastal_maintenance",
+      "delivery": [
+        ".blend editable",
+        "GLB",
+        "UV/PBR baked",
+        "colisión separada si bloquea",
+        "LOD cuando beneficioso y evidencia de importación"
+      ],
+      "actual_artifacts": [],
+      "reuse": [
+        "cámara de riego",
+        "acceso al reliquario",
+        "archivo abisal"
+      ]
+    },
+    {
+      "id": "TERRA_CHANNEL_4M",
+      "parent_catalog_id": "KIT_terra",
+      "name": "Canal de riego longitudinal",
+      "status": "planned",
+      "dimension_target_m": {
+        "x": 4,
+        "y": 1,
+        "z": 0.45
+      },
+      "dimension_basis": "propuesta ergonómica y retícula; confirmar con jugador 1,85 m y cámara actual",
+      "function": "Conecta agua a cámara; labios transitables visibles, canal libre",
+      "batch_priority": 0,
+      "source_collection": "TERRA_SOURCE",
+      "export_collection": "TERRA_EXPORT",
+      "material_family": "terra_coastal_maintenance",
+      "delivery": [
+        ".blend editable",
+        "GLB",
+        "UV/PBR baked",
+        "colisión separada si bloquea",
+        "LOD cuando beneficioso y evidencia de importación"
+      ],
+      "actual_artifacts": [],
+      "reuse": [
+        "cámara de riego",
+        "acceso al reliquario",
+        "archivo abisal"
+      ]
+    },
+    {
+      "id": "TERRA_GRATE_2M",
+      "parent_catalog_id": "KIT_terra",
+      "name": "Rejilla de inspección desmontable",
+      "status": "planned",
+      "dimension_target_m": {
+        "x": 2,
+        "y": 1,
+        "z": 0.08
+      },
+      "dimension_basis": "propuesta ergonómica y retícula; confirmar con jugador 1,85 m y cámara actual",
+      "function": "Cubre canal; bastidor y cara de pisada continuos",
+      "batch_priority": 0,
+      "source_collection": "TERRA_SOURCE",
+      "export_collection": "TERRA_EXPORT",
+      "material_family": "terra_coastal_maintenance",
+      "delivery": [
+        ".blend editable",
+        "GLB",
+        "UV/PBR baked",
+        "colisión separada si bloquea",
+        "LOD cuando beneficioso y evidencia de importación"
+      ],
+      "actual_artifacts": [],
+      "reuse": [
+        "cámara de riego",
+        "acceso al reliquario",
+        "archivo abisal"
+      ]
+    },
+    {
+      "id": "TERRA_WALL_4M",
+      "parent_catalog_id": "KIT_terra",
+      "name": "Muro de cámara",
+      "status": "planned",
+      "dimension_target_m": {
+        "x": 4,
+        "y": 0.4,
+        "z": 3
+      },
+      "dimension_basis": "propuesta ergonómica y retícula; confirmar con jugador 1,85 m y cámara actual",
+      "function": "Panel portante de hormigón marino con cerámica reparada y zócalo húmedo",
+      "batch_priority": 0,
+      "source_collection": "TERRA_SOURCE",
+      "export_collection": "TERRA_EXPORT",
+      "material_family": "terra_coastal_maintenance",
+      "delivery": [
+        ".blend editable",
+        "GLB",
+        "UV/PBR baked",
+        "colisión separada si bloquea",
+        "LOD cuando beneficioso y evidencia de importación"
+      ],
+      "actual_artifacts": [],
+      "reuse": [
+        "cámara de riego",
+        "acceso al reliquario",
+        "archivo abisal"
+      ]
+    },
+    {
+      "id": "TERRA_SERVICE_WALL",
+      "parent_catalog_id": "KIT_terra",
+      "name": "Muro con registro",
+      "status": "planned",
+      "dimension_target_m": {
+        "x": 4,
+        "y": 0.5,
+        "z": 3
+      },
+      "dimension_basis": "propuesta ergonómica y retícula; confirmar con jugador 1,85 m y cámara actual",
+      "function": "Registro de 1,2 m deja holgura de mantenimiento; interior no decorado inútil",
+      "batch_priority": 0,
+      "source_collection": "TERRA_SOURCE",
+      "export_collection": "TERRA_EXPORT",
+      "material_family": "terra_coastal_maintenance",
+      "delivery": [
+        ".blend editable",
+        "GLB",
+        "UV/PBR baked",
+        "colisión separada si bloquea",
+        "LOD cuando beneficioso y evidencia de importación"
+      ],
+      "actual_artifacts": [],
+      "reuse": [
+        "cámara de riego",
+        "acceso al reliquario",
+        "archivo abisal"
+      ]
+    },
+    {
+      "id": "TERRA_BUTTRESS",
+      "parent_catalog_id": "KIT_terra",
+      "name": "Contrafuerte de cisterna",
+      "status": "planned",
+      "dimension_target_m": {
+        "x": 1,
+        "y": 1.5,
+        "z": 4
+      },
+      "dimension_basis": "propuesta ergonómica y retícula; confirmar con jugador 1,85 m y cámara actual",
+      "function": "Transfiere carga al suelo, bronce insertado y apoyo ancho",
+      "batch_priority": 0,
+      "source_collection": "TERRA_SOURCE",
+      "export_collection": "TERRA_EXPORT",
+      "material_family": "terra_coastal_maintenance",
+      "delivery": [
+        ".blend editable",
+        "GLB",
+        "UV/PBR baked",
+        "colisión separada si bloquea",
+        "LOD cuando beneficioso y evidencia de importación"
+      ],
+      "actual_artifacts": [],
+      "reuse": [
+        "cámara de riego",
+        "acceso al reliquario",
+        "archivo abisal"
+      ]
+    },
+    {
+      "id": "TERRA_BEAM_4M",
+      "parent_catalog_id": "KIT_terra",
+      "name": "Viga de borde",
+      "status": "planned",
+      "dimension_target_m": {
+        "x": 4,
+        "y": 0.4,
+        "z": 0.6
+      },
+      "dimension_basis": "propuesta ergonómica y retícula; confirmar con jugador 1,85 m y cámara actual",
+      "function": "Cierra cámara y aloja abrazaderas de conducto",
+      "batch_priority": 1,
+      "source_collection": "TERRA_SOURCE",
+      "export_collection": "TERRA_EXPORT",
+      "material_family": "terra_coastal_maintenance",
+      "delivery": [
+        ".blend editable",
+        "GLB",
+        "UV/PBR baked",
+        "colisión separada si bloquea",
+        "LOD cuando beneficioso y evidencia de importación"
+      ],
+      "actual_artifacts": [],
+      "reuse": [
+        "cámara de riego",
+        "acceso al reliquario",
+        "archivo abisal"
+      ]
+    },
+    {
+      "id": "TERRA_CORNER_1M",
+      "parent_catalog_id": "KIT_terra",
+      "name": "Esquina exterior reparada",
+      "status": "planned",
+      "dimension_target_m": {
+        "x": 1,
+        "y": 1,
+        "z": 3
+      },
+      "dimension_basis": "propuesta ergonómica y retícula; confirmar con jugador 1,85 m y cámara actual",
+      "function": "Hace girar muro y trim sin costura de UV visible",
+      "batch_priority": 1,
+      "source_collection": "TERRA_SOURCE",
+      "export_collection": "TERRA_EXPORT",
+      "material_family": "terra_coastal_maintenance",
+      "delivery": [
+        ".blend editable",
+        "GLB",
+        "UV/PBR baked",
+        "colisión separada si bloquea",
+        "LOD cuando beneficioso y evidencia de importación"
+      ],
+      "actual_artifacts": [],
+      "reuse": [
+        "cámara de riego",
+        "acceso al reliquario",
+        "archivo abisal"
+      ]
+    },
+    {
+      "id": "TERRA_ARCH_4M",
+      "parent_catalog_id": "KIT_terra",
+      "name": "Arco de servicio",
+      "status": "planned",
+      "dimension_target_m": {
+        "x": 4,
+        "y": 0.65,
+        "z": 4
+      },
+      "dimension_basis": "propuesta ergonómica y retícula; confirmar con jugador 1,85 m y cámara actual",
+      "function": "Paso libre mínimo propuesto 2,4 m ancho por 3 m alto; herrajes en laterales",
+      "batch_priority": 0,
+      "source_collection": "TERRA_SOURCE",
+      "export_collection": "TERRA_EXPORT",
+      "material_family": "terra_coastal_maintenance",
+      "delivery": [
+        ".blend editable",
+        "GLB",
+        "UV/PBR baked",
+        "colisión separada si bloquea",
+        "LOD cuando beneficioso y evidencia de importación"
+      ],
+      "actual_artifacts": [],
+      "reuse": [
+        "cámara de riego",
+        "acceso al reliquario",
+        "archivo abisal"
+      ]
+    },
+    {
+      "id": "TERRA_STAIR_2M",
+      "parent_catalog_id": "KIT_terra",
+      "name": "Escalera de seis peldaños",
+      "status": "planned",
+      "dimension_target_m": {
+        "x": 2,
+        "y": 2.4,
+        "z": 1.2
+      },
+      "dimension_basis": "propuesta ergonómica y retícula; confirmar con jugador 1,85 m y cámara actual",
+      "function": "Alzada 0,2 m/huella 0,4 m; colisión de rampa candidata pendiente controlador",
+      "batch_priority": 1,
+      "source_collection": "TERRA_SOURCE",
+      "export_collection": "TERRA_EXPORT",
+      "material_family": "terra_coastal_maintenance",
+      "delivery": [
+        ".blend editable",
+        "GLB",
+        "UV/PBR baked",
+        "colisión separada si bloquea",
+        "LOD cuando beneficioso y evidencia de importación"
+      ],
+      "actual_artifacts": [],
+      "reuse": [
+        "cámara de riego",
+        "acceso al reliquario",
+        "archivo abisal"
+      ]
+    },
+    {
+      "id": "TERRA_LANDING_2M",
+      "parent_catalog_id": "KIT_terra",
+      "name": "Descansillo",
+      "status": "planned",
+      "dimension_target_m": {
+        "x": 2,
+        "y": 2,
+        "z": 0.25
+      },
+      "dimension_basis": "propuesta ergonómica y retícula; confirmar con jugador 1,85 m y cámara actual",
+      "function": "Pieza de enlace sin desniveles sorpresa ni ranuras que atrapen pie",
+      "batch_priority": 1,
+      "source_collection": "TERRA_SOURCE",
+      "export_collection": "TERRA_EXPORT",
+      "material_family": "terra_coastal_maintenance",
+      "delivery": [
+        ".blend editable",
+        "GLB",
+        "UV/PBR baked",
+        "colisión separada si bloquea",
+        "LOD cuando beneficioso y evidencia de importación"
+      ],
+      "actual_artifacts": [],
+      "reuse": [
+        "cámara de riego",
+        "acceso al reliquario",
+        "archivo abisal"
+      ]
+    },
+    {
+      "id": "TERRA_RAIL_2M",
+      "parent_catalog_id": "KIT_terra",
+      "name": "Barandilla de mantenimiento",
+      "status": "planned",
+      "dimension_target_m": {
+        "x": 2,
+        "y": 0.1,
+        "z": 1.1
+      },
+      "dimension_basis": "propuesta ergonómica y retícula; confirmar con jugador 1,85 m y cámara actual",
+      "function": "Dos travesaños con postes; no tapa visual del interactuable",
+      "batch_priority": 0,
+      "source_collection": "TERRA_SOURCE",
+      "export_collection": "TERRA_EXPORT",
+      "material_family": "terra_coastal_maintenance",
+      "delivery": [
+        ".blend editable",
+        "GLB",
+        "UV/PBR baked",
+        "colisión separada si bloquea",
+        "LOD cuando beneficioso y evidencia de importación"
+      ],
+      "actual_artifacts": [],
+      "reuse": [
+        "cámara de riego",
+        "acceso al reliquario",
+        "archivo abisal"
+      ]
+    },
+    {
+      "id": "TERRA_POST",
+      "parent_catalog_id": "KIT_terra",
+      "name": "Poste de pasarela",
+      "status": "planned",
+      "dimension_target_m": {
+        "x": 0.25,
+        "y": 0.25,
+        "z": 1.1
+      },
+      "dimension_basis": "propuesta ergonómica y retícula; confirmar con jugador 1,85 m y cámara actual",
+      "function": "Socket de barandilla y fijación al suelo",
+      "batch_priority": 1,
+      "source_collection": "TERRA_SOURCE",
+      "export_collection": "TERRA_EXPORT",
+      "material_family": "terra_coastal_maintenance",
+      "delivery": [
+        ".blend editable",
+        "GLB",
+        "UV/PBR baked",
+        "colisión separada si bloquea",
+        "LOD cuando beneficioso y evidencia de importación"
+      ],
+      "actual_artifacts": [],
+      "reuse": [
+        "cámara de riego",
+        "acceso al reliquario",
+        "archivo abisal"
+      ]
+    },
+    {
+      "id": "TERRA_PIPE_2M",
+      "parent_catalog_id": "KIT_terra",
+      "name": "Conducto de riego",
+      "status": "planned",
+      "dimension_target_m": {
+        "x": 2,
+        "y": 0.32,
+        "z": 0.32
+      },
+      "dimension_basis": "propuesta ergonómica y retícula; confirmar con jugador 1,85 m y cámara actual",
+      "function": "Tubo con bridas a ambos extremos; eje y diámetro constantes",
+      "batch_priority": 0,
+      "source_collection": "TERRA_SOURCE",
+      "export_collection": "TERRA_EXPORT",
+      "material_family": "terra_coastal_maintenance",
+      "delivery": [
+        ".blend editable",
+        "GLB",
+        "UV/PBR baked",
+        "colisión separada si bloquea",
+        "LOD cuando beneficioso y evidencia de importación"
+      ],
+      "actual_artifacts": [],
+      "reuse": [
+        "cámara de riego",
+        "acceso al reliquario",
+        "archivo abisal"
+      ]
+    },
+    {
+      "id": "TERRA_PIPE_ELBOW",
+      "parent_catalog_id": "KIT_terra",
+      "name": "Codo de conducto",
+      "status": "planned",
+      "dimension_target_m": {
+        "x": 0.8,
+        "y": 0.8,
+        "z": 0.32
+      },
+      "dimension_basis": "propuesta ergonómica y retícula; confirmar con jugador 1,85 m y cámara actual",
+      "function": "Giro de 90 grados con radio creíble y acceso a pernos",
+      "batch_priority": 0,
+      "source_collection": "TERRA_SOURCE",
+      "export_collection": "TERRA_EXPORT",
+      "material_family": "terra_coastal_maintenance",
+      "delivery": [
+        ".blend editable",
+        "GLB",
+        "UV/PBR baked",
+        "colisión separada si bloquea",
+        "LOD cuando beneficioso y evidencia de importación"
+      ],
+      "actual_artifacts": [],
+      "reuse": [
+        "cámara de riego",
+        "acceso al reliquario",
+        "archivo abisal"
+      ]
+    },
+    {
+      "id": "TERRA_MANIFOLD",
+      "parent_catalog_id": "KIT_terra",
+      "name": "Distribuidor de tres salidas",
+      "status": "planned",
+      "dimension_target_m": {
+        "x": 2,
+        "y": 0.8,
+        "z": 1.5
+      },
+      "dimension_basis": "propuesta ergonómica y retícula; confirmar con jugador 1,85 m y cámara actual",
+      "function": "Tres canales distinguibles por posición y pictograma; mantenimiento frontal",
+      "batch_priority": 0,
+      "source_collection": "TERRA_SOURCE",
+      "export_collection": "TERRA_EXPORT",
+      "material_family": "terra_coastal_maintenance",
+      "delivery": [
+        ".blend editable",
+        "GLB",
+        "UV/PBR baked",
+        "colisión separada si bloquea",
+        "LOD cuando beneficioso y evidencia de importación"
+      ],
+      "actual_artifacts": [],
+      "reuse": [
+        "cámara de riego",
+        "acceso al reliquario",
+        "archivo abisal"
+      ]
+    },
+    {
+      "id": "TERRA_IRRIGATION_STATION",
+      "parent_catalog_id": "MINI_terra",
+      "name": "Estación de riego resonante",
+      "status": "planned",
+      "dimension_target_m": {
+        "x": 1.8,
+        "y": 0.85,
+        "z": 1.6
+      },
+      "dimension_basis": "propuesta ergonómica y retícula; confirmar con jugador 1,85 m y cámara actual",
+      "function": "Tres controles con centro a 1,05 m; estados off/pressure/regulated por orientación",
+      "batch_priority": 0,
+      "source_collection": "TERRA_SOURCE",
+      "export_collection": "TERRA_EXPORT",
+      "material_family": "terra_coastal_maintenance",
+      "delivery": [
+        ".blend editable",
+        "GLB",
+        "UV/PBR baked",
+        "colisión separada si bloquea",
+        "LOD cuando beneficioso y evidencia de importación"
+      ],
+      "actual_artifacts": [],
+      "reuse": [
+        "minijuego Terra",
+        "mecanismo del reliquario"
+      ]
+    },
+    {
+      "id": "TERRA_PRESSURE_GAUGE",
+      "parent_catalog_id": "PROPS_terra",
+      "name": "Manómetro protegido",
+      "status": "planned",
+      "dimension_target_m": {
+        "x": 0.24,
+        "y": 0.12,
+        "z": 0.3
+      },
+      "dimension_basis": "propuesta ergonómica y retícula; confirmar con jugador 1,85 m y cámara actual",
+      "function": "Aguja y banda de lectura por forma; carcasa con vidrio reemplazable",
+      "batch_priority": 0,
+      "source_collection": "TERRA_SOURCE",
+      "export_collection": "TERRA_EXPORT",
+      "material_family": "terra_coastal_maintenance",
+      "delivery": [
+        ".blend editable",
+        "GLB",
+        "UV/PBR baked",
+        "colisión separada si bloquea",
+        "LOD cuando beneficioso y evidencia de importación"
+      ],
+      "actual_artifacts": [],
+      "reuse": [
+        "cámara de riego",
+        "acceso al reliquario",
+        "archivo abisal"
+      ]
+    },
+    {
+      "id": "TERRA_SEED_CASSETTE",
+      "parent_catalog_id": "PROPS_terra",
+      "name": "Cassette de semillas",
+      "status": "planned",
+      "dimension_target_m": {
+        "x": 0.38,
+        "y": 0.25,
+        "z": 0.12
+      },
+      "dimension_basis": "propuesta ergonómica y retícula; confirmar con jugador 1,85 m y cámara actual",
+      "function": "Cierre y asa funcionales, celdas opacas; etiqueta geométrica original",
+      "batch_priority": 0,
+      "source_collection": "TERRA_SOURCE",
+      "export_collection": "TERRA_EXPORT",
+      "material_family": "terra_coastal_maintenance",
+      "delivery": [
+        ".blend editable",
+        "GLB",
+        "UV/PBR baked",
+        "colisión separada si bloquea",
+        "LOD cuando beneficioso y evidencia de importación"
+      ],
+      "actual_artifacts": [],
+      "reuse": [
+        "cámara de riego",
+        "acceso al reliquario",
+        "archivo abisal"
+      ]
+    },
+    {
+      "id": "TERRA_ARCHIVE_TERMINAL",
+      "parent_catalog_id": "PROPS_terra",
+      "name": "Atril de acta autenticada",
+      "status": "planned",
+      "dimension_target_m": {
+        "x": 0.9,
+        "y": 0.65,
+        "z": 1.2
+      },
+      "dimension_basis": "propuesta ergonómica y retícula; confirmar con jugador 1,85 m y cámara actual",
+      "function": "Plano de lectura inclinado, sello y soporte de memoria extraíble",
+      "batch_priority": 0,
+      "source_collection": "TERRA_SOURCE",
+      "export_collection": "TERRA_EXPORT",
+      "material_family": "terra_coastal_maintenance",
+      "delivery": [
+        ".blend editable",
+        "GLB",
+        "UV/PBR baked",
+        "colisión separada si bloquea",
+        "LOD cuando beneficioso y evidencia de importación"
+      ],
+      "actual_artifacts": [],
+      "reuse": [
+        "cámara de riego",
+        "acceso al reliquario",
+        "archivo abisal"
+      ]
+    },
+    {
+      "id": "TERRA_ARCHIVE_VAULT",
+      "parent_catalog_id": "PROPS_terra",
+      "name": "Armario estanco de archivo",
+      "status": "planned",
+      "dimension_target_m": {
+        "x": 1.2,
+        "y": 0.65,
+        "z": 2.1
+      },
+      "dimension_basis": "propuesta ergonómica y retícula; confirmar con jugador 1,85 m y cámara actual",
+      "function": "Bisagras y junta de puerta, tres bandejas; umbral no bloquea interacción",
+      "batch_priority": 1,
+      "source_collection": "TERRA_SOURCE",
+      "export_collection": "TERRA_EXPORT",
+      "material_family": "terra_coastal_maintenance",
+      "delivery": [
+        ".blend editable",
+        "GLB",
+        "UV/PBR baked",
+        "colisión separada si bloquea",
+        "LOD cuando beneficioso y evidencia de importación"
+      ],
+      "actual_artifacts": [],
+      "reuse": [
+        "cámara de riego",
+        "acceso al reliquario",
+        "archivo abisal"
+      ]
+    },
+    {
+      "id": "TERRA_CABLE_REEL",
+      "parent_catalog_id": "PROPS_terra",
+      "name": "Carrete de cable de taller",
+      "status": "planned",
+      "dimension_target_m": {
+        "x": 0.65,
+        "y": 0.45,
+        "z": 0.7
+      },
+      "dimension_basis": "propuesta ergonómica y retícula; confirmar con jugador 1,85 m y cámara actual",
+      "function": "Cable con extremos y uso creíble; curvas editables y export malla aparte",
+      "batch_priority": 1,
+      "source_collection": "TERRA_SOURCE",
+      "export_collection": "TERRA_EXPORT",
+      "material_family": "terra_coastal_maintenance",
+      "delivery": [
+        ".blend editable",
+        "GLB",
+        "UV/PBR baked",
+        "colisión separada si bloquea",
+        "LOD cuando beneficioso y evidencia de importación"
+      ],
+      "actual_artifacts": [],
+      "reuse": [
+        "cámara de riego",
+        "acceso al reliquario",
+        "archivo abisal"
+      ]
+    },
+    {
+      "id": "TERRA_REPAIR_BOX",
+      "parent_catalog_id": "PROPS_terra",
+      "name": "Caja de reparación",
+      "status": "planned",
+      "dimension_target_m": {
+        "x": 0.6,
+        "y": 0.4,
+        "z": 0.35
+      },
+      "dimension_basis": "propuesta ergonómica y retícula; confirmar con jugador 1,85 m y cámara actual",
+      "function": "Tapa, asas y cierre legibles; material compartido con estación",
+      "batch_priority": 1,
+      "source_collection": "TERRA_SOURCE",
+      "export_collection": "TERRA_EXPORT",
+      "material_family": "terra_coastal_maintenance",
+      "delivery": [
+        ".blend editable",
+        "GLB",
+        "UV/PBR baked",
+        "colisión separada si bloquea",
+        "LOD cuando beneficioso y evidencia de importación"
+      ],
+      "actual_artifacts": [],
+      "reuse": [
+        "cámara de riego",
+        "acceso al reliquario",
+        "archivo abisal"
+      ]
+    },
+    {
+      "id": "TERRA_REFUGE_LAMP",
+      "parent_catalog_id": "PROPS_terra",
+      "name": "Lámpara de refugio",
+      "status": "planned",
+      "dimension_target_m": {
+        "x": 0.25,
+        "y": 0.25,
+        "z": 0.5
+      },
+      "dimension_basis": "propuesta ergonómica y retícula; confirmar con jugador 1,85 m y cámara actual",
+      "function": "Emisor ámbar protegido, icono de refugio y soporte orientable",
+      "batch_priority": 0,
+      "source_collection": "TERRA_SOURCE",
+      "export_collection": "TERRA_EXPORT",
+      "material_family": "terra_coastal_maintenance",
+      "delivery": [
+        ".blend editable",
+        "GLB",
+        "UV/PBR baked",
+        "colisión separada si bloquea",
+        "LOD cuando beneficioso y evidencia de importación"
+      ],
+      "actual_artifacts": [],
+      "reuse": [
+        "cámara de riego",
+        "acceso al reliquario",
+        "archivo abisal"
+      ]
+    },
+    {
+      "id": "TERRA_ROOT_BRIDGE",
+      "parent_catalog_id": "KIT_terra",
+      "name": "Raíz de junta",
+      "status": "planned",
+      "dimension_target_m": {
+        "x": 3,
+        "y": 0.5,
+        "z": 0.5
+      },
+      "dimension_basis": "propuesta ergonómica y retícula; confirmar con jugador 1,85 m y cámara actual",
+      "function": "Raíz con dos apoyos y bifurcación; nunca cruza accidentalmente ruta ni control",
+      "batch_priority": 1,
+      "source_collection": "TERRA_SOURCE",
+      "export_collection": "TERRA_EXPORT",
+      "material_family": "terra_coastal_maintenance",
+      "delivery": [
+        ".blend editable",
+        "GLB",
+        "UV/PBR baked",
+        "colisión separada si bloquea",
+        "LOD cuando beneficioso y evidencia de importación"
+      ],
+      "actual_artifacts": [],
+      "reuse": [
+        "cámara de riego",
+        "acceso al reliquario",
+        "archivo abisal"
+      ]
+    },
+    {
+      "id": "TERRA_PLANTER",
+      "parent_catalog_id": "KIT_terra",
+      "name": "Vivero de riego",
+      "status": "planned",
+      "dimension_target_m": {
+        "x": 2,
+        "y": 1,
+        "z": 0.7
+      },
+      "dimension_basis": "propuesta ergonómica y retícula; confirmar con jugador 1,85 m y cámara actual",
+      "function": "Cubeta reparada conectable a canal; nivel de suelo y agua separados",
+      "batch_priority": 1,
+      "source_collection": "TERRA_SOURCE",
+      "export_collection": "TERRA_EXPORT",
+      "material_family": "terra_coastal_maintenance",
+      "delivery": [
+        ".blend editable",
+        "GLB",
+        "UV/PBR baked",
+        "colisión separada si bloquea",
+        "LOD cuando beneficioso y evidencia de importación"
+      ],
+      "actual_artifacts": [],
+      "reuse": [
+        "cámara de riego",
+        "acceso al reliquario",
+        "archivo abisal"
+      ]
+    },
+    {
+      "id": "TERRA_VALVE_WHEEL",
+      "parent_catalog_id": "PROPS_terra",
+      "name": "Volante desmontable",
+      "status": "planned",
+      "dimension_target_m": {
+        "x": 0.4,
+        "y": 0.12,
+        "z": 0.4
+      },
+      "dimension_basis": "propuesta ergonómica y retícula; confirmar con jugador 1,85 m y cámara actual",
+      "function": "Tres radios con agarre y eje libre; pivote central, marcas de estado",
+      "batch_priority": 0,
+      "source_collection": "TERRA_SOURCE",
+      "export_collection": "TERRA_EXPORT",
+      "material_family": "terra_coastal_maintenance",
+      "delivery": [
+        ".blend editable",
+        "GLB",
+        "UV/PBR baked",
+        "colisión separada si bloquea",
+        "LOD cuando beneficioso y evidencia de importación"
+      ],
+      "actual_artifacts": [],
+      "reuse": [
+        "cámara de riego",
+        "acceso al reliquario",
+        "archivo abisal"
+      ]
+    },
+    {
+      "id": "TERRA_DRAIN_BASKET",
+      "parent_catalog_id": "PROPS_terra",
+      "name": "Cesta de filtro de sal",
+      "status": "planned",
+      "dimension_target_m": {
+        "x": 0.5,
+        "y": 0.5,
+        "z": 0.45
+      },
+      "dimension_basis": "propuesta ergonómica y retícula; confirmar con jugador 1,85 m y cámara actual",
+      "function": "Asa y rejilla gruesa; partículas finas solo en textura, limpieza reconocible",
+      "batch_priority": 1,
+      "source_collection": "TERRA_SOURCE",
+      "export_collection": "TERRA_EXPORT",
+      "material_family": "terra_coastal_maintenance",
+      "delivery": [
+        ".blend editable",
+        "GLB",
+        "UV/PBR baked",
+        "colisión separada si bloquea",
+        "LOD cuando beneficioso y evidencia de importación"
+      ],
+      "actual_artifacts": [],
+      "reuse": [
+        "cámara de riego",
+        "acceso al reliquario",
+        "archivo abisal"
+      ]
+    }
+  ]
+}
