@@ -5,94 +5,82 @@
 **CLAIM:** CLM-AURORA-WORLD-001  
 **BRANCH:** `art/world-aurora-veil-001`  
 **REMOTE 3D PROJECT:** `d6488148-8547-4ffe-b63d-e5fbec3a339c`  
-**REMOTE REVISION:** `8`  
-**STATUS:** `IN_PROGRESS — WAVE 1 QUALIFIED + WAVE 2 CAMP MODULAR TECH REVIEW, NOT FINAL ART`  
+**REMOTE REVISION:** `12`  
+**STATUS:** `IN_PROGRESS — MACRO/ORBITAL + CAMP MODULAR + TEMPORAL CONTRACT TECHNICALLY QUALIFIED; FINAL ART/RUNTIME OPEN`  
 
-## Current coverage
+## Current production state
 
-| Area | State | Receipt |
+| Area | State | Evidence |
 |---|---|---|
-| Claim / ownership | DONE | Fleet ACK issue #7 epoch 1; draft PR #20 |
-| World Bible / Art contract | DONE | `WORLD_BIBLE.md` |
-| Planet scale contract | PROPOSED | `ADR/ADR-AUR-001-planet-scale.md` |
-| Master Asset List | DONE for initial families | `MASTER_ASSET_LIST.yaml` |
-| L1 orbital shell/atmosphere | REVIEW | rev 7+, `QA/orbital_r7.json` |
-| 3-region macro terrain | REVIEW | rev 8 preserves macro surface |
-| Campamento modular architecture | REVIEW_TECHNICAL | rev 8, `QA/camp_r8.json` |
-| Repetition Plain temporal grammar | IN_PROGRESS | next P0 |
-| AEON Orchard / arena | REVIEW_BLOCKOUT | 50 m / 3 sectors |
-| Ecology/NPC/enemy proxies | IN_PROGRESS_BLOCKOUT | semantic only |
-| Peregrino variant | REVIEW_BLOCKOUT | 5.8×2.7×2.4 m |
-| Collision/streaming planning | REVIEW | 4 world proxies + 27 planning cells |
-| GLB export | PASS at rev 8 | etag `d7b72b60d8a6a7dee7e72737f1643201` |
-| Editable Blend | PASS at rev 8 | etag `eea9deb1db85ab6e71c42cd234371093` |
-| Engine import | BLOCKED | EXO-012 |
-| Target-hardware performance | BLOCKED | target unavailable |
-| Human GATE-ART | PENDING | evidence exists; no human sign-off |
+| Ownership | DONE / epoch 1 | issue #7 ACK, draft PR #20 |
+| World Bible / scale ADR | DONE / proposal boundary | `WORLD_BIBLE.md`, ADR |
+| L1 orbital | REVIEW | `QA/orbital_r7.json` |
+| Macro terrain | IN_PROGRESS | next critical path |
+| Campamento modular kit | REVIEW_TECHNICAL | `QA/camp_r8.json` |
+| Temporal grammar | REVIEW_TECHNICAL | `TEMPORAL_CONTRACT.md`, `QA/temporal_r12.json` |
+| AEON arena | REVIEW_BLOCKOUT | 50 m + 3 sectors |
+| Ecology/population | IN_PROGRESS_BLOCKOUT | semantic proxies |
+| GLB / editable Blend | PASS rev 12 | remote artifacts |
+| Engine integration | BLOCKED | EXO-012 |
+| Target-hardware perf | BLOCKED | target unavailable |
+| Human GATE-ART | PENDING | no final art approval |
 
-## Campamento modular r8 facts
+## Remote rev12 facts
 
-- Authoring grid: **4 m**.
-- Refuge proof: 4×3 bays; **16×12 m** habitable footprint.
-- Full proof child bounds including service gantry: **16.9×14.6×4.03 m**.
-- Source library: **12 modules**, hidden from render.
-- Observatory ring: **48 m** exact outer diameter; 24 × 15° segments + 24 splice flanges.
-- Ring segment instances share `LIB_AUR_ARC_003_RING_SEG_15D_MESH`.
-- Refuge proof uses shared floor/roof/foundation/frame meshes rather than destructive duplicates.
-- Material roles: galvanized structure, ceramic composite envelope, EPDM gasket, dark glass, calibrated bronze, mineral foundation, service-tray metal.
-- Manufacturing causalities are recorded for structure/envelope/floor/roof/foundation/services/ring.
-- Route-recorder beacon and clock-sync foundation families now have source modules.
-- Old monolithic observatory torus was removed; modular ring is the active proof.
+- Temporal contract version: `AUR-TEMPORAL-v1-r12`.
+- Three local temporal fields: A/B/C.
+- Five deterministic state families per field: `IDLE`, `PRE_CUE`, `REPEAT_ARMED`, `REPEAT_ACTIVE`, `COOLDOWN`.
+- 3 field collision proxies + 3 AEON sector proxies = 6 total; hidden from render, disabled by default.
+- Collision policy: `ENABLE_LOCAL_REPEAT_PROXY_ONLY` and only for `REPEAT_ACTIVE`.
+- Legacy temporal collection retained but hidden from render, making the migration reversible.
+- Global rewind: FORBIDDEN.
+- Global save-state mutation: FORBIDDEN.
+- AEON sectors: exactly 3; one visible delay rule per sector.
+- Runtime remains intentionally unimplemented until engine interface exists.
 
-## Campamento r8 render/QA
+## Temporal visual evidence
 
-`aurora_r8_camp_modular.png` / artifact `499ece4233ccfca6d51eee3fcbab6a88`, 640×360.
+- `aurora_r12_temporal_field_b.png` / artifact `37c827b99d717a97918cd57ecc8636a1`: mean 0.1975, p99 0.8733, black clip 0.0062, white clip 0.
+- `aurora_r12_aeon_temporal_sectors.png` / artifact `faafcfef3bbd5e5f26696ccd51110cd9`: mean 0.1822, p99 0.9070, black clip 0.0718, white clip 0.
+- Arena dark-region ratio remains a human art/readability review item; it is not promoted to visual PASS from statistics alone.
 
-- mean: 0.1714;
-- p01: 0.0410;
-- p50: 0.1912;
-- p99: 0.5031;
-- black clip: 0.0006;
-- white clip: 0;
-- pixels above luminance 0.075: 0.8065;
-- r5 Camp baseline mean: 0.1724;
-- delta vs baseline: **−0.0010**.
+## Portable artifacts rev12
 
-This is a photometric/regression PASS, **not** an art-direction PASS.
+- Blend: 7,561,886 bytes; etag `9c6a327ccabd8337b26c0ad4c042af5b`.
+- GLB: 5,113,024 bytes; etag `be87a2884661cbd3b0abc3052e0e54e8`.
 
-## Persistent scene facts retained
+## Campamento modular facts retained
 
-- Blender 5.2; metric local frame, 1 BU = 1 m.
-- Macro frame: 5,200×3,000 m.
-- Canon gravity 0.94 g; reference temperature 11 °C.
-- Proposed planet radius 5,900 km remains PROPOSAL.
-- L1 orbital proxy remains display-only at 1e-4 scale; no global continent geography invented.
-- AEON arena remains canonical 50 m diameter with exactly 3 primary echo sectors.
-- 12 bounded temporal anchors remain in the blockout pending productionization.
-- One global stellar `SUN_VELAR_LOW`; no AREA-light export dependency.
+- 4 m grid.
+- 12 source modules.
+- 16×12 m refuge proof footprint.
+- 24-segment 48 m observatory ring.
+- shared mesh instancing.
+- manufacturing/material-role contract.
+- Camp render regression delta −0.001 vs r5 mean.
 
-## QA / failure history
+## Orbital facts retained
 
-1. Monolithic first build timed out → world builds now use semantic checkpoint mutations.
-2. Observatory ring and Peregrino scale mismatches were corrected before promotion.
-3. Overview camera far clip was corrected before visual baseline.
-4. Pixel auditor was fixed to load explicit PNGs rather than rely on an empty Render Result buffer.
-5. Orbital second-SUN regression was detected and removed; surface baseline delta became 0.0000.
-6. Camp modular replacement r8 preserves Camp exposure within −0.001 mean luminance vs r5 while replacing the monolithic ring with instanced modules.
+- proposed 5,900 km physical radius isolated as metadata.
+- 1e-4 display representation.
+- separate body/atmosphere/aurora layers.
+- 2 observation-station proxies.
+- global continent geography remains UNKNOWN_NOT_AUTHORED.
+- orbital insertion surface regression delta 0.0000.
 
-## Progress metrics
+## Failure/fix history worth preserving
 
-- World/category coverage: broad initial inventory complete; final production depth still low.
-- Modeling: macro + orbital + Camp modular proof established; hero/character production topology pending.
-- Materials: construction-role materials established in r8; calibrated texture/PBR board still pending.
-- Optimization: mesh instancing demonstrated in Camp kit; LOD/HLOD/perf not qualified.
-- Integration: GLB exchange succeeds through rev 8; native production engine import blocked.
-- QA: dimensions, export, photometric regression, instancing and manufacturing metadata validated; human art gate pending.
+1. Monolithic build timeout → semantic staged mutations.
+2. Scale mismatches on ring/Peregrino → measured corrections before promotion.
+3. Camera clip failure → far-clip QA gate.
+4. Pixel-buffer validator bug → explicit PNG-load auditor.
+5. Second scene-global SUN risk → removed and regression-tested.
+6. Temporal `IDLE` geometry initially lacked `state_id` → r12 metadata correction before review.
 
 ## Critical path NEXT
 
-1. **AUR/TEMPORAL/007** — productionize bounded echo grammar: stable state IDs, local time offsets, anticipation cues, source/repeat separation and per-state collision proxies.
-2. AUR/MAT/020 — turn role materials into calibrated material board and parameter ranges.
-3. AUR/PROC/027 — cable/instrument routing generator consuming the Camp modular sockets.
+1. `AUR/TERRAIN/005`: quantify current slope/elevation/geology and refine region-specific terrain without invalidating anchors.
+2. `AUR/MAT/020`: calibrated material board with physically causal parameter ranges.
+3. `AUR/PROC/027`: cable/instrument routing generator consuming Camp sockets.
 
 Claim remains **KEEP / IN_PROGRESS**.
