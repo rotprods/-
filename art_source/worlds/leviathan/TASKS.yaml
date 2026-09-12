@@ -1,0 +1,193 @@
+schema_version: 1
+world_id: leviathan
+claim_id: CLM-W10-WORLD-LEVIATHAN-001
+agent_id: AGENT-LEVIATHAN-10
+north_star: >-
+  Deliver a recoverable LEVIATHAN world-production foundation that makes the living-planet
+  identity legible, preserves stable gameplay collision beneath deforming visual tissue,
+  and establishes the three canonical regions plus the 58 m SOMA encounter interface.
+status: IN_PROGRESS
+
+first_10_tasks:
+  - id: W10/WORLD/001
+    title: Lock evidence-bound LEVIATHAN World Bible
+    priority: P0
+    status: DONE
+    objective: Separate canon, observed facts, proposals and blockers for world production.
+    inputs:
+      - design/EXOVANT_BIBLIA.md
+      - design/EXOVANT_DATA.json
+      - docs/ART_PRODUCTION.md
+    output: art_source/worlds/leviathan/WORLD_BIBLE.md
+    dependencies: []
+    dod:
+      - three canonical regions recorded
+      - gravity and temperature traced to canon
+      - planet radius remains UNKNOWN rather than invented
+      - engine and hardware uncertainty recorded
+      - art-drift and collision contracts written
+    evidence:
+      - art_source/worlds/leviathan/WORLD_BIBLE.md
+
+  - id: W10/WORLD/002
+    title: Build master asset registry and coverage matrix
+    priority: P0
+    status: IN_PROGRESS
+    objective: Give every required foundation family a stable ID, tier, owner/status and dependency.
+    output: art_source/worlds/leviathan/MASTER_ASSET_LIST.yaml
+    dependencies:
+      - W10/WORLD/001
+    dod:
+      - all three regions represented
+      - environment/material/ecology/population/combat/vehicle/technical families represented
+      - proxy versus final-production state explicit
+      - no proposed catalog row presented as produced asset
+
+  - id: W10/BLEND/003
+    title: Create deterministic LEVIATHAN master Blender scene
+    priority: P0
+    status: IN_PROGRESS
+    objective: Create an editable metre-scale Blender foundation in the dedicated remote project.
+    output:
+      - art_source/worlds/leviathan/tools/build_master_scene.py
+      - remote editable .blend revision
+      - portable GLB revision
+    dependencies:
+      - W10/WORLD/001
+    dod:
+      - metric units verified
+      - semantic collection hierarchy exists
+      - source generator can rebuild foundation deterministically
+      - editable .blend produced
+      - GLB produced
+      - project/revision receipts recorded
+    evidence:
+      - remote_project_id: 2577a7b6-ebd7-4d31-a645-620e4b73a95d
+      - remote_revision: 1
+
+  - id: W10/REGION/004
+    title: Block out Puerto de la Herida
+    priority: P1
+    status: IN_PROGRESS
+    objective: Establish the scar-port graft language, colony-module family, sutures and refuge interface.
+    dependencies:
+      - W10/BLEND/003
+    output: R1 blockout collection in master scene
+    dod:
+      - stable traversal deck exists
+      - scar boundary is readable at gameplay and overview scale
+      - at least one repeatable human graft module family exists
+      - sutures/valves imply physical maintenance rather than random decoration
+      - 1.85 m human reference confirms scale
+
+  - id: W10/REGION/005
+    title: Block out Jardines Inmunes
+    priority: P1
+    status: IN_PROGRESS
+    objective: Establish lymph-channel traversal and first ecological silhouettes.
+    dependencies:
+      - W10/BLEND/003
+    output: R2 blockout collection in master scene
+    dod:
+      - stable gameplay path exists independently of visual tissue
+      - lymph channels express flow direction
+      - pulse algae and gardener/lymph-whale silhouettes are present as proxies
+      - ecology proxies are explicitly non-final
+
+  - id: W10/REGION/006
+    title: Block out Cámara de SOMA
+    priority: P1
+    status: IN_PROGRESS
+    objective: Implement the canonical 58 m encounter interface with safe-space logic.
+    dependencies:
+      - W10/BLEND/003
+    output: R3 blockout and combat-interface collection
+    dod:
+      - arena interface measures 58 m diameter
+      - biological bridge family exists
+      - at least three readable safe-valve interfaces exist
+      - contraction membranes are marked visual-only
+      - SOMA proxy is explicitly non-final anatomy
+      - no unavoidable crushing volume is introduced in the stable collision layer
+
+  - id: W10/TECH/007
+    title: Qualify scale and stable collision separation
+    priority: P0
+    status: TODO
+    objective: Prove the blockout's collision and scale contracts independently of beauty rendering.
+    dependencies:
+      - W10/REGION/004
+      - W10/REGION/005
+      - W10/REGION/006
+    output: art_source/worlds/leviathan/evidence/geometry_collision_validation.json
+    dod:
+      - 1.85 m reference measured
+      - 58 m arena measured
+      - stable-collision objects enumerated
+      - visual-only contraction objects enumerated
+      - no final engine-collision PASS claimed without runtime import/test
+
+  - id: W10/MAT/008
+    title: Establish LEVIATHAN material-role library
+    priority: P1
+    status: IN_PROGRESS
+    objective: Define portable PBR roles for host tissue, cartilage, vascular systems, human grafts and signal semantics.
+    dependencies:
+      - W10/WORLD/001
+      - W10/BLEND/003
+    output: portable Blender material roles and material manifest
+    dod:
+      - host and human material families remain visually separable
+      - amber/cyan/vermilion roles follow project semantic language
+      - no unsupported texture/UDIM budget is invented
+      - GLB portability warnings recorded
+
+  - id: W10/ECO/009
+    title: Establish ecology and adversary silhouette interfaces
+    priority: P1
+    status: IN_PROGRESS
+    objective: Provide scale/function proxies for first-pass ecology and enemy coverage.
+    dependencies:
+      - W10/REGION/005
+    output: ecology/combat proxy collections and asset-registry entries
+    dod:
+      - Parásito jardinero proxy represented
+      - Ballena de linfa proxy represented
+      - Fagocito/Extractor/Colonia parasitaria proxies represented
+      - all proxies marked non-final
+      - no final anatomy or rig claim
+
+  - id: W10/QA/010
+    title: Run blockout QA and export receipts
+    priority: P0
+    status: IN_PROGRESS
+    objective: Validate structural completeness, render framing and portable export without overclaiming final quality.
+    dependencies:
+      - W10/BLEND/003
+      - W10/REGION/004
+      - W10/REGION/005
+      - W10/REGION/006
+    output:
+      - art_source/worlds/leviathan/validation.json
+      - overview render receipt
+      - SOMA gameplay-camera render receipt
+      - editable .blend receipt
+      - GLB receipt
+    dod:
+      - required semantic objects found
+      - scale checks recorded
+      - overview visually inspected
+      - SOMA gameplay view visually inspected
+      - missing/intersecting/floating issues converted to tasks or fixed
+      - glTF export warnings recorded
+      - engine import marked NOT_RUN until actually executed
+      - performance marked UNMEASURED until target hardware exists
+
+stop_conditions:
+  do_not_mark_world_done_if:
+    - any P0/P1 in this claim remains open
+    - engine import has not been checked for final assets
+    - target performance remains unqualified
+    - human art review is pending
+    - planet-scale blockers are unresolved for L0/L1
+    - final assets lack manifests or source
