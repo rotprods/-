@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "claim": "CLM-SYLVA-MACRO-001",
+  "source_revision": 13,
+  "classification": "READ_ONLY_PREFETCH_TEST_EVIDENCE",
+  "operation_id": "sylva-r13-route-residency-preflight",
+  "sample_spacing_m": 25,
+  "cell_tie_policy": "boundary to positive axis",
+  "total_centerline_transitions": 4,
+  "routes": [
+    {
+      "route": "SYLVA_TRAV_PathGuide_00",
+      "length_m": 1963.093,
+      "geometry_stream_cells_r13": ["X0Y1", "X1Y1"],
+      "centerline_cells_ordered": ["X0Y1", "X1Y1"],
+      "transitions": [
+        {"from": "X0Y1", "to": "X1Y1", "distance_m": 283.876, "point_xyz_m": [-3000, -2000, 345.8]}
+      ]
+    },
+    {
+      "route": "SYLVA_TRAV_PathGuide_01",
+      "length_m": 2382.483,
+      "geometry_stream_cells_r13": ["X1Y1", "X1Y2", "X2Y1", "X2Y2"],
+      "centerline_cells_ordered": ["X1Y1", "X1Y2", "X2Y2"],
+      "transitions": [
+        {"from": "X1Y1", "to": "X1Y2", "distance_m": 1678.729, "point_xyz_m": [-500, 0, 356.1]},
+        {"from": "X1Y2", "to": "X2Y2", "distance_m": 2282.483, "point_xyz_m": [0, 250, 352.2]}
+      ]
+    },
+    {
+      "route": "SYLVA_TRAV_PathGuide_02",
+      "length_m": 2188.103,
+      "geometry_stream_cells_r13": ["X1Y2", "X2Y2"],
+      "centerline_cells_ordered": ["X2Y2"],
+      "transitions": []
+    },
+    {
+      "route": "SYLVA_TRAV_PathGuide_03",
+      "length_m": 2364.615,
+      "geometry_stream_cells_r13": ["X2Y2", "X3Y2"],
+      "centerline_cells_ordered": ["X2Y2", "X3Y2"],
+      "transitions": [
+        {"from": "X2Y2", "to": "X3Y2", "distance_m": 1605.12, "point_xyz_m": [3000, 2000, -72.4]}
+      ]
+    }
+  ],
+  "interpretation": {
+    "geometry_membership": "Conservative object-bounds residency: correct for rendering/collision ownership; may include cells the centerline never enters.",
+    "centerline_membership": "Player/travel prefetch sequence; do not replace geometry membership with it.",
+    "l2_crossings": [
+      "Route 01 transition X1Y1 -> X1Y2 crosses L2_X0Y0 -> L2_X0Y1",
+      "Route 01 transition X1Y2 -> X2Y2 crosses L2_X0Y1 -> L2_X1Y1"
+    ],
+    "same_l2_crossings": [
+      "Route 00 X0Y1 -> X1Y1 remains L2_X0Y0",
+      "Route 03 X2Y2 -> X3Y2 remains L2_X1Y1"
+    ]
+  },
+  "truth": "Approximate transition distance has <=25m sampling granularity; transition coordinates lie on authored L3 boundaries. No engine residency was executed."
+}
