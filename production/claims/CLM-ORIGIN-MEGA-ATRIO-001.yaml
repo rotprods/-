@@ -8,12 +8,13 @@ world_id: origin
 region_id: ATRIO-DE-LAS-RUTAS
 category: megastructures
 subdomain: route_ring_structural_kit
-status: CLAIMED
+status: IN_PROGRESS
+truth_state: locally_validated_blockout
 priority: P0
 branch: art/world-origin-001
 base_sha: 196ef814fdc845ec797979906d01dc25009217c7
 created_at: 2026-09-12T21:54:00+02:00
-last_heartbeat: 2026-09-12T21:54:00+02:00
+last_heartbeat: 2026-09-12T22:02:30+02:00
 
 north_star: >-
   Deliver a physically legible, modular, deterministic structural kit for the canonical 70 m
@@ -72,11 +73,30 @@ proposal_constraints:
   ring_deck_width_m: 5.0
   note: dimensions above are proposal values to validate with traversal and camera; only arena envelope and three-ring topology are canon.
 
-release_conditions:
-  - Blender source and generator committed
-  - remote Blender mutation verified
-  - required assets and collision proxies present
-  - no degenerate geometry / missing materials / accidental non-unit scale
-  - GLB export resolves
-  - runtime traversal and human art review remain separate gates
+remote_blender:
+  project_id: 6e64cd59-f1f6-461f-850c-737d098f1723
+  revision: 2
+  blender_version: 5.2.0 LTS
+  qa_operation: origin-atrio-qa-release-005
+  qa_result: PASS
+  object_count: 132
+  collision_proxy_count: 19
+  visible_approx_triangles: 11436
+
+checkpoint_completed:
+  - deterministic source generator committed
+  - remote Blender revisions 1 and 2 produced
+  - required asset coverage PASS
+  - collision coverage PASS
+  - support contact PASS after correction
+  - camera production-corner coverage PASS after correction
+  - GLB export PASS
+  - manifest and QA receipt committed
+
+pending_gates:
+  - engine import / CharacterBody traversal
+  - final UV / PBR / LOD pass
+  - target-hardware performance
+  - human GATE-ART review
+
 claim_status: KEEP
