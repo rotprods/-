@@ -1,4 +1,4 @@
-# HANDOFF — SYLVA PRIME MACRO FOUNDATION
+# HANDOFF — SYLVA PRIME MACRO FOUNDATION R11
 
 AGENT: `AGENT-SYLVA-MACRO-01`  
 SESSION: `20260912-SYLVA-MACRO-001`  
@@ -6,130 +6,175 @@ CLAIM: `CLM-SYLVA-MACRO-001`
 BRANCH: `art/world-sylva-prime-macro-001`  
 LINEAR: `ROT-117`  
 DRAFT PR: `#3`  
-PRIMARY BLENDER: `05dce898-753d-4ff6-a4b0-31757dc868d8` @ revision `6`  
-NORTH STAR: reproducible metre-scale macro/regional foundation for SYLVA PRIME with explicit ownership and evidence.
+PRIMARY BLENDER: `05dce898-753d-4ff6-a4b0-31757dc868d8` @ **revision 11**  
+NORTH STAR: reproducible metre-scale macro/regional foundation for SYLVA PRIME with explicit ownership, physical causality and recoverable integration contracts.
 
 ## CURRENT TRUTH
 
-- Current checkpoint: `WAVE1D_BIOGEO_MACRO_TERRAIN_R6`.
-- Remote r6 `.blend` + GLB exist; exact bytes are not recovered locally in this sandbox.
-- Blender technical QA: `PASS_BLOCKOUT_R6`.
-- Human `GATE-ART`: `PENDING`.
-- Native engine import/traversal/collision: `ENV_BLOCKED / NOT_RUN`.
-- Target-hardware performance: unresolved.
-- Planet radius Option C remains a proposal only.
-- Claim: `KEEP / CHECKPOINT`.
+- checkpoint: `WAVE1I_CONTRACT_METADATA_R11`;
+- primary scene source + portable GLB exist remotely;
+- source technical QA: PASS at blockout/interface level;
+- r9 route collision is historical failed checkpoint; r10 fixes it;
+- r11 only normalizes metadata, no geometry delta from r10;
+- human `GATE-ART`: PENDING;
+- native engine import/traversal: NOT_RUN / environment-blocked here;
+- provider root kit: NOT_READY due pivot + manifest gate;
+- planetary Option C: proposal only;
+- claim remains `KEEP / CHECKPOINT`.
 
-## OWNERSHIP
+## OWNERSHIP BOUNDARY
 
-This claim owns macro terrain/topology, regional spatial foundation, traversal/streaming/collision interfaces, VESPER macro encounter layout and reversible planetary-scale proposal artifacts.
+### This claim owns
+- causal macro terrain and local metric world foundation;
+- canonical region placement/spatial composition;
+- diagnostic macro root topology;
+- terrain-aware navigation centerlines;
+- macro collision/streaming interfaces;
+- VESPER macro encounter layout;
+- root-kit **consumer sockets/support map**;
+- reversible planet-scale decision artifacts.
 
-PR #6 / `CLM-SYLVA-PROC-NROOT-001` exclusively owns reusable A1/A2/A3/B1/B2/C1/C2/C3 neural-root modules and their per-module collision. R6 copies **zero** provider meshes.
+### PR #6 owns
+`CLM-SYLVA-PROC-NROOT-001`:
+- reusable A1/A2/A3/B1/B2/C1/C2/C3 meso root module geometry;
+- provider generator, callus surfaces, module collisions/material interfaces.
 
-## PRODUCTION LINEAGE
+This branch contains **zero provider module meshes**.
+
+## BUILD LINEAGE
 
 1. `generate_sylva_macro.py`
 2. `add_sylva_macro_interfaces.py`
 3. `add_vesper_three_terraces.py`
 4. `refine_macro_terrain_r6.py`
+5. `apply_socket_consumer_contract_r7.py`
+6. `apply_socket_support_map_r8.py`
+7. `build_terrain_aware_routes_r10.py`
+8. r11 metadata-only normalization (`SYLVA_NAV_R10`, `SYLVA_SOCKET_CONSUMER_V1`).
 
-Current integration QA:
-- `IMPORT_CONTRACT.md`
-- `validate_glb_contract.py`
-- `qa/GLB_CONTRACT_SELFTEST_R5.json`
-- `qa/R5_VESPER_CANON_LAYOUT.json`
-- `qa/R6_TERRAIN_CAUSALITY.json`
-- `qa/ENGINE_IMPORT_ENV_BLOCKER.json`
+## WHAT CHANGED AFTER R6
 
-## R6 DELIVERED
+### R7 — provider pivot blocker
+Read-only audit of provider Blender project `43cf2b06-c47f-4ccd-ac34-76e9a585225a` r4 found object origins unsuitable for deterministic instancing: sampled origin→geometry-center offsets mostly 9–17.55 m. Only sampled C2 terrace callus was centered.
 
-### Macro terrain causality
+Persistent provider request: PR #6 comment `5648741376`.
 
-The original mathematical blockout terrain was replaced by deterministic macro shaping with:
-- six structural root-bearing ridges;
-- two catchment/depression hypotheses (`PROPOSAL_NOT_CANON_WATERWAYS`);
-- route-support band around the authored macro centerline;
-- stable support zones under Puerto/Bosque/VESPER;
-- VESPER root-knot basin/rim;
-- no microdetail and no tectonic/canonical geography claim.
+Consumer contract locked:
+- `+X` forward;
+- `+Z` up;
+- metres;
+- scale 1;
+- provider instances = 0;
+- provider geometry copy = forbidden;
+- transforms frozen until provider pivot normalization.
 
-Render terrain:
-- 2,401 vertices;
-- 2,304 faces / 4,608 tris;
-- z −310.617 → 519.258 m.
+### R8 — semantic support map
+All eight sockets now declare intended support object/role, but **zero transforms were snapped**. This prevents implicit placement guesses while preserving integration intent.
 
-Collision terrain:
-- 33×33 / 1,089 vertices;
-- 1,024 faces / 2,048 tris;
-- exact same height function as render.
+Support map: `SYLVA_SOCKET_SUPPORT_MAP_V1`.
 
-Render↔collision validation:
-- 289 shared samples;
-- max height delta **0 m**;
-- mean height delta **0 m**.
+### R9 — failed route-collision attempt
+Terrain-aware centerlines were introduced, but the first collision ribbons had invalid side/end-cap topology and glTF emitted `mesh not valid` warnings.
 
-Terrain slopes:
-- median 4.939°;
-- p90 14.186°;
-- p95 20.297°;
-- max 51.231°.
+R9 is **not deliverable** and is retained as failure evidence.
 
-Macro route grades:
-- 00: 2.996°;
-- 01: 2.199°;
-- 02: 1.484°;
-- 03: **15.079°** → requires runtime player/camera test.
+### R10 — valid terrain-aware navigation
+Four stable route IDs are preserved and conform to r6 terrain using A* slope-weighted routing.
 
-### Retained VESPER r5 contract
+Total: **8,898.294 m**.
 
-- 3 terraces / 2 wide connectors;
-- connector slopes 12.178° / 12.689°;
-- 18 m visible / 16 m collision width;
-- no precision jumps;
-- 12 total macro collision nodes;
-- obsolete single-floor arena absent;
-- final VESPER absent.
+- leg00: 1,963.093 m / max 18.490°;
+- leg01: 2,382.483 m / max 15.131°;
+- leg02: 2,188.103 m / max 7.285°;
+- leg03: 2,364.615 m / max 20.530°.
 
-### Remote r6 evidence
+Collision ribbons are now closed manifold:
+- 00: 28 verts / 26 faces;
+- 01: 36 / 34;
+- 02: 32 / 30;
+- 03: 36 / 34;
+- all: 0 nonmanifold edges, 0 degenerate faces.
 
-- `.blend`: 2,348,647 B; etag `f82350b275ed699a790d7977be3a1ee1`.
-- GLB: 1,299,444 B; etag `896ae5e1b86cc5874f008872c05235a7`.
-- review PNG: `8f6c2c0d249577bd9d4e586b6b62145c`.
-- master 320×180 smoke: 90,828 B; mean ~0.32490; variance ~0.06411; nonblank true.
+### R11 — metadata consistency
+No geometry changed.
 
-Render signal is not art approval.
+Scene now declares:
+- navigation `SYLVA_NAV_R10`;
+- route profile `BALANCED_FOOT_TERRAIN_AWARE_R10`;
+- collision `MANIFOLD_RIBBON_R10`;
+- consumer contract `SYLVA_SOCKET_CONSUMER_V1`;
+- support map `SYLVA_SOCKET_SUPPORT_MAP_V1`.
 
-## PLANETARY SCALE
+## R11 RECEIPTS
 
-Decision package:
-- `ADR-001_PLANETARY_SCALE_PROPOSAL.md`
-- `planetary_scale_options.json`
+Scene:
+- objects 151;
+- meshes 91;
+- curves 12;
+- ~19,928 triangles;
+- collision nodes 12;
+- streaming cells/envelopes 16/3;
+- sockets 8;
+- VESPER terraces/connectors 3/2;
+- provider meshes 0;
+- final-scope violations 0;
+- namespace/unit-scale violations 0.
 
-Recommended Option C / 1.20 R⊕ is `PROPOSAL_PENDING_CREATIVE_DIRECTOR`; no canon files were changed.
+Remote artifacts:
+- `.blend`: 2,382,689 B / etag `095b96cc5dfca24bb086ac8b7b315d17`;
+- GLB: 1,325,280 B / etag `5da3def12f2919b530bf6b4fc738a0e9`.
 
-Separate orbital remote `c796230b-0463-4e17-9446-2e746c5c4933` remains **revision 0 / EMPTY**. `generate_orbital_scale_proposal_c.py` exists but must not execute until the fleet registry includes this project ID.
+Master render smoke:
+- 320×180;
+- 90,993 B;
+- mean RGB ~0.32439;
+- variance ~0.06411;
+- nonblank true.
 
-## FLEET / RESYNC
+This is not human art approval.
 
-- current main at checkpoint: `f78bfdc8bd7b2f6ab52b45d39babcc1589ab3918`;
-- producer ACK: issue #7 comment `5648367024`;
-- r5 heartbeat: `5648494825`;
-- orbital registration request: `5648418266`;
-- last registry readback: claim still `reserved` with `ack:null`;
-- producer must not edit `ops/fleet/registry.json`.
+## GLB CONTRACT
 
-## ENV BLOCKER
+Use `validate_glb_contract_r10.py` for recovered current GLB bytes.
 
-`BLOCK-SYLVA-003`:
-- remote provider resolves artifacts;
-- sandbox cannot download signed R2 bytes (DNS/safe-download restrictions);
-- pinned Godot 4.7.2 not present locally;
-- classify as `ENV_BLOCKED`, not asset or engine FAIL.
+The validator checks node/scope contracts and decodes the route-collision accessors to require closed-manifold, non-degenerate triangles.
+
+Equivalent-logic synthetic gauntlet: **10/10 PASS**. `qa/GLB_CONTRACT_SELFTEST_R10.json` records truth boundaries.
+
+Actual r11 GLB SHA/topology validation remains `ENV_BLOCKED_BINARY_RECOVERY` in this sandbox.
+
+## BLOCKERS
+
+### BLOCK-SYLVA-001 — planetary scale
+Option C (1.20 R⊕) remains proposal. Orbital project `c796230b-0463-4e17-9446-2e746c5c4933` stays EMPTY r0 until fleet registry includes it.
+
+### BLOCK-SYLVA-002 — target engine/hardware
+No final LOD/HLOD/performance claim until engine + hardware/preset are qualified.
+
+### BLOCK-SYLVA-003 — binary/native execution
+Current sandbox cannot recover signed provider binaries or install pinned Godot through its network. Classify `ENV_BLOCKED`, not asset FAIL.
+
+### BLOCK-SYLVA-004 — root-kit provider readiness
+PR #6 must supply:
+- valid manifest;
+- normalized per-asset pivots/anchors;
+- documented basis;
+- render/collision anchor parity.
+
+Do not instantiate provider modules until then.
+
+## FLEET STATE
+
+- published main at latest checked checkpoint: `f78bfdc8bd7b2f6ab52b45d39babcc1589ab3918`;
+- producer ACK: issue #7 `5648367024`;
+- orbital project registration request: `5648418266`;
+- latest registry read before r7 still `reserved / ack:null`;
+- producer does not edit `ops/fleet/registry.json`.
 
 ## NEXT 3 ACTIONS
 
-1. Re-read fleet registry. If integrator publishes ACK/path/project-ID expansion, update local claim and only then mutate orbital r0.
-2. On an artifact-enabled runtime, recover exact r6 binaries, run the GLB validator against exact SHA-256 and import into pinned Godot; traverse Puerto → Bosque → all VESPER terraces, attacking Route 03 grade 15.079°.
-3. Human-review the r6 interactive scene. Convert composition/scale/readability failures into atomic follow-up tasks before any detail/material density pass.
+1. RESYNC `main`, fleet registry and PR #6. If provider fixes pivots/manifest, read-only audit first, then consume modules through sockets; never copy ad hoc.
+2. On an artifact-enabled runtime, recover exact r11 `.blend`/GLB, bind SHA-256, run `validate_glb_contract_r10.py`, import into pinned Godot and traverse all four legs + VESPER terraces with normal controls.
+3. Human-review r11 composition/readability before adding microterrain/material/foliage density. Convert feedback into atomic claims.
 
 CLAIM STATUS: `KEEP / CHECKPOINT`
