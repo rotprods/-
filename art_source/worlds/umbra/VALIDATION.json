@@ -69,6 +69,41 @@
       "caravan_chassis": 5,
       "cameras": 2,
       "lights": 7
+    },
+    {
+      "id": "umbra-repo-generator-replay-001",
+      "type": "clean_project_mutation",
+      "status": "succeeded",
+      "project_id": "7f33ae14-540c-4af5-8131-1490465fe6cc",
+      "source_blob_sha": "8456a891ebb14590794d3730e329a7d4bbd05c65",
+      "revision_before": 0,
+      "revision_after": 1,
+      "object_count": 96,
+      "mesh_count": 85,
+      "material_count": 9,
+      "blend_size_bytes": 1581834,
+      "blend_etag": "88ca5db662ea398e6dd0ae3ce9e6aab7",
+      "glb_size_bytes": 819168,
+      "glb_etag": "a536afcefeff280e93bd0aeb8f2dd405",
+      "note": "Binary etags are not asserted identical because Blender container metadata can differ; semantic geometry was separately compared. GLB byte size matched exactly."
+    },
+    {
+      "id": "umbra-repo-generator-replay-qa-001",
+      "type": "clean_project_query",
+      "status": "succeeded",
+      "object_count": 96,
+      "mesh_count": 85,
+      "material_count": 9,
+      "triangles_evaluated": 12204,
+      "material_slots_total": 85,
+      "bad_object_scales": [],
+      "zero_dimension_meshes": [],
+      "terrain_dimensions_m": [1200, 700, 11.795],
+      "human_dimensions_m": [0.44, 0.44, 1.75],
+      "rover_dimensions_m": [4.6, 2.1, 2.0],
+      "reflector_masts": 4,
+      "caravan_chassis": 5,
+      "semantic_equivalence_to_primary_revision": "PASS"
     }
   ],
   "gates": {
@@ -80,6 +115,7 @@
     "portable_glb_generated": "PASS",
     "editable_blend_generated": "PASS",
     "preview_generated": "PASS",
+    "deterministic_clean_replay_semantic": "PASS",
     "visual_agent_inspection": "REVIEW_NOT_CLAIMED",
     "topology_final": "NOT_APPLICABLE_BLOCKOUT",
     "uv_final": "NOT_APPLICABLE_BLOCKOUT",
@@ -88,7 +124,8 @@
     "collision": "PENDING_RUNTIME_IMPORT",
     "engine_import": "BLOCKED_NOT_EXECUTED",
     "gpu_performance": "BLOCKED_NOT_QUALIFIED",
-    "human_art_review": "PENDING"
+    "human_art_review": "PENDING",
+    "branch_resync": "DIVERGED_MAIN_RECONCILIATION_REQUIRED"
   },
-  "overall": "LOCALLY_VALIDATED_BLOCKOUT_NOT_PRODUCTION_DONE"
+  "overall": "LOCALLY_VALIDATED_REPRODUCIBLE_BLOCKOUT_NOT_PRODUCTION_DONE"
 }
