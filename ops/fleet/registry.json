@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generation": 3,
+  "generation": 8,
   "base_main": "196ef814fdc845ec797979906d01dc25009217c7",
   "authority": "Published latest main only. Local transactions are proposals until normal ref update/readback. Cooperative guard, not provider ACL.",
   "coordination_issue": "https://github.com/rotprods/-/issues/7",
@@ -15,8 +15,12 @@
       "branch": "art/world-aurora-veil-001",
       "role": "world",
       "epoch": 1,
-      "status": "reserved",
-      "ack": null,
+      "status": "active",
+      "ack": {
+        "owner": "AGENT-02-AURORA",
+        "epoch": 1,
+        "evidence_ref": "https://github.com/rotprods/-/issues/7#issuecomment-5648367254"
+      },
       "paths": [
         "art_source/aurora_veil/",
         "production/claims/aurora/CLM-AURORA-WORLD-001.yaml"
@@ -30,10 +34,50 @@
       "project_ids": [
         "d6488148-8547-4ffe-b63d-e5fbec3a339c"
       ],
-      "asset_ids": [],
+      "asset_ids": [
+        "AUR-PLN-001",
+        "AUR-ATM-001",
+        "AUR-TER-001",
+        "AUR-TER-002",
+        "AUR-TER-003",
+        "AUR-ARC-001",
+        "AUR-ARC-002",
+        "AUR-ARC-003",
+        "AUR-ARC-004",
+        "AUR-INF-001",
+        "AUR-INF-002",
+        "AUR-INF-003",
+        "AUR-TMP-001",
+        "AUR-TMP-002",
+        "AUR-VEG-001",
+        "AUR-FAU-001",
+        "AUR-FAU-002",
+        "AUR-FAU-003",
+        "AUR-NPC-001",
+        "AUR-NPC-002",
+        "AUR-NPC-003",
+        "AUR-ENM-001",
+        "AUR-ENM-002",
+        "AUR-ENM-003",
+        "AUR-VEH-001",
+        "AUR-AEO-001",
+        "AUR-AEO-002",
+        "AUR-AEO-003",
+        "AUR-PRP-001",
+        "AUR-PRP-002",
+        "AUR-STY-001",
+        "AUR-STY-002",
+        "AUR-STY-003",
+        "AUR-DEC-001",
+        "AUR-DST-001",
+        "AUR-VIS-001",
+        "AUR-TEC-001",
+        "AUR-TEC-002"
+      ],
       "observed_head": "10b22780a18df147e7f984681f218abfae55c04e",
       "evidence_refs": [
-        "https://github.com/rotprods/-/blob/10b22780a18df147e7f984681f218abfae55c04e/production/claims/aurora/CLM-AURORA-WORLD-001.yaml"
+        "https://github.com/rotprods/-/blob/10b22780a18df147e7f984681f218abfae55c04e/production/claims/aurora/CLM-AURORA-WORLD-001.yaml",
+        "https://github.com/rotprods/-/issues/7#issuecomment-5648367254"
       ],
       "reservation_basis": "World scope explicit; glob paths inferred from changed tree, not explicitly reserved by claim",
       "includes": [
@@ -51,7 +95,6 @@
       ],
       "provider_mapping_basis": "project display-name match; owner must confirm",
       "acceptance_pending": [
-        "owner ACK of normalized scope and paths",
         "exact asset IDs and delivery evidence"
       ],
       "worker_status": "UNKNOWN"
@@ -237,8 +280,12 @@
       "branch": "art/world-nacre-001",
       "role": "world",
       "epoch": 1,
-      "status": "reserved",
-      "ack": null,
+      "status": "active",
+      "ack": {
+        "owner": "AGENT-3D-NACRE-01",
+        "epoch": 1,
+        "evidence_ref": "https://github.com/rotprods/-/issues/7#issuecomment-5648339684"
+      },
       "paths": [
         "art_source/coordination/CLM-NACRE-WORLD-MACRO-001.md"
       ],
@@ -251,10 +298,17 @@
       "project_ids": [
         "a49fc6f3-fedb-40a5-913f-10a08debb0e1"
       ],
-      "asset_ids": [],
+      "asset_ids": [
+        "NACRE-MACRO-SHELL-001",
+        "NACRE-MACRO-LINING-001",
+        "NACRE-ARCHIVE-NET-001",
+        "NACRE-BRIDGE-NET-001",
+        "NACRE-SCALE-REF-001"
+      ],
       "observed_head": "22187daddc276c0b736267967527b4d03dc885b6",
       "evidence_refs": [
-        "https://github.com/rotprods/-/blob/22187daddc276c0b736267967527b4d03dc885b6/art_source/coordination/CLM-NACRE-WORLD-MACRO-001.md"
+        "https://github.com/rotprods/-/blob/22187daddc276c0b736267967527b4d03dc885b6/art_source/coordination/CLM-NACRE-WORLD-MACRO-001.md",
+        "https://github.com/rotprods/-/issues/7#issuecomment-5648339684"
       ],
       "reservation_basis": "No asset directory or Owned paths declaration yet; do not invent world-wide path lock",
       "includes": [
@@ -276,7 +330,6 @@
       ],
       "provider_mapping_basis": "project display-name match; owner must confirm",
       "acceptance_pending": [
-        "owner ACK of normalized scope and paths",
         "exact asset IDs and delivery evidence"
       ],
       "worker_status": "UNKNOWN"
@@ -288,8 +341,12 @@
       "branch": "art/world-pelagos-thalassa-001",
       "role": "world",
       "epoch": 1,
-      "status": "reserved",
-      "ack": null,
+      "status": "active",
+      "ack": {
+        "owner": "AGENT-PELAGOS-01",
+        "epoch": 1,
+        "evidence_ref": "https://github.com/rotprods/-/issues/7#issuecomment-5648578777"
+      },
       "paths": [
         "art_source/worlds/pelagos/",
         "production/claims/CLM-PEL-WORLD-001.yaml"
@@ -303,11 +360,21 @@
       "project_ids": [
         "39930c08-62bb-4034-b35d-70d0ce51c9d9"
       ],
-      "asset_ids": [],
+      "asset_ids": [
+        "PEL-MATLIB-001",
+        "PEL-BIOME-CORAL-GROWTH",
+        "PEL-BOSS-THALASSA",
+        "PEL-VEH-NACAR2",
+        "PEL-ECO-JELLY-001",
+        "PEL-ECO-EEL-001",
+        "PEL-ECO-BOV-001",
+        "PEL-ECO-SCRIBE-001"
+      ],
       "observed_head": "4b6e6636eb2b4de982915c63b527ec07070ac25b",
       "evidence_refs": [
         "https://github.com/rotprods/-/blob/4b6e6636eb2b4de982915c63b527ec07070ac25b/production/claims/CLM-PEL-WORLD-001.yaml",
-        "https://github.com/rotprods/-/blob/4b6e6636eb2b4de982915c63b527ec07070ac25b/art_source/worlds/pelagos/OWNERSHIP.md"
+        "https://github.com/rotprods/-/blob/4b6e6636eb2b4de982915c63b527ec07070ac25b/art_source/worlds/pelagos/OWNERSHIP.md",
+        "https://github.com/rotprods/-/issues/7#issuecomment-5648578777"
       ],
       "reservation_basis": "Explicit Owned paths plus conditional export scope",
       "includes": [
@@ -328,7 +395,6 @@
       ],
       "provider_mapping_basis": "persisted owner reference",
       "acceptance_pending": [
-        "owner ACK of normalized scope and paths",
         "exact asset IDs and delivery evidence"
       ],
       "worker_status": "UNKNOWN"
@@ -340,8 +406,12 @@
       "branch": "art/world-umbra-001",
       "role": "world",
       "epoch": 1,
-      "status": "reserved",
-      "ack": null,
+      "status": "active",
+      "ack": {
+        "owner": "AGENT-UMBRA-04",
+        "epoch": 1,
+        "evidence_ref": "https://github.com/rotprods/-/issues/7#issuecomment-5648349781"
+      },
       "paths": [
         "art_source/worlds/umbra/",
         "art_source/coordination/ART-UMBRA-001-OWNERSHIP.md"
@@ -361,12 +431,35 @@
         }
       ],
       "project_ids": [
-        "7ab99682-8777-4143-8ae0-1fbb178ccafb"
+        "7ab99682-8777-4143-8ae0-1fbb178ccafb",
+        "7f33ae14-540c-4af5-8131-1490465fe6cc"
       ],
-      "asset_ids": [],
+      "asset_ids": [
+        "W04-TERR-001",
+        "W04-TERR-002",
+        "W04-INF-001",
+        "W04-INF-002",
+        "W04-INF-003",
+        "W04-CAR-001",
+        "W04-ARCH-001",
+        "W04-BOSSENV-001",
+        "W04-BOSSENV-002",
+        "W04-GUIDE-001",
+        "W04-GUIDE-002",
+        "W04-MAT-001",
+        "W04-MAT-002",
+        "W04-MAT-003",
+        "W04-MAT-004",
+        "W04-MAT-005",
+        "W04-NPC-001",
+        "W04-CRE-001",
+        "W04-BOSS-001",
+        "W04-STORY-001"
+      ],
       "observed_head": "230245872f73d4dcb7f4376a6c1a0c609b5845ac",
       "evidence_refs": [
-        "https://github.com/rotprods/-/blob/230245872f73d4dcb7f4376a6c1a0c609b5845ac/art_source/coordination/ART-UMBRA-001-OWNERSHIP.md"
+        "https://github.com/rotprods/-/blob/230245872f73d4dcb7f4376a6c1a0c609b5845ac/art_source/coordination/ART-UMBRA-001-OWNERSHIP.md",
+        "https://github.com/rotprods/-/issues/7#issuecomment-5648349781"
       ],
       "reservation_basis": "Explicit Owned paths",
       "includes": [
@@ -384,7 +477,6 @@
       ],
       "provider_mapping_basis": "project display-name match; owner must confirm",
       "acceptance_pending": [
-        "owner ACK of normalized scope and paths",
         "exact asset IDs and delivery evidence"
       ],
       "worker_status": "UNKNOWN"
@@ -539,11 +631,17 @@
       "branch": "art/world-sylva-prime-macro-001",
       "role": "world",
       "epoch": 1,
-      "status": "reserved",
-      "ack": null,
+      "status": "active",
+      "ack": {
+        "owner": "AGENT-SYLVA-MACRO-01",
+        "epoch": 1,
+        "evidence_ref": "https://github.com/rotprods/-/issues/7#issuecomment-5648367024"
+      },
       "paths": [
         "art_source/worlds/sylva_prime/macro/",
-        "production/claims/CLM-SYLVA-MACRO-001.yaml"
+        "production/claims/CLM-SYLVA-MACRO-001.yaml",
+        "production/manifests/sylva/macro/",
+        "production/receipts/sylva/CLM-SYLVA-MACRO-001-R4.yaml"
       ],
       "scopes": [
         {
@@ -557,14 +655,15 @@
       "asset_ids": [],
       "evidence_refs": [
         "https://github.com/rotprods/-/pull/3",
-        "ops/fleet/scope-audit-20260912.json"
+        "ops/fleet/scope-audit-20260912.json",
+        "https://github.com/rotprods/-/issues/7#issuecomment-5648367024"
       ],
       "worker_status": "UNKNOWN",
       "acceptance_pending": [
-        "owner ACK of normalized scope and paths",
         "exact asset IDs and delivery evidence"
       ],
-      "boundary_proposal": "Own regional composition, terrain, centerlines, sockets and proxy-only geometry; consume root-kit IDs; do not independently produce final reusable root modules. Both owners must ACK."
+      "boundary_proposal": "Own regional composition, terrain, centerlines, sockets and proxy-only geometry; consume root-kit IDs; do not independently produce final reusable root modules. Both owners must ACK.",
+      "remote_writer_gate": "Owner must preserve REMOTE_WRITER_FENCE.json and admit exactly one identified writer session before resuming; this ACK alone does not clear a concurrency conflict."
     },
     {
       "id": "CLM-SYLVA-PROC-NROOT-001",

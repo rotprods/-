@@ -50,6 +50,29 @@ def remote(project="project-alpha", *, revision=3, sequence=7, operation=None):
 
 
 class FleetReservations(unittest.TestCase):
+    def test_world_metadata_shards_allow_declared_world_only(self):
+        c = claim(world="Sylva Prime")
+        c["paths"] = ["production/manifests/sylva/macro/",
+                      "production/receipts/sylva/macro.json"]
+        fleet.validate(registry(c))
+
+    def test_world_metadata_shards_reject_parent_other_world_and_escape(self):
+        for path in ("production/manifests/", "production/receipts/",
+                     "production/manifests/nacre/", "production/receipts/sylva",
+                     "production/manifests/sylva/../nacre/"):
+            c = claim(world="sylva")
+            c["paths"] = [path]
+            with self.subTest(path=path), self.assertRaises(fleet.FleetError):
+                fleet.validate(registry(c))
+
+    def test_same_world_metadata_shards_still_detect_path_collisions(self):
+        a = claim(world="sylva", facet="art/macro")
+        b = claim("beta", world="sylva", facet="art/roots")
+        a["paths"] = ["production/manifests/sylva/"]
+        b["paths"] = ["production/manifests/sylva/roots/"]
+        with self.assertRaisesRegex(fleet.FleetError, "path"):
+            fleet.validate(registry(a, b))
+
     def test_world_aliases_share_one_semantic_namespace(self):
         for a, b in (("Ares IX", "ares"), ("sylva_prime", "Sylva"),
                      ("Aurora Veil", "aurora"), ("Elysium Null", "elysium")):
@@ -395,6 +418,54 @@ class FleetDeliveries(unittest.TestCase):
         self.assertTrue(result["passed"])
         self.assertIn("human approval", result["not_claimed"])
         self.assertIn("target hardware performance", result["not_claimed"])
+
+    def replace_export(self, payload):
+        payload = bytearray(payload)
+        struct.pack_into("<I", payload, 8, len(payload))
+        (self.root / "model.glb").write_bytes(payload)
+        self.delivery["glb"] = self.item("model.glb")
+        self.receipt["artifact_sha256"] = self.sha("model.glb")
+        self.save_receipt()
+
+    def test_truncated_tail_header_with_valid_total_and_hash_is_rejected(self):
+        self.replace_export((self.root / "model.glb").read_bytes() + b"tail")
+        with self.assertRaisesRegex(fleet.FleetError, "chunk header"):
+            fleet.delivery_check(self.root, self.delivery)
+
+    def test_tail_chunk_overflow_with_valid_total_and_hash_is_rejected(self):
+        self.replace_export((self.root / "model.glb").read_bytes()
+                            + struct.pack("<II", 12, 0x004E4942) + b"1234")
+        with self.assertRaisesRegex(fleet.FleetError, "bounds"):
+            fleet.delivery_check(self.root, self.delivery)
+
+    def test_unaligned_chunk_with_valid_total_and_hash_is_rejected(self):
+        self.replace_export((self.root / "model.glb").read_bytes()
+                            + struct.pack("<II", 1, 0x004E4942) + b"x")
+        with self.assertRaisesRegex(fleet.FleetError, "alignment"):
+            fleet.delivery_check(self.root, self.delivery)
+
+    def test_duplicate_json_chunk_is_rejected(self):
+        original = (self.root / "model.glb").read_bytes()
+        self.replace_export(original + original[12:])
+        with self.assertRaisesRegex(fleet.FleetError, "duplicate"):
+            fleet.delivery_check(self.root, self.delivery)
+
+    def test_duplicate_binary_chunk_is_rejected(self):
+        binary = struct.pack("<II", 4, 0x004E4942) + b"1234"
+        self.replace_export((self.root / "model.glb").read_bytes() + binary * 2)
+        with self.assertRaisesRegex(fleet.FleetError, "duplicate"):
+            fleet.delivery_check(self.root, self.delivery)
+
+    def test_unknown_aligned_extension_chunk_is_preserved(self):
+        self.replace_export((self.root / "model.glb").read_bytes()
+                            + struct.pack("<II", 4, 0x12345678) + b"1234")
+        self.assertTrue(fleet.delivery_check(self.root, self.delivery)["passed"])
+
+    def test_receipt_path_map_is_not_a_valid_evidence_list(self):
+        self.receipt["evidence_refs"] = {"engine.log": "not a list"}
+        self.save_receipt()
+        with self.assertRaisesRegex(fleet.FleetError, "list of paths"):
+            fleet.delivery_check(self.root, self.delivery)
 
     def test_modified_blend_or_export_breaks_hash_binding(self):
         for kind, path in (("blend", "source.blend"), ("glb", "model.glb")):

@@ -5,12 +5,19 @@ test_matching_install_does_not_redownload (test_bootstrap.Bootstrap.test_matchin
 test_oversized_download_rejected (test_bootstrap.Bootstrap.test_oversized_download_rejected) ... ok
 test_truncated_download_rejected (test_bootstrap.Bootstrap.test_truncated_download_rejected) ... ok
 test_valid_extract_only_expected_executable (test_bootstrap.Bootstrap.test_valid_extract_only_expected_executable) ... ok
+test_duplicate_binary_chunk_is_rejected (test_fleet_control.FleetDeliveries.test_duplicate_binary_chunk_is_rejected) ... ok
+test_duplicate_json_chunk_is_rejected (test_fleet_control.FleetDeliveries.test_duplicate_json_chunk_is_rejected) ... ok
 test_external_glb_resource_is_rejected_even_with_current_hashes (test_fleet_control.FleetDeliveries.test_external_glb_resource_is_rejected_even_with_current_hashes) ... ok
 test_modified_blend_or_export_breaks_hash_binding (test_fleet_control.FleetDeliveries.test_modified_blend_or_export_breaks_hash_binding) ... ok
 test_receipt_digest_and_referenced_evidence_are_required (test_fleet_control.FleetDeliveries.test_receipt_digest_and_referenced_evidence_are_required) ... ok
 test_receipt_must_be_successful_and_bound_to_current_export (test_fleet_control.FleetDeliveries.test_receipt_must_be_successful_and_bound_to_current_export) ... ok
+test_receipt_path_map_is_not_a_valid_evidence_list (test_fleet_control.FleetDeliveries.test_receipt_path_map_is_not_a_valid_evidence_list) ... ok
+test_tail_chunk_overflow_with_valid_total_and_hash_is_rejected (test_fleet_control.FleetDeliveries.test_tail_chunk_overflow_with_valid_total_and_hash_is_rejected) ... ok
 test_transport_receipt_does_not_promote_artistic_or_hardware_approval (test_fleet_control.FleetDeliveries.test_transport_receipt_does_not_promote_artistic_or_hardware_approval) ... ok
 test_truncated_export_and_source_path_escape_are_rejected (test_fleet_control.FleetDeliveries.test_truncated_export_and_source_path_escape_are_rejected) ... ok
+test_truncated_tail_header_with_valid_total_and_hash_is_rejected (test_fleet_control.FleetDeliveries.test_truncated_tail_header_with_valid_total_and_hash_is_rejected) ... ok
+test_unaligned_chunk_with_valid_total_and_hash_is_rejected (test_fleet_control.FleetDeliveries.test_unaligned_chunk_with_valid_total_and_hash_is_rejected) ... ok
+test_unknown_aligned_extension_chunk_is_preserved (test_fleet_control.FleetDeliveries.test_unknown_aligned_extension_chunk_is_preserved) ... ok
 test_actual_wrong_branch_cannot_be_hidden_by_request (test_fleet_control.FleetGitGuards.test_actual_wrong_branch_cannot_be_hidden_by_request) ... ok
 test_deleted_file_outside_scope_is_detected (test_fleet_control.FleetGitGuards.test_deleted_file_outside_scope_is_detected) ... ok
 test_diff_derived_guard_accepts_owned_changes_and_actual_branch (test_fleet_control.FleetGitGuards.test_diff_derived_guard_accepts_owned_changes_and_actual_branch) ... ok
@@ -43,8 +50,11 @@ test_malformed_shapes_fail_with_a_structured_fleet_error (test_fleet_control.Fle
 test_release_cannot_reuse_one_project_observation_for_another (test_fleet_control.FleetReservations.test_release_cannot_reuse_one_project_observation_for_another) ... ok
 test_release_reconciles_provider_and_fences_old_owner (test_fleet_control.FleetReservations.test_release_reconciles_provider_and_fences_old_owner) ... ok
 test_reserve_is_pure_and_stale_proposal_cannot_win_twice (test_fleet_control.FleetReservations.test_reserve_is_pure_and_stale_proposal_cannot_win_twice) ... ok
+test_same_world_metadata_shards_still_detect_path_collisions (test_fleet_control.FleetReservations.test_same_world_metadata_shards_still_detect_path_collisions) ... ok
 test_semantic_parent_covers_descendants_but_not_siblings (test_fleet_control.FleetReservations.test_semantic_parent_covers_descendants_but_not_siblings) ... ok
 test_world_aliases_share_one_semantic_namespace (test_fleet_control.FleetReservations.test_world_aliases_share_one_semantic_namespace) ... ok
+test_world_metadata_shards_allow_declared_world_only (test_fleet_control.FleetReservations.test_world_metadata_shards_allow_declared_world_only) ... ok
+test_world_metadata_shards_reject_parent_other_world_and_escape (test_fleet_control.FleetReservations.test_world_metadata_shards_reject_parent_other_world_and_escape) ... ok
 test_world_writer_cannot_reserve_global_state_or_tooling (test_fleet_control.FleetReservations.test_world_writer_cannot_reserve_global_state_or_tooling) ... ok
 test_all_twelve_learnings_recoverable (test_governance.Continuity.test_all_twelve_learnings_recoverable) ... ok
 test_dangling_graph_rejected (test_governance.Continuity.test_dangling_graph_rejected) ... ok
@@ -75,6 +85,6 @@ test_uncovered_goal_rejected (test_studio.Studio.test_uncovered_goal_rejected) .
 test_unknown_gate_rejected (test_studio.Studio.test_unknown_gate_rejected) ... ok
 
 ----------------------------------------------------------------------
-Ran 75 tests in 0.424s
+Ran 85 tests in 0.581s
 
 OK

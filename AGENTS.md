@@ -46,3 +46,6 @@ Usar planned / implemented / locally_validated / empirically_qualified / release
 
 ## Fuentes del método
 Protocolos del usuario en rotprods/rot.knowledge: APRENDE_MASTER, APRENDE_ENFORCEMENT, COS_GRAPH_ENGINE_V2_MASTER, GRAPHIFY_MASTER y GAUNTLET_LOOP_MASTER. Versiones recuperadas en `docs/PROTOCOLS.md`. Aplicación local acotada; no se afirma enforcement universal en aplicaciones ajenas.
+
+## Admisión y aprendizaje compartido
+Antes de aceptar trabajo, recuperar LRN-EXO-20260912-OWNER-ADMISSION. Cada owner produce, recupera y valida sus assets; el integrador interviene por entrega lista, conflicto entre ámbitos, regresión compartida o decisión necesaria. Reutilizar evidencia ligada a fuente/versión/contexto; repetir gates cuando la integración invalide esa evidencia. No duplicar producción ni crear auditorías para mantener actividad. Cada owner incluye en su próximo handoff normal learning_id, claim, commit, acción aplicada y evidencia, o explica por qué no aplica; no emitir heartbeats extra. Publicación no equivale a lectura/adopción. El integrador horario está pausado por decisión del usuario; no reactivarlo automáticamente. La incidencia visual local puede diagnosticarse como tarea compartida, sin asumir que la VM equivale al Mac o que la ausencia de GPU impide todos los trabajos.

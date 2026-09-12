@@ -1,0 +1,20 @@
+{
+  "base_commit": "f78bfdc8bd7b2f6ab52b45d39babcc1589ab3918",
+  "before_fix": {
+    "cases": 6,
+    "failures": 6,
+    "errors": 0
+  },
+  "cases": [
+    "test_truncated_tail_header_with_valid_total_and_hash_is_rejected",
+    "test_tail_chunk_overflow_with_valid_total_and_hash_is_rejected",
+    "test_unaligned_chunk_with_valid_total_and_hash_is_rejected",
+    "test_duplicate_json_chunk_is_rejected",
+    "test_duplicate_binary_chunk_is_rejected",
+    "test_receipt_path_map_is_not_a_valid_evidence_list"
+  ],
+  "after_fix_fleet_tests": 48,
+  "after_fix_passed": true,
+  "scope": "Synthetic transport cases only; no Blender editability, mesh semantics or human/GPU approval",
+  "learning": "No promotion; extends the bounded transport threat model of FLEET-CAS."
+}
