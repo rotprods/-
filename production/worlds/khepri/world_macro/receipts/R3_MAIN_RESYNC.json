@@ -1,0 +1,9 @@
+{
+  "claim_id": "CLM-KHEPRI-WMACRO-001",
+  "observed_at": "2026-09-12T21:44:35Z",
+  "main_head": "758a9b6326a7d061f1e304abe9b1593b6b2d1a66",
+  "main_push_gauntlet_run": 34720800915,
+  "main_push_gauntlet_status_at_observation": "in_progress",
+  "integration_decision": "BLOCK_RECONCILIATION_UNTIL_MAIN_EXACT_PUSH_GATE_TERMINAL_SUCCESS",
+  "reason": "Fleet is advancing concurrently. Producer must not reconcile against an unqualified moving main snapshot."
+}
