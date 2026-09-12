@@ -6,14 +6,14 @@ world_id: nacre
 domain: world_macro
 subdomain: planetary_foundation
 status: IN_PROGRESS
-quality_tier: BLOCKOUT_FOUNDATION_STRUCTURAL
+quality_tier: BLOCKOUT_FOUNDATION_STRUCTURAL_REPRODUCIBLE
 base_main_sha_at_claim: 4c2fa044080004609ea6df45f34b2a784536507a
-current_main_observed: f78bfdc8bd7b2f6ab52b45d39babcc1589ab3918
+last_main_resynced: 70fda70cd2120d38fba94e6a66e554e564c6c471
 branch: art/world-nacre-001
 fleet_epoch: 1
 fleet_status_observed: reserved
 fleet_ack: https://github.com/rotprods/-/issues/7#issuecomment-5648339684
-updated_at: 2026-09-12T21:28:30Z
+updated_at: 2026-09-12T21:44:00Z
 
 source_authority:
   repository: rotprods/-
@@ -31,7 +31,9 @@ pipeline:
   method_status: PIPELINE_METHOD_NOT_FOUND
   verified_route: Higgsfield 3D Jutsu bpy -> Blender 5.2 -> GLB interchange -> Godot prototype
   reproducible_generator: art_source/nacre_world_macro/build_macro.py
-  qa_receipt: art_source/nacre_world_macro/qa-r3.yaml
+  qa_receipts:
+    - art_source/nacre_world_macro/qa-r3.yaml
+    - art_source/nacre_world_macro/qa-r4.yaml
   source_format: blend
   interchange_format: glb
   prototype_engine: Godot 4.7.2
@@ -41,29 +43,38 @@ pipeline:
 remote_blender:
   project_id: a49fc6f3-fedb-40a5-913f-10a08debb0e1
   project_name: EXOVANT 2950 — NACRE World Macro — CLM-NACRE-WORLD-MACRO-001
-  revision: 3
+  revision: 4
+  build_macro_version: 3
   blend:
-    bytes: 2913059
-    etag: 2b5398f1c4bd906874e827daad64428b
+    bytes: 3500059
+    etag: a365ae84492f4142d949c1033636b092
   glb:
-    bytes: 3090440
-    etag: 6ccb564c4ada071aeca2270db804ba87
+    bytes: 3828832
+    etag: 0b6dee01664cb91aae1a4b332e8ae163
+  semantic_sha256: 48742ba2dc253a626fb807799a55e2c83f2e87f437cf761b66522bac7ba88787
+
+clean_replay:
+  project_id: 4750e054-b063-4ab8-afc9-214462f36128
+  replay_revision: 1
+  semantic_sha256: 48742ba2dc253a626fb807799a55e2c83f2e87f437cf761b66522bac7ba88787
+  semantic_match_primary_revision_4: true
+  object_count_match: true
+  mesh_objects: 97
+  curve_objects: 30
+  portable_lights: [SUN_MNEME_A, SUN_MNEME_B]
+  binary_byte_identity_required: false
 
 canon_documented:
   galaxy: Andromeda
   system: Mneme
   faction: Casas de Nácar
   boss_target: MNEMOS, el archivo encarnado
-  celestial_premise: Mneme A/B is a fictive stable binary; Nacre is a world/moon context of mineral shells and cultivated archives with three fictive archive moons.
+  celestial_premise: Mneme A/B is a fictive stable binary; Nacre is a mineral-shell/cultivated-archive world context with three fictive archive moons.
   gravity_g: 0.26
   area_temperature_c: 16
   cultural_material_premise: Cities grow inside kilometre-scale shells; inhabitants preserve lives in pearls and trade biographies.
-  archive_language: Mineral archive vaults, bounded translucent plates and thin bridges.
-  named_places:
-    - Casa de las Copias
-    - Canteras de Concha
-    - Archivo de MNEMOS
   archive_mnemos_form: Spherical archive rooms connected by bridges.
+  archive_language: Mineral archive vaults, bounded translucent plates and thin bridges.
   art_risk: Avoid duplicated scenarios and uncontrolled translucent-material proliferation; bound active versions and prefab states.
 
 unknown_not_canon:
@@ -85,10 +96,10 @@ reversible_proposals:
   bridge_surface_clearance_m: 3.0
   note: These are blockout parameters for scale/structural communication, not approved planetary canon.
 
-scene_metrics_revision_3:
+scene_metrics_revision_4:
+  object_total: 130
   mesh_objects: 97
   curve_objects: 30
-  object_total: 130
   non_unit_scale_objects: 0
   zero_dimension_objects: 0
   docking_sockets: 21
@@ -97,11 +108,9 @@ scene_metrics_revision_3:
   growth_strata: 5
   bridge_links_checked: 10
   bridge_penetrations: 0
-  bridge_surface_clearance_m_each_endpoint: 3.0
+  bridge_surface_clearance_m_observed: [2.9999, 3.0]
   camera: CAM_NACRE_MACRO
-  portable_lights:
-    - SUN_MNEME_A
-    - SUN_MNEME_B
+  portable_lights: [SUN_MNEME_A, SUN_MNEME_B]
 
 material_roles:
   - MAT_Nacre_ArchivePearl
@@ -120,14 +129,14 @@ asset_coverage:
     tier: D_to_C_blockout
     status: IN_PROGRESS
     dimensions_status: PROPOSAL
-    qa: geometry_checkpoint_pass
+    qa: reproducible_geometry_checkpoint_pass
   - asset_id: NACRE-MACRO-LINING-001
     category: macro_architecture
     name: inner pearl lining
     tier: D_to_C_blockout
     status: IN_PROGRESS
     dimensions_status: PROPOSAL
-    qa: geometry_checkpoint_pass
+    qa: reproducible_geometry_checkpoint_pass
   - asset_id: NACRE-ARCHIVE-NET-001
     category: archive_infrastructure
     name: spherical archive chamber network with service rings and suspension load paths
@@ -151,40 +160,45 @@ asset_coverage:
 
 verification:
   geometry_export_checkpoint: PASS
-  glb_export_revision_3: PASS
-  unsupported_area_light_warning: FIXED_IN_REVISION_2_AND_ABSENT_R3
+  glb_export_revision_4: PASS
+  portable_light_contract: PASS
   bridge_attachment_geometry: PASS
   bridge_penetrations: 0
   transform_sanity: PASS
   degenerate_dimension_check: PASS
   structural_macro_causality: PASS_CANDIDATE
-  revision_2_multiview:
-    operation: nacre-art-review-multiview-r2
-    hero_artifact_id: 587ff0728c5d116a7d82f4955b2431b2
-    side_ortho_artifact_id: 4350ec483a9d546c390adc22ca6b1f1c
-    top_ortho_artifact_id: beb5812d5e3e3dae9d43647a92fe5144
-  revision_3_preview:
-    operation: nacre-qa-r3-geometry-render
-    artifact_id: a5c7c5699ab993db11fb4d5903fb5504
-    name: nacre_r3_structural_hero.png
+  cold_replay_generator: PASS
+  semantic_reproducibility: PASS
+  generator_bug_blender_5_2_collection_membership: FIXED_AND_REPLAYED
+  revision_4_preview:
+    operation: nacre-r4-canonical-qa
+    artifact_id: 24642ce8001df31f7c50875e79c07c9d
+    name: nacre_r4_canonical_hero.png
     dimensions_px: [640, 360]
-  agent_visual_judgement: NOT_CLAIMED
   human_gate_art: OPEN
-  godot_import_gate: OPEN
+  godot_import_gate: ENV_BLOCKED
   collision_gate: OPEN
   lod_gate: OPEN
   performance_gate: OPEN
-  fleet_native_delivery: OPEN
+  fleet_native_delivery: ENV_BLOCKED
+
+native_delivery_attempt:
+  status: ENV_BLOCKED
+  godot_import_executed: false
+  reasons:
+    - isolated execution container could not resolve github.com for clean clone
+    - provider-signed binary could not cross the available safe-download boundary into that container
+  interpretation: environment/transit limitation; not an asset FAIL and not a runtime PASS
 
 receipts:
-  blender_build_operation: nacre-macro-build-v1c
+  initial_build_operation: nacre-macro-build-v1c
   portability_fix_operation: nacre-portability-fix-r2
-  revision_2_multiview_operation: nacre-art-review-multiview-r2
   structural_revision_3_operation: nacre-structural-bridge-fix-r3
   revision_3_qa_operation: nacre-qa-r3-geometry-render
-  failed_noncommitting_attempts:
-    - nacre-macro-build-v1: empty scene had no World datablock; no revision committed
-    - nacre-macro-build-v1b: Blender 5.2 collection membership API mismatch; no revision committed
+  generator_api_probe: nacre-r3-generator-api-probe
+  clean_replay_operation: nacre-r3-clean-replay-fixed-generator
+  primary_revision_4_operation: nacre-r4-generator-canonicalization
+  revision_4_qa_operation: nacre-r4-canonical-qa
 
 claim_status: KEEP
-stop_reason: Human art approval, Godot import/collision, LOD/streaming, performance and fleet-native binary delivery remain open. No DONE claim is permitted.
+stop_reason: Human art approval, native Godot import/collision, LOD/streaming, performance and fleet-native binary delivery remain open. No DONE claim is permitted.
