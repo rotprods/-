@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "claim_id": "CLM-SYLVA-MACRO-001",
+  "source_revision": 13,
+  "proposal": "SYLVA_STREAM_HIERARCHY_R14",
+  "status": "PASS_READONLY_READY_NOT_EXECUTED",
+  "writer_fence": "SYLVA-MACRO-WRITER-EPOCH-2-20260912",
+  "mutation_performed": false,
+  "checks": {
+    "l3_coverage_count": 16,
+    "l3_unique": true,
+    "l2_neighbor_symmetry_4": true,
+    "l2_neighbor_symmetry_8": true,
+    "l2_counts_match_proposal": true,
+    "four_l2_hotspots_match_proposal": true
+  },
+  "l2": {
+    "L2_X0Y0": {"unique_spatial_objects": 48, "membership_slots": 58},
+    "L2_X0Y1": {"unique_spatial_objects": 26, "membership_slots": 27},
+    "L2_X1Y0": {"unique_spatial_objects": 17, "membership_slots": 19},
+    "L2_X1Y1": {"unique_spatial_objects": 87, "membership_slots": 99}
+  },
+  "hero_core_overlays": {
+    "PUERTO": {
+      "core_radius_m_proposal": 550,
+      "core_cells": ["X0Y1", "X1Y1"],
+      "core_l2": ["L2_X0Y0"],
+      "authoritative_center_cell": "X0Y1"
+    },
+    "BOSQUE": {
+      "core_radius_m_proposal": 200,
+      "core_cells": ["X1Y1", "X1Y2", "X2Y1", "X2Y2"],
+      "core_l2": ["L2_X0Y0", "L2_X0Y1", "L2_X1Y0", "L2_X1Y1"],
+      "authoritative_center_cell": "X2Y2",
+      "streaming_hotspot": "GLOBAL_L2_JUNCTION"
+    },
+    "VESPER": {
+      "core_radius_m_proposal": 400,
+      "core_cells": ["X2Y2", "X3Y2"],
+      "core_l2": ["L2_X1Y1"],
+      "authoritative_center_cell": "X3Y2"
+    }
+  },
+  "cross_l2": {
+    "object_count": 19,
+    "four_l2_hotspots": [
+      "SYLVA_BOSQUE_Route0_RootR",
+      "SYLVA_COL_ROUTE_01",
+      "SYLVA_ROOT_PRIMARY_R02",
+      "SYLVA_ROOT_PRIMARY_R04",
+      "SYLVA_ROOT_PRIMARY_R05",
+      "SYLVA_TRAV_PathGuide_01"
+    ],
+    "design_implication": "Do not duplicate source geometry per L2 and do not move Bosque to simplify partitioning. Residency/prefetch metadata must support a central cross-L2 hero junction."
+  },
+  "execution_gate": {
+    "build_stream_hierarchy_r14_py": "NOT_EXECUTED",
+    "reason": "Primary Blender is FROZEN_PENDING_FLEET_ACTIVE.",
+    "allowed_when": "Fleet registry publishes current claim active/ACK and one writer owns the primary project wave."
+  },
+  "truth": "Read-only verification of proposal against accepted r13 scene. Does not create L2 nodes or HLOD geometry and does not select an engine backend."
+}
