@@ -1,0 +1,124 @@
+{
+  "schema_version": 1,
+  "receipt_id": "ART-ELYSIUM-001-EDEN-R5",
+  "world": "elysium",
+  "world_name": "ELYSIUM NULL",
+  "status": "BLENDER_MOTION_COLLISION_CANDIDATE_RUNTIME_PENDING",
+  "remote_scene": {
+    "project_id": "00152eea-2da0-40ec-8666-78d6764c718f",
+    "qualified_revision": 5,
+    "blender": "5.2.0 LTS",
+    "fps": 24
+  },
+  "canon_retained": {
+    "arena_diameter_m": 48.0,
+    "reubicacion_warning_seconds": 1.5
+  },
+  "proposal": {
+    "movement_duration_seconds": 1.0,
+    "movement_frames": 24,
+    "module_footprint_m": [8.0, 8.0],
+    "minimum_axis_corridor_m": 6.0,
+    "mechanism": "2-axis linear actuator sled on orthogonal subfloor rails"
+  },
+  "timeline": {
+    "stable_A_until_frame": 24,
+    "telegraph_start_frame": 25,
+    "telegraph_end_frame": 60,
+    "telegraph_frames": 36,
+    "movement_start_frame": 61,
+    "movement_end_frame": 84,
+    "stable_B_check_frame": 96,
+    "end_frame": 108
+  },
+  "state_positions": {
+    "frame_24_A": [[-10,101,0],[10,101,0],[-10,115,0],[10,115,0]],
+    "frame_42_warning": [[-10,101,0],[10,101,0],[-10,115,0],[10,115,0]],
+    "frame_60_warning_end": [[-10,101,0],[10,101,0],[-10,115,0],[10,115,0]],
+    "frame_61_motion_start": [[-10,101,0],[10,101,0],[-10,115,0],[10,115,0]],
+    "frame_72_mid_motion": [[-11.87,101,0],[11.87,101,0],[-11.87,115,0],[11.87,115,0]],
+    "frame_84_B": [[-14,101,0],[14,101,0],[-14,115,0],[14,115,0]],
+    "frame_96_B_stable": [[-14,101,0],[14,101,0],[-14,115,0],[14,115,0]]
+  },
+  "collision": {
+    "proxy_count": 8,
+    "per_module": [
+      "7.6 x 7.6 x 1.35 m base box",
+      "2.7 x 2.7 x 2.8 m topiary cylinder envelope"
+    ],
+    "asset_ids": [
+      "ELYS-COL-EDN-00-BASE","ELYS-COL-EDN-00-TOP",
+      "ELYS-COL-EDN-01-BASE","ELYS-COL-EDN-01-TOP",
+      "ELYS-COL-EDN-02-BASE","ELYS-COL-EDN-02-TOP",
+      "ELYS-COL-EDN-03-BASE","ELYS-COL-EDN-03-TOP"
+    ],
+    "render_visibility": "hidden",
+    "gameplay_import": "PENDING"
+  },
+  "mechanism_objects": 16,
+  "hierarchy_defect_and_fix": {
+    "failed_operation": "ART-ELYSIUM-001.r4-eden-collision-motion",
+    "failed_reason": "Blender 5.2 Action API no longer exposed Action.fcurves as expected; no revision committed.",
+    "revision_4_issue": "Structural verification found existing visible garden children were double-transformed after initial parent preservation, e.g. intended (-10,101) rendered world location (-20,202).",
+    "revision_5_fix": "Visible garden base/soil/topiary, actuator sled and collision proxies use explicit local coordinates under each kinematic root.",
+    "revision_5_verification": "At A and B, each visible garden base and base collision proxy have identical XYZ world positions; all measured differences are [0,0,0]."
+  },
+  "runtime_clearance_static": {
+    "source": "main@196ef814fdc845ec797979906d01dc25009217c7/scripts/player.gd",
+    "player_capsule_radius_m": 0.38,
+    "player_capsule_diameter_m": 0.76,
+    "player_capsule_height_m": 1.85,
+    "candidate_door_width_m": 2.4,
+    "candidate_door_height_m": 2.7,
+    "total_horizontal_slack_m": 1.64,
+    "per_side_horizontal_slack_m": 0.82,
+    "vertical_headroom_m": 0.85,
+    "status": "PASS_STATIC_GEOMETRY_ONLY"
+  },
+  "standard_enemy_clearance_static": {
+    "source": "main@196ef814fdc845ec797979906d01dc25009217c7/scripts/enemy.gd",
+    "capsule_radius_m": 0.4,
+    "capsule_diameter_m": 0.8,
+    "capsule_height_m": 1.8,
+    "candidate_door_width_m": 2.4,
+    "candidate_door_height_m": 2.7,
+    "status": "PASS_STATIC_GEOMETRY_ONLY"
+  },
+  "boss_clearance_static": {
+    "capsule_radius_m": 1.1,
+    "capsule_diameter_m": 2.2,
+    "capsule_height_m": 5.8,
+    "candidate_door_height_m": 2.7,
+    "status": "INTENTIONALLY_NOT_TRAVERSABLE_BY_CURRENT_BOSS_CAPSULE"
+  },
+  "artifacts_revision_5": {
+    "blend_size_bytes": 2867208,
+    "blend_etag": "dc639fd78ed771da917a4d45b02f1c99",
+    "glb_size_bytes": 2692504,
+    "glb_etag": "2d2e0aee2c06bec978685794af33665",
+    "state_a_preview": "951c10651bc747331a491786c1969111",
+    "state_b_preview": "316d7b8e9566b4103a8d1713f2e4fbcf"
+  },
+  "gates": {
+    "canonical_48m_arena": "PASS",
+    "canonical_1_5s_warning_timing": "PASS_BLENDER_TIMELINE",
+    "module_root_animation": "PASS_BLENDER",
+    "visible_collision_alignment": "PASS",
+    "separate_collision_geometry": "PASS_BLENDER",
+    "physical_actuation_readability": "IMPLEMENTED_CANDIDATE",
+    "static_player_clearance": "PASS",
+    "native_player_traversal": "PENDING",
+    "combat_camera": "PENDING",
+    "target_engine_state_transition": "PENDING",
+    "nav_update": "PENDING",
+    "performance": "PENDING",
+    "gate_art": "PENDING"
+  },
+  "non_claims": [
+    "Blender keyframes are not target-runtime gameplay implementation.",
+    "Collision proxies have not been imported or traversed in Godot/Unreal.",
+    "The 1.0 s movement duration is a proposal, not canon.",
+    "The 6 m corridor is not production-qualified until gameplay/camera/accessibility tests pass.",
+    "Preview generation is not GATE-ART approval."
+  ]
+}
