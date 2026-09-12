@@ -22,16 +22,16 @@
   "remote_source": {
     "project_id": "c82188b1-afdc-43f2-828a-5f0e98291f83",
     "blender_version": "5.2.0 LTS",
-    "revision": 9,
+    "revision": 10,
     "blend": {
-      "size_bytes": 8178521,
-      "etag": "9cc8c4c8c79e887ce9ef7364710dcbf4",
-      "sha256": "11b60150409718182cac44d190444f912064e7ff4431f444cca76effbdd0c66b"
+      "size_bytes": 11414294,
+      "etag": "ced280eaa6112470cc21a1ac02afec62",
+      "sha256": "128979e51a507d97792ef3c15aaf9de20369e21589b60a9d13fe4d0d262d1466"
     },
     "glb": {
-      "size_bytes": 5993560,
-      "etag": "0e82911eefab809ede430a231ae9953b",
-      "sha256": "d4cb8154802e7713b9887328431bd27dfdbc6ba6bec07e790fd0b99befef3258",
+      "size_bytes": 9228876,
+      "etag": "0311edc1eaa61c3c599957d57a47d165",
+      "sha256": "934450fab1d9eff9dff0dc62971682a692d5f04d4d72871b9f274e6240c7e171",
       "meshes": 701,
       "nodes": 832,
       "materials": 20,
@@ -44,7 +44,7 @@
     "generator": "art_source/vanta/pipeline/generate_asset_registry.py"
   },
   "cp4": {
-    "status": "EMPIRICALLY_QUALIFIED_GODOT_4_7_2_STATIC_IMPORT_COLLISION",
+    "status": "EMPIRICALLY_QUALIFIED_GODOT_4_7_2_BOUNDED_CHARACTERBODY_TRAVERSAL",
     "snap_modules": 12,
     "snap_sockets": 48,
     "parent_children_fixed_rev5": 205,
@@ -53,17 +53,28 @@
     "runtime_static_bodies": 20,
     "runtime_collision_shapes": 20,
     "floor_raycast_pass": true,
-    "full_player_traversal": false
+    "full_player_traversal": false,
+    "characterbody_traversal_pass": true,
+    "characterbody_floor_frames": 323,
+    "characterbody_travel_ratio": 0.969267592149354
   },
   "cp5": {
-    "status": "NATIVE_MATERIAL_BINDING_PRESENT_VISUAL_EQUIVALENCE_OPEN",
+    "status": "EMPIRICALLY_QUALIFIED_GODOT_TEXTURE_PAYLOAD_AND_GROSS_MATERIAL_ROLE_TRANSPORT",
     "packed_images": 13,
     "textured_cp4_meshes": 147,
     "uv_missing": 0,
     "godot_visual_surfaces": 691,
     "godot_bound_material_surfaces": 691,
     "area_light_warning_resolved": true,
-    "glb_sampler_warning_open": true
+    "glb_sampler_warning_open": true,
+    "revision9_all_13_payloads_black_defect": true,
+    "revision10_payload_repaired": true,
+    "source_to_embedded_png_roundtrip_pass": true,
+    "godot_gross_color_roles_pass": true,
+    "godot_required_materials_missing": 0,
+    "godot_import_cache_bytes": 4783432,
+    "final_visual_art_approval": false,
+    "photometric_equivalence_pass": false
   },
   "engine_qualification": {
     "runtime": "Godot 4.7.2-stable (official)",
@@ -75,21 +86,28 @@
     "static_collision_pass": true,
     "single_floor_physics_query_pass": true,
     "visual_equivalence_pass": false,
-    "target_hardware_performance_pass": false
+    "target_hardware_performance_pass": false,
+    "revision": 10,
+    "glb_sha256": "934450fab1d9eff9dff0dc62971682a692d5f04d4d72871b9f274e6240c7e171",
+    "actions_run_id": 34722670811,
+    "actions_job_id": 103631274506,
+    "gross_material_role_transport_pass": true,
+    "bounded_characterbody_traversal_pass": true
   },
   "evidence": {
     "cp4": "art_source/vanta/CP4_STATUS.md",
     "cp5": "art_source/vanta/CP5_STATUS.md",
     "godot_rev9": "art_source/vanta/evidence/godot_rev9_native_qualification.json",
-    "remote_rev8": "art_source/vanta/evidence/remote_blender_rev8.json"
+    "remote_rev8": "art_source/vanta/evidence/remote_blender_rev8.json",
+    "rev10_texture_engine": "art_source/vanta/evidence/rev10_texture_engine_qualification.json"
   },
   "checkpoints": {
     "CP0": "DONE",
     "CP1": "DOCUMENTED_REVIEW_OPEN",
     "CP2": "IMPLEMENTED_GEOMETRY_REVIEW_OPEN",
     "CP3": "IMPLEMENTED_GEOMETRY_REVIEW_OPEN",
-    "CP4": "GODOT_NATIVE_STATIC_COLLISION_EMPIRICALLY_QUALIFIED_FULL_TRAVERSAL_PERF_OPEN",
-    "CP5": "GODOT_NATIVE_BINDING_VALIDATED_VISUAL_PERF_OPEN",
+    "CP4": "GODOT_BOUNDED_CHARACTERBODY_TRAVERSAL_EMPIRICALLY_QUALIFIED_FULL_ROUTE_PERF_OPEN",
+    "CP5": "GODOT_TEXTURE_PAYLOAD_AND_GROSS_ROLE_TRANSPORT_EMPIRICALLY_QUALIFIED_VISUAL_PERF_OPEN",
     "CP6": "OPEN",
     "CP7": "OPEN",
     "CP8": "OPEN",
@@ -103,12 +121,16 @@
     "full_collision_traversal_playtest_qualified": false,
     "performance_qualified": false,
     "final_engine_selected": false,
-    "aaa_aaaa_complete": false
+    "aaa_aaaa_complete": false,
+    "photometric_equivalence_pass": false,
+    "bounded_cp4_characterbody_traversal_qualified": true,
+    "cp5_texture_payload_transport_qualified": true
   },
   "next": [
-    "resolve or map remaining glTF sampler semantics and produce controlled Blender-vs-Godot captures",
-    "run player-controller traversal on the CP4 collision yard",
-    "measure render and memory cost on declared target hardware",
-    "propagate CP4/CP5 only after visual, traversal and performance gates pass"
+    "perform human visual/art-direction review with controlled Blender and Godot captures under matched camera/exposure/lighting",
+    "qualify instancing/HLOD strategy before scaling the 327 planning targets; current representative geometry reuses only 10 meshes more than once",
+    "measure frame-time, draw calls, texture residency and VRAM on declared target GPU hardware",
+    "expand CharacterBody traversal from the 12 m CP4 floor test to a representative authored route",
+    "propagate CP4/CP5 only after visual and target-hardware gates pass"
   ]
 }
