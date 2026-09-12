@@ -11,7 +11,7 @@ priority: P1
 base_sha: 4c2fa044080004609ea6df45f34b2a784536507a
 branch: art/world-aurora-veil-001
 created_at: 2026-09-12T19:29:57Z
-last_heartbeat: 2026-09-12T20:06:22Z
+last_heartbeat: 2026-09-12T20:18:09Z
 includes:
   - planetary canon proposals where canon is currently silent, isolated behind ADRs
   - orbital representation
@@ -61,10 +61,15 @@ pipeline:
   blender_worker_version: "5.2"
 remote_scene:
   project_id: d6488148-8547-4ffe-b63d-e5fbec3a339c
-  revision: 5
-  status: WAVE1_MACRO_BLOCKOUT_R4_LIGHTING_QA
-  blend_etag: 828f4cbd201f87fcb232cfed66471131
-  glb_etag: d9f25ec99d93aa9b693f933eeafe9119
+  revision: 7
+  status: WAVE1_ORBITAL_L1_R7_SINGLE_STAR
+  blend_size_bytes: 5859342
+  blend_etag: 7418b326a1a0745688903f0b3fc42b3e
+  glb_size_bytes: 4503316
+  glb_etag: 210ef84a071fb40a3b62c81d73b7b656
+  macro_blockout_preserved: true
+  orbital_l1_present: true
+  surface_regression_passed: true
   final_art_claimed: false
 fleet_registry:
   authority: main:ops/fleet/registry.json
@@ -90,4 +95,5 @@ blocked_by:
 claim_notes:
   - Final engine-specific integration waits for the production-engine decision, but Blender/world production proceeds through portable GLB and documented scene contracts.
   - Physical planetary parameters absent from canon remain PROPOSAL until an ADR is accepted.
-  - Human GATE-ART remains pending; current remote world is a semantic macro blockout, not finished AAA/AAAA art.
+  - L1 orbital shell is a display proxy at 1e-4 scale; it does not invent global continental geography.
+  - Human GATE-ART remains pending; current remote world is a semantic macro/orbital blockout, not finished AAA/AAAA art.
