@@ -28,7 +28,8 @@ excludes:
   - edits to global STATE/PLAN unless reconciled by the project single-writer workflow
 branch: art/world-khepri-001
 base_branch: main
-base_sha: 4c2fa044080004609ea6df45f34b2a784536507a
+base_sha_at_claim: 4c2fa044080004609ea6df45f34b2a784536507a
+latest_main_observed: 196ef814fdc845ec797979906d01dc25009217c7
 blender_project_id: 040f0c45-83a7-483c-9ee7-1e31c640a587
 blender_revision: 2
 blender_project_name: "EXOVANT 2950 — KHEPRI World Master — ART-KHEPRI-001"
@@ -50,9 +51,11 @@ canon_inputs:
   - docs/ART_PRODUCTION.md
 dependencies:
   - EXO-017 Andromeda chapters (future campaign integration)
+  - INFRA-005-FLEET-001 manifest/continuity reconciliation
 blocked_by:
   - BINARY_PERSISTENCE_TRANSPORT
   - HUMAN_VISUAL_REVIEW
+  - GLOBAL_CI_MANIFEST_RECONCILIATION
 blockers:
   BINARY_PERSISTENCE_TRANSPORT:
     decision_needed: "Choose/enable a provider-to-repository binary transfer path for final .blend/GLB persistence."
@@ -74,6 +77,14 @@ blockers:
     recommended_option: "Human review now; machine visual regression later when artifact transport is available."
     reversibility: high
     work_that_can_continue: "parallel KHEPRI domain claims using published interfaces"
+  GLOBAL_CI_MANIFEST_RECONCILIATION:
+    decision_needed: "Restore green main and define one shard-compatible manifest reconciliation path for concurrent producers."
+    affected_scope: "repository continuity / all world-art PRs"
+    why_blocking: "PR #8 run 34715183868 and main@196ef814 run 34715278567 both fail Verify committed evidence and continuity before Godot; project_control.py uses a monolithic MANIFEST.json hotspot."
+    owner: "INFRA-005-FLEET-001 / global integrator via issue #7"
+    recommended_option: "Integrator repairs main first and owns manifest strategy; KHEPRI must not independently race on MANIFEST.json."
+    reversibility: medium
+    work_that_can_continue: "Blender/art review and downstream sharded production; no merge-ready claim"
 created_at: "2026-09-12T19:20:00Z"
-last_heartbeat: "2026-09-12T19:46:00Z"
-claim_status_note: "Structural blockout and provider export are validated at Blender revision 2. Keep claim during review; do not release until binary persistence and visual review are reconciled or explicitly waived."
+last_heartbeat: "2026-09-12T19:52:00Z"
+claim_status_note: "Structural blockout/provider export validated at Blender revision 2. Keep claim in REVIEW until visual, binary persistence and global CI continuity are reconciled or explicitly waived."
