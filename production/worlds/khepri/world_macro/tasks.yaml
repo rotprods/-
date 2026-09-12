@@ -1,0 +1,150 @@
+agent_id: AGENT-KHEPRI-WMACRO-001
+session_id: SESSION-20260912-KHEPRI-001
+claim_id: CLM-KHEPRI-WMACRO-001
+world_id: khepri
+scope: world_macro/planetary_foundation
+north_star: >-
+  Deliver KHEPRI world-macro foundation as a reproducible, metre-scale, physically plausible,
+  canon-preserving Blender production artifact with measured QA and explicit CANON/PROPOSAL boundaries.
+tasks:
+  - id: KHP/WM/001
+    priority: P0
+    objective: Reconstruct repository authority and current global state.
+    output: Repo evidence pack in WORLD_MACRO_CONTRACT.md.
+    dependencies: []
+    status: DONE
+    dod:
+      - repository/default branch/base SHA verified
+      - canon/art/pipeline/progress authorities identified
+      - engine decision represented without overstating Unreal or AAA readiness
+    evidence:
+      - production/worlds/khepri/world_macro/WORLD_MACRO_CONTRACT.md
+
+  - id: KHP/WM/002
+    priority: P0
+    objective: Audit concurrent ownership and persist an atomic claim.
+    output: production/claims/CLM-KHEPRI-WMACRO-001.yaml
+    dependencies: [KHP/WM/001]
+    status: DONE
+    dod:
+      - active branches audited semantically
+      - includes/excludes explicit
+      - branch and 3D Jutsu project bound to claim
+    evidence:
+      - production/claims/CLM-KHEPRI-WMACRO-001.yaml
+      - commit:697c92906ae52201edc10ddda726398596ca86cf
+
+  - id: KHP/WM/003
+    priority: P0
+    objective: Resolve physical planet scale without inventing canon.
+    output: KHP-ADR-001 planet-scale proposal.
+    dependencies: [KHP/WM/001]
+    status: DONE
+    dod:
+      - canon 0.63 g preserved
+      - radius/mass/density explicitly PROPOSAL
+      - alternatives and reversibility recorded
+      - no canonical design file modified
+    evidence:
+      - production/worlds/khepri/world_macro/decisions/KHP-ADR-001-planet-scale.md
+
+  - id: KHP/WM/004
+    priority: P0
+    objective: Define coordinate, cell and export interfaces for macro production.
+    output: Deterministic generator metadata and scene conventions.
+    dependencies: [KHP/WM/003]
+    status: IN_PROGRESS
+    dod:
+      - 1 BU = 1 m confirmed in generated scene
+      - Blender Z-up authoring documented
+      - local tangent cell separated from planet metadata
+      - GLB export path and semantic naming encoded
+
+  - id: KHP/WM/005
+    priority: P0
+    objective: Generate KHEPRI L1 orbital proxy and L2 representative macro terrain cell.
+    output: Committed 3D Jutsu Blender revision from clean project.
+    dependencies: [KHP/WM/004]
+    status: TODO
+    dod:
+      - L1 and L2 are separate objects/collections
+      - macro cell measures 6400 m x 4800 m proposal extent
+      - no monolithic full-scale planet gameplay mesh
+      - no final architecture/character/boss assets authored
+
+  - id: KHP/WM/006
+    priority: P1
+    objective: Establish functional macro route anchors derived from documented missions.
+    output: Shade, glass-sea, crucible and RA-KHET approach proxy anchors.
+    dependencies: [KHP/WM/005]
+    status: TODO
+    dod:
+      - four anchors have semantic IDs and metadata
+      - anchors remain proxies/interfaces only
+      - distances and elevation deltas are recorded
+      - no ownership collision with architecture/boss domains
+
+  - id: KHP/WM/007
+    priority: P1
+    objective: Add procedural macro terrain causality and optical infrastructure footprints.
+    output: Reproducible bpy generator committed under art_source/khepri/world_macro/.
+    dependencies: [KHP/WM/004]
+    status: TODO
+    dod:
+      - deterministic seed
+      - low/mid frequency macro topography only
+      - heliostat footprints use instancing/shared mesh data where applicable
+      - no random greeble/detail noise
+
+  - id: KHP/WM/008
+    priority: P0
+    objective: Run geometry/scale/scene QA on the generated macro scene.
+    output: validation.json and Blender query receipt.
+    dependencies: [KHP/WM/005, KHP/WM/006, KHP/WM/007]
+    status: TODO
+    dod:
+      - object/mesh/material counts measured
+      - dimensions and human-scale reference measured
+      - duplicate semantic names = 0
+      - negative scale and non-finite transforms = 0
+      - macro terrain bounding box within documented tolerance
+
+  - id: KHP/WM/009
+    priority: P1
+    objective: Perform visual macro validation.
+    output: neutral overview and gameplay-height context previews.
+    dependencies: [KHP/WM/008]
+    status: TODO
+    dod:
+      - Eevee render from delivery camera
+      - gameplay-height scale proof
+      - horizon/landmark/readability defects logged and corrected or explicitly blocked
+      - no claim of AAA finish based on preview alone
+
+  - id: KHP/WM/010
+    priority: P0
+    objective: Persist portable artifacts and handoff evidence.
+    output: verified GLB/.blend retrieval, manifest, draft PR and recoverable handoff.
+    dependencies: [KHP/WM/008, KHP/WM/009]
+    status: TODO
+    dod:
+      - committed 3D Jutsu revision settled
+      - GLB retrieval succeeds
+      - .blend retrieval succeeds
+      - source persistence strategy recorded
+      - branch resynced against main before PR integration
+      - handoff contains next 3 executable actions and claim status
+
+progress_metrics:
+  asset_coverage_percent: 10
+  modeling_percent: 0
+  materials_percent: 0
+  optimization_percent: 0
+  integration_percent: 0
+  qa_percent: 0
+priority_open:
+  P0: 4
+  P1: 3
+  P2: 0
+  P3: 0
+last_heartbeat: "2026-09-12T19:24:00Z"
