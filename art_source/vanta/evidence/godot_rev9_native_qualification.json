@@ -1,0 +1,118 @@
+{
+  "schema": "exovant.vanta.engine-qualification.v1",
+  "world": "VANTA",
+  "branch": "art/world-vanta-001",
+  "remote_project_id": "c82188b1-afdc-43f2-828a-5f0e98291f83",
+  "remote_revision": 9,
+  "validation_runtime": {
+    "engine": "Godot 4.7.2-stable (official)",
+    "role": "validation runtime only; not final engine selection",
+    "runner": "GitHub hosted ubuntu-24.04",
+    "successful_run_id": 34720473947,
+    "successful_job_id": 103625283508,
+    "artifact_id": 10306350489
+  },
+  "source": {
+    "blend": {
+      "size_bytes": 8178521,
+      "etag": "9cc8c4c8c79e887ce9ef7364710dcbf4",
+      "sha256": "11b60150409718182cac44d190444f912064e7ff4431f444cca76effbdd0c66b"
+    },
+    "glb": {
+      "size_bytes": 5993560,
+      "etag": "0e82911eefab809ede430a231ae9953b",
+      "sha256": "d4cb8154802e7713b9887328431bd27dfdbc6ba6bec07e790fd0b99befef3258",
+      "meshes": 701,
+      "nodes": 832,
+      "materials": 20,
+      "images": 13,
+      "external_resources": 0
+    }
+  },
+  "collision_contract": {
+    "source_collision_meshes": 20,
+    "godot_suffix": "_colonly",
+    "runtime_static_bodies": 20,
+    "runtime_collision_shapes": 20,
+    "floor_raycast_passed": true,
+    "floor_raycast_collider": "COL_VAN_MOD_FLOOR_4M_A",
+    "semantic_body_names": [
+      "COL_VAN_ANCHOR",
+      "COL_VAN_CP4_TEST_YARD_FLOOR",
+      "COL_VAN_CRANE_BASE",
+      "COL_VAN_CRANE_BOOM",
+      "COL_VAN_MOD_BRACE_4M_A",
+      "COL_VAN_MOD_BULKHEAD_8M_A",
+      "COL_VAN_MOD_DOOR_4M_A",
+      "COL_VAN_MOD_FLOOR_4M_A",
+      "COL_VAN_MOD_MAG_RAIL_4M_A",
+      "COL_VAN_MOD_PILLAR_4M_A",
+      "COL_VAN_MOD_PIPE_TRAY_4M_A",
+      "COL_VAN_MOD_RAIL_4M_A",
+      "COL_VAN_MOD_ROOF_4M_A",
+      "COL_VAN_MOD_STAIR_4M_A",
+      "COL_VAN_MOD_WALL_SERVICE_4M_A",
+      "COL_VAN_MOD_WALL_SOLID_4M_A",
+      "COL_VAN_RIB_LEFT",
+      "COL_VAN_RIB_RIGHT",
+      "COL_VAN_RIB_TOP",
+      "COL_VAN_SHELTER"
+    ]
+  },
+  "native_import": {
+    "passed": true,
+    "mesh_instances": 691,
+    "mesh_surfaces": 691,
+    "bound_material_surfaces": 691,
+    "critical_visual_names_missing": [],
+    "critical_visual_names": [
+      "VAN_CRANE_BASE",
+      "VAN_ANCHOR_BASE",
+      "VAN_RIB_PILLAR_-1",
+      "VAN_SHELTER_BODY",
+      "VAN_MOD_FLOOR_4M_A_DECK",
+      "VAN_MOD_WALL_SOLID_4M_A_PANEL",
+      "VAN_MOD_STAIR_4M_A_STEP_00"
+    ]
+  },
+  "history": {
+    "rev8_negative_collision_receipt": {
+      "run_id": 34720166494,
+      "job_id": 103624453807,
+      "glb_sha256": "18318e0fdae3757b07054e0b376c8222b0adfd281f24d0ba57582010bd039792",
+      "mesh_instances": 711,
+      "collision_object_nodes": 0,
+      "interpretation": "native import passed but collision guides had no runtime physics semantics"
+    },
+    "rev9_first_probe": {
+      "run_id": 34720407614,
+      "job_id": 103625107081,
+      "asset_recovery_passed": true,
+      "godot_editor_import_passed": true,
+      "qualification_script_executed": false,
+      "failure": "GDScript parse/type-inference error in test harness; no asset failure"
+    },
+    "rev9_second_probe": {
+      "run_id": 34720473947,
+      "job_id": 103625283508,
+      "passed": true
+    }
+  },
+  "portability": {
+    "area_light_warning_resolved": true,
+    "remaining_glb_sampler_warning": true,
+    "remaining_warning_summary": "Blender glTF exporter reports multiple image texture nodes participating in some PBR/trim textures; visual/sampler equivalence remains open."
+  },
+  "truth": {
+    "native_import_empirically_qualified": true,
+    "static_collision_conversion_empirically_qualified": true,
+    "single_floor_physics_query_empirically_qualified": true,
+    "material_resource_binding_empirically_qualified": true,
+    "full_player_traversal_qualified": false,
+    "visual_equivalence_qualified": false,
+    "target_hardware_performance_qualified": false,
+    "final_engine_selected": false,
+    "final_art_approved": false,
+    "aaa_aaaa_complete": false
+  }
+}
