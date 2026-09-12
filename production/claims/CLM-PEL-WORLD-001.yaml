@@ -26,7 +26,8 @@ excludes:
   - global engine decision
 base_branch: main
 original_base_sha: 4c2fa044080004609ea6df45f34b2a784536507a
-last_resync_main_sha: 196ef814fdc845ec797979906d01dc25009217c7
+last_resync_main_sha: f78bfdc8bd7b2f6ab52b45d39babcc1589ab3918
+last_main_merge_commit: 1b83921fc8fd3cb9d882e8e3fdee23f3782ea784
 branch: art/world-pelagos-thalassa-001
 draft_pr: 5
 coordination_issue: 7
@@ -34,25 +35,31 @@ linear_issue: ROT-118
 remote_3d_project_id: 39930c08-62bb-4034-b35d-70d0ce51c9d9
 remote_3d_project_name: EXOVANT 2950 — PELAGOS World Master — ART-PELAGOS-001
 created_at: 2026-09-12T21:18:00+02:00
-last_heartbeat: 2026-09-12T20:04:00Z
+owner_ack:
+  owner: AGENT-PELAGOS-01
+  epoch: 1
+  evidence_ref: https://github.com/rotprods/-/issues/7#issuecomment-5648578777
+  registry_transition: PENDING_INTEGRATOR_MAIN_TRANSITION
+  note: "The owner ACK is observable in issue #7. main:ops/fleet/registry.json generation 3 still predates this ACK and remains reserved/ack:null until the integrator publishes the transition."
 dependencies:
   - design/EXOVANT_BIBLIA.md
   - design/EXOVANT_DATA.json
   - docs/ART_PRODUCTION.md
   - docs/DEVELOPMENT_PROTOCOL.md
+  - docs/FLEET_COORDINATION.md
   - learning/hub/agents/codex-root/chats/exovant-persistence-20260912/events/LRN-EXO-20260912-BLENDER.json
 blocked_by:
   - production target GPU and final engine qualification for performance budgets
   - human art-director gate for final visual approval
 collision_audit:
   initial_checked_main_sha: 4c2fa044080004609ea6df45f34b2a784536507a
-  latest_checked_main_sha: 196ef814fdc845ec797979906d01dc25009217c7
-  coordination_registry: "GitHub issue #7 marks art/world-pelagos-thalassa-001 as PELAGOS OCCUPIED"
+  latest_checked_main_sha: f78bfdc8bd7b2f6ab52b45d39babcc1589ab3918
+  coordination_registry: "main:ops/fleet/registry.json generation 3 protects CLM-PEL-WORLD-001 as reserved; issue #7 contains the owner ACK awaiting integrator transition to active."
   pelagos_branches_observed:
     - art/world-pelagos-thalassa-001
   pelagos_prs_observed:
     - 5
   linear_scope: ROT-118
   result: NO_SEMANTIC_COLLISION_OBSERVED
-  reconciliation_note: "main advanced with ownership-preflight policy only; no Pelagos path collision observed. Branch integration with newer main remains required before merge."
+  reconciliation_note: "Branch merged current main f78bfdc8 via merge commit 1b83921f with no force. Post-merge compare reports behind_by=0 and only Pelagos/claim paths differ from main."
 release_policy: KEEP_UNTIL_WORLD_SCOPE_HANDOFF_OR_REASSIGNMENT
