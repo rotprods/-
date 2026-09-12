@@ -1,0 +1,56 @@
+claim_id: CLM-SYLVA-PROC-NROOT-001
+agent_id: AGENT-SYLVA-ROOT-01
+session_id: SES-20260912T2123+0200-SYLVA01
+scope_key: world-sylva/procedural-modeling/neural-root-structural-kit
+world_id: SYLVA-PRIME
+region_id: SHARED-WORLD-KIT
+category: procedural_modeling
+subdomain: neural_root_structural_kit
+status: CLAIMED
+priority: P1
+branch: agent/sylva-neural-root-001
+base_sha: 4c2fa044080004609ea6df45f34b2a784536507a
+created_at: 2026-09-12T21:23:00+02:00
+last_heartbeat: 2026-09-12T21:23:00+02:00
+source_authority:
+  - AGENTS.md
+  - _project_intelligence/STATE.json
+  - design/EXOVANT_BIBLIA.md
+  - design/EXOVANT_DATA.json
+includes:
+  - reusable structural root segment generator
+  - root junction and fork modules
+  - broad traversable root walkway variants
+  - terrace and membrane-anchor interfaces attached to root structures
+  - deterministic Blender bpy source generation
+  - neutral material IDs for later world lookdev
+  - collision-proxy naming and export metadata
+  - asset manifest and non-runtime QA tooling for this kit
+excludes:
+  - VESPER boss model or rig
+  - fauna or creatures
+  - NPCs or humanoid characters
+  - vehicles
+  - full terrain or planetary geography
+  - settlements and complete architecture kits
+  - final production textures or world-wide material library
+  - Godot gameplay scripts and current Terra runtime
+  - engine migration or Unreal qualification
+collision_audit:
+  checked_branches:
+    - art/terra-reliquary-kit-001
+    - art/ares-ix-world-001
+    - art/ares-ix-world-agent-02
+    - art/world-khepri-001
+    - art/world-pelagos-thalassa-001
+    - art/world-umbra-001
+    - art/world-vanta-001
+  result: NO_SEMANTIC_COLLISION_OBSERVED
+  note: Sylva Prime had no visible active branch at claim time. Existing Terra ownership of art_source/coordination is avoided by using sharded production/claims and art_source/sylva_neural_root_kit paths.
+dependencies:
+  - documented Sylva route-readability risk and neural-forest asset-kit definition
+blocked_by:
+  - final planet radius and diameter are UNKNOWN and intentionally not required for this atomic kit
+  - target GPU budgets remain UNKNOWN pending production-hardware qualification
+release_condition:
+  - release only after source generator, manifests and QA receipts are committed and remote Blender execution is either verified or explicitly marked BLOCKED
