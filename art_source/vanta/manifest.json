@@ -1,163 +1,114 @@
 {
   "schema": "exovant.world-art-cell.v1",
   "project": "EXOVANT 2950",
-  "world": {
-    "id": "vanta",
-    "name": "VANTA",
-    "galaxy": "ANDROMEDA",
-    "system": "Drav",
-    "faction": "Trabajadores del Anillo",
-    "canon_gravity_g": 1.86,
-    "canon_temperature_c": -12,
-    "custodian": "FERRUM, coloso de chatarra"
-  },
+  "world": "VANTA",
   "ownership": {
     "branch": "art/world-vanta-001",
     "linear_issue": "ROT-114",
-    "parent_issue": "ROT-109",
-    "scope": "VANTA art/modeling only",
-    "integration_policy": "PR only; no force push; ownership preflight before significant waves"
+    "scope": "VANTA art/modeling only"
   },
-  "remote_source": {
-    "provider": "Higgsfield 3D Jutsu",
-    "project_id": "c82188b1-afdc-43f2-828a-5f0e98291f83",
-    "blender_version": "5.2.0 LTS",
-    "revision": 8,
-    "editable_blend": {"size_bytes": 8168427, "etag": "251f6d510f8ae6c5250bae10c8ee5a61"},
-    "portable_glb": {"size_bytes": 5990788, "etag": "a3cfe2daf6a1005e35db478e3f4ec51d", "engine_semantics_qualified": false}
+  "canon": {
+    "gravity_g": 1.86,
+    "temperature_c": -12,
+    "ferrum_arena_diameter_m": 72
   },
-  "scale": {
-    "unit": "metre",
+  "production_proposals": {
     "planet_radius_m": 7600000,
-    "planet_radius_status": "PROPOSED_NOT_CANON",
     "authored_district_m": [24000, 24000],
     "streaming_cell_m": [4000, 4000],
-    "streaming_cell_count": 36,
-    "cp4_snap_grid_m": 4,
-    "ferrum_arena_diameter_m": 72,
-    "ferrum_arena_status": "CANON",
-    "ferrum_target_height_m": 30,
-    "ferrum_height_status": "PRODUCTION_PROPOSAL"
+    "snap_grid_m": 4,
+    "ferrum_height_m": 30
   },
-  "regions": [
-    {"id":"port_of_hands","name":"Puerto de las Manos","state":"BLOCKOUT_PLUS_CP4_CP5_VERTICAL_SLICE"},
-    {"id":"iron_rain","name":"Lluvia de Hierro","state":"BLOCKOUT"},
-    {"id":"fallen_ring","name":"Anillo Caído","state":"BLOCKOUT"}
-  ],
-  "targets": {
-    "npcs": ["Mika Drav", "Ciro Fenn", "Bel Orta"],
-    "enemies": ["Cobrador de astillero", "Enjambre de remaches", "Remolcador automatizado"],
-    "biota": ["Litófago magnético", "Raya de limaduras", "Cuervo de remache", "Bacteria de escoria"],
-    "vehicle": ["Remolcador Drav"],
-    "boss": ["FERRUM"]
+  "remote_source": {
+    "project_id": "c82188b1-afdc-43f2-828a-5f0e98291f83",
+    "blender_version": "5.2.0 LTS",
+    "revision": 9,
+    "blend": {
+      "size_bytes": 8178521,
+      "etag": "9cc8c4c8c79e887ce9ef7364710dcbf4",
+      "sha256": "11b60150409718182cac44d190444f912064e7ff4431f444cca76effbdd0c66b"
+    },
+    "glb": {
+      "size_bytes": 5993560,
+      "etag": "0e82911eefab809ede430a231ae9953b",
+      "sha256": "d4cb8154802e7713b9887328431bd27dfdbc6ba6bec07e790fd0b99befef3258",
+      "meshes": 701,
+      "nodes": 832,
+      "materials": 20,
+      "images": 13
+    }
   },
   "registry": {
-    "generator": "art_source/vanta/pipeline/generate_asset_registry.py",
-    "target_row_count": 327,
+    "target_rows": 327,
     "rows_are_completion_claims": false,
-    "categories": {"environment":84,"modular_kit":61,"props":61,"characters":7,"biota":4,"vehicles":1,"boss_parts":43,"vfx":20,"materials":16,"decals":30}
+    "generator": "art_source/vanta/pipeline/generate_asset_registry.py"
   },
   "cp4": {
-    "status": "LOCALLY_VALIDATED_GEOMETRY_AND_BLENDER_ASSEMBLY",
-    "representative_microset": ["VAN_KIT_CRANE_A","VAN_KIT_MAG_ANCHOR_A","VAN_KIT_DRYDOCK_RIB_A","VAN_KIT_STORM_SHELTER_A"],
-    "snap_module_count": 12,
-    "snap_socket_count": 48,
-    "render_mesh_count": 206,
-    "collision_object_count": 19,
-    "lod1_proxy_count": 16,
-    "parent_fix_revision": 5,
-    "parented_render_children_fixed": 205,
-    "coordinate_guard_failures": 0,
-    "test_yard_revision": 6,
-    "test_yard_instance_markers": 19,
-    "test_yard_linked_render_meshes": 76,
+    "status": "EMPIRICALLY_QUALIFIED_GODOT_4_7_2_STATIC_IMPORT_COLLISION",
+    "snap_modules": 12,
+    "snap_sockets": 48,
+    "parent_children_fixed_rev5": 205,
     "test_yard_seam_checks": 7,
     "test_yard_max_gap_m": 0,
-    "engine_snap_import": "UNQUALIFIED",
-    "collision_playtest": "UNQUALIFIED"
+    "runtime_static_bodies": 20,
+    "runtime_collision_shapes": 20,
+    "floor_raycast_pass": true,
+    "full_player_traversal": false
   },
   "cp5": {
-    "status": "LOCALLY_VALIDATED_MATERIAL_FOUNDATION",
-    "texture_resolution": [512,512],
-    "packed_image_count": 13,
-    "pbr_sets": ["STEEL","RUST","YELLOW"],
-    "maps_per_pbr_set": ["BC","ORM","N"],
-    "trim_family": "TRIM_A",
-    "decal_atlas": "DECAL_A",
+    "status": "NATIVE_MATERIAL_BINDING_PRESENT_VISUAL_EQUIVALENCE_OPEN",
+    "packed_images": 13,
     "textured_cp4_meshes": 147,
-    "textured_uv_missing": 0,
-    "calibration_objects": 12,
-    "decal_cards": 4,
-    "visual_art_review": "OPEN",
-    "engine_material_import": "UNQUALIFIED",
-    "mip_compression": "UNQUALIFIED",
-    "performance": "UNQUALIFIED"
+    "uv_missing": 0,
+    "godot_visual_surfaces": 691,
+    "godot_bound_material_surfaces": 691,
+    "area_light_warning_resolved": true,
+    "glb_sampler_warning_open": true
   },
-  "current_scene": {
-    "revision": 8,
-    "objects": 832,
-    "meshes": 711,
-    "materials": 20,
-    "collections": 25,
-    "cameras": 12,
-    "lights": 15,
-    "ferrum_named_parts": 43,
-    "render_evidence": [
-      {"name":"vanta_master_blockout.png","artifact_id":"55e6eec9287c17b69c6c261c0d581781","resolution":[960,540],"revision":2},
-      {"name":"vanta_ferrum_arena.png","artifact_id":"0761e510e83a252022b488bfbccfacb4","resolution":[960,540],"revision":2},
-      {"name":"vanta_cp4_crane_proof.png","artifact_id":"c09519f9702b54ce7595e7803f0a35a5","resolution":[640,480],"revision":3},
-      {"name":"vanta_cp4_test_yard.png","artifact_id":"f2ce32a87e098470ed00328fef4cbbb2","resolution":[640,480],"revision":8},
-      {"name":"vanta_cp5_neutral_board.png","artifact_id":"a2438a37035038ca58e40a4ff27176d7","resolution":[640,480],"revision":8}
-    ]
+  "engine_qualification": {
+    "runtime": "Godot 4.7.2-stable (official)",
+    "runtime_is_final_engine_selection": false,
+    "run_id": 34720473947,
+    "job_id": 103625283508,
+    "native_import_pass": true,
+    "critical_visual_names_missing": 0,
+    "static_collision_pass": true,
+    "single_floor_physics_query_pass": true,
+    "visual_equivalence_pass": false,
+    "target_hardware_performance_pass": false
   },
-  "reproducibility": {
-    "blockout_generator": "art_source/vanta/pipeline/vanta_blockout.py",
-    "registry_generator": "art_source/vanta/pipeline/generate_asset_registry.py",
-    "production_system": "art_source/vanta/VANTA_WORLD_PRODUCTION.md",
-    "cp4_status": "art_source/vanta/CP4_STATUS.md",
-    "cp5_status": "art_source/vanta/CP5_STATUS.md",
-    "evidence_rev2": "art_source/vanta/evidence/remote_blender_rev2.json",
-    "evidence_rev4": "art_source/vanta/evidence/remote_blender_rev4.json",
-    "evidence_rev8": "art_source/vanta/evidence/remote_blender_rev8.json"
+  "evidence": {
+    "cp4": "art_source/vanta/CP4_STATUS.md",
+    "cp5": "art_source/vanta/CP5_STATUS.md",
+    "godot_rev9": "art_source/vanta/evidence/godot_rev9_native_qualification.json",
+    "remote_rev8": "art_source/vanta/evidence/remote_blender_rev8.json"
   },
-  "known_export_warnings": [
-    "glTF multiple-image-texture sampler warning on some PBR/trim materials; engine material semantics not qualified",
-    "glTF unsupported AREA-light warning from Blender test yard; engine light portability not qualified"
-  ],
   "checkpoints": {
-    "CP0_ownership_lock": "DONE",
-    "CP1_canon_scale_art_direction": "DOCUMENTED_REVIEW_OPEN",
-    "CP2_macro_world_blockout": "IMPLEMENTED_GEOMETRY_REVIEW_OPEN",
-    "CP3_silhouette_targets": "IMPLEMENTED_GEOMETRY_REVIEW_OPEN",
-    "CP4_modular_construction_kit": "LOCALLY_VALIDATED_BLENDER_ENGINE_GATES_OPEN",
-    "CP5_material_trim_decal_system": "FOUNDATION_LOCALLY_VALIDATED_ENGINE_ART_GATES_OPEN",
-    "CP6_port_of_hands_final_art": "OPEN",
-    "CP7_iron_rain_final_art": "OPEN",
-    "CP8_fallen_ring_final_art": "OPEN",
-    "CP9_characters_enemies_biota_vehicle": "OPEN",
-    "CP10_ferrum_hero": "OPEN",
-    "CP11_lighting_weather_vfx": "OPEN",
-    "CP12_optimization_engine_qualification": "OPEN"
+    "CP0": "DONE",
+    "CP1": "DOCUMENTED_REVIEW_OPEN",
+    "CP2": "IMPLEMENTED_GEOMETRY_REVIEW_OPEN",
+    "CP3": "IMPLEMENTED_GEOMETRY_REVIEW_OPEN",
+    "CP4": "GODOT_NATIVE_STATIC_COLLISION_EMPIRICALLY_QUALIFIED_FULL_TRAVERSAL_PERF_OPEN",
+    "CP5": "GODOT_NATIVE_BINDING_VALIDATED_VISUAL_PERF_OPEN",
+    "CP6": "OPEN",
+    "CP7": "OPEN",
+    "CP8": "OPEN",
+    "CP9": "OPEN",
+    "CP10": "OPEN",
+    "CP11": "OPEN",
+    "CP12": "OPEN"
   },
   "truth": {
-    "editable_source_exists": true,
-    "portable_glb_exists": true,
-    "cp4_parent_transform_defect_fixed": true,
-    "cp4_local_assembly_pass": true,
-    "cp5_pbr_trim_decal_foundation": true,
-    "visual_render_created": true,
     "visual_aesthetic_pass": false,
-    "engine_import_qualified": false,
-    "collision_playtest_qualified": false,
+    "full_collision_traversal_playtest_qualified": false,
     "performance_qualified": false,
-    "final_hero_assets_complete": false,
-    "aaa_quality_claim": false
+    "final_engine_selected": false,
+    "aaa_aaaa_complete": false
   },
   "next": [
-    "Qualify PBR/trim/decal material binding in the target engine and eliminate/understand glTF sampler warnings",
-    "Run close/mid/far art review on the representative slice",
-    "Run engine snap/import and collision traversal for the CP4 test yard",
-    "Measure triangle/draw/material/texture/memory/GPU cost on declared target hardware",
-    "Only after those gates pass, propagate the CP4/CP5 system across the wider Vanta registry"
+    "resolve or map remaining glTF sampler semantics and produce controlled Blender-vs-Godot captures",
+    "run player-controller traversal on the CP4 collision yard",
+    "measure render and memory cost on declared target hardware",
+    "propagate CP4/CP5 only after visual, traversal and performance gates pass"
   ]
 }
