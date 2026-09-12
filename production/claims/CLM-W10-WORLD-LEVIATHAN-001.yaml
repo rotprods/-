@@ -1,0 +1,50 @@
+claim_id: CLM-W10-WORLD-LEVIATHAN-001
+agent_id: AGENT-LEVIATHAN-10
+session_id: ART-LEVIATHAN-001-20260912T2123+0200
+scope_key: world-10/leviathan/world-production/master-foundation
+world_id: leviathan
+category: world_production
+subdomain: master_foundation
+status: CLAIMED
+base_branch: main
+base_sha: 4c2fa044080004609ea6df45f34b2a784536507a
+branch: art/world-leviathan-001
+created_at: 2026-09-12T21:23:00+02:00
+last_heartbeat: 2026-09-12T21:23:00+02:00
+includes:
+  - art_source/worlds/leviathan/**
+  - leviathan L0-L5 world scale specification and master blockout
+  - canonical region blockouts and coverage manifests
+  - local environment/architecture/material/prop/ecology/NPC/enemy/vehicle proxy families
+  - SOMA arena/environment proxy interfaces
+  - deterministic Blender generator, editable .blend, GLB, previews and validation evidence
+excludes:
+  - runtime Godot scenes/scripts and gameplay logic
+  - shared STATE/PLAN/HANDOFF/PROGRESS mutation
+  - other world-owned paths
+  - shared libraries without explicit coordination
+  - Unreal/DLSS/GPU performance claims without qualification
+  - production-complete or AAAA-complete claims before all applicable gates
+collision_audit:
+  observed_claimed_worlds:
+    - terra
+    - ares
+    - pelagos
+    - khepri
+    - nacre
+    - umbra
+    - vanta
+  abandoned_collision:
+    world: umbra
+    reason: concurrent branch and ownership commit appeared before build
+  leviathan_collision_found: false
+dependencies:
+  - design/EXOVANT_BIBLIA.md
+  - design/EXOVANT_DATA.json
+  - docs/ART_PRODUCTION.md
+  - learning/hub/agents/codex-root/chats/exovant-persistence-20260912/events/LRN-EXO-20260912-BLENDER.json
+blocked_by: []
+claim_state_note: >-
+  WAVE 0 claim only. Physical planet radius, production engine, target hardware budgets,
+  final playable-area dimensions and final SOMA anatomy are not silently inferred; they remain
+  proposal/blocker fields until approved or empirically qualified.
