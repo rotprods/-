@@ -35,3 +35,9 @@ Implementados movimiento y cámara analógicos, botones de combate, navegación/
 Implementado registro de 13 frentes productores, un tombstone Ares y la unidad integradora; normalización de mundos, conflictos de rutas/ámbitos/proyectos/asset IDs/ramas, ACK y fencing por epoch, guard de cambios Git y recibos de entrega. 41 casos adversariales incluyen dos procesos concurrentes y Git bare real; encontrado y corregido reuse de observación remota al liberar varios proyectos. Primer ACK real de Khepri incorporado. Origin reservado, no libre.
 
 Main avanzó durante el trabajo de 4c2fa044 a 196ef814 con solo AGENTS modificado y MANIFEST viejo. Reproducido mismatch de hash, conservado el preflight mediante merge de tres vías y regenerada integridad. El guard admite manifiesto regenerado EXACTO en ramas artísticas, sin dar propiedad de STATE/herramientas globales. 75 tests Python y 78 nativos aprobados con recibos finales; CI del commit final se verifica después de publicar. No se modifica geometría ni gameplay en esta unidad.
+
+## INFRA-005-DELIVERY-003
+Incremento del control de entrega: recorrido completo de chunks GLB y lista explícita de evidencias. Seis casos reproducen la aceptación incorrecta en f78bfdc8; 48 tests de flota pasan tras el fix. Sin geometría nueva ni cambios de runtime. ADOPTION-002 no está recuperado. Fuente de evidencia: evidence/delivery-container-regression.json; gates actuales en evidence/gates/INFRA-005-*.json.
+
+## INFRA-005-LEARNING-004
+Corrección del usuario convertida en evento L2 y preflight AGENTS. Objetivo de remediación y criterios por problema dentro de PLAN existente. Difusión por hilo #7; adopción externa pendiente, sin nuevos agentes ni watchers.

@@ -24,3 +24,7 @@ CI: recuperar LRN-EXO-20260912-CI-BOOTSTRAP y CI-BOOTSTRAP-VERIFIED antes de cam
 Entradas: recuperar LRN-EXO-20260912-INPUT-BOUNDARY y INPUT-PREFERENCES. No asumir que el mapa de juego crea navegación UI ni que JSON conserva el tipo entero en comparaciones. Testear eventos físicos sintéticos atravesando UI/escena y recargar preferencias; no confundirlo con probar un mando conectado.
 
 Flota: recuperar LRN-EXO-20260912-FLEET-CAS. Leer issue #7 y ops/fleet/registry.json actuales, cruzar branch/PR/abandono y proveedor. Khepri es primer ACK; Ares PR2 es tombstone; Origin ya tiene owner. No equiparar rama con worker, o una lectura de proyecto B con reconciliación de A. MANIFEST es proyección determinista: regenerar en rama y árbol de integración; no escribir AGENTS en main sin actualizarlo.
+
+Entregas GLB: un hash correcto y una cabecera coherente no garantizan integridad del contenedor completo. Recorrer todos los chunks; rechazar truncado, overflow, desalineación y duplicados JSON/BIN, conservando extensiones desconocidas válidas. Regresión acotada en evidence/delivery-container-regression.json; no promoción del aprendizaje ni validación artística por este control.
+
+Admisión y consumo: recuperar LRN-EXO-20260912-OWNER-ADMISSION (L2, adopción externa pendiente). El owner conserva modelado/recuperación/validación; el integrador necesita entrega o bloqueo concreto. Pausa horaria registrada en issue #7 comentario 5648819121. Capacidad de ejecución se prueba por operación; no confundir error de ruta, display y GPU.
