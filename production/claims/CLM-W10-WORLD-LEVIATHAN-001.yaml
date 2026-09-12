@@ -14,12 +14,15 @@ base_sha_at_claim: 4c2fa044080004609ea6df45f34b2a784536507a
 latest_main_observed: f78bfdc8bd7b2f6ab52b45d39babcc1589ab3918
 branch: art/world-leviathan-001
 created_at: 2026-09-12T21:23:00+02:00
-last_heartbeat: 2026-09-12T22:22:00+02:00
+last_heartbeat: 2026-09-12T22:32:00+02:00
 remote_project:
   project_id: 2577a7b6-ebd7-4d31-a645-620e4b73a95d
-  observed_revision: 5
+  observed_revision: 7
   observed_scene_sequence: 0
   observed_active_operation: null
+cold_rebuild_project:
+  project_id: 37a931c7-f2e6-46bc-9be0-26077e5de1c1
+  observed_revision: 5
 includes:
   - art_source/worlds/leviathan/**
   - leviathan L0-L5 world scale specification and master blockout
@@ -28,6 +31,7 @@ includes:
   - SOMA arena/environment proxy interfaces
   - deterministic Blender generator, editable .blend, GLB, previews and validation evidence
   - representative-detail Puerto microset for LEV-ARCH-001, LEV-INF-002 and LEV-INF-003
+  - representative-detail Jardines microset for LEV-INF-005, LEV-ECO-001 and LEV-ECO-004
 excludes:
   - runtime Godot scenes/scripts and gameplay logic
   - shared STATE/PLAN/HANDOFF/PROGRESS mutation
@@ -43,6 +47,9 @@ published_asset_ids:
   - LEV-ARCH-001
   - LEV-INF-002
   - LEV-INF-003
+  - LEV-INF-005
+  - LEV-ECO-001
+  - LEV-ECO-004
   - LEV-MAT-001
   - LEV-MAT-002
   - LEV-TECH-001
@@ -74,7 +81,8 @@ blocked_by:
   - ENV_BLOCKED_BINARY_TRANSPORT_AND_RUNTIME
 claim_state_note: >-
   Physical planet radius, production engine, target hardware budgets, final playable-area dimensions
-  and final SOMA anatomy remain unresolved. Master and Puerto stages are deterministic and locally
-  Blender-validated; runtime import/collision and direct art review remain open. Fleet registry
-  currently protects this claim as reserved; producer ACK is being published through issue #7 and
-  the integrator owns the registry transition to active.
+  and final SOMA anatomy remain unresolved. Master, Puerto and Jardines production stages are
+  deterministic and Blender-validated through independent cold rebuilds. Runtime import/collision
+  and direct art review remain open. Fleet registry protects the claim as reserved; producer ACK
+  and a later asset-ID delta have been published through issue #7, while the integrator owns the
+  transition to active.
