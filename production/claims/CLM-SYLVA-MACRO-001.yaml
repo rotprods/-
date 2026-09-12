@@ -6,13 +6,19 @@ world_id: sylva
 world_name: SYLVA PRIME
 domain: world_macro_terrain
 subdomain: regional_foundation
+claim_type: ATOMIC_SUBCLAIM
 status: IN_PROGRESS
 priority: P0
 branch: art/world-sylva-prime-macro-001
 base_branch: main
-base_sha: 4c2fa044080004609ea6df45f34b2a784536507a
+base_sha_at_claim: 4c2fa044080004609ea6df45f34b2a784536507a
+current_main_observed: 196ef814fdc845ec797979906d01dc25009217c7
+merge_state: DIVERGED_RECONCILE_REQUIRED
 created_at: 2026-09-12T21:10:00+02:00
-last_heartbeat: 2026-09-12T21:50:00+02:00
+last_heartbeat: 2026-09-12T21:56:00+02:00
+linear_issue: ROT-117
+coordination_issue: 7
+draft_pr: 3
 
 north_star: >-
   Deliver the metric-scale, reproducible spatial foundation for SYLVA PRIME: canonical regions,
@@ -20,18 +26,22 @@ north_star: >-
   interfaces for later terrain, architecture, ecology and encounter teams, without inventing
   unresolved planetary canon.
 
-includes:
+owns:
+  - km/regional terrain and root-network topology/placement
   - local metric coordinate convention for the authored Sylva foundation
-  - macro terrain/root-network blockout
   - Puerto del Injerto regional foundation
   - Bosque de las Frases regional foundation
   - Camara de VESPER regional foundation and boss-space envelope only
-  - primary traversal corridors and scale references
-  - root/membrane/scaffold proxy families needed to prove spatial language
-  - Blender source, deterministic generator, portable GLB and verification evidence
+  - macro traversal corridors and landmark silhouettes
+  - L2/L3 spatial relationships and streaming envelopes
+  - diagnostic macro root/membrane/scaffold proxies
+  - Blender source, deterministic generator, portable GLB and verification evidence for macro blockout
   - collision/streaming/LOD interface specification at blockout level
 
 excludes:
+  - reusable meso root module kit and generator; delegated to CLM-SYLVA-PROC-NROOT-001 / PR 6
+  - 8-14 m root straight/curve/rise/fork/arch/buttress/terrace/membrane-anchor production modules
+  - per-module collision proxies for reusable neural-root kit
   - final VESPER creature/boss model, rig, animation or attacks
   - final NPC characters: Edda Jun, Siete-en-Uno, Nico Fer
   - final wildlife or vegetation species assets
@@ -39,7 +49,7 @@ excludes:
   - final materials/textures beyond diagnostic lookdev materials
   - gameplay scripts, quests, dialogue or runtime state
   - global engine migration decisions
-  - Terra, Ares IX, Pelagos, Umbra, Khepri or Vanta assets
+  - all other EXOVANT worlds
 
 canonical_sources:
   - AGENTS.md
@@ -53,6 +63,7 @@ canonical_sources:
   - design/EXOVANT_DATA.json
   - docs/ART_PRODUCTION.md
   - learning/hub/agents/codex-root/chats/exovant-persistence-20260912/events/LRN-EXO-20260912-BLENDER.json
+  - coordination issue 7
 
 canon_facts:
   galaxy: ANDROMEDA
@@ -81,24 +92,25 @@ unknowns:
 
 blocked_by:
   - BLOCK-SYLVA-001 planetary radius only blocks L0/L1 orbital representation
+  - branch is 1 commit behind current main; reconcile ownership-protocol commit before merge
 
 dependencies:
+  - CLM-SYLVA-PROC-NROOT-001 for reusable meso neural-root modules if macro topology advances to production geometry
   - future engine target qualification for final streaming/performance gates
   - creative-director decision if planetary radius becomes gameplay-relevant
-  - human art-direction review of r3 blockout
+  - human art-direction review of Blender r3 blockout
   - runtime import/collision/traversal test
 
-collision_audit:
-  checked_branches: true
-  checked_open_prs: true
-  semantic_collision_found: false
-  occupied_worlds_observed_at_claim:
-    - terra
-    - ares
-    - pelagos
-    - umbra
-    - khepri
-    - vanta
+collision_reconciliation:
+  initial_semantic_collision_found: false
+  live_resync_later_found: CLM-SYLVA-PROC-NROOT-001
+  temporal_priority: CLM-SYLVA-MACRO-001 older
+  resolution: ACCEPTED_SHARD_BOUNDARY
+  macro_boundary: km/regional topology, placement, anchors, corridors, L2/L3, streaming envelope, diagnostic proxies
+  proc_root_boundary: reusable 8-14 m meso modules, callus surfaces, module interfaces, per-module collision proxies
+  pr3_acceptance_comment: 5648304071
+  pr6_acceptance_comment: 5648304564
+  registry_comment: 5648307515
 
 receipts:
   blender_project: 05dce898-753d-4ff6-a4b0-31757dc868d8
@@ -106,5 +118,6 @@ receipts:
   validation: art_source/worlds/sylva_prime/macro/validation.json
   status: art_source/worlds/sylva_prime/macro/STATUS.md
   handoff: art_source/worlds/sylva_prime/macro/HANDOFF.md
+  linear: ROT-117
 
 claim_status: KEEP
