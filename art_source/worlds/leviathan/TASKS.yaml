@@ -7,7 +7,7 @@ north_star: >-
   identity legible, preserves stable gameplay collision beneath deforming visual tissue,
   and establishes the three canonical regions plus the 58 m SOMA encounter interface.
 status: IN_PROGRESS
-last_checkpoint: BLENDER_REVISION_2
+last_checkpoint: BLENDER_REVISION_5_PUERTO_MICROSET
 
 first_10_tasks:
   - id: W10/WORLD/001
@@ -39,7 +39,7 @@ first_10_tasks:
   - id: W10/BLEND/003
     title: Create deterministic LEVIATHAN master Blender scene
     priority: P0
-    status: REVIEW
+    status: DONE
     output:
       - art_source/worlds/leviathan/tools/build_master_scene.py
       - editable remote .blend
@@ -54,22 +54,33 @@ first_10_tasks:
       - versioned generator independently cold-rerun before DONE
     evidence:
       - remote_project_id: 2577a7b6-ebd7-4d31-a645-620e4b73a95d
-      - remote_revision: 2
-      - validation: art_source/worlds/leviathan/validation.json
+      - deterministic_master_revision: 3
+      - cold_project_id: 37a931c7-f2e6-46bc-9be0-26077e5de1c1
+      - semantic_fingerprint: 207649cb10842785dd23c2f3823ec654e265c9bcfbd602d460b067266cbccf9f
+      - receipt: art_source/worlds/leviathan/evidence/cold_rebuild_r3.json
 
   - id: W10/REGION/004
-    title: Block out Puerto de la Herida
+    title: Block out and establish representative detail for Puerto de la Herida
     priority: P1
     status: REVIEW
-    output: R1 blockout collection
+    output:
+      - R1 blockout collection
+      - 24_R1_HERO_GRAFT_MICROSET
+      - art_source/worlds/leviathan/tools/build_puerto_microset.py
+      - art_source/worlds/leviathan/tools/refine_puerto_microset_v2.py
     dependency: [W10/BLEND/003]
     dod:
       - stable traversal deck exists
       - scar boundary and graft module family exist
       - sutures/valves imply maintenance logic
       - 1.85 m reference confirms scale
+      - one representative architecture/infrastructure microset advances beyond primitive blockout
+      - microset is deterministic under cold rebuild
       - visual art review passes before DONE
-    evidence: [art_source/worlds/leviathan/validation.json]
+      - runtime import/traversal passes before DONE
+    evidence:
+      - art_source/worlds/leviathan/validation.json
+      - art_source/worlds/leviathan/evidence/puerto_microset_r5.json
 
   - id: W10/REGION/005
     title: Block out Jardines Inmunes
@@ -109,21 +120,27 @@ first_10_tasks:
       - 1.85 m reference and 58 m arena measured
       - stable collision objects enumerated
       - visual contraction objects confirmed outside collision collection
+      - Puerto representative module collision proxy measured
       - engine traversal/collision smoke test passes before DONE
-    evidence: [art_source/worlds/leviathan/validation.json]
+    evidence:
+      - art_source/worlds/leviathan/validation.json
+      - art_source/worlds/leviathan/evidence/puerto_microset_r5.json
 
   - id: W10/MAT/008
     title: Establish LEVIATHAN material-role library
     priority: P1
     status: REVIEW
-    output: 11 portable blockout material roles + registry entries
+    output: 13 portable material roles plus registry/receipt entries
     dependency: [W10/WORLD/001, W10/BLEND/003]
     dod:
       - living host and human graft roles remain separable
       - amber/cyan/vermilion roles follow project semantics
+      - brushed metal and elastomer seal roles support Puerto manufacturing logic
       - no unsupported UDIM/texture budget invented
       - final calibrated PBR texture pass required before DONE
-    evidence: [art_source/worlds/leviathan/validation.json]
+    evidence:
+      - art_source/worlds/leviathan/validation.json
+      - art_source/worlds/leviathan/evidence/puerto_microset_r5.json
 
   - id: W10/ECO/009
     title: Establish ecology and adversary silhouette interfaces
@@ -139,24 +156,29 @@ first_10_tasks:
     evidence: [art_source/worlds/leviathan/MASTER_ASSET_LIST.yaml]
 
   - id: W10/QA/010
-    title: Run blockout QA and export receipts
+    title: Run blockout and representative-detail QA/export receipts
     priority: P0
     status: REVIEW
     output:
       - art_source/worlds/leviathan/validation.json
-      - overview and SOMA render receipts
+      - art_source/worlds/leviathan/evidence/cold_rebuild_r3.json
+      - art_source/worlds/leviathan/evidence/puerto_microset_r5.json
+      - overview/SOMA/region render receipts
       - editable .blend and GLB receipts
     dependency: [W10/BLEND/003, W10/REGION/004, W10/REGION/005, W10/REGION/006]
     dod:
       - required semantic objects and scale checks pass
       - glTF export warnings reconciled
-      - overview and SOMA visuals receive direct art review
+      - master and Puerto production stages cold-rebuild deterministically
+      - overview, region and SOMA visuals receive direct art review
       - engine import stays NOT_RUN until actually executed
       - performance stays UNMEASURED until target hardware exists
-    evidence: [art_source/worlds/leviathan/validation.json]
+    evidence:
+      - art_source/worlds/leviathan/validation.json
+      - art_source/worlds/leviathan/evidence/cold_rebuild_r3.json
+      - art_source/worlds/leviathan/evidence/puerto_microset_r5.json
 
 open_p0:
-  - W10/BLEND/003
   - W10/TECH/007
   - W10/QA/010
 open_p1:
