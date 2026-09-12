@@ -1,0 +1,48 @@
+name: ELYSIUM one-shot manifest reconcile
+
+on:
+  push:
+    branches:
+      - art/world-elysium-null-001
+
+permissions:
+  contents: write
+
+concurrency:
+  group: elysium-manifest-reconcile
+  cancel-in-progress: true
+
+jobs:
+  reconcile:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - name: Checkout owner branch with history
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: art/world-elysium-null-001
+          fetch-depth: 0
+
+      - name: Reconcile main and refresh continuity manifest
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git fetch origin main
+          git merge --no-edit origin/main
+
+          # This workflow is intentionally one-shot. Remove it before generating
+          # the canonical manifest so it leaves no infrastructure surface behind.
+          rm .github/workflows/elysium-manifest-reconcile.yml
+
+          python3 tools/project_control.py refresh
+          python3 -m unittest discover -s tests -p 'test_*.py' -v
+          python3 tools/project_control.py check
+
+          git add -A
+          git diff --cached --check
+          git commit -m "chore(control): reconcile ELYSIUM manifest with main"
+          git push origin HEAD:art/world-elysium-null-001
