@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "checkpoint": "PELAGOS-VISUAL-QA-R20",
+  "world_id": "pelagos",
+  "claim_id": "CLM-PEL-WORLD-001",
+  "agent_id": "AGENT-PELAGOS-01",
+  "remote_3d": {
+    "project_id": "39930c08-62bb-4034-b35d-70d0ce51c9d9",
+    "revision": 20
+  },
+  "failed_batch": {
+    "operation": "pelagos.visual.qa.rev20.batch1",
+    "mode": "seven isolated Eevee 768x768 renders in one query",
+    "status": "TIMED_OUT",
+    "timeout_ms": 300000,
+    "effect_on_scene": "NONE_QUERY_ONLY",
+    "classification": "KNOWN_MONOLITHIC_WORLD_MASTER_RENDER_COST_FAILURE_MODE",
+    "control": "do not use multi-asset Eevee batch renders from the whole World Master"
+  },
+  "validated_control": {
+    "operation": "pelagos.visual.qa.rev20.characters-workbench",
+    "mode": "asset-isolated Workbench 512x512 silhouette QA",
+    "status": "PASS_EXECUTION",
+    "duration_seconds_approx": 18,
+    "artifacts": [
+      {"asset_id": "PEL-NPC-NARA", "artifact_id": "6b13a99dd287e1ed34ba80da5a9a2f80", "name": "qa_nara_r20_wb.png", "resolution": [512, 512], "bbox_m": [0.684, 1.471, 1.737]},
+      {"asset_id": "PEL-NPC-TEA", "artifact_id": "c624705e48ff1e7788a281004877b57f", "name": "qa_tea_r20_wb.png", "resolution": [512, 512], "bbox_m": [0.641, 1.436, 1.697]},
+      {"asset_id": "PEL-BOSS-THALASSA", "artifact_id": "8589016efddbbd3cf1ab0619da917583", "name": "qa_thalassa_r20_wb.png", "resolution": [512, 512], "bbox_m": [46.141, 43.5, 24.798]}
+    ]
+  },
+  "truth": {
+    "execution_gate": "PASS",
+    "silhouette_artifacts_exist": true,
+    "semantic_pixel_inspection_by_current_agent": "UNAVAILABLE",
+    "human_art_direction_review": "PENDING",
+    "material_light_qa": "SEPARATE_GATE_REQUIRED",
+    "engine_camera_qa": "PENDING_ENGINE"
+  },
+  "policy": [
+    "Use one isolated asset per visual operation when possible.",
+    "Use Workbench for silhouette/proportion/contact QA.",
+    "Use small Eevee only for material/light QA after isolation.",
+    "Never treat generated render existence as human GATE-ART approval."
+  ]
+}
