@@ -1,0 +1,81 @@
+{
+  "_meta": {
+    "content_digest": "98fcace0966f626e112313b537fec1aeb643abddc1ab19d5426443b526547889",
+    "persisted_at": "2026-09-12T21:34:40.640571Z"
+  },
+  "analysis": {
+    "confidence": 0.9,
+    "family_or_pattern": "duplicate_owner_work_and_unsupported_capability_assumptions",
+    "generalization_boundary": "EXOVANT cooperative agents. Mandatory integration gates still apply. No universal runtime enforcement or quantified quota saving.",
+    "mechanism": "Admit integration work only for a concrete delivery, cross-owner conflict, shared regression or required decision; reuse source-bound evidence when context remains valid.",
+    "non_applicable_cases": [
+      "Changed source/engine/context invalidating receipts",
+      "Independent review required by acceptance gates"
+    ],
+    "symptom": "Integrator proposed repeating source recovery and native asset checks already assigned to world owners; user corrected duplicated effort."
+  },
+  "authority_after": "L2-persisted",
+  "authority_before": "L1-retrieved",
+  "event_class": "correction",
+  "evidence": [
+    {
+      "claim": "Persisted user-directed decision and observed automation pause; not all-agent adoption.",
+      "kind": "issue",
+      "ref": "https://github.com/rotprods/-/issues/7#issuecomment-5648819121"
+    },
+    {
+      "claim": "Six malformed delivery cases demonstrate that hashes alone do not validate content.",
+      "kind": "test",
+      "ref": "evidence/delivery-container-regression.json"
+    }
+  ],
+  "knowledge_relation": {
+    "relation": "EXTENDS",
+    "targets": [
+      "LRN-EXO-20260912-FLEET-CAS"
+    ]
+  },
+  "learning_id": "LRN-EXO-20260912-OWNER-ADMISSION",
+  "promotion": {
+    "reason": "Recover ownership and learning before accepting work; require an actual integration need.",
+    "target_ref": "AGENTS.md",
+    "target_type": "routing-rule"
+  },
+  "provenance": {
+    "agent_id": "codex-root",
+    "chat_id": "INFRA-005-LEARNING-004",
+    "chat_id_source": "session-alias",
+    "run_id": "INFRA-005-LEARNING-004"
+  },
+  "revalidation_condition": "Owner conflict, changed execution context or receipt discrepancy",
+  "scope": {
+    "artifacts": [
+      "AGENTS.md",
+      "_project_intelligence/PLAN.json",
+      "HANDOFF.md"
+    ],
+    "level": "project",
+    "project": "EXOVANT 2950",
+    "repository": "rotprods/-"
+  },
+  "status": "persisted",
+  "timestamp": "2026-09-12T21:34:40.640309+00:00",
+  "unknowns": [
+    "Which external agents will acknowledge and apply this lesson",
+    "Visual display root cause in current environment",
+    "Actual weekly model consumption savings"
+  ],
+  "verification": {
+    "adversarial_review": {
+      "evidence_ref": "https://github.com/rotprods/-/issues/7#issuecomment-5648819121",
+      "status": "pass"
+    },
+    "anti_recurrence_control": "Cooperative AGENTS preflight; not enforced for external agents.",
+    "retrieval_test": {
+      "status": "pending"
+    },
+    "runtime_test": {
+      "status": "pending"
+    }
+  }
+}

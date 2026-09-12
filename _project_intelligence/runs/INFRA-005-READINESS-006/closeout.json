@@ -1,0 +1,10 @@
+{
+  "task_id": "INFRA-005",
+  "outcome": "checkpoint",
+  "evidence": [
+    "evidence/migration-readiness-contract.json"
+  ],
+  "source_digest": "7d788a1555d98ed69c11fea738f0535750b9f5f4dd4efd1f494e5ed5246aa592",
+  "next_action": "Admitir una entrega con owner vigente, respaldo binario recuperable y manifiesto del árbol exacto; después cualificar Mac aislado.",
+  "executed_at": "2026-09-12T22:08:23.983248+00:00"
+}
