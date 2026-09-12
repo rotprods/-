@@ -1,0 +1,150 @@
+{
+  "schema_version": 1,
+  "project": "EXOVANT 2950",
+  "world_id": "leviathan",
+  "claim_id": "CLM-W10-WORLD-LEVIATHAN-001",
+  "checkpoint": "SOMA_ENCOUNTER_MICROSET_R8",
+  "source": {
+    "rejected_preflight": {
+      "path": "art_source/worlds/leviathan/tools/build_soma_encounter_microset.py",
+      "blob_sha": "c322b55aa71134ff3d9f266cb84855b019d1aa0e",
+      "executed": false,
+      "reason": "source preflight found contraction-wall visual envelope could exceed canonical 29 m chamber radius"
+    },
+    "authoritative_stage": {
+      "path": "art_source/worlds/leviathan/tools/build_soma_encounter_microset_v2.py",
+      "blob_sha": "610177ee49e800cdf9ea7506684bc2a3b0f1da6f"
+    }
+  },
+  "master": {
+    "project_id": "2577a7b6-ebd7-4d31-a645-620e4b73a95d",
+    "revision": 8,
+    "blend_size_bytes": 7656412,
+    "blend_etag": "d127731e3342217a5f9a89a98b41da94",
+    "glb_size_bytes": 8492516,
+    "glb_etag": "ebbcac32bc7412cd227c472aff128b5c",
+    "scene_objects": 381,
+    "scene_meshes": 260,
+    "scene_materials": 18,
+    "collections": 13,
+    "soma_microset_objects": 98
+  },
+  "cold_rebuild": {
+    "project_id": "37a931c7-f2e6-46bc-9be0-26077e5de1c1",
+    "revision": 6,
+    "blend_size_bytes": 7657188,
+    "blend_etag": "8975e76878a80b4a7bda4c0f03ca762c",
+    "glb_size_bytes": 8503720,
+    "glb_etag": "b48c6a89be078ec0c6b210791319b79a",
+    "pipeline": "empty -> master -> Puerto -> Puerto refinement -> Jardines -> Jardines truth refinement -> SOMA encounter v2",
+    "scene_objects": 381,
+    "scene_meshes": 260,
+    "scene_materials": 18,
+    "collections": 13,
+    "soma_microset_objects": 98
+  },
+  "determinism": {
+    "master_semantic_fingerprint_excluding_provider_hf_id": "5d59df25bb89a19dfe90dc10e911ee99b20409d03ff9689415e61b89b3e2fba3",
+    "cold_semantic_fingerprint_excluding_provider_hf_id": "5d59df25bb89a19dfe90dc10e911ee99b20409d03ff9689415e61b89b3e2fba3",
+    "semantic_payload_bytes": 103818,
+    "status": "PASS_EXACT_SEMANTIC_MATCH"
+  },
+  "assets": {
+    "LEV-RGN-003": {
+      "state": "REPRESENTATIVE_ENCOUNTER_ENVIRONMENT_NOT_FINAL",
+      "canon_outer_chamber_diameter_m": 58.0,
+      "canon_radius_m": 29.0,
+      "boss_dependency": "LEV-BOSS-001 remains BLOCKED; final SOMA anatomy not modified"
+    },
+    "LEV-ENV-003": {
+      "state": "REPRESENTATIVE_BRIDGE_SYSTEM_NOT_FINAL",
+      "logic": "cartilage load ribs + membrane visual treads; stable floor remains collision authority"
+    },
+    "LEV-INF-003": {
+      "state": "REPRESENTATIVE_LOCAL_SAFE_VALVE_VARIANT_NOT_FINAL",
+      "function": "pressure refuge / bypass interface",
+      "signal_semantics": "amber refuge; cyan diagnostic; vermilion hazard"
+    },
+    "LEV-ENV-002": {
+      "state": "REPRESENTATIVE_CONTRACTION_SYSTEM_NOT_FINAL",
+      "collision_authority": "NONE_VISUAL_ONLY",
+      "telegraph_contract": "tendon preload + vermilion pressure node before contraction"
+    }
+  },
+  "radius_gate": {
+    "source_limit": {
+      "contraction_center_radius_m": 24.5,
+      "contraction_radial_half_depth_m": 3.8,
+      "source_radial_sum_m": 28.3,
+      "canonical_radius_m": 29.0
+    },
+    "first_validator": {
+      "method": "evaluated object AABB corners",
+      "reported_max_radius_m": 29.2015,
+      "status": "FALSE_POSITIVE_HEURISTIC",
+      "reason": "rotated ellipsoid AABB corners are not points on the actual surface"
+    },
+    "authoritative_validator": {
+      "method": "actual evaluated mesh vertices after curve tessellation",
+      "max_actual_xy_radius_m": 28.3,
+      "clearance_to_canonical_radius_m": 0.7,
+      "max_object": "R3_HCM_MEMBRANE_1",
+      "status": "PASS_WITHIN_29M"
+    }
+  },
+  "boss_non_mutation": {
+    "object": "SOMA_PROXY_NOT_FINAL",
+    "dimensions_m": [17.0, 17.0, 22.0],
+    "final_anatomy": false,
+    "role": "COMBAT_SCALE_AND_SILHOUETTE_INTERFACE_ONLY",
+    "claim": "Final SOMA art/anatomy remains blocked and was not promoted by this checkpoint."
+  },
+  "qa": {
+    "required_missing": [],
+    "bad_object_scales": [],
+    "zero_polygon_meshes": [],
+    "degenerate_meshes": [],
+    "materialless_meshes": [],
+    "visual_microset_objects_in_collision_collection": [],
+    "arena_floor_dims_m": [58.0, 58.0, 6.0],
+    "arena_ring_dims_m": [58.0, 58.0, 6.4],
+    "representative_centers_in_inspection_camera": true,
+    "inspection_light": "SPOT",
+    "portable_export": "PASS",
+    "engine_import": "NOT_RUN_ENV_BLOCKED",
+    "direct_art_review": "REVIEW_REQUIRED"
+  },
+  "geometry_cost_evaluated": {
+    "method": "mesh plus evaluated curve tessellation",
+    "objects": 98,
+    "source_meshes": 54,
+    "source_curves": 40,
+    "evaluated_vertices": 17640,
+    "evaluated_triangles": 34308,
+    "material_slots": 94,
+    "hard_budget_status": "MEASURED_NO_HARD_BUDGET_UNTIL_ENGINE_AND_TARGET_HARDWARE_QUALIFIED"
+  },
+  "materials": {
+    "roles_used": [
+      "LEV_MAT_CARTILAGE",
+      "LEV_MAT_FIBROUS_TENDON",
+      "LEV_MAT_MEMBRANE",
+      "LEV_MAT_PRESSURE_LUMEN",
+      "LEV_MAT_TISSUE_WARM",
+      "LEV_MAT_VASCULAR",
+      "SIGNAL_AMBER_REFUGE",
+      "SIGNAL_CYAN_MEMORY",
+      "SIGNAL_VERMILION_HOSTILE"
+    ],
+    "new_roles": ["LEV_MAT_PRESSURE_LUMEN", "LEV_MAT_FIBROUS_TENDON"],
+    "final_texture_status": "NOT_FINAL"
+  },
+  "truth": {
+    "region_done": false,
+    "boss_done": false,
+    "world_done": false,
+    "final_uv_pbr_lod": false,
+    "runtime_collision": false,
+    "performance_qualified": false
+  }
+}
