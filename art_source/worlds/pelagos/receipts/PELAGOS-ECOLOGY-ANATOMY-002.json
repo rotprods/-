@@ -1,0 +1,101 @@
+{
+  "schema_version": 1,
+  "checkpoint": "PELAGOS-ECOLOGY-ANATOMY-002",
+  "task_id": "PEL/ECO/009",
+  "world_id": "pelagos",
+  "claim_id": "CLM-PEL-WORLD-001",
+  "agent_id": "AGENT-PELAGOS-01",
+  "status": "IN_PROGRESS",
+  "claim": "canonical_ecology_functional_anatomy_blockouts_structurally_validated_not_final_creatures",
+  "remote_3d": {
+    "project_id": "39930c08-62bb-4034-b35d-70d0ce51c9d9",
+    "build_revision": 16,
+    "verified_revision": 17,
+    "build_operation": "pelagos.ecology.anatomy.v1",
+    "structural_verification": "pelagos.ecology.verify.r16",
+    "scale_reference_probe": "pelagos.ecology.scale-ref-probe.r16",
+    "metadata_fix": "pelagos.ecology.metadatafix.v1",
+    "failed_visual_query": "pelagos.ecology.visual.r17",
+    "isolated_visual_query": "pelagos.ecology.visual-isolated.r17"
+  },
+  "assets": {
+    "PEL-ECO-JELLY-001": {
+      "canon_role": "Medusa mnémica: transmits luminous memory; information belongs to living individuals",
+      "proposal_anatomy": "pulsatile hydrostatic bell, circumferential muscle ring, six oral filter arms, twelve sensory tentacles, sixteen mnemonic photophores",
+      "measured_visible_bbox_m": [4.909, 4.909, 8.308],
+      "rig_contract": {"tentacle_sockets": 12, "sensory_tentacles": 12, "memory_photophores": 16},
+      "locomotion_status": "PROPOSAL_NOT_ANIMATED"
+    },
+    "PEL-ECO-EEL-001": {
+      "canon_role": "Anguila de vidrio: hunts following repeated sound",
+      "proposal_anatomy": "anguilliform body, flexible cartilage-like spine, jaw plates, bilateral acoustic lateral line and compliant fin rails",
+      "measured_visible_bbox_m": [6.339, 1.147, 0.92],
+      "rig_contract": {"spine_joints": 11, "lateral_line_nodes": 16},
+      "locomotion_status": "PROPOSAL_NOT_ANIMATED"
+    },
+    "PEL-ECO-BOV-001": {
+      "canon_role": "Bóvido de arrecife: maintains reef channels while grazing",
+      "proposal_anatomy": "six-limb amphibious grazer with three paired load stations, broad reef contact pads, ventral mineralized rasp and vibration-sensing plates; explicitly not an Earth-cow clone",
+      "measured_visible_bbox_m": [5.47, 2.72, 2.537],
+      "rig_contract": {"limb_root_joints": 6, "limb_joints": 6, "contact_pads": 6, "rasp_teeth": 7},
+      "locomotion_status": "PROPOSAL_NOT_ANIMATED"
+    },
+    "PEL-ECO-SCRIBE-001": {
+      "canon_role": "Coral escriba: incorporates vibration into its growth",
+      "proposal_anatomy": "hero interactive colony with mineralized base, eight recording branch pairs, vibration growth rings and terminal memory nodes",
+      "nominal_height_proposal_m": 6.8,
+      "measured_visible_bbox_m": [5.57, 5.57, 7.18],
+      "height_discrepancy": "documented blockout extent; not treated as canon conflict",
+      "dependency": "PEL/BIOME/007 owns background coral population; this asset is hero interactive specimen only",
+      "rig_contract": {"recording_branches": 16, "growth_records": 24, "terminal_memory_nodes": 8}
+    }
+  },
+  "qa": {
+    "missing_asset_ids": 0,
+    "materialless_geometry": 0,
+    "nonunit_mesh_scales": 0,
+    "all_assets_within_coro_authored_300m": true,
+    "asset_center_radius_from_coro_m": {
+      "PEL-ECO-JELLY-001": 161.25,
+      "PEL-ECO-EEL-001": 153.56,
+      "PEL-ECO-BOV-001": 219.68,
+      "PEL-ECO-SCRIBE-001": 218.4
+    },
+    "old_world_foundation_ecology_proxies_hidden": 31,
+    "human_scale_reference_asset_id": "PEL-SCALE-HUMAN",
+    "human_scale_reference_note": "World Foundation validation proxy consists of torso/head/chest-mark parts; it is a scale aid, not a final anatomical standard.",
+    "structural_gate": "PASS_FOR_ANATOMY_FOUNDATION",
+    "visual_silhouette_gate": "ISOLATED_WORKBENCH_RENDERS_GENERATED_HUMAN_REVIEW_PENDING",
+    "final_organic_sculpt": "NOT_DONE",
+    "retopology": "NOT_DONE",
+    "uv_bake": "NOT_DONE",
+    "final_biological_shaders": "NOT_DONE",
+    "armatures_deformation": "NOT_DONE",
+    "locomotion_behavior_animation": "NOT_DONE",
+    "engine_collision_hitboxes": "NOT_RUN",
+    "lod_crowd_variants": "NOT_DONE",
+    "performance": "NOT_RUN",
+    "human_art_review": "PENDING"
+  },
+  "visual_artifacts": [
+    {"name": "PELAGOS-ECO-JELLY-r17-isolated.png", "artifact_id": "462e2770b5dbe5098488a48ede71b405", "bytes": 180613, "resolution": [512, 512]},
+    {"name": "PELAGOS-ECO-EEL-r17-isolated.png", "artifact_id": "1328d2ae3d91b14d22d1a92a06601c45", "bytes": 161671, "resolution": [512, 512]},
+    {"name": "PELAGOS-ECO-BOVID-r17-isolated.png", "artifact_id": "5737d7535965f6e1610212784e0b93bd", "bytes": 306764, "resolution": [512, 512]},
+    {"name": "PELAGOS-ECO-SCRIBE-r17-isolated.png", "artifact_id": "d1836db4985150755bee2438cee08512", "bytes": 272968, "resolution": [512, 512]}
+  ],
+  "revision_artifacts": {
+    "blend_revision": 17,
+    "blend_size_bytes": 14801681,
+    "glb_revision": 17,
+    "glb_size_bytes": 12042988
+  },
+  "pipeline_incident": {
+    "symptom": "Four 768x768 Eevee validation renders from the monolithic World Master timed out after 300 seconds.",
+    "failed_operation": "pelagos.ecology.visual.r17",
+    "control": "Hide all unrelated objects per shot and use isolated 512x512 Workbench silhouette QA; material/light QA remains a separate gate.",
+    "control_operation": "pelagos.ecology.visual-isolated.r17",
+    "control_duration_seconds_approx": 14,
+    "status": "CONTROL_VALIDATED_FOR_THIS_SCOPE"
+  },
+  "reason_not_done": "Creature DoD still requires lead anatomy review, organic sculpt/retopology, UV/bakes/final shaders, armatures and deformation QA, locomotion/behavior animation, engine hitboxes/collision, LOD/crowd variants, performance qualification and human art-direction approval."
+}
