@@ -4,7 +4,8 @@
   ],
   "correction": [
     "agents/codex-root/chats/EXO-004-INPUT-001/events/LRN-EXO-20260912-INPUT-BOUNDARY.json",
-    "agents/codex-root/chats/EXO-004-INPUT-001/events/LRN-EXO-20260912-INPUT-PREFERENCES.json"
+    "agents/codex-root/chats/EXO-004-INPUT-001/events/LRN-EXO-20260912-INPUT-PREFERENCES.json",
+    "agents/codex-root/chats/INFRA-005-FLEET-001/events/LRN-EXO-20260912-FLEET-CAS.json"
   ],
   "failure": [
     "agents/codex-root/chats/INFRA-005-CONTRACT/events/LRN-EXO-20260912-CI-BOOTSTRAP.json",

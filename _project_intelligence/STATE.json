@@ -1,10 +1,10 @@
 {
   "project": "EXOVANT 2950",
-  "checkpoint": "EXO-004-INPUT-001",
+  "checkpoint": "INFRA-005-FLEET-001",
   "date": "2026-09-12",
   "global_goal": "Original 3D interplanetary soulslike based on the existing twelve-world preproduction plan",
-  "current_wave": "EXO-004 input, controller navigation and persistent preferences",
-  "status": "PLAYABILITY_INCREMENT_LOCALLY_VALIDATED",
+  "current_wave": "Cooperative multi-agent fleet harness and current-main continuity repair",
+  "status": "FLEET_HARNESS_LOCALLY_VALIDATED_OWNER_ADOPTION_PARTIAL",
   "engine": "Godot 4.7.2.stable.official.ed1daf0bf",
   "production_engine_decision": "Unreal remains the plan's principal candidate; Godot is the executable prototype, not an irreversible replacement",
   "authority": [
@@ -32,7 +32,10 @@
     "analog gamepad movement and camera",
     "controller UI navigation and modal input boundaries",
     "persisted keyboard mouse and gamepad-button remapping",
-    "dynamic control hints"
+    "dynamic control hints",
+    "Cooperative fleet reservations with scope/project/asset collision checks and fencing",
+    "Git-derived scope guard including verified generated manifest projection",
+    "Native asset delivery hash/receipt validation interface"
   ],
   "not_claimed": [
     "full game",
@@ -43,10 +46,13 @@
     "DLSS integration",
     "GPU performance target",
     "human playtest",
-    "continuous worker availability"
+    "continuous worker availability",
+    "All external art workers acknowledged or controlled",
+    "Automatic continuous provider orchestration",
+    "All world source binaries recovered locally"
   ],
   "next_workunit": "EXO-004",
-  "next_action": "EXO-004-ROUTE-002: traverse fresh Ines-water-archive-ATLAS-choice-portal route through normal controls; attack out-of-order progression, death and reload; human and physical-controller playtest remain pending.",
+  "next_action": "Integrador: obtener acuses restantes en issue #7 y aplicar el guard a PRs de arte; Sylva macro/root-kit confirman interfaz y los productores recuperan Blend+GLB. Frente gameplay mantiene EXO-004-ROUTE-002 sin debug. Arte Terra continúa desde PR1 con revisión en cámara, sin duplicar el kit.",
   "evidence": [
     "evidence/gauntlet.json",
     "evidence/state-tests.json",
@@ -58,7 +64,7 @@
     "canonical": "GitHub rotprods/- main",
     "state_file": "_project_intelligence/STATE.json",
     "single_writer": true,
-    "concurrency_control": "normal fast-forward push against observed parent; reconcile remote changes",
+    "concurrency_control": "Published fleet reservations + local studio lock + normal non-force Git update against verified parent; cooperative, not universal provider enforcement",
     "projections": [
       "Linear project EXOVANT 2950",
       "Drive folder EXOVANT 2950",
@@ -95,9 +101,9 @@
       "suite": "native_scene_integration"
     },
     "native_gates": {
-      "run_id": "native-20260912T182954429961Z",
-      "executed_at": "2026-09-12T18:30:10.107590+00:00",
-      "source_digest": "86c64744977a9c92d6c70385005de4d2eb112333542a6d67a65b74dfc47167f6",
+      "run_id": "native-20260912T195851501557Z",
+      "executed_at": "2026-09-12T19:59:07.683855+00:00",
+      "source_digest": "18c90a0b8f72148d244f4406a52ee0d63555c663b315ccf50fd0f6a01f3b58ed",
       "gates": [
         {
           "gate": "import",
@@ -128,10 +134,11 @@
       "passed": true
     },
     "continuity": {
-      "current_receipt": "evidence/gates/EXO-004-GATE-CONTROL.json",
-      "tests": 34,
+      "current_receipt": "evidence/gates/INFRA-005-GATE-CONTROL.json",
+      "tests": 75,
       "passed": true,
-      "source_digest": "86c64744977a9c92d6c70385005de4d2eb112333542a6d67a65b74dfc47167f6"
+      "note": "Read receipt for exact source digest",
+      "source_digest": "18c90a0b8f72148d244f4406a52ee0d63555c663b315ccf50fd0f6a01f3b58ed"
     },
     "learning_retrieval": "evidence/learning-retrieval.json",
     "ci_repair": "evidence/ci-repair-readback.json",
@@ -146,8 +153,10 @@
       "suite": "native_input_and_preferences"
     },
     "ci_previous_checkpoint": "evidence/ci-contract-readback.json",
-    "ci_current_source": "Pending publication; use GitHub Actions run matching current git HEAD; do not apply old CI receipt to changed code",
-    "controls_ui": "evidence/controls-ui.json"
+    "ci_current_source": "Pending publication: verify exact final commit Actions run; prior 196ef814 failed manifest and was reconciled locally",
+    "controls_ui": "evidence/controls-ui.json",
+    "fleet": "evidence/fleet-adversarial-review.json",
+    "main_reconciliation": "evidence/fleet-main-reconciliation.json"
   },
   "cold_resume": {
     "source_archive_reimport": true,
@@ -155,13 +164,13 @@
     "note": "Fresh extraction without .godot cache; HUD-only adjustment additionally rendered and smoke-tested."
   },
   "source_repository": "https://github.com/rotprods/-",
-  "updated_at": "2026-09-12T18:33:35.269778+00:00",
+  "updated_at": "2026-09-12T19:58:50.761081+00:00",
   "learning": {
     "authority": "learning/hub",
     "scope": "project",
     "authority_level": "L2-persisted",
     "global_enforcement_claimed": false,
-    "event_count": 16,
+    "event_count": 17,
     "verified_events": [
       "LRN-EXO-20260912-CI-BOOTSTRAP-VERIFIED"
     ]
@@ -182,7 +191,26 @@
     "Human playthrough and physical-controller review",
     "Mem routing note provider rate limit",
     "Provider completion record for independent scheduled execution",
-    "Production GPU and Unreal qualification"
+    "Production GPU and Unreal qualification",
+    "Producer acknowledgements and exact scope/asset-ID inventories",
+    "Sylva supplier/consumer boundary acknowledgement",
+    "World-branch Blend/GLB recovery and native/human art gates"
   ],
-  "last_run": "_project_intelligence/runs/EXO-004-INPUT-001/closeout.json"
+  "last_run": "_project_intelligence/runs/INFRA-005-FLEET-001/closeout.json",
+  "fleet": {
+    "registry": "ops/fleet/registry.json",
+    "coordination_issue": "https://github.com/rotprods/-/issues/7",
+    "protocol": "docs/FLEET_COORDINATION.md",
+    "imported_producer_reservations": 13,
+    "producer_acknowledgements": [
+      "CLM-KHEPRI-WMACRO-001"
+    ],
+    "abandoned_tombstones": [
+      "ART-ARES-001-ABANDONED"
+    ],
+    "external_workers_running": "not inferred from branch or project existence",
+    "provider_snapshot": "ops/fleet/provider-snapshot-20260912.json",
+    "scope_audit": "ops/fleet/scope-audit-20260912.json",
+    "origin": "Reserved; issue #14 supersedes earlier unclaimed snapshot"
+  }
 }
