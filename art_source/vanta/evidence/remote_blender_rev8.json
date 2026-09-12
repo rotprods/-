@@ -1,0 +1,35 @@
+{
+  "schema": "exovant.remote-blender-evidence.v1",
+  "world": "VANTA",
+  "project_id": "c82188b1-afdc-43f2-828a-5f0e98291f83",
+  "blender_version": "5.2.0 LTS",
+  "current_revision": 8,
+  "history": [
+    {"op":"vanta-cp4-parenting-audit-001","rev":4,"status":"succeeded","finding":"P1 parent-inverse defect; representative child world coordinates were doubled."},
+    {"op":"vanta-cp4-parent-fix-001","from":4,"to":5,"status":"succeeded","fixed_children":205,"coordinate_failures":0,"blend":{"bytes":7032696,"etag":"30a2b0a629c7b82513198049b65b4a31"},"glb":{"bytes":4822424,"etag":"dc1ea5e5b1c5deadfe7237151ec826f5"}},
+    {"op":"vanta-cp4-test-yard-001","rev":5,"status":"failed_before_commit","finding":"First instancer failed seam assertion; no revision change."},
+    {"op":"vanta-cp4-test-yard-002","from":5,"to":6,"status":"succeeded","instances":19,"linked_meshes":76,"seam_checks":7,"max_gap_m":0,"blend":{"bytes":7421204,"etag":"538aed8fd6603a40cfc8a8f2b21b1621"},"glb":{"bytes":5375388,"etag":"85b835bfbdd33cd862c0e03251ba4fdf"}},
+    {"op":"vanta-cp5-pbr-textures-001","rev":6,"status":"failed_before_commit","finding":"Generated-image packing validator failed; no revision change."},
+    {"op":"vanta-cp5-pbr-textures-002","from":6,"to":7,"status":"succeeded","packed_images":9,"resolution":[512,512],"textured_cp4_meshes":147,"missing_uv":0,"blend":{"bytes":7557149,"etag":"593e9b598b8c83ab8aa9866456648f28"},"glb":{"bytes":5429352,"etag":"3e86b6ae502410d6c629d2e82d3561ed"}},
+    {"op":"vanta-cp5-trim-decal-001","from":7,"to":8,"status":"succeeded","packed_trim_images":3,"packed_decal_images":1,"calibration_objects":12,"decal_cards":4,"blend":{"bytes":8168427,"etag":"251f6d510f8ae6c5250bae10c8ee5a61"},"glb":{"bytes":5990788,"etag":"a3cfe2daf6a1005e35db478e3f4ec51d"}},
+    {"op":"vanta-rev8-final-audit-001","rev":8,"status":"succeeded","objects":832,"meshes":711,"materials":20,"collections":25,"cameras":12,"lights":15,"coordinate_failures":0,"seam_checks":7,"max_gap_m":0,"cp5_packed_images":13,"missing_packed":0,"textured_cp4_meshes":147,"missing_uv":0},
+    {"op":"vanta-cp5-neutral-proof-001","rev":8,"status":"succeeded","artifact":{"id":"a2438a37035038ca58e40a4ff27176d7","name":"vanta_cp5_neutral_board.png","size":[640,480],"bytes":244743,"etag":"c04df5f9f60ba91124191e15718d7f5b"}},
+    {"op":"vanta-cp4-test-yard-proof-001","rev":8,"status":"succeeded","artifact":{"id":"f2ce32a87e098470ed00328fef4cbbb2","name":"vanta_cp4_test_yard.png","size":[640,480],"bytes":248872,"etag":"3ace388889e77bc9c32e47c1942af5d7"}}
+  ],
+  "export_warnings": [
+    "glTF warns that multiple image texture nodes participate in some PBR/trim materials; target-engine material semantics remain unqualified.",
+    "glTF reports unsupported AREA lights from the Blender test yard; engine-light portability remains unqualified."
+  ],
+  "truth": {
+    "cp4_parent_fix_pass": true,
+    "cp4_local_assembly_pass": true,
+    "cp4_engine_snap_import": false,
+    "cp4_collision_playtest": false,
+    "cp5_pbr_trim_decal_foundation": true,
+    "visual_aesthetic_pass": false,
+    "engine_material_import": false,
+    "performance_qualified": false,
+    "final_art_claim": false,
+    "aaa_quality_claim": false
+  }
+}
