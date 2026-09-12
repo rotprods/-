@@ -42,7 +42,8 @@ def reset_scene():
 
 def collection(name, scene):
     c = bpy.data.collections.get(name) or bpy.data.collections.new(name)
-    if c not in scene.collection.children:
+    # Blender 5.2 bpy_prop_collection.__contains__ expects a string, not a Collection.
+    if c.name not in [child.name for child in scene.collection.children]:
         scene.collection.children.link(c)
     return c
 
@@ -189,7 +190,7 @@ def build():
         "NACRE_SHELL_CITY_ENVELOPE", c_shell, m_outer, (700, 560, 430),
         math.radians(-30), math.radians(210), math.radians(18), math.radians(162), 72, 36, 10.0,
     )
-    inner = shell_patch(
+    shell_patch(
         "NACRE_INNER_PEARL_LINING", c_shell, m_inner, (682, 542, 414),
         math.radians(-28), math.radians(208), math.radians(22), math.radians(158), 60, 30, 4.0,
     )
@@ -221,8 +222,7 @@ def build():
         ("ARCHIVE_UP", (15, 155, 195), 42),
         ("ARCHIVE_LOW", (8, 40, -160), 48),
     ]
-    archives = {}
-    radii = {}
+    archives, radii = {}, {}
     for name, pos, radius in archive_specs:
         bpy.ops.mesh.primitive_uv_sphere_add(segments=40, ring_count=24, radius=radius, location=pos)
         obj = bpy.context.object
@@ -283,28 +283,26 @@ def build():
     for name, obj in archives.items():
         radius = radii[name]
         bpy.ops.mesh.primitive_torus_add(
-            major_radius=radius * 1.045, minor_radius=max(0.8, radius * 0.012),
-            major_segments=48, minor_segments=8, location=obj.location,
+            major_radius=radius * 1.045,
+            minor_radius=max(0.8, radius * 0.012),
+            major_segments=48,
+            minor_segments=8,
+            location=obj.location,
         )
         ring = bpy.context.object
         ring.name = "SERVICE_RING_" + name
         move_to(ring, c_struct)
         ring.data.materials.append(m_deck)
 
-    # Reversible macro load paths to the inner blockout shell.
     ea, eb, ec = 650.0, 510.0, 390.0
     for name, obj in archives.items():
         p = Vector(obj.location)
         q = (p.x / ea) ** 2 + (p.y / eb) ** 2 + (p.z / ec) ** 2
-        if q < 1e-6:
-            anchor = Vector((0, eb * 0.96, 0))
-        else:
-            anchor = p * (1.0 / math.sqrt(q)) * 0.96
+        anchor = Vector((0, eb * 0.96, 0)) if q < 1e-6 else p * (1.0 / math.sqrt(q)) * 0.96
         direction = (anchor - p).normalized()
         start = p + direction * (radii[name] + 3.0)
         poly_curve("SUSPENSION_" + name, [start, anchor], 1.6, m_struct, c_struct)
 
-    # Growth-history strata: causal shell growth signal, not random surface noise.
     for idx, ph_deg in enumerate((52, 76, 100, 124, 148)):
         ph = math.radians(ph_deg)
         pts = []
@@ -314,7 +312,6 @@ def build():
             pts.append((660 * s * math.cos(th), 520 * s * math.sin(th), 396 * c))
         poly_curve(f"GROWTH_STRATUM_{idx:02d}", pts, 0.9, m_inner, c_struct)
 
-    # Bounded translucent accents only.
     for idx, x in enumerate((-360, -250, -140, 140, 250, 360)):
         bpy.ops.mesh.primitive_cube_add(size=1, location=(x, -360, 80 + 35 * math.sin(idx)))
         obj = bpy.context.object
