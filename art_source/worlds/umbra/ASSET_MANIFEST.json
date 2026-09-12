@@ -1,52 +1,69 @@
 {
-  "schema": "exovant.umbra.asset-manifest.v2",
+  "schema": "exovant.umbra.asset-manifest.v3",
   "world": "UMBRA",
   "world_id": "W04",
   "claim": "CLM-W04-WORLD-UMBRA-001",
   "owner": "AGENT-UMBRA-04",
-  "truth_state": "WAVE1_PRODUCTION_FOUNDATION_REPRODUCIBLE",
+  "truth_state": "WAVE2_ENVIRONMENT_PRODUCTION_FOUNDATION_REPRODUCIBLE",
   "primary_project": {
     "id": "7ab99682-8777-4143-8ae0-1fbb178ccafb",
-    "revision": 2,
-    "blend_bytes": 4134586,
-    "glb_bytes": 2474196
+    "checkpoint": "WAVE2_REFUGE_QUESTCELLS_OPT_001"
   },
   "replay_project": {
     "id": "7f33ae14-540c-4af5-8131-1490465fe6cc",
-    "revision": 2,
     "semantic_match": true
   },
   "assets": [
-    {"id":"W04-TERR-001","name":"Twilight-band authored terrain testbed","class":"environment/terrain","status":"DONE_BLOCKOUT","target":"A","current":"C","notes":"1200x700 m L2 proposal only; not planet size"},
-    {"id":"W04-TERR-002","name":"Directional dark-ice ridges","class":"environment/terrain-proxy","status":"DONE_BLOCKOUT","target":"B","current":"C","notes":"7 ridge proxies; final terrain cells pending"},
+    {"id":"W04-TERR-001","name":"Twilight-band authored terrain testbed","class":"environment/terrain","status":"DONE_BLOCKOUT","target":"A","current":"C","notes":"1200x700 m L2 proposal only; never planet size"},
+    {"id":"W04-TERR-002","name":"Directional dark-ice ridges","class":"environment/terrain-proxy","status":"DONE_BLOCKOUT","target":"B","current":"C","notes":"7 ridge proxies; global geology remains undefined"},
+    {"id":"W04-TERR-M01","name":"M01 thermal-track environment cell","class":"environment/quest-cell","status":"DONE_WAVE2_FOUNDATION","target":"A","current":"B","notes":"ordered thermal anchors, track scars, lee shelters; runtime logic absent"},
+    {"id":"W04-TERR-M02","name":"M02 reflector-exposure environment cell","class":"environment/quest-cell","status":"DONE_WAVE2_FOUNDATION","target":"A","current":"B","notes":"occlusion fins, exposure corridor edges, future reflector control mount"},
+    {"id":"W04-TERR-M03","name":"M03 exclusion archive environment cell","class":"environment/quest-cell","status":"DONE_WAVE2_FOUNDATION","target":"A","current":"B","notes":"archive shell, evidence slabs/caches; narrative content external"},
+    {"id":"W04-TERR-M04","name":"M04 crown-ascent environment cell","class":"environment/quest-cell","status":"DONE_WAVE2_FOUNDATION","target":"A","current":"B","notes":"stepped ascent and crown threshold; stops before final NOCTIL entity"},
     {"id":"W04-INF-001","name":"Reflector tower modular kit","class":"infrastructure/reflector","status":"DONE_WAVE1_FOUNDATION","target":"A","current":"B","notes":"4 terrain-seated assemblies with foundation/anchors/guying/service/gimbal/backing/actuators/sensors; final UV/PBR/LOD/runtime pending"},
-    {"id":"W04-INF-002","name":"Windbreak pylons","class":"infrastructure/wind","status":"DONE_BLOCKOUT","target":"B","current":"C","notes":"9 proxies; terrain contact family not yet production-authorized"},
-    {"id":"W04-INF-003","name":"Hardpack traversal route","class":"environment/traversal","status":"DONE_BLOCKOUT","target":"B","current":"C","notes":"5 route segments; quest-state implementation pending"},
-    {"id":"W04-CAR-001","name":"Flotilla caravan modular vehicle","class":"vehicle/mobile-architecture","status":"DONE_WAVE1_FOUNDATION","target":"A","current":"B","notes":"5 terrain-seated instances with frame/bogies/suspension/service/cargo/thermal/canopy/beacon; final vehicle topology/UV/rig/LOD/runtime pending"},
-    {"id":"W04-ARCH-001","name":"Refuge hub","class":"architecture/refuge","status":"IN_PROGRESS_WAVE1","target":"A","current":"C_PLUS","notes":"terrain contact + six feet fixed; full modular manufacturing/wind logic pending"},
+    {"id":"W04-INF-002","name":"Windbreak pylons","class":"infrastructure/wind","status":"DONE_BLOCKOUT","target":"B","current":"C","notes":"9 proxies; final production family pending"},
+    {"id":"W04-INF-003","name":"Hardpack traversal route","class":"environment/traversal","status":"DONE_BLOCKOUT","target":"B","current":"C","notes":"5 route segments; runtime quest-state integration pending"},
+    {"id":"W04-CAR-001","name":"Flotilla caravan modular vehicle","class":"vehicle/mobile-architecture","status":"DONE_WAVE1_FOUNDATION","target":"A","current":"B","notes":"5 terrain-seated instances with frame/bogies/suspension/service/cargo/thermal/canopy/beacon; final topology/UV/rig/LOD/runtime pending"},
+    {"id":"W04-ARCH-001","name":"Refuge hub modular production foundation","class":"architecture/refuge","status":"DONE_WAVE2_FOUNDATION","target":"A","current":"B","notes":"portal ribs, longitudinal rails, replaceable wind baffles, sealed airlock, external thermal modules, cargo dock, redundant refuge beacons; wind bearing reversible proposal"},
     {"id":"W04-BOSSENV-001","name":"NOCTIL eclipse destination ring","class":"boss-environment/interface","status":"DONE_PROXY","target":"S","current":"D","notes":"environmental destination only; not boss anatomy"},
     {"id":"W04-BOSSENV-002","name":"NOCTIL arena anchors","class":"boss-environment/arena","status":"DONE_BLOCKOUT","target":"A","current":"C","notes":"8 anchors; gameplay/telegraph integration pending"},
     {"id":"W04-GUIDE-001","name":"Human scale reference","class":"guide","status":"DONE","target":"QA","current":"QA","notes":"1.75 m"},
     {"id":"W04-GUIDE-002","name":"Rover scale reference","class":"guide","status":"DONE","target":"QA","current":"QA","notes":"4.6 x 2.1 x 2.0 m"},
     {"id":"W04-MAT-001","name":"Dark ice","class":"material","status":"BLOCKOUT_IMPLEMENTED","target":"A","current":"C","notes":"portable Principled role; final texture set pending"},
-    {"id":"W04-MAT-002","name":"Sin Sol dark metal","class":"material","status":"BLOCKOUT_IMPLEMENTED","target":"A","current":"C","notes":"used by Wave1 mechanisms"},
-    {"id":"W04-MAT-003","name":"Reflector mirror","class":"material","status":"BLOCKOUT_IMPLEMENTED","target":"A","current":"C","notes":"functional optical role; no final optical sim claimed"},
-    {"id":"W04-MAT-004","name":"Tension fabric","class":"material","status":"BLOCKOUT_IMPLEMENTED","target":"A","current":"C","notes":"portable blockout material"},
+    {"id":"W04-MAT-002","name":"Sin Sol dark metal","class":"material","status":"BLOCKOUT_IMPLEMENTED","target":"A","current":"C","notes":"used by production-foundation mechanisms"},
+    {"id":"W04-MAT-003","name":"Reflector mirror","class":"material","status":"BLOCKOUT_IMPLEMENTED","target":"A","current":"C","notes":"functional optical role; no final optical simulation claimed"},
+    {"id":"W04-MAT-004","name":"Tension fabric","class":"material","status":"BLOCKOUT_IMPLEMENTED","target":"A","current":"C","notes":"portable production-foundation role"},
     {"id":"W04-MAT-005","name":"Colonial ivory repair","class":"material","status":"BLOCKOUT_IMPLEMENTED","target":"A","current":"C","notes":"service/repair hierarchy material"},
+    {"id":"W04-MAT-006","name":"Memory pale cyan","class":"material/semantic","status":"WAVE2_IMPLEMENTED","target":"A","current":"C","notes":"M03 evidence semantic; physical grouping/order provides non-color redundancy"},
     {"id":"W04-NPC-001","name":"Flotilla population family","class":"npc","status":"TODO","target":"A","current":"UNBUILT","notes":"world-owner reserved; no final population fabricated"},
     {"id":"W04-CRE-001","name":"Native ecology family","class":"creature/ecology","status":"BLOCKED_CANON","target":"A","current":"UNDEFINED","notes":"canon does not define detailed species; do not populate generic alien flora/fauna"},
     {"id":"W04-BOSS-001","name":"NOCTIL final entity","class":"boss/character","status":"BLOCKED_SPEC","target":"S","current":"UNDEFINED","notes":"morphology/function/rig/attacks not authorized"},
-    {"id":"W04-STORY-001","name":"Exclusion records environmental evidence","class":"story/prop-family","status":"TODO","target":"A","current":"UNBUILT","notes":"quest M03 evidence family"}
+    {"id":"W04-STORY-001","name":"Exclusion records environmental evidence","class":"story/prop-family","status":"DONE_WAVE2_FOUNDATION","target":"A","current":"B","notes":"M03 archive/evidence physical placeholders exist; narrative record content remains external"}
   ],
   "quality_receipts": {
-    "wave1_objects": 407,
-    "wave1_meshes": 395,
-    "wave1_materials": 9,
-    "wave1_evaluated_triangles": 35028,
-    "wave1_named_new_objects": 310,
-    "terrain_contact": "PASS_ALL_CHECKED_ABS_LE_0.25M",
-    "delivery_framing": "PASS_REQUIRED_ANCHORS_INSIDE",
-    "clean_replay": "PASS_EXACT_SEMANTIC_METRICS_AND_GLB_SIZE",
-    "direct_visual_art": "REVIEW_NOT_CLAIMED"
+    "wave1": {
+      "objects": 407,
+      "mesh_objects": 395,
+      "materials": 9,
+      "evaluated_triangles": 35028,
+      "terrain_contact": "PASS_ALL_CHECKED_ABS_LE_0.25M",
+      "delivery_framing": "PASS_REQUIRED_ANCHORS_INSIDE",
+      "clean_replay": "PASS"
+    },
+    "wave2": {
+      "checkpoint": "WAVE2_REFUGE_QUESTCELLS_OPT_001",
+      "objects": 552,
+      "mesh_objects": 536,
+      "materials": 10,
+      "evaluated_triangles": 44616,
+      "bad_object_scales": 0,
+      "zero_dimension_meshes": 0,
+      "wave2_baffle_contact": "PASS_PLUS_0.05M",
+      "quest_camera_framing": "PASS_M01_M02_M03_M04_REQUIRED_ANCHORS",
+      "exact_mesh_data_sharing": "PASS_CONSERVATIVE_EQUALITY_PREDICATE",
+      "clean_replay": "PASS_SEMANTIC_CONTRACT",
+      "direct_visual_art": "REVIEW_NOT_CLAIMED"
+    },
+    "provider_independent_binary_custody": "BLOCKED_MR_EXO_001"
   }
 }
