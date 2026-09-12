@@ -2,8 +2,8 @@
   "gate_id": "GATE-CONTROL",
   "task_id": "INFRA-005",
   "passed": true,
-  "executed_at": "2026-09-12T21:22:34.428450+00:00",
-  "source_digest": "7d788a1555d98ed69c11fea738f0535750b9f5f4dd4efd1f494e5ed5246aa592",
+  "executed_at": "2026-09-12T22:17:34.826244+00:00",
+  "source_digest": "acbed8e7cae41b340562637ce4833bda7b2f3fe4a33357d5f5a4df9b4fc4d67c",
   "evidence_refs": [
     "evidence/gates/INFRA-005-GATE-CONTROL.log"
   ],
@@ -19,5 +19,5 @@
     "test_*.py",
     "-v"
   ],
-  "tests_run": 82
+  "tests_run": 85
 }
