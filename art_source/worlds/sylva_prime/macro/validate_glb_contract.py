@@ -1,8 +1,11 @@
 #!/usr/bin/env python3
-"""Offline GLB contract validator for SYLVA PRIME macro foundation.
+"""Offline GLB contract validator for SYLVA PRIME macro foundation r5.
 
-Pure stdlib. It validates transport/header + node naming contract before an engine
-import. It does NOT validate visual art, physics behavior, gameplay traversal or GPU cost.
+Pure stdlib. Validates GLB transport plus the revision-5 macro naming contract before
+an engine import. It deliberately rejects the obsolete revision-4 single-floor VESPER
+arena contract.
+
+It does NOT validate visual art, runtime physics, gameplay traversal or GPU cost.
 
 Usage:
     python3 validate_glb_contract.py path/to/sylva.glb
@@ -24,27 +27,53 @@ MAGIC = b"glTF"
 GLB_VERSION = 2
 JSON_CHUNK = 0x4E4F534A
 BIN_CHUNK = 0x004E4942
+CONTRACT = "CLM-SYLVA-MACRO-001/R5"
 
 EXPECTED_EXACT = {
+    # Macro terrain / metadata.
     "SYLVA_TERRAIN_Macro12km_PROPOSAL",
-    "SYLVA_COL_TERRAIN_Macro12km_LowRes_PROPOSAL",
-    "SYLVA_COL_PUERTO_Deck",
-    "SYLVA_COL_BOSQUE_CentralPad",
-    "SYLVA_COL_VESPER_ArenaFloor",
+    "SYLVA_META_RootKitIntegration",
+    # Regional streaming envelopes.
     "SYLVA_STREAM_REGION_PUERTO_INJERTO",
     "SYLVA_STREAM_REGION_BOSQUE_FRASES",
     "SYLVA_STREAM_REGION_CAMARA_VESPER",
-    "SYLVA_META_RootKitIntegration",
+    # General macro collision contract.
+    "SYLVA_COL_TERRAIN_Macro12km_LowRes_PROPOSAL",
+    "SYLVA_COL_PUERTO_Deck",
+    "SYLVA_COL_BOSQUE_CentralPad",
+    "SYLVA_COL_ROUTE_00",
+    "SYLVA_COL_ROUTE_01",
+    "SYLVA_COL_ROUTE_02",
+    "SYLVA_COL_ROUTE_03",
+    # r5 canonical VESPER macro layout.
+    "SYLVA_VESPER_Terrace_00_ENTRY",
+    "SYLVA_VESPER_Terrace_01_MIDDLE",
+    "SYLVA_VESPER_Terrace_02_UPPER",
+    "SYLVA_VESPER_TerraceConnector_00",
+    "SYLVA_VESPER_TerraceConnector_01",
+    "SYLVA_META_VESPER_ThreeTerraceLayout",
+    # r5 VESPER collision contract.
+    "SYLVA_COL_VESPER_Terrace_00_ENTRY",
+    "SYLVA_COL_VESPER_Terrace_01_MIDDLE",
+    "SYLVA_COL_VESPER_Terrace_02_UPPER",
+    "SYLVA_COL_VESPER_Connector_00",
+    "SYLVA_COL_VESPER_Connector_01",
 }
 
 EXPECTED_PREFIX_COUNTS = {
     "SYLVA_STREAM_L3_": 16,
     "SYLVA_STREAM_REGION_": 3,
     "SYLVA_SOCKET_": 8,
-    "SYLVA_COL_": 8,
+    "SYLVA_COL_": 12,
     "SYLVA_TRAV_PathGuide_": 4,
     "SYLVA_ROOT_PRIMARY_": 6,
     "SYLVA_ROOT_SECONDARY_": 8,
+    "SYLVA_VESPER_TerraceConnector_": 2,
+}
+
+FORBIDDEN_LEGACY_ARENA_NODES = {
+    "SYLVA_VESPER_ProxyArenaFloor",
+    "SYLVA_COL_VESPER_ArenaFloor",
 }
 
 FORBIDDEN_PROVIDER_NODE_NAMES = {
@@ -139,6 +168,7 @@ def validate(doc: dict, meta: dict, strict_namespace: bool = True) -> dict:
         if prefix_counts[prefix] != expected
     }
 
+    legacy_arena_nodes = sorted(name_set & FORBIDDEN_LEGACY_ARENA_NODES)
     provider_nodes = sorted(name_set & FORBIDDEN_PROVIDER_NODE_NAMES)
     final_scope_nodes = sorted(
         name for name in names if any(token in name.upper() for token in FORBIDDEN_FINAL_SCOPE_TOKENS)
@@ -160,6 +190,7 @@ def validate(doc: dict, meta: dict, strict_namespace: bool = True) -> dict:
         "required_exact_names": not missing_exact,
         "prefix_counts": not bad_prefix_counts,
         "unique_named_nodes": not duplicate_names,
+        "no_legacy_single_floor_arena": not legacy_arena_nodes,
         "no_provider_mesh_names": not provider_nodes,
         "no_final_scope_nodes": not final_scope_nodes,
         "namespace": not namespace_violations,
@@ -168,7 +199,7 @@ def validate(doc: dict, meta: dict, strict_namespace: bool = True) -> dict:
 
     return {
         "schema_version": 1,
-        "contract": "CLM-SYLVA-MACRO-001/R4",
+        "contract": CONTRACT,
         "passed": passed,
         "checks": checks,
         "transport": meta,
@@ -184,6 +215,7 @@ def validate(doc: dict, meta: dict, strict_namespace: bool = True) -> dict:
         "missing_exact": missing_exact,
         "bad_prefix_counts": bad_prefix_counts,
         "duplicate_names": duplicate_names,
+        "legacy_arena_nodes": legacy_arena_nodes,
         "namespace_violations": namespace_violations,
         "forbidden_provider_nodes": provider_nodes,
         "final_scope_nodes": final_scope_nodes,
@@ -200,7 +232,6 @@ def _synthetic_names() -> list[str]:
     names = set(EXPECTED_EXACT)
     names.update(f"SYLVA_STREAM_L3_X{x}Y{y}" for x in range(4) for y in range(4))
     names.update(f"SYLVA_SOCKET_TEST_{i:02d}" for i in range(8))
-    names.update(f"SYLVA_COL_ROUTE_{i:02d}" for i in range(4))
     names.update(f"SYLVA_TRAV_PathGuide_{i:02d}" for i in range(4))
     names.update(f"SYLVA_ROOT_PRIMARY_R{i:02d}" for i in range(1, 7))
     names.update(f"SYLVA_ROOT_SECONDARY_{i:02d}" for i in range(8))
@@ -209,7 +240,7 @@ def _synthetic_names() -> list[str]:
 
 def _write_synthetic_glb(path: Path, names: list[str]) -> None:
     doc = {
-        "asset": {"version": "2.0", "generator": "SYLVA_CONTRACT_SELF_TEST"},
+        "asset": {"version": "2.0", "generator": "SYLVA_R5_CONTRACT_SELF_TEST"},
         "scene": 0,
         "scenes": [{"nodes": list(range(len(names)))}],
         "nodes": [{"name": name} for name in names],
@@ -226,14 +257,14 @@ def _write_synthetic_glb(path: Path, names: list[str]) -> None:
 def self_test() -> dict:
     cases: dict[str, bool] = {}
     details: dict[str, object] = {}
-    with tempfile.TemporaryDirectory(prefix="sylva-glb-contract-") as tmp:
+    with tempfile.TemporaryDirectory(prefix="sylva-r5-glb-contract-") as tmp:
         root = Path(tmp)
-        valid_path = root / "valid.glb"
+        valid_path = root / "valid-r5.glb"
         valid_names = _synthetic_names()
         _write_synthetic_glb(valid_path, valid_names)
         doc, meta = read_glb(valid_path)
         valid_report = validate(doc, meta)
-        cases["valid_contract_passes"] = valid_report["passed"] is True
+        cases["valid_r5_contract_passes"] = valid_report["passed"] is True
         details["valid_prefix_counts"] = valid_report["prefix_counts"]
 
         missing_socket = root / "missing-socket.glb"
@@ -255,6 +286,28 @@ def self_test() -> dict:
         report4 = validate(doc4, meta4)
         cases["provider_duplication_fails"] = report4["passed"] is False and provider_name in report4["forbidden_provider_nodes"]
 
+        # An r4-style single-floor arena cannot substitute for the five r5 VESPER collision nodes
+        # and the three-terrace visible layout.
+        legacy = root / "legacy-r4-arena.glb"
+        r5_vesper_nodes = {
+            name for name in valid_names
+            if name.startswith("SYLVA_VESPER_Terrace_")
+            or name.startswith("SYLVA_VESPER_TerraceConnector_")
+            or name.startswith("SYLVA_COL_VESPER_Terrace_")
+            or name.startswith("SYLVA_COL_VESPER_Connector_")
+            or name == "SYLVA_META_VESPER_ThreeTerraceLayout"
+        }
+        legacy_names = [name for name in valid_names if name not in r5_vesper_nodes]
+        legacy_names.extend(sorted(FORBIDDEN_LEGACY_ARENA_NODES))
+        _write_synthetic_glb(legacy, legacy_names)
+        doc5, meta5 = read_glb(legacy)
+        report5 = validate(doc5, meta5)
+        cases["legacy_r4_single_floor_fails"] = (
+            report5["passed"] is False
+            and bool(report5["legacy_arena_nodes"])
+            and bool(report5["missing_exact"])
+        )
+
         corrupt = root / "corrupt.glb"
         corrupt.write_bytes(b"not-a-glb")
         try:
@@ -270,11 +323,11 @@ def self_test() -> dict:
     passed = all(cases.values())
     return {
         "schema_version": 1,
-        "contract": "CLM-SYLVA-MACRO-001/R4",
+        "contract": CONTRACT,
         "self_test_passed": passed,
         "cases": cases,
         "details": details,
-        "note": "Synthetic transport/contract tests only; actual r4 GLB still requires binary recovery and execution.",
+        "note": "Synthetic transport/contract tests only; actual r5 GLB still requires binary recovery and execution.",
     }
 
 
@@ -318,7 +371,7 @@ def main(argv: list[str] | None = None) -> int:
     except Exception as exc:
         report = {
             "schema_version": 1,
-            "contract": "CLM-SYLVA-MACRO-001/R4",
+            "contract": CONTRACT,
             "passed": False,
             "error": type(exc).__name__,
             "detail": str(exc),
