@@ -7,7 +7,7 @@ north_star: >-
   identity legible, preserves stable gameplay collision beneath deforming visual tissue,
   and establishes the three canonical regions plus the 58 m SOMA encounter interface.
 status: IN_PROGRESS
-last_checkpoint: BLENDER_REVISION_8_SOMA_ENCOUNTER_MICROSET
+last_checkpoint: BLENDER_REVISION_9_SAFE_INSTANCING_AND_STRICT_REPRO_AUDIT
 
 first_10_tasks:
   - id: W10/WORLD/001
@@ -34,8 +34,12 @@ first_10_tasks:
     status: DONE
     output: [art_source/worlds/leviathan/tools/build_master_scene.py, editable remote .blend, portable GLB]
     dependency: [W10/WORLD/001]
-    dod: [metric units verified, semantic hierarchy exists, generator versioned, blend+GLB produced, independent cold rebuild exact semantic match]
+    dod: [metric units verified, semantic hierarchy exists, generator versioned, blend+GLB produced, independent master-stage semantic cold rebuild verified]
     evidence: [art_source/worlds/leviathan/evidence/cold_rebuild_r3.json]
+    note: >-
+      DONE applies to the master-stage semantic contract. Later QA discovered context-dependent raw primitive
+      mesh/UV realization drift in some Jardines/SOMA/macro families; that stricter replay property belongs to
+      W10/QA/010 and remains open rather than retroactively hiding the master-stage receipt.
 
   - id: W10/REGION/004
     title: Puerto de la Herida representative foundation
@@ -43,7 +47,13 @@ first_10_tasks:
     status: REVIEW
     output: [R1 blockout, 24_R1_HERO_GRAFT_MICROSET, art_source/worlds/leviathan/tools/build_puerto_microset.py, art_source/worlds/leviathan/tools/refine_puerto_microset_v2.py]
     dependency: [W10/BLEND/003]
-    dod: [stable traversal exists, graft/suture/valve manufacturing logic exists, human scale validated, staged cold rebuild exact, direct art review required, runtime traversal required]
+    dod:
+      - stable traversal exists
+      - graft/suture/valve manufacturing logic exists
+      - human scale validated
+      - strict family-level cold replay remains matching
+      - direct art review required before DONE
+      - runtime traversal required before DONE
     evidence: [art_source/worlds/leviathan/evidence/puerto_microset_r5.json]
 
   - id: W10/REGION/005
@@ -52,8 +62,16 @@ first_10_tasks:
     status: REVIEW
     output: [R2 blockout, 25_R2_HERO_LYMPH_MICROSET, art_source/worlds/leviathan/tools/build_jardines_microset.py, art_source/worlds/leviathan/tools/refine_jardines_truth_v2.py]
     dependency: [W10/BLEND/003]
-    dod: [stable path independent from living visuals, LEV-INF-005/LEV-ECO-004/LEV-ECO-001 represented, creature collision provisional, staged cold rebuild exact, art/rig/runtime required]
-    evidence: [art_source/worlds/leviathan/evidence/jardines_microset_r7.json]
+    dod:
+      - stable path independent from living visuals
+      - LEV-INF-005/LEV-ECO-004/LEV-ECO-001 represented
+      - creature collision provisional
+      - high-level staged semantic replay retained
+      - strict raw primitive realization drift resolved or explicitly normalized with evidence before DONE
+      - art/rig/runtime required before DONE
+    evidence:
+      - art_source/worlds/leviathan/evidence/jardines_microset_r7.json
+      - art_source/worlds/leviathan/evidence/instancing_optimization_r9.json
 
   - id: W10/REGION/006
     title: Cámara de SOMA encounter foundation
@@ -70,11 +88,13 @@ first_10_tasks:
       - biological bridges, three refuge valves, contraction telegraphs and regulator cradle exist
       - all new contraction/bridge visuals remain outside collision authority
       - SOMA proxy remains final_anatomy=false and unmodified as final art
-      - staged cold rebuild exact semantic match
+      - high-level staged semantic replay retained
+      - strict raw primitive realization drift resolved or explicitly normalized with evidence before DONE
       - direct art review and runtime import required before DONE
     evidence:
       - art_source/worlds/leviathan/validation.json
       - art_source/worlds/leviathan/evidence/soma_encounter_microset_r8.json
+      - art_source/worlds/leviathan/evidence/instancing_optimization_r9.json
 
   - id: W10/TECH/007
     title: Qualify scale and stable collision separation
@@ -95,21 +115,33 @@ first_10_tasks:
       - art_source/worlds/leviathan/evidence/runtime_import_blocker_r5.json
 
   - id: W10/MAT/008
-    title: Establish LEVIATHAN material-role library
+    title: Establish LEVIATHAN material-role library and production readiness contract
     priority: P1
     status: REVIEW
-    output: 18 portable material roles plus receipts
+    output:
+      - 18 portable material roles
+      - art_source/worlds/leviathan/UV_PBR_LOD_CONTRACT.md
+      - art_source/worlds/leviathan/evidence/uv_pbr_lod_audit_r8.json
     dependency: [W10/WORLD/001, W10/BLEND/003]
     dod:
       - living host and human graft roles remain separable
       - amber/cyan/vermilion semantics preserved
       - Puerto/Jardines/SOMA representative material roles exist
+      - structural UV audit has no accidental zero-area/out-of-range coordinates
+      - texel density is normalized or intentionally exempted after target profile is known
       - no unsupported texture/UDIM budget invented
-      - final calibrated PBR texture pass required before DONE
+      - final calibrated image-textured PBR pass required before DONE
+    current_truth:
+      mesh_objects_with_uv: 260
+      image_textures: 0
+      lod_objects: 0
+      production_uv_pass: false
+      final_pbr_pass: false
     evidence:
       - art_source/worlds/leviathan/evidence/puerto_microset_r5.json
       - art_source/worlds/leviathan/evidence/jardines_microset_r7.json
       - art_source/worlds/leviathan/evidence/soma_encounter_microset_r8.json
+      - art_source/worlds/leviathan/evidence/uv_pbr_lod_audit_r8.json
 
   - id: W10/ECO/009
     title: Establish ecology and adversary interfaces
@@ -121,7 +153,7 @@ first_10_tasks:
     evidence: [art_source/worlds/leviathan/MASTER_ASSET_LIST.yaml, art_source/worlds/leviathan/evidence/jardines_microset_r7.json]
 
   - id: W10/QA/010
-    title: Run representative-foundation QA/export receipts
+    title: Run representative-foundation QA/export/reproducibility receipts
     priority: P0
     status: REVIEW
     output:
@@ -130,19 +162,30 @@ first_10_tasks:
       - art_source/worlds/leviathan/evidence/puerto_microset_r5.json
       - art_source/worlds/leviathan/evidence/jardines_microset_r7.json
       - art_source/worlds/leviathan/evidence/soma_encounter_microset_r8.json
+      - art_source/worlds/leviathan/evidence/uv_pbr_lod_audit_r8.json
+      - art_source/worlds/leviathan/evidence/instancing_optimization_r9.json
     dependency: [W10/BLEND/003, W10/REGION/004, W10/REGION/005, W10/REGION/006]
     dod:
       - structural/scale/export checks pass
-      - all staged cold rebuilds match semantically
+      - high-level staged semantic replay is recoverable
+      - strict raw mesh/UV replay drift is resolved for versioned primitives or explicitly accepted by a versioned normalization contract
+      - primary structural instancing preserves object-level geometry/UV/material fingerprint
       - direct visual review receives explicit PASS before DONE
       - engine import remains NOT_RUN until executed
       - performance remains unqualified until target hardware exists
+    current_open_defects:
+      - STRICT_RAW_PRIMITIVE_REALIZATION_DRIFT in R2/R3/macro families
+      - DIRECT_PIXEL_ART_REVIEW unavailable
+      - ENGINE_IMPORT_AND_TRAVERSAL unavailable
+      - PR10_ROOT_MANIFEST_AGGREGATION pending integrator refresh; 75 Python tests already pass
     evidence:
       - art_source/worlds/leviathan/validation.json
       - art_source/worlds/leviathan/evidence/cold_rebuild_r3.json
       - art_source/worlds/leviathan/evidence/puerto_microset_r5.json
       - art_source/worlds/leviathan/evidence/jardines_microset_r7.json
       - art_source/worlds/leviathan/evidence/soma_encounter_microset_r8.json
+      - art_source/worlds/leviathan/evidence/uv_pbr_lod_audit_r8.json
+      - art_source/worlds/leviathan/evidence/instancing_optimization_r9.json
 
 open_p0: [W10/TECH/007, W10/QA/010]
 open_p1: [W10/REGION/004, W10/REGION/005, W10/REGION/006, W10/MAT/008, W10/ECO/009]
@@ -152,5 +195,6 @@ stop_conditions:
     - engine import has not been checked for final assets
     - target performance remains unqualified
     - human/direct art review is pending
+    - strict raw-mesh reproducibility defect remains unresolved where determinism is claimed
     - planet-scale blockers are unresolved for L0/L1
     - final assets lack manifests or editable source
