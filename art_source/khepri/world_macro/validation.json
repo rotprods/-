@@ -1,0 +1,115 @@
+{
+  "schema_version": 1,
+  "project": "EXOVANT 2950",
+  "world_id": "khepri",
+  "scope": "world-macro/planetary-foundation",
+  "claim_id": "CLM-KHEPRI-WMACRO-001",
+  "agent_id": "AGENT-KHEPRI-WMACRO-001",
+  "branch": "art/world-khepri-001",
+  "base_main_sha": "4c2fa044080004609ea6df45f34b2a784536507a",
+  "blender_project_id": "040f0c45-83a7-483c-9ee7-1e31c640a587",
+  "blender_revision": 2,
+  "status": "STRUCTURALLY_VALIDATED_BLOCKOUT",
+  "pipeline": "Higgsfield 3D Jutsu / Blender 5.2.0 LTS / bpy / GLB",
+  "build": {
+    "operation": "khepri.wmacro.generate.r1.fix1",
+    "revision_after": 1,
+    "result": {
+      "objects": 77,
+      "materials": 5,
+      "cell_size_m": [6400.0, 4800.0],
+      "planet_radius_m_proposal": 5224000.0,
+      "gravity_g_canon": 0.63
+    },
+    "artifact_sizes_bytes": {
+      "blend": 1529116,
+      "glb": 781376
+    }
+  },
+  "optimization": {
+    "operation": "khepri.wmacro.optimize.r2",
+    "revision_after": 2,
+    "mechanism": "32 identical heliostat mast mesh datablocks were replaced by one shared mesh datablock",
+    "before": {
+      "mast_objects": 32,
+      "mast_unique_meshes": 32,
+      "blend_bytes": 1529116,
+      "glb_bytes": 781376
+    },
+    "after": {
+      "mast_objects": 32,
+      "mast_unique_meshes": 1,
+      "blend_bytes": 1357562,
+      "glb_bytes": 702900
+    }
+  },
+  "qa": {
+    "operation": "khepri.wmacro.qa.r2.fix1",
+    "revision_inspected": 2,
+    "passed": true,
+    "checks": {
+      "units_metric_scale_1": true,
+      "duplicate_object_names_zero": true,
+      "duplicate_asset_ids_zero": true,
+      "nonfinite_transforms_zero": true,
+      "negative_scale_zero": true,
+      "nonunit_mesh_scale_zero": true,
+      "terrain_xy_6400x4800_m": true,
+      "human_scale_1_85_m": true,
+      "heliostat_panels_shared_mesh": true,
+      "heliostat_masts_shared_mesh": true,
+      "claim_metadata_matches": true,
+      "world_metadata_matches": true
+    },
+    "metrics": {
+      "objects": 77,
+      "mesh_datablocks": 6,
+      "materials": 5,
+      "curves": 1,
+      "unique_mesh_vertices": 5697,
+      "unique_mesh_triangles": 11092,
+      "terrain_dimensions_m": [6400.0, 4800.0, 228.805],
+      "terrain_z_range_m": [-132.96, 95.845],
+      "human_guide_height_m": 1.85,
+      "heliostat_panel_objects": 32,
+      "heliostat_panel_unique_meshes": 1,
+      "heliostat_mast_objects": 32,
+      "heliostat_mast_unique_meshes": 1,
+      "route_anchor_segment_distances_m": [2125.99, 1783.94, 1838.65]
+    }
+  },
+  "recorded_failures": [
+    {
+      "operation": "khepri.wmacro.generate.r1",
+      "classification": "GENERATOR_DEFECT",
+      "cause": "empty 3D Jutsu scene had no World datablock; generator dereferenced scene.world.color",
+      "effect": "no revision committed",
+      "fix": "create KHP_WM_WORLD when scene.world is None",
+      "fix_commit": "13fd3a81b43db4589b2ba7359858bcfa79a5628b"
+    },
+    {
+      "operation": "khepri.wmacro.qa.r2",
+      "classification": "QA_TOOL_DEFECT",
+      "cause": "invalid Python generator-expression syntax in height audit",
+      "effect": "query failed; Blender revision unchanged",
+      "fix": "separate min/max generator expressions",
+      "fixed_operation": "khepri.wmacro.qa.r2.fix1"
+    }
+  ],
+  "visual_evidence": {
+    "revision_1_overview_artifact": "035e2230991745f7e50a3ea2d1e6f779",
+    "revision_1_gameplay_artifact": "39254569736c3aa1da0416a678fe8530",
+    "inspection_status": "BLOCKED_IN_AGENT_RUNTIME",
+    "blocker": "artifact URLs cannot be downloaded into the analysis container because this session has no DNS/network path to the signed object store",
+    "human_preview_available": true
+  },
+  "explicit_nonclaims": [
+    "artistic approval",
+    "engine integration",
+    "collision approval",
+    "GPU performance qualification",
+    "AAA/AAAA final quality",
+    "final Khepri physical radius canon",
+    "full world completion"
+  ]
+}
