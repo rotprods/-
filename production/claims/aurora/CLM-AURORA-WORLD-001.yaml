@@ -11,7 +11,7 @@ priority: P1
 base_sha: 4c2fa044080004609ea6df45f34b2a784536507a
 branch: art/world-aurora-veil-001
 created_at: 2026-09-12T19:29:57Z
-last_heartbeat: 2026-09-12T21:22:00Z
+last_heartbeat: 2026-09-12T21:31:00Z
 includes:
   - planetary canon proposals where canon is currently silent, isolated behind ADRs
   - orbital representation
@@ -39,41 +39,28 @@ excludes:
   - global planetary travel framework
   - production-engine selection
   - shared libraries owned by another claim unless consumed read-only
-collision_audit:
-  observed_branches_at_claim:
-    - art/terra-reliquary-kit-001
-    - art/ares-ix-world-001
-    - art/world-khepri-001
-    - art/world-leviathan-001
-    - art/world-nacre-001
-    - art/world-pelagos-thalassa-001
-    - art/world-sylva-prime-macro-001
-    - art/world-umbra-001
-    - art/world-vanta-001
-  aurora_branch_before_claim: none
-  aurora_pr_before_claim: none
-  result: NO_OBSERVED_COLLISION
 pipeline:
-  approximate_user_name_searched: "Flu In / Flow In"
   exact_repo_method_found: null
   method_status: PIPELINE_METHOD_NOT_FOUND
   verified_fallback: Higgsfield 3D Jutsu bpy + editable .blend + GLB exchange + evidence
   blender_worker_version: "5.2"
 remote_scene:
   project_id: d6488148-8547-4ffe-b63d-e5fbec3a339c
-  revision: 8
-  status: WAVE2_CAMP_MODULAR_R8
-  blend_size_bytes: 6581463
-  blend_etag: eea9deb1db85ab6e71c42cd234371093
-  glb_size_bytes: 4684768
-  glb_etag: d7b72b60d8a6a7dee7e72737f1643201
+  revision: 12
+  status: WAVE2_TEMPORAL_CONTRACT_R12_METADATA_QA
+  blend_size_bytes: 7561886
+  blend_etag: 9c6a327ccabd8337b26c0ad4c042af5b
+  glb_size_bytes: 5113024
+  glb_etag: be87a2884661cbd3b0abc3052e0e54e8
   macro_blockout_preserved: true
   orbital_l1_present: true
   camp_modular_kit_present: true
-  camp_grid_m: 4
-  camp_refuge_footprint_m: [16, 12]
-  camp_ring_outer_diameter_m: 48
-  surface_regression_passed: true
+  temporal_contract_present: true
+  temporal_contract_version: AUR-TEMPORAL-v1-r12
+  temporal_fields: 3
+  temporal_collision_proxies: 6
+  global_rewind: FORBIDDEN
+  save_state_mutation: FORBIDDEN
   final_art_claimed: false
 fleet_registry:
   authority: main:ops/fleet/registry.json
@@ -97,8 +84,8 @@ blocked_by:
   - production-engine-specific integration and HLOD implementation
   - target-hardware performance qualification
 claim_notes:
-  - Final engine-specific integration waits for the production-engine decision, but Blender/world production proceeds through portable GLB and documented scene contracts.
   - Physical planetary parameters absent from canon remain PROPOSAL until an ADR is accepted.
-  - L1 orbital shell is a display proxy at 1e-4 scale; it does not invent global continental geography.
-  - Campamento rev8 is a manufacturing-aware modular blockout; final art/UV/PBR/LOD/human review are not claimed.
-  - Human GATE-ART remains pending; current remote world is not finished AAA/AAAA art.
+  - L1 orbital shell is display-only and does not invent global geography.
+  - Campamento rev8 is a manufacturing-aware modular blockout; final PBR/UV/art gates remain open.
+  - Temporal rev12 is a runtime-neutral local state/collision contract; engine implementation, audio and human comprehension testing remain open.
+  - Human GATE-ART remains pending; current world is not finished AAA/AAAA art.
