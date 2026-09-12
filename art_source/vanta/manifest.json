@@ -1,0 +1,132 @@
+{
+  "schema": "exovant.world-art-cell.v1",
+  "project": "EXOVANT 2950",
+  "world": {
+    "id": "vanta",
+    "name": "VANTA",
+    "galaxy": "ANDROMEDA",
+    "system": "Drav",
+    "faction": "Trabajadores del Anillo",
+    "canon_gravity_g": 1.86,
+    "canon_temperature_c": -12,
+    "custodian": "FERRUM, coloso de chatarra"
+  },
+  "ownership": {
+    "branch": "art/world-vanta-001",
+    "linear_issue": "ROT-114",
+    "parent_issue": "ROT-109",
+    "scope": "VANTA art/modeling only",
+    "exclusions": ["terra", "ares", "pelagos", "gameplay implementation", "planetary travel framework"],
+    "integration_policy": "PR only; no force push; reconcile ownership before editing shared assets"
+  },
+  "remote_source": {
+    "provider": "Higgsfield 3D Jutsu",
+    "project_id": "c82188b1-afdc-43f2-828a-5f0e98291f83",
+    "project_url": "https://higgsfield.ai/3d-jutsu/c82188b1-afdc-43f2-828a-5f0e98291f83",
+    "blender_version": "5.2.0 LTS",
+    "revision": 2,
+    "editable_blend": {
+      "size_bytes": 3976733,
+      "etag": "24cf39e31bc8fc31a595be3f6089f6fd"
+    },
+    "portable_glb": {
+      "size_bytes": 2369648,
+      "etag": "e0ac09d2bb0b30cfe01f67d0b6586da8"
+    }
+  },
+  "scale": {
+    "unit": "metre",
+    "planet_radius_m": 7600000,
+    "planet_radius_status": "PROPOSED_NOT_CANON",
+    "planet_diameter_m": 15200000,
+    "planet_diameter_status": "PROPOSED_NOT_CANON",
+    "authored_district_m": [24000, 24000],
+    "streaming_cell_m": [4000, 4000],
+    "streaming_cell_count": 36,
+    "ferrum_arena_diameter_m": 72,
+    "ferrum_arena_status": "CANON",
+    "ferrum_target_height_m": 30,
+    "ferrum_height_status": "PRODUCTION_PROPOSAL"
+  },
+  "regions": [
+    {"id": "port_of_hands", "name": "Puerto de las Manos", "state": "BLOCKOUT"},
+    {"id": "iron_rain", "name": "Lluvia de Hierro", "state": "BLOCKOUT"},
+    {"id": "fallen_ring", "name": "Anillo Caído", "state": "BLOCKOUT"}
+  ],
+  "targets": {
+    "npcs": ["Mika Drav", "Ciro Fenn", "Bel Orta"],
+    "enemies": ["Cobrador de astillero", "Enjambre de remaches", "Remolcador automatizado"],
+    "biota": ["Litófago magnético", "Raya de limaduras", "Cuervo de remache", "Bacteria de escoria"],
+    "vehicle": ["Remolcador Drav"],
+    "boss": ["FERRUM"]
+  },
+  "registry": {
+    "generator": "art_source/vanta/pipeline/generate_asset_registry.py",
+    "target_row_count": 327,
+    "rows_are_completion_claims": false,
+    "categories": {
+      "environment": 84,
+      "modular_kit": 61,
+      "props": 61,
+      "characters": 7,
+      "biota": 4,
+      "vehicles": 1,
+      "boss_parts": 43,
+      "vfx": 20,
+      "materials": 16,
+      "decals": 30
+    }
+  },
+  "reproducibility": {
+    "blockout_generator": "art_source/vanta/pipeline/vanta_blockout.py",
+    "production_system": "art_source/vanta/VANTA_WORLD_PRODUCTION.md",
+    "evidence": "art_source/vanta/evidence/remote_blender_rev2.json"
+  },
+  "current_scene": {
+    "revision": 2,
+    "objects": 388,
+    "macro_revision_1_meshes": 245,
+    "materials": 8,
+    "collections": 15,
+    "ferrum_named_parts": 43,
+    "render_evidence": [
+      {"name": "vanta_master_blockout.png", "artifact_id": "55e6eec9287c17b69c6c261c0d581781", "resolution": [960, 540]},
+      {"name": "vanta_ferrum_arena.png", "artifact_id": "0761e510e83a252022b488bfbccfacb4", "resolution": [960, 540]}
+    ]
+  },
+  "checkpoints": {
+    "CP0_ownership_lock": "DONE",
+    "CP1_canon_scale_art_direction": "DOCUMENTED_REVIEW_OPEN",
+    "CP2_macro_world_blockout": "IMPLEMENTED_GEOMETRY_REVIEW_OPEN",
+    "CP3_silhouette_targets": "IMPLEMENTED_GEOMETRY_REVIEW_OPEN",
+    "CP4_modular_construction_kit": "OPEN",
+    "CP5_material_trim_decal_system": "OPEN",
+    "CP6_port_of_hands_final_art": "OPEN",
+    "CP7_iron_rain_final_art": "OPEN",
+    "CP8_fallen_ring_final_art": "OPEN",
+    "CP9_characters_enemies_biota_vehicle": "OPEN",
+    "CP10_ferrum_hero": "OPEN",
+    "CP11_lighting_weather_vfx": "OPEN",
+    "CP12_optimization_engine_qualification": "OPEN"
+  },
+  "truth": {
+    "editable_source_exists": true,
+    "portable_glb_exists": true,
+    "macro_scale_locally_validated": true,
+    "visual_render_created": true,
+    "visual_aesthetic_pass": false,
+    "final_hero_assets_complete": false,
+    "engine_import_qualified": false,
+    "collision_playtest_qualified": false,
+    "performance_qualified": false,
+    "aaa_quality_claim": false
+  },
+  "next": [
+    "Run and persist generated 327-row registry outputs",
+    "Build CP4 modular snap kit and pivot validator",
+    "Build CP5 neutral PBR calibration board, trims and decals",
+    "Take one Puerto microset to final representative quality before scaling detail to the whole planet",
+    "Review deterministic close/mid/far cameras in an inspectable client",
+    "Integrate only after engine target and budget gates are empirically qualified"
+  ]
+}
