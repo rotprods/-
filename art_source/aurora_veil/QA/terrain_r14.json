@@ -1,0 +1,94 @@
+{
+  "schema_version": 1,
+  "world_id": "aurora",
+  "claim_id": "CLM-AURORA-WORLD-001",
+  "task_id": "AUR/TERRAIN/005",
+  "remote_project_id": "d6488148-8547-4ffe-b63d-e5fbec3a339c",
+  "remote_revision": 14,
+  "contract_version": "AUR-TERRAIN-RELIEF-v2-r14",
+  "quality_claim": "MACRO_MORPHOLOGY_TECH_PASS; FINAL_TERRAIN_AND_ART_PENDING",
+  "terrain": {
+    "object": "AURORA_MACRO_TERRAIN",
+    "mesh": "AURORA_MACRO_TERRAIN_MESH",
+    "dimensions_m": [5200.0, 3000.0, 53.61],
+    "z_minmax_m": [-15.331, 38.279],
+    "vertices": 3969,
+    "polygons": 3840,
+    "grid": [81, 49],
+    "spacing_m": [65.0, 62.5]
+  },
+  "slope_degrees": {
+    "global": {"mean": 1.517, "p50": 1.061, "p95": 4.278, "max": 8.666},
+    "camp": {"p50": 1.411, "p95": 4.052, "max": 5.627, "z_span_m": 50.904},
+    "plain": {"p50": 0.972, "p95": 4.962, "max": 8.666, "z_span_m": 45.877},
+    "orchard": {"p50": 0.901, "p95": 3.510, "max": 7.238, "z_span_m": 38.436}
+  },
+  "protected_corridor": {
+    "polyline_xy_m": [[-1600,350],[0,-50],[1650,250]],
+    "core_m": 120,
+    "feather_m": 300
+  },
+  "contacts": {
+    "camp_anchor_origin_minus_terrain_m": 0.0158,
+    "plain_anchor_origin_minus_terrain_m": 0.0036,
+    "orchard_anchor_origin_minus_terrain_m": -0.1085,
+    "aeon_arena_floor_minus_terrain_m": 0.5915,
+    "temporal_field_a_ring_offset_m": 0.28,
+    "temporal_field_b_ring_offset_m": 0.28,
+    "temporal_field_c_ring_offset_m": 0.28
+  },
+  "rollback": {
+    "mode": "DETERMINISTIC_INVERSE_RELIEF_V2",
+    "base_revision": 12,
+    "unused_mesh_backup_claim": false,
+    "reason": "unreferenced Blender datablocks are not durable checkpoint receipts"
+  },
+  "export_cleanliness": {
+    "terrain_qa_collection": "21_TERRAIN_QA",
+    "geometric_qa_objects": 0,
+    "metadata_empty_objects": 3,
+    "visible_debug_geometry": [],
+    "area_lights": [],
+    "r14_gltf_log_contains_removed_qa_curve": false
+  },
+  "overview_render": {
+    "name": "aurora_r14_terrain_overview.png",
+    "artifact_id": "82290c40977f786d24c7a1f31b6380f7",
+    "resolution": [480,270],
+    "mean": 0.1634,
+    "p01": 0.0410,
+    "p50": 0.1822,
+    "p99": 0.8836,
+    "black_clip": 0.0,
+    "white_clip": 0.0,
+    "r5_baseline_mean": 0.1793,
+    "mean_delta": -0.0159,
+    "boundary": "photometric evidence only; composition/art approval remains human gate"
+  },
+  "portable_artifacts_revision_14": {
+    "blend": {"size_bytes": 7573464, "etag": "5c0ecf64eca2587d4304030f11923bc3"},
+    "glb": {"size_bytes": 5114780, "etag": "7fe7cebfe2c60d7aa13f484ad721d85d"}
+  },
+  "failure_history": [
+    "r13 object dimensions initially read before post-check; r13 audit confirmed actual 53.61m span",
+    "unused backup mesh datablock was purged; rollback replaced with deterministic inverse generator",
+    "temporal fields used fixed Z and were floating/intersecting; r14 raycast reground corrected all to +0.28m",
+    "QA corridor curve appeared in GLB export despite hide_render; r14 removed geometric QA guides",
+    "three-render review query exceeded 300s; render QA circuit breaker split to single 480x270 operations"
+  ],
+  "gates": {
+    "SCALE": "PASS",
+    "MACRO_RELIEF": "PASS_PROPOSAL",
+    "SLOPE_BOUNDS": "PASS_FOR_MACRO_CANDIDATE",
+    "ANCHOR_CONTACT": "PASS_BLOCKOUT",
+    "TEMPORAL_CONTACT": "PASS",
+    "EXPORT_CLEANLINESS": "PASS",
+    "ROLLBACK_REPRODUCIBILITY": "PASS_VERSIONED_FORMULA",
+    "LITHOLOGY": "NOT_CLAIMED",
+    "MICRODETAIL": "NOT_STARTED",
+    "MATERIAL_BLEND": "NOT_STARTED_FINAL",
+    "TRAVERSAL": "PENDING_GAMEPLAY_QUALIFICATION",
+    "ART": "PENDING_HUMAN_VISUAL_REVIEW",
+    "ENGINE": "BLOCKED_EXO_012"
+  }
+}
