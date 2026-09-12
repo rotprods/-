@@ -7,134 +7,91 @@ north_star: >-
   Deliver KHEPRI world-macro foundation as a reproducible, metre-scale, physically plausible,
   canon-preserving Blender production artifact with measured QA and explicit CANON/PROPOSAL boundaries.
 tasks:
-  - id: KHP/WM/001
-    priority: P0
-    objective: Reconstruct repository authority and current global state.
-    status: DONE
-    dod_result: PASS
-  - id: KHP/WM/002
-    priority: P0
-    objective: Audit concurrent ownership and persist an atomic claim.
-    status: DONE
-    dod_result: PASS
-  - id: KHP/WM/003
-    priority: P0
-    objective: Resolve physical planet scale without inventing canon.
-    status: DONE
-    dod_result: PASS_PROPOSAL_NOT_CANON
-  - id: KHP/WM/004
-    priority: P0
-    objective: Define coordinate, cell and export interfaces for macro production.
-    status: DONE
-    dod_result: PASS
+  - {id: KHP/WM/001, priority: P0, status: DONE, objective: "Reconstruct repository authority and current global state.", dod_result: PASS}
+  - {id: KHP/WM/002, priority: P0, status: DONE, objective: "Audit concurrent ownership and persist an atomic claim.", dod_result: PASS}
+  - {id: KHP/WM/003, priority: P0, status: DONE, objective: "Resolve physical planet scale without inventing canon.", dod_result: PASS_PROPOSAL_NOT_CANON}
+  - {id: KHP/WM/004, priority: P0, status: DONE, objective: "Define coordinate, cell and export interfaces.", dod_result: PASS}
   - id: KHP/WM/005
     priority: P0
-    objective: Generate KHEPRI L1 orbital proxy and L2 representative macro terrain cell.
     status: DONE
-    evidence:
-      terrain_dimensions_m: [6400.0, 4800.0, 228.805]
-      blender_project: 040f0c45-83a7-483c-9ee7-1e31c640a587
-      revision: 2
+    objective: Generate L1 orbital proxy and L2 representative macro terrain.
+    evidence: {terrain_dimensions_m: [6400.0, 4800.0, 228.805], master_project: 040f0c45-83a7-483c-9ee7-1e31c640a587, revision: 3}
     dod_result: PASS_BLOCKOUT
   - id: KHP/WM/006
     priority: P1
-    objective: Establish functional macro route anchors derived from documented missions.
     status: DONE
-    evidence:
-      route_anchors: [KHP_WM_ROUTE_SHADE, KHP_WM_ROUTE_GLASS_SEA, KHP_WM_ROUTE_CRUCIBLE, KHP_WM_ROUTE_RAKHET]
-      segment_distances_m: [2125.99, 1783.94, 1838.65]
+    objective: Establish mission-derived macro route interfaces.
+    evidence: {anchors: [KHP_WM_ROUTE_SHADE, KHP_WM_ROUTE_GLASS_SEA, KHP_WM_ROUTE_CRUCIBLE, KHP_WM_ROUTE_RAKHET], segment_distances_m: [2125.99, 1783.94, 1838.65]}
     dod_result: PASS_INTERFACE_ONLY
   - id: KHP/WM/007
     priority: P1
-    objective: Add procedural macro terrain causality and optical infrastructure footprints.
     status: DONE
-    evidence:
-      deterministic_seed: 295006
-      heliostat_panel_objects: 32
-      heliostat_panel_unique_meshes: 1
-      heliostat_mast_objects: 32
-      heliostat_mast_unique_meshes: 1
+    objective: Procedural macro terrain and optical-infrastructure footprints.
+    evidence: {seed: 295006, panel_objects: 32, panel_unique_meshes: 1, mast_objects: 32, mast_unique_meshes: 1}
     dod_result: PASS_BLOCKOUT
   - id: KHP/WM/008
     priority: P0
-    objective: Run geometry/scale/scene QA on the generated macro scene.
     status: DONE
-    evidence:
-      duplicate_object_names: 0
-      duplicate_asset_ids: 0
-      nonfinite_transforms: 0
-      negative_scale: 0
-      nonunit_mesh_scale: 0
-      human_guide_height_m: 1.85
-      unique_mesh_triangles: 11092
+    objective: Geometry/scale/scene QA.
+    evidence: {validator_operation: khepri.validator.r3, duplicate_names: 0, duplicate_asset_ids: 0, nonfinite_transforms: 0, negative_scale: 0, nonunit_mesh_scale: 0, unique_mesh_triangles: 11092}
     dod_result: STRUCTURAL_PASS
   - id: KHP/WM/009
     priority: P1
-    objective: Perform visual macro validation.
-    status: BLOCKED
+    status: REVIEW
+    objective: Visual macro validation.
     evidence:
       render_operation: khepri.visual.r2.gauntlet
-      overview_artifact: 2e1d37433ac3ceee968443e2f784e651
-      gameplay_artifact: db6d33b28ef50daa2a115ebbcb5aea36
-      render_resolution: [1280, 720]
-      blocker: HUMAN_VISUAL_REVIEW
-    dod_result: NOT_PASS_PIXEL_REVIEW_UNAVAILABLE
+      machine_visual_r3: PASS
+      overview_lens_mm: 32.0
+      overview_clip_end_m: 12000.0
+      all_route_anchors_in_frame: true
+      all_route_anchors_within_clip: true
+      human_guide_visible_in_gameplay_camera: true
+      human_guide_projected_height_px_at_720p: 84.7
+      human_gate: PENDING
+    dod_result: MACHINE_VISUAL_PASS_HUMAN_ART_REVIEW_PENDING
   - id: KHP/WM/010
     priority: P0
-    objective: Persist portable artifacts and handoff evidence.
     status: IN_PROGRESS
+    objective: Persist portable artifacts and delivery evidence.
     evidence:
-      blend_revision: 2
-      blend_bytes: 1357562
-      blend_etag: 2efee5ad6b7207bf45dcff22d7f115fb
-      glb_revision: 2
-      glb_bytes: 702900
-      glb_etag: ec7a8590f53e9b64bf27165172e11e9e
+      master_revision: 3
+      blend_bytes: 1357838
+      blend_etag: 3ffea751fa6b48b11fb86d80507c016a
+      glb_bytes: 703040
+      glb_etag: 06690127aa85172b5caa64f98c1441ab
       blocker: BINARY_PERSISTENCE_TRANSPORT
     dod_result: PARTIAL_PROVIDER_RECOVERY_ONLY
   - id: KHP/WM/011
     priority: P0
-    objective: Prove clean-project reproducibility from versioned generator and optimizer.
     status: DONE
-    output:
-      - art_source/khepri/world_macro/fingerprint_khepri_world_macro.py
-      - art_source/khepri/world_macro/cold-rebuild.json
+    objective: Prove clean-project reproducibility from versioned logic.
     evidence:
-      cold_project: d13625de-15d1-440b-8345-2c9fbc27d69e
-      cold_revision: 2
-      master_semantic_sha256: 127b35919b9c385ecabd3143942afe498c108e0e753066ab420c1bc323a40771
-      cold_semantic_sha256: 127b35919b9c385ecabd3143942afe498c108e0e753066ab420c1bc323a40771
-      master_blend_bytes: 1357562
-      cold_blend_bytes: 1357562
-      master_glb_bytes: 702900
-      cold_glb_bytes: 702900
+      cold_r2_project: d13625de-15d1-440b-8345-2c9fbc27d69e
+      cold_r3_project: 4c01fdbb-7093-4229-9a49-8237583280bc
+      master_r3_semantic_sha256: 7d80db30181cde1bded58d357384095c07cce0d2ca65e1b728b841aa93b252ca
+      cold_r3_semantic_sha256: 7d80db30181cde1bded58d357384095c07cce0d2ca65e1b728b841aa93b252ca
+      master_r3_blend_bytes: 1357838
+      cold_r3_blend_bytes: 1357838
+      master_r3_glb_bytes: 703040
+      cold_r3_glb_bytes: 703040
     dod_result: SEMANTIC_REPRODUCIBILITY_PASS
   - id: KHP/WM/012
     priority: P0
-    objective: Reconcile producer branch with current fleet-qualified main and restore exact PR CI.
     status: IN_PROGRESS
+    objective: Reconcile producer branch with fleet-qualified main and restore exact PR CI.
     dependencies: [KHP/WM/011]
     evidence:
-      current_main_observed: f78bfdc8bd7b2f6ab52b45d39babcc1589ab3918
+      current_main: f78bfdc8bd7b2f6ab52b45d39babcc1589ab3918
       main_gauntlet_run: 34715800243
       main_gauntlet_status: SUCCESS
       fleet_claim_status: active
     dod:
       - clean combined tree contains current main plus only KHEPRI owned paths and exact generated MANIFEST
-      - no global STATE/PLAN regression from old producer base
-      - PR Gauntlet on exact reconciled SHA succeeds
-    dod_result: PENDING
-progress_metrics:
-  asset_coverage_percent: 100
-  modeling_percent: 100
-  materials_percent: 25
-  optimization_percent: 100
-  integration_percent: 45
-  qa_percent: 90
-metrics_scope_note: "Percentages apply only to CLM-KHEPRI-WMACRO-001 blockout scope, never to the full KHEPRI world or campaign."
-priority_open:
-  P0: 2
-  P1: 1
-  P2: 0
-  P3: 0
-last_heartbeat: "2026-09-12T21:32:00Z"
+      - no old producer global STATE/PLAN projection replaces current main
+      - PR Gauntlet succeeds on exact reconciled SHA
+    dod_result: PENDING_INTEGRATOR_RECONCILIATION
+progress_metrics: {asset_coverage_percent: 100, modeling_percent: 100, materials_percent: 25, optimization_percent: 100, integration_percent: 50, qa_percent: 95}
+metrics_scope_note: "Percentages apply only to CLM-KHEPRI-WMACRO-001 blockout scope, never full KHEPRI or campaign."
+priority_open: {P0: 2, P1: 1, P2: 0, P3: 0}
+last_heartbeat: "2026-09-12T21:42:00Z"
