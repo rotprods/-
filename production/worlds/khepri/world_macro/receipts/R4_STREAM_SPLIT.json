@@ -1,0 +1,52 @@
+{
+  "claim_id": "CLM-KHEPRI-WMACRO-001",
+  "world_id": "khepri",
+  "master_project_id": "040f0c45-83a7-483c-9ee7-1e31c640a587",
+  "source_revision": 4,
+  "operation": "khepri.export.split.audit.r4",
+  "passed": true,
+  "tool": "art_source/khepri/world_macro/export_stream_units.py",
+  "L1_ORBITAL": {
+    "collections": ["KHP_WM_10_L1_ORBITAL"],
+    "object_count": 1,
+    "mesh_object_count": 1,
+    "bytes": 132944,
+    "sha256": "5f0bc35663a0bd785da818c6c6e383f4ad6d6bb8accf324e2427097a15951bf3",
+    "glb_version": 2,
+    "gltf_nodes": 1,
+    "gltf_meshes": 1,
+    "gltf_materials": 1,
+    "gltf_cameras": 0,
+    "external_uris": []
+  },
+  "L2_MACROCELL": {
+    "collections": [
+      "KHP_WM_20_L2_TERRAIN",
+      "KHP_WM_30_OPTICAL_FOOTPRINTS",
+      "KHP_WM_40_ROUTE_INTERFACES"
+    ],
+    "object_count": 69,
+    "mesh_object_count": 65,
+    "bytes": 553012,
+    "sha256": "27e5ddd4bf22014d37d3feb52d7f2b52cc19cf4f643562b28bd7bc8710e34862",
+    "glb_version": 2,
+    "gltf_nodes": 69,
+    "gltf_meshes": 3,
+    "gltf_materials": 3,
+    "gltf_cameras": 0,
+    "external_uris": []
+  },
+  "contract_checks": {
+    "l1_has_one_mesh_object": true,
+    "l1_no_cameras": true,
+    "l1_self_contained": true,
+    "l2_has_terrain": true,
+    "l2_has_optics": true,
+    "l2_has_route_anchors": true,
+    "l2_excludes_qa_route": true,
+    "l2_excludes_human_guide": true,
+    "l2_no_cameras": true,
+    "l2_self_contained": true
+  },
+  "boundary": "Portable split-export proof only. This does not select the production engine, implement world streaming, certify collision/navmesh, or replace the whole-scene provider preview artifact."
+}
