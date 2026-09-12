@@ -1,0 +1,137 @@
+{
+  "schema_version": 1,
+  "scope": "EXOVANT producer scenes only; read-only observations, no global capacity/worker health inference",
+  "observed_at": "2026-09-12T19:49:51.483Z",
+  "projects": [
+    {
+      "name": "EXOVANT 2950 — AURORA VEIL World Master — CLM-AURORA-WORLD-001",
+      "project_id": "d6488148-8547-4ffe-b63d-e5fbec3a339c",
+      "observed_at": "2026-09-12T19:49:51.340Z",
+      "revision": 3,
+      "scene_sequence": 0,
+      "active_operation_id": "aurora-r3-visual-evidence",
+      "blend_bytes": 4779438,
+      "glb_bytes": 3086408
+    },
+    {
+      "name": "EXOVANT 2950 — ELYSIUM NULL World Master — ART-ELYSIUM-001",
+      "project_id": "00152eea-2da0-40ec-8666-78d6764c718f",
+      "observed_at": "2026-09-12T19:49:51.314Z",
+      "revision": 2,
+      "scene_sequence": 0,
+      "active_operation_id": "ART-ELYSIUM-001.eden-stategraph-v1",
+      "blend_bytes": 2444788,
+      "glb_bytes": 2291876
+    },
+    {
+      "name": "EXOVANT 2950 — SYLVA PRIME Macro Foundation — CLM-SYLVA-MACRO-001",
+      "project_id": "05dce898-753d-4ff6-a4b0-31757dc868d8",
+      "observed_at": "2026-09-12T19:49:51.367Z",
+      "revision": 3,
+      "scene_sequence": 0,
+      "active_operation_id": "sylva-png-byte-smoke-r3",
+      "blend_bytes": 1897056,
+      "glb_bytes": 1013560
+    },
+    {
+      "name": "EXOVANT 2950 — Sylva Neural Root Structural Kit — AGENT-SYLVA-ROOT-01",
+      "project_id": "43cf2b06-c47f-4ccd-ac34-76e9a585225a",
+      "observed_at": "2026-09-12T19:49:51.298Z",
+      "revision": 4,
+      "scene_sequence": 0,
+      "active_operation_id": null,
+      "blend_bytes": 1669982,
+      "glb_bytes": 1906236
+    },
+    {
+      "name": "EXOVANT 2950 — LEVIATHAN World Master — ART-LEVIATHAN-001",
+      "project_id": "2577a7b6-ebd7-4d31-a645-620e4b73a95d",
+      "observed_at": "2026-09-12T19:49:51.317Z",
+      "revision": 2,
+      "scene_sequence": 0,
+      "active_operation_id": null,
+      "blend_bytes": 4034313,
+      "glb_bytes": 4397196
+    },
+    {
+      "name": "EXOVANT 2950 — NACRE World Macro — CLM-NACRE-WORLD-MACRO-001",
+      "project_id": "a49fc6f3-fedb-40a5-913f-10a08debb0e1",
+      "observed_at": "2026-09-12T19:49:51.393Z",
+      "revision": 0,
+      "scene_sequence": 0,
+      "active_operation_id": null,
+      "blend_bytes": 0,
+      "glb_bytes": 0
+    },
+    {
+      "name": "EXOVANT 2950 — UMBRA World Master — ART-UMBRA-001",
+      "project_id": "7ab99682-8777-4143-8ae0-1fbb178ccafb",
+      "observed_at": "2026-09-12T19:49:51.483Z",
+      "revision": 0,
+      "scene_sequence": 0,
+      "active_operation_id": "umbra-wave0-blockout-002",
+      "blend_bytes": 0,
+      "glb_bytes": 0
+    },
+    {
+      "name": "EXOVANT 2950 — PELAGOS World Master — ART-PELAGOS-001",
+      "project_id": "39930c08-62bb-4034-b35d-70d0ce51c9d9",
+      "observed_at": "2026-09-12T19:49:51.286Z",
+      "revision": 3,
+      "scene_sequence": 0,
+      "active_operation_id": "pelagos.nacar2.verify.r3",
+      "blend_bytes": 7628557,
+      "glb_bytes": 6507188
+    },
+    {
+      "name": "EXOVANT 2950 — KHEPRI World Master — ART-KHEPRI-001",
+      "project_id": "040f0c45-83a7-483c-9ee7-1e31c640a587",
+      "observed_at": "2026-09-12T19:49:51.411Z",
+      "revision": 2,
+      "scene_sequence": 0,
+      "active_operation_id": null,
+      "blend_bytes": 1357562,
+      "glb_bytes": 702900
+    },
+    {
+      "name": "EXOVANT 2950 — VANTA — Full World Production Cell",
+      "project_id": "c82188b1-afdc-43f2-828a-5f0e98291f83",
+      "observed_at": "2026-09-12T19:49:51.313Z",
+      "revision": 2,
+      "scene_sequence": 0,
+      "active_operation_id": null,
+      "blend_bytes": 3976733,
+      "glb_bytes": 2369648
+    },
+    {
+      "name": "EXOVANT 2950 — ARES IX — World Agent 02",
+      "project_id": "5d899bbd-f27f-4be9-bae8-7108d0c33440",
+      "observed_at": "2026-09-12T19:49:51.359Z",
+      "revision": 1,
+      "scene_sequence": 0,
+      "active_operation_id": null,
+      "blend_bytes": 3340633,
+      "glb_bytes": 2652488
+    },
+    {
+      "name": "EXOVANT 2950 — ARES IX World Master — ART-ARES-001",
+      "project_id": "1fe12f5b-3c86-42ca-a04a-1c8c36f509d3",
+      "observed_at": "2026-09-12T19:49:51.381Z",
+      "revision": 0,
+      "scene_sequence": 0,
+      "active_operation_id": null,
+      "blend_bytes": 0,
+      "glb_bytes": 0
+    },
+    {
+      "name": "EXOVANT 2950 — Terra Reliquary production kit · ART-001",
+      "project_id": "710b21ea-a09a-4f3c-b3a4-ca446ec58bc8",
+      "observed_at": "2026-09-12T19:49:51.441Z",
+      "revision": 4,
+      "scene_sequence": 0,
+      "active_operation_id": null,
+      "blend_bytes": 6513829,
+      "glb_bytes": 7459372
+    }
+  ]
+}

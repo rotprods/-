@@ -117,6 +117,11 @@
           "id": "M-RECOVERY",
           "target": "RPO de un checkpoint publicado; recuperar antes de la siguiente unidad de trabajo",
           "status": "policy"
+        },
+        {
+          "id": "M-FLEET",
+          "target": "No conflicting declared paths/projects/asset IDs; producer ACK plus source-bound handoff for each imported claim",
+          "status": "locally_validated_partial_owner_adoption"
         }
       ]
     },
@@ -296,11 +301,10 @@
         "GATE-ASSET"
       ],
       "evidence": [
+        "evidence/delivery-container-regression.json",
         "evidence/gates/INFRA-005-GATE-CONTROL.json",
         "evidence/gates/INFRA-005-GATE-NATIVE.json",
         "evidence/gates/INFRA-005-GATE-GRAPH.json",
-        "evidence/gates/INFRA-005-GATE-CI.json",
-        "evidence/gates/INFRA-005-GATE-RESTORE.json",
         "evidence/gates/INFRA-005-GATE-ASSET.json"
       ],
       "estimate_person_hours": null,
@@ -310,7 +314,8 @@
         "First scheduled execution from main has not been observed",
         "Mem routing note pending provider rate limit; optional mirror, not a product blocker"
       ],
-      "closeout": "_project_intelligence/runs/INFRA-005-CONTRACT/closeout.json"
+      "closeout": "_project_intelligence/runs/INFRA-005-DELIVERY-003/closeout.json",
+      "checkpoint_note": "GLB delivery container regression repair; checkpoint only. ADOPTION-002 source remains unrecovered; producer adoption and Mac qualification remain pending."
     },
     {
       "id": "EXO-004",
@@ -771,6 +776,8 @@
       "ambiguous external mutation",
       "spend outside approved budget"
     ],
-    "recovery": "preserve checkpoint, reconcile evidence, choose an authorized alternative or register exact blocker"
+    "recovery": "preserve checkpoint, reconcile evidence, choose an authorized alternative or register exact blocker",
+    "fleet_registry": "ops/fleet/registry.json",
+    "parallelism_scope": "max_parallel_workunits governs global integrator PLAN, not separate producer checkouts; cooperative reservations bound those scopes"
   }
 }

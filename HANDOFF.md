@@ -29,3 +29,12 @@ INFRA-005 se cierra como checkpoint en revisión: controles locales, CI, clon li
 ## Próxima unidad tras EXO-004-INPUT-001
 
 Controles y primer tramo ya comprobados: no rehacerlos. Continuar EXO-004-ROUTE-002 con la ruta nueva Inés → riego → archivo → ATLAS → consecuencia → portal, usando controles y colisión normales, sin teletransportes ni concesión de flags/daño. Atacar orden de misiones (incluido llegar a ATLAS antes del archivo), muerte/recuperación y recarga. Guardar fricción y fixes; GATE-PLAY humano sigue pendiente. Para remapeo sintético usar --test-input (preferencias y partida separadas). La captura controls-ui.png es CPU; no demuestra rendimiento ni acabado artístico.
+
+## INFRA-005-FLEET-001 · Frontera del integrador
+
+Leer primero docs/FLEET_COORDINATION.md, registro main actual e issue #7. Harness con 41 tests nuevos; recibir acuses restantes y checkpoints binarios. Khepri tiene ACK real y rutas/IDs; Sylva requiere confirmar interfaz macro→root-kit; Ares2 conserva artefactos sin checkpoint formal; Origin ya está reservado (#14). No repetir la auditoría desde cero ni crear otro issue de coordinación.
+
+El padre 196ef814 modificó AGENTS sin MANIFEST y falló CI. La reconciliación preserva ese protocolo y añade control ejecutable; confirmar CI del commit final. La excepción de MANIFEST solo admite generación exacta; los productores no tienen acceso libre al estado global. Mantener EXO-004-ROUTE-002 en su frente de gameplay. Tras adoptar guard/receipts, próxima unidad de arte es cualificar y mejorar kit Terra de PR1 en la cámara del juego, no producir otro kit duplicado. Mem sigue pendiente sin reintento en esta sesión.
+
+## INFRA-005-DELIVERY-003
+Se rechazaban mal las entregas GLB con cabecera válida y chunks posteriores truncados, desalineados o duplicados. Corregido y cubierto con siete tests adicionales (seis regresiones antes/después y una extensión desconocida válida). No recupera ADOPTION-002 ni acredita fuentes Blender editables. Próximo: admitir una entrega Khepri fijada con prueba nativa real, consultando primero si su owner ya la integró. Mantener gameplay EXO-004 y arte Terra PR1 en sus scopes. Mac requiere sesión y cualificación propias; plan en issue #7 comentario 5648748464.

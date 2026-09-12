@@ -1,0 +1,374 @@
+{
+  "schema_version": 1,
+  "observed_at": "2026-09-12T19:39:48.489Z",
+  "scope": "READ_ONLY ARES IX / SYLVA PRIME ownership audit",
+  "authority": "Current branch trees, all-status PRs, explicit claim files, get_project snapshots. No provider mutation or branch write.",
+  "repository": "rotprods/-",
+  "base_main": "4c2fa044080004609ea6df45f34b2a784536507a",
+  "coverage": {
+    "branches": 4,
+    "remote_projects": 4,
+    "pr_states": "all",
+    "runtime_worker_status": "UNKNOWN",
+    "remote_geometry_inspection": false,
+    "artifact_download_validation": false
+  },
+  "branches": [
+    {
+      "branch": "art/ares-ix-world-001",
+      "sha": "30c525a2518b574eb5a3d378ea0f7b8014760c3f",
+      "tree_sha": "30c525a2518b574eb5a3d378ea0f7b8014760c3f",
+      "changed_files": [
+        {
+          "path": "art_source/coordination/ART-ARES-001-OWNERSHIP.md",
+          "sha": "b1f69f8b0f7322f458cfb628ad405eae40f18534"
+        }
+      ],
+      "pr": {
+        "body": "Abandoned immediately after user conflict notice: another agent already owns ARES IX. No successful Blender mutation was committed; dedicated 3D Jutsu project remains at revision 0. This PR is closed to prevent scope collision. Do not merge.",
+        "head": "art/ares-ix-world-001",
+        "number": 2,
+        "sha": "30c525a2518b574eb5a3d378ea0f7b8014760c3f",
+        "state": "closed",
+        "url": "https://github.com/rotprods/-/pull/2"
+      }
+    },
+    {
+      "branch": "art/ares-ix-world-agent-02",
+      "sha": "4c2fa044080004609ea6df45f34b2a784536507a",
+      "tree_sha": "4c2fa044080004609ea6df45f34b2a784536507a",
+      "changed_files": [],
+      "pr": null
+    },
+    {
+      "branch": "agent/sylva-neural-root-001",
+      "sha": "dbd9c260878e1da3f086694b91f9e178a7c65b16",
+      "tree_sha": "dbd9c260878e1da3f086694b91f9e178a7c65b16",
+      "changed_files": [
+        {
+          "path": "production/claims/CLM-SYLVA-PROC-NROOT-001.yaml",
+          "sha": "4c74ef6451668483a2c234e68b43505120f32b67"
+        }
+      ],
+      "pr": null
+    },
+    {
+      "branch": "art/world-sylva-prime-macro-001",
+      "sha": "92e839fa7c012eb15e38c37688097a6b41bdc82e",
+      "tree_sha": "92e839fa7c012eb15e38c37688097a6b41bdc82e",
+      "changed_files": [
+        {
+          "path": "art_source/worlds/sylva_prime/macro/PLAN.md",
+          "sha": "4ecd5fed522cd0e57bbd2707942fca3ba5c51e0e"
+        },
+        {
+          "path": "production/claims/CLM-SYLVA-MACRO-001.yaml",
+          "sha": "2d87394abf4c6798531e9a5b4d1ae486cb851520"
+        }
+      ],
+      "pr": {
+        "body": "## Claim\n`CLM-SYLVA-MACRO-001` — **SYLVA PRIME / World Macro + Terrain + Regional Foundation**.\n\nAgent: `AGENT-SYLVA-MACRO-01`  \nSession: `20260912-SYLVA-MACRO-001`\n\n### Includes\nMetric local coordinate foundation; macro terrain/root network; Puerto del Injerto, Bosque de las Frases and Cámara de VESPER spatial foundations; primary traversal corridors; proxy root/membrane/scaffold language; Blender source/generator/GLB/evidence; blockout collision/streaming/LOD interfaces.\n\n### Explicitly excludes\nFinal VESPER, NPCs, wildlife/vegetation species, final architecture/interiors, gameplay scripts, quests and other worlds.\n\n### Collision audit\nBranches and open PRs checked immediately before claim. Terra, Ares IX, Pelagos, Umbra, Khepri and Vanta were already occupied. No Sylva branch or open PR existed at claim time.\n\n### Canon boundary\nPlanetary radius/diameter and several global planetary parameters are currently UNKNOWN in canon and will not be silently invented. Local authored space remains metre-scale and decoupled from unresolved L0 planetary metadata.\n\nCurrent state: `CLAIMED / WAVE 0→1`. Do not merge until Blender, asset, QA and integration receipts required by the scope are present.",
+        "head": "art/world-sylva-prime-macro-001",
+        "number": 3,
+        "sha": "92e839fa7c012eb15e38c37688097a6b41bdc82e",
+        "state": "open",
+        "url": "https://github.com/rotprods/-/pull/3"
+      }
+    }
+  ],
+  "remote_projects": [
+    {
+      "exists": true,
+      "ok": true,
+      "project": {
+        "activeOperationId": null,
+        "appliedSceneSequence": 0,
+        "artifacts": null,
+        "createdAt": "2026-09-12T19:14:55.847Z",
+        "projectId": "1fe12f5b-3c86-42ca-a04a-1c8c36f509d3",
+        "revision": 0,
+        "sceneSequence": 0,
+        "updatedAt": "2026-09-12T19:14:55.847Z"
+      },
+      "projectUrl": "https://higgsfield.ai/3d-jutsu/1fe12f5b-3c86-42ca-a04a-1c8c36f509d3"
+    },
+    {
+      "exists": true,
+      "ok": true,
+      "project": {
+        "activeOperationId": null,
+        "appliedSceneSequence": 0,
+        "artifacts": {
+          "blend": {
+            "etag": "2b3510615c1e2202eae60e0126798e91",
+            "size": 3340633
+          },
+          "generated": [
+            {
+              "etag": "1294db36d4b3e0ccd5e4fe1724c05b94",
+              "height": 720,
+              "id": "1b8e065b60548af254ed686056e1e7ad",
+              "mediaType": "image/png",
+              "name": "ares_ix_world_anchor_r1.png",
+              "size": 881205,
+              "width": 1280
+            }
+          ],
+          "glb": {
+            "etag": "9347d68e7e9527c817865370955b32c0",
+            "size": 2652488
+          },
+          "projectId": "5d899bbd-f27f-4be9-bae8-7108d0c33440",
+          "revision": 1
+        },
+        "createdAt": "2026-09-12T19:15:27.757Z",
+        "projectId": "5d899bbd-f27f-4be9-bae8-7108d0c33440",
+        "revision": 1,
+        "sceneSequence": 0,
+        "updatedAt": "2026-09-12T19:18:11.338Z"
+      },
+      "projectUrl": "https://higgsfield.ai/3d-jutsu/5d899bbd-f27f-4be9-bae8-7108d0c33440"
+    },
+    {
+      "exists": true,
+      "ok": true,
+      "project": {
+        "activeOperationId": "sylva-root-kit-qa-fix-003",
+        "appliedSceneSequence": 0,
+        "artifacts": {
+          "blend": {
+            "etag": "8b49f73fb33b85a7dcc1979798d5a44e",
+            "size": 1583021
+          },
+          "generated": [
+            {
+              "etag": "b134d65eccaf56a5ca8d5ff1f7b6ffba",
+              "height": 760,
+              "id": "016317490ddc7b58289ae20fc1ba1c5d",
+              "mediaType": "image/png",
+              "name": "sylva-root-kit-blockout-v1.png",
+              "size": 827696,
+              "width": 1100
+            }
+          ],
+          "glb": {
+            "etag": "8449e52a62ee6196484badbd691f07b8",
+            "size": 1881748
+          },
+          "projectId": "43cf2b06-c47f-4ccd-ac34-76e9a585225a",
+          "revision": 1
+        },
+        "createdAt": "2026-09-12T19:30:05.176Z",
+        "projectId": "43cf2b06-c47f-4ccd-ac34-76e9a585225a",
+        "revision": 1,
+        "sceneSequence": 0,
+        "updatedAt": "2026-09-12T19:35:37.923Z"
+      },
+      "projectUrl": "https://higgsfield.ai/3d-jutsu/43cf2b06-c47f-4ccd-ac34-76e9a585225a"
+    },
+    {
+      "exists": true,
+      "ok": true,
+      "project": {
+        "activeOperationId": "sylva-macro-portable-lighting-r2",
+        "appliedSceneSequence": 0,
+        "artifacts": {
+          "blend": {
+            "etag": "66b32139e370a1de1521332bbaee252b",
+            "size": 1880621
+          },
+          "generated": [
+            {
+              "etag": "dcc53dd55df3edf8e5cbc60206eef152",
+              "height": 720,
+              "id": "aaea259524d16e0c5f71645f179a0f76",
+              "mediaType": "image/png",
+              "name": "sylva_macro_blockout_v1.png",
+              "size": 424455,
+              "width": 1280
+            }
+          ],
+          "glb": {
+            "etag": "595241d2568f9d00e3116ce808691758",
+            "size": 1012304
+          },
+          "projectId": "05dce898-753d-4ff6-a4b0-31757dc868d8",
+          "revision": 1
+        },
+        "createdAt": "2026-09-12T19:30:55.627Z",
+        "projectId": "05dce898-753d-4ff6-a4b0-31757dc868d8",
+        "revision": 1,
+        "sceneSequence": 0,
+        "updatedAt": "2026-09-12T19:33:23.509Z"
+      },
+      "projectUrl": "https://higgsfield.ai/3d-jutsu/05dce898-753d-4ff6-a4b0-31757dc868d8"
+    }
+  ],
+  "findings": [
+    {
+      "id": "ARES-COLLISION-RESOLVED",
+      "severity": "info",
+      "status": "RESOLVED_BY_EXISTING_OWNER",
+      "evidence": [
+        "https://github.com/rotprods/-/pull/2",
+        "get_project:1fe12f5b-3c86-42ca-a04a-1c8c36f509d3"
+      ],
+      "finding": "PR #2 is CLOSED and explicitly ABANDONED after user conflict notice. Its only added file is stale ownership Markdown; remote remains revision 0. Do not report this as an active Ares collision or revive/reassign it.",
+      "action": "Keep closed PR and branch as tombstone; exclude abandoned claim from active-ownership calculation."
+    },
+    {
+      "id": "ARES-OWNER-PERSISTENCE-GAP",
+      "severity": "P1",
+      "status": "NEEDS_OWNER_CONFIRMATION",
+      "evidence": [
+        "refs/heads/art/ares-ix-world-agent-02@4c2fa044080004609ea6df45f34b2a784536507a",
+        "get_project:5d899bbd-f27f-4be9-bae8-7108d0c33440"
+      ],
+      "finding": "Agent-02 branch has no committed delta or open PR, yet its separate provider project has revision-1 Blend 3340633 bytes and GLB 2652488 bytes. Production evidence exists remotely; absent commits do not imply absent worker. No agent ID or scope exclusions are persisted on this branch.",
+      "action": "Integrator should request scoped claim + provider-to-branch mapping + editable artifact checkpoint from agent-02. Do not mutate its provider project or delete artifact based on absent branch changes."
+    },
+    {
+      "id": "SYLVA-SEMANTIC-BOUNDARY",
+      "severity": "P1",
+      "status": "PARTITION_PROPOSED_NOT_ACKNOWLEDGED",
+      "evidence": [
+        "production/claims/CLM-SYLVA-PROC-NROOT-001.yaml@dbd9c260878e1da3f086694b91f9e178a7c65b16",
+        "production/claims/CLM-SYLVA-MACRO-001.yaml@92e839fa7c012eb15e38c37688097a6b41bdc82e",
+        "https://github.com/rotprods/-/pull/3"
+      ],
+      "finding": "Published path sets are disjoint. Both claims include root/membrane structures and traversal/collision interfaces, so semantic duplication is possible. Root kit explicitly excludes full terrain/geography; macro excludes final species/architecture/materials. They can be complementary supplier and consumer.",
+      "action": "Keep both branches/projects. Macro owns regional composition, terrain, root centerlines, sockets and diagnostic proxies; root-kit owns reusable mesh generators, forks/junctions/walkways and root-attached anchor modules. Macro references kit asset IDs and does not independently promote proxy families to final kit assets."
+    },
+    {
+      "id": "SYLVA-ID-NORMALIZATION",
+      "severity": "P1",
+      "status": "INTEGRATOR_ACTION",
+      "evidence": [
+        "CLM-SYLVA-PROC-NROOT-001.yaml world_id=SYLVA-PRIME",
+        "CLM-SYLVA-MACRO-001.yaml world_id=sylva"
+      ],
+      "finding": "Equivalent world IDs differ across claims. A literal-string registry can miss the collision.",
+      "action": "Normalize aliases SYLVA-PRIME / SYLVA PRIME / sylva -> canonical sylva before overlap comparison; preserve original field for provenance."
+    },
+    {
+      "id": "SYLVA-ACTIVE-PROVIDER-OPERATIONS",
+      "severity": "P0",
+      "status": "DO_NOT_MUTATE",
+      "evidence": [
+        "get_project:43cf2b06-c47f-4ccd-ac34-76e9a585225a activeOperationId=sylva-root-kit-qa-fix-003",
+        "get_project:05dce898-753d-4ff6-a4b0-31757dc868d8 activeOperationId=sylva-macro-portable-lighting-r2"
+      ],
+      "finding": "Both Sylva projects have an active operation at snapshot time. This proves in-flight provider operations, not worker health or duration.",
+      "action": "Owner must reconcile current operation before next mutation; integrator must not replay or overwrite."
+    }
+  ],
+  "ownership_contracts": {
+    "ares_primary": {
+      "branch": "art/ares-ix-world-agent-02",
+      "agent_id": "UNKNOWN",
+      "project_id": "5d899bbd-f27f-4be9-bae8-7108d0c33440",
+      "status": "CANDIDATE_OWNER_PROVIDER_EVIDENCE_NO_PERSISTED_CLAIM",
+      "includes": "Not yet explicitly persisted on branch",
+      "excludes": "Not yet explicitly persisted on branch"
+    },
+    "ares_abandoned": {
+      "branch": "art/ares-ix-world-001",
+      "claim_id": "ART-ARES-001",
+      "owned_paths": [
+        "art_source/worlds/ares_ix/**",
+        "art_source/coordination/ART-ARES-001-OWNERSHIP.md"
+      ],
+      "status": "ABANDONED_BY_PR2"
+    },
+    "sylva_root": {
+      "agent_id": "AGENT-SYLVA-ROOT-01",
+      "claim_id": "CLM-SYLVA-PROC-NROOT-001",
+      "branch": "agent/sylva-neural-root-001",
+      "includes": [
+        "reusable structural root segment generator",
+        "junction/fork modules",
+        "walkway variants",
+        "root terrace and membrane-anchor interfaces",
+        "neutral material IDs",
+        "collision and export metadata"
+      ],
+      "excludes": [
+        "full terrain/planet geography",
+        "settlements and complete architecture",
+        "VESPER/NPC/fauna/vehicles",
+        "final world materials",
+        "gameplay/engine migration"
+      ],
+      "declared_source_path": "art_source/sylva_neural_root_kit/**"
+    },
+    "sylva_macro": {
+      "agent_id": "AGENT-SYLVA-MACRO-01",
+      "claim_id": "CLM-SYLVA-MACRO-001",
+      "branch": "art/world-sylva-prime-macro-001",
+      "includes": [
+        "local coordinates",
+        "macro terrain/root network",
+        "three canonical regional foundations",
+        "primary corridors",
+        "root/membrane/scaffold proxies",
+        "blockout collision/streaming/LOD interfaces"
+      ],
+      "excludes": [
+        "final boss/characters/species",
+        "final architecture/interiors/materials",
+        "gameplay/quests/runtime",
+        "other worlds"
+      ],
+      "observed_source_path": "art_source/worlds/sylva_prime/macro/**"
+    }
+  },
+  "overlaps": {
+    "shared_changed_file_paths": [],
+    "shared_produced_asset_ids": "UNKNOWN: none published in these branch trees; no per-asset manifests yet",
+    "shared_baseline": "All four inherit unchanged main assets and MANIFEST; inherited files are not production duplication."
+  },
+  "proposed_sylva_interface": {
+    "status": "PROPOSED_NO_OWNER_ACK",
+    "world_id": "sylva",
+    "units": "metres; 1 BU=1m",
+    "macro_outputs": [
+      "region origins/anchors",
+      "root centerlines/radii",
+      "socket transforms",
+      "walkway clearance constraints",
+      "diagnostic proxy instances"
+    ],
+    "kit_outputs": [
+      "stable asset IDs",
+      "generator version + seed",
+      "pivot/bounds/axis metadata",
+      "junction socket contract",
+      "collision variants",
+      "portable material IDs"
+    ],
+    "reservation_rule": "Macro proxies use proxy-only IDs and reference root-kit candidates after both owners accept the interface. No branch-wide lock of all Sylva assets.",
+    "acceptance_required": [
+      "Both claim owners acknowledge inclusion/exclusion delta",
+      "No duplicate production asset ID",
+      "No shared-path writes outside integrator",
+      "Source and export receipts published from same revision"
+    ],
+    "preserve_work": "No deletions, no force refs, no provider mutation. Keep current macro geometry and root modules; replace only designated proxies during reviewed integration."
+  },
+  "coordination": {
+    "external_worker_ack": "NOT_OBSERVED",
+    "pr2_comments": 0,
+    "pr3_comments": 0,
+    "reason": "No comments on PR2/PR3 at inspection; all branches authored under same GitHub login so login is not agent identity."
+  },
+  "tool_failures": {
+    "github_tree_encoded_branch_path": "INVALID_ARGUMENT; recovered with verified full commit SHA in git/trees endpoint"
+  },
+  "recommended_parent_actions": [
+    "Drop resolved Ares collision from live P0 count",
+    "Publish advisory supplier-consumer Sylva boundary via existing PR/claim coordination, recording acknowledgement pending",
+    "Ask Ares agent-02 through existing owner channel for source checkpoint, not permission to overwrite",
+    "Normalize world aliases and ignore abandoned claims in fleet audit",
+    "Do not use main MANIFEST inherited by claim-only branches as evidence their new files or provider artifacts were qualified"
+  ]
+}

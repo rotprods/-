@@ -100,6 +100,36 @@
     "type": "INSTANCE_OF"
   },
   {
+    "from": "LRN-EXO-20260912-FLEET-CAS",
+    "to": "INFRA-005-FLEET-001",
+    "type": "OCCURRED_IN_CHAT"
+  },
+  {
+    "from": "LRN-EXO-20260912-FLEET-CAS",
+    "to": "codex-root",
+    "type": "EXECUTED_BY"
+  },
+  {
+    "from": "LRN-EXO-20260912-FLEET-CAS",
+    "to": "evidence/fleet-adversarial-review.json",
+    "type": "EVIDENCED_BY"
+  },
+  {
+    "from": "LRN-EXO-20260912-FLEET-CAS",
+    "to": "https://github.com/rotprods/-/issues/7#issuecomment-5648289971",
+    "type": "EVIDENCED_BY"
+  },
+  {
+    "from": "LRN-EXO-20260912-FLEET-CAS",
+    "to": "evidence/fleet-main-reconciliation.json",
+    "type": "EVIDENCED_BY"
+  },
+  {
+    "from": "LRN-EXO-20260912-FLEET-CAS",
+    "to": "cooperative_fleet_ownership_and_publication_races",
+    "type": "INSTANCE_OF"
+  },
+  {
     "from": "LRN-EXO-20260912-ART",
     "to": "exovant-persistence-20260912",
     "type": "OCCURRED_IN_CHAT"

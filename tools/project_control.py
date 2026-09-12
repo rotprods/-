@@ -45,6 +45,9 @@ def check(root):
     if graph != build(root):problems.append('graph projection drift')
     from studio import validate_project
     problems+=validate_project(root)
+    from fleet_control import validate as validate_fleet, FleetError, REGISTRY
+    try: validate_fleet(json.loads((root/REGISTRY).read_text()))
+    except (FleetError,ValueError,TypeError,KeyError,OSError) as exc: problems.append('fleet registry: '+str(exc))
     sys.path.insert(0,str(root/'tools'))
     from aprende_runtime import LearningHub
     from aprende_lifecycle import SessionLifecycle

@@ -2,16 +2,16 @@
   "gate_id": "GATE-NATIVE",
   "task_id": "INFRA-005",
   "passed": true,
-  "executed_at": "2026-09-12T18:05:55.490253+00:00",
-  "source_digest": "47d2720c0805ce5f250eac0c2e22002fa5df37e149ec1090c624f663ff5847af",
+  "executed_at": "2026-09-12T21:22:51.666051+00:00",
+  "source_digest": "7d788a1555d98ed69c11fea738f0535750b9f5f4dd4efd1f494e5ed5246aa592",
   "evidence_refs": [
-    "evidence/gate-native.log"
+    "evidence/gates/INFRA-005-GATE-NATIVE.log"
   ],
   "reviewer": "automated-local-runner",
   "command": [
     "python3",
     "tests/run_gauntlet.py",
     "--godot",
-    "/workspace/scratch/50c20796a10a/exovant-remote-restore/.tools/Godot_v4.7.2-stable_linux.x86_64"
+    "/workspace/scratch/14f30c1fd0bf/exovant/.tools/Godot_v4.7.2-stable_linux.x86_64"
   ]
 }

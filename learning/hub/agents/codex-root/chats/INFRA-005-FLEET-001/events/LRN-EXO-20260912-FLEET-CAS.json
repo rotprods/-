@@ -1,0 +1,85 @@
+{
+  "_meta": {
+    "content_digest": "abe7aea1da1df973c561d7a40ed0332499e74a5b933d6ce3a7da44dce6962596",
+    "persisted_at": "2026-09-12T19:58:50.764375Z"
+  },
+  "analysis": {
+    "confidence": 0.94,
+    "family_or_pattern": "cooperative_fleet_ownership_and_publication_races",
+    "generalization_boundary": "Cooperative EXOVANT wrappers and local real Git race; not authentication, permanent workers, natural-language semantic proof, provider-wide ACL or art quality.",
+    "mechanism": "Canonical world IDs and hierarchical declared scopes plus project/asset/path uniqueness; current owner ACK+epoch; local CAS and remote non-force sibling commit rejection; per-project observation binding and exact generated manifest.",
+    "non_applicable_cases": [
+      "Agents bypassing wrapper",
+      "Unobserved hardware or universal global enforcement"
+    ],
+    "symptom": "Independent world producers reserve aliases, stale branches and shared manifests; falsey provider states or cross-key observations can conceal unfinished operations."
+  },
+  "authority_after": "L2-persisted",
+  "authority_before": "L1-retrieved",
+  "event_class": "correction",
+  "evidence": [
+    {
+      "claim": "41 adversarial cases passed, including actual process and Git races",
+      "kind": "test",
+      "ref": "evidence/fleet-adversarial-review.json"
+    },
+    {
+      "claim": "Khepri owner acknowledged scope/paths/project/IDs and reported main manifest drift",
+      "kind": "issue",
+      "ref": "https://github.com/rotprods/-/issues/7#issuecomment-5648289971"
+    },
+    {
+      "claim": "Concurrent AGENTS-only commit drift reproduced and reconciled",
+      "kind": "log",
+      "ref": "evidence/fleet-main-reconciliation.json"
+    }
+  ],
+  "knowledge_relation": {
+    "relation": "NEW",
+    "targets": []
+  },
+  "learning_id": "LRN-EXO-20260912-FLEET-CAS",
+  "promotion": {
+    "reason": "Prevent recurrence in repeatable tests and cooperative preflight",
+    "target_ref": "tests/test_fleet_control.py",
+    "target_type": "test"
+  },
+  "provenance": {
+    "agent_id": "codex-root",
+    "chat_id": "INFRA-005-FLEET-001",
+    "chat_id_source": "session-alias",
+    "run_id": "INFRA-005-FLEET-001"
+  },
+  "revalidation_condition": "Registry schema, semantic partition, Git publication method or provider observation contract changes",
+  "scope": {
+    "artifacts": [
+      "tools/fleet_control.py",
+      "tests/test_fleet_control.py",
+      "ops/fleet/registry.json"
+    ],
+    "level": "project",
+    "project": "EXOVANT 2950",
+    "repository": "rotprods/-"
+  },
+  "status": "persisted",
+  "timestamp": "2026-09-12T19:58:50.761081+00:00",
+  "unknowns": [
+    "Remaining owner acknowledgements",
+    "Final source recovery from all world providers",
+    "Human art and target-GPU qualification"
+  ],
+  "verification": {
+    "adversarial_review": {
+      "evidence_ref": "evidence/fleet-adversarial-review.json",
+      "status": "pass"
+    },
+    "anti_recurrence_control": "tests/test_fleet_control.py",
+    "retrieval_test": {
+      "status": "pending"
+    },
+    "runtime_test": {
+      "evidence_ref": "evidence/fleet-adversarial-review.json",
+      "status": "pass"
+    }
+  }
+}
