@@ -1,0 +1,38 @@
+name: EXOVANT Vanta Manifest Refresh
+on:
+  pull_request:
+permissions:
+  contents: write
+concurrency:
+  group: vanta-manifest-refresh-${{ github.base_ref }}
+  cancel-in-progress: true
+jobs:
+  refresh:
+    if: ${{ github.base_ref == 'art/world-vanta-001' }}
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          fetch-depth: 0
+      - name: Refresh base branch projection only
+        env:
+          BASE_BRANCH: ${{ github.base_ref }}
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git fetch origin "$BASE_BRANCH"
+          rm -rf /tmp/vanta-base
+          git worktree add --detach /tmp/vanta-base "origin/$BASE_BRANCH"
+          cd /tmp/vanta-base
+          python3 tools/project_control.py refresh
+          python3 tools/project_control.py check
+          if git diff --quiet -- MANIFEST.json; then
+            echo "MANIFEST already current; no push required."
+            exit 0
+          fi
+          git add MANIFEST.json
+          git diff --cached --check
+          git commit -m "chore(vanta): refresh generated manifest after rev10 receipts"
+          git push origin "HEAD:$BASE_BRANCH"
