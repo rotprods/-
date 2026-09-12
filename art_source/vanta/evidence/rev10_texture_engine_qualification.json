@@ -1,0 +1,136 @@
+{
+  "schema": "exovant.vanta.rev10-texture-engine-qualification.v1",
+  "world": "VANTA",
+  "passed": true,
+  "truth_level": "EMPIRICALLY_QUALIFIED_BOUNDED_GODOT_MATERIAL_ROLE_TRANSPORT_AND_TRAVERSAL",
+  "remote_source": {
+    "provider": "Higgsfield 3D Jutsu",
+    "project_id": "c82188b1-afdc-43f2-828a-5f0e98291f83",
+    "revision": 10,
+    "operation_id": "vanta-rev10-texture-payload-repair-001",
+    "blender_version": "5.2.0 LTS",
+    "blend": {
+      "size_bytes": 11414294,
+      "etag": "ced280eaa6112470cc21a1ac02afec62",
+      "sha256": "128979e51a507d97792ef3c15aaf9de20369e21589b60a9d13fe4d0d262d1466"
+    },
+    "glb": {
+      "size_bytes": 9228876,
+      "etag": "0311edc1eaa61c3c599957d57a47d165",
+      "sha256": "934450fab1d9eff9dff0dc62971682a692d5f04d4d72871b9f274e6240c7e171",
+      "meshes": 701,
+      "nodes": 832,
+      "materials": 20,
+      "images": 13,
+      "external_resources": 0,
+      "collision_suffix_nodes": 20
+    }
+  },
+  "negative_history": {
+    "revision": 9,
+    "finding": "All 13 CP5 packed image payloads were empirically read back as black in Blender, including BC, ORM, normal and decal. Godot rev9 correctly transported the invalid source payload.",
+    "disposition": "SUPERSEDED_BY_REV10_TEXTURE_PAYLOAD_REPAIR; preserve rev9 receipts as negative evidence."
+  },
+  "source_roundtrip": {
+    "method": "Blender pixels.foreach_set -> image.update -> image.pack -> GLB export -> embedded PNG extraction -> Blender reload/readback",
+    "passed": true,
+    "packed_image_count": 13,
+    "resolution": [512, 512],
+    "embedded_external_resources": 0,
+    "sampler_count": 1,
+    "sampler": {"magFilter": 9729, "minFilter": 9987, "wrap_default": "REPEAT"},
+    "representative_payloads": {
+      "steel_bc_avg": [0.1744, 0.1858, 0.199],
+      "rust_bc_avg": [0.4503, 0.1366, 0.0547],
+      "yellow_bc_avg": [0.8089, 0.4347, 0.03],
+      "steel_orm_avg": [1.0, 0.38, 0.902],
+      "rust_orm_avg": [1.0, 0.78, 0.0784],
+      "yellow_orm_avg": [1.0, 0.5199, 0.1216],
+      "normal_expected": "near [0.5,0.5,1.0] with bounded XY microvariation"
+    }
+  },
+  "godot_actions_receipt": {
+    "run_id": 34722670811,
+    "job_id": 103631274506,
+    "merge_ref_sha": "a3bc2980213a429319a63519e4c1115cbde6f0f1",
+    "head_sha": "f93791791cb6bc1c3e69cd4e74b2af802fb1d566",
+    "executed_at": "2026-09-12T22:27:48Z",
+    "engine": "Godot 4.7.2-stable (official)",
+    "host": "GitHub-hosted Ubuntu 24.04",
+    "renderer": "OpenGL compatibility via Mesa llvmpipe; CPU software path, not target GPU",
+    "artifact_id": 10306787762,
+    "artifact_digest": "sha256:b419bcff9f1057ee9852fae303165c6a1c9b65e8989bf1c0d56055f5ce91afd8",
+    "capture_ok": true,
+    "gross_color_roles_pass": true,
+    "missing_required_materials": [],
+    "material_runtime_readback": {
+      "M_VAN_CP4_STEEL": {"albedo_avg": [0.171875,0.183088257908821,0.196139752864838],"metallic_texture": true,"metallic_channel": 2,"roughness_texture": true,"roughness_channel": 1,"normal_texture": true},
+      "M_VAN_CP4_RUST": {"albedo_avg": [0.463480353355408,0.142279461026192,0.057536780834198],"metallic_texture": true,"metallic_channel": 2,"roughness_texture": true,"roughness_channel": 1,"normal_texture": true},
+      "M_VAN_CP4_UNION_YELLOW": {"albedo_avg": [0.801531493663788,0.427389681339264,0.0286152083426714],"metallic_texture": true,"metallic_channel": 2,"roughness_texture": true,"roughness_channel": 1,"normal_texture": true},
+      "M_VAN_CP5_TRIM_A": {"albedo_avg": [0.489521950483322,0.366053909063339,0.270036786794662],"metallic_texture": true,"metallic_channel": 2,"roughness_texture": true,"roughness_channel": 1,"normal_texture": true},
+      "M_VAN_CP5_DECAL_A": {"albedo_avg": [0.203798919916153,0.137132376432419,0.0618260391056538],"transparency_enum": 4}
+    },
+    "characterbody_traversal": {
+      "passed": true,
+      "reached_target": true,
+      "floor_frames": 323,
+      "travel_ratio": 0.969267592149354,
+      "start": [-5381.10009765625,1.14999997615814,-622.0],
+      "target": [-5370.89990234375,1.14999997615814,-622.0],
+      "final": [-5371.21337890625,0.899868428707123,-622.0]
+    },
+    "godot_import_cache": {
+      "file_count": 28,
+      "total_bytes": 4783432,
+      "packed_scene_bytes": 2932946,
+      "classification": "disk import cache footprint; not VRAM/GPU-memory claim"
+    }
+  },
+  "independent_sandbox_confirmation": {
+    "passed": true,
+    "repo_base": "main clone at qualification time",
+    "engine": "Godot 4.7.2-stable (official)",
+    "renderer": "Mesa llvmpipe compatibility path",
+    "glb_sha256": "934450fab1d9eff9dff0dc62971682a692d5f04d4d72871b9f274e6240c7e171",
+    "gross_color_roles_pass": true,
+    "characterbody_traversal_pass": true,
+    "travel_ratio": 0.969267592149354
+  },
+  "godot_capture": {
+    "media_id": "161b4050-7522-443a-b219-f5153a50735e",
+    "resolution": [640, 360],
+    "mean_rgb": [102.35, 85.88, 77.08],
+    "near_black_ratio": 0.0066,
+    "yellowish_ratio": 0.0974,
+    "rust_orange_ratio": 0.1138,
+    "cool_steel_ratio": 0.7278,
+    "interpretation": "Confirms the calibration capture is no longer the degenerate all-black payload and contains gross steel/rust/yellow role separation; not human aesthetic or photometric-equivalence approval."
+  },
+  "structural_cost_reference": {
+    "source_revision": 9,
+    "applicability": "Geometry intentionally unchanged by rev10 texture-only repair.",
+    "unique_mesh_definitions": 701,
+    "unique_vertices": 161180,
+    "unique_triangles": 82280,
+    "naive_instanced_triangles": 82688,
+    "meshes_reused_more_than_once": 10,
+    "max_reuse": 2,
+    "finding": "Current representative slice has low real instancing; do not propagate to 327 planning targets before instancing/HLOD discipline and target-hardware measurement."
+  },
+  "open_gates": [
+    "human visual/art-direction approval",
+    "controlled photometric Blender-vs-Godot equivalence under matched exposure/lighting",
+    "target GPU FPS/frame-time/VRAM and texture-residency measurement",
+    "HLOD/instancing runtime qualification",
+    "expanded gameplay-route traversal beyond the bounded CP4 test-yard floor",
+    "final engine selection",
+    "final hero assets and AAA/AAAA completion"
+  ],
+  "evidence_refs": [
+    "art_source/vanta/CP4_STATUS.md",
+    "art_source/vanta/CP5_STATUS.md",
+    "art_source/vanta/evidence/godot_rev9_native_qualification.json",
+    "GitHub Actions run 34722670811 / job 103631274506 / artifact 10306787762",
+    "Higgsfield media 161b4050-7522-443a-b219-f5153a50735e"
+  ]
+}
