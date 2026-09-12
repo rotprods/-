@@ -4,7 +4,7 @@
 **Session:** AURORA-20260912T192957Z-001  
 **Claim:** CLM-AURORA-WORLD-001  
 **Branch:** art/world-aurora-veil-001  
-**Remote checkpoint:** 3D Jutsu `d6488148-8547-4ffe-b63d-e5fbec3a339c` revision 7  
+**Remote checkpoint:** 3D Jutsu `d6488148-8547-4ffe-b63d-e5fbec3a339c` revision 8  
 
 ## North Star
 
@@ -14,16 +14,16 @@ Deliver AURORA VEIL as a complete, physically plausible, unmistakable EXOVANT wo
 
 | ID | Priority | Status | Current evidence / remaining DoD |
 |---|---|---|---|
-| AUR/WORLD/001 Atomic ownership claim | P0 | DONE | Claim persisted before Blender. Commit `096745b1305ead0e9b5d04ffdd74b1633bdba300`. |
+| AUR/WORLD/001 Atomic ownership claim | P0 | DONE | Claim persisted before Blender. Commit `096745b1305ead0e9b5d04ffdd74b1633bdba300`; Fleet ACK issue #7 epoch 1. |
 | AUR/WORLD/002 World Bible + scale ADR | P0 | DONE | `WORLD_BIBLE.md`, `ADR-AUR-001-planet-scale.md`; canon/proposal boundary explicit. |
-| AUR/WORLD/003 L1 orbital representation | P0 | REVIEW | Remote rev 7: separate `AUR-PLN-001` shell + `AUR-ATM-001` atmosphere/4 ribbons, 2 canonical station proxies, GLB PASS, no global geography invented, surface camera regression delta 0. Human visual review remains open. |
-| AUR/WORLD/004 Macro map + regional anchors | P0 | REVIEW | 3 anchors + 5.2×3.0 km local macro frame exist; global macro/continent geography intentionally remains UNKNOWN rather than invented. |
+| AUR/WORLD/003 L1 orbital representation | P0 | REVIEW | Remote rev 7+: separate `AUR-PLN-001` + `AUR-ATM-001`, 4 aurora ribbons, 2 station proxies, no invented global geography, surface regression PASS. Human visual review remains open. |
+| AUR/WORLD/004 Macro map + regional anchors | P0 | REVIEW | 3 anchors + 5.2×3.0 km local macro frame exist; global continent geography remains UNKNOWN by design. |
 | AUR/TERRAIN/005 Three-region terrain macro | P0 | REVIEW | Low-frequency terrain exists; geology/erosion/traversal refinement and final region tiling pending. |
-| AUR/ARCH/006 Camp observatory/refuge kit | P1 | IN_PROGRESS | 48 m ring, 72 m mast, habitats and sync stations exist as blockout; manufacturing-complete modular kit and assembled proof need production pass. |
-| AUR/TEMPORAL/007 Bounded echo grammar | P0 | IN_PROGRESS | 3 fields, 12 anchors, delayed source/state geometry exist; runtime collision/audio/state schema pending. |
+| AUR/ARCH/006 Camp observatory/refuge kit | P1 | REVIEW_TECHNICAL | Rev 8: 4 m grid, 12 source modules, 16×12 m refuge proof, 24-segment 48 m observatory ring, manufacturing/material-role contract, instancing and render regression PASS. Final art/UV/PBR/human review pending. |
+| AUR/TEMPORAL/007 Bounded echo grammar | P0 | IN_PROGRESS | 3 fields + 12 anchors exist. Next: explicit local state machine, per-state collision proxies and non-color-only pre-cue proof; no global rewind. |
 | AUR/AEON/008 Huerto + 50 m arena | P1 | REVIEW_BLOCKOUT | Canon 50 m arena + 3 sectors + 10 machine trees + AEON blockout exist; final hero design/rig/readability pending. |
 | AUR/ECO/009 Ecology/population lineup | P1 | IN_PROGRESS | Semantic proxies exist for NPC/enemies/fauna/Peregrino; final anatomy/silhouette/art approval pending. |
-| AUR/TECH/010 Export/collision/streaming/QA | P0 | IN_PROGRESS | Blend/GLB export PASS through rev 7, 4 collision proxies, 27 planning cells, scale + photometric + surface-regression QA PASS; engine import/perf/human art gate pending. |
+| AUR/TECH/010 Export/collision/streaming/QA | P0 | IN_PROGRESS | Blend/GLB export PASS through rev 8, 4 world collision proxies, 27 planning cells, dimensional/photometric/regression QA active; engine import/perf/human art gate pending. |
 
 ## Stable DoD references
 
@@ -34,33 +34,24 @@ Deliver AURORA VEIL as a complete, physically plausible, unmistakable EXOVANT wo
 - no hero geometry on orbital mesh;
 - coordinate link to local region anchors documented;
 - no global geography invented where canon is silent;
-- surface-region visual regression remains unchanged after orbital insertion.
-
-### AUR/WORLD/004
-- Campamento/Llanura/Huerto stable IDs;
-- macro distances and vista hierarchy defined;
-- local tangent frames preserved;
-- no false engine-specific streaming claim.
-
-### AUR/TERRAIN/005
-- macro elevation and geological logic before microdetail;
-- route corridors/slopes reviewed;
-- material distribution semantic;
-- hero-zone edges and region tiling documented.
+- surface-region visual regression unchanged after orbital insertion.
 
 ### AUR/ARCH/006
 - plausible foundations/load paths;
-- maintenance access, utilities, drainage/cabling;
-- grid, pivots, variants and transitions documented;
-- one assembled production structure proves kit;
-- human-scale QA.
+- maintenance access, utilities and cable/service routing represented;
+- 4 m grid, pivots, variants and transitions documented;
+- modular source objects use shared mesh datablocks for repeated assembly;
+- 16×12 m refuge proof scene and 48 m segmented observatory ring prove the kit;
+- manufacturing process recorded for structure/envelope/floor/roof/foundation/services/ring;
+- human-scale and final art review still required before DONE.
 
 ### AUR/TEMPORAL/007
 - one temporal rule per initial encounter sector;
-- local state variants only;
+- local state variants only; global world/save rewind prohibited;
 - non-color-only anticipation cue;
 - explicit per-state collision and persistence;
-- readable delay contract.
+- readable delay contract and deterministic state IDs;
+- visual source/repeat geometry must be inspectable independently.
 
 ### AUR/AEON/008
 - 50 m arena exact;
@@ -90,19 +81,19 @@ Deliver AURORA VEIL as a complete, physically plausible, unmistakable EXOVANT wo
 ## Multi-week production backlog
 
 ### WAVE 1 — MACRO WORLD
-- AUR/MAP/011 — global height/biome mask concept from canonical constraints — DEFERRED_UNTIL_GLOBAL_GEOGRAPHY_DECISION
+- AUR/MAP/011 — global height/biome mask concept — DEFERRED_UNTIL_GLOBAL_GEOGRAPHY_DECISION
 - AUR/MAP/012 — Campamento regional terrain pass — IN_PROGRESS
 - AUR/MAP/013 — Llanura regional terrain pass — IN_PROGRESS
 - AUR/MAP/014 — Huerto regional terrain pass — IN_PROGRESS
 - AUR/VISTA/015 — inter-region skyline / landmarks — IN_PROGRESS
 
 ### WAVE 2 — KIT FOUNDATIONS
-- AUR/MAT/020 — calibrated world material board — TODO
-- AUR/ARCH/021 — refuge modules — TODO
-- AUR/ARCH/022 — observatory ring modules — IN_PROGRESS
-- AUR/ARCH/023 — service / utility modules — TODO
-- AUR/INFRA/024 — route-recorder beacons — TODO
-- AUR/INFRA/025 — clock-sync stations — IN_PROGRESS_BLOCKOUT
+- AUR/MAT/020 — calibrated world material board — IN_PROGRESS_ROLE_LIBRARY_R8
+- AUR/ARCH/021 — refuge modules — REVIEW_TECHNICAL_R8
+- AUR/ARCH/022 — observatory ring modules — REVIEW_TECHNICAL_R8
+- AUR/ARCH/023 — service / utility modules — REVIEW_TECHNICAL_R8
+- AUR/INFRA/024 — route-recorder beacons — REVIEW_BLOCKOUT_R8
+- AUR/INFRA/025 — clock-sync stations — REVIEW_BLOCKOUT_R8
 - AUR/PROC/026 — prairie scatter / variation system — TODO
 - AUR/PROC/027 — cable / instrument routing generator — TODO
 
