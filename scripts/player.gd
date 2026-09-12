@@ -38,7 +38,7 @@ func _ready() -> void:
 	camera.position = position + Vector3(0,4,7)
 
 func _unhandled_input(event: InputEvent) -> void:
-	if not input_enabled or world.modal_open: return
+	if not input_enabled or world.modal_open or event.is_echo(): return
 	if event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
 		yaw -= event.relative.x * .0025
 		pitch = clampf(pitch - event.relative.y * .0025, -.8, .2)
@@ -63,7 +63,7 @@ func begin_attack(heavy: bool) -> bool:
 	return true
 
 func begin_dodge() -> bool:
-	if health <= 0 or in_vehicle or attack_time > 0 or dodge_time > 0 or stamina < 27: return false
+	if health <= 0 or in_vehicle or world.modal_open or attack_time > 0 or dodge_time > 0 or stamina < 27: return false
 	stamina -= 27
 	dodge_time = .52
 	dodge_direction = movement_direction()
@@ -89,6 +89,10 @@ func receive_damage(amount: float, source: Vector3) -> bool:
 
 func _physics_process(dt: float) -> void:
 	if world.modal_open: return
+	if input_enabled and not is_instance_valid(locked):
+		var look := Input.get_vector("look_left","look_right","look_up","look_down",.22)
+		yaw -= look.x * 2.8 * dt
+		pitch = clampf(pitch - look.y * 1.8 * dt,-.8,.2)
 	guarding = input_enabled and Input.is_action_pressed("guard") and attack_time <= 0 and dodge_time <= 0
 	if is_instance_valid(locked) and (locked.health <= 0 or global_position.distance_to(locked.global_position) > 35): locked = null
 	if is_instance_valid(locked):

@@ -1,0 +1,7 @@
+{
+  "failed": 0,
+  "fresh_route": "spawn to Ines only; no teleports or progression injection",
+  "passed": 33,
+  "scope": "Synthetic physical InputEvents through engine; no attached-controller hardware or full human playthrough claim",
+  "suite": "native_input_and_preferences"
+}

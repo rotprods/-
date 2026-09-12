@@ -1,0 +1,13 @@
+{
+  "observed_at": "2026-09-12T18:33:35.269778+00:00",
+  "provider_readback": {
+    "is_enabled": true,
+    "prompt_uses_github_main": true,
+    "legacy_package_ids_present": false,
+    "last_run_time": null,
+    "next_run_time": null
+  },
+  "current_invocation": "Received the continuation request and executed Godot on recovered main",
+  "completed_independent_scheduled_run_claimed": false,
+  "future_worker_availability_claimed": false
+}

@@ -3,6 +3,11 @@ const Progress = preload("res://scripts/progress.gd")
 const SaveStore = preload("res://scripts/save_store.gd")
 const Player = preload("res://scripts/player.gd")
 const Enemy = preload("res://scripts/enemy.gd")
+const Controls = preload("res://scripts/controls.gd")
+var controls = Controls.new()
+var controls_footer: Label
+var rebind_action := ""
+var controls_return: Callable
 var progress = Progress.new()
 var storage = SaveStore.new()
 var player: CharacterBody3D
@@ -151,22 +156,17 @@ func register(id: String, label: String, pos: Vector3, radius: float = 3.0) -> v
 	interactables.append({"id":id,"label":label,"position":pos,"radius":radius})
 
 func configure_input() -> void:
-	var bindings := {"forward":KEY_W,"back":KEY_S,"left":KEY_A,"right":KEY_D,
-		"dodge":KEY_SPACE,"jump":KEY_C,"heal":KEY_R,"lock":KEY_Q,"interact":KEY_E,"heavy_attack":KEY_F,"guard":KEY_SHIFT,"pause_game":KEY_ESCAPE}
-	for action in bindings:
-		if not InputMap.has_action(action): InputMap.add_action(action)
-		var e := InputEventKey.new()
-		e.physical_keycode = bindings[action]
-		InputMap.action_add_event(action,e)
-	InputMap.add_action("light_attack")
-	var click := InputEventMouseButton.new()
-	click.button_index = MOUSE_BUTTON_LEFT
-	InputMap.action_add_event("light_attack",click)
+	if "--test-input" in OS.get_cmdline_user_args():
+		controls = Controls.new("user://exovant-test-input-controls.json")
+	elif "--test-world" in OS.get_cmdline_user_args():
+		controls = Controls.new("user://exovant-test-world-controls.json")
+	controls.load_bindings()
 
 func _ready() -> void:
 	configure_input()
 	capture_mode = "--capture" in OS.get_cmdline_user_args()
 	if "--test-world" in OS.get_cmdline_user_args(): storage = SaveStore.new("user://exovant-test-world.json")
+	if "--test-input" in OS.get_cmdline_user_args(): storage = SaveStore.new("user://exovant-test-input.json")
 	var saved := storage.load_game()
 	if not saved.is_empty(): progress.restore(saved)
 	build_environment()
@@ -349,7 +349,7 @@ func build_ui() -> void:
 	foot.size = Vector2(1280,55)
 	foot.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	ui.add_child(foot)
-	label("WASD mover · Ratón cámara · Clic atacar · F fuerte · Espacio esquivar · Shift bloquear\nQ fijar · R curar · C saltar · E interactuar · Esc pausa",Vector2(30,676),12,Color("b7c9c8"))
+	controls_footer = label(controls.footer(),Vector2(30,676),12,Color("b7c9c8"))
 	tint = ColorRect.new()
 	tint.size = Vector2(1280,720)
 	tint.mouse_filter = Control.MOUSE_FILTER_IGNORE
@@ -397,6 +397,7 @@ func label(text: String, pos: Vector2, font_size: int, color: Color = Color("d5e
 	return l
 
 func open_modal(heading: String, body: String) -> void:
+	rebind_action = ""
 	modal_open = true
 	modal.visible = true
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
@@ -421,8 +422,10 @@ func button(text: String, callback: Callable) -> void:
 	b.custom_minimum_size.y = 42
 	b.pressed.connect(callback)
 	modal_content.add_child(b)
+	if get_viewport().gui_get_focus_owner() == null: b.grab_focus()
 
 func close_modal() -> void:
+	rebind_action = ""
 	modal_open = false
 	modal.visible = false
 	if not capture_mode: Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
@@ -430,20 +433,59 @@ func close_modal() -> void:
 func show_title() -> void:
 	open_modal("EXOVANT 2950", "EL DERECHO A REGRESAR\n\nTerra se ha recuperado. Sus custodios ya no nos reconocen como habitantes.\n\nUna sección experimental en 3D: costa, riego, archivo y ATLAS.\nConstrucción 0.1 · Personajes y combate en prototipo.")
 	button("Continuar en la costa" if progress.flags.size()>0 else "Despertar en Terra",close_modal)
-	button("Controles",show_controls)
+	button("Controles",func(): controls_return = show_title; show_controls())
 
 func show_controls() -> void:
-	open_modal("PROTOCOLO DEL RETORNADO", "WASD: movimiento · Ratón: cámara\nClic: ataque ligero · F: golpe fuerte\nEspacio: esquiva con invulnerabilidad breve\nShift: guardia frontal · Q: fijación de enemigo\nR: curar · C: saltar · E: interacción\n\nLas zonas bermellón anuncian un golpe. Sal del área o esquiva. Descansar guarda, cura y repone cargas, pero reactiva custodios menores.")
-	button("Regresar",show_title)
+	open_modal("CONTROLES DEL RETORNADO", "Selecciona una acción y pulsa una tecla o botón.\nEsc cancela · Start pausa · Sticks: movimiento y cámara")
+	var scroll := ScrollContainer.new()
+	scroll.custom_minimum_size.y = 215
+	scroll.horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
+	scroll.follow_focus = true
+	modal_content.add_child(scroll)
+	var rows := VBoxContainer.new()
+	rows.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	scroll.add_child(rows)
+	for action in Controls.LABELS:
+		var b := Button.new()
+		b.text = "%s · %s / %s" % [Controls.LABELS[action],controls.binding_text(action),controls.binding_text(action,true)]
+		b.custom_minimum_size.y = 36
+		b.pressed.connect(func(): begin_rebind(action))
+		rows.add_child(b)
+		if get_viewport().gui_get_focus_owner() == null: b.grab_focus()
+	button("Restaurar controles iniciales",func():
+		if not controls.commit(Controls.defaults()): notify(controls.last_error)
+		show_controls())
+	button("Volver",func():
+		if controls_return.is_valid(): controls_return.call()
+		else: show_pause())
 
-func _unhandled_input(event: InputEvent) -> void:
-	if event.is_action_pressed("pause_game"):
+func begin_rebind(action: String) -> void:
+	open_modal("ASIGNAR · " + str(Controls.LABELS[action]).to_upper(), "Pulsa la nueva entrada. Tecla ocupada: se rechaza.\nBotón de mando ocupado: intercambia las dos acciones.\nEsc cancela. Start y navegación de menús se conservan.")
+	rebind_action = action
+
+func show_pause() -> void:
+	open_modal("RETORNO EN PAUSA","El mundo está detenido. El refugio fija el punto de regreso.\nLas zonas bermellón anuncian golpes: sal del área o esquiva.")
+	button("Continuar",close_modal)
+	button("Guardar",func(): save_progress(); close_modal())
+	button("Controles",func(): controls_return = show_pause; show_controls())
+
+func _input(event: InputEvent) -> void:
+	controls.observe(event)
+	if not is_instance_valid(modal): return
+	if rebind_action != "":
+		if event.is_action_pressed("pause_game"):
+			show_controls()
+		elif event.is_pressed() and not event.is_echo() and (event is InputEventKey or event is InputEventMouseButton or event is InputEventJoypadButton):
+			if controls.rebind(rebind_action,event):
+				notify("Controles guardados")
+				show_controls()
+			else: notify(controls.last_error)
+		get_viewport().set_input_as_handled()
+		return
+	if event.is_action_pressed("pause_game") or (modal_open and event.is_action_pressed("ui_cancel")):
 		if modal_open: close_modal()
-		else:
-			open_modal("RETORNO EN PAUSA","La simulación está detenida. El progreso de misión se guarda al completarse cada objetivo; el refugio fija el punto de regreso.")
-			button("Continuar",close_modal)
-			button("Guardar",func(): save_progress(); close_modal())
-			button("Controles",show_controls)
+		else: show_pause()
+		get_viewport().set_input_as_handled()
 
 func notify(text: String) -> void:
 	notice.text = text
@@ -560,7 +602,7 @@ func interact() -> void:
 			button("Volver a Terra",close_modal)
 		"rover":
 			player.in_vehicle = true
-			notify("PEREGRINO-6 · WASD pilotar · E bajar")
+			notify("PEREGRINO-6 · Movimiento para pilotar · " + controls.hint_for("interact") + " para bajar")
 
 func show_valves() -> void:
 	if not progress.flags.get("met_ines",false):
@@ -611,6 +653,7 @@ func _process(dt: float) -> void:
 	health_bar.size.x = clampf(player.health,0,100)*3.3
 	stamina_bar.size.x = clampf(player.stamina,0,100)*3.3
 	quest_label.text = progress.objective()
+	controls_footer.text = controls.footer()
 	if modal_open: return
 	elapsed += dt
 	notice_time -= dt
@@ -618,12 +661,12 @@ func _process(dt: float) -> void:
 	damage_flash = maxf(0,damage_flash-dt)
 	tint.color.a = damage_flash*.65
 	var item := current_interaction()
-	hint.text = "E · " + item.label if not item.is_empty() else ""
+	hint.text = controls.hint_for("interact") + " · " + item.label if not item.is_empty() else ""
 	if player.in_vehicle:
 		rover.position = player.position
 		rover.rotation.y = player.yaw
-		hint.text = "PEREGRINO-6 · E para bajar"
-	if not progress.echo.is_empty() and player.position.distance_to(echoes.position)<2: hint.text = "E · Recuperar eco"
+		hint.text = "PEREGRINO-6 · " + controls.hint_for("interact") + " para bajar"
+	if not progress.echo.is_empty() and player.position.distance_to(echoes.position)<2: hint.text = controls.hint_for("interact") + " · Recuperar eco"
 	for i in range(pulses.size()-1,-1,-1):
 		pulses[i].life -= dt
 		if pulses[i].life <= 0:

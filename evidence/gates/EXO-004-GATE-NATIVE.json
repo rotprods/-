@@ -1,0 +1,17 @@
+{
+  "gate_id": "GATE-NATIVE",
+  "task_id": "EXO-004",
+  "passed": true,
+  "executed_at": "2026-09-12T18:30:10.145187+00:00",
+  "source_digest": "86c64744977a9c92d6c70385005de4d2eb112333542a6d67a65b74dfc47167f6",
+  "evidence_refs": [
+    "evidence/gates/EXO-004-GATE-NATIVE.log"
+  ],
+  "reviewer": "automated-local-runner",
+  "command": [
+    "python3",
+    "tests/run_gauntlet.py",
+    "--godot",
+    "/workspace/scratch/50c20796a10a/exovant-remote-restore/.tools/Godot_v4.7.2-stable_linux.x86_64"
+  ]
+}

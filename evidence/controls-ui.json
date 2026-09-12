@@ -1,0 +1,14 @@
+{
+  "modal_rect": [
+    330.0,
+    140.0,
+    620.0,
+    497.0
+  ],
+  "renderer": "GL Compatibility on Mesa CPU; no GPU performance claim",
+  "viewport": [
+    1280.0,
+    720.0
+  ],
+  "within_viewport": true
+}

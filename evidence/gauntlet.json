@@ -1,7 +1,7 @@
 {
-  "run_id": "native-20260912T180544599876Z",
-  "executed_at": "2026-09-12T18:05:55.464252+00:00",
-  "source_digest": "47d2720c0805ce5f250eac0c2e22002fa5df37e149ec1090c624f663ff5847af",
+  "run_id": "native-20260912T182954429961Z",
+  "executed_at": "2026-09-12T18:30:10.107590+00:00",
+  "source_digest": "86c64744977a9c92d6c70385005de4d2eb112333542a6d67a65b74dfc47167f6",
   "gates": [
     {
       "gate": "import",
@@ -15,6 +15,11 @@
     },
     {
       "gate": "world-tests",
+      "passed": true,
+      "exit_code": 0
+    },
+    {
+      "gate": "input-tests",
       "passed": true,
       "exit_code": 0
     },

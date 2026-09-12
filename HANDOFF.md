@@ -25,3 +25,7 @@ La tarea horaria recupera main y comprueba capacidades en cada activación. Su h
 Los recibos actuales y el estado de cierre de INFRA-005 están en STATE, PLAN y evidence. Nunca utilizar un porcentaje de Linear para afirmar avance artístico o de campaña. La última respuesta del chat no es la fuente de verdad.
 
 INFRA-005 se cierra como checkpoint en revisión: controles locales, CI, clon limpio y restauración de Drive comprobados. Pendiente observar la primera activación programada y el espejo Mem (rate limit). EXO-004 no depende de estos pendientes. ops/sync-queue.json evita perderlos; no repetir toda la fase de infraestructura antes de trabajar en producto.
+
+## Próxima unidad tras EXO-004-INPUT-001
+
+Controles y primer tramo ya comprobados: no rehacerlos. Continuar EXO-004-ROUTE-002 con la ruta nueva Inés → riego → archivo → ATLAS → consecuencia → portal, usando controles y colisión normales, sin teletransportes ni concesión de flags/daño. Atacar orden de misiones (incluido llegar a ATLAS antes del archivo), muerte/recuperación y recarga. Guardar fricción y fixes; GATE-PLAY humano sigue pendiente. Para remapeo sintético usar --test-input (preferencias y partida separadas). La captura controls-ui.png es CPU; no demuestra rendimiento ni acabado artístico.

@@ -1,10 +1,10 @@
 {
   "project": "EXOVANT 2950",
-  "checkpoint": "EXO-INFRA-005",
+  "checkpoint": "EXO-004-INPUT-001",
   "date": "2026-09-12",
   "global_goal": "Original 3D interplanetary soulslike based on the existing twelve-world preproduction plan",
-  "current_wave": "Operational development infrastructure and verified recovery",
-  "status": "OPERATIONAL_INFRASTRUCTURE_WITH_PENDING_EXTERNAL_VERIFICATION",
+  "current_wave": "EXO-004 input, controller navigation and persistent preferences",
+  "status": "PLAYABILITY_INCREMENT_LOCALLY_VALIDATED",
   "engine": "Godot 4.7.2.stable.official.ed1daf0bf",
   "production_engine_decision": "Unreal remains the plan's principal candidate; Godot is the executable prototype, not an irreversible replacement",
   "authority": [
@@ -28,7 +28,11 @@
     "two persistent outcomes",
     "basic rover controller",
     "versioned recoverable save",
-    "Blender portal import and traversable ramp"
+    "Blender portal import and traversable ramp",
+    "analog gamepad movement and camera",
+    "controller UI navigation and modal input boundaries",
+    "persisted keyboard mouse and gamepad-button remapping",
+    "dynamic control hints"
   ],
   "not_claimed": [
     "full game",
@@ -42,7 +46,7 @@
     "continuous worker availability"
   ],
   "next_workunit": "EXO-004",
-  "next_action": "EXO-004: complete the fresh-game route without debug and fix observed friction; verify first scheduled execution and retry queued Mem mirror separately.",
+  "next_action": "EXO-004-ROUTE-002: traverse fresh Ines-water-archive-ATLAS-choice-portal route through normal controls; attack out-of-order progression, death and reload; human and physical-controller playtest remain pending.",
   "evidence": [
     "evidence/gauntlet.json",
     "evidence/state-tests.json",
@@ -64,10 +68,13 @@
   },
   "automation": {
     "requested": true,
-    "status": "PROMPT_PREPARED_PENDING_REENABLE",
+    "status": "ENABLED_MAIN_PROMPT_READ_BACK",
     "cadence": "hourly",
     "first_scheduled_execution_verified": false,
-    "max_same_problem_iterations_before_reassessment": 6
+    "max_same_problem_iterations_before_reassessment": 6,
+    "current_invocation_received": true,
+    "current_invocation_code_execution": true,
+    "evidence": "evidence/continuation-readback.json"
   },
   "validation": {
     "state": {
@@ -88,9 +95,9 @@
       "suite": "native_scene_integration"
     },
     "native_gates": {
-      "run_id": "native-20260912T180737399878Z",
-      "executed_at": "2026-09-12T18:07:48.825862+00:00",
-      "source_digest": "47d2720c0805ce5f250eac0c2e22002fa5df37e149ec1090c624f663ff5847af",
+      "run_id": "native-20260912T182954429961Z",
+      "executed_at": "2026-09-12T18:30:10.107590+00:00",
+      "source_digest": "86c64744977a9c92d6c70385005de4d2eb112333542a6d67a65b74dfc47167f6",
       "gates": [
         {
           "gate": "import",
@@ -108,6 +115,11 @@
           "exit_code": 0
         },
         {
+          "gate": "input-tests",
+          "passed": true,
+          "exit_code": 0
+        },
+        {
           "gate": "smoke",
           "passed": true,
           "exit_code": 0
@@ -116,18 +128,26 @@
       "passed": true
     },
     "continuity": {
-      "current_receipt": "evidence/gates/INFRA-005-GATE-CONTROL.json",
+      "current_receipt": "evidence/gates/EXO-004-GATE-CONTROL.json",
       "tests": 34,
       "passed": true,
-      "source_digest": "47d2720c0805ce5f250eac0c2e22002fa5df37e149ec1090c624f663ff5847af",
-      "historical_receipt": "evidence/governance.json"
+      "source_digest": "86c64744977a9c92d6c70385005de4d2eb112333542a6d67a65b74dfc47167f6"
     },
     "learning_retrieval": "evidence/learning-retrieval.json",
     "ci_repair": "evidence/ci-repair-readback.json",
-    "infrastructure_control": "evidence/gates/INFRA-005-GATE-CONTROL.json",
-    "ci_current_source": "evidence/ci-contract-readback.json",
+    "infrastructure_control": "evidence/gates/EXO-004-GATE-CONTROL.json",
     "remote_restore": "evidence/remote-restore.json",
-    "drive_restore": "evidence/drive-restore.json"
+    "drive_restore": "evidence/drive-restore.json",
+    "input": {
+      "failed": 0,
+      "fresh_route": "spawn to Ines only; no teleports or progression injection",
+      "passed": 33,
+      "scope": "Synthetic physical InputEvents through engine; no attached-controller hardware or full human playthrough claim",
+      "suite": "native_input_and_preferences"
+    },
+    "ci_previous_checkpoint": "evidence/ci-contract-readback.json",
+    "ci_current_source": "Pending publication; use GitHub Actions run matching current git HEAD; do not apply old CI receipt to changed code",
+    "controls_ui": "evidence/controls-ui.json"
   },
   "cold_resume": {
     "source_archive_reimport": true,
@@ -135,13 +155,13 @@
     "note": "Fresh extraction without .godot cache; HUD-only adjustment additionally rendered and smoke-tested."
   },
   "source_repository": "https://github.com/rotprods/-",
-  "updated_at": "2026-09-12T18:18:44.932523+00:00",
+  "updated_at": "2026-09-12T18:33:35.269778+00:00",
   "learning": {
     "authority": "learning/hub",
     "scope": "project",
     "authority_level": "L2-persisted",
     "global_enforcement_claimed": false,
-    "event_count": 14,
+    "event_count": 16,
     "verified_events": [
       "LRN-EXO-20260912-CI-BOOTSTRAP-VERIFIED"
     ]
@@ -158,9 +178,11 @@
   },
   "project_contract": "_project_intelligence/PLAN.json",
   "pending": [
-    "Mem routing note: provider rate limit",
-    "First scheduled activation: not yet observed",
-    "Full human playthrough and production GPU qualification"
+    "Complete fresh-game route beyond Ines without debug",
+    "Human playthrough and physical-controller review",
+    "Mem routing note provider rate limit",
+    "Provider completion record for independent scheduled execution",
+    "Production GPU and Unreal qualification"
   ],
-  "last_run": "_project_intelligence/runs/INFRA-005-CONTRACT/closeout.json"
+  "last_run": "_project_intelligence/runs/EXO-004-INPUT-001/closeout.json"
 }

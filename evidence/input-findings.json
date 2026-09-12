@@ -1,0 +1,46 @@
+{
+  "run": "EXO-004-INPUT-001",
+  "source_digest": "86c64744977a9c92d6c70385005de4d2eb112333542a6d67a65b74dfc47167f6",
+  "executed_at": "2026-09-12T18:33:35.269778+00:00",
+  "findings": [
+    {
+      "id": "INPUT-01",
+      "observed": "Bindings fixed in world.gd; no player-facing remap or gamepad actions",
+      "resolution": "Dedicated validated desktop/gamepad preferences, controls UI and dynamic hints",
+      "evidence": "evidence/input-tests.json"
+    },
+    {
+      "id": "INPUT-02",
+      "observed": "Runtime-created ui_accept had only keyboard events; no initial menu focus",
+      "resolution": "Explicit controller UI mappings plus initial focus and separated modal handling",
+      "evidence": "evidence/input-tests.json"
+    },
+    {
+      "id": "INPUT-03",
+      "observed": "JSON reload and gamepad swap failed because membership/dictionary comparisons mixed float and int",
+      "resolution": "Reject fractional numbers then normalize integer identifiers before comparison",
+      "evidence": "evidence/input-tests.json"
+    },
+    {
+      "id": "INPUT-04",
+      "observed": "README described incorrect guard/dodge controls",
+      "resolution": "Documentation now points to Controls screen and actual defaults",
+      "evidence": "README.md"
+    }
+  ],
+  "implementation_errors_corrected": [
+    "KEY_MASK_CODE was not a Godot constant; corrected to verified KEY_CODE_MASK",
+    "Test variable bad required an explicit Dictionary type"
+  ],
+  "limits": [
+    "Synthetic InputEvents; no physical controller connected",
+    "Route tested from fresh spawn to Ines only",
+    "Existing scene-integration cases use controlled setup",
+    "No full human playthrough or AAA art/performance qualification"
+  ],
+  "sources": [
+    "https://docs.godotengine.org/en/stable/tutorials/ui/gui_navigation.html",
+    "https://docs.godotengine.org/en/stable/classes/class_inputmap.html",
+    "https://docs.godotengine.org/en/stable/classes/class_input.html"
+  ]
+}

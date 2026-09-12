@@ -21,7 +21,11 @@ python3 tools/bootstrap_godot.py --destination .tools
 .tools/Godot_v4.7.2-stable_linux.x86_64 --path .
 ```
 
-WASD movimiento · ratón cámara · Q objetivo · clic izquierdo ataque · clic derecho bloqueo · Shift esquiva · R cura · C salto · E interactúa · Escape pausa. Consultar el HUD y project.godot para asignaciones vigentes.
+WASD: movimiento · ratón: cámara · Q: fijar · clic: ataque ligero · F: fuerte · Shift: guardia · Espacio: esquiva · R: cura · C: salto · E: interactuar · Escape: pausa.
+
+Mando: stick izquierdo mueve, derecho orienta cámara; RB/R1 ataca, Y/Triángulo golpe fuerte, LB/L1 guardia, B/Círculo esquiva, X/Cuadrado cura, A/Cruz interactúa, L3 salta, R3 fija y Start pausa. Cruceta y A/Cruz navegan los menús.
+
+**Controles** permite remapear teclado, botones de ratón y botones de mando. Las teclas ocupadas se rechazan; los botones de mando ocupados intercambian acciones. Las preferencias se guardan aparte de la campaña; Escape/Start y la navegación de menús permanecen disponibles. El HUD muestra la asignación vigente.
 
 ## Comprobar
 
@@ -31,6 +35,6 @@ python3 tools/project_control.py check
 python3 tests/run_gauntlet.py --godot .tools/Godot_v4.7.2-stable_linux.x86_64
 ```
 
-Los gates cubren importación, estado/guardado, escena nativa y smoke. La integración prepara situaciones controladas; no sustituye una partida humana completa ni un perfil GPU. Los checks de continuidad rechazan eventos alterados, referencias rotas y pruebas ligadas a otras fuentes.
+Los gates cubren importación, estado/guardado, escena nativa, entrada/preferencias y smoke. La integración prepara situaciones controladas; no sustituye una partida humana completa ni un perfil GPU. Los checks de continuidad rechazan eventos alterados, referencias rotas y pruebas ligadas a otras fuentes.
 
 El plan propone 12 mundos, 84 misiones, 24 armas, 10 vehículos y 318 filas de assets. Son objetivos de producción; el prototipo implementa una cadena condensada de Terra. Siguiente incremento: EXO-004, ruta completa y usabilidad. Ver RIGHTS.md para procedencia y distribución.

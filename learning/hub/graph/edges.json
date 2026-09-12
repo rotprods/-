@@ -1,5 +1,55 @@
 [
   {
+    "from": "LRN-EXO-20260912-INPUT-BOUNDARY",
+    "to": "EXO-004-INPUT-001",
+    "type": "OCCURRED_IN_CHAT"
+  },
+  {
+    "from": "LRN-EXO-20260912-INPUT-BOUNDARY",
+    "to": "codex-root",
+    "type": "EXECUTED_BY"
+  },
+  {
+    "from": "LRN-EXO-20260912-INPUT-BOUNDARY",
+    "to": "evidence/input-tests.json",
+    "type": "EVIDENCED_BY"
+  },
+  {
+    "from": "LRN-EXO-20260912-INPUT-BOUNDARY",
+    "to": "evidence/input-findings.json",
+    "type": "EVIDENCED_BY"
+  },
+  {
+    "from": "LRN-EXO-20260912-INPUT-BOUNDARY",
+    "to": "input_ui_gameplay_boundary",
+    "type": "INSTANCE_OF"
+  },
+  {
+    "from": "LRN-EXO-20260912-INPUT-PREFERENCES",
+    "to": "EXO-004-INPUT-001",
+    "type": "OCCURRED_IN_CHAT"
+  },
+  {
+    "from": "LRN-EXO-20260912-INPUT-PREFERENCES",
+    "to": "codex-root",
+    "type": "EXECUTED_BY"
+  },
+  {
+    "from": "LRN-EXO-20260912-INPUT-PREFERENCES",
+    "to": "evidence/input-tests.json",
+    "type": "EVIDENCED_BY"
+  },
+  {
+    "from": "LRN-EXO-20260912-INPUT-PREFERENCES",
+    "to": "evidence/input-findings.json",
+    "type": "EVIDENCED_BY"
+  },
+  {
+    "from": "LRN-EXO-20260912-INPUT-PREFERENCES",
+    "to": "json_numeric_identifier_normalization",
+    "type": "INSTANCE_OF"
+  },
+  {
     "from": "LRN-EXO-20260912-CI-BOOTSTRAP-VERIFIED",
     "to": "INFRA-005-CONTRACT",
     "type": "OCCURRED_IN_CHAT"

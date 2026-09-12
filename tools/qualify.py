@@ -12,7 +12,7 @@ def qualify(root,task,engine):
     receipts=[]
     for gate,args in gates:
         start=time.monotonic();run=subprocess.run([sys.executable,*args],cwd=root,capture_output=True,text=True,timeout=300)
-        text=run.stdout+run.stderr;log='evidence/'+gate.lower()+'.log';(root/log).write_text(text)
+        text=run.stdout+run.stderr;log='evidence/gates/'+task+'-'+gate+'.log';(root/log).parent.mkdir(exist_ok=True);(root/log).write_text(text)
         ok=run.returncode==0
         record(root/'telemetry/tool_calls.jsonl',tool='qualify.'+gate,run_id=task,status='returned' if ok else 'error',duration_ms=round((time.monotonic()-start)*1000),task_outcome='verified_success' if ok else 'verified_failure')
         receipt={'gate_id':gate,'task_id':task,'passed':ok,'executed_at':datetime.datetime.now(datetime.timezone.utc).isoformat(),'source_digest':source_digest(root),'evidence_refs':[log],'reviewer':'automated-local-runner','command':['python3',*args]}

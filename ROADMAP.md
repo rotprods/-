@@ -14,7 +14,7 @@
 | Unidad | Fase | Dependencias | Estado |
 |---|---|---|---|
 | INFRA-005 Base operativa recuperable y proyecciones conectadas | P0 |  | in_review |
-| EXO-004 Complete playability route, input and guidance | P1 |  | planned |
+| EXO-004 Complete playability route, input and guidance | P1 |  | in_review |
 | EXO-005 Player combat and animation pass | P2 | EXO-004 | planned |
 | EXO-006 Portal asset production pass | P2 |  | planned |
 | EXO-007 Terra art direction proof | P2 | EXO-004, EXO-006 | planned |

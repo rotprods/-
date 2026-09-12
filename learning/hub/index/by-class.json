@@ -2,6 +2,10 @@
   "authority-defect": [
     "agents/codex-root/chats/exovant-persistence-20260912/events/LRN-EXO-20260912-SCHEDULER.json"
   ],
+  "correction": [
+    "agents/codex-root/chats/EXO-004-INPUT-001/events/LRN-EXO-20260912-INPUT-BOUNDARY.json",
+    "agents/codex-root/chats/EXO-004-INPUT-001/events/LRN-EXO-20260912-INPUT-PREFERENCES.json"
+  ],
   "failure": [
     "agents/codex-root/chats/INFRA-005-CONTRACT/events/LRN-EXO-20260912-CI-BOOTSTRAP.json",
     "agents/codex-root/chats/exovant-persistence-20260912/events/LRN-EXO-20260912-COLLISION.json",

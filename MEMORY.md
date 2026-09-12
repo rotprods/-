@@ -20,3 +20,5 @@ Leer `learning/README.md` y recuperar el evento por ID antes de reutilizar una c
 Preferencias: español claro; ejecutar trabajo autorizado; máximo detalle artístico dentro de una producción verificable; no reiniciar la planificación; diseño original inspirado en cualidades de exploración, atmósfera y combate, sin copiar personajes, mapas o assets de otros juegos. Mantener doce mundos como horizonte y una región representativa como siguiente demostración.
 
 CI: recuperar LRN-EXO-20260912-CI-BOOTSTRAP y CI-BOOTSTRAP-VERIFIED antes de cambiar descargas. Un 403 real se corrigió fijando el release oficial y verificando bytes; siete tests adversariales y CI independiente sostienen L3 del mecanismo acotado. Total actual: 14 eventos; solo uno L3.
+
+Entradas: recuperar LRN-EXO-20260912-INPUT-BOUNDARY y INPUT-PREFERENCES. No asumir que el mapa de juego crea navegación UI ni que JSON conserva el tipo entero en comparaciones. Testear eventos físicos sintéticos atravesando UI/escena y recargar preferencias; no confundirlo con probar un mando conectado.

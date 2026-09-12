@@ -25,3 +25,7 @@ Añadidos PLAN con 6 objetivos, 6 fases, 17 unidades y 10 gates; GOALS/ROADMAP g
 ## Verificación externa de INFRA-005
 
 Commit d8fdc7c: CI success, clon limpio con integridad/control/native PASS. Drive: snapshot descargado de nuevo, SHA256 idéntico y 147 entradas del manifiesto verificadas. Contratos de Linear leídos: 6 hitos, 17 tareas. Índices de estudio y aprendizaje leídos tras escritura. Mem sigue pendiente por rate limit tras dos intentos; queda en cola. La primera ejecución programada aún no está demostrada.
+
+## EXO-004-INPUT-001 · Controles y jugabilidad inicial
+
+Implementados movimiento y cámara analógicos, botones de combate, navegación/foco de menús, remapeo persistente y ayudas dinámicas. Corregidos el rechazo de preferencias JSON válidas, la comparación de botones tras recarga y la documentación equivocada de guardia/esquiva. 34 tests Python + 26 estado + 19 integración + 33 input pasan; cinco gates nativos. Recorrido real por inputs desde spawn hasta Inés, sin teletransporte ni avance de estado artificial. UI renderizada en Mesa a 1280×720 y comprobada dentro del viewport; no aprobación artística AAA. EXO-004 permanece en revisión: falta la ruta completa y prueba humana/con mando físico. Mem volvió a limitar solicitudes; cola conserva el tercer intento sin insistir.

@@ -1,0 +1,13 @@
+{
+  "run_id": "EXO-004-INPUT-001",
+  "task_id": "EXO-004",
+  "base_commit": "bcb8e9ba17d6663a3c77db9ee4686ba401b805ce",
+  "read_set": {
+    "AGENTS.md": "b6a5901c4f9eca7e5a44739be650a2c3d45d58b88fc4973c2f29d34d8bb8cbbc",
+    "MEMORY.md": "172a383e2a9bf1d0f7641e60e4c063722774d053692334b1d00d12f9e9aa7608",
+    "HANDOFF.md": "bf9022a309788537056438317195d4d3644a23ce57de4820254f48c8109cad2f",
+    "_project_intelligence/STATE.json": "7cb1a1aff4e60ed641c2edaa096061ae6c255a0fbef682444c03d6a30308fd17",
+    "_project_intelligence/PLAN.json": "b3aa8987e7eba5f7ee0d628735cc620eeef8138d559e0270d5875ebcb9d5eb51"
+  },
+  "started_at": "2026-09-12T18:20:35.053469+00:00"
+}

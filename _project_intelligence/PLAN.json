@@ -320,7 +320,7 @@
         "G-PLAY"
       ],
       "depends_on": [],
-      "status": "planned",
+      "status": "in_review",
       "owner_role": "gameplay_engineer",
       "acceptance": [
         "Start a fresh game, walk every route without teleports/debug progression, solve puzzle, win or lose/recover, decide and return. Record friction and fix blockers. Add gamepad/remapping with parity checks."
@@ -330,10 +330,26 @@
         "GATE-NATIVE",
         "GATE-PLAY"
       ],
-      "evidence": [],
+      "evidence": [
+        "evidence/gates/EXO-004-GATE-CONTROL.json",
+        "evidence/gates/EXO-004-GATE-NATIVE.json"
+      ],
       "estimate_person_hours": null,
       "estimate_status": "decompose and estimate when ready; global slice baseline in design WBS",
-      "max_failed_iterations": 6
+      "max_failed_iterations": 6,
+      "completed_checkpoints": [
+        {
+          "id": "EXO-004-INPUT-001",
+          "scope": "Gamepad, persisted remapping, initial NPC route and input boundaries",
+          "evidence": "evidence/input-tests.json"
+        }
+      ],
+      "pending_verification": [
+        "Full fresh-game route from Ines through water/archive/ATLAS/consequence/portal",
+        "Human playability and physical controller parity",
+        "Sensitivity/invert-Y and accessibility tuning not yet implemented"
+      ],
+      "closeout": "_project_intelligence/runs/EXO-004-INPUT-001/closeout.json"
     },
     {
       "id": "EXO-005",

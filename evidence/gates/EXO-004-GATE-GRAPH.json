@@ -1,0 +1,16 @@
+{
+  "gate_id": "GATE-GRAPH",
+  "task_id": "EXO-004",
+  "passed": true,
+  "executed_at": "2026-09-12T18:29:54.278614+00:00",
+  "source_digest": "b5da1a0aceadf41253ecbeb467be6004fb29158a1b8d0a304687c6276d531523",
+  "evidence_refs": [
+    "evidence/gates/EXO-004-GATE-GRAPH.log"
+  ],
+  "reviewer": "automated-local-runner",
+  "command": [
+    "python3",
+    "tools/studio.py",
+    "validate"
+  ]
+}

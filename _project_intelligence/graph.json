@@ -4117,6 +4117,24 @@
       "artifact_path": "docs/ART_PRODUCTION.md"
     },
     {
+      "id": "LRN-EXO-20260912-INPUT-BOUNDARY",
+      "type": "learning",
+      "label": "input_ui_gameplay_boundary",
+      "epistemic": "fact",
+      "status": "persisted",
+      "provenance": "learning/hub/agents/codex-root/chats/EXO-004-INPUT-001/events/LRN-EXO-20260912-INPUT-BOUNDARY.json",
+      "artifact_path": "learning/hub/agents/codex-root/chats/EXO-004-INPUT-001/events/LRN-EXO-20260912-INPUT-BOUNDARY.json"
+    },
+    {
+      "id": "LRN-EXO-20260912-INPUT-PREFERENCES",
+      "type": "learning",
+      "label": "json_numeric_identifier_normalization",
+      "epistemic": "fact",
+      "status": "persisted",
+      "provenance": "learning/hub/agents/codex-root/chats/EXO-004-INPUT-001/events/LRN-EXO-20260912-INPUT-PREFERENCES.json",
+      "artifact_path": "learning/hub/agents/codex-root/chats/EXO-004-INPUT-001/events/LRN-EXO-20260912-INPUT-PREFERENCES.json"
+    },
+    {
       "id": "LRN-EXO-20260912-CI-BOOTSTRAP-VERIFIED",
       "type": "learning",
       "label": "unqualified_dependency_bootstrap",
@@ -4310,7 +4328,7 @@
       "type": "workunit",
       "label": "Complete playability route, input and guidance",
       "epistemic": "proposal",
-      "status": "planned",
+      "status": "in_review",
       "provenance": "_project_intelligence/PLAN.json",
       "artifact_path": "_project_intelligence/PLAN.json"
     },
@@ -7492,6 +7510,30 @@
       "source": "mesa",
       "target": "hardware",
       "type": "CONSTRAINS"
+    },
+    {
+      "id": "project:exovant::LEARNS::LRN-EXO-20260912-INPUT-BOUNDARY",
+      "source": "project:exovant",
+      "target": "LRN-EXO-20260912-INPUT-BOUNDARY",
+      "type": "LEARNS"
+    },
+    {
+      "id": "LRN-EXO-20260912-INPUT-BOUNDARY::CHECKED_BY::governance",
+      "source": "LRN-EXO-20260912-INPUT-BOUNDARY",
+      "target": "governance",
+      "type": "CHECKED_BY"
+    },
+    {
+      "id": "project:exovant::LEARNS::LRN-EXO-20260912-INPUT-PREFERENCES",
+      "source": "project:exovant",
+      "target": "LRN-EXO-20260912-INPUT-PREFERENCES",
+      "type": "LEARNS"
+    },
+    {
+      "id": "LRN-EXO-20260912-INPUT-PREFERENCES::CHECKED_BY::governance",
+      "source": "LRN-EXO-20260912-INPUT-PREFERENCES",
+      "target": "governance",
+      "type": "CHECKED_BY"
     },
     {
       "id": "project:exovant::LEARNS::LRN-EXO-20260912-CI-BOOTSTRAP-VERIFIED",

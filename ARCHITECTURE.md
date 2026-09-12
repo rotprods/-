@@ -38,3 +38,7 @@ flowchart TD
   E --> H[Aprendizaje y siguiente unidad]
   H --> B
 ```
+
+## Entrada y preferencias
+
+controls.gd administra un mapa validado de acciones: escritorio y mando independientes, sticks con zona muerta, navegación UI separada, Escape/Start reservados. JSON local versionado y escritura temporal antes de renombrar; error de escritura conserva el mapa vigente y corrupción recupera defaults. world.gd captura remapeo/pausa antes de GUI; player.gd usa acciones de juego y frena simulación durante modales. tests/test_input.gd entra por Input.parse_input_event, ejecuta física y serialización reales y se integra en CI. No hay controlador físico cualificado; ejes/sensibilidad/inversión todavía no son configurables.

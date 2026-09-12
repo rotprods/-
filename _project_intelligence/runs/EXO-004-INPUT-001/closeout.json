@@ -1,0 +1,11 @@
+{
+  "task_id": "EXO-004",
+  "outcome": "checkpoint",
+  "evidence": [
+    "evidence/gates/EXO-004-GATE-CONTROL.json",
+    "evidence/gates/EXO-004-GATE-NATIVE.json"
+  ],
+  "source_digest": "86c64744977a9c92d6c70385005de4d2eb112333542a6d67a65b74dfc47167f6",
+  "next_action": "EXO-004-ROUTE-002: traverse fresh Ines-water-archive-ATLAS-choice-portal route through normal controls; attack out-of-order progression, death and reload; human and physical-controller playtest remain pending.",
+  "executed_at": "2026-09-12T18:33:35.423812+00:00"
+}

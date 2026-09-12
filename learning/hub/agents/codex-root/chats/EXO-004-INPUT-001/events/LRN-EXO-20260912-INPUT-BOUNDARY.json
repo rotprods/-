@@ -1,0 +1,80 @@
+{
+  "_meta": {
+    "content_digest": "ff795ceb8045c91c9aaee732d7e4ce06e760a401e62d9f2bd4e503b47fe2c2dd",
+    "persisted_at": "2026-09-12T18:33:35.297482Z"
+  },
+  "analysis": {
+    "confidence": 0.9,
+    "family_or_pattern": "input_ui_gameplay_boundary",
+    "generalization_boundary": "Godot runtime-created InputMap in EXOVANT; synthetic inputs prove engine behavior, not physical device compatibility.",
+    "mechanism": "A controller mapping for gameplay does not populate UI navigation or assign focus. UI must consume modal events while gameplay polls remain explicitly gated.",
+    "non_applicable_cases": [
+      "Unobserved controller hardware",
+      "Other engine versions without requalification"
+    ],
+    "symptom": "input_ui_gameplay_boundary"
+  },
+  "authority_after": "L2-persisted",
+  "authority_before": "L1-retrieved",
+  "event_class": "correction",
+  "evidence": [
+    {
+      "claim": "33 native input/preference checks passed after corrections",
+      "kind": "test",
+      "ref": "evidence/input-tests.json"
+    },
+    {
+      "claim": "Observed failures and their bounded fixes recorded",
+      "kind": "log",
+      "ref": "evidence/input-findings.json"
+    }
+  ],
+  "knowledge_relation": {
+    "relation": "NEW",
+    "targets": []
+  },
+  "learning_id": "LRN-EXO-20260912-INPUT-BOUNDARY",
+  "promotion": {
+    "reason": "Retain regressions in the native Gauntlet and CI",
+    "target_ref": "tests/test_input.gd",
+    "target_type": "test"
+  },
+  "provenance": {
+    "agent_id": "codex-root",
+    "chat_id": "EXO-004-INPUT-001",
+    "chat_id_source": "session-alias",
+    "run_id": "EXO-004-INPUT-001"
+  },
+  "revalidation_condition": "Input subsystem, preference schema, platform or Godot version changes",
+  "scope": {
+    "artifacts": [
+      "scripts/controls.gd",
+      "scripts/world.gd",
+      "tests/test_input.gd"
+    ],
+    "level": "project",
+    "project": "EXOVANT 2950",
+    "repository": "rotprods/-"
+  },
+  "status": "persisted",
+  "timestamp": "2026-09-12T18:33:35.269778+00:00",
+  "unknowns": [
+    "Independent future-agent adoption",
+    "Physical controller drivers and feel"
+  ],
+  "verification": {
+    "adversarial_review": {
+      "evidence_ref": "tests/test_input.gd",
+      "notes": "Corrupt and duplicated preferences, reserved key, failed write, modal leakage, stick drift",
+      "status": "pass"
+    },
+    "anti_recurrence_control": "tests/test_input.gd",
+    "retrieval_test": {
+      "status": "pending"
+    },
+    "runtime_test": {
+      "evidence_ref": "evidence/input-tests.json",
+      "status": "pass"
+    }
+  }
+}

@@ -1,0 +1,36 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+PASS Missing preferences load complete defaults
+PASS Reconfiguration does not duplicate input bindings
+PASS Free physical keyboard binding saves
+PASS Remap survives a new settings instance
+PASS Duplicate keyboard binding preserves saved controls
+PASS Escape cannot be stolen from menus
+PASS Occupied gamepad button swaps both actions without losing one
+PASS Fractional input codes are rejected
+PASS Persisted reserved keys are rejected too
+PASS Write failure keeps previous active configuration
+PASS Corrupt preferences recover safe defaults
+PASS User can persist restored defaults
+PASS New-game menu has initial keyboard/controller focus
+PASS Controller D-pad navigates menu choices
+PASS Controller accepts title without leaking an attack into play
+PASS Stick drift inside deadzone does not move player
+PASS Analog stick preserves partial walking speed
+PASS Fresh-spawn walk and controller interaction start Ines mission
+PASS Dialogue retains controller focus
+PASS Modal freezes player/enemies and blocks combat input
+PASS Dodge entry point also refuses modal input
+PASS Controller cancel closes dialogue without leaking a dodge
+PASS Right stick rotates gameplay camera
+PASS Start pauses gameplay
+PASS Scrollable remapping menu has focus
+PASS Physical key capture persists remap without unpausing
+PASS HUD uses saved keyboard mapping
+PASS Keyboard remap preserves independent controller binding
+PASS Escape cancels capture and keeps controls menu open
+PASS Escape remains a route back to gameplay
+PASS Remapped physical interaction works in the scene
+PASS Controller attack executes combat commitment
+PASS Controller dodge executes outside menus
+{"failed":0,"fresh_route":"spawn to Ines only; no teleports or progression injection","passed":33,"scope":"Synthetic physical InputEvents through engine; no attached-controller hardware or full human playthrough claim","suite":"native_input_and_preferences"}

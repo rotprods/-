@@ -5,11 +5,13 @@
       "id": "SYNC-MEM-EXOVANT",
       "provider": "Mem",
       "status": "pending_rate_limit",
-      "attempts_observed": 2,
+      "attempts_observed": 3,
       "last_error": "Mem is rate-limiting requests",
       "action": "Create routing note only after read/search reconciliation; use stable ID from private registry",
       "blocking_game_development": false,
-      "retry_policy": "at most one attempt per scheduled activation; no tight retry loop"
+      "retry_policy": "at most one attempt per scheduled activation; no tight retry loop",
+      "last_attempt_at": "2026-09-12T18:33:35.269778+00:00",
+      "last_attempt_run": "EXO-004-INPUT-001"
     }
   ]
 }
