@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "project": "EXOVANT 2950",
+  "world_id": "leviathan",
+  "claim_id": "CLM-W10-WORLD-LEVIATHAN-001",
+  "generator": {
+    "path": "art_source/worlds/leviathan/tools/build_master_scene.py",
+    "git_blob_sha": "7bedbbf3192f5e7a3d0f7327565fa2d3c8d6d91b"
+  },
+  "authority_resync": {
+    "main_head_observed": "196ef814fdc845ec797979906d01dc25009217c7",
+    "change": "AGENTS.md ownership-preflight policy only",
+    "owned_path_collision": false,
+    "reconciliation": "Current claim already satisfies the promoted ownership preflight; no LEVIATHAN path overlap."
+  },
+  "source_master": {
+    "project_id": "2577a7b6-ebd7-4d31-a645-620e4b73a95d",
+    "normalized_revision": 3,
+    "scene_sequence": 0,
+    "object_count": 125,
+    "mesh_count": 90,
+    "material_count": 11,
+    "semantic_fingerprint_excluding_provider_hf_id": "207649cb10842785dd23c2f3823ec654e265c9bcfbd602d460b067266cbccf9f",
+    "semantic_payload_bytes": 33636
+  },
+  "cold_project": {
+    "project_id": "37a931c7-f2e6-46bc-9be0-26077e5de1c1",
+    "revision": 1,
+    "scene_sequence": 0,
+    "object_count": 125,
+    "mesh_count": 90,
+    "material_count": 11,
+    "human_reference_m": 1.85,
+    "soma_arena_diameter_m": 58.0,
+    "planet_radius": "BLOCKED_CANON_UNKNOWN",
+    "blend_size_bytes": 4035090,
+    "blend_etag": "ddea3236213aa2284cf9c7baf2c372ad",
+    "glb_size_bytes": 4407196,
+    "glb_etag": "b2338515f69f18c7c45b5132e443f502",
+    "semantic_fingerprint_excluding_provider_hf_id": "207649cb10842785dd23c2f3823ec654e265c9bcfbd602d460b067266cbccf9f",
+    "semantic_payload_bytes": 33636
+  },
+  "provider_ephemeral_fields": {
+    "excluded_from_semantic_fingerprint": ["hf_id"],
+    "reason": "3D Jutsu assigns per-project object IDs; they are provider identity, not scene semantics."
+  },
+  "drift_found_and_repaired": [
+    {
+      "object": "LGT_TISSUE_BOUNCE",
+      "master_revision_2_state": "POINT light retained stale rotation from earlier AREA-light state",
+      "generator_state": "POINT light rotation 0,0,0",
+      "resolution": "Normalized master revision 3 to generator state; rotation has no POINT-light semantic value."
+    },
+    {
+      "objects": [
+        "R2_PARASITE_GARDENER_PROXY_0",
+        "R2_PARASITE_GARDENER_PROXY_1",
+        "R2_PARASITE_GARDENER_PROXY_2"
+      ],
+      "master_revision_2_state": "proxy_only metadata absent",
+      "generator_state": "proxy_only=true",
+      "resolution": "Normalized master revision 3 to preserve non-final truth classification."
+    }
+  ],
+  "result": {
+    "status": "PASS_DETERMINISTIC_SEMANTIC_REBUILD",
+    "byte_identical_binary_required": false,
+    "semantic_scene_match": true,
+    "w10_blend_003": "DONE",
+    "note": "Binary .blend/GLB etags are not used as the determinism criterion because provider/project metadata and serialization may differ. The canonical scene fingerprint, scale, collections, geometry counts, transforms, material assignments, cameras/lights and truth metadata match after excluding provider-generated hf_id."
+  }
+}
