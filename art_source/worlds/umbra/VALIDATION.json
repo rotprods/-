@@ -11,6 +11,20 @@
     "scale_length": 1.0,
     "render_engine": "BLENDER_EEVEE"
   },
+  "coordination": {
+    "role": "WORLD_OWNER",
+    "branch": "art/world-umbra-001",
+    "fleet_epoch": 1,
+    "main_reconciled_sha": "f78bfdc8bd7b2f6ab52b45d39babcc1589ab3918",
+    "reconciliation_merge_sha": "455bf6419815a718641636cbb37723047863cdef",
+    "linear_issue": "ROT-119",
+    "draft_pr": 16,
+    "owner_ack_issue": 7,
+    "owner_ack_comment_id": 5648349781,
+    "registry_state_observed_before_ack_application": "reserved / ack=null",
+    "registry_ack_application": "PENDING_INTEGRATOR_READBACK",
+    "final_diff_at_reconciliation": "7 UMBRA-owned paths only; branch 0 commits behind main at reconciliation"
+  },
   "operations": [
     {
       "id": "umbra-bootstrap-inspect-001",
@@ -104,11 +118,37 @@
       "reflector_masts": 4,
       "caravan_chassis": 5,
       "semantic_equivalence_to_primary_revision": "PASS"
+    },
+    {
+      "id": "github-actions-run-34716069512",
+      "type": "ci",
+      "status": "failed",
+      "head_sha": "455bf6419815a718641636cbb37723047863cdef",
+      "runner_id": 1000060659,
+      "runner": "GitHub Actions / ubuntu-24.04",
+      "unit_tests": "PASS_75_OF_75",
+      "project_control_check": "FAIL_MANIFEST_DRIFT_ONLY",
+      "drift_paths": [
+        "art_source/coordination/ART-UMBRA-001-OWNERSHIP.md",
+        "art_source/worlds/umbra/ASSET_MANIFEST.json",
+        "art_source/worlds/umbra/HANDOFF.md",
+        "art_source/worlds/umbra/TASKS.md",
+        "art_source/worlds/umbra/VALIDATION.json",
+        "art_source/worlds/umbra/WORLD_BIBLE.md",
+        "art_source/worlds/umbra/generate_wave0.py"
+      ],
+      "godot_native_steps": "SKIPPED_AFTER_CONTINUITY_FAILURE",
+      "classification": "REAL_CI_FAILURE_GENERATED_MANIFEST_STALE",
+      "required_fix": "refresh generated root MANIFEST.json exactly after final UMBRA text/content changes, then rerun through normal PR CI"
     }
   ],
   "gates": {
     "canon_separation": "PASS",
-    "claim_collision": "PASS_AT_OBSERVED_TIME",
+    "claim_collision": "PASS_AT_RESERVATION_AND_FLEET_IMPORT",
+    "fleet_owner_ack_published": "PASS",
+    "fleet_registry_ack_readback": "PENDING_INTEGRATOR",
+    "branch_resync": "PASS_RECONCILED_TO_MAIN_F78_NO_FORCE",
+    "owned_diff_only": "PASS_7_UMBRA_PATHS_AT_RECONCILIATION",
     "metric_scale": "PASS",
     "object_scale": "PASS",
     "zero_dimension_mesh": "PASS",
@@ -125,7 +165,9 @@
     "engine_import": "BLOCKED_NOT_EXECUTED",
     "gpu_performance": "BLOCKED_NOT_QUALIFIED",
     "human_art_review": "PENDING",
-    "branch_resync": "DIVERGED_MAIN_RECONCILIATION_REQUIRED"
+    "ci_unit_tests": "PASS_75_OF_75",
+    "ci_continuity": "FAIL_MANIFEST_REFRESH_REQUIRED",
+    "ci_native_godot": "NOT_EXECUTED_DUE_CONTINUITY_GATE"
   },
-  "overall": "LOCALLY_VALIDATED_REPRODUCIBLE_BLOCKOUT_NOT_PRODUCTION_DONE"
+  "overall": "LOCALLY_VALIDATED_REPRODUCIBLE_BLOCKOUT_WITH_OPEN_CONTINUITY_AND_PRODUCTION_GATES"
 }
