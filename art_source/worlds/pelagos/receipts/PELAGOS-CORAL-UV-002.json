@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "checkpoint": "PELAGOS-CORAL-UV-002",
+  "task_id": "PEL/TECH/021",
+  "world_id": "pelagos",
+  "claim_id": "CLM-PEL-WORLD-001",
+  "agent_id": "AGENT-PELAGOS-01",
+  "status": "IN_PROGRESS",
+  "remote_3d": {
+    "project_id": "39930c08-62bb-4034-b35d-70d0ce51c9d9",
+    "revision": 24,
+    "successful_operation": "pelagos.coral.uv-foundation.v2",
+    "superseded_operation": "pelagos.coral.uv-foundation.v1"
+  },
+  "claim": "All 13 unique shared coral source meshes now contain non-empty deterministic UV0 data independent of object visibility. This is a tiled structural delivery foundation, not final hero UV/bake approval.",
+  "projection": {
+    "method": "dominant-axis box projection per polygon at mesh-data level",
+    "tile_metres": 2.0,
+    "visibility_independent": true,
+    "linked_instances_inherit_source_uv": true,
+    "purpose": "portable runtime/material foundation for deterministic procedural coral"
+  },
+  "mesh_gate": {
+    "unique_source_meshes": 13,
+    "all_have_uv_data": true,
+    "all_uv_values_finite": true,
+    "loop_parity": [
+      {"mesh":"PEL_CORAL_DAMAGED_LOD0_MESH","mesh_loops":780,"uv_loops":780},
+      {"mesh":"PEL_CORAL_DAMAGED_LOD1_MESH","mesh_loops":144,"uv_loops":144},
+      {"mesh":"PEL_CORAL_DAMAGED_LOD2_MESH","mesh_loops":36,"uv_loops":36},
+      {"mesh":"PEL_CORAL_MATURE_LOD0_MESH","mesh_loops":1860,"uv_loops":1860},
+      {"mesh":"PEL_CORAL_MATURE_LOD1_MESH","mesh_loops":336,"uv_loops":336},
+      {"mesh":"PEL_CORAL_MATURE_LOD2_MESH","mesh_loops":108,"uv_loops":108},
+      {"mesh":"PEL_CORAL_MEMORY_NODE_MESH","mesh_loops":240,"uv_loops":240},
+      {"mesh":"PEL_CORAL_RECOVERING_LOD0_MESH","mesh_loops":2160,"uv_loops":2160},
+      {"mesh":"PEL_CORAL_RECOVERING_LOD1_MESH","mesh_loops":384,"uv_loops":384},
+      {"mesh":"PEL_CORAL_RECOVERING_LOD2_MESH","mesh_loops":108,"uv_loops":108},
+      {"mesh":"PEL_CORAL_YOUNG_LOD0_MESH","mesh_loops":180,"uv_loops":180},
+      {"mesh":"PEL_CORAL_YOUNG_LOD1_MESH","mesh_loops":48,"uv_loops":48},
+      {"mesh":"PEL_CORAL_YOUNG_LOD2_MESH","mesh_loops":36,"uv_loops":36}
+    ]
+  },
+  "incident": {
+    "first_attempt": "Smart Project operator created valid UV on visible LOD0 meshes but hidden LOD1/LOD2 sources retained zero-length UV data in headless context.",
+    "control": "replace visibility-dependent bpy UV operator with deterministic direct mesh-data projection",
+    "result": "PASS"
+  },
+  "pending": [
+    "hero-specific seam review where unique unwrap is justified",
+    "texel density acceptance by asset tier",
+    "bake validation",
+    "final material application and engine sampler behavior",
+    "mip/texture memory profile",
+    "engine import and LOD switching",
+    "human art review"
+  ],
+  "reason_not_done": "PEL/TECH/021 covers more than UV presence; final texel-density/bake/material/runtime validation remains open."
+}
