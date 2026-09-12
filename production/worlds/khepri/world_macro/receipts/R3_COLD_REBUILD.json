@@ -1,0 +1,9 @@
+{
+  "claim_id": "CLM-KHEPRI-WMACRO-001",
+  "master": {"project_id": "040f0c45-83a7-483c-9ee7-1e31c640a587", "revision": 3, "blend_bytes": 1357838, "glb_bytes": 703040, "semantic_sha256": "7d80db30181cde1bded58d357384095c07cce0d2ca65e1b728b841aa93b252ca"},
+  "cold": {"project_id": "4c01fdbb-7093-4229-9a49-8237583280bc", "optimized_revision": 2, "blend_bytes": 1357838, "glb_bytes": 703040, "semantic_sha256": "7d80db30181cde1bded58d357384095c07cce0d2ca65e1b728b841aa93b252ca"},
+  "passed": true,
+  "truth_state": "LOCALLY_VALIDATED_SEMANTIC_REPRODUCIBILITY",
+  "binary_identity_claimed": false,
+  "human_art_approval_claimed": false
+}
