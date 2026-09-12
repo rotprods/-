@@ -1,0 +1,103 @@
+{
+  "project": "EXOVANT 2950",
+  "world": "VANTA",
+  "branch": "art/world-vanta-001",
+  "linear_issue": "ROT-114",
+  "remote_blender": {
+    "provider": "Higgsfield 3D Jutsu",
+    "project_id": "c82188b1-afdc-43f2-828a-5f0e98291f83",
+    "project_url": "https://higgsfield.ai/3d-jutsu/c82188b1-afdc-43f2-828a-5f0e98291f83",
+    "blender_version": "5.2.0 LTS",
+    "revision": 2,
+    "scene_sequence": 0,
+    "operations": [
+      {
+        "id": "vanta-world-blockout-001",
+        "status": "failed",
+        "failure": "scene.world was None in the initial empty project; no revision committed"
+      },
+      {
+        "id": "vanta-world-blockout-002",
+        "status": "succeeded",
+        "revision_after": 1,
+        "objects": 255,
+        "meshes": 245,
+        "materials": 8,
+        "collections": 15,
+        "terrain_cells": 36,
+        "map_footprint_m": [24000, 24000],
+        "arena_diameter_m": 72
+      },
+      {
+        "id": "vanta-blockout-audit-001",
+        "status": "succeeded",
+        "revision_checked": 1,
+        "visible_bounds_m": {
+          "min": [-12000, -12000, -32],
+          "max": [12000, 12000, 667]
+        },
+        "checks": {
+          "PORT_UNION_HALL_dimensions_m": [520, 360, 170],
+          "FERRUM_ARENA_DECK_dimensions_m": [72, 72, 24],
+          "RING_DRYDOCK_SPINE_dimensions_m": [2200, 180, 110]
+        }
+      },
+      {
+        "id": "vanta-silhouette-targets-001",
+        "status": "succeeded",
+        "revision_after": 2,
+        "scene_objects": 388,
+        "ferrum_named_parts": 43,
+        "ferrum_target_height_m": 30,
+        "vehicle": "DRAV_TUG",
+        "enemy_targets": ["SHIPYARD_COLLECTOR", "RIVET_SWARM", "AUTO_TUG"],
+        "biota_targets": ["MAG_LITHOPHAGE", "FILINGS_RAY", "RIVET_CROW", "SLAG_BIOFILM"]
+      },
+      {
+        "id": "vanta-render-proof-001",
+        "status": "succeeded",
+        "revision_checked": 2,
+        "renders": [
+          {
+            "name": "vanta_master_blockout.png",
+            "artifact_id": "55e6eec9287c17b69c6c261c0d581781",
+            "size_bytes": 511580,
+            "resolution": [960, 540]
+          },
+          {
+            "name": "vanta_ferrum_arena.png",
+            "artifact_id": "0761e510e83a252022b488bfbccfacb4",
+            "size_bytes": 471227,
+            "resolution": [960, 540]
+          }
+        ],
+        "visual_review": "PENDING_CLIENT_IMAGE_INSPECTION",
+        "note": "Render production succeeded. The current client did not expose the signed artifact URLs to the agent as inspectable images, so no aesthetic PASS is claimed."
+      }
+    ],
+    "committed_artifacts": {
+      "blend": {
+        "revision": 2,
+        "size_bytes": 3976733,
+        "etag": "24cf39e31bc8fc31a595be3f6089f6fd"
+      },
+      "glb": {
+        "revision": 2,
+        "size_bytes": 2369648,
+        "etag": "e0ac09d2bb0b30cfe01f67d0b6586da8"
+      }
+    }
+  },
+  "truth_state": {
+    "canon_extracted": "documented",
+    "macro_blockout": "implemented_remote_blender",
+    "scale_audit": "locally_validated",
+    "silhouette_targets": "implemented_remote_blender",
+    "visual_art_direction_review": "pending",
+    "final_models": "not_produced",
+    "engine_import": "not_qualified",
+    "collision_playtest": "not_qualified",
+    "performance": "not_qualified",
+    "aaa_claim": false
+  }
+}
