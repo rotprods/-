@@ -1,0 +1,229 @@
+schema_version: 1
+manifest_id: SYL_NEURAL_ROOT_KIT_001
+claim_id: CLM-SYLVA-PROC-NROOT-001
+agent_id: AGENT-SYLVA-ROOT-01
+session_id: SES-20260912T2123+0200-SYLVA01
+world_id: SYLVA-PRIME
+region_id: SHARED-WORLD-KIT
+domain: procedural_modeling
+subdomain: neural_root_structural_kit
+status: LOCALLY_VALIDATED_BLOCKOUT
+quality_tier: FOUNDATION_KIT_BLOCKOUT
+priority: P1
+
+source_authority:
+  CANON:
+    - design/EXOVANT_BIBLIA.md
+    - design/EXOVANT_DATA.json
+  DOCUMENTED:
+    - AGENTS.md
+    - ARCHITECTURE.md
+    - MEMORY.md
+    - ops/tool-registry.json
+  OBSERVED:
+    - Blender 5.2.0 LTS on Higgsfield 3D Jutsu project 43cf2b06-c47f-4ccd-ac34-76e9a585225a
+    - current player collision reference from scripts/player.gd: capsule radius 0.38 m, height 1.85 m
+  PROPOSAL:
+    - traversable callus route widths 3.0-3.5 m pending engine traversal and art review
+    - material colors are neutral lookdev placeholders, not final Sylva palette
+  UNKNOWN:
+    - final Sylva planetary radius and diameter
+    - final production GPU triangle/material/draw-call budgets
+    - final engine selection after EXO-012
+
+world_contract:
+  faction: Coro Micelial
+  rule: "La red vegetal comparte información con retraso local; daño en una raíz produce respuesta anunciada en otra zona."
+  asset_kit: "Bosque neural: raíces estructurales, membranas, andamios de injerto y follaje por capas."
+  risk: "Navegación en formas orgánicas: conservar pendientes, anchuras y lenguaje de ruta legibles."
+  gravity: "1.12 g (proposal in current world data)"
+  temperature_reference: "34 C"
+
+local_north_star:
+  statement: "Entregar una gramática estructural de raíces reusable para Sylva Prime que pueda sostener rutas, forks, arcos, buttresses, terrazas y membranas sin convertir el mundo en geometry noise, preservando escala humana, colisión separable y fuente procedural reproducible."
+  metrics:
+    required_module_families: 8
+    required_named_root_objects_min: 20
+    collision_proxies_min: 10
+    missing_materials_allowed: 0
+    non_unit_scales_allowed: 0
+    degenerate_mesh_objects_allowed: 0
+    camera_center_coverage_required: true
+    source_generator_required: true
+    blend_required: true
+    glb_required: true
+    qa_receipt_required: true
+
+pipeline:
+  pipeline_method_search: PIPELINE_METHOD_NOT_FOUND
+  verified_method: "Higgsfield 3D Jutsu -> bpy -> Blender 5.2.0 LTS -> committed .blend + GLB"
+  local_blender: NOT_FOUND_IN_PATH
+  unit_system: METRIC
+  blender_unit_m: 1.0
+  interchange: GLB
+  editable_source: BLEND
+  generator: art_source/sylva_neural_root_kit/sylva_neural_root_kit.py
+  remote_project_id: 43cf2b06-c47f-4ccd-ac34-76e9a585225a
+  remote_project_url: https://higgsfield.ai/3d-jutsu/43cf2b06-c47f-4ccd-ac34-76e9a585225a
+  validated_revision: 4
+
+asset_families:
+  - asset_id: SYL_ROOT_A1_STRAIGHT_08M
+    category: traversable_root
+    function: broad straight route segment
+    proposed_route_width_m: 3.2
+    collision: COL_SYL_ROOT_A1_STRAIGHT_08M
+    status: BLOCKOUT_V1
+  - asset_id: SYL_ROOT_A2_CURVE_12M
+    category: traversable_root
+    function: broad curved route segment
+    proposed_route_width_m: 3.4
+    collision: COL_SYL_ROOT_A2_CURVE_12M
+    status: BLOCKOUT_V1
+  - asset_id: SYL_ROOT_A3_RISE_10M
+    category: traversable_root
+    function: rising route segment
+    proposed_route_width_m: 3.2
+    collision: COL_SYL_ROOT_A3_RISE_10M
+    status: BLOCKOUT_V1
+  - asset_id: SYL_ROOT_B1_FORK
+    category: traversable_junction
+    function: Y junction / load-distributing callus node
+    members:
+      - SYL_ROOT_B1_FORK_TRUNK
+      - SYL_ROOT_B1_FORK_LEFT
+      - SYL_ROOT_B1_FORK_RIGHT
+      - SYL_ROOT_B1_FORK_CALLOUS_NODE
+    proposed_route_width_m: 3.0-3.5
+    status: BLOCKOUT_V1
+  - asset_id: SYL_ROOT_B2_ARCH_14M
+    category: structural_root
+    function: non-traversable spanning arch
+    collision: COL_SYL_ROOT_B2_ARCH_14M
+    status: BLOCKOUT_V1
+  - asset_id: SYL_ROOT_C1_BUTTRESS_07M
+    category: structural_root
+    function: vertical load transfer / buttress
+    collision: COL_SYL_ROOT_C1_BUTTRESS_07M
+    status: BLOCKOUT_V1
+  - asset_id: SYL_ROOT_C2_TERRACE
+    category: structural_interface
+    function: three-root support cluster plus grown terrace interface
+    members:
+      - SYL_ROOT_C2_SUPPORT_1
+      - SYL_ROOT_C2_SUPPORT_2
+      - SYL_ROOT_C2_SUPPORT_3
+      - SYL_ROOT_C2_TERRACE_CALLOUS
+    collision: COL_SYL_ROOT_C2_TERRACE_CALLOUS
+    status: BLOCKOUT_V1
+  - asset_id: SYL_ROOT_C3_MEMBRANE_ANCHOR
+    category: structural_interface
+    function: living ring for membrane attachment
+    members:
+      - SYL_ROOT_C3_MEMBRANE_ANCHOR
+      - SYL_MEMBRANE_C3_SURFACE
+    collision: COL_SYL_ROOT_C3_MEMBRANE_ANCHOR
+    status: BLOCKOUT_V1
+
+realism_contract:
+  macro:
+    - load paths are legible before surface detail
+    - traversable roots have broad compressed crowns rather than hidden invisible walkways
+    - junctions thicken where structural forces converge
+  meso:
+    - longitudinal deterministic growth ribs imply anisotropic biological growth
+    - callus surfaces are separate editable interfaces
+    - collision proxies are separated from render geometry
+  micro:
+    status: DEFERRED
+    reason: "Micro bark breakup, scars, moisture, lichen and causal wear belong after macro/meso route validation; adding noise now would violate the anti-CGI contract."
+
+materials:
+  - SYL_MAT_Bark_Primary
+  - SYL_MAT_Bark_CallusEdge
+  - SYL_MAT_Traversable_Callus
+  - SYL_MAT_Membrane_Preview
+  - PREVIEW_MAT_Collision
+  - PREVIEW_MAT_Guide
+  - PREVIEW_MAT_Floor
+  note: "All are portable neutral blockout/lookdev materials; no final PBR texture claim."
+
+remote_receipts:
+  failed_operation:
+    id: sylva-root-kit-blockout-001
+    status: FAILED
+    mechanism: "Blender 5.2 lacks bpy.ops.mesh.primitive_capsule_add"
+    consequence: "revision remained 0; no scene contamination"
+  build_operation:
+    id: sylva-root-kit-blockout-002
+    revision_after: 1
+    objects: 50
+    mesh_objects: 36
+    visible_approx_triangles: 15894
+  qa_fix_operation:
+    id: sylva-root-kit-qa-fix-003
+    revision_after: 2
+    collision_count: 13
+  metadata_camera_fix:
+    id: sylva-root-kit-metadata-camera-fix-005
+    revision_after: 3
+  final_camera_fix:
+    id: sylva-root-kit-camera-final-007
+    revision_after: 4
+  final_qa:
+    id: sylva-root-qa-release-008
+    revision: 4
+    pass: true
+    object_count: 52
+    root_claim_tag_count: 20
+    collision_count: 13
+    visible_approx_triangles: 15894
+    zero_area_mesh_objects: 0
+    mesh_without_material: 0
+    non_unit_scale: 0
+    claim_property_mismatch: 0
+    camera_center_coverage_pass: true
+
+artifacts:
+  blend:
+    revision: 4
+    size_bytes: 1669982
+    etag: e0a4393afe08b78e508efe6908090176
+  glb:
+    revision: 4
+    size_bytes: 1906236
+    etag: d0b02f2cecc40fefd8b7ac5680fee455
+  render:
+    revision: 4
+    artifact_id: ed6411ee63c1c046201db18fdcb41c66
+    name: sylva-root-kit-blockout-v4-final.png
+    width: 1100
+    height: 760
+    size_bytes: 803186
+
+qa_status:
+  geometry: PASS_BLOCKOUT
+  scale: PASS_BLOCKOUT
+  materials_present: PASS
+  collision_presence: PASS_BLOCKOUT
+  export: PASS_REMOTE_GLTF_EXPORT
+  visual_art_review: PENDING_HUMAN_OR_PIXEL_INSPECTION
+  engine_import: NOT_RUN
+  gameplay_traversal: NOT_RUN
+  lod: NOT_IMPLEMENTED
+  uv_final: NOT_IMPLEMENTED
+  final_pbr: NOT_IMPLEMENTED
+  performance_target: BLOCKED_TARGET_HARDWARE
+
+claim_dod_status:
+  source_generator: DONE
+  manifest: DONE
+  remote_blend: DONE
+  remote_glb: DONE
+  structural_blockout: DONE
+  collision_proxy_set: DONE
+  deterministic_naming: DONE
+  technical_qa: PASS
+  visual_art_approval: PENDING
+  engine_integration: PENDING
+  final_asset_dod: NOT_DONE
