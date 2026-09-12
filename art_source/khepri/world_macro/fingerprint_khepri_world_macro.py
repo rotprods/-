@@ -1,11 +1,11 @@
 """Semantic reproducibility fingerprint for EXOVANT KHEPRI world-macro.
 
-Canonicalizes geometry independently of mesh vertex-index ordering. This is required because
-Blender primitive operators may assign equivalent UV-sphere indices differently across fresh
-projects even when the actual vertex multiset and face geometry are identical.
+Canonicalizes geometry independently of mesh vertex-index ordering. Blender primitive operators
+may assign equivalent UV-sphere indices differently across fresh projects, while actual vertex
+multisets and face geometry remain identical. Camera lens and clipping ranges are part of the
+fingerprint because kilometre-scale validation depends on them.
 
-This script does NOT claim binary-identical .blend/GLB serialization. It proves semantic scene
-reproduction for the CLM-KHEPRI-WMACRO-001 blockout contract.
+This does NOT claim binary-identical .blend/GLB serialization.
 """
 import bpy, json, hashlib
 
@@ -47,7 +47,12 @@ def semantic_fingerprint():
             "props": custom_props(obj),
         }
         if obj.type == "CAMERA":
-            row["camera"] = [rnd(obj.data.lens), rnd(obj.data.sensor_width)]
+            row["camera"] = [
+                rnd(obj.data.lens),
+                rnd(obj.data.sensor_width),
+                rnd(obj.data.clip_start),
+                rnd(obj.data.clip_end),
+            ]
         if obj.type == "LIGHT":
             row["light"] = [obj.data.type, rnd(obj.data.energy), [rnd(v) for v in obj.data.color]]
         objects.append(row)
@@ -55,13 +60,12 @@ def semantic_fingerprint():
     meshes = []
     for mesh in sorted(bpy.data.meshes, key=lambda x: x.name):
         indexed_vertices = [tuple(rnd(c) for c in v.co) for v in mesh.vertices]
-        vertex_multiset = sorted(indexed_vertices)
         face_geometry = []
         for polygon in mesh.polygons:
             face_geometry.append(sorted(indexed_vertices[index] for index in polygon.vertices))
         meshes.append({
             "name": mesh.name,
-            "vertex_multiset": vertex_multiset,
+            "vertex_multiset": sorted(indexed_vertices),
             "face_geometry": sorted(face_geometry),
             "materials": [m.name if m else None for m in mesh.materials],
         })
