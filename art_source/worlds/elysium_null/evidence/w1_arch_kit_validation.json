@@ -1,0 +1,76 @@
+{
+  "schema_version": 1,
+  "receipt_id": "ART-ELYSIUM-001-W1-ARCH-R2",
+  "world": "elysium",
+  "status": "STRUCTURAL_CANDIDATE_RUNTIME_CLEARANCE_PENDING",
+  "remote_scene": {
+    "project_id": "00152eea-2da0-40ec-8666-78d6764c718f",
+    "revision": 2,
+    "operation_id": "ART-ELYSIUM-001.w1-arch-kit-v1"
+  },
+  "candidate_grid": {
+    "planning_grid_m": 1.0,
+    "primary_bay_m": 4.0,
+    "span_family_m": [8.0, 12.0, 16.0],
+    "door_clearance_proposal_m": [2.4, 2.7],
+    "runtime_player_clearance": "PENDING"
+  },
+  "module_checks": {
+    "KIT_COL_0p4x0p4x4_PROTO": [0.4, 0.4, 4.0],
+    "KIT_PANEL_SOLID_4x4_PROTO": [4.0, 0.24, 4.0],
+    "KIT_DOOR_SHADOW_2p4x2p7": [2.4, 0.05, 2.7],
+    "KIT_SPAN_08M": [8.0, 0.45, 0.65],
+    "KIT_SPAN_12M": [12.0, 0.45, 0.65],
+    "KIT_SPAN_16M": [16.0, 0.45, 0.65],
+    "ARC_ARRIVAL_W_FACADE_R0C0": [0.24, 3.8, 3.6],
+    "ARC_ARRIVAL_E_FACADE_R3C3": [0.24, 3.8, 3.6]
+  },
+  "instancing": {
+    "deployed_facade_objects": 32,
+    "shared_mesh_users_including_prototype": 33,
+    "all_deployed_facades_share_prototype_mesh": true
+  },
+  "scene_after": {
+    "total_objects": 212,
+    "total_meshes": 206,
+    "materials": 9,
+    "w1_collection_objects": 58
+  },
+  "artifacts": {
+    "editable_blend_remote": {
+      "size_bytes": 2444788,
+      "etag": "c61dfa77e608108288230e7287573618"
+    },
+    "portable_glb_remote": {
+      "size_bytes": 2291876,
+      "etag": "17f2835c0ad1cbed24fe987897e5d75e"
+    },
+    "preview": {
+      "artifact_id": "843145b3393686db07aee02dac0d1715",
+      "name": "elysium_w1_arch_kit_v1.png",
+      "width": 1280,
+      "height": 720,
+      "size_bytes": 885343,
+      "etag": "257ec051b89bb502a5c5a29d052a79a7"
+    },
+    "source": "art_source/worlds/elysium_null/scripts/add_w1_arch_kit.py",
+    "spec": "art_source/worlds/elysium_null/ARCHITECTURE_KIT_SPEC.md"
+  },
+  "gates": {
+    "module_dimensions": "PASS",
+    "mesh_instancing": "PASS",
+    "metadata_root": "PASS",
+    "portable_export_exists": "PASS_REMOTE",
+    "visual_review": "PENDING",
+    "player_controller_clearance": "PENDING",
+    "collision": "PENDING",
+    "engine_import": "PENDING",
+    "performance": "PENDING"
+  },
+  "non_claims": [
+    "The 1 m / 4 m / 8-12-16 m grammar is a proposal, not project canon.",
+    "Door clearance is not production-qualified until real controller/camera/enemy traversal tests pass.",
+    "Structural verification is not GATE-ART approval.",
+    "No target-hardware performance claim is made."
+  ]
+}
