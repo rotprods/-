@@ -301,7 +301,9 @@
         "GATE-ASSET"
       ],
       "evidence": [
-        "evidence/migration-readiness-contract.json"
+        "evidence/fleet-ack-reconciliation-007.json",
+        "evidence/gates/INFRA-005-GATE-CONTROL.json",
+        "evidence/gates/INFRA-005-GATE-NATIVE.json"
       ],
       "estimate_person_hours": null,
       "estimate_status": "actual time not retroactively invented",
@@ -310,7 +312,7 @@
         "First scheduled execution from main has not been observed",
         "Mem routing note pending provider rate limit; optional mirror, not a product blocker"
       ],
-      "closeout": "_project_intelligence/runs/INFRA-005-READINESS-006/closeout.json",
+      "closeout": "_project_intelligence/runs/INFRA-005-REMEDIATION-007/closeout.json",
       "checkpoint_note": "GLB delivery container regression repair; checkpoint only. ADOPTION-002 source remains unrecovered; producer adoption and Mac qualification remain pending."
     },
     {
@@ -854,8 +856,9 @@
         {
           "id": "MR-OWN",
           "owner": "integrator + each_owner",
-          "status": "pending",
-          "done_when": "Cada entrega admitida tiene owner, claim, epoch, rutas y proyecto remoto actuales sin conflicto. Los ACK se reconciliaron con evidencia; un registro reserved no se presenta como active."
+          "status": "partial",
+          "done_when": "Cada entrega admitida tiene owner, claim, epoch, rutas y proyecto remoto actuales sin conflicto. Los ACK se reconciliaron con evidencia; un registro reserved no se presenta como active.",
+          "evidence": "evidence/fleet-ack-reconciliation-007.json"
         },
         {
           "id": "MR-ASSET",

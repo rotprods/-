@@ -1,36 +1,36 @@
 {
   "coverage": "partial; instrumented rows only; no historical total inferred",
-  "recorded_calls": 109,
+  "recorded_calls": 118,
   "by_tool_outcome": [
     {
       "tool": "godot.import",
       "status": "returned",
       "task_outcome": "verified_success",
-      "count": 9
+      "count": 10
     },
     {
       "tool": "godot.input-tests",
       "status": "returned",
       "task_outcome": "verified_success",
-      "count": 4
+      "count": 5
     },
     {
       "tool": "godot.smoke",
       "status": "returned",
       "task_outcome": "verified_success",
-      "count": 9
+      "count": 10
     },
     {
       "tool": "godot.state-tests",
       "status": "returned",
       "task_outcome": "verified_success",
-      "count": 9
+      "count": 10
     },
     {
       "tool": "godot.world-tests",
       "status": "returned",
       "task_outcome": "verified_success",
-      "count": 9
+      "count": 10
     },
     {
       "tool": "mcp__codex_apps__github_add_comment_to_issue",
@@ -90,25 +90,25 @@
       "tool": "qualify.GATE-ASSET",
       "status": "returned",
       "task_outcome": "verified_success",
-      "count": 5
+      "count": 6
     },
     {
       "tool": "qualify.GATE-CONTROL",
       "status": "returned",
       "task_outcome": "verified_success",
-      "count": 5
+      "count": 6
     },
     {
       "tool": "qualify.GATE-GRAPH",
       "status": "returned",
       "task_outcome": "verified_success",
-      "count": 5
+      "count": 6
     },
     {
       "tool": "qualify.GATE-NATIVE",
       "status": "returned",
       "task_outcome": "verified_success",
-      "count": 5
+      "count": 6
     }
   ]
 }

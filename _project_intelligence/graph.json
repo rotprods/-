@@ -4499,7 +4499,7 @@
       "type": "workunit",
       "label": "CLM-AURORA-WORLD-001 / AGENT-02-AURORA",
       "epistemic": "proposal",
-      "status": "reserved",
+      "status": "active",
       "provenance": "ops/fleet/registry.json",
       "artifact_path": "ops/fleet/registry.json"
     },
@@ -4535,7 +4535,7 @@
       "type": "workunit",
       "label": "CLM-NACRE-WORLD-MACRO-001 / AGENT-3D-NACRE-01",
       "epistemic": "proposal",
-      "status": "reserved",
+      "status": "active",
       "provenance": "ops/fleet/registry.json",
       "artifact_path": "ops/fleet/registry.json"
     },
@@ -4544,7 +4544,7 @@
       "type": "workunit",
       "label": "CLM-PEL-WORLD-001 / AGENT-PELAGOS-01",
       "epistemic": "proposal",
-      "status": "reserved",
+      "status": "active",
       "provenance": "ops/fleet/registry.json",
       "artifact_path": "ops/fleet/registry.json"
     },
@@ -4553,7 +4553,7 @@
       "type": "workunit",
       "label": "CLM-W04-WORLD-UMBRA-001 / AGENT-UMBRA-04",
       "epistemic": "proposal",
-      "status": "reserved",
+      "status": "active",
       "provenance": "ops/fleet/registry.json",
       "artifact_path": "ops/fleet/registry.json"
     },
@@ -4598,7 +4598,7 @@
       "type": "workunit",
       "label": "CLM-SYLVA-MACRO-001 / AGENT-SYLVA-MACRO-01",
       "epistemic": "proposal",
-      "status": "reserved",
+      "status": "active",
       "provenance": "ops/fleet/registry.json",
       "artifact_path": "ops/fleet/registry.json"
     },

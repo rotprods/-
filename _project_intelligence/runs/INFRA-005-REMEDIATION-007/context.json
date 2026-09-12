@@ -1,0 +1,13 @@
+{
+  "run_id": "INFRA-005-REMEDIATION-007",
+  "task_id": "INFRA-005",
+  "base_commit": "b74bd7072a7b2c68c4453402fbffe9d20bfb4de0",
+  "read_set": {
+    "AGENTS.md": "b872f84f54b2fc249100a05ef40e0b43c7a84085ae11de27d8cbe83daf4ccf6e",
+    "MEMORY.md": "9b7c86b4b3c13b686104b2ae25b7f869c44fa6c635a7abd15a818075f5d8c874",
+    "HANDOFF.md": "e556761b54d154de035c6206173135fccce848047df7f7ac2cdb931f5c306a7f",
+    "_project_intelligence/STATE.json": "e4279d77fdcc5a10116437ab66222c8cc6b0e6640df4ae7008af9d1ca0f1133a",
+    "_project_intelligence/PLAN.json": "ff84fb419d495dd6b46ec7d9526b66bee4aee1c1d40be8cbf4ba2f32ab981a77"
+  },
+  "started_at": "2026-09-12T22:12:39.145831+00:00"
+}

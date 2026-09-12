@@ -151,3 +151,5 @@ Un fallo de continuidad no prueba fallo de geometría; tampoco permite afirmar q
 El informe por entrega debe separar contrato declarado, prueba ejecutada y adopción observada. No deducir todos los agentes activos/cumplidores desde ramas o JSON. Un conflicto de escritor congela solamente el ámbito afectado hasta reconciliar; no operar proyectos de otros owners. Una sesión sin acuse no obtiene autoridad por antigüedad.
 
 La próxima unidad integradora es una entrega corregida y recuperada, no conectar cuarenta aplicaciones. Usar issue #7 para deltas y acuses ordinarios; Linear/Drive por checkpoint. Mantener automatización pausada y telemetría con cobertura parcial. La evaluación de hardware puede comenzar con Terra aislada; la migración completa de producción exige el inventario y los respaldos aceptados.
+
+REMEDIATION-007: el validador admite production/manifests/<mundo-canónico>/ y production/receipts/<mundo-canónico>/ únicamente cuando ese mundo está declarado en el claim. No admite sus padres compartidos ni otro mundo; los solapes siguen siendo error. ACKs publicados no liberan fences de concurrencia del proveedor.

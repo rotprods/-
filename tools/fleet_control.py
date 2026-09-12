@@ -96,8 +96,18 @@ def validate(registry):
         for p in c["paths"]:
             selector(p)
             if c["role"] == "world":
+                parts = p.rstrip("/").split("/")
+                # Delivery metadata may be sharded under its canonical world.
+                # Never grant the shared parent or a different world's shard.
+                scoped_metadata = (
+                    len(parts) >= 3 and parts[:2] in
+                    [["production", "manifests"], ["production", "receipts"]]
+                    and (len(parts) > 3 or p.endswith("/"))
+                    and parts[2] in {world_id(s.get("world")) for s in c["scopes"]}
+                )
                 require(p.startswith("art_source/") or p.startswith("production/worlds/")
-                        or (p.startswith("production/claims/") and not p.endswith("/")),
+                        or (p.startswith("production/claims/") and not p.endswith("/"))
+                        or scoped_metadata,
                         "world claim cannot own integration files: " + p)
         keys = [scope_key(s) for s in c["scopes"]]
         require(len(set(keys)) == len(keys), "duplicate semantic scope")

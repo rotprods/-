@@ -50,8 +50,11 @@ test_malformed_shapes_fail_with_a_structured_fleet_error (test_fleet_control.Fle
 test_release_cannot_reuse_one_project_observation_for_another (test_fleet_control.FleetReservations.test_release_cannot_reuse_one_project_observation_for_another) ... ok
 test_release_reconciles_provider_and_fences_old_owner (test_fleet_control.FleetReservations.test_release_reconciles_provider_and_fences_old_owner) ... ok
 test_reserve_is_pure_and_stale_proposal_cannot_win_twice (test_fleet_control.FleetReservations.test_reserve_is_pure_and_stale_proposal_cannot_win_twice) ... ok
+test_same_world_metadata_shards_still_detect_path_collisions (test_fleet_control.FleetReservations.test_same_world_metadata_shards_still_detect_path_collisions) ... ok
 test_semantic_parent_covers_descendants_but_not_siblings (test_fleet_control.FleetReservations.test_semantic_parent_covers_descendants_but_not_siblings) ... ok
 test_world_aliases_share_one_semantic_namespace (test_fleet_control.FleetReservations.test_world_aliases_share_one_semantic_namespace) ... ok
+test_world_metadata_shards_allow_declared_world_only (test_fleet_control.FleetReservations.test_world_metadata_shards_allow_declared_world_only) ... ok
+test_world_metadata_shards_reject_parent_other_world_and_escape (test_fleet_control.FleetReservations.test_world_metadata_shards_reject_parent_other_world_and_escape) ... ok
 test_world_writer_cannot_reserve_global_state_or_tooling (test_fleet_control.FleetReservations.test_world_writer_cannot_reserve_global_state_or_tooling) ... ok
 test_all_twelve_learnings_recoverable (test_governance.Continuity.test_all_twelve_learnings_recoverable) ... ok
 test_dangling_graph_rejected (test_governance.Continuity.test_dangling_graph_rejected) ... ok
@@ -82,6 +85,6 @@ test_uncovered_goal_rejected (test_studio.Studio.test_uncovered_goal_rejected) .
 test_unknown_gate_rejected (test_studio.Studio.test_unknown_gate_rejected) ... ok
 
 ----------------------------------------------------------------------
-Ran 82 tests in 0.455s
+Ran 85 tests in 0.581s
 
 OK
