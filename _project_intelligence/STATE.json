@@ -1,10 +1,10 @@
 {
   "project": "EXOVANT 2950",
-  "checkpoint": "INFRA-005-FLEET-001",
+  "checkpoint": "INFRA-005-READINESS-006",
   "date": "2026-09-12",
   "global_goal": "Original 3D interplanetary soulslike based on the existing twelve-world preproduction plan",
-  "current_wave": "Cooperative multi-agent fleet harness and current-main continuity repair",
-  "status": "FLEET_HARNESS_LOCALLY_VALIDATED_OWNER_ADOPTION_PARTIAL",
+  "current_wave": "Migration readiness contract and asset custody",
+  "status": "MIGRATION_READINESS_PLANNED",
   "engine": "Godot 4.7.2.stable.official.ed1daf0bf",
   "production_engine_decision": "Unreal remains the plan's principal candidate; Godot is the executable prototype, not an irreversible replacement",
   "authority": [
@@ -52,7 +52,7 @@
     "All world source binaries recovered locally"
   ],
   "next_workunit": "EXO-004",
-  "next_action": "Integrador: obtener acuses restantes en issue #7 y aplicar el guard a PRs de arte; Sylva macro/root-kit confirman interfaz y los productores recuperan Blend+GLB. Frente gameplay mantiene EXO-004-ROUTE-002 sin debug. Arte Terra continúa desde PR1 con revisión en cámara, sin duplicar el kit.",
+  "next_action": "Admitir una entrega con owner vigente, respaldo binario recuperable y manifiesto del árbol exacto; después cualificar Mac aislado.",
   "evidence": [
     "evidence/gauntlet.json",
     "evidence/state-tests.json",
@@ -73,8 +73,8 @@
     "historical_packages": "Earlier Library checkpoints are recovery history, superseded as source authority."
   },
   "automation": {
-    "requested": true,
-    "status": "ENABLED_MAIN_PROMPT_READ_BACK",
+    "requested": false,
+    "status": "PAUSED_BY_USER_COST_AND_DUPLICATION_DECISION",
     "cadence": "hourly",
     "first_scheduled_execution_verified": false,
     "max_same_problem_iterations_before_reassessment": 6,
@@ -196,7 +196,7 @@
     "Sylva supplier/consumer boundary acknowledgement",
     "World-branch Blend/GLB recovery and native/human art gates"
   ],
-  "last_run": "_project_intelligence/runs/INFRA-005-FLEET-001/closeout.json",
+  "last_run": "_project_intelligence/runs/INFRA-005-READINESS-006/closeout.json",
   "fleet": {
     "registry": "ops/fleet/registry.json",
     "coordination_issue": "https://github.com/rotprods/-/issues/7",
@@ -212,5 +212,11 @@
     "provider_snapshot": "ops/fleet/provider-snapshot-20260912.json",
     "scope_audit": "ops/fleet/scope-audit-20260912.json",
     "origin": "Reserved; issue #14 supersedes earlier unclaimed snapshot"
+  },
+  "migration_readiness": {
+    "contract": "_project_intelligence/PLAN.json#/remediation_contract/migration_readiness",
+    "status": "planned",
+    "fleet_compliance": "partial; not universally enforced",
+    "binary_backup_coverage": "not verified for all world deliveries"
   }
 }

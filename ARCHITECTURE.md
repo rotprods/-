@@ -46,3 +46,5 @@ controls.gd administra un mapa validado de acciones: escritorio y mando independ
 ## Fleet harness cooperativo
 
 `fleet_control.py` separa reserva de ACK y entrega. Compara ámbitos canónicos, paths, IDs de assets, rama y proyecto remoto; epoch invalida al owner anterior tras release. CAS local con mkdir y reemplazo atómico; publicación remota normal requiere padre vigente y readback. `guard-git` deriva cambios completos y verifica la excepción determinista MANIFEST; no depende de listas de archivos omitidas por el agente. project_control valida el registro y Graphify proyecta los claims como propuestas. No hay broker de GPU ni control de procesos remotos; wrappers omitidos quedan fuera de cobertura.
+
+El filtro fleet de entregas recorre la envoltura completa GLB y valida evidencia_refs como lista de rutas. Sigue siendo control de transporte cooperativo: no autentica recibos, no comprueba toda la semántica glTF ni sustituye importación nativa o revisión visual.
