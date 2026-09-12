@@ -11,7 +11,7 @@ priority: P1
 base_sha: 4c2fa044080004609ea6df45f34b2a784536507a
 branch: art/world-aurora-veil-001
 created_at: 2026-09-12T19:29:57Z
-last_heartbeat: 2026-09-12T20:00:00Z
+last_heartbeat: 2026-09-12T20:06:22Z
 includes:
   - planetary canon proposals where canon is currently silent, isolated behind ADRs
   - orbital representation
@@ -66,10 +66,21 @@ remote_scene:
   blend_etag: 828f4cbd201f87fcb232cfed66471131
   glb_etag: d9f25ec99d93aa9b693f933eeafe9119
   final_art_claimed: false
+fleet_registry:
+  authority: main:ops/fleet/registry.json
+  observed_main: f78bfdc8bd7b2f6ab52b45d39babcc1589ab3918
+  claim_epoch: 1
+  observed_status: reserved
+  owner_identity_confirmed: true
+  ack_comment: https://github.com/rotprods/-/issues/7#issuecomment-5648367254
+  requested_transition: active
+  producer_edits_shared_registry: false
+  note: integrator must apply registry transition and preserve epoch; producer branch does not overwrite shared registry
 dependencies:
   - design/EXOVANT_BIBLIA.md
   - design/EXOVANT_DATA.json
   - docs/ART_PRODUCTION.md
+  - docs/FLEET_COORDINATION.md
   - AGENTS.md
   - _project_intelligence/STATE.json
   - EXO-012 for final production-engine integration
