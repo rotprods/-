@@ -7,6 +7,10 @@ with current owner ACK, and exactly one writer session must own the primary proj
 
 This script is backend-neutral. It creates no HLOD meshes and does not change terrain,
 routes, hero geometry, collisions or canonical geography.
+
+Important semantic rule: hero residency is L3-granular. L2 references are coverage/HLOD
+metadata only; a hero crossing several L2 supercells does not imply all those L2s must be
+fully resident.
 """
 from __future__ import annotations
 
@@ -14,7 +18,7 @@ import bpy
 
 CLAIM = "CLM-SYLVA-MACRO-001"
 CONTRACT = "SYLVA_STREAM_HIERARCHY_R14"
-PREFETCH = "ADJACENT_8_PLUS_HERO_RESIDENCY_GROUP"
+PREFETCH = "ADJACENT_8_PLUS_L3_HERO_RESIDENCY_GROUP"
 
 L2_MAP = {
     "L2_X0Y0": ["X0Y0", "X0Y1", "X1Y0", "X1Y1"],
@@ -33,22 +37,22 @@ HERO = {
         "region": "SYLVA_STREAM_REGION_PUERTO_INJERTO",
         "center_cell": "X0Y1",
         "core_radius_m": 550.0,
-        "core_cells": ["X0Y1", "X1Y1"],
-        "core_l2": ["L2_X0Y0"],
+        "resident_l3_cells": ["X0Y1", "X1Y1"],
+        "l2_coverage": ["L2_X0Y0"],
     },
     "BOSQUE": {
         "region": "SYLVA_STREAM_REGION_BOSQUE_FRASES",
         "center_cell": "X2Y2",
         "core_radius_m": 200.0,
-        "core_cells": ["X1Y1", "X1Y2", "X2Y1", "X2Y2"],
-        "core_l2": ["L2_X0Y0", "L2_X0Y1", "L2_X1Y0", "L2_X1Y1"],
+        "resident_l3_cells": ["X1Y1", "X1Y2", "X2Y1", "X2Y2"],
+        "l2_coverage": ["L2_X0Y0", "L2_X0Y1", "L2_X1Y0", "L2_X1Y1"],
     },
     "VESPER": {
         "region": "SYLVA_STREAM_REGION_CAMARA_VESPER",
         "center_cell": "X3Y2",
         "core_radius_m": 400.0,
-        "core_cells": ["X2Y2", "X3Y2"],
-        "core_l2": ["L2_X1Y1"],
+        "resident_l3_cells": ["X2Y2", "X3Y2"],
+        "l2_coverage": ["L2_X1Y1"],
     },
 }
 
@@ -73,7 +77,10 @@ def neighbor_graph(size: int, diagonal: bool):
 
 
 def l2_neighbor_graph(diagonal: bool):
-    coords = {"L2_X0Y0": (0, 0), "L2_X0Y1": (0, 1), "L2_X1Y0": (1, 0), "L2_X1Y1": (1, 1)}
+    coords = {
+        "L2_X0Y0": (0, 0), "L2_X0Y1": (0, 1),
+        "L2_X1Y0": (1, 0), "L2_X1Y1": (1, 1),
+    }
     graph = {}
     for name, (x, y) in coords.items():
         neighbors = []
@@ -97,7 +104,7 @@ def ensure_collection(name: str):
 
 
 def main():
-    # Scene-side guard: require accepted R13 as the input. External fleet-active check remains mandatory.
+    # Scene-side input guard. External fleet-active readback is still mandatory before mutation.
     root = bpy.data.objects.get("SYLVA_WORLD_ROOT")
     if not root or root.get("build_status") != "WAVE1K_STREAM_MEMBERSHIP_R13":
         raise RuntimeError("Expected accepted R13 scene before R14 hierarchy")
@@ -129,7 +136,6 @@ def main():
         obj["hlod_status"] = "CONTRACT_ONLY_TARGET_BACKEND_PENDING"
         created.append(obj.name)
 
-    # Enrich each L3 cell with hierarchy/prefetch data; do not change its parent transform.
     for x in range(4):
         for y in range(4):
             cid = f"X{x}Y{y}"
@@ -142,7 +148,7 @@ def main():
             cell["neighbors8"] = "|".join(l3_8[cid])
             cell["prefetch_policy"] = PREFETCH
 
-    # Explicit hero residency overlays; no geography moves.
+    # Hero residency overlay is L3-only. L2 is coverage metadata, not a full-residency command.
     for hero_id, spec in HERO.items():
         region = bpy.data.objects.get(spec["region"])
         if not region:
@@ -150,9 +156,10 @@ def main():
         region["stream_hierarchy_contract"] = CONTRACT
         region["hero_core_radius_m_proposal"] = spec["core_radius_m"]
         region["authoritative_center_cell"] = spec["center_cell"]
-        region["hero_resident_cells"] = "|".join(spec["core_cells"])
-        region["hero_resident_l2"] = "|".join(spec["core_l2"])
-        region["hero_residency_policy"] = "OVERLAY_GROUP_DO_NOT_MOVE_GEOGRAPHY"
+        region["hero_resident_l3_cells"] = "|".join(spec["resident_l3_cells"])
+        region["hero_l2_coverage"] = "|".join(spec["l2_coverage"])
+        region["hero_l2_full_residency_implied"] = False
+        region["hero_residency_policy"] = "L3_OVERLAY_DO_NOT_MOVE_GEOGRAPHY"
         region["hero_core_basis"] = "OBSERVED_GEOMETRY_EXTENT_PLUS_50M_ROUNDED25"
 
     meta = bpy.data.objects.new("SYLVA_META_StreamHierarchyR14", None)
@@ -165,17 +172,19 @@ def main():
     meta["l3_count"] = 16
     meta["l3_size_m"] = 3000
     meta["prefetch_policy"] = PREFETCH
+    meta["hero_residency_granularity"] = "L3_ONLY"
+    meta["l2_hero_semantics"] = "COVERAGE_METADATA_ONLY_NOT_FULL_RESIDENCY"
     meta["backend"] = "ENGINE_TBD"
     meta["hlod_status"] = "CONTRACT_ONLY_TARGET_BACKEND_PENDING"
-    meta["bosque_hotspot"] = "HERO_CORE_SPANS_ALL_FOUR_L2_SUPERCELLS"
+    meta["bosque_hotspot"] = "HERO_CORE_SPANS_ALL_FOUR_L2_SUPERCELLS_BUT_ONLY_4_L3_RESIDENT"
     meta["center_tie_policy"] = "HALF_OPEN_BINS_BOUNDARY_TO_POSITIVE_AXIS"
 
     root["build_status"] = "WAVE1L_STREAM_HIERARCHY_R14"
     root["stream_hierarchy_contract"] = CONTRACT
 
-    # QA: each L3 appears exactly once in L2 mapping; neighbor graphs symmetric; hero references valid.
     flattened = [cell for cells in L2_MAP.values() for cell in cells]
-    if sorted(flattened) != sorted({f"X{x}Y{y}" for x in range(4) for y in range(4)}):
+    expected_l3 = {f"X{x}Y{y}" for x in range(4) for y in range(4)}
+    if len(flattened) != 16 or set(flattened) != expected_l3 or len(set(flattened)) != 16:
         raise RuntimeError("L2 mapping does not cover all L3 cells exactly once")
     for graph in (l3_4, l3_8):
         for a, neighbors in graph.items():
@@ -188,7 +197,7 @@ def main():
                 if a not in graph[b]:
                     raise RuntimeError(f"Asymmetric L2 graph: {a}/{b}")
     for spec in HERO.values():
-        if any(cell not in cell_to_l2 for cell in spec["core_cells"]):
+        if any(cell not in cell_to_l2 for cell in spec["resident_l3_cells"]):
             raise RuntimeError("Hero residency references unknown L3 cell")
 
     bpy.ops.wm.save_as_mainfile(filepath=bpy.data.filepath)
@@ -197,7 +206,9 @@ def main():
         "l2_nodes_created": created,
         "l3_cells_enriched": 16,
         "hero_overlays": len(HERO),
-        "bosque_l2_count": len(HERO["BOSQUE"]["core_l2"]),
+        "bosque_resident_l3_count": len(HERO["BOSQUE"]["resident_l3_cells"]),
+        "bosque_l2_coverage_count": len(HERO["BOSQUE"]["l2_coverage"]),
+        "l2_full_residency_implied": False,
         "geometry_changed": False,
     }
 
