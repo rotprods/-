@@ -6,15 +6,16 @@ session_id: ART-LEVIATHAN-001-20260912T2123+0200
 branch: art/world-leviathan-001
 status: IN_PROGRESS
 claim_status: KEEP
-remote_blender_revision: 2
+remote_blender_revision: 5
 remote_project_id: 2577a7b6-ebd7-4d31-a645-620e4b73a95d
+cold_rebuild_project_id: 37a931c7-f2e6-46bc-9be0-26077e5de1c1
 
 metrics:
   first_10_task_completion:
-    done: 2
+    done: 3
     total: 10
-    percent_done: 20
-    review: 8
+    percent_done: 30
+    review: 7
     methodology: only DONE counts as complete; REVIEW is not completion
   asset_category_started_coverage:
     started_or_in_progress: 9
@@ -25,35 +26,46 @@ metrics:
     wave1_region_blockouts_present: 3
     wave1_region_blockouts_total: 3
     blockout_presence_percent: 100
+    representative_detail_microsets: 1
+    representative_detail_assets:
+      - LEV-ARCH-001
+      - LEV-INF-002
+      - LEV-INF-003
     final_asset_completion_percent: 0
-    note: blockout presence is not production-finished modeling
+    note: representative detail is not production-finished modeling
   materials:
-    wave1_material_roles_present: 11
-    wave1_material_roles_target: 11
-    blockout_role_coverage_percent: 100
+    portable_material_roles_present: 13
+    new_puerto_roles:
+      - HUM_MAT_BRUSHED_METAL
+      - HUM_MAT_SEAL_RUBBER
     final_calibrated_texture_completion_percent: 0
   optimization:
+    puerto_microset_triangles_measured: 13380
+    hard_budget_status: UNSET_UNTIL_RUNTIME_AND_TARGET_HARDWARE_QUALIFIED
     final_completion_percent: 0
-    note: no target hardware budget, LOD/HLOD or runtime profile has passed
   integration:
-    passed_foundation_receipts: 2
-    foundation_receipts_total: 4
-    percent: 50
+    passed_foundation_receipts: 3
+    foundation_receipts_total: 5
+    percent: 60
     passed:
       - editable Blender revision exists
       - portable GLB export exists
+      - deterministic semantic cold rebuild exists for master and Puerto stages
     open:
       - production-engine import/instantiate
-      - runtime collision/performance smoke test
+      - runtime collision/traversal smoke test
   qa:
     full_pass_gates: 4
     total_gates: 13
     percent_full_pass: 31
     full_pass:
       - A_CANON foundation
-      - D_GEOMETRY blockout
+      - D_GEOMETRY blockout/representative detail
       - G_SCALE blockout
-      - K_EXPORT blockout
+      - K_EXPORT blockout/representative detail
+    additional_pipeline_passes:
+      - master deterministic semantic rebuild
+      - Puerto staged deterministic semantic rebuild
     partial_or_open:
       - B_ART
       - C_REALISM
@@ -67,7 +79,6 @@ metrics:
 
 priority_state:
   P0_open:
-    - W10/BLEND/003
     - W10/TECH/007
     - W10/QA/010
   P1_open:
@@ -86,7 +97,7 @@ priority_state:
 
 completed:
   - repository bootstrap and authority map
-  - multi-agent collision audit
+  - multi-agent collision audit and issue-7 ownership preflight
   - atomic branch and claim persistence
   - evidence-bound World Bible
   - master asset/coverage registry
@@ -97,9 +108,14 @@ completed:
   - stable collision versus visual contraction separation
   - exact 58 m SOMA arena correction
   - portable-light export correction
-  - editable .blend and GLB revision-2 receipts
-  - structural/scale/camera QA
-  - revision-2 overview and SOMA render receipts
+  - deterministic master cold rebuild with exact semantic fingerprint
+  - normalized master revision 3 bound to versioned generator
+  - Puerto representative-detail microset for architecture/suture/living-valve families
+  - Puerto human-scale door/contact defect found, fixed and revalidated
+  - deterministic Puerto staged cold rebuild with exact semantic fingerprint
+  - editable .blend and GLB revision-5 receipts
+  - structural/scale/camera/cost QA
+  - revision-3 overview/Puerto/Jardines/SOMA render receipts produced
 
 blocked:
   - id: LEV-BLK-001
@@ -117,19 +133,25 @@ blocked:
   - id: LEV-BLK-005
     decision: final playable-region dimensions
     impacts: [streaming topology, authored density]
+  - id: LEV-BLK-006
+    decision: shard-safe global continuity/manifest check
+    impacts: [PR CI readiness]
+    related_issue: 13
 
 risks:
-  - final pixel-level art review of revision-2 renders is not completed by this agent client
-  - current living tissue is intentionally blockout/proxy, not final hyperreal material/anatomy
+  - revision-3 visual renders exist but direct pixel-level art inspection remains unavailable in this agent runtime
+  - current living tissue and SOMA remain blockout/proxy, not final hyperreal material/anatomy
+  - Puerto representative-detail geometry still lacks final UV/baked PBR/LOD/engine import
   - no engine import receipt exists for LEVIATHAN yet
   - no target-hardware performance budget exists
   - physical planet scale is intentionally unresolved
+  - global CI continuity gate is not shard-safe yet and may fail art-only branches despite isolated ownership
 
 next:
-  - cold-rerun the versioned Blender generator in a clean project and compare structural receipts
-  - perform direct visual/art review of revision-2 overview and SOMA view, convert findings into fix tasks
-  - qualify a runtime import path and execute scale/material/collision smoke import
-  - split next atomic production claims for final SOMA, character/NPC, ecology and architecture kits after collision audit
-  - resolve/ADR the L0 physical planet scale before orbital representation work
+  - qualify runtime import path and execute scale/material/collision traversal smoke import
+  - continue Puerto vertical microset through final UV/PBR/LOD only after runtime path is proven
+  - perform direct human/art review when revision-5 visual inspection surface is available
+  - split next atomic production claims for final SOMA, characters/NPCs, ecology or additional architecture only after issue-7 preflight
+  - resolve/ADR L0 physical planet scale before orbital representation work
 
-last_heartbeat: 2026-09-12T21:45:00+02:00
+last_heartbeat: 2026-09-12T22:19:00+02:00
