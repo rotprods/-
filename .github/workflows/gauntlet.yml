@@ -1,20 +1,20 @@
-name: EXOVANT Vanta Persist
+name: EXOVANT Vanta Manifest Persist
 on:
   pull_request:
 permissions:
   contents: write
 concurrency:
-  group: vanta-persist-${{ github.ref }}
+  group: vanta-manifest-${{ github.ref }}
   cancel-in-progress: true
 jobs:
-  persist:
+  persist-manifest:
     runs-on: ubuntu-24.04
     timeout-minutes: 5
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
           fetch-depth: 0
-      - name: Generate final merge-context projection
+      - name: Generate projection for final canonical workflow
         run: |
           cat > .github/workflows/gauntlet.yml <<'YAML'
           name: EXOVANT Gauntlet
@@ -55,8 +55,7 @@ jobs:
           python3 tools/project_control.py refresh
           python3 tools/project_control.py check
           cp MANIFEST.json /tmp/VANTA_FINAL_MANIFEST.json
-          cp .github/workflows/gauntlet.yml /tmp/VANTA_FINAL_GAUNTLET.yml
-      - name: Persist projection and restore canonical workflow
+      - name: Persist manifest to producer branch
         env:
           HEAD_BRANCH: ${{ github.head_ref }}
         run: |
@@ -69,8 +68,7 @@ jobs:
           git fetch origin "$HEAD_BRANCH"
           git checkout -B "$HEAD_BRANCH" "origin/$HEAD_BRANCH"
           cp /tmp/VANTA_FINAL_MANIFEST.json MANIFEST.json
-          cp /tmp/VANTA_FINAL_GAUNTLET.yml .github/workflows/gauntlet.yml
-          git add MANIFEST.json .github/workflows/gauntlet.yml
+          git add MANIFEST.json
           git diff --cached --check
-          git commit -m "ci(vanta): persist continuity projection after rev9 qualification"
+          git commit -m "ci(vanta): persist merge-context manifest after rev9 qualification"
           git push origin "HEAD:$HEAD_BRANCH"
