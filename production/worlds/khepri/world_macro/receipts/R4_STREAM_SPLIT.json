@@ -5,24 +5,31 @@
   "master_revision": 4,
   "cold_project_id": "4c01fdbb-7093-4229-9a49-8237583280bc",
   "cold_revision": 3,
-  "master_operation": "khepri.export.split.audit.r4",
-  "cold_operation": "khepri.export.split.cold.audit.r4",
-  "normalization_operations": [
-    "khepri.export.split.master.normalized.r4",
-    "khepri.export.split.cold.normalized.r4"
-  ],
   "passed": true,
   "tool": "art_source/khepri/world_macro/export_stream_units.py",
+  "operations": {
+    "split_master": "khepri.export.split.audit.r4",
+    "split_cold": "khepri.export.split.cold.audit.r4",
+    "normalized_master": "khepri.export.split.master.normalized.r4",
+    "normalized_cold": "khepri.export.split.cold.normalized.r4",
+    "origin_audit": "khepri.export.origin.audit.r4",
+    "l1_center_master": "khepri.export.l1.recenter.master.r4",
+    "l1_center_cold": "khepri.export.l1.recenter.cold.r4"
+  },
   "L1_ORBITAL": {
     "collections": ["KHP_WM_10_L1_ORBITAL"],
+    "origin_policy": "Temporarily subtract KHP_WM_L1_ORBITAL_PROXY_1_TO_20000 authoring offset; restore master after export.",
+    "authoring_location_blender_xyz_m": [0.0, 0.0, -1100.0],
+    "uncentered_gltf_translation_y_up_m": [0.0, -1100.0, 0.0],
+    "centered_root_translation": [0.0, 0.0, 0.0],
     "object_count": 1,
     "mesh_object_count": 1,
-    "bytes_master": 132944,
-    "bytes_cold": 132944,
-    "sha256_master": "5f0bc35663a0bd785da818c6c6e383f4ad6d6bb8accf324e2427097a15951bf3",
-    "sha256_cold": "687a3fac793cb8824cb0b48ea9926882bfb64a4001d26982750cbe5e2ca1b83c",
-    "normalized_gltf_json_sha256_master": "b04faf19c85b4c7646eec4ae18273086522a8db6e53301ac77c61a08d61c7a13",
-    "normalized_gltf_json_sha256_cold": "b04faf19c85b4c7646eec4ae18273086522a8db6e53301ac77c61a08d61c7a13",
+    "bytes_master_centered": 132916,
+    "bytes_cold_centered": 132916,
+    "sha256_master_centered": "ea2a2f1f3bf2feb59b588db96fb6cd84432b331ac63437af116447c4248614b8",
+    "sha256_cold_centered": "ec2654a6edecd318fa0bbf3966904636749a6810186c986a70c230f8f07f7b85",
+    "normalized_gltf_json_sha256_master_centered": "5600ba9ebd70b6cdc2d738fb899eb8b5bb215b5d488246bc67d35e1c359eb6cb",
+    "normalized_gltf_json_sha256_cold_centered": "5600ba9ebd70b6cdc2d738fb899eb8b5bb215b5d488246bc67d35e1c359eb6cb",
     "glb_version": 2,
     "gltf_nodes": 1,
     "gltf_meshes": 1,
@@ -36,6 +43,7 @@
       "KHP_WM_30_OPTICAL_FOOTPRINTS",
       "KHP_WM_40_ROUTE_INTERFACES"
     ],
+    "origin_policy": "Retain local tangent cell coordinates; terrain is already centered at local origin.",
     "object_count": 69,
     "mesh_object_count": 65,
     "bytes_master": 553012,
@@ -55,6 +63,7 @@
     "l1_has_one_mesh_object": true,
     "l1_no_cameras": true,
     "l1_self_contained": true,
+    "l1_origin_centered": true,
     "l1_master_cold_semantic_match": true,
     "l2_has_terrain": true,
     "l2_has_optics": true,
@@ -65,7 +74,7 @@
     "l2_self_contained": true,
     "l2_master_cold_semantic_match": true
   },
-  "binary_hash_note": "Master/cold GLB SHA256 differs despite identical bytes and normalized glTF JSON. The deterministic gate is normalized glTF structure plus the independent Blender semantic fingerprint, not provider-serialization byte identity.",
+  "binary_hash_note": "Master/cold GLB SHA256 differs despite identical sizes and normalized glTF JSON. The deterministic gate is normalized glTF structure plus independent Blender semantic fingerprint, not provider-serialization byte identity.",
   "normalization": "Recursively removes only provider-generated extras key hf_id before hashing glTF JSON.",
   "boundary": "Portable split-export proof only. This does not select the production engine, implement world streaming, certify collision/navmesh, or replace the whole-scene provider preview artifact."
 }
