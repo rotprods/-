@@ -1,0 +1,148 @@
+{
+  "schema_version": 1,
+  "receipt_id": "ART-ELYSIUM-001-WHITE-MATERIAL-R7",
+  "world": "elysium",
+  "status": "STRUCTURAL_LOOKDEV_PASS_DIRECT_VISUAL_AND_ENGINE_REVIEW_PENDING",
+  "date": "2026-09-12",
+  "remote_scene": {
+    "provider": "Higgsfield 3D Jutsu",
+    "project_id": "00152eea-2da0-40ec-8666-78d6764c718f",
+    "revision": 7,
+    "operation_id": "ART-ELYSIUM-001.r7-white-material-microstructure",
+    "blender_version": "5.2.0 LTS",
+    "units": "METRIC_1BU_1M"
+  },
+  "intent": {
+    "problem": "Revision 6 established material roles and construction thickness, but the three white candidates were constant-value Principled shaders with no intrinsic manufacturing microstructure.",
+    "rule": "Add only restrained manufacturing-scale color/roughness/normal variation. Do not use random wear, generic scratches or all-over dirt to manufacture realism."
+  },
+  "materials": {
+    "MAT_Elysium_WHITE_C01_SinteredCeramic": {
+      "status": "W1_MICROSTRUCTURE_CANDIDATE",
+      "node_count": 8,
+      "link_count": 9,
+      "required_nodes_present": true,
+      "manufacturing_hypothesis": "sintered mineral-ceramic facing / controlled firing variation",
+      "macro_noise_scale_per_m": 3.2,
+      "micro_noise_scale_per_m": 650.0,
+      "roughness_range": [0.30, 0.39],
+      "bump_strength": 0.10,
+      "bump_distance_m": 0.00028,
+      "coat_weight": 0.055,
+      "coat_roughness": 0.12
+    },
+    "MAT_Elysium_WHITE_C02_MineralComposite": {
+      "status": "W1_MICROSTRUCTURE_CANDIDATE",
+      "node_count": 8,
+      "link_count": 9,
+      "required_nodes_present": true,
+      "manufacturing_hypothesis": "cast/mineral composite service core / low-frequency aggregate response",
+      "macro_noise_scale_per_m": 11.0,
+      "micro_noise_scale_per_m": 145.0,
+      "roughness_range": [0.47, 0.60],
+      "bump_strength": 0.17,
+      "bump_distance_m": 0.00110,
+      "coat_weight": 0.0
+    },
+    "MAT_Elysium_WHITE_C03_ServiceGlaze": {
+      "status": "W1_MICROSTRUCTURE_CANDIDATE",
+      "node_count": 8,
+      "link_count": 9,
+      "required_nodes_present": true,
+      "manufacturing_hypothesis": "maintainable glazed service surface / subtle orange-peel microtexture",
+      "macro_noise_scale_per_m": 7.0,
+      "micro_noise_scale_per_m": 340.0,
+      "roughness_range": [0.18, 0.27],
+      "bump_strength": 0.06,
+      "bump_distance_m": 0.00010,
+      "coat_weight": 0.15,
+      "coat_roughness": 0.075
+    },
+    "MAT_Elysium_JointGasket_EPDM": {
+      "status": "W1_CONSTRUCTION_CANDIDATE",
+      "node_count": 2,
+      "roughness": 0.46,
+      "ior": 1.47,
+      "role": "compressed joint gasket; construction layer, not decorative black trim"
+    }
+  },
+  "construction_witness": {
+    "ceramic_face_m": 0.012,
+    "mineral_composite_core_m": 0.180,
+    "metal_backer_m": 0.004,
+    "nominal_visible_joint_m": 0.016,
+    "compressed_gasket_m": 0.010,
+    "backer_rail_dimensions_m": [0.042, 0.032, 2.88],
+    "mechanical_anchor_dimensions_m": [0.12, 0.026, 0.06],
+    "mechanical_anchor_count": 3,
+    "anchor_spacing_proposal_m": 1.02,
+    "service_cavity_dimensions_m": [0.085, 0.12, 2.82]
+  },
+  "scene_after": {
+    "object_count": 303,
+    "mesh_count": 271,
+    "material_count": 14,
+    "render_cameras": ["CAM_MAT_CLOSE", "CAM_MAT_MID", "CAM_MAT_FAR"]
+  },
+  "artifacts": {
+    "editable_blend_remote": {
+      "size_bytes": 3603699,
+      "etag": "0a761b011f931c1937167bfa86e13fce"
+    },
+    "portable_glb_remote": {
+      "size_bytes": 3435576,
+      "etag": "078e228b1366b6c7a6df52a5a8ae27fa"
+    },
+    "close": {
+      "artifact_id": "1a387eea7a43d4619d93e2fa3c6a7632",
+      "name": "elysium_r7_material_close.png",
+      "width": 960,
+      "height": 540,
+      "size_bytes": 531737,
+      "etag": "4fbbda843f728f0cbf112bc0030d2e20"
+    },
+    "mid": {
+      "artifact_id": "8ad3d534ac8671e039a59a832337ff0b",
+      "name": "elysium_r7_material_mid.png",
+      "width": 960,
+      "height": 540,
+      "size_bytes": 520224,
+      "etag": "1abad9c7d153160336d39bf35272cf0e"
+    },
+    "far": {
+      "artifact_id": "eb9d896f8a31ea644623ea38b5f87219",
+      "name": "elysium_r7_material_far.png",
+      "width": 960,
+      "height": 540,
+      "size_bytes": 515255,
+      "etag": "c90db0886c21d29e0fa82025883d5a9e"
+    },
+    "source": "art_source/worlds/elysium_null/scripts/refine_white_material_microstructure.py"
+  },
+  "qa": {
+    "metric_material_microstructure": "PASS_STRUCTURAL",
+    "construction_layers": "PASS_STRUCTURAL",
+    "joint_gasket_backer_anchor_logic": "PASS_STRUCTURAL_CANDIDATE",
+    "anti_grunge_contract": "PASS_BY_NODE_AND_METADATA_CONTRACT",
+    "same_close_mid_far_camera_set": "PASS",
+    "direct_visual_art_review": "PENDING",
+    "target_engine_shader_translation": "PENDING",
+    "uv_texture_mip_memory_cost": "PENDING",
+    "representative_building_propagation": "PENDING",
+    "gate_asset": "PENDING",
+    "gate_art": "PENDING"
+  },
+  "known_limitations": [
+    "Procedural Noise nodes are a lookdev proof, not the guaranteed final game shader implementation.",
+    "Revision-6 automated render-buffer statistics returned NO_PIXEL_BUFFER and therefore produced no exposure/clipping PASS; revision 7 does not pretend otherwise.",
+    "No target-engine material import or GPU shader-cost benchmark has been executed for this material family.",
+    "No all-over dirt/scratch layer was added; ELYSIUM wear remains localized and causal by art-direction contract."
+  ],
+  "non_claims": [
+    "Not a MATERIAL_MASTER promotion.",
+    "Not final PBR/UV qualification.",
+    "Not GATE-ART approval.",
+    "Not target-hardware performance qualification.",
+    "Not permission to propagate these shaders across all ELYSIUM assets yet."
+  ]
+}
