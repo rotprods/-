@@ -1,0 +1,246 @@
+snapshot_at: "2026-09-12T19:44:00Z"
+world_id: khepri
+branch_context: art/world-khepri-001
+note: >-
+  Branch-local coverage snapshot for coordination. It does not override claims created later by other agents.
+  Status UNCLAIMED means no semantically equivalent KHEPRI branch/claim was observed at this snapshot.
+coverage:
+  - region_id: GLOBAL_KHEPRI
+    category: world_macro
+    asset_family: planetary_foundation
+    priority: P0
+    status: REVIEW
+    owner: AGENT-KHEPRI-WMACRO-001
+    claim: CLM-KHEPRI-WMACRO-001
+    dependency: KHP-ADR-001
+    art_status: BLOCKOUT
+    modeling_status: STRUCTURALLY_VALIDATED
+    material_status: BLOCKOUT_ONLY
+    optimization_status: PASS_FOR_BLOCKOUT
+    integration_status: PROVIDER_EXPORT_ONLY
+    qa_status: STRUCTURAL_PASS_VISUAL_HUMAN_PENDING
+
+  - region_id: GLOBAL_KHEPRI
+    category: terrain_geology
+    asset_family: final_planetary_geology_and_tiles
+    priority: P0
+    status: TODO
+    owner: UNCLAIMED
+    claim: null
+    dependency: world_macro/planetary_foundation
+    art_status: NOT_STARTED
+    modeling_status: NOT_STARTED
+    material_status: NOT_STARTED
+    optimization_status: NOT_STARTED
+    integration_status: NOT_STARTED
+    qa_status: NOT_STARTED
+
+  - region_id: GLOBAL_KHEPRI
+    category: biome_composition
+    asset_family: biome_systems
+    priority: P1
+    status: TODO
+    owner: UNCLAIMED
+    claim: null
+    dependency: terrain_geology
+    art_status: NOT_STARTED
+    modeling_status: NOT_STARTED
+    material_status: NOT_STARTED
+    optimization_status: NOT_STARTED
+    integration_status: NOT_STARTED
+    qa_status: NOT_STARTED
+
+  - region_id: SHADE_DISTRICT_FUNCTIONAL
+    category: architecture
+    asset_family: communal_shade_and_habitation
+    priority: P1
+    status: TODO
+    owner: UNCLAIMED
+    claim: null
+    dependency: KHP_WM_ROUTE_SHADE
+    art_status: NOT_STARTED
+    modeling_status: NOT_STARTED
+    material_status: NOT_STARTED
+    optimization_status: NOT_STARTED
+    integration_status: NOT_STARTED
+    qa_status: NOT_STARTED
+
+  - region_id: GLASS_SEA_FUNCTIONAL
+    category: infrastructure
+    asset_family: reflectors_subterranean_crossing
+    priority: P1
+    status: TODO
+    owner: UNCLAIMED
+    claim: null
+    dependency: KHP_WM_ROUTE_GLASS_SEA
+    art_status: NOT_STARTED
+    modeling_status: NOT_STARTED
+    material_status: NOT_STARTED
+    optimization_status: NOT_STARTED
+    integration_status: NOT_STARTED
+    qa_status: NOT_STARTED
+
+  - region_id: CRUCIBLE_FUNCTIONAL
+    category: industrial_architecture
+    asset_family: crucible_energy_debt_infrastructure
+    priority: P1
+    status: TODO
+    owner: UNCLAIMED
+    claim: null
+    dependency: KHP_WM_ROUTE_CRUCIBLE
+    art_status: NOT_STARTED
+    modeling_status: NOT_STARTED
+    material_status: NOT_STARTED
+    optimization_status: NOT_STARTED
+    integration_status: NOT_STARTED
+    qa_status: NOT_STARTED
+
+  - region_id: RAKHET_FUNCTIONAL
+    category: megastructures_hero_landmarks
+    asset_family: rakhet_arena_and_solar_nodes
+    priority: P1
+    status: TODO
+    owner: UNCLAIMED
+    claim: null
+    dependency: KHP_WM_ROUTE_RAKHET
+    art_status: NOT_STARTED
+    modeling_status: NOT_STARTED
+    material_status: NOT_STARTED
+    optimization_status: NOT_STARTED
+    integration_status: NOT_STARTED
+    qa_status: NOT_STARTED
+
+  - region_id: GLOBAL_KHEPRI
+    category: materials_surface_library
+    asset_family: glass_bronze_scorched_ceramic_mirror_fabric_mineral
+    priority: P1
+    status: TODO
+    owner: UNCLAIMED
+    claim: null
+    dependency: world_bible_art_direction
+    art_status: NOT_STARTED
+    modeling_status: N_A
+    material_status: NOT_STARTED
+    optimization_status: NOT_STARTED
+    integration_status: NOT_STARTED
+    qa_status: NOT_STARTED
+
+  - region_id: GLOBAL_KHEPRI
+    category: vegetation
+    asset_family: flora_system
+    priority: P2
+    status: BLOCKED
+    owner: UNCLAIMED
+    claim: null
+    dependency: canonical_ecology_definition
+    art_status: BLOCKED
+    modeling_status: NOT_STARTED
+    material_status: NOT_STARTED
+    optimization_status: NOT_STARTED
+    integration_status: NOT_STARTED
+    qa_status: NOT_STARTED
+
+  - region_id: GLOBAL_KHEPRI
+    category: fauna_wildlife
+    asset_family: fauna_system
+    priority: P2
+    status: BLOCKED
+    owner: UNCLAIMED
+    claim: null
+    dependency: canonical_ecology_definition
+    art_status: BLOCKED
+    modeling_status: NOT_STARTED
+    material_status: NOT_STARTED
+    optimization_status: NOT_STARTED
+    integration_status: NOT_STARTED
+    qa_status: NOT_STARTED
+
+  - region_id: GLOBAL_KHEPRI
+    category: humanoid_characters
+    asset_family: sinodo_population_and_quest_npcs
+    priority: P1
+    status: TODO
+    owner: UNCLAIMED
+    claim: null
+    dependency: character_canon_recovery
+    art_status: NOT_STARTED
+    modeling_status: NOT_STARTED
+    material_status: NOT_STARTED
+    optimization_status: NOT_STARTED
+    integration_status: NOT_STARTED
+    qa_status: NOT_STARTED
+
+  - region_id: RAKHET_FUNCTIONAL
+    category: industrial_machinery_robotics
+    asset_family: RA_KHET_FINAL
+    priority: P1
+    status: TODO
+    owner: UNCLAIMED
+    claim: null
+    dependency: boss_design_and_gameplay_contract
+    art_status: NOT_STARTED
+    modeling_status: NOT_STARTED
+    material_status: NOT_STARTED
+    optimization_status: NOT_STARTED
+    integration_status: NOT_STARTED
+    qa_status: NOT_STARTED
+
+  - region_id: GLOBAL_KHEPRI
+    category: wardrobe_equipment
+    asset_family: population_equipment
+    priority: P2
+    status: TODO
+    owner: UNCLAIMED
+    claim: null
+    dependency: character_art_direction
+    art_status: NOT_STARTED
+    modeling_status: NOT_STARTED
+    material_status: NOT_STARTED
+    optimization_status: NOT_STARTED
+    integration_status: NOT_STARTED
+    qa_status: NOT_STARTED
+
+  - region_id: GLOBAL_KHEPRI
+    category: vehicles
+    asset_family: ground_air_orbital_transport
+    priority: P2
+    status: TODO
+    owner: UNCLAIMED
+    claim: null
+    dependency: transportation_canon
+    art_status: NOT_STARTED
+    modeling_status: NOT_STARTED
+    material_status: NOT_STARTED
+    optimization_status: NOT_STARTED
+    integration_status: NOT_STARTED
+    qa_status: NOT_STARTED
+
+  - region_id: GLOBAL_KHEPRI
+    category: props_set_dressing
+    asset_family: optical_maintenance_market_debt_storytelling
+    priority: P2
+    status: TODO
+    owner: UNCLAIMED
+    claim: null
+    dependency: architecture_and_material_kits
+    art_status: NOT_STARTED
+    modeling_status: NOT_STARTED
+    material_status: NOT_STARTED
+    optimization_status: NOT_STARTED
+    integration_status: NOT_STARTED
+    qa_status: NOT_STARTED
+
+  - region_id: GLOBAL_KHEPRI
+    category: technical_art
+    asset_family: lod_collision_streaming_export_qa
+    priority: P0
+    status: TODO
+    owner: UNCLAIMED
+    claim: null
+    dependency: production_engine_qualification
+    art_status: N_A
+    modeling_status: N_A
+    material_status: N_A
+    optimization_status: NOT_STARTED
+    integration_status: NOT_STARTED
+    qa_status: NOT_STARTED
