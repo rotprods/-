@@ -96,8 +96,18 @@ def validate(registry):
         for p in c["paths"]:
             selector(p)
             if c["role"] == "world":
+                parts = p.rstrip("/").split("/")
+                # Delivery metadata may be sharded under its canonical world.
+                # Never grant the shared parent or a different world's shard.
+                scoped_metadata = (
+                    len(parts) >= 3 and parts[:2] in
+                    [["production", "manifests"], ["production", "receipts"]]
+                    and (len(parts) > 3 or p.endswith("/"))
+                    and parts[2] in {world_id(s.get("world")) for s in c["scopes"]}
+                )
                 require(p.startswith("art_source/") or p.startswith("production/worlds/")
-                        or (p.startswith("production/claims/") and not p.endswith("/")),
+                        or (p.startswith("production/claims/") and not p.endswith("/"))
+                        or scoped_metadata,
                         "world claim cannot own integration files: " + p)
         keys = [scope_key(s) for s in c["scopes"]]
         require(len(set(keys)) == len(keys), "duplicate semantic scope")
@@ -281,6 +291,20 @@ def delivery_check(root, delivery):
             and chunk_size <= size - 20, "invalid GLB header")
     document = json.loads(glb[20:20 + chunk_size])
     require(isinstance(document, dict), "invalid GLB document")
+    # The envelope length alone does not validate the remainder of the file.
+    # Walk every chunk before trusting a hash-bound provider delivery.
+    cursor = 12
+    seen = set()
+    while cursor < size:
+        require(size - cursor >= 8, "truncated GLB chunk header")
+        length, kind = struct.unpack_from("<II", glb, cursor)
+        cursor += 8
+        require(length % 4 == 0 and length <= size - cursor,
+                "invalid GLB chunk alignment or bounds")
+        if kind in {0x4E4F534A, 0x004E4942}:
+            require(kind not in seen, "duplicate GLB JSON/BIN chunk")
+            seen.add(kind)
+        cursor += length
     require(bool(document.get("meshes")), "GLB contains no playable mesh candidate")
     require(not any("uri" in x for x in document.get("buffers", []) + document.get("images", [])),
             "GLB depends on external resources; runtime must stay offline")
@@ -293,6 +317,9 @@ def delivery_check(root, delivery):
     require(receipt.get("passed") is True and receipt.get("artifact_sha256") == hashes["glb"]
             and receipt.get("executed_at") and receipt.get("engine") and receipt.get("evidence_refs"),
             "native receipt is not bound to this exported artifact")
+    require(isinstance(receipt["evidence_refs"], list)
+            and all(isinstance(ref, str) and bool(ref) for ref in receipt["evidence_refs"]),
+            "native evidence_refs must be a list of paths")
     for ref in receipt["evidence_refs"]:
         safe_file(root, ref)
     return {"passed": True, "stage": "candidate_recovered_with_native_receipt", "hashes": hashes,

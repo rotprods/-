@@ -2,8 +2,8 @@
   "gate_id": "GATE-NATIVE",
   "task_id": "INFRA-005",
   "passed": true,
-  "executed_at": "2026-09-12T19:59:07.715473+00:00",
-  "source_digest": "18c90a0b8f72148d244f4406a52ee0d63555c663b315ccf50fd0f6a01f3b58ed",
+  "executed_at": "2026-09-12T22:17:51.277264+00:00",
+  "source_digest": "acbed8e7cae41b340562637ce4833bda7b2f3fe4a33357d5f5a4df9b4fc4d67c",
   "evidence_refs": [
     "evidence/gates/INFRA-005-GATE-NATIVE.log"
   ],

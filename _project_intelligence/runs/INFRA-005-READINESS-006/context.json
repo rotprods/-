@@ -1,0 +1,13 @@
+{
+  "run_id": "INFRA-005-READINESS-006",
+  "task_id": "INFRA-005",
+  "base_commit": "758a9b6326a7d061f1e304abe9b1593b6b2d1a66",
+  "read_set": {
+    "AGENTS.md": "b872f84f54b2fc249100a05ef40e0b43c7a84085ae11de27d8cbe83daf4ccf6e",
+    "MEMORY.md": "63dfcc00ce6a4ba403b03f2588c54f0b623f55a06d5ce84f2c4e0f552d08cfab",
+    "HANDOFF.md": "ae8b92b56952c36847d2df31851fe2d48cbb3efba64dbd87af60a11841464763",
+    "_project_intelligence/STATE.json": "4a7abf6d4ca0120ca83c1a514acf19dc9ed57aa4d73cf7a240af4cbbc9990a81",
+    "_project_intelligence/PLAN.json": "76d9195c0cc812d562cf70c7f27aaecd65ce38ade0a5c2eaedb28ead808482be"
+  },
+  "started_at": "2026-09-12T22:06:12.413823+00:00"
+}

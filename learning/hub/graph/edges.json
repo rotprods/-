@@ -130,6 +130,31 @@
     "type": "INSTANCE_OF"
   },
   {
+    "from": "LRN-EXO-20260912-OWNER-ADMISSION",
+    "to": "INFRA-005-LEARNING-004",
+    "type": "OCCURRED_IN_CHAT"
+  },
+  {
+    "from": "LRN-EXO-20260912-OWNER-ADMISSION",
+    "to": "codex-root",
+    "type": "EXECUTED_BY"
+  },
+  {
+    "from": "LRN-EXO-20260912-OWNER-ADMISSION",
+    "to": "https://github.com/rotprods/-/issues/7#issuecomment-5648819121",
+    "type": "EVIDENCED_BY"
+  },
+  {
+    "from": "LRN-EXO-20260912-OWNER-ADMISSION",
+    "to": "evidence/delivery-container-regression.json",
+    "type": "EVIDENCED_BY"
+  },
+  {
+    "from": "LRN-EXO-20260912-OWNER-ADMISSION",
+    "to": "duplicate_owner_work_and_unsupported_capability_assumptions",
+    "type": "INSTANCE_OF"
+  },
+  {
     "from": "LRN-EXO-20260912-ART",
     "to": "exovant-persistence-20260912",
     "type": "OCCURRED_IN_CHAT"

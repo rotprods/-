@@ -1,0 +1,11 @@
+[
+  {
+    "learning_id": "LRN-EXO-20260912-OWNER-ADMISSION",
+    "path": "agents/codex-root/chats/INFRA-005-LEARNING-004/events/LRN-EXO-20260912-OWNER-ADMISSION.json",
+    "authority": "L2-persisted",
+    "status": "persisted",
+    "agent_id": "codex-root",
+    "chat_id": "INFRA-005-LEARNING-004",
+    "chat_id_source": "session-alias"
+  }
+]
