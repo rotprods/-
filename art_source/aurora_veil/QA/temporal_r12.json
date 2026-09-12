@@ -1,0 +1,108 @@
+{
+  "schema_version": 1,
+  "world_id": "aurora",
+  "claim_id": "CLM-AURORA-WORLD-001",
+  "task_id": "AUR/TEMPORAL/007",
+  "remote_project_id": "d6488148-8547-4ffe-b63d-e5fbec3a339c",
+  "remote_revision": 12,
+  "contract_version": "AUR-TEMPORAL-v1-r12",
+  "scene_status": "WAVE2_TEMPORAL_CONTRACT_R12_METADATA_QA",
+  "quality_claim": "STRUCTURAL_AND_EXPORT_PASS; RUNTIME_AND_HUMAN_ART_PENDING",
+  "legacy": {
+    "collection": "05_TEMPORAL",
+    "status": "LEGACY_BLOCKOUT_SUPERSEDED",
+    "hidden_from_render": true,
+    "destructively_deleted": false
+  },
+  "state_order": ["IDLE", "PRE_CUE", "REPEAT_ARMED", "REPEAT_ACTIVE", "COOLDOWN"],
+  "fields": [
+    {
+      "field_id": "AUR-TMP-FIELD-A",
+      "delay_s_proposal": 1.0,
+      "cue_lead_s_proposal": 0.80,
+      "active_window_s_proposal": 0.55,
+      "state_geometry_counts": {"IDLE": 1, "PRE_CUE": 8, "REPEAT_ARMED": 4, "REPEAT_ACTIVE": 3, "COOLDOWN": 6},
+      "persistence": "ENCOUNTER_LOCAL_RESET_ON_EXIT_OR_RELOAD",
+      "collision_proxy": "AUR-TMP-FIELD-A_COL_REPEAT_ACTIVE"
+    },
+    {
+      "field_id": "AUR-TMP-FIELD-B",
+      "delay_s_proposal": 1.4,
+      "cue_lead_s_proposal": 1.05,
+      "active_window_s_proposal": 0.65,
+      "state_geometry_counts": {"IDLE": 1, "PRE_CUE": 8, "REPEAT_ARMED": 4, "REPEAT_ACTIVE": 3, "COOLDOWN": 6},
+      "persistence": "ENCOUNTER_LOCAL_RESET_ON_EXIT_OR_RELOAD",
+      "collision_proxy": "AUR-TMP-FIELD-B_COL_REPEAT_ACTIVE"
+    },
+    {
+      "field_id": "AUR-TMP-FIELD-C",
+      "delay_s_proposal": 1.8,
+      "cue_lead_s_proposal": 1.25,
+      "active_window_s_proposal": 0.75,
+      "state_geometry_counts": {"IDLE": 1, "PRE_CUE": 8, "REPEAT_ARMED": 4, "REPEAT_ACTIVE": 3, "COOLDOWN": 6},
+      "persistence": "ENCOUNTER_LOCAL_RESET_ON_EXIT_OR_RELOAD",
+      "collision_proxy": "AUR-TMP-FIELD-C_COL_REPEAT_ACTIVE"
+    }
+  ],
+  "collision": {
+    "collection": "19_TEMPORAL_COLLISION_PROXIES",
+    "collection_hidden_from_render": true,
+    "proxy_count": 6,
+    "default": "DISABLED",
+    "only_collision_state": "REPEAT_ACTIVE",
+    "policy": "ENABLE_LOCAL_REPEAT_PROXY_ONLY"
+  },
+  "aeon_sectors": [
+    {"id": "AUR-AEON-TMP-SECTOR-1", "delay_s_proposal": 0.9, "rule": "ONE_VISIBLE_DELAY_PER_SECTOR"},
+    {"id": "AUR-AEON-TMP-SECTOR-2", "delay_s_proposal": 1.2, "rule": "ONE_VISIBLE_DELAY_PER_SECTOR"},
+    {"id": "AUR-AEON-TMP-SECTOR-3", "delay_s_proposal": 1.5, "rule": "ONE_VISIBLE_DELAY_PER_SECTOR"}
+  ],
+  "hard_invariants": {
+    "global_rewind": "FORBIDDEN",
+    "save_state_mutation": "FORBIDDEN",
+    "whole_world_duplication": "FORBIDDEN",
+    "color_only_cue": "FORBIDDEN"
+  },
+  "renders": [
+    {
+      "name": "aurora_r12_temporal_field_b.png",
+      "artifact_id": "37c827b99d717a97918cd57ecc8636a1",
+      "resolution": [640, 360],
+      "mean": 0.1975,
+      "p01": 0.0711,
+      "p50": 0.1890,
+      "p99": 0.8733,
+      "black_clip": 0.0062,
+      "white_clip": 0.0
+    },
+    {
+      "name": "aurora_r12_aeon_temporal_sectors.png",
+      "artifact_id": "faafcfef3bbd5e5f26696ccd51110cd9",
+      "resolution": [640, 360],
+      "mean": 0.1822,
+      "p01": 0.0,
+      "p50": 0.1859,
+      "p99": 0.9070,
+      "black_clip": 0.0718,
+      "white_clip": 0.0
+    }
+  ],
+  "portable_artifacts_revision_12": {
+    "blend": {"size_bytes": 7561886, "etag": "9c6a327ccabd8337b26c0ad4c042af5b"},
+    "glb": {"size_bytes": 5113024, "etag": "be87a2884661cbd3b0abc3052e0e54e8"}
+  },
+  "gates": {
+    "CANON_BOUNDARY": "PASS",
+    "STATE_COMPLETENESS": "PASS",
+    "COLLISION_SEPARATION": "PASS_BLOCKOUT",
+    "PERSISTENCE_BOUNDARY": "PASS",
+    "ACCESSIBILITY_SHAPE_CUE": "PASS_GEOMETRY_PROOF_SOUND_PENDING",
+    "AEON_THREE_SECTORS": "PASS",
+    "EXPORT": "PASS_REMOTE_GLB_REV12",
+    "PHOTOMETRIC_FIELD": "PASS_BLOCKOUT",
+    "PHOTOMETRIC_ARENA": "PASS_NO_WHITE_CLIP_REVIEW_DARK_REGIONS",
+    "ART": "PENDING_HUMAN_VISUAL_REVIEW",
+    "RUNTIME": "BLOCKED_ENGINE_INTERFACE",
+    "GAMEPLAY_TIMING": "PENDING_HUMAN_QUALIFICATION"
+  }
+}
