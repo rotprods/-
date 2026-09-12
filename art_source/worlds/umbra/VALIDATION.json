@@ -10,8 +10,9 @@
     "registry_readback": "RESERVED_ACK_NULL_PENDING_INTEGRATOR",
     "linear": "ROT-119",
     "pr": 16,
-    "last_reconciled_main": "ca224a78c72512770cb599e82977623c4b8aa76d",
-    "reconciliation_merge": "58e54c25965a21e6a39b2bd3e309281be01b1166",
+    "last_reconciled_main": "758a9b6326a7d061f1e304abe9b1593b6b2d1a66",
+    "reconciliation_merge": "bfff105fb5e46d31e064a22f33053e43b132df19",
+    "previous_reconciliation_merge": "58e54c25965a21e6a39b2bd3e309281be01b1166",
     "no_force_update": true
   },
   "wave0": {
@@ -92,8 +93,8 @@
     "binary_etag_equality_required": false
   },
   "ci": {
-    "pre_wave1_source_head": "498f5de4ef991be7d768b613f2cd09a7df4be7c9",
-    "run_id": 34720234976,
+    "last_completed_green_baseline_head": "498f5de4ef991be7d768b613f2cd09a7df4be7c9",
+    "baseline_run_id": 34720234976,
     "python_tests": "PASS_82_OF_82",
     "project_control_check": "PASS",
     "godot_version": "4.7.2",
@@ -105,14 +106,15 @@
       "smoke": "PASS"
     },
     "evidence_artifact_id": 10306275373,
-    "note": "Wave1 documentation/source commit must refresh generated MANIFEST and pass the same continuity contract before merge readiness. Latest post-Wave1 run is tracked externally on PR #16 to avoid self-invalidating this validation file."
+    "post_wave1_status": "PENDING_FINAL_MANIFEST_AND_CI_AT_TIME_OF_THIS_FILE",
+    "note": "Latest post-Wave1 CI is tracked externally on PR #16 / Linear ROT-119 after MANIFEST refresh so this validation file does not self-invalidate the generated manifest."
   },
   "gates": {
     "canon_separation": "PASS",
     "claim_collision": "PASS_RESERVED_TO_THIS_OWNER",
     "fleet_owner_ack_published": "PASS",
     "fleet_registry_ack_readback": "PENDING_INTEGRATOR",
-    "branch_reconciled_to_main": "PASS_AT_CA224A7",
+    "branch_reconciled_to_main": "PASS_AT_758A9B6",
     "metric_scale": "PASS",
     "object_scale": "PASS",
     "zero_dimension": "PASS",
