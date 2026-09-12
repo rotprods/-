@@ -1,0 +1,107 @@
+{
+  "schema_version": 1,
+  "project": "EXOVANT 2950",
+  "world_id": "khepri",
+  "claim_id": "CLM-KHEPRI-WMACRO-001",
+  "gate": "KHP-WM-COLD-REBUILD",
+  "executed_at": "2026-09-12T21:31:34Z",
+  "passed": true,
+  "truth_state": "LOCALLY_VALIDATED_SEMANTIC_REPRODUCIBILITY",
+  "source": {
+    "generator_path": "art_source/khepri/world_macro/generate_khepri_world_macro.py",
+    "generator_git_blob": "da43815529221a6fba6a691190cb6db501581bd1",
+    "optimizer_path": "art_source/khepri/world_macro/optimize_khepri_world_macro.py",
+    "optimizer_git_blob": "9c9984d1a47c0b125550aa44f6f8320b77ac4cea",
+    "fingerprint_path": "art_source/khepri/world_macro/fingerprint_khepri_world_macro.py"
+  },
+  "master": {
+    "project_id": "040f0c45-83a7-483c-9ee7-1e31c640a587",
+    "revision": 2,
+    "scene_sequence": 0,
+    "blend_bytes": 1357562,
+    "blend_etag": "2efee5ad6b7207bf45dcff22d7f115fb",
+    "glb_bytes": 702900,
+    "glb_etag": "ec7a8590f53e9b64bf27165172e11e9e",
+    "semantic_sha256": "127b35919b9c385ecabd3143942afe498c108e0e753066ab420c1bc323a40771"
+  },
+  "cold_rebuild": {
+    "project_id": "d13625de-15d1-440b-8345-2c9fbc27d69e",
+    "revision_after_generator": 1,
+    "revision_after_optimizer": 2,
+    "scene_sequence": 0,
+    "revision_1": {
+      "objects": 77,
+      "meshes": 38,
+      "materials": 5,
+      "blend_bytes": 1529116,
+      "blend_etag": "fe35c7c6542cde4c1dbb825e78761365",
+      "glb_bytes": 781376,
+      "glb_etag": "2a1e1772649c4fa596ebd9a24853d663"
+    },
+    "revision_2": {
+      "objects": 77,
+      "meshes": 6,
+      "curves": 1,
+      "materials": 5,
+      "blend_bytes": 1357562,
+      "blend_etag": "a29cf367fb6d5001f25198cb7ef42602",
+      "glb_bytes": 702900,
+      "glb_etag": "a48c8ed144633050e8725320a86e1098",
+      "semantic_sha256": "127b35919b9c385ecabd3143942afe498c108e0e753066ab420c1bc323a40771"
+    }
+  },
+  "adversarial_findings": {
+    "naive_index_sensitive_master_sha256": "a4b0e798dcae6f53c7a9db044852526e88c45de6f253b5fcc81ddda1df02eb94",
+    "naive_index_sensitive_cold_sha256": "d024525d6942eb719edb8167e0a19723b610d348b84e3a83424742f3bb77b50d",
+    "identical_categories": [
+      "objects/transforms/custom-properties",
+      "curves",
+      "materials",
+      "scene metadata",
+      "units",
+      "five of six mesh datablocks by index-sensitive hash"
+    ],
+    "isolated_difference": {
+      "mesh": "Sphere",
+      "purpose": "1.85 m human QA guide head; not a production character asset",
+      "master_index_sensitive_mesh_sha256": "b97a3a75b17f1bf94b47a1e9de8ff818e58636e89ffee081aea750d0dc01c3ac",
+      "cold_index_sensitive_mesh_sha256": "aa1ea1d3b7e6af1f2891fe22929de26d4ccf771fcefece63f4561fece93c1fe2",
+      "vertex_multiset_sha256_both": "d6c67e4b1d5a0563a9f8d8ca5dd6576305e202219b67f9911ea9f806d5fa74a4",
+      "face_geometry_sha256_both": "6ec8695aee28cdb1bf620a29b8bce5036a95b69b49ca3d1da2ed8bfd8b4fa337",
+      "interpretation": "Blender primitive indexing order differs between fresh projects while actual vertex multiset and face geometry are identical. Semantic fingerprint canonicalizes index order instead of forcing a meaningless binary/index match."
+    }
+  },
+  "acceptance": {
+    "same_object_count": true,
+    "same_mesh_count_after_optimizer": true,
+    "same_curve_count": true,
+    "same_material_count": true,
+    "same_master_and_cold_semantic_sha256": true,
+    "same_revision_1_artifact_sizes": true,
+    "same_revision_2_artifact_sizes": true,
+    "binary_etag_identity_required": false,
+    "binary_etag_identity_observed": false
+  },
+  "non_claims": [
+    "No binary-identical .blend serialization claim",
+    "No binary-identical GLB serialization claim",
+    "No GATE-ART human approval",
+    "No runtime engine import/traversal approval",
+    "No target-GPU performance qualification",
+    "No final KHEPRI world completion"
+  ],
+  "operations": [
+    "khepri.cold.generator.r1",
+    "khepri.cold.optimize.r2",
+    "khepri.master.fingerprint.r2",
+    "khepri.cold.fingerprint.r2",
+    "khepri.master.subhash.r2",
+    "khepri.cold.subhash.r2",
+    "khepri.master.meshhash.r2",
+    "khepri.cold.meshhash.r2",
+    "khepri.master.sphere.semantic.r2",
+    "khepri.cold.sphere.semantic.r2",
+    "khepri.master.semanticfp.r2",
+    "khepri.cold.semanticfp.r2"
+  ]
+}
