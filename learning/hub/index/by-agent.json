@@ -4,6 +4,8 @@
     "agents/codex-root/chats/EXO-004-INPUT-001/events/LRN-EXO-20260912-INPUT-PREFERENCES.json",
     "agents/codex-root/chats/INFRA-005-CONTRACT/events/LRN-EXO-20260912-CI-BOOTSTRAP-VERIFIED.json",
     "agents/codex-root/chats/INFRA-005-CONTRACT/events/LRN-EXO-20260912-CI-BOOTSTRAP.json",
+    "agents/codex-root/chats/INFRA-005-FLEET-001/events/LRN-EXO-20260912-FLEET-CAS.json",
+    "agents/codex-root/chats/INFRA-005-LEARNING-004/events/LRN-EXO-20260912-OWNER-ADMISSION.json",
     "agents/codex-root/chats/exovant-persistence-20260912/events/LRN-EXO-20260912-ART.json",
     "agents/codex-root/chats/exovant-persistence-20260912/events/LRN-EXO-20260912-BLENDER.json",
     "agents/codex-root/chats/exovant-persistence-20260912/events/LRN-EXO-20260912-CAPABILITY.json",

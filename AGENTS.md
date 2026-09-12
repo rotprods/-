@@ -9,6 +9,22 @@ Este repositorio contiene EXOVANT 2950 (nombre inicial del repositorio: Humanity
 4. Comprobar ejecutables, límites y dispositivos actuales. El inventario de game-dev-mcp-hub describe otra máquina y una fecha; no prueba conectividad.
 5. Ejecutar `python3 tools/studio.py start TASK --run RUN` para reservar un escritor local y emitir BOOTSTRAP con contexto y aprendizajes. Los hashes identifican los archivos disponibles; no prueban por sí solos comprensión del agente. El recibo no aumenta autoridad.
 
+## Preflight obligatorio de ownership para producción artística multiagente
+Antes de seleccionar, reservar o modelar un mundo, región, personaje, criatura, vehículo, boss o kit compartido:
+
+1. Leer la superficie de coordinación activa `https://github.com/rotprods/-/issues/7` y no tratarla como canon narrativo; sirve únicamente para evitar solapes.
+2. Recuperar **todas las ramas actuales y los PR abiertos/cerrados relevantes** del repositorio. No decidir disponibilidad con una captura antigua, un mensaje de chat ni solo por ausencia de assignee en Linear.
+3. Clasificar la intención como `WORLD_OWNER` o `ATOMIC_SUBCLAIM`:
+   - `WORLD_OWNER`: una sola rama posee el mundo completo de arte/modelado.
+   - `ATOMIC_SUBCLAIM`: trabajo estrictamente acotado dentro de un mundo ya ocupado, con ID, exclusiones y assets concretos.
+4. Una rama de reserva existente basta para considerar un mundo **OCCUPIED**, aunque todavía no exista PR. Solo puede liberarse con evidencia explícita `ABANDONED`, `SUPERSEDED` o cierre equivalente.
+5. No confundir ramas históricas abandonadas con owners activos. Cruzar `branch + PR state/title/body + Linear scope` antes de decidir.
+6. Para un mundo libre, crear la rama de reserva y la tarea Linear **antes** de producir geometría; después volver a consultar ramas. Si aparece una reserva concurrente, detenerse y reconciliar antes de escribir más.
+7. Si el mundo ya tiene owner, no abrir otra rama `full world`. Crear un claim atómico (`CLM-<WORLD>-<DOMAIN>-<NAME>-<NNN>`) y acordar una partición no solapada de asset IDs/colecciones.
+8. Cada PR artístico debe declarar: mundo/claim, owner branch, exclusiones, estado de verdad (`planned`, `implemented`, `locally_validated`, etc.), dependencias y handoff.
+9. En colisión, el agente posterior abandona o reduce scope; conservar evidencia del conflicto en vez de ocultarlo. Nunca force-push ni sobrescribir trabajo ajeno.
+10. Antes de cada nueva ola significativa, repetir este preflight. El ownership puede cambiar mientras varios agentes trabajan en paralelo.
+
 ## Desarrollo y Gauntlet
 Trabajar en una unidad acotada del backlog, con criterio de aceptación observable. OBSERVE → GRAPHIFY → PLAN → ATTACK → IMPLEMENT → TEST → EVIDENCE → PERSIST → COLD RESUME → NEXT. Corregir regresiones antes de añadir contenido. A la sexta iteración del mismo fallo revisar causa y arquitectura.
 
@@ -24,7 +40,12 @@ El juego debe funcionar offline. No mezclar llamadas a proveedores con runtime d
 - Cerrar con `studio.py finish --run RUN --outcome checkpoint|blocked|done --next ...`, pasando recibos y learning IDs pertinentes. Done exige todos los gates y dependencias; un checkpoint permite cerrar trabajo parcial sin falsear el estado. Escribir exactamente un CLOSE por run, idempotente para contenido idéntico. Dejar una siguiente acción ejecutable. Los agentes no son procesos permanentes por existir un JSON.
 
 ## Claims y límites
+Para trabajo paralelo, leer `docs/FLEET_COORDINATION.md`, `main:ops/fleet/registry.json` y el [hilo #7](https://github.com/rotprods/-/issues/7). Las reservas de productores importadas no implican acuse. Confirmar owner/claim/rutas/proyecto remoto y publicar reservas mediante padre actual + ref sin force. Ejecutar `fleet_control.py guard-git` sobre el checkout de entrega; preservar cambios globales de otras ramas como propuestas para el integrador. No reemplazar STATE/PLAN/MANIFEST/grafo de main con los de una rama artística. `studio.py` es lock local, no distribuido; ningún heartbeat viejo libera un mundo automáticamente. Ares PR #2 está abandonado; Sylva macro y root-kit necesitan acuse del reparto proveedor/consumidor. Los snapshots no sustituyen lecturas actuales.
+
 Usar planned / implemented / locally_validated / empirically_qualified / released con evidencia adecuada. Render de CPU no es benchmark GPU; modelo bonito no valida colisiones; tests con teletransporte no son una partida humana; tarea programada creada no es tarea ejecutada. No afirmar AAA, DLSS, Unreal operativo o campaña final sin sus gates. Calidad artística: silueta, materiales, animación, composición y rendimiento conjunto; la cantidad de polígonos no basta.
 
 ## Fuentes del método
 Protocolos del usuario en rotprods/rot.knowledge: APRENDE_MASTER, APRENDE_ENFORCEMENT, COS_GRAPH_ENGINE_V2_MASTER, GRAPHIFY_MASTER y GAUNTLET_LOOP_MASTER. Versiones recuperadas en `docs/PROTOCOLS.md`. Aplicación local acotada; no se afirma enforcement universal en aplicaciones ajenas.
+
+## Admisión y aprendizaje compartido
+Antes de aceptar trabajo, recuperar LRN-EXO-20260912-OWNER-ADMISSION. Cada owner produce, recupera y valida sus assets; el integrador interviene por entrega lista, conflicto entre ámbitos, regresión compartida o decisión necesaria. Reutilizar evidencia ligada a fuente/versión/contexto; repetir gates cuando la integración invalide esa evidencia. No duplicar producción ni crear auditorías para mantener actividad. Cada owner incluye en su próximo handoff normal learning_id, claim, commit, acción aplicada y evidencia, o explica por qué no aplica; no emitir heartbeats extra. Publicación no equivale a lectura/adopción. El integrador horario está pausado por decisión del usuario; no reactivarlo automáticamente. La incidencia visual local puede diagnosticarse como tarea compartida, sin asumir que la VM equivale al Mac o que la ausencia de GPU impide todos los trabajos.

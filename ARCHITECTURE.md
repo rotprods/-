@@ -42,3 +42,9 @@ flowchart TD
 ## Entrada y preferencias
 
 controls.gd administra un mapa validado de acciones: escritorio y mando independientes, sticks con zona muerta, navegación UI separada, Escape/Start reservados. JSON local versionado y escritura temporal antes de renombrar; error de escritura conserva el mapa vigente y corrupción recupera defaults. world.gd captura remapeo/pausa antes de GUI; player.gd usa acciones de juego y frena simulación durante modales. tests/test_input.gd entra por Input.parse_input_event, ejecuta física y serialización reales y se integra en CI. No hay controlador físico cualificado; ejes/sensibilidad/inversión todavía no son configurables.
+
+## Fleet harness cooperativo
+
+`fleet_control.py` separa reserva de ACK y entrega. Compara ámbitos canónicos, paths, IDs de assets, rama y proyecto remoto; epoch invalida al owner anterior tras release. CAS local con mkdir y reemplazo atómico; publicación remota normal requiere padre vigente y readback. `guard-git` deriva cambios completos y verifica la excepción determinista MANIFEST; no depende de listas de archivos omitidas por el agente. project_control valida el registro y Graphify proyecta los claims como propuestas. No hay broker de GPU ni control de procesos remotos; wrappers omitidos quedan fuera de cobertura.
+
+El filtro fleet de entregas recorre la envoltura completa GLB y valida evidencia_refs como lista de rutas. Sigue siendo control de transporte cooperativo: no autentica recibos, no comprueba toda la semántica glTF ni sustituye importación nativa o revisión visual.

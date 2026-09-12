@@ -1,0 +1,16 @@
+{
+  "run": "INFRA-005-READINESS-006",
+  "state": "contract_defined_not_migration_executed",
+  "source_commit": "758a9b6326a7d061f1e304abe9b1593b6b2d1a66",
+  "inspection": "Prior live GitHub inspection of 12 open PR trees: Terra contains own blend/glb; other 11 did not contain own world blend/glb. Provider binaries not downloaded in that inspection.",
+  "observed_ci_failures": [
+    34721530206,
+    34721520681,
+    34721281196,
+    34721265353
+  ],
+  "failure": "82 Python tests pass; manifest drift rejects continuity; native steps skipped. No code/asset fix claimed.",
+  "runtime_changed": false,
+  "learning": "OWNER-ADMISSION retrieved; consolidation only, no new promotion",
+  "validation": "See closeout and CI at published SHA; no new hardware or asset gates claimed"
+}

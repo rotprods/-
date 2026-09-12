@@ -33,6 +33,18 @@ def build(root):
         node(t['id'],'workunit',t['title'],'proposal',t['status'],'_project_intelligence/PLAN.json')
         for goal in t['goals']:edge(t['id'],goal,'ADVANCES')
         for dep in t['depends_on']:edge(t['id'],dep,'DEPENDS_ON')
+    fleet_path='ops/fleet/registry.json'
+    if (root/fleet_path).exists():
+        from fleet_control import world_id
+        fleet=json.loads((root/fleet_path).read_text())
+        node('fleet-registry','artifact','Reservas cooperativas de producción',status='implemented',path=fleet_path)
+        edge('project:exovant','fleet-registry','COORDINATES_WITH')
+        for claim in fleet['claims']:
+            cid='claim:'+claim['id']
+            node(cid,'workunit',claim['id']+' / '+claim['owner'],'proposal',claim['status'],fleet_path)
+            edge('fleet-registry',cid,'RECORDS')
+            for world in sorted({world_id(s['world']) for s in claim['scopes']}):
+                if world!='studio':edge(cid,'world:'+world,'BOUNDS_WORK_ON')
     return {'schema_version':1,'authority':'Projection only; refer to provenance and STATE','generator':'tools/graphify_project.py','update_policy':'after meaningful change; no background global watcher','nodes':nodes,'edges':edges,'hyperedges':[]}
 if __name__=='__main__':
     graph=build(ROOT);(ROOT/'_project_intelligence/graph.json').write_text(json.dumps(graph,ensure_ascii=False,indent=2)+'\n');print(json.dumps({'nodes':len(graph['nodes']),'edges':len(graph['edges'])}))

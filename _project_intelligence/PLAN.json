@@ -117,6 +117,11 @@
           "id": "M-RECOVERY",
           "target": "RPO de un checkpoint publicado; recuperar antes de la siguiente unidad de trabajo",
           "status": "policy"
+        },
+        {
+          "id": "M-FLEET",
+          "target": "No conflicting declared paths/projects/asset IDs; producer ACK plus source-bound handoff for each imported claim",
+          "status": "locally_validated_partial_owner_adoption"
         }
       ]
     },
@@ -296,12 +301,9 @@
         "GATE-ASSET"
       ],
       "evidence": [
+        "evidence/fleet-ack-reconciliation-007.json",
         "evidence/gates/INFRA-005-GATE-CONTROL.json",
-        "evidence/gates/INFRA-005-GATE-NATIVE.json",
-        "evidence/gates/INFRA-005-GATE-GRAPH.json",
-        "evidence/gates/INFRA-005-GATE-CI.json",
-        "evidence/gates/INFRA-005-GATE-RESTORE.json",
-        "evidence/gates/INFRA-005-GATE-ASSET.json"
+        "evidence/gates/INFRA-005-GATE-NATIVE.json"
       ],
       "estimate_person_hours": null,
       "estimate_status": "actual time not retroactively invented",
@@ -310,7 +312,8 @@
         "First scheduled execution from main has not been observed",
         "Mem routing note pending provider rate limit; optional mirror, not a product blocker"
       ],
-      "closeout": "_project_intelligence/runs/INFRA-005-CONTRACT/closeout.json"
+      "closeout": "_project_intelligence/runs/INFRA-005-REMEDIATION-007/closeout.json",
+      "checkpoint_note": "GLB delivery container regression repair; checkpoint only. ADOPTION-002 source remains unrecovered; producer adoption and Mac qualification remain pending."
     },
     {
       "id": "EXO-004",
@@ -771,6 +774,135 @@
       "ambiguous external mutation",
       "spend outside approved budget"
     ],
-    "recovery": "preserve checkpoint, reconcile evidence, choose an authorized alternative or register exact blocker"
+    "recovery": "preserve checkpoint, reconcile evidence, choose an authorized alternative or register exact blocker",
+    "fleet_registry": "ops/fleet/registry.json",
+    "parallelism_scope": "max_parallel_workunits governs global integrator PLAN, not separate producer checkouts; cooperative reservations bound those scopes"
+  },
+  "remediation_contract": {
+    "goal": "Resolver los problemas operativos conocidos de EXOVANT con evidencia reproducible y sin duplicar trabajo de owners, preservando NS-EXO.",
+    "north_star": "Un agente nuevo recupera fuente, owner, aprendizaje y siguiente tarea; una entrega se integra con evidencia válida y el juego puede inspeccionarse en los entornos cualificados.",
+    "scope": "Continuidad, consumo, ownership, recepción de assets, visualización local e identificación de gates hardware.",
+    "constraints": [
+      "Runtime offline",
+      "No force ni sobrescritura ajena",
+      "Sin nuevos costes",
+      "Gates humanos/hardware no se simulan",
+      "No workers permanentes presumidos"
+    ],
+    "problems": [
+      {
+        "id": "DUPLICATION",
+        "owner": "integrator",
+        "status": "mitigated",
+        "done_when": "Cada intervención tiene entrega/bloqueo concreto y no repite el trabajo del owner; comprobar en próximas entregas."
+      },
+      {
+        "id": "VISUAL-DISPLAY",
+        "owner": "technical_director",
+        "status": "locally_validated",
+        "done_when": "Escena existente visible y captura reproducible; o bloqueo de plataforma demostrado y ruta alternativa cualificada.",
+        "evidence": "evidence/visual-display-qualified.json"
+      },
+      {
+        "id": "RECOVERY",
+        "owner": "each_owner",
+        "status": "partial",
+        "done_when": "Fuentes y exports del checkpoint se restauran; ADOPTION-002 se rescata solo si necesario o se registra descarte explícito."
+      },
+      {
+        "id": "OWNERSHIP-ACK",
+        "owner": "integrator_and_producers",
+        "status": "partial",
+        "done_when": "Entregas admitidas tienen ACK y scope actuales, sin solapes."
+      },
+      {
+        "id": "ASSET-QUALITY",
+        "owner": "each_owner_and_art_director",
+        "status": "pending",
+        "done_when": "Fuentes, importación, colisión y revisión artística en motor pasan gates de su tarea."
+      },
+      {
+        "id": "MEM-MIRROR",
+        "owner": "integrator",
+        "status": "optional_deferred",
+        "done_when": "Nota estable reconciliada y sincronizada sin duplicados; no bloquea producto."
+      },
+      {
+        "id": "HARDWARE",
+        "owner": "qualified_host_operator",
+        "status": "pending",
+        "done_when": "Mediciones reales sobre hardware objetivo y pruebas de mando/plataforma requeridas."
+      }
+    ],
+    "acceptance": "No marcar resuelto un problema por documentarlo; blocked/deferred no equivalen a fixed. Campaña completa conserva gates G-RELEASE.",
+    "first_frontier": "Un integrador admite una entrega lista, acuerda paths con owner, corrige su manifest drift y verifica un paquete binario recuperable. Reutilizar Terra/Vanta si sus recibos exactos aplican; no rehacer su modelado.",
+    "adoption": "Owners report learning_id, claim, commit and applied evidence in next normal handoff; missing ACK remains pending.",
+    "migration_readiness": {
+      "id": "MR-EXO-001",
+      "status": "planned",
+      "parent_goals": [
+        "G-OPS",
+        "G-TECH"
+      ],
+      "preserves": "NS-EXO",
+      "goal": "Trasladar un checkpoint recuperable al Mac sin perder fuentes, duplicar propietarios ni promover entregas sin pruebas.",
+      "north_star": "Un operador nuevo restaura cada entrega admitida desde almacenamiento duradero, identifica su owner y abre el proyecto sin depender del chat ni de una URL temporal.",
+      "scope": "Cierre de entregas y continuidad para migración; no cierre de campaña ni certificación artística global.",
+      "migration_modes": {
+        "host_qualification": "Permitida en checkout aislado antes del cierre de todos los mundos; no cambia autoridad ni ownership.",
+        "production_handoff": "Exige los gates de cada entrega incluida y un inventario de lo pendiente; no afirmar migración completa si quedan fuentes sin respaldo."
+      },
+      "subgoals": [
+        {
+          "id": "MR-OWN",
+          "owner": "integrator + each_owner",
+          "status": "partial",
+          "done_when": "Cada entrega admitida tiene owner, claim, epoch, rutas y proyecto remoto actuales sin conflicto. Los ACK se reconciliaron con evidencia; un registro reserved no se presenta como active.",
+          "evidence": "evidence/fleet-ack-reconciliation-007.json"
+        },
+        {
+          "id": "MR-ASSET",
+          "owner": "each_owner",
+          "status": "pending",
+          "done_when": "100% de entregas incluidas tienen fuente Blender, GLB, texturas/dependencias y recibo con hashes en ubicación persistente; descarga independiente y reapertura probadas. URLs de proveedor y generadores solos no satisfacen el gate."
+        },
+        {
+          "id": "MR-CI",
+          "owner": "integrator + affected_owner",
+          "status": "pending",
+          "done_when": "Manifiesto exacto del árbol de entrega/integración y gates relevantes aprobados en SHA final. Sin runner es ENV_BLOCKED. No reintentos ciegos ni refrescar manifiesto dentro de CI para ocultar drift."
+        },
+        {
+          "id": "MR-HANDOFF",
+          "owner": "integrator",
+          "status": "pending",
+          "done_when": "Un checkpoint identifica cada entrega incluida/excluida, SHA, pruebas, defecto pendiente, responsable y próxima acción. Restauración independiente del paquete migrado aprobada."
+        },
+        {
+          "id": "MR-MAC",
+          "owner": "qualified_host_operator",
+          "status": "pending",
+          "done_when": "Inventario real, Blender/dispositivo gráfico, importación del juego y escena representativa medidos. No tocar servicios existentes. No equivalencia GPU inferida desde CPU."
+        }
+      ],
+      "sequence": [
+        "MR-OWN",
+        "MR-ASSET + MR-CI por entrega",
+        "MR-HANDOFF",
+        "MR-MAC para producción; cualificación aislada puede adelantarse"
+      ],
+      "done": "Todos los gates requeridos del checkpoint migrado pasan; toda exclusión es visible y conserva owner. No declarar todos los mundos respaldados por un único paquete probado.",
+      "first_frontier": "Un integrador admite una entrega lista, acuerda paths con owner, corrige su manifest drift y verifica un paquete binario recuperable. Reutilizar Terra/Vanta si sus recibos exactos aplican; no rehacer su modelado.",
+      "schedule": "Por dependencias y entregas, sin fecha inventada; reevaluar capacidad tras primera recuperación real en Mac.",
+      "unknowns": [
+        "Número de workers vivos",
+        "Durabilidad/retención real de cada export remoto",
+        "Cobertura de backups de mundos",
+        "Capacidad efectiva del Mac",
+        "Adopción externa del harness"
+      ],
+      "surface_contract": "docs/FLEET_COORDINATION.md#ubicación-de-assets-y-aplicaciones",
+      "automation": "Permanece pausada; no nuevos workers por este contrato."
+    }
   }
 }
