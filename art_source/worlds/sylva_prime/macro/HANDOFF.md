@@ -3,39 +3,99 @@
 AGENT: `AGENT-SYLVA-MACRO-01`  
 SESSION: `20260912-SYLVA-MACRO-001`  
 CLAIM: `CLM-SYLVA-MACRO-001`  
+CLAIM TYPE: `ATOMIC_SUBCLAIM`  
 BRANCH: `art/world-sylva-prime-macro-001`  
-HEAD AT HANDOFF CREATION: branch commit immediately preceding this file; resolve current branch HEAD before resuming.  
+LINEAR: `ROT-117`  
+DRAFT PR: `#3`  
+REMOTE BLENDER: `05dce898-753d-4ff6-a4b0-31757dc868d8` @ revision `3`  
 NORTH STAR: metric-scale, reproducible macro/regional foundation for SYLVA PRIME without inventing unresolved planetary canon.
 
+## CURRENT RESYNC
+
+- Claim base at creation: `4c2fa044080004609ea6df45f34b2a784536507a`.
+- Current `main` observed after wave: `196ef814fdc845ec797979906d01dc25009217c7`.
+- Branch comparison: `diverged`, 8 commits ahead / 1 behind at the comparison checkpoint.
+- New main commit adds mandatory multi-agent world-ownership preflight to `AGENTS.md` and points to coordination issue `#7`.
+- Coordination issue `#7` currently recognizes SYLVA PRIME as `OCCUPIED + SHARDED` by this macro claim plus `CLM-SYLVA-PROC-NROOT-001`.
+- Linear reservation added retroactively under the new protocol: `ROT-117`, project `EXOVANT 2950`, parent `ROT-109`, status `In Progress`, priority `Urgent`.
+- **Do not merge PR #3 until current main is reconciled.**
+
+## OWNERSHIP RECONCILIATION
+
+A later concurrent claim appeared while this wave was running:
+
+- `CLM-SYLVA-PROC-NROOT-001`
+- branch `agent/sylva-neural-root-001`
+- draft PR `#6`
+- agent `AGENT-SYLVA-ROOT-01`
+
+The later agent correctly identified this macro claim as temporally prior and raised the overlap instead of merging.
+
+**Accepted boundary:**
+
+### PR #3 / MACRO owns
+- km/regional terrain;
+- root-network topology and placement;
+- region anchors;
+- macro traversal corridors;
+- landmark silhouettes;
+- L2/L3 spatial relationships;
+- streaming envelopes;
+- diagnostic macro proxies;
+- Puerto del Injerto, Bosque de las Frases and Cámara de VESPER regional foundations.
+
+### PR #6 / PROC ROOT owns
+- reusable 8–14 m meso root modules;
+- straight/curve/rise/fork/arch/buttress/terrace/membrane-anchor production grammar;
+- callus route surfaces;
+- module naming/material interfaces;
+- per-module collision proxies.
+
+The coarse roots already present in this branch's Blender r3 are **diagnostic topology guides only**. They must not evolve into a competing reusable meso root kit. If macro production needs refined root modules, consume/request them from PR #6.
+
+Persistent receipts:
+- PR #3 acceptance comment `5648304071`;
+- PR #6 reciprocal acceptance comment `5648304564`;
+- coordination issue #7 reconciliation comment `5648307515`.
+
 ## DONE
-- Persistent sharded claim created and exposed through draft PR #3.
+
 - Repository authority/canon/pipeline recovered.
-- Dedicated remote Blender 5.2 LTS project created: `05dce898-753d-4ff6-a4b0-31757dc868d8`.
-- Blender revision 3 committed.
-- 12 km × 12 km local proposal terrain blockout created.
+- `Flu In / Flow In` searched; no identifiable repo method found, therefore `PIPELINE_METHOD_NOT_FOUND` rather than guessed.
+- Verified Blender route used: Higgsfield 3D Jutsu + `bpy`, Blender 5.2.0 LTS.
+- Persistent sharded claim created and exposed through draft PR #3.
+- Linear scope `ROT-117` created after ownership protocol promotion.
+- Dedicated remote Blender project created and advanced to revision 3.
+- 12 km × 12 km **local PROPOSAL** terrain blockout created.
 - Three canonical region foundations created: Puerto del Injerto, Bosque de las Frases, Cámara de VESPER.
-- Structural root network created: 6 primary + 8 secondary roots.
-- Puerto graft scaffold/living arch proxy language created.
+- Macro structural root topology created: 6 primary + 8 secondary diagnostic roots.
+- Puerto graft scaffold/living-arch proxy language created.
 - Bosque three-route geometric signal language created.
 - VESPER chamber envelope created without final boss mesh.
 - Human scale references and 6 m diagnostic route guides created.
-- Portable light fix applied; no unsupported AREA light remains in r3 export.
-- GLB and `.blend` generated for revision 3.
+- Portable light fix applied; unsupported `AREA` light removed before r3.
+- GLB and editable `.blend` generated for r3.
 - Deterministic Blender generator persisted.
 - Classified macro World Bible persisted.
-- Validation and checkpoint status persisted.
+- Validation and status persisted.
+- Semantic overlap with PR #6 detected on live resync and resolved by explicit sharding.
 
 ## IN PROGRESS
+
 - Human art review of silhouettes/composition.
 - Engine import/traversal/collision gate.
 - LOD/performance strategy after engine/hardware qualification.
+- Reconcile branch with current `main` ownership-protocol commit before integration.
 
 ## BLOCKED
-- `BLOCK-SYLVA-001`: planetary radius/diameter are not defined by current canon. This blocks L0/L1 planet/orbital physical representation, not local region production.
-- Target GPU/hardware unresolved; no meaningful production perf budget yet.
-- Current client cannot perform visual inspection of published PNG; only file-level nonblank validation was possible.
+
+- `BLOCK-SYLVA-001`: planetary radius/diameter are not defined by current canon. This blocks L0/L1 planet/orbital physical representation, not local regional work.
+- Target GPU/hardware unresolved; no meaningful production performance budget yet.
+- Current client cannot perform visual content inspection of published PNG; only file-level nonblank validation was possible.
+- Merge blocked until branch reconciles current `main` and outstanding art/engine gates.
 
 ## FILES MODIFIED / CREATED
+
 - `production/claims/CLM-SYLVA-MACRO-001.yaml`
 - `art_source/worlds/sylva_prime/macro/PLAN.md`
 - `art_source/worlds/sylva_prime/macro/generate_sylva_macro.py`
@@ -45,9 +105,10 @@ NORTH STAR: metric-scale, reproducible macro/regional foundation for SYLVA PRIME
 - `art_source/worlds/sylva_prime/macro/HANDOFF.md`
 
 ## ASSETS CREATED
+
 Remote Blender project `05dce898-753d-4ff6-a4b0-31757dc868d8` r3:
 - local macro terrain;
-- root network;
+- macro root-network topology guides;
 - Puerto regional proxies;
 - Bosque route proxies;
 - VESPER chamber envelope;
@@ -56,39 +117,54 @@ Remote Blender project `05dce898-753d-4ff6-a4b0-31757dc868d8` r3:
 - portable lights and four cameras.
 
 ## TESTS / RECEIPTS
-- Scope/namespace: PASS, no non-`SYLVA_` objects in QA query.
-- Transform scale: PASS, no non-unit-scale objects in QA query.
-- Scope intrusion: PASS, no final named NPC/VESPER final objects.
-- Export: PASS, r3 GLB 1,013,560 bytes.
-- Editable source: PASS, r3 `.blend` 1,897,056 bytes.
+
+- Scene objects: 100.
+- Mesh objects: 76.
+- Curve objects: 8.
+- Approx blockout triangles: 15,052.
+- Terrain: 12,000 × 12,000 m; ~828.9 m vertical span.
+- Scope/namespace: PASS — no non-`SYLVA_` objects in QA query.
+- Transform scale: PASS — no non-unit-scale objects in QA query.
+- Scope intrusion: PASS — no final named NPC/VESPER-final objects.
 - Portable lights: PASS after r2 correction.
-- PNG file-level render smoke: PASS_NONBLANK for Puerto (160×90, byte range 0–249, variance 254.9406).
-- Human visual review: PENDING.
-- Engine import/collision: PENDING.
+- Export: PASS — r3 GLB 1,013,560 bytes, etag `d07f51362f8c6c9a29cc3ec03661b0d4`.
+- Editable source: PASS — r3 `.blend` 1,897,056 bytes, etag `ffd2e7ad0ac1f97b5e5908ab3c569394`.
+- PNG file-level smoke: PASS_NONBLANK for Puerto, 160×90, byte range 0–249, variance 254.9406.
+- `Render Result` direct pixel query is rejected as a validator because it produced a false all-zero reading contradicted by the PNG byte decode.
+- Human `GATE-ART`: PENDING.
+- Engine import/collision/traversal: PENDING.
 - GPU performance: PENDING.
 
 ## DECISIONS
-- Planetary radius remains UNKNOWN/BLOCKED rather than silently invented.
-- 12 km local patch is PROPOSAL, explicitly separate from physical planet size.
-- Final VESPER, NPC, ecology and architecture ownership intentionally excluded.
-- Biological macro language uses hierarchical structural roots; human presence uses graft interfaces/scaffolds, not generic sci-fi greeble.
+
+- Planetary radius remains `UNKNOWN/BLOCKED`; no silent physical planet scale invented.
+- 12 km local patch is `PROPOSAL`, separate from physical planet size.
+- Final VESPER, NPC, ecology and architecture remain outside this claim.
+- Biological macro language uses hierarchical structural roots; human occupation uses graft interfaces/scaffolds, not generic greeble.
 - Route information is geometric/redundant; color cannot be the sole signal.
+- Reusable meso neural-root kit ownership is delegated to PR #6; this branch only places diagnostic macro topology.
 
 ## DEPENDENCIES
+
+- `CLM-SYLVA-PROC-NROOT-001` / PR #6 for production meso neural-root modules.
 - Runtime/engine importer for integration gate.
 - Human creative review.
-- Future planetary scale ADR.
+- Future planetary-scale ADR.
 - Target hardware qualification.
+- Current `main` reconciliation.
 
 ## RISKS
-- Organic form density can destroy navigation clarity if future teams ignore corridor/landmark language.
-- Later architecture/vegetation agents could duplicate macro roots unless they respect this claim boundary.
-- 12 km patch is a blockout proposal and must not become accidental canon through reuse.
-- Visual quality has not been judged from image content by this agent.
+
+- Organic density can destroy navigation clarity if future teams ignore corridor/landmark language.
+- Diagnostic root guides could become accidental duplicate production assets unless the accepted PR #6 boundary is enforced.
+- 12 km patch must not become accidental planetary canon through reuse.
+- Visual quality has not been human-approved.
+- Branch was created before the ownership-preflight commit landed on `main`; all future waves must re-run issue #7 + branch/PR/Linear preflight first.
 
 ## NEXT 3 ACTIONS
-1. Import revision-3 GLB into current executable engine path and run scale/collision/traversal smoke with the real controller.
-2. Human review the interactive r3 scene and region cameras; convert feedback into explicit art tasks rather than silent tweaks.
-3. After review, subdivide follow-up claims (terrain geology, Puerto architecture, Bosque biome/vegetation, VESPER hero-zone environment) without expanding this claim into characters or final boss production.
 
-CLAIM STATUS: `KEEP`
+1. Reconcile `art/world-sylva-prime-macro-001` with current `main` (`196ef814...`) and rerun ownership preflight before any further geometry.
+2. Import revision-3 GLB into the current executable engine path and run scale/collision/traversal smoke with the real controller.
+3. Human-review the interactive r3 scene; turn feedback into explicit atomic follow-up claims, consuming PR #6 root modules instead of duplicating them.
+
+CLAIM STATUS: `KEEP / REVIEW BEFORE NEXT WAVE`
