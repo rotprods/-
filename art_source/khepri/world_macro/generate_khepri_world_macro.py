@@ -5,10 +5,9 @@ Agent: AGENT-KHEPRI-WMACRO-001
 Verified worker target: Blender 5.2.x / Higgsfield 3D Jutsu
 Units: 1 Blender Unit = 1 metre
 
-Scope is deliberately atomic: L0 metadata, L1 orbital proxy, L2 representative
-macro terrain cell, optical-infrastructure footprints, mission-derived route
-anchors and QA guides. Final architecture, characters, fauna, vehicles and
-RA-KHET are excluded.
+Atomic scope only: L0 metadata, L1 orbital proxy, L2 representative macro terrain,
+optical-infrastructure footprints, mission-derived route anchors and QA guides.
+Final architecture, characters, fauna, vehicles and RA-KHET are excluded.
 """
 from __future__ import annotations
 
@@ -23,7 +22,7 @@ from mathutils import Vector
 WORLD_ID = "khepri"
 CLAIM_ID = "CLM-KHEPRI-WMACRO-001"
 AGENT_ID = "AGENT-KHEPRI-WMACRO-001"
-BASE_SHA = "4c2fa044080004609ea6df45f34b2a784536507a"
+BASE_SHA = "f78bfdc8bd7b2f6ab52b45d39babcc1589ab3918"
 SEED = 295006
 
 # DOCUMENTED / CANON INPUTS
@@ -42,14 +41,26 @@ CELL_SIZE_Y_M = 4_800.0
 GRID_X = 81
 GRID_Y = 61
 
+# QA camera contract for kilometre-scale world-macro evidence.
+OVERVIEW_CAMERA_LOCATION = (-4100.0, -3600.0, 1850.0)
+OVERVIEW_CAMERA_TARGET = (0.0, -100.0, 50.0)
+OVERVIEW_LENS_MM = 32.0
+OVERVIEW_CLIP_END_M = 12_000.0
+GAMEPLAY_CAMERA_XY = (-2380.0, 880.0)
+GAMEPLAY_TARGET_XY = (-1200.0, 300.0)
+GAMEPLAY_TARGET_HEIGHT_M = 25.0
+GAMEPLAY_LENS_MM = 38.0
+GAMEPLAY_CLIP_END_M = 8_000.0
+QA_GUIDE_FORWARD_M = 30.0
+
 
 def clear_scene() -> None:
     for obj in list(bpy.data.objects):
         bpy.data.objects.remove(obj, do_unlink=True)
-    for collection in list(bpy.data.collections):
-        bpy.data.collections.remove(collection)
-    master = bpy.data.collections.new("KHP_WM_MASTER")
-    bpy.context.scene.collection.children.link(master)
+    for col in list(bpy.data.collections):
+        bpy.data.collections.remove(col)
+    root = bpy.data.collections.new("KHP_WM_MASTER")
+    bpy.context.scene.collection.children.link(root)
 
 
 def master() -> bpy.types.Collection:
@@ -102,9 +113,7 @@ def empty(name, location, col, asset_id, role, epistemic="PROPOSAL", **extras):
 
 
 def cylinder(name, location, radius, depth, mat, col, asset_id, role, vertices=12):
-    bpy.ops.mesh.primitive_cylinder_add(
-        vertices=vertices, radius=radius, depth=depth, location=location
-    )
+    bpy.ops.mesh.primitive_cylinder_add(vertices=vertices, radius=radius, depth=depth, location=location)
     obj = bpy.context.object
     obj.name = name
     move(obj, col)
@@ -123,10 +132,22 @@ def terrain_height(x: float, y: float) -> float:
     secondary = 31.0 * math.sin((x + 0.37 * y) / 370.0)
     tertiary = 13.0 * math.cos((0.28 * x - y) / 210.0)
     glass_sea_basin = -58.0 * math.exp(-((y + 180.0) / 620.0) ** 2)
-    crucible_shelf = 44.0 * math.exp(
-        -(((x - 1250.0) / 900.0) ** 2 + ((y + 650.0) / 780.0) ** 2)
-    )
+    crucible_shelf = 44.0 * math.exp(-(((x - 1250.0) / 900.0) ** 2 + ((y + 650.0) / 780.0) ** 2))
     return broad + secondary + tertiary + glass_sea_basin + crucible_shelf
+
+
+def gameplay_target() -> Vector:
+    x, y = GAMEPLAY_TARGET_XY
+    return Vector((x, y, terrain_height(x, y) + GAMEPLAY_TARGET_HEIGHT_M))
+
+
+def guide_xy() -> tuple[float, float]:
+    camera = Vector((GAMEPLAY_CAMERA_XY[0], GAMEPLAY_CAMERA_XY[1], 0.0))
+    target = Vector((GAMEPLAY_TARGET_XY[0], GAMEPLAY_TARGET_XY[1], 0.0))
+    direction = target - camera
+    direction.normalize()
+    point = camera + direction * QA_GUIDE_FORWARD_M
+    return point.x, point.y
 
 
 def build_terrain(col, mat):
@@ -156,12 +177,9 @@ def build_terrain(col, mat):
 
 
 def build_orbital_proxy(col, mat):
-    # Reduced display object; physical scale is metadata. Never gameplay/collision geometry.
     display_scale = 1.0 / 20_000.0
     display_radius = PLANET_RADIUS_M_PROPOSAL * display_scale
-    bpy.ops.mesh.primitive_ico_sphere_add(
-        subdivisions=4, radius=display_radius, location=(0.0, 0.0, -1100.0)
-    )
+    bpy.ops.mesh.primitive_ico_sphere_add(subdivisions=4, radius=display_radius, location=(0.0, 0.0, -1100.0))
     obj = bpy.context.object
     obj.name = "KHP_WM_L1_ORBITAL_PROXY_1_TO_20000"
     move(obj, col)
@@ -175,7 +193,6 @@ def build_orbital_proxy(col, mat):
 
 
 def build_heliostat_footprints(col, bronze, mirror):
-    # One shared panel mesh; footprint proxies only, not architecture ownership.
     bpy.ops.mesh.primitive_cube_add(location=(0.0, 0.0, -9999.0))
     tmp = bpy.context.object
     tmp.dimensions = (36.0, 2.0, 22.0)
@@ -192,49 +209,33 @@ def build_heliostat_footprints(col, bronze, mirror):
             y = -1550.0 + row * 510.0
             z = terrain_height(x, y)
             mast = cylinder(
-                f"KHP_WM_HELIOSTAT_MAST_{idx:02d}",
-                (x, y, z + 18.0),
-                2.4,
-                36.0,
-                bronze,
-                col,
-                f"KHP_WM_HEL_MAST_{idx:02d}",
-                "heliostat_footprint",
-                vertices=10,
+                f"KHP_WM_HELIOSTAT_MAST_{idx:02d}", (x, y, z + 18.0), 2.4, 36.0,
+                bronze, col, f"KHP_WM_HEL_MAST_{idx:02d}", "heliostat_footprint", vertices=10,
             )
             mast["proxy_only"] = True
             panel = bpy.data.objects.new(f"KHP_WM_HELIOSTAT_PANEL_{idx:02d}", shared)
             col.objects.link(panel)
             panel.location = (x, y, z + 42.0)
             panel.rotation_euler = (
-                math.radians(12.0 + row * 2.0),
-                0.0,
-                math.radians(-18.0 + column * 4.0),
+                math.radians(12.0 + row * 2.0), 0.0, math.radians(-18.0 + column * 4.0)
             )
             tag(panel, f"KHP_WM_HEL_PANEL_{idx:02d}", "heliostat_footprint")
             panel["proxy_only"] = True
 
 
 def build_route_anchors(col):
-    documented_function_proxies = {
+    points = {
         "KHP_WM_ROUTE_SHADE": (-2300.0, 900.0),
         "KHP_WM_ROUTE_GLASS_SEA": (-450.0, -140.0),
         "KHP_WM_ROUTE_CRUCIBLE": (1250.0, -650.0),
         "KHP_WM_ROUTE_RAKHET": (2550.0, 650.0),
     }
     anchors = []
-    for name, (x, y) in documented_function_proxies.items():
-        anchors.append(
-            empty(
-                name,
-                (x, y, terrain_height(x, y)),
-                col,
-                name,
-                "route_interface_anchor",
-                "DOCUMENT_DERIVED_PROXY",
-                proxy_only=True,
-            )
-        )
+    for name, (x, y) in points.items():
+        anchors.append(empty(
+            name, (x, y, terrain_height(x, y)), col, name,
+            "route_interface_anchor", "DOCUMENT_DERIVED_PROXY", proxy_only=True,
+        ))
     return anchors
 
 
@@ -256,20 +257,16 @@ def build_route_guide(col, mat, anchors):
 
 
 def build_human_scale_guide(col, mat):
-    # Exactly 1.85 m overall; QA guide, not a character asset.
-    x, y = -2280.0, 900.0
+    # 1.85 m QA guide placed on gameplay view axis so it actually proves visual scale.
+    x, y = guide_xy()
     z = terrain_height(x, y)
-    bpy.ops.mesh.primitive_cylinder_add(
-        vertices=12, radius=0.22, depth=1.45, location=(x, y, z + 0.725)
-    )
+    bpy.ops.mesh.primitive_cylinder_add(vertices=12, radius=0.22, depth=1.45, location=(x, y, z + 0.725))
     body = bpy.context.object
     body.name = "KHP_WM_GUIDE_HUMAN_1P85M_BODY"
     move(body, col)
     body.data.materials.append(mat)
     tag(body, "KHP_WM_GUIDE_HUMAN_BODY", "scale_guide")
-    bpy.ops.mesh.primitive_uv_sphere_add(
-        segments=12, ring_count=6, radius=0.20, location=(x, y, z + 1.65)
-    )
+    bpy.ops.mesh.primitive_uv_sphere_add(segments=12, ring_count=6, radius=0.20, location=(x, y, z + 1.65))
     head = bpy.context.object
     head.name = "KHP_WM_GUIDE_HUMAN_1P85M_HEAD"
     move(head, col)
@@ -283,27 +280,29 @@ def build_cameras_and_lighting(camera_col, light_col):
     sun = bpy.context.object
     sun.name = "KHP_WM_LIGHT_SAHRA_KEY"
     sun.data.energy = 3.2
-    sun.rotation_euler = (
-        math.radians(38.0), math.radians(-22.0), math.radians(-28.0)
-    )
+    sun.rotation_euler = (math.radians(38.0), math.radians(-22.0), math.radians(-28.0))
     sun["motivated_by"] = "Sahra primary star / macro validation"
     move(sun, light_col)
 
-    bpy.ops.object.camera_add(location=(-4100.0, -3600.0, 1850.0))
+    bpy.ops.object.camera_add(location=OVERVIEW_CAMERA_LOCATION)
     overview = bpy.context.object
     overview.name = "KHP_WM_CAM_OVERVIEW"
-    overview.data.lens = 46.0
+    overview.data.lens = OVERVIEW_LENS_MM
+    overview.data.clip_start = 0.1
+    overview.data.clip_end = OVERVIEW_CLIP_END_M
     move(overview, camera_col)
-    look_at(overview, (0.0, -100.0, 50.0))
+    look_at(overview, OVERVIEW_CAMERA_TARGET)
     scene.camera = overview
 
-    x, y = -2380.0, 880.0
+    x, y = GAMEPLAY_CAMERA_XY
     bpy.ops.object.camera_add(location=(x, y, terrain_height(x, y) + 1.65))
     gameplay = bpy.context.object
     gameplay.name = "KHP_WM_CAM_GAMEPLAY_SCALE"
-    gameplay.data.lens = 38.0
+    gameplay.data.lens = GAMEPLAY_LENS_MM
+    gameplay.data.clip_start = 0.1
+    gameplay.data.clip_end = GAMEPLAY_CLIP_END_M
     move(gameplay, camera_col)
-    look_at(gameplay, (-1200.0, 300.0, terrain_height(-1200.0, 300.0) + 25.0))
+    look_at(gameplay, gameplay_target())
 
 
 def build() -> dict:
@@ -317,7 +316,6 @@ def build() -> dict:
     scene.render.resolution_percentage = 100
     scene.render.image_settings.file_format = "PNG"
 
-    # Empty 3D Jutsu projects may have no World datablock.
     if scene.world is None:
         scene.world = bpy.data.worlds.new("KHP_WM_WORLD")
     scene.world.color = (0.012, 0.008, 0.005)
@@ -342,7 +340,7 @@ def build() -> dict:
 
     meta = empty(
         "KHP_WM_PLANET_META", (0.0, 0.0, 0.0), cols["meta"],
-        "KHP_WM_PLANET_META", "planet_metadata", "MIXED_CANON_PROPOSAL"
+        "KHP_WM_PLANET_META", "planet_metadata", "MIXED_CANON_PROPOSAL",
     )
     meta["gravity_g_canon"] = GRAVITY_G_CANON
     meta["temperature_c_reference_documented"] = TEMPERATURE_C_REFERENCE
@@ -371,6 +369,7 @@ def build() -> dict:
     scene["authoring_coordinate_system"] = "Blender Z-up local tangent cell"
     scene["export_contract"] = "GLB portable export; glTF handles Y-up conversion"
     scene["canon_status"] = "world entry PROPOSED; KHP radius remains PROPOSAL"
+    scene["qa_camera_contract"] = "overview 32mm/12km; gameplay 38mm/8km; 1.85m guide 30m on view axis"
 
     blend_path = os.environ.get("KHP_OUTPUT_BLEND")
     if blend_path:
@@ -393,6 +392,9 @@ def build() -> dict:
         "terrain_object": terrain.name,
         "orbital_proxy": orbital.name,
         "route_anchors": [obj.name for obj in anchors],
+        "overview_camera": {"lens_mm": OVERVIEW_LENS_MM, "clip_end_m": OVERVIEW_CLIP_END_M},
+        "gameplay_camera": {"lens_mm": GAMEPLAY_LENS_MM, "clip_end_m": GAMEPLAY_CLIP_END_M},
+        "qa_guide_forward_m": QA_GUIDE_FORWARD_M,
     }
 
 
