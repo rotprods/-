@@ -6,7 +6,7 @@ session_id: ART-LEVIATHAN-001-20260912T2123+0200
 branch: art/world-leviathan-001
 status: IN_PROGRESS
 claim_status: KEEP
-remote_blender_revision: 5
+remote_blender_revision: 7
 remote_project_id: 2577a7b6-ebd7-4d31-a645-620e4b73a95d
 cold_rebuild_project_id: 37a931c7-f2e6-46bc-9be0-26077e5de1c1
 fleet:
@@ -14,6 +14,7 @@ fleet:
   registry_state: reserved
   epoch: 1
   producer_ack_comment: https://github.com/rotprods/-/issues/7#issuecomment-5648464282
+  producer_ack_delta_jardines: https://github.com/rotprods/-/issues/7#issuecomment-5648515712
   integrator_transition_to_active: pending
   old_manifest_issue_13: RESOLVED_CLOSED
   main_push_gauntlet_run: 34715800243
@@ -30,26 +31,29 @@ metrics:
     started_or_in_progress: 9
     total_world_categories: 20
     percent: 45
-    methodology: categories in MASTER_ASSET_LIST coverage with evidence beyond TODO
   modeling:
     wave1_region_blockouts_present: 3
     wave1_region_blockouts_total: 3
     blockout_presence_percent: 100
-    representative_detail_microsets: 1
+    representative_detail_microsets: 2
     representative_detail_assets:
       - LEV-ARCH-001
       - LEV-INF-002
       - LEV-INF-003
+      - LEV-INF-005
+      - LEV-ECO-001
+      - LEV-ECO-004
     final_asset_completion_percent: 0
     note: representative detail is not production-finished modeling
   materials:
-    portable_material_roles_present: 13
-    new_puerto_roles:
-      - HUM_MAT_BRUSHED_METAL
-      - HUM_MAT_SEAL_RUBBER
+    portable_material_roles_present: 16
+    new_puerto_roles: [HUM_MAT_BRUSHED_METAL, HUM_MAT_SEAL_RUBBER]
+    new_jardines_roles: [LEV_MAT_MUCOSA_WET, LEV_MAT_NECROTIC, LEV_MAT_ALGA_PRESSURE]
     final_calibrated_texture_completion_percent: 0
   optimization:
-    puerto_microset_triangles_measured: 13380
+    puerto_microset_native_mesh_triangles_measured: 13380
+    jardines_microset_evaluated_triangles_measured: 21644
+    jardines_cost_method: mesh plus evaluated curve tessellation
     hard_budget_status: UNSET_UNTIL_RUNTIME_AND_TARGET_HARDWARE_QUALIFIED
     final_completion_percent: 0
   integration:
@@ -59,7 +63,7 @@ metrics:
     passed:
       - editable Blender revision exists
       - portable GLB export exists
-      - deterministic semantic cold rebuild exists for master and Puerto stages
+      - deterministic semantic cold rebuild exists for master, Puerto and Jardines stages
     open:
       - production-engine import/instantiate
       - runtime collision/traversal smoke test
@@ -67,66 +71,39 @@ metrics:
     full_pass_gates: 4
     total_gates: 13
     percent_full_pass: 31
-    full_pass:
-      - A_CANON foundation
-      - D_GEOMETRY blockout/representative detail
-      - G_SCALE blockout
-      - K_EXPORT blockout/representative detail
+    full_pass: [A_CANON foundation, D_GEOMETRY representative foundation, G_SCALE foundation, K_EXPORT representative foundation]
     additional_pipeline_passes:
       - master deterministic semantic rebuild
       - Puerto staged deterministic semantic rebuild
+      - Jardines staged deterministic semantic rebuild
       - fleet main continuity push CI green
-    partial_or_open:
-      - B_ART
-      - C_REALISM
-      - E_UV
-      - F_MATERIALS
-      - H_PERFORMANCE
-      - I_LOD
-      - J_COLLISION runtime
-      - L_ENGINE
-      - M_VISUAL_REGRESSION
+    partial_or_open: [B_ART, C_REALISM, E_UV, F_MATERIALS, H_PERFORMANCE, I_LOD, J_COLLISION runtime, L_ENGINE, M_VISUAL_REGRESSION]
 
 priority_state:
-  P0_open:
-    - W10/TECH/007
-    - W10/QA/010
-  P1_open:
-    - W10/REGION/004
-    - W10/REGION/005
-    - W10/REGION/006
-    - W10/MAT/008
-    - W10/ECO/009
-  P2_open:
-    - final NPCs
-    - local vehicle
-    - unbuilt ecology species
-    - interiors/props/wardrobe/equipment decomposition
-  P3_open:
-    - polish/storytelling/decal/destruction breadth after foundations
+  P0_open: [W10/TECH/007, W10/QA/010]
+  P1_open: [W10/REGION/004, W10/REGION/005, W10/REGION/006, W10/MAT/008, W10/ECO/009]
+  P2_open: [final NPCs, local vehicle, unbuilt ecology species, interiors/props/wardrobe/equipment decomposition]
+  P3_open: [polish/storytelling/decal/destruction breadth after foundations]
 
 completed:
   - repository bootstrap and authority map
-  - multi-agent collision audit and issue-7 ownership preflight
-  - atomic branch and claim persistence
-  - evidence-bound World Bible
-  - master asset/coverage registry
-  - first 10 tasks with DoD
-  - dedicated Blender 5.2 project qualification
-  - master WAVE-1 blockout at metre scale
-  - three canonical region interfaces
+  - multi-agent collision audit and fleet ownership preflight
+  - atomic branch/claim persistence
+  - evidence-bound World Bible and master asset registry
+  - deterministic metre-scale master scene
+  - three canonical region blockouts
   - stable collision versus visual contraction separation
-  - exact 58 m SOMA arena correction
+  - exact 58 m SOMA chamber correction
   - portable-light export correction
-  - deterministic master cold rebuild with exact semantic fingerprint
-  - normalized master revision 3 bound to versioned generator
-  - Puerto representative-detail microset for architecture/suture/living-valve families
-  - Puerto human-scale door/contact defect found, fixed and revalidated
-  - deterministic Puerto staged cold rebuild with exact semantic fingerprint
-  - editable .blend and GLB revision-5 receipts
-  - structural/scale/camera/cost QA
-  - revision-3 overview/Puerto/Jardines/SOMA render receipts produced
-  - producer ACK published to fleet coordination issue #7
+  - deterministic master cold rebuild
+  - Puerto representative-detail microset with manufacturing causality
+  - Puerto human-scale door/contact defect found and fixed
+  - deterministic Puerto staged cold rebuild
+  - Jardines representative-detail lymph-channel/algae/gardener microset
+  - Jardines truth metadata corrected from measured envelopes
+  - deterministic Jardines staged cold rebuild with exact whole-scene semantic fingerprint
+  - Jardines evaluated geometry cost profile including curve tessellation
+  - producer ACK and Jardines ACK delta published to issue #7
   - old manifest-sharding blocker issue #13 closed after green fleet-harness main
 
 blocked:
@@ -153,27 +130,24 @@ blocked:
 resolved_blockers:
   - id: LEV-BLK-006
     former_problem: shard-safe global continuity/manifest check
-    resolution: fleet harness and exact generated-manifest guard integrated on main f78bfdc8; canonical push CI success
-    evidence:
-      - docs/FLEET_COORDINATION.md
-      - issue: 13
-      - workflow_run: 34715800243
+    resolution: fleet harness + generated-manifest guard on main f78bfdc8; canonical push CI success
+    evidence: [docs/FLEET_COORDINATION.md, issue 13, workflow run 34715800243]
 
 risks:
-  - revision-3 visual renders exist but direct pixel-level art inspection remains unavailable in this agent runtime
-  - current living tissue and SOMA remain blockout/proxy, not final hyperreal material/anatomy
-  - Puerto representative-detail geometry still lacks final UV/baked PBR/LOD/engine import
-  - no engine import receipt exists for LEVIATHAN yet
+  - direct pixel-level art inspection remains unavailable in this producer runtime
+  - current SOMA remains combat-scale proxy, not final anatomy
+  - Puerto/Jardines representative geometry lacks final UV/baked PBR/LOD/engine import
+  - gardener rig and final appendage collision are intentionally not qualified
   - no target-hardware performance budget exists
   - physical planet scale is intentionally unresolved
-  - fleet registry still awaits integrator transition from reserved to active after producer ACK
+  - fleet registry still awaits integrator transition reserved -> active
 
 next:
-  - continue non-blocked representative-detail work in Jardines Inmunes while runtime transport remains blocked
+  - establish a representative Cámara de SOMA environment/encounter microset without unblocking final SOMA anatomy
   - qualify runtime import path once exact GLB bytes and engine coexist in one execution environment
-  - continue Puerto vertical microset through final UV/PBR/LOD only after runtime path is proven
-  - perform direct human/art review when revision-5 visual inspection surface is available
-  - split next specialist claims only after issue-7 preflight and current world-owner coordination
-  - resolve/ADR L0 physical planet scale before orbital representation work
+  - perform direct art review when image/scene inspection surface is available
+  - continue PBR/UV/LOD only after runtime path and art direction are qualified
+  - split specialist claims only after issue-7 preflight and current world-owner coordination
+  - resolve/ADR L0 planet scale before orbital representation
 
-last_heartbeat: 2026-09-12T22:24:00+02:00
+last_heartbeat: 2026-09-12T22:34:00+02:00
