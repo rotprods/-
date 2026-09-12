@@ -1,5 +1,55 @@
 [
   {
+    "from": "LRN-EXO-20260912-CI-BOOTSTRAP-VERIFIED",
+    "to": "INFRA-005-CONTRACT",
+    "type": "OCCURRED_IN_CHAT"
+  },
+  {
+    "from": "LRN-EXO-20260912-CI-BOOTSTRAP-VERIFIED",
+    "to": "codex-root",
+    "type": "EXECUTED_BY"
+  },
+  {
+    "from": "LRN-EXO-20260912-CI-BOOTSTRAP-VERIFIED",
+    "to": "evidence/ci-download-repair.json",
+    "type": "EVIDENCED_BY"
+  },
+  {
+    "from": "LRN-EXO-20260912-CI-BOOTSTRAP-VERIFIED",
+    "to": "https://github.com/rotprods/-/actions/runs/34709298733",
+    "type": "EVIDENCED_BY"
+  },
+  {
+    "from": "LRN-EXO-20260912-CI-BOOTSTRAP-VERIFIED",
+    "to": "unqualified_dependency_bootstrap",
+    "type": "INSTANCE_OF"
+  },
+  {
+    "from": "LRN-EXO-20260912-CI-BOOTSTRAP",
+    "to": "INFRA-005-CONTRACT",
+    "type": "OCCURRED_IN_CHAT"
+  },
+  {
+    "from": "LRN-EXO-20260912-CI-BOOTSTRAP",
+    "to": "codex-root",
+    "type": "EXECUTED_BY"
+  },
+  {
+    "from": "LRN-EXO-20260912-CI-BOOTSTRAP",
+    "to": "evidence/ci-download-repair.json",
+    "type": "EVIDENCED_BY"
+  },
+  {
+    "from": "LRN-EXO-20260912-CI-BOOTSTRAP",
+    "to": "https://github.com/rotprods/-/actions/runs/34709298733",
+    "type": "EVIDENCED_BY"
+  },
+  {
+    "from": "LRN-EXO-20260912-CI-BOOTSTRAP",
+    "to": "unqualified_dependency_bootstrap",
+    "type": "INSTANCE_OF"
+  },
+  {
     "from": "LRN-EXO-20260912-ART",
     "to": "exovant-persistence-20260912",
     "type": "OCCURRED_IN_CHAT"

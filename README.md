@@ -6,6 +6,7 @@ Universo 3D soulslike original: humanidad colonizadora en 2950. Este repositorio
 
 - [Reanudar el proyecto](HANDOFF.md) · [Contrato de agentes](AGENTS.md)
 - [Estado verificable](_project_intelligence/STATE.json) · [Progreso](PROGRESS.md)
+- [Objetivos](GOALS.md) · [Fases y calendario](ROADMAP.md) · [Protocolo de desarrollo](docs/DEVELOPMENT_PROTOCOL.md)
 - [Arquitectura](ARCHITECTURE.md) · [Memoria y aprendizajes](MEMORY.md)
 - [Biblia de los 12 mundos](design/EXOVANT_BIBLIA.md) · [Catálogo](design/EXOVANT_DATA.json)
 - [Arte y calidad](docs/ART_PRODUCTION.md) · [Hardware y Unreal](docs/HARDWARE.md)
@@ -25,7 +26,7 @@ WASD movimiento · ratón cámara · Q objetivo · clic izquierdo ataque · clic
 ## Comprobar
 
 ```sh
-python3 -m unittest discover -s tests -p 'test_governance.py'
+python3 -m unittest discover -s tests -p 'test_*.py'
 python3 tools/project_control.py check
 python3 tests/run_gauntlet.py --godot .tools/Godot_v4.7.2-stable_linux.x86_64
 ```

@@ -1,11 +1,25 @@
-# EXOVANT — reanudación canónica
+# EXOVANT — continuidad operativa
 
-Checkpoint EXO-PERSISTENCE-004. Fuente: https://github.com/rotprods/-.git. Leer AGENTS.md, _project_intelligence/STATE.json y MEMORY.md. Toda cifra histórica debe contrastarse con los recibos y el hash de fuentes. El proyecto global sigue en desarrollo.
+Leer AGENTS.md, _project_intelligence/STATE.json, PLAN.json, MEMORY.md y GOALS.md. ROADMAP es una proyección del contrato; la biblia mantiene el objetivo de doce mundos. El juego sigue siendo un prototipo de Terra y no un producto AAA terminado.
 
-Ya existe un prototipo Godot con combate, NPC, puzzle, ATLAS, rover básico, consecuencias y guardado recuperable; la biblia mantiene doce mundos. El portal tiene fuente Blender editable en art_source. Ejecutar los gates indicados en docs/RECOVERY.md. El render conocido usa CPU llvmpipe. No hay conexión actual al Mac ni editor Unreal cualificado.
+## Recuperar
 
-Siguiente acción de producto: EXO-004-playability, ruta completa desde partida nueva sin teletransportes de pruebas; registrar fricción real y resolverla antes de escalar arte y regiones. Siguiente frente artístico: EXO-006 y EXO-007, portal optimizado y una ruta Terra representativa.
+Clonar https://github.com/rotprods/-.git. Ejecutar `python3 tools/project_control.py check` antes de alterar archivos, `python3 tools/bootstrap_godot.py --destination .tools`, `make test`, `make native`. Si el binario no coincide, detener esa instalación; no sobrescribir otro motor. La URL oficial fijada sustituyó un endpoint que devolvía 403 y CI verificó la reparación.
 
-La tarea horaria debe leer GitHub actual, comprobar si hay otro escritor, abrir un incremento acotado, testear y persistir. Su estado real está en el recibo operativo; creación/activación no demuestra una ejecución autónoma ni disponibilidad constante de herramientas. Si no hay shell/motor, registrar ese bloqueo concreto en la superficie disponible.
+## Trabajar
 
-Linear y Drive son proyecciones. Los IDs privados de proveedores y de la tarea se guardan en el dossier operativo externo; no hacen falta para compilar el juego. Antes de crear una proyección, buscar el nombre EXOVANT y reconciliar ID. No modificar PROJECT_GRANADA ni otros proyectos.
+Consultar PLAN y seleccionar una unidad desbloqueada. Comprobar HEAD remoto y posibles cambios ajenos. `python3 tools/studio.py start EXO-004 --run <id-unico>` reserva el escritor y registra contexto y recuperación de aprendizajes. Implementar, atacar los casos anómalos, ejecutar gates, registrar evidencia. No declarar done sin todas las pruebas requeridas, incluidas las humanas donde aplique. Cerrar run con studio.py finish; actualizar memoria/progreso y publicar checkpoint mediante conector GitHub si la terminal no tiene credenciales.
+
+## Frontera de producto
+
+EXO-004: recorrer una partida nueva completa sin teletransportes ni estados de debug; observar fricción, arreglar bloqueos y después controles/orientación. EXO-006/007: optimizar portal y producir un kit Terra y personaje de referencia dentro del motor. EXO-012: probar Unreal en un host con GPU adecuado antes de decidir migración. Mesa actual renderiza por CPU; Blender remoto está comprobado, el Mac no está conectado por esta sesión.
+
+## Superficies y ejecución
+
+GitHub es fuente del juego; rot.knowledge contiene el índice canónico del Learning OS hacia sus eventos; game-dev-mcp-hub contiene integración y políticas de estudio. Linear organiza las seis fases y unidades; Drive conserva dossier y snapshot; Mem recupera enlaces. Los registros de proveedores están en el dossier operativo y en la entrada EXOVANT de rot.knowledge. No copiar IDs de archivos temporales como si fueran persistentes.
+
+La tarea horaria recupera main y comprueba capacidades en cada activación. Su habilitación no demuestra disponibilidad de shell/motor ni una primera ejecución autónoma. En caso de conflicto, fallo de herramienta o interrupción, conservar el último commit, reconciliar el resultado y registrar el bloqueo; no reiniciar la planificación.
+
+## Estado de la ola
+
+Los recibos actuales y el estado de cierre de INFRA-005 están en STATE, PLAN y evidence. Nunca utilizar un porcentaje de Linear para afirmar avance artístico o de campaña. La última respuesta del chat no es la fuente de verdad.

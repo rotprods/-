@@ -1,0 +1,15 @@
+{
+  "gate_id": "GATE-ASSET",
+  "task_id": "INFRA-005",
+  "passed": true,
+  "executed_at": "2026-09-12T18:05:44.556118+00:00",
+  "source_digest": "47d2720c0805ce5f250eac0c2e22002fa5df37e149ec1090c624f663ff5847af",
+  "evidence_refs": [
+    "evidence/gate-asset.log"
+  ],
+  "reviewer": "automated-local-runner",
+  "command": [
+    "python3",
+    "tools/asset_audit.py"
+  ]
+}

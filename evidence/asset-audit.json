@@ -1,0 +1,13 @@
+{
+  "bytes": 5920808,
+  "sha256": "a3dd85c9d236020676ee20ad7308d36e7269a404812cdfc4694b99c5af2a399f",
+  "nodes": 417,
+  "meshes": 410,
+  "materials": 16,
+  "triangle_primitives": 410,
+  "indexed_or_vertex_triangles": 142916,
+  "animations": 1,
+  "scope": "export geometry including presentation; no artistic/performance approval",
+  "passed": true,
+  "editable_blend_sha256": "b7d21862b4ba19caaca3a8522939abd2cfb230061eb8514c8fe494b15057ede5"
+}

@@ -1,0 +1,748 @@
+{
+  "schema_version": 1,
+  "project": "EXOVANT 2950",
+  "north_star": {
+    "id": "NS-EXO",
+    "statement": "Crear una campaña 3D soulslike interplanetaria original, ambientada en 2950, donde la expansión humana transforma doce mundos y cada victoria o pacto altera de forma persistente su vida, rutas y poder. Alcanzar una identidad visual y un combate de calidad profesional demostrados en el motor.",
+    "acceptance_goals": [
+      "G-PLAY",
+      "G-ART",
+      "G-WORLD",
+      "G-TECH",
+      "G-OPS",
+      "G-RELEASE"
+    ],
+    "anti_goals": [
+      "No copiar IP/arte/mapas de las referencias",
+      "No MMO ni multijugador antes de la campaña base",
+      "No runtime dependiente de APIs de generación",
+      "No declarar AAA por conteo de polígonos o pruebas parciales"
+    ]
+  },
+  "goals": [
+    {
+      "id": "G-PLAY",
+      "title": "Combate y exploración legibles",
+      "success": [
+        "Recorrido Terra completo desde partida nueva sin debug",
+        "Cámara, controles, daño, muerte y recuperación consistentes",
+        "Mando, remapeo y accesibilidad verificados"
+      ],
+      "metrics": [
+        {
+          "id": "M-ROUTE",
+          "target": "0 bloqueos de progresión en la ruta de aceptación",
+          "status": "unmeasured"
+        },
+        {
+          "id": "M-PLAYTEST",
+          "target": "5 personas externas completan un playtest del slice; registrar abandonos y fricción",
+          "status": "proposed"
+        }
+      ]
+    },
+    {
+      "id": "G-ART",
+      "title": "Calidad artística propia y representativa",
+      "success": [
+        "Ruta Terra con kit, personaje y ATLAS aprobados dentro del motor",
+        "Cada hero asset tiene fuente, materiales, rig/animación cuando corresponda, colisión y coste medido",
+        "Composición, silueta y anticipación legibles"
+      ],
+      "metrics": [
+        {
+          "id": "M-ART",
+          "target": "Revisión del director creativo aprobada en cámara de juego a cerca/medio/lejos",
+          "status": "unmeasured"
+        }
+      ]
+    },
+    {
+      "id": "G-WORLD",
+      "title": "Doce mundos con identidad y consecuencias",
+      "success": [
+        "Cada capítulo tiene regla de mundo, misiones, NPC/ecología, jefe y consecuencia persistente",
+        "Viajes y estado de campaña se recuperan entre planetas",
+        "No convertir diferencias de color en diferencias mecánicas finales"
+      ],
+      "metrics": [
+        {
+          "id": "M-WORLDS",
+          "target": "12 capítulos cualificados según el catálogo vigente",
+          "status": "planned"
+        },
+        {
+          "id": "M-QUESTS",
+          "target": "84 misiones propuestas trazadas hasta aceptación o decisión explícita de cambio",
+          "status": "planned"
+        }
+      ]
+    },
+    {
+      "id": "G-TECH",
+      "title": "Rendimiento y distribución medidos",
+      "success": [
+        "Decisión Godot/Unreal basada en escena equivalente",
+        "Build reproducible en plataforma elegida",
+        "Guardados versionados, recuperación y migraciones probadas"
+      ],
+      "metrics": [
+        {
+          "id": "M-FRAME",
+          "target": "Objetivo propuesto 60 FPS a resolución/preset/hardware por fijar; p95/p99 y stutter registrados",
+          "status": "requires_target_hardware"
+        },
+        {
+          "id": "M-RESTORE",
+          "target": "Clon limpio → motor fijado → tests → arranque, sin caché ni chat",
+          "status": "qualifying"
+        }
+      ]
+    },
+    {
+      "id": "G-OPS",
+      "title": "Desarrollo persistente y auditable",
+      "success": [
+        "Fuente única, tareas con dependencias, evidencia por cierre y aprendizaje recuperable",
+        "CI, copias y recuperación probados",
+        "Errores e interrupciones reconciliados sin sobreescribir trabajo"
+      ],
+      "metrics": [
+        {
+          "id": "M-DOD",
+          "target": "100% tareas cerradas referencian criterios y recibos válidos",
+          "status": "enforced_by_project_tool"
+        },
+        {
+          "id": "M-RECOVERY",
+          "target": "RPO de un checkpoint publicado; recuperar antes de la siguiente unidad de trabajo",
+          "status": "policy"
+        }
+      ]
+    },
+    {
+      "id": "G-RELEASE",
+      "title": "Campaña publicable y mantenible",
+      "success": [
+        "Campaña completa y revisada externamente",
+        "Licencias, localización, opciones y empaquetado revisados",
+        "Sin defectos críticos abiertos; soporte y rollback de versión definidos"
+      ],
+      "metrics": [
+        {
+          "id": "M-RELEASE",
+          "target": "0 P0/P1 abiertos en los escenarios de lanzamiento cualificados",
+          "status": "planned"
+        }
+      ]
+    }
+  ],
+  "phases": [
+    {
+      "id": "P0",
+      "title": "Infraestructura reproducible",
+      "goal": "G-OPS",
+      "exit_criteria": [
+        "Clon limpio y hashes",
+        "CI verde",
+        "Contrato trazable",
+        "Superficies reconciliadas"
+      ],
+      "status": "in_progress"
+    },
+    {
+      "id": "P1",
+      "title": "Jugabilidad Terra",
+      "goal": "G-PLAY",
+      "exit_criteria": [
+        "Ruta completa",
+        "Control y cámara",
+        "Recuperación tras muerte"
+      ],
+      "status": "planned"
+    },
+    {
+      "id": "P2",
+      "title": "Combate y arte representativo",
+      "goal": "G-ART",
+      "exit_criteria": [
+        "Portal de producción",
+        "Kit Terra",
+        "Personaje y ATLAS legibles"
+      ],
+      "status": "planned"
+    },
+    {
+      "id": "P3",
+      "title": "Decisión de motor y vertical slice",
+      "goal": "G-TECH",
+      "exit_criteria": [
+        "Escena equivalente medida",
+        "30–45 minutos completos",
+        "Playtests externos"
+      ],
+      "status": "planned"
+    },
+    {
+      "id": "P4",
+      "title": "Campaña por capítulos",
+      "goal": "G-WORLD",
+      "exit_criteria": [
+        "Viaje persistente",
+        "Planetas uno por uno",
+        "Consecuencias de campaña"
+      ],
+      "status": "planned"
+    },
+    {
+      "id": "P5",
+      "title": "Cualificación y lanzamiento",
+      "goal": "G-RELEASE",
+      "exit_criteria": [
+        "Plataformas y rendimiento",
+        "Licencias y localización",
+        "Candidato de lanzamiento"
+      ],
+      "status": "planned"
+    }
+  ],
+  "gates": [
+    {
+      "id": "GATE-CONTROL",
+      "kind": "automated",
+      "execution": "python3 -m unittest discover -s tests -p test_*.py",
+      "acceptance": "Controles, esquema y transiciones adversariales"
+    },
+    {
+      "id": "GATE-NATIVE",
+      "kind": "automated",
+      "execution": "python3 tests/run_gauntlet.py --godot <binary>",
+      "acceptance": "Import, estado, integración y smoke"
+    },
+    {
+      "id": "GATE-GRAPH",
+      "kind": "automated",
+      "execution": "python3 tools/studio.py validate",
+      "acceptance": "Integridad de plan, dependencias y cobertura de objetivos"
+    },
+    {
+      "id": "GATE-CI",
+      "kind": "provider",
+      "execution": "GitHub Actions on exact commit",
+      "acceptance": "Workflow correcto finalizado con success; no reutilizar un SHA diferente"
+    },
+    {
+      "id": "GATE-RESTORE",
+      "kind": "automated",
+      "execution": "python3 tools/cold_restore.py --godot <binary>",
+      "acceptance": "Clon limpio fijado, integridad previa y gates desde fuente"
+    },
+    {
+      "id": "GATE-ASSET",
+      "kind": "automated",
+      "execution": "python3 tools/asset_audit.py",
+      "acceptance": "Integridad GLB/fuente, métricas y procedencia; no aprueba calidad artística"
+    },
+    {
+      "id": "GATE-PLAY",
+      "kind": "human",
+      "execution": "Recorrido sin debug y acta de playtest",
+      "acceptance": "Ruta real, fricción observada, entradas, versión y resultado"
+    },
+    {
+      "id": "GATE-ART",
+      "kind": "human",
+      "execution": "Revisión del director creativo en motor",
+      "acceptance": "Silueta, materiales, animación, composición y lectura"
+    },
+    {
+      "id": "GATE-PERF",
+      "kind": "hardware",
+      "execution": "Benchmark reproducible sobre host objetivo",
+      "acceptance": "CPU/GPU p50/p95/p99, memoria, resolución, preset y duración"
+    },
+    {
+      "id": "GATE-RELEASE",
+      "kind": "human",
+      "execution": "Revisión de candidato de lanzamiento",
+      "acceptance": "Licencias, campaña, plataformas y defectos críticos"
+    }
+  ],
+  "tasks": [
+    {
+      "id": "INFRA-005",
+      "title": "Base operativa recuperable y proyecciones conectadas",
+      "phase": "P0",
+      "goals": [
+        "G-OPS",
+        "G-TECH"
+      ],
+      "depends_on": [],
+      "status": "in_progress",
+      "owner_role": "technical_director",
+      "acceptance": [
+        "Clonar y comprobar fuentes y binarios sin contexto previo",
+        "Descarga fijada y CI correctos",
+        "Objetivos, fases, tareas, gates y dependencias validados",
+        "Linear, Drive y aprendizaje con enlaces y lectura posterior",
+        "Activación horaria recupera main y respeta exclusión de escritor"
+      ],
+      "required_gates": [
+        "GATE-CONTROL",
+        "GATE-NATIVE",
+        "GATE-GRAPH",
+        "GATE-CI",
+        "GATE-RESTORE",
+        "GATE-ASSET"
+      ],
+      "evidence": [],
+      "estimate_person_hours": null,
+      "estimate_status": "actual time not retroactively invented",
+      "max_failed_iterations": 6
+    },
+    {
+      "id": "EXO-004",
+      "title": "Complete playability route, input and guidance",
+      "phase": "P1",
+      "goals": [
+        "G-PLAY"
+      ],
+      "depends_on": [],
+      "status": "planned",
+      "owner_role": "gameplay_engineer",
+      "acceptance": [
+        "Start a fresh game, walk every route without teleports/debug progression, solve puzzle, win or lose/recover, decide and return. Record friction and fix blockers. Add gamepad/remapping with parity checks."
+      ],
+      "required_gates": [
+        "GATE-CONTROL",
+        "GATE-NATIVE",
+        "GATE-PLAY"
+      ],
+      "evidence": [],
+      "estimate_person_hours": null,
+      "estimate_status": "decompose and estimate when ready; global slice baseline in design WBS",
+      "max_failed_iterations": 6
+    },
+    {
+      "id": "EXO-005",
+      "title": "Player combat and animation pass",
+      "phase": "P2",
+      "goals": [
+        "G-PLAY",
+        "G-ART"
+      ],
+      "depends_on": [
+        "EXO-004"
+      ],
+      "status": "planned",
+      "owner_role": "gameplay_engineer",
+      "acceptance": [
+        "Authored readable anticipation/recovery, attack and dodge cancel policy, second weapon family, hit feedback, audio events, combat drill with recorded inputs."
+      ],
+      "required_gates": [
+        "GATE-CONTROL",
+        "GATE-NATIVE",
+        "GATE-PLAY"
+      ],
+      "evidence": [],
+      "estimate_person_hours": null,
+      "estimate_status": "decompose and estimate when ready; global slice baseline in design WBS",
+      "max_failed_iterations": 6
+    },
+    {
+      "id": "EXO-006",
+      "title": "Portal asset production pass",
+      "phase": "P2",
+      "goals": [
+        "G-ART",
+        "G-TECH"
+      ],
+      "depends_on": [],
+      "status": "planned",
+      "owner_role": "art_director",
+      "acceptance": [
+        "Retain original source, reduce draw calls/material duplication, UV/texture/LOD as appropriate, explicit collision asset, compare visuals and target performance."
+      ],
+      "required_gates": [
+        "GATE-CONTROL",
+        "GATE-NATIVE",
+        "GATE-ASSET",
+        "GATE-ART"
+      ],
+      "evidence": [],
+      "estimate_person_hours": null,
+      "estimate_status": "decompose and estimate when ready; global slice baseline in design WBS",
+      "max_failed_iterations": 6
+    },
+    {
+      "id": "EXO-007",
+      "title": "Terra art direction proof",
+      "phase": "P2",
+      "goals": [
+        "G-ART"
+      ],
+      "depends_on": [
+        "EXO-004",
+        "EXO-006"
+      ],
+      "status": "planned",
+      "owner_role": "art_director",
+      "acceptance": [
+        "One short route with coherent bronze/basalt/ivory, plausible scale, vegetation, lighting and final character target. Review in engine, not only as concept images."
+      ],
+      "required_gates": [
+        "GATE-CONTROL",
+        "GATE-NATIVE",
+        "GATE-ASSET",
+        "GATE-ART"
+      ],
+      "evidence": [],
+      "estimate_person_hours": null,
+      "estimate_status": "decompose and estimate when ready; global slice baseline in design WBS",
+      "max_failed_iterations": 6
+    },
+    {
+      "id": "EXO-008",
+      "title": "ATLAS authored encounter",
+      "phase": "P2",
+      "goals": [
+        "G-PLAY",
+        "G-ART"
+      ],
+      "depends_on": [
+        "EXO-005",
+        "EXO-007"
+      ],
+      "status": "planned",
+      "owner_role": "gameplay_engineer",
+      "acceptance": [
+        "Six to eight attacks, three genuinely distinct phase rules, non-destructive isolation route, tested cover/camera/weapon parity."
+      ],
+      "required_gates": [
+        "GATE-CONTROL",
+        "GATE-NATIVE",
+        "GATE-PLAY"
+      ],
+      "evidence": [],
+      "estimate_person_hours": null,
+      "estimate_status": "decompose and estimate when ready; global slice baseline in design WBS",
+      "max_failed_iterations": 6
+    },
+    {
+      "id": "EXO-009",
+      "title": "Archive route alternatives",
+      "phase": "P2",
+      "goals": [
+        "G-WORLD"
+      ],
+      "depends_on": [
+        "EXO-004"
+      ],
+      "status": "planned",
+      "owner_role": "gameplay_engineer",
+      "acceptance": [
+        "Roof, lock and negotiated routes; evidence integrity, debt and nursery flags; save/reload at each transition."
+      ],
+      "required_gates": [
+        "GATE-CONTROL",
+        "GATE-NATIVE",
+        "GATE-PLAY"
+      ],
+      "evidence": [],
+      "estimate_person_hours": null,
+      "estimate_status": "decompose and estimate when ready; global slice baseline in design WBS",
+      "max_failed_iterations": 6
+    },
+    {
+      "id": "EXO-010",
+      "title": "Ecology and consequences",
+      "phase": "P2",
+      "goals": [
+        "G-WORLD"
+      ],
+      "depends_on": [
+        "EXO-009"
+      ],
+      "status": "planned",
+      "owner_role": "gameplay_engineer",
+      "acceptance": [
+        "At least three regional changes visible in routes, NPC behavior and services; no mere palette swap as final consequence."
+      ],
+      "required_gates": [
+        "GATE-CONTROL",
+        "GATE-NATIVE",
+        "GATE-PLAY"
+      ],
+      "evidence": [],
+      "estimate_person_hours": null,
+      "estimate_status": "decompose and estimate when ready; global slice baseline in design WBS",
+      "max_failed_iterations": 6
+    },
+    {
+      "id": "EXO-011",
+      "title": "Rover physics and accessibility",
+      "phase": "P2",
+      "goals": [
+        "G-PLAY"
+      ],
+      "depends_on": [
+        "EXO-004"
+      ],
+      "status": "planned",
+      "owner_role": "gameplay_engineer",
+      "acceptance": [
+        "Mount/dismount collision clearance, controller support, slopes/water behavior and reliable save/reset."
+      ],
+      "required_gates": [
+        "GATE-CONTROL",
+        "GATE-NATIVE",
+        "GATE-PLAY"
+      ],
+      "evidence": [],
+      "estimate_person_hours": null,
+      "estimate_status": "decompose and estimate when ready; global slice baseline in design WBS",
+      "max_failed_iterations": 6
+    },
+    {
+      "id": "EXO-012",
+      "title": "Production engine decision",
+      "phase": "P3",
+      "goals": [
+        "G-TECH"
+      ],
+      "depends_on": [
+        "EXO-006",
+        "EXO-007"
+      ],
+      "status": "planned",
+      "owner_role": "technical_director",
+      "acceptance": [
+        "Same representative scenario measured in the chosen native engine; document build, frame-time, memory and workflow. No automatic migration based on tool availability alone."
+      ],
+      "required_gates": [
+        "GATE-CONTROL",
+        "GATE-NATIVE",
+        "GATE-PERF",
+        "GATE-PLAY"
+      ],
+      "evidence": [],
+      "estimate_person_hours": null,
+      "estimate_status": "decompose and estimate when ready; global slice baseline in design WBS",
+      "max_failed_iterations": 6
+    },
+    {
+      "id": "EXO-013",
+      "title": "30–45 minute Terra slice",
+      "phase": "P3",
+      "goals": [
+        "G-PLAY",
+        "G-ART",
+        "G-TECH"
+      ],
+      "depends_on": [
+        "EXO-005",
+        "EXO-006",
+        "EXO-007",
+        "EXO-008",
+        "EXO-009",
+        "EXO-010",
+        "EXO-011",
+        "EXO-012"
+      ],
+      "status": "planned",
+      "owner_role": "producer",
+      "acceptance": [
+        "Complete region, three enemy archetypes, three NPC arcs, two weapons, one vehicle, one minigame, ATLAS and persistent consequence; human playtest gates from the plan."
+      ],
+      "required_gates": [
+        "GATE-CONTROL",
+        "GATE-NATIVE",
+        "GATE-PLAY"
+      ],
+      "evidence": [],
+      "estimate_person_hours": null,
+      "estimate_status": "decompose and estimate when ready; global slice baseline in design WBS",
+      "max_failed_iterations": 6
+    },
+    {
+      "id": "EXO-014",
+      "title": "Planetary travel framework",
+      "phase": "P4",
+      "goals": [
+        "G-WORLD",
+        "G-TECH"
+      ],
+      "depends_on": [
+        "EXO-013"
+      ],
+      "status": "planned",
+      "owner_role": "gameplay_engineer",
+      "acceptance": [
+        "Explicit domain transitions, ship cabin/map, save across travel, bounded scene streaming; no runtime external content dependency."
+      ],
+      "required_gates": [
+        "GATE-CONTROL",
+        "GATE-NATIVE",
+        "GATE-PLAY"
+      ],
+      "evidence": [],
+      "estimate_person_hours": null,
+      "estimate_status": "decompose and estimate when ready; global slice baseline in design WBS",
+      "max_failed_iterations": 6
+    },
+    {
+      "id": "EXO-015",
+      "title": "Ares IX chapter",
+      "phase": "P4",
+      "goals": [
+        "G-WORLD"
+      ],
+      "depends_on": [
+        "EXO-014"
+      ],
+      "status": "planned",
+      "owner_role": "producer",
+      "acceptance": [
+        "Unique world rule, assets, missions, ecology, MOL-9 and outcome with regressions."
+      ],
+      "required_gates": [
+        "GATE-CONTROL",
+        "GATE-NATIVE",
+        "GATE-PLAY"
+      ],
+      "evidence": [],
+      "estimate_person_hours": null,
+      "estimate_status": "decompose and estimate when ready; global slice baseline in design WBS",
+      "max_failed_iterations": 6
+    },
+    {
+      "id": "EXO-016",
+      "title": "Remaining Milky Way chapters",
+      "phase": "P4",
+      "goals": [
+        "G-WORLD"
+      ],
+      "depends_on": [
+        "EXO-015"
+      ],
+      "status": "planned",
+      "owner_role": "producer",
+      "acceptance": [
+        "Pelagos and Umbra meet the same chapter gate and add mechanically distinct systems."
+      ],
+      "required_gates": [
+        "GATE-CONTROL",
+        "GATE-NATIVE",
+        "GATE-PLAY"
+      ],
+      "evidence": [],
+      "estimate_person_hours": null,
+      "estimate_status": "decompose and estimate when ready; global slice baseline in design WBS",
+      "max_failed_iterations": 6
+    },
+    {
+      "id": "EXO-017",
+      "title": "Andromeda chapters",
+      "phase": "P4",
+      "goals": [
+        "G-WORLD"
+      ],
+      "depends_on": [
+        "EXO-016"
+      ],
+      "status": "planned",
+      "owner_role": "producer",
+      "acceptance": [
+        "Sylva Prime, Khepri, Nacre and Vanta, staged one chapter at a time."
+      ],
+      "required_gates": [
+        "GATE-CONTROL",
+        "GATE-NATIVE",
+        "GATE-PLAY"
+      ],
+      "evidence": [],
+      "estimate_person_hours": null,
+      "estimate_status": "decompose and estimate when ready; global slice baseline in design WBS",
+      "max_failed_iterations": 6
+    },
+    {
+      "id": "EXO-018",
+      "title": "Extragalactic final act",
+      "phase": "P4",
+      "goals": [
+        "G-WORLD"
+      ],
+      "depends_on": [
+        "EXO-017"
+      ],
+      "status": "planned",
+      "owner_role": "producer",
+      "acceptance": [
+        "Aurora Veil, Leviathan, Elysium Null and Origin with full campaign consequence resolution."
+      ],
+      "required_gates": [
+        "GATE-CONTROL",
+        "GATE-NATIVE",
+        "GATE-PLAY"
+      ],
+      "evidence": [],
+      "estimate_person_hours": null,
+      "estimate_status": "decompose and estimate when ready; global slice baseline in design WBS",
+      "max_failed_iterations": 6
+    },
+    {
+      "id": "EXO-019",
+      "title": "Release qualification",
+      "phase": "P5",
+      "goals": [
+        "G-RELEASE"
+      ],
+      "depends_on": [
+        "EXO-018"
+      ],
+      "status": "planned",
+      "owner_role": "producer",
+      "acceptance": [
+        "Localisation, options, controller parity, save migration, licensing, target performance, packaging, external playtests and release criteria."
+      ],
+      "required_gates": [
+        "GATE-CONTROL",
+        "GATE-NATIVE",
+        "GATE-RELEASE",
+        "GATE-PERF",
+        "GATE-PLAY"
+      ],
+      "evidence": [],
+      "estimate_person_hours": null,
+      "estimate_status": "decompose and estimate when ready; global slice baseline in design WBS",
+      "max_failed_iterations": 6
+    }
+  ],
+  "schedule": {
+    "type": "capacity_scenario_not_deadline",
+    "baseline_source": "design/EXOVANT_DATA.json#/wbs",
+    "slice_person_hours": 3200,
+    "productive_hours_per_person_week": 30,
+    "team_sizes": [
+      1,
+      2,
+      4
+    ],
+    "start_assumption": "2026-09-14",
+    "calendar_commitment": false,
+    "reestimate_after": "EXO-007 and EXO-012; actual throughput from first completed workunits"
+  },
+  "execution_policy": {
+    "max_parallel_workunits": 1,
+    "checkpoint_after": "each verified meaningful change; before a tool/environment transition",
+    "review_cadence": "each workunit; weekly roadmap review when work is active",
+    "stop_conditions": [
+      "conflicting remote writer",
+      "unresolved severe regression",
+      "unavailable required capability",
+      "ambiguous external mutation",
+      "spend outside approved budget"
+    ],
+    "recovery": "preserve checkpoint, reconcile evidence, choose an authorized alternative or register exact blocker"
+  }
+}

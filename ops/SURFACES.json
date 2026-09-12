@@ -1,0 +1,11 @@
+{
+  "authority": "GitHub rotprods/-",
+  "learning_index": "https://github.com/rotprods/rot.knowledge/blob/main/prompts/learning/projects/EXOVANT_2950.md",
+  "studio_integration": "https://github.com/rotprods/game-dev-mcp-hub/blob/main/docs/studio/exovant/INTEGRATION.md",
+  "linear_project_name": "EXOVANT 2950",
+  "drive_folder_name": "EXOVANT 2950",
+  "mem_note_title": "EXOVANT 2950 — recuperar proyecto y aprendizaje",
+  "conflict_rule": "canonical commit wins; reconcile projection by existing provider ID; never create blind duplicates",
+  "private_provider_ids": "operational dossier in Drive and private rot.knowledge index",
+  "last_sync_receipt": "evidence/surfaces-readback.json"
+}

@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "gate_id",
+    "task_id",
+    "passed",
+    "executed_at",
+    "source_digest",
+    "evidence_refs",
+    "reviewer"
+  ],
+  "properties": {
+    "passed": {
+      "type": "boolean"
+    },
+    "evidence_refs": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string"
+      }
+    },
+    "source_digest": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "reviewer": {
+      "type": "string",
+      "minLength": 1
+    }
+  }
+}

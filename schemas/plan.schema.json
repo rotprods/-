@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "EXOVANT project contract",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "project",
+    "north_star",
+    "goals",
+    "phases",
+    "gates",
+    "tasks",
+    "schedule",
+    "execution_policy"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "project": {
+      "const": "EXOVANT 2950"
+    },
+    "north_star": {
+      "type": "object",
+      "required": [
+        "id",
+        "statement",
+        "acceptance_goals"
+      ]
+    },
+    "tasks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "title",
+          "phase",
+          "goals",
+          "depends_on",
+          "status",
+          "acceptance",
+          "required_gates",
+          "evidence"
+        ],
+        "properties": {
+          "status": {
+            "enum": [
+              "planned",
+              "ready",
+              "in_progress",
+              "blocked",
+              "in_review",
+              "done",
+              "superseded"
+            ]
+          }
+        }
+      }
+    }
+  }
+}

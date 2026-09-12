@@ -1,0 +1,13 @@
+{
+  "run_id": "INFRA-005-CONTRACT",
+  "task_id": "INFRA-005",
+  "base_commit": "a9156566fdba815f06b46bc1cd516e7dbee837f6",
+  "read_set": {
+    "AGENTS.md": "a28a74a0180da194cbf0fe2394209fae414a8a71e8edd6115177b5f9a0f9e762",
+    "MEMORY.md": "f01f270269de1e97aae218e58f584b133b53aad522a1b7d64b1a8c4b807567a3",
+    "HANDOFF.md": "ec3c0268d15e4edd734672c069d7eefab18daf4e9e88b2afa1090fbbdeba7687",
+    "_project_intelligence/STATE.json": "e8ec86f759de6be11a2ddb15108726729abbd00c45ab31cce8d8c1b8f3f3a481",
+    "_project_intelligence/PLAN.json": "7ae3fa846769e26381657e5d19cc1a3847d3ed08036b36cea8613b8c086b2c95"
+  },
+  "started_at": "2026-09-12T17:56:35.954127+00:00"
+}

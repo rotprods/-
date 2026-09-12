@@ -1,0 +1,42 @@
+{
+  "ok": true,
+  "operation": {
+    "access": "query",
+    "artifacts": null,
+    "baseRevision": 2,
+    "createdAt": "2026-09-12T17:48:47.519Z",
+    "error": null,
+    "finishedAt": "2026-09-12T17:48:57.177Z",
+    "generatedArtifacts": [],
+    "headRevision": 2,
+    "headSceneSequence": 0,
+    "id": "f4a63a9b-9f6d-44b5-8f51-78312756ef03",
+    "output": {
+      "stderrTail": "",
+      "stdoutTail": "",
+      "truncated": false
+    },
+    "projectId": "989aa82f-9eb8-4fd9-b475-87347ce834f9",
+    "result": {
+      "blender_version": "5.2.0 LTS",
+      "fps": 24,
+      "frames": [
+        1,
+        120
+      ],
+      "materials": 16,
+      "meshes": 398,
+      "objects": 417,
+      "scene": "Scene"
+    },
+    "revisionAfter": null,
+    "revisionBefore": 2,
+    "sceneSequenceAfter": 0,
+    "sceneSequenceBefore": 0,
+    "stale": false,
+    "startedAt": "2026-09-12T17:48:47.589Z",
+    "status": "succeeded"
+  },
+  "projectUrl": "https://higgsfield.ai/3d-jutsu/989aa82f-9eb8-4fd9-b475-87347ce834f9",
+  "terminal": true
+}

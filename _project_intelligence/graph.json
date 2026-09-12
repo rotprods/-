@@ -4117,6 +4117,24 @@
       "artifact_path": "docs/ART_PRODUCTION.md"
     },
     {
+      "id": "LRN-EXO-20260912-CI-BOOTSTRAP-VERIFIED",
+      "type": "learning",
+      "label": "unqualified_dependency_bootstrap",
+      "epistemic": "fact",
+      "status": "verified",
+      "provenance": "learning/hub/agents/codex-root/chats/INFRA-005-CONTRACT/events/LRN-EXO-20260912-CI-BOOTSTRAP-VERIFIED.json",
+      "artifact_path": "learning/hub/agents/codex-root/chats/INFRA-005-CONTRACT/events/LRN-EXO-20260912-CI-BOOTSTRAP-VERIFIED.json"
+    },
+    {
+      "id": "LRN-EXO-20260912-CI-BOOTSTRAP",
+      "type": "learning",
+      "label": "unqualified_dependency_bootstrap",
+      "epistemic": "fact",
+      "status": "persisted",
+      "provenance": "learning/hub/agents/codex-root/chats/INFRA-005-CONTRACT/events/LRN-EXO-20260912-CI-BOOTSTRAP.json",
+      "artifact_path": "learning/hub/agents/codex-root/chats/INFRA-005-CONTRACT/events/LRN-EXO-20260912-CI-BOOTSTRAP.json"
+    },
+    {
       "id": "LRN-EXO-20260912-ART",
       "type": "learning",
       "label": "detail-without-readability",
@@ -4225,13 +4243,76 @@
       "artifact_path": "learning/hub/agents/codex-root/chats/exovant-persistence-20260912/events/LRN-EXO-20260912-TELEMETRY.json"
     },
     {
+      "id": "G-PLAY",
+      "type": "decision",
+      "label": "Combate y exploración legibles",
+      "epistemic": "decision",
+      "status": "planned",
+      "provenance": "_project_intelligence/PLAN.json",
+      "artifact_path": "_project_intelligence/PLAN.json"
+    },
+    {
+      "id": "G-ART",
+      "type": "decision",
+      "label": "Calidad artística propia y representativa",
+      "epistemic": "decision",
+      "status": "planned",
+      "provenance": "_project_intelligence/PLAN.json",
+      "artifact_path": "_project_intelligence/PLAN.json"
+    },
+    {
+      "id": "G-WORLD",
+      "type": "decision",
+      "label": "Doce mundos con identidad y consecuencias",
+      "epistemic": "decision",
+      "status": "planned",
+      "provenance": "_project_intelligence/PLAN.json",
+      "artifact_path": "_project_intelligence/PLAN.json"
+    },
+    {
+      "id": "G-TECH",
+      "type": "decision",
+      "label": "Rendimiento y distribución medidos",
+      "epistemic": "decision",
+      "status": "planned",
+      "provenance": "_project_intelligence/PLAN.json",
+      "artifact_path": "_project_intelligence/PLAN.json"
+    },
+    {
+      "id": "G-OPS",
+      "type": "decision",
+      "label": "Desarrollo persistente y auditable",
+      "epistemic": "decision",
+      "status": "planned",
+      "provenance": "_project_intelligence/PLAN.json",
+      "artifact_path": "_project_intelligence/PLAN.json"
+    },
+    {
+      "id": "G-RELEASE",
+      "type": "decision",
+      "label": "Campaña publicable y mantenible",
+      "epistemic": "decision",
+      "status": "planned",
+      "provenance": "_project_intelligence/PLAN.json",
+      "artifact_path": "_project_intelligence/PLAN.json"
+    },
+    {
+      "id": "INFRA-005",
+      "type": "workunit",
+      "label": "Base operativa recuperable y proyecciones conectadas",
+      "epistemic": "proposal",
+      "status": "in_progress",
+      "provenance": "_project_intelligence/PLAN.json",
+      "artifact_path": "_project_intelligence/PLAN.json"
+    },
+    {
       "id": "EXO-004",
       "type": "workunit",
       "label": "Complete playability route, input and guidance",
       "epistemic": "proposal",
       "status": "planned",
-      "provenance": "_project_intelligence/BACKLOG.md",
-      "artifact_path": "_project_intelligence/BACKLOG.md"
+      "provenance": "_project_intelligence/PLAN.json",
+      "artifact_path": "_project_intelligence/PLAN.json"
     },
     {
       "id": "EXO-005",
@@ -4239,8 +4320,8 @@
       "label": "Player combat and animation pass",
       "epistemic": "proposal",
       "status": "planned",
-      "provenance": "_project_intelligence/BACKLOG.md",
-      "artifact_path": "_project_intelligence/BACKLOG.md"
+      "provenance": "_project_intelligence/PLAN.json",
+      "artifact_path": "_project_intelligence/PLAN.json"
     },
     {
       "id": "EXO-006",
@@ -4248,8 +4329,8 @@
       "label": "Portal asset production pass",
       "epistemic": "proposal",
       "status": "planned",
-      "provenance": "_project_intelligence/BACKLOG.md",
-      "artifact_path": "_project_intelligence/BACKLOG.md"
+      "provenance": "_project_intelligence/PLAN.json",
+      "artifact_path": "_project_intelligence/PLAN.json"
     },
     {
       "id": "EXO-007",
@@ -4257,8 +4338,8 @@
       "label": "Terra art direction proof",
       "epistemic": "proposal",
       "status": "planned",
-      "provenance": "_project_intelligence/BACKLOG.md",
-      "artifact_path": "_project_intelligence/BACKLOG.md"
+      "provenance": "_project_intelligence/PLAN.json",
+      "artifact_path": "_project_intelligence/PLAN.json"
     },
     {
       "id": "EXO-008",
@@ -4266,8 +4347,8 @@
       "label": "ATLAS authored encounter",
       "epistemic": "proposal",
       "status": "planned",
-      "provenance": "_project_intelligence/BACKLOG.md",
-      "artifact_path": "_project_intelligence/BACKLOG.md"
+      "provenance": "_project_intelligence/PLAN.json",
+      "artifact_path": "_project_intelligence/PLAN.json"
     },
     {
       "id": "EXO-009",
@@ -4275,8 +4356,8 @@
       "label": "Archive route alternatives",
       "epistemic": "proposal",
       "status": "planned",
-      "provenance": "_project_intelligence/BACKLOG.md",
-      "artifact_path": "_project_intelligence/BACKLOG.md"
+      "provenance": "_project_intelligence/PLAN.json",
+      "artifact_path": "_project_intelligence/PLAN.json"
     },
     {
       "id": "EXO-010",
@@ -4284,8 +4365,8 @@
       "label": "Ecology and consequences",
       "epistemic": "proposal",
       "status": "planned",
-      "provenance": "_project_intelligence/BACKLOG.md",
-      "artifact_path": "_project_intelligence/BACKLOG.md"
+      "provenance": "_project_intelligence/PLAN.json",
+      "artifact_path": "_project_intelligence/PLAN.json"
     },
     {
       "id": "EXO-011",
@@ -4293,8 +4374,8 @@
       "label": "Rover physics and accessibility",
       "epistemic": "proposal",
       "status": "planned",
-      "provenance": "_project_intelligence/BACKLOG.md",
-      "artifact_path": "_project_intelligence/BACKLOG.md"
+      "provenance": "_project_intelligence/PLAN.json",
+      "artifact_path": "_project_intelligence/PLAN.json"
     },
     {
       "id": "EXO-012",
@@ -4302,8 +4383,8 @@
       "label": "Production engine decision",
       "epistemic": "proposal",
       "status": "planned",
-      "provenance": "_project_intelligence/BACKLOG.md",
-      "artifact_path": "_project_intelligence/BACKLOG.md"
+      "provenance": "_project_intelligence/PLAN.json",
+      "artifact_path": "_project_intelligence/PLAN.json"
     },
     {
       "id": "EXO-013",
@@ -4311,8 +4392,8 @@
       "label": "30–45 minute Terra slice",
       "epistemic": "proposal",
       "status": "planned",
-      "provenance": "_project_intelligence/BACKLOG.md",
-      "artifact_path": "_project_intelligence/BACKLOG.md"
+      "provenance": "_project_intelligence/PLAN.json",
+      "artifact_path": "_project_intelligence/PLAN.json"
     },
     {
       "id": "EXO-014",
@@ -4320,8 +4401,8 @@
       "label": "Planetary travel framework",
       "epistemic": "proposal",
       "status": "planned",
-      "provenance": "_project_intelligence/BACKLOG.md",
-      "artifact_path": "_project_intelligence/BACKLOG.md"
+      "provenance": "_project_intelligence/PLAN.json",
+      "artifact_path": "_project_intelligence/PLAN.json"
     },
     {
       "id": "EXO-015",
@@ -4329,8 +4410,8 @@
       "label": "Ares IX chapter",
       "epistemic": "proposal",
       "status": "planned",
-      "provenance": "_project_intelligence/BACKLOG.md",
-      "artifact_path": "_project_intelligence/BACKLOG.md"
+      "provenance": "_project_intelligence/PLAN.json",
+      "artifact_path": "_project_intelligence/PLAN.json"
     },
     {
       "id": "EXO-016",
@@ -4338,8 +4419,8 @@
       "label": "Remaining Milky Way chapters",
       "epistemic": "proposal",
       "status": "planned",
-      "provenance": "_project_intelligence/BACKLOG.md",
-      "artifact_path": "_project_intelligence/BACKLOG.md"
+      "provenance": "_project_intelligence/PLAN.json",
+      "artifact_path": "_project_intelligence/PLAN.json"
     },
     {
       "id": "EXO-017",
@@ -4347,8 +4428,8 @@
       "label": "Andromeda chapters",
       "epistemic": "proposal",
       "status": "planned",
-      "provenance": "_project_intelligence/BACKLOG.md",
-      "artifact_path": "_project_intelligence/BACKLOG.md"
+      "provenance": "_project_intelligence/PLAN.json",
+      "artifact_path": "_project_intelligence/PLAN.json"
     },
     {
       "id": "EXO-018",
@@ -4356,8 +4437,8 @@
       "label": "Extragalactic final act",
       "epistemic": "proposal",
       "status": "planned",
-      "provenance": "_project_intelligence/BACKLOG.md",
-      "artifact_path": "_project_intelligence/BACKLOG.md"
+      "provenance": "_project_intelligence/PLAN.json",
+      "artifact_path": "_project_intelligence/PLAN.json"
     },
     {
       "id": "EXO-019",
@@ -4365,8 +4446,8 @@
       "label": "Release qualification",
       "epistemic": "proposal",
       "status": "planned",
-      "provenance": "_project_intelligence/BACKLOG.md",
-      "artifact_path": "_project_intelligence/BACKLOG.md"
+      "provenance": "_project_intelligence/PLAN.json",
+      "artifact_path": "_project_intelligence/PLAN.json"
     }
   ],
   "edges": [
@@ -7413,6 +7494,30 @@
       "type": "CONSTRAINS"
     },
     {
+      "id": "project:exovant::LEARNS::LRN-EXO-20260912-CI-BOOTSTRAP-VERIFIED",
+      "source": "project:exovant",
+      "target": "LRN-EXO-20260912-CI-BOOTSTRAP-VERIFIED",
+      "type": "LEARNS"
+    },
+    {
+      "id": "LRN-EXO-20260912-CI-BOOTSTRAP-VERIFIED::CHECKED_BY::governance",
+      "source": "LRN-EXO-20260912-CI-BOOTSTRAP-VERIFIED",
+      "target": "governance",
+      "type": "CHECKED_BY"
+    },
+    {
+      "id": "project:exovant::LEARNS::LRN-EXO-20260912-CI-BOOTSTRAP",
+      "source": "project:exovant",
+      "target": "LRN-EXO-20260912-CI-BOOTSTRAP",
+      "type": "LEARNS"
+    },
+    {
+      "id": "LRN-EXO-20260912-CI-BOOTSTRAP::CHECKED_BY::governance",
+      "source": "LRN-EXO-20260912-CI-BOOTSTRAP",
+      "target": "governance",
+      "type": "CHECKED_BY"
+    },
+    {
       "id": "project:exovant::LEARNS::LRN-EXO-20260912-ART",
       "source": "project:exovant",
       "target": "LRN-EXO-20260912-ART",
@@ -7557,104 +7662,98 @@
       "type": "CHECKED_BY"
     },
     {
-      "id": "project:exovant::NEXT_FRONTIER::EXO-004",
+      "id": "project:exovant::AIMS_FOR::G-PLAY",
       "source": "project:exovant",
-      "target": "EXO-004",
-      "type": "NEXT_FRONTIER"
+      "target": "G-PLAY",
+      "type": "AIMS_FOR"
     },
     {
-      "id": "project:exovant::NEXT_FRONTIER::EXO-005",
+      "id": "project:exovant::AIMS_FOR::G-ART",
       "source": "project:exovant",
-      "target": "EXO-005",
-      "type": "NEXT_FRONTIER"
+      "target": "G-ART",
+      "type": "AIMS_FOR"
     },
     {
-      "id": "project:exovant::NEXT_FRONTIER::EXO-006",
+      "id": "project:exovant::AIMS_FOR::G-WORLD",
       "source": "project:exovant",
-      "target": "EXO-006",
-      "type": "NEXT_FRONTIER"
+      "target": "G-WORLD",
+      "type": "AIMS_FOR"
     },
     {
-      "id": "project:exovant::NEXT_FRONTIER::EXO-007",
+      "id": "project:exovant::AIMS_FOR::G-TECH",
       "source": "project:exovant",
-      "target": "EXO-007",
-      "type": "NEXT_FRONTIER"
+      "target": "G-TECH",
+      "type": "AIMS_FOR"
     },
     {
-      "id": "project:exovant::NEXT_FRONTIER::EXO-008",
+      "id": "project:exovant::AIMS_FOR::G-OPS",
       "source": "project:exovant",
-      "target": "EXO-008",
-      "type": "NEXT_FRONTIER"
+      "target": "G-OPS",
+      "type": "AIMS_FOR"
     },
     {
-      "id": "project:exovant::NEXT_FRONTIER::EXO-009",
+      "id": "project:exovant::AIMS_FOR::G-RELEASE",
       "source": "project:exovant",
-      "target": "EXO-009",
-      "type": "NEXT_FRONTIER"
+      "target": "G-RELEASE",
+      "type": "AIMS_FOR"
     },
     {
-      "id": "project:exovant::NEXT_FRONTIER::EXO-010",
-      "source": "project:exovant",
-      "target": "EXO-010",
-      "type": "NEXT_FRONTIER"
+      "id": "INFRA-005::ADVANCES::G-OPS",
+      "source": "INFRA-005",
+      "target": "G-OPS",
+      "type": "ADVANCES"
     },
     {
-      "id": "project:exovant::NEXT_FRONTIER::EXO-011",
-      "source": "project:exovant",
-      "target": "EXO-011",
-      "type": "NEXT_FRONTIER"
+      "id": "INFRA-005::ADVANCES::G-TECH",
+      "source": "INFRA-005",
+      "target": "G-TECH",
+      "type": "ADVANCES"
     },
     {
-      "id": "project:exovant::NEXT_FRONTIER::EXO-012",
-      "source": "project:exovant",
-      "target": "EXO-012",
-      "type": "NEXT_FRONTIER"
+      "id": "EXO-004::ADVANCES::G-PLAY",
+      "source": "EXO-004",
+      "target": "G-PLAY",
+      "type": "ADVANCES"
     },
     {
-      "id": "project:exovant::NEXT_FRONTIER::EXO-013",
-      "source": "project:exovant",
-      "target": "EXO-013",
-      "type": "NEXT_FRONTIER"
+      "id": "EXO-005::ADVANCES::G-PLAY",
+      "source": "EXO-005",
+      "target": "G-PLAY",
+      "type": "ADVANCES"
     },
     {
-      "id": "project:exovant::NEXT_FRONTIER::EXO-014",
-      "source": "project:exovant",
-      "target": "EXO-014",
-      "type": "NEXT_FRONTIER"
-    },
-    {
-      "id": "project:exovant::NEXT_FRONTIER::EXO-015",
-      "source": "project:exovant",
-      "target": "EXO-015",
-      "type": "NEXT_FRONTIER"
-    },
-    {
-      "id": "project:exovant::NEXT_FRONTIER::EXO-016",
-      "source": "project:exovant",
-      "target": "EXO-016",
-      "type": "NEXT_FRONTIER"
-    },
-    {
-      "id": "project:exovant::NEXT_FRONTIER::EXO-017",
-      "source": "project:exovant",
-      "target": "EXO-017",
-      "type": "NEXT_FRONTIER"
-    },
-    {
-      "id": "project:exovant::NEXT_FRONTIER::EXO-018",
-      "source": "project:exovant",
-      "target": "EXO-018",
-      "type": "NEXT_FRONTIER"
-    },
-    {
-      "id": "project:exovant::NEXT_FRONTIER::EXO-019",
-      "source": "project:exovant",
-      "target": "EXO-019",
-      "type": "NEXT_FRONTIER"
+      "id": "EXO-005::ADVANCES::G-ART",
+      "source": "EXO-005",
+      "target": "G-ART",
+      "type": "ADVANCES"
     },
     {
       "id": "EXO-005::DEPENDS_ON::EXO-004",
       "source": "EXO-005",
+      "target": "EXO-004",
+      "type": "DEPENDS_ON"
+    },
+    {
+      "id": "EXO-006::ADVANCES::G-ART",
+      "source": "EXO-006",
+      "target": "G-ART",
+      "type": "ADVANCES"
+    },
+    {
+      "id": "EXO-006::ADVANCES::G-TECH",
+      "source": "EXO-006",
+      "target": "G-TECH",
+      "type": "ADVANCES"
+    },
+    {
+      "id": "EXO-007::ADVANCES::G-ART",
+      "source": "EXO-007",
+      "target": "G-ART",
+      "type": "ADVANCES"
+    },
+    {
+      "id": "EXO-007::DEPENDS_ON::EXO-004",
+      "source": "EXO-007",
       "target": "EXO-004",
       "type": "DEPENDS_ON"
     },
@@ -7665,9 +7764,75 @@
       "type": "DEPENDS_ON"
     },
     {
+      "id": "EXO-008::ADVANCES::G-PLAY",
+      "source": "EXO-008",
+      "target": "G-PLAY",
+      "type": "ADVANCES"
+    },
+    {
+      "id": "EXO-008::ADVANCES::G-ART",
+      "source": "EXO-008",
+      "target": "G-ART",
+      "type": "ADVANCES"
+    },
+    {
       "id": "EXO-008::DEPENDS_ON::EXO-005",
       "source": "EXO-008",
       "target": "EXO-005",
+      "type": "DEPENDS_ON"
+    },
+    {
+      "id": "EXO-008::DEPENDS_ON::EXO-007",
+      "source": "EXO-008",
+      "target": "EXO-007",
+      "type": "DEPENDS_ON"
+    },
+    {
+      "id": "EXO-009::ADVANCES::G-WORLD",
+      "source": "EXO-009",
+      "target": "G-WORLD",
+      "type": "ADVANCES"
+    },
+    {
+      "id": "EXO-009::DEPENDS_ON::EXO-004",
+      "source": "EXO-009",
+      "target": "EXO-004",
+      "type": "DEPENDS_ON"
+    },
+    {
+      "id": "EXO-010::ADVANCES::G-WORLD",
+      "source": "EXO-010",
+      "target": "G-WORLD",
+      "type": "ADVANCES"
+    },
+    {
+      "id": "EXO-010::DEPENDS_ON::EXO-009",
+      "source": "EXO-010",
+      "target": "EXO-009",
+      "type": "DEPENDS_ON"
+    },
+    {
+      "id": "EXO-011::ADVANCES::G-PLAY",
+      "source": "EXO-011",
+      "target": "G-PLAY",
+      "type": "ADVANCES"
+    },
+    {
+      "id": "EXO-011::DEPENDS_ON::EXO-004",
+      "source": "EXO-011",
+      "target": "EXO-004",
+      "type": "DEPENDS_ON"
+    },
+    {
+      "id": "EXO-012::ADVANCES::G-TECH",
+      "source": "EXO-012",
+      "target": "G-TECH",
+      "type": "ADVANCES"
+    },
+    {
+      "id": "EXO-012::DEPENDS_ON::EXO-006",
+      "source": "EXO-012",
+      "target": "EXO-006",
       "type": "DEPENDS_ON"
     },
     {
@@ -7677,9 +7842,147 @@
       "type": "DEPENDS_ON"
     },
     {
+      "id": "EXO-013::ADVANCES::G-PLAY",
+      "source": "EXO-013",
+      "target": "G-PLAY",
+      "type": "ADVANCES"
+    },
+    {
+      "id": "EXO-013::ADVANCES::G-ART",
+      "source": "EXO-013",
+      "target": "G-ART",
+      "type": "ADVANCES"
+    },
+    {
+      "id": "EXO-013::ADVANCES::G-TECH",
+      "source": "EXO-013",
+      "target": "G-TECH",
+      "type": "ADVANCES"
+    },
+    {
+      "id": "EXO-013::DEPENDS_ON::EXO-005",
+      "source": "EXO-013",
+      "target": "EXO-005",
+      "type": "DEPENDS_ON"
+    },
+    {
+      "id": "EXO-013::DEPENDS_ON::EXO-006",
+      "source": "EXO-013",
+      "target": "EXO-006",
+      "type": "DEPENDS_ON"
+    },
+    {
+      "id": "EXO-013::DEPENDS_ON::EXO-007",
+      "source": "EXO-013",
+      "target": "EXO-007",
+      "type": "DEPENDS_ON"
+    },
+    {
+      "id": "EXO-013::DEPENDS_ON::EXO-008",
+      "source": "EXO-013",
+      "target": "EXO-008",
+      "type": "DEPENDS_ON"
+    },
+    {
+      "id": "EXO-013::DEPENDS_ON::EXO-009",
+      "source": "EXO-013",
+      "target": "EXO-009",
+      "type": "DEPENDS_ON"
+    },
+    {
+      "id": "EXO-013::DEPENDS_ON::EXO-010",
+      "source": "EXO-013",
+      "target": "EXO-010",
+      "type": "DEPENDS_ON"
+    },
+    {
+      "id": "EXO-013::DEPENDS_ON::EXO-011",
+      "source": "EXO-013",
+      "target": "EXO-011",
+      "type": "DEPENDS_ON"
+    },
+    {
       "id": "EXO-013::DEPENDS_ON::EXO-012",
       "source": "EXO-013",
       "target": "EXO-012",
+      "type": "DEPENDS_ON"
+    },
+    {
+      "id": "EXO-014::ADVANCES::G-WORLD",
+      "source": "EXO-014",
+      "target": "G-WORLD",
+      "type": "ADVANCES"
+    },
+    {
+      "id": "EXO-014::ADVANCES::G-TECH",
+      "source": "EXO-014",
+      "target": "G-TECH",
+      "type": "ADVANCES"
+    },
+    {
+      "id": "EXO-014::DEPENDS_ON::EXO-013",
+      "source": "EXO-014",
+      "target": "EXO-013",
+      "type": "DEPENDS_ON"
+    },
+    {
+      "id": "EXO-015::ADVANCES::G-WORLD",
+      "source": "EXO-015",
+      "target": "G-WORLD",
+      "type": "ADVANCES"
+    },
+    {
+      "id": "EXO-015::DEPENDS_ON::EXO-014",
+      "source": "EXO-015",
+      "target": "EXO-014",
+      "type": "DEPENDS_ON"
+    },
+    {
+      "id": "EXO-016::ADVANCES::G-WORLD",
+      "source": "EXO-016",
+      "target": "G-WORLD",
+      "type": "ADVANCES"
+    },
+    {
+      "id": "EXO-016::DEPENDS_ON::EXO-015",
+      "source": "EXO-016",
+      "target": "EXO-015",
+      "type": "DEPENDS_ON"
+    },
+    {
+      "id": "EXO-017::ADVANCES::G-WORLD",
+      "source": "EXO-017",
+      "target": "G-WORLD",
+      "type": "ADVANCES"
+    },
+    {
+      "id": "EXO-017::DEPENDS_ON::EXO-016",
+      "source": "EXO-017",
+      "target": "EXO-016",
+      "type": "DEPENDS_ON"
+    },
+    {
+      "id": "EXO-018::ADVANCES::G-WORLD",
+      "source": "EXO-018",
+      "target": "G-WORLD",
+      "type": "ADVANCES"
+    },
+    {
+      "id": "EXO-018::DEPENDS_ON::EXO-017",
+      "source": "EXO-018",
+      "target": "EXO-017",
+      "type": "DEPENDS_ON"
+    },
+    {
+      "id": "EXO-019::ADVANCES::G-RELEASE",
+      "source": "EXO-019",
+      "target": "G-RELEASE",
+      "type": "ADVANCES"
+    },
+    {
+      "id": "EXO-019::DEPENDS_ON::EXO-018",
+      "source": "EXO-019",
+      "target": "EXO-018",
       "type": "DEPENDS_ON"
     }
   ],

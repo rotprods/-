@@ -6,7 +6,7 @@ ROOT=Path(__file__).resolve().parents[1]
 SKIP={'.git','.godot','.tools','__pycache__'}
 def digest(path): return hashlib.sha256(path.read_bytes()).hexdigest()
 def tracked_files(root):
-    return sorted(p for p in root.rglob('*') if p.is_file() and not any(x in SKIP for x in p.relative_to(root).parts) and not p.name.endswith(('.pyc','.tmp','.bak')))
+    return sorted(p for p in root.rglob('*') if p.is_file() and not any(x in SKIP for x in p.relative_to(root).parts) and not p.name.endswith(('.pyc','.tmp','.bak')) and not p.name.startswith('.write-'))
 def source_manifest(root):
     prefixes=('scripts/','scenes/','assets/','tests/','tools/')
     return {str(p.relative_to(root)):digest(p) for p in tracked_files(root) if str(p.relative_to(root)).startswith(prefixes) or p.name=='project.godot'}
@@ -41,6 +41,10 @@ def check(root):
     for n in graph['nodes']:
         ref=n.get('artifact_path')
         if ref and not (root/ref).exists():problems.append('missing graph artifact '+ref)
+    from graphify_project import build
+    if graph != build(root):problems.append('graph projection drift')
+    from studio import validate_project
+    problems+=validate_project(root)
     sys.path.insert(0,str(root/'tools'))
     from aprende_runtime import LearningHub
     from aprende_lifecycle import SessionLifecycle

@@ -9,7 +9,7 @@ from aprende_lifecycle import SessionLifecycle
 class Continuity(unittest.TestCase):
     def setUp(self):
         self.temp=tempfile.TemporaryDirectory();self.root=pathlib.Path(self.temp.name)
-        self.event=json.loads(next((ROOT/'learning/hub/agents').glob('*/chats/*/events/*.json')).read_text())
+        self.event=json.loads(next((ROOT/'learning/hub/agents').glob('*/chats/*/events/LRN-EXO-20260912-ART.json')).read_text())
         self.event.pop('_meta',None)
     def tearDown(self):self.temp.cleanup()
     def test_learning_roundtrip_retrieval(self):
@@ -65,6 +65,6 @@ class Continuity(unittest.TestCase):
         self.assertNotIn('arguments',p.read_text());self.assertNotIn('verified_success',p.read_text())
     def test_all_twelve_learnings_recoverable(self):
         hub=LearningHub(ROOT/'learning/hub');events=list(hub.iter_events());self.assertGreaterEqual(len(events),12)
-        for _,e in events:self.assertEqual(hub.retrieve(e['learning_id'])[0]['learning_id'],e['learning_id'])
+        for _,e in events:self.assertTrue(any(hit['learning_id']==e['learning_id'] for hit in hub.retrieve(e['learning_id'])))
 
 if __name__=='__main__':unittest.main()

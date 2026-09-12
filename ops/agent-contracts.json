@@ -1,0 +1,58 @@
+{
+  "scope": "project",
+  "runtime_executor": "current authorized assistant session",
+  "background_workers_installed": false,
+  "roles": [
+    {
+      "id": "producer",
+      "responsibility": "Prioridad, dependencias, alcance, calendario y handoff",
+      "outputs": [
+        "PLAN.json",
+        "PROGRESS.md"
+      ],
+      "gate": "GATE-GRAPH",
+      "status": "role_contract_not_separate_running_agent"
+    },
+    {
+      "id": "technical_director",
+      "responsibility": "Motor, integración, build, rendimiento y continuidad",
+      "outputs": [
+        "ARCHITECTURE.md",
+        "receipts"
+      ],
+      "gate": "GATE-CONTROL",
+      "status": "role_contract_not_separate_running_agent"
+    },
+    {
+      "id": "gameplay_engineer",
+      "responsibility": "Controles, combate, misiones y guardado",
+      "outputs": [
+        "scripts",
+        "native tests"
+      ],
+      "gate": "GATE-NATIVE",
+      "status": "role_contract_not_separate_running_agent"
+    },
+    {
+      "id": "art_director",
+      "responsibility": "Silueta, materiales, rig, animación y composición",
+      "outputs": [
+        "editable art",
+        "in-engine review"
+      ],
+      "gate": "GATE-ART",
+      "status": "role_contract_not_separate_running_agent"
+    },
+    {
+      "id": "qa_reviewer",
+      "responsibility": "Casos anómalos, pruebas y clasificación de defectos",
+      "outputs": [
+        "incident",
+        "gate receipt"
+      ],
+      "gate": "GATE-PLAY",
+      "status": "role_contract_not_separate_running_agent"
+    }
+  ],
+  "delegation_policy": "Only instantiate agents when supported and explicitly authorized; contracts do not imply running workers."
+}

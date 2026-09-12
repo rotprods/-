@@ -1,0 +1,17 @@
+{
+  "passed": true,
+  "learning_id": "LRN-EXO-20260912-CI-BOOTSTRAP",
+  "matches": [
+    {
+      "learning_id": "LRN-EXO-20260912-CI-BOOTSTRAP",
+      "path": "agents/codex-root/chats/INFRA-005-CONTRACT/events/LRN-EXO-20260912-CI-BOOTSTRAP.json",
+      "authority": "L2-persisted",
+      "status": "persisted",
+      "agent_id": "codex-root",
+      "chat_id": "INFRA-005-CONTRACT",
+      "chat_id_source": "session-alias"
+    }
+  ],
+  "audit": [],
+  "scope": "project event retrieval after persistence; no universal hook"
+}

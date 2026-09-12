@@ -17,3 +17,7 @@ Siguiente incremento de producto: EXO-004, recorrido completo sin teletransporte
 ## Infraestructura 005 — reparación de descarga
 
 El fallo de GitHub Actions se reprodujo localmente: HTTP 403 del endpoint de descarga. La URL oficial de release 4.7.2 permitió descargar e instalar con hashes coincidentes. Siete pruebas adicionales cubren corrupción, truncado, tamaño y preservación del binario existente. El clon remoto conservó íntegros los 108 archivos y pasó los cuatro gates nativos. CI corregido pendiente de ejecución remota.
+
+## INFRA-005 · contrato y herramientas
+
+Añadidos PLAN con 6 objetivos, 6 fases, 17 unidades y 10 gates; GOALS/ROADMAP generados; control de escritor local y cierre con evidencia; graph drift check; auditoría GLB; paquete reproducible y restore remoto; telemetry opt-in de conectores; pruebas adversariales adicionales. Linear refleja seis hitos y diecisiete tareas. Integraciones documentales publicadas en game-dev-mcp-hub y rot.knowledge. Mem devolvió rate limit en el primer intento; no se declara sincronizado. Cierre global de infraestructura todavía en cualificación.

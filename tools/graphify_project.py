@@ -26,10 +26,13 @@ def build(root):
     edge('blender','godot','EXPORTED_TO');edge('native-tests','godot','VALIDATES');edge('mesa','hardware','CONSTRAINS')
     for p in sorted((root/'learning/hub/agents').glob('*/chats/*/events/*.json')):
         e=json.loads(p.read_text());id=e['learning_id'];node(id,'learning',e['analysis']['family_or_pattern'],status=e['status'],path=str(p.relative_to(root)));edge('project:exovant',id,'LEARNS');edge(id,'governance','CHECKED_BY')
-    for n,line in enumerate((root/'_project_intelligence/BACKLOG.md').read_text().splitlines()):
-        if not line.startswith('| EXO-'):continue
-        cells=[x.strip() for x in line.split('|')];id=cells[1];node(id,'workunit',cells[2],'proposal','planned','_project_intelligence/BACKLOG.md');edge('project:exovant',id,'NEXT_FRONTIER')
-    edge('EXO-005','EXO-004','DEPENDS_ON');edge('EXO-007','EXO-006','DEPENDS_ON');edge('EXO-008','EXO-005','DEPENDS_ON');edge('EXO-012','EXO-007','DEPENDS_ON');edge('EXO-013','EXO-012','DEPENDS_ON')
+    plan=json.loads((root/'_project_intelligence/PLAN.json').read_text())
+    for g in plan['goals']:
+        node(g['id'],'decision',g['title'],'decision','planned','_project_intelligence/PLAN.json');edge('project:exovant',g['id'],'AIMS_FOR')
+    for t in plan['tasks']:
+        node(t['id'],'workunit',t['title'],'proposal',t['status'],'_project_intelligence/PLAN.json')
+        for goal in t['goals']:edge(t['id'],goal,'ADVANCES')
+        for dep in t['depends_on']:edge(t['id'],dep,'DEPENDS_ON')
     return {'schema_version':1,'authority':'Projection only; refer to provenance and STATE','generator':'tools/graphify_project.py','update_policy':'after meaningful change; no background global watcher','nodes':nodes,'edges':edges,'hyperedges':[]}
 if __name__=='__main__':
     graph=build(ROOT);(ROOT/'_project_intelligence/graph.json').write_text(json.dumps(graph,ensure_ascii=False,indent=2)+'\n');print(json.dumps({'nodes':len(graph['nodes']),'edges':len(graph['edges'])}))

@@ -1,0 +1,78 @@
+{
+  "schema_version": 1,
+  "observed_at": "2026-09-12T17:51:56.252483+00:00",
+  "runtime_offline": true,
+  "tools": [
+    {
+      "id": "godot",
+      "route": "local portable executable",
+      "status": "validated",
+      "evidence": "evidence/gauntlet.json",
+      "failure_policy": "checksum and import gates"
+    },
+    {
+      "id": "mesa",
+      "route": "local OpenGL llvmpipe",
+      "status": "validated_cpu_only",
+      "evidence": "evidence/visual-run.log",
+      "failure_policy": "never label GPU benchmark"
+    },
+    {
+      "id": "blender_remote",
+      "route": "Higgsfield 3D Jutsu bpy",
+      "status": "query_validated_current_revision_2",
+      "evidence": "evidence/blender-remote-probe.json",
+      "failure_policy": "exact revision/scene sequence; reconcile active operation"
+    },
+    {
+      "id": "github",
+      "route": "connected GitHub app writes + public git clone",
+      "status": "validated",
+      "evidence": "https://github.com/rotprods/-",
+      "failure_policy": "read ref, normal fast-forward only"
+    },
+    {
+      "id": "linear",
+      "route": "connected app",
+      "status": "project_created",
+      "evidence": "project EXOVANT 2950",
+      "failure_policy": "search before create, readback"
+    },
+    {
+      "id": "drive",
+      "route": "connected app",
+      "status": "folder_created",
+      "evidence": "EXOVANT 2950 folder",
+      "failure_policy": "versioned snapshot and readback"
+    },
+    {
+      "id": "mem",
+      "route": "connected app",
+      "status": "reachable_not_synced",
+      "evidence": "search EXOVANT returned empty",
+      "failure_policy": "routing note, no duplicate authority"
+    },
+    {
+      "id": "unreal",
+      "route": "game-dev-mcp-hub historical Mac inventory",
+      "status": "not_connected_here",
+      "evidence": "docs/HARDWARE.md",
+      "failure_policy": "host probe + policies + representative scenario"
+    },
+    {
+      "id": "blender_local",
+      "route": "local PATH",
+      "status": "not_found_in_path",
+      "evidence": "evidence/hardware-probe.json",
+      "failure_policy": "prefer qualified remote path"
+    },
+    {
+      "id": "studio_mcp_catalog",
+      "route": "rotprods/game-dev-mcp-hub",
+      "status": "source_available",
+      "evidence": "docs/HARDWARE.md",
+      "failure_policy": "allowlist and host checks; no automatic launch of every MCP"
+    }
+  ],
+  "paid_generation": "Use explicit model/credit preflight per art task; no automatic generation in runtime."
+}

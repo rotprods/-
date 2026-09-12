@@ -1,10 +1,10 @@
 {
   "project": "EXOVANT 2950",
-  "checkpoint": "EXO-PERSISTENCE-004",
+  "checkpoint": "EXO-INFRA-005",
   "date": "2026-09-12",
   "global_goal": "Original 3D interplanetary soulslike based on the existing twelve-world preproduction plan",
-  "current_wave": "Persistence, bounded learning and production capability qualification",
-  "status": "PROTOTYPE_WITH_PERSISTENT_CONTROL",
+  "current_wave": "Operational development infrastructure and verified recovery",
+  "status": "INFRASTRUCTURE_QUALIFYING",
   "engine": "Godot 4.7.2.stable.official.ed1daf0bf",
   "production_engine_decision": "Unreal remains the plan's principal candidate; Godot is the executable prototype, not an irreversible replacement",
   "authority": [
@@ -41,8 +41,8 @@
     "human playtest",
     "continuous worker availability"
   ],
-  "next_workunit": "EXO-004-playability",
-  "next_action": "Validate a complete manual route with no setup teleports, then implement gamepad/remapping and directional guidance from measured friction before adding a second region",
+  "next_workunit": "INFRA-005",
+  "next_action": "Finish infrastructure gates, sync readbacks and restore; then EXO-004",
   "evidence": [
     "evidence/gauntlet.json",
     "evidence/state-tests.json",
@@ -64,7 +64,7 @@
   },
   "automation": {
     "requested": true,
-    "status": "MIGRATION_PAUSED_PENDING_REMOTE_RESTORE",
+    "status": "PAUSED_UNTIL_NEW_CHECKPOINT_QUALIFIED",
     "cadence": "hourly",
     "first_scheduled_execution_verified": false,
     "max_same_problem_iterations_before_reassessment": 6
@@ -122,7 +122,8 @@
       "tests": 15,
       "source_digest": "065073f02c50b656b1a3c689360a4bc4c6551091700245dce09e3b38aa01dc36"
     },
-    "learning_retrieval": "evidence/learning-retrieval.json"
+    "learning_retrieval": "evidence/learning-retrieval.json",
+    "ci_repair": "evidence/ci-repair-readback.json"
   },
   "cold_resume": {
     "source_archive_reimport": true,
@@ -130,12 +131,16 @@
     "note": "Fresh extraction without .godot cache; HUD-only adjustment additionally rendered and smoke-tested."
   },
   "source_repository": "https://github.com/rotprods/-",
-  "updated_at": "2026-09-12T16:53:44.346796+00:00",
+  "updated_at": "2026-09-12T18:05:44.250089+00:00",
   "learning": {
     "authority": "learning/hub",
     "scope": "project",
     "authority_level": "L2-persisted",
-    "global_enforcement_claimed": false
+    "global_enforcement_claimed": false,
+    "event_count": 14,
+    "verified_events": [
+      "LRN-EXO-20260912-CI-BOOTSTRAP-VERIFIED"
+    ]
   },
   "capability_report": "docs/HARDWARE.md",
   "graph": "_project_intelligence/graph.json",
@@ -145,5 +150,6 @@
     "initial_parent": "2bc78fc3c283e4dad0e93a49fbb3457732b2b322",
     "checkpoint": "EXO-PERSISTENCE-004",
     "readback_receipt": "provider receipt and next persistence checkpoint"
-  }
+  },
+  "project_contract": "_project_intelligence/PLAN.json"
 }

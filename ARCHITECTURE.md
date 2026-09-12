@@ -21,3 +21,20 @@ El grafo se actualiza tras cambios significativos y se verifica en cada cierre. 
 
 ## Producción y motor
 Godot 4.7.2 es el prototipo ejecutable. Unreal 5.8 sigue como candidato de producción, sujeto a EXO-012: misma escena representativa, controles, geometría, materiales, tiempos CPU/GPU, memoria, carga y export. La migración no se decide por marketing o por tener un conector. Ni DLSS ni el aumento de polígonos resuelven diseño de combate, animación o composición.
+
+## Control ejecutable de producción
+
+PLAN.json enlaza North Star → objetivos → fases → unidades → gates. studio.py valida IDs, cobertura, ciclos, escritor y recibos antes del cierre. La reserva es local y el guardado remoto usa un padre verificado; no se afirma un lock distribuido. Las pruebas e inputs actuales se atan a source_digest. Graphify se regenera desde PLAN, catálogo y aprendizaje; project_control comprueba divergencia.
+
+```mermaid
+flowchart TD
+  A[Contrato de objetivos] --> B[Unidad de trabajo]
+  B --> C[Código y arte]
+  C --> D[Pruebas y revisión]
+  D --> E[Commit recuperable]
+  D --> F[Defecto y corrección]
+  F --> B
+  E --> G[Linear y Drive]
+  E --> H[Aprendizaje y siguiente unidad]
+  H --> B
+```

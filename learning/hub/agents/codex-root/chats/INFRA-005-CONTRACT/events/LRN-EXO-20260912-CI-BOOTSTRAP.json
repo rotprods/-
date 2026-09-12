@@ -1,0 +1,82 @@
+{
+  "_meta": {
+    "content_digest": "8a575bfd97b99b8371301787d0a66194a72bd30c6bfe1929a7827417cc6fbf0b",
+    "persisted_at": "2026-09-12T18:02:43.758377Z"
+  },
+  "analysis": {
+    "confidence": 0.9,
+    "family_or_pattern": "unqualified_dependency_bootstrap",
+    "generalization_boundary": "Godot Linux 4.7.2 y este release; futuras versiones requieren nuevo digest y CI; no implica que todos los 403 tengan esta causa",
+    "mechanism": "El endpoint genérico devolvía 403; el asset de release oficial versionado funciona y su digest confirma el mismo archivo",
+    "non_applicable_cases": [
+      "Recursos privados sin autorización",
+      "Cambios de motor no probados"
+    ],
+    "symptom": "Bootstrap de Godot falla en CI aunque el motor local funciona"
+  },
+  "authority_after": "L2-persisted",
+  "authority_before": "L1-retrieved",
+  "event_class": "failure",
+  "evidence": [
+    {
+      "claim": "403 reproducido localmente y en CI; descarga oficial corregida",
+      "kind": "log",
+      "ref": "evidence/ci-download-repair.json"
+    },
+    {
+      "claim": "Workflow de reparación completo con success en a915656",
+      "kind": "repository",
+      "ref": "https://github.com/rotprods/-/actions/runs/34709298733"
+    }
+  ],
+  "knowledge_relation": {
+    "relation": "EXTENDS",
+    "targets": [
+      "LRN-EXO-20260912-GODOT",
+      "LRN-EXO-20260912-PERSISTENCE"
+    ]
+  },
+  "learning_id": "LRN-EXO-20260912-CI-BOOTSTRAP",
+  "promotion": {
+    "reason": "URL oficial fija, checksum independiente, límite de tamaño y publicación atómica; tests rechazan corrupción/truncado/overwrite",
+    "target_ref": "tools/bootstrap_godot.py",
+    "target_type": "guardrail"
+  },
+  "provenance": {
+    "agent_id": "codex-root",
+    "chat_id": "INFRA-005-CONTRACT",
+    "chat_id_source": "session-alias",
+    "run_id": "INFRA-005-CONTRACT"
+  },
+  "revalidation_condition": "Cambio de entorno, motor, control afectado o evidencia que contradiga la conclusión.",
+  "scope": {
+    "artifacts": [
+      "tools/bootstrap_godot.py",
+      "tests/test_bootstrap.py",
+      "evidence/ci-repair-readback.json"
+    ],
+    "level": "project",
+    "project": "EXOVANT 2950",
+    "repository": "rotprods/-"
+  },
+  "status": "persisted",
+  "timestamp": "2026-09-12T18:02:43.758183+00:00",
+  "unknowns": [
+    "Adopción en futuras sesiones independientes aún no verificada"
+  ],
+  "verification": {
+    "adversarial_review": {
+      "evidence_ref": "tests/test_bootstrap.py",
+      "notes": "7 casos ejecutados localmente y dentro de CI",
+      "status": "pass"
+    },
+    "anti_recurrence_control": "tests/test_bootstrap.py",
+    "retrieval_test": {
+      "status": "pending"
+    },
+    "runtime_test": {
+      "evidence_ref": "evidence/ci-repair-readback.json",
+      "status": "pass"
+    }
+  }
+}
