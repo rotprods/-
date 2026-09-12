@@ -1,41 +1,49 @@
 # SYLVA PRIME Macro — Engine Import Contract
 
 Claim: `CLM-SYLVA-MACRO-001`  
-Remote source: Higgsfield 3D Jutsu project `05dce898-753d-4ff6-a4b0-31757dc868d8`, validated revision `5`  
+Remote project: `05dce898-753d-4ff6-a4b0-31757dc868d8`  
+Current validated Blender revision: **6**  
+Node/import contract generation: **R5** (still valid in r6; r6 modifies terrain mesh data, not required IDs)  
 Status: `BLOCKOUT / INTEGRATION CONTRACT`, not final art.
 
-## Purpose
+## 1. Coordinate / scale
 
-This contract removes importer ambiguity before the r5 GLB enters Godot/Unreal. It does **not** claim runtime import has passed. It defines deterministic naming and classification so render geometry, collision interfaces, streaming metadata and provider sockets can be separated without heuristics.
+- `1 Blender Unit = 1 metre`.
+- Current local authored envelope: `12,000 × 12,000 m`, classification `PROPOSAL`.
+- Physical Sylva radius/diameter are not approved canon; never infer them from the local patch.
+- Blender source is Z-up; use normal glTF engine conversion rather than applying a second manual axis rotation.
+- Mesh/curve transforms have unit scale in r6 QA.
 
-## Coordinate / scale contract
+## 2. Current terrain contract
 
-- Blender source uses metric units: `1 Blender Unit = 1 metre`.
-- Current local authored envelope is `12,000 × 12,000 m` and classified `PROPOSAL`.
-- Physical Sylva Prime radius/diameter remain unresolved canon; `ADR-SYLVA-001` contains a separate proposal and must not be mistaken for approved world data.
-- Do not infer planetary scale from the local patch.
-- Blender is Z-up. glTF interchange is Y-up; importer must use the engine's standard glTF coordinate conversion rather than applying a second manual axis rotation.
-- Mesh/curve transforms were validated at unit scale in Blender r5.
+Visible macro terrain:
+- `SYLVA_TERRAIN_Macro12km_PROPOSAL`
+- terrain model: `R6_BIOGEO_CAUSAL_MACRO_V1`
+- render grid: 49×49 / 2,401 vertices.
 
-## Namespace classes
+Collision terrain:
+- `SYLVA_COL_TERRAIN_Macro12km_LowRes_PROPOSAL`
+- grid: 33×33 / 1,089 vertices.
 
-### Render / macro foundation
+Both use the same deterministic height function. R6 QA compared 289 shared coordinates: max/mean render↔collision height delta = **0 m**.
 
-All owned scene objects use the `SYLVA_` namespace.
+The terrain model contains six proposed root-bearing ridges and two proposed catchment depressions. These are production shaping hypotheses, not canonical tectonics/waterways.
 
-Important render families:
-- `SYLVA_TERRAIN_*` — visible macro terrain proposal.
-- `SYLVA_ROOT_PRIMARY_*` / `SYLVA_ROOT_SECONDARY_*` — diagnostic macro topology guides only.
-- `SYLVA_PUERTO_*` — Puerto del Injerto blockout/proxy foundation.
-- `SYLVA_BOSQUE_*` — Bosque de las Frases route-language blockout.
-- `SYLVA_VESPER_*` — Cámara de VESPER encounter envelope/proxies only; no final VESPER asset.
-- `SYLVA_TRAV_*` — diagnostic traversal guides, not final road meshes.
+## 3. Render / macro namespaces
 
-### Cámara de VESPER — canonical macro layout
+Owned visible families:
+- `SYLVA_TERRAIN_*`
+- `SYLVA_ROOT_PRIMARY_*` / `SYLVA_ROOT_SECONDARY_*` — diagnostic macro topology only
+- `SYLVA_PUERTO_*`
+- `SYLVA_BOSQUE_*`
+- `SYLVA_VESPER_*` — macro encounter/environment proxies only, no final VESPER
+- `SYLVA_TRAV_*` — diagnostic traversal guides
 
-The r5 contract intentionally invalidates the older single circular arena proxy. Canon requires **three terraces connected by wide roots**, with vertical movement through routes/anchors rather than surprise precision jumps.
+All owned nodes must remain in the `SYLVA_` namespace.
 
-Required visible macro-layout nodes:
+## 4. Cámara de VESPER r5/r6 required layout
+
+Required visible nodes:
 - `SYLVA_VESPER_Terrace_00_ENTRY`
 - `SYLVA_VESPER_Terrace_01_MIDDLE`
 - `SYLVA_VESPER_Terrace_02_UPPER`
@@ -43,20 +51,22 @@ Required visible macro-layout nodes:
 - `SYLVA_VESPER_TerraceConnector_01`
 - `SYLVA_META_VESPER_ThreeTerraceLayout`
 
-Measured r5 connector interfaces:
-- Connector 00: 142.215 m long, 12.178° slope, 18 m visible width, 16 m collision width.
-- Connector 01: 145.685 m long, 12.689° slope, 18 m visible width, 16 m collision width.
-- Both declare `precision_jump_required=false`.
+Measured connectors:
+- 00: 142.215 m, 12.178°, 18 m visible / 16 m collision width
+- 01: 145.685 m, 12.689°, 18 m visible / 16 m collision width
+- both: `precision_jump_required=false`
 
-The removed legacy nodes must not be treated as valid r5 content:
+Forbidden legacy arena nodes:
 - `SYLVA_VESPER_ProxyArenaFloor`
 - `SYLVA_COL_VESPER_ArenaFloor`
 
-### Collision interface
+A GLB containing the legacy single-floor arena is not an r6-valid delivery.
 
-Prefix: `SYLVA_COL_`
+## 5. Collision contract — 12 nodes
 
-Current r5 collision nodes (**12 total**):
+Prefix: `SYLVA_COL_`.
+
+Required:
 - `SYLVA_COL_TERRAIN_Macro12km_LowRes_PROPOSAL`
 - `SYLVA_COL_PUERTO_Deck`
 - `SYLVA_COL_BOSQUE_CentralPad`
@@ -70,20 +80,18 @@ Current r5 collision nodes (**12 total**):
 - `SYLVA_COL_VESPER_Connector_00`
 - `SYLVA_COL_VESPER_Connector_01`
 
-Importer policy:
-1. Never display `SYLVA_COL_*` as final visible art.
-2. Instantiate them as collision/debug interfaces according to engine policy.
-3. Do not use visible high-detail geometry as collision merely because it exists.
-4. r5 proxies validate presence and naming only; actual CharacterBody traversal is still pending.
-5. VESPER terrace/connector collision must be tested with the real controller before any gameplay-pass claim.
+Policy:
+1. never display collision proxies as final art;
+2. instantiate/separate them using engine collision policy;
+3. never substitute visible high-detail geometry as collision merely because it exists;
+4. real CharacterBody traversal is required before collision PASS.
 
-### Root-kit integration sockets
+## 6. Neural-root provider sockets
 
-Prefix: `SYLVA_SOCKET_`
+Prefix: `SYLVA_SOCKET_`.
 
-These are placement interfaces to provider claim `CLM-SYLVA-PROC-NROOT-001`; this macro claim does **not** own the provider meshes.
+Provider claim: `CLM-SYLVA-PROC-NROOT-001` / PR #6. This branch owns placement sockets, **not** provider meshes.
 
-Current socket contract:
 - `SYLVA_SOCKET_PUERTO_EXIT_A1` → `SYL_ROOT_A1_STRAIGHT_08M`
 - `SYLVA_SOCKET_PUERTO_MEMBRANE_C3` → `SYL_ROOT_C3_MEMBRANE_ANCHOR`
 - `SYLVA_SOCKET_BOSQUE_APPROACH_A2` → `SYL_ROOT_A2_CURVE_12M`
@@ -93,68 +101,57 @@ Current socket contract:
 - `SYLVA_SOCKET_VESPER_BUTTRESS_C1` → `SYL_ROOT_C1_BUTTRESS_07M`
 - `SYLVA_SOCKET_VESPER_MEMBRANE_C3` → `SYL_ROOT_C3_MEMBRANE_ANCHOR`
 
-Provider manifest:
-`production/manifests/sylva/procedural/SYL_NEURAL_ROOT_KIT_001.yaml`
+Provider manifest: `production/manifests/sylva/procedural/SYL_NEURAL_ROOT_KIT_001.yaml`.
 
-Importer/integrator must not treat these sockets as permission to duplicate provider meshes into this branch. Provider assets should be instanced/linked after PR #6 integration.
+## 7. Streaming metadata
 
-### Streaming metadata
-
-Prefix: `SYLVA_STREAM_`
-
-Current proposal:
-- `SYLVA_STREAM_L3_X0Y0` … `SYLVA_STREAM_L3_X3Y3`: 16 local 3 km L3 cells.
+- 16 `SYLVA_STREAM_L3_X*Y*` local cells, currently 3 km proposals.
 - `SYLVA_STREAM_REGION_PUERTO_INJERTO`
 - `SYLVA_STREAM_REGION_BOSQUE_FRASES`
 - `SYLVA_STREAM_REGION_CAMARA_VESPER`
 
-These are metadata interfaces, **not a commitment to a specific engine streaming backend**. Godot/Unreal implementation remains `ENGINE_TBD` until engine/runtime qualification.
+These are portable metadata interfaces, not a decision to use a specific Godot/Unreal streaming backend.
 
-## Import acceptance sequence
+## 8. Pre-import validator
 
-1. Recover the exact revision-5 GLB and `.blend` into a delivery checkout.
-2. Verify exact GLB SHA-256 against the delivery/native receipt.
-3. Run `validate_glb_contract.py <file.glb>` before engine import; r4/legacy arena exports must fail the r5 contract.
-4. Import using the engine's normal glTF path with no manual global scale multiplier.
-5. Confirm expected top-level/node names survived import.
-6. Separate `SYLVA_COL_*` from visible render geometry.
-7. Record `SYLVA_SOCKET_*` transforms for provider-module placement; do not bake provider meshes into this source.
-8. Record `SYLVA_STREAM_*` metadata or equivalent importer map; do not silently discard without waiver.
-9. Spawn the real project player/controller at Puerto.
-10. Traverse Puerto → Bosque → Cámara de VESPER with normal controls and collision; no teleports/debug progression.
-11. Specifically traverse all three VESPER terraces and both wide connectors; record slope, snagging, camera, fall and recovery behavior.
-12. Record clearance, camera, collision, z-fighting, material and navigation defects.
-13. Profile only on a declared hardware/preset; CPU/software render is not GPU qualification.
+Run:
 
-## Native receipt minimum
+```bash
+python3 art_source/worlds/sylva_prime/macro/validate_glb_contract.py <recovered-r6.glb> --expected-sha256 <exact-sha>
+```
 
-A runtime receipt must contain:
-- exact GLB SHA-256;
-- import timestamp;
-- engine/version;
-- source branch/commit;
-- imported scene/resource path;
-- scale check result;
-- r5 named-node contract result;
-- collision-node result;
-- VESPER three-terrace traversal result;
-- full Puerto → Bosque → VESPER traversal result;
-- screenshots/logs/evidence refs;
-- `passed: true|false` with explicit failure reasons.
+The validator contract is `CLM-SYLVA-MACRO-001/R5`; its node requirements remain the current r6 requirements. Synthetic adversarial self-test passes 7/7, including rejection of an r4 single-floor export. The exact r6 GLB still needs recovery and execution against its real SHA-256.
 
-## Current remote r5 artifact identity
+## 9. Native acceptance sequence
 
-Remote provider metadata only; not a recovered delivery receipt:
-- `.blend`: 2,290,409 bytes; etag `2ccbc1ec2ffd854ae83b5cee197d16de`.
-- GLB: 1,215,672 bytes; etag `9c288dd826d7cbc3331b849dda1590e5`.
+1. Recover exact r6 `.blend` + GLB into an integrator/delivery checkout.
+2. Bind SHA-256 to the recovered GLB.
+3. Run the GLB contract validator.
+4. Import through the engine's standard glTF path with no manual global scale multiplier.
+5. Verify required node IDs survived import.
+6. Split `SYLVA_COL_*` from visible geometry.
+7. Preserve/read `SYLVA_SOCKET_*` and `SYLVA_STREAM_*` metadata or document an explicit conversion.
+8. Spawn the real project controller at Puerto.
+9. Traverse Puerto → Bosque → Cámara de VESPER with normal controls, no teleport/debug progression.
+10. Attack Route 03 specifically: measured guide grade **15.079°**.
+11. Traverse all three VESPER terraces and both connectors.
+12. Record snagging, falls, camera obstruction, collision, z-fighting, scale/material defects.
+13. Profile only on declared target hardware/preset.
 
-## Gates still open
+## 10. Current remote r6 identity
 
-- `GATE-ART`: human visual review.
-- `GATE-ENGINE`: actual Godot/Unreal import.
-- runtime collision/traversal.
-- HLOD/LOD implementation.
-- target-hardware performance.
-- recovered binary `.blend` + GLB in an integrator checkout per `docs/FLEET_COORDINATION.md` delivery gate.
+Provider metadata, **not recovered delivery proof**:
+- `.blend`: 2,348,647 bytes; etag `f82350b275ed699a790d7977be3a1ee1`.
+- GLB: 1,299,444 bytes; etag `896ae5e1b86cc5874f008872c05235a7`.
 
-A remote 3D Jutsu URL, successful remote GLB export, or beauty render does **not** close those gates.
+## 11. Open gates
+
+- binary recovery: `ENV_BLOCKED` in current sandbox;
+- human `GATE-ART`: pending;
+- engine import: not run;
+- runtime traversal/collision: not run;
+- LOD/HLOD: not implemented;
+- target-hardware performance: blocked;
+- planetary scale: proposal pending decision.
+
+Remote export success, render signal or a provider URL does not close these gates.
