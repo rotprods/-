@@ -1,0 +1,97 @@
+{
+  "schema_version": 1,
+  "receipt_id": "ART-ELYSIUM-001-EDEN-STATEGRAPH-R3",
+  "world": "elysium",
+  "status": "STRUCTURAL_PASS_GAMEPLAY_ENGINE_PENDING",
+  "remote_scene": {
+    "project_id": "00152eea-2da0-40ec-8666-78d6764c718f",
+    "revision": 3,
+    "operation_id": "ART-ELYSIUM-001.eden-stategraph-v1"
+  },
+  "canon_anchors": {
+    "arena_diameter_m": 48.0,
+    "relocation_destination_telegraph_s": 1.5
+  },
+  "proposal": {
+    "module_footprint_m": [8.0, 8.0],
+    "guaranteed_min_axis_corridor_m": 6.0,
+    "states": {
+      "A": [[-10,101],[10,101],[-10,115],[10,115]],
+      "B": [[-14,101],[14,101],[-14,115],[14,115]],
+      "C": [[-10,97],[10,97],[-10,119],[10,119]]
+    }
+  },
+  "checks": {
+    "A": {
+      "max_corner_radius_m": 17.804,
+      "within_24m_radius": true,
+      "central_vertical_corridor_m": 12.0,
+      "central_horizontal_corridor_m": 6.0,
+      "min_axis_corridor_m": 6.0
+    },
+    "B": {
+      "max_corner_radius_m": 21.095,
+      "within_24m_radius": true,
+      "central_vertical_corridor_m": 20.0,
+      "central_horizontal_corridor_m": 6.0,
+      "min_axis_corridor_m": 6.0
+    },
+    "C": {
+      "max_corner_radius_m": 20.518,
+      "within_24m_radius": true,
+      "central_vertical_corridor_m": 12.0,
+      "central_horizontal_corridor_m": 14.0,
+      "min_axis_corridor_m": 12.0
+    }
+  },
+  "scene_receipts": {
+    "metadata_root": "META_EDEN_STATE_GRAPH_V1",
+    "state_target_empties": 12,
+    "visible_state_B_footprint_bars": 16,
+    "stategraph_collection_objects": 31,
+    "arena_dimensions_verified_m": [48.0,48.0,0.55],
+    "garden_module_dimensions_verified_m": [8.0,8.0,1.4],
+    "scene_total_objects_after": 244,
+    "scene_total_meshes_after": 224
+  },
+  "artifacts": {
+    "editable_blend_remote": {
+      "size_bytes": 2615075,
+      "etag": "607b88229b4e4dd16a918925aa74ef98"
+    },
+    "portable_glb_remote": {
+      "size_bytes": 2507192,
+      "etag": "9f3fc126755c2ff89009cc75cb4978e5"
+    },
+    "preview": {
+      "artifact_id": "88b6a9523f38fa5dcaeee39b6d3cb7ee",
+      "name": "elysium_eden_stategraph_v1.png",
+      "width": 1280,
+      "height": 720,
+      "size_bytes": 945070,
+      "etag": "f2bcbdfce9d394d4400fd1a797e38d9e"
+    },
+    "source": "art_source/worlds/elysium_null/scripts/add_eden_stategraph.py",
+    "spec": "art_source/worlds/elysium_null/EDEN_STATE_GRAPH.md"
+  },
+  "gates": {
+    "canonical_arena_metric": "PASS",
+    "candidate_states_inside_arena": "PASS",
+    "candidate_corridor_measurement": "PASS",
+    "destination_targets_exist": "PASS",
+    "visual_readability": "PENDING",
+    "movement_mechanism": "PENDING",
+    "collision": "PENDING",
+    "player_controller": "PENDING",
+    "combat_camera": "PENDING",
+    "engine_state_transition": "PENDING",
+    "performance_nav": "PENDING",
+    "gate_art": "PENDING"
+  },
+  "non_claims": [
+    "The 6 m corridor is not canon.",
+    "The 8x8 m garden module size is not canon.",
+    "This does not implement boss combat or actual moving collision.",
+    "A Blender preview is not an engine gameplay validation."
+  ]
+}
