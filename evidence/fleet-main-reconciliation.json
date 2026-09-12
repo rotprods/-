@@ -1,0 +1,12 @@
+{
+  "observed_main": "196ef814fdc845ec797979906d01dc25009217c7",
+  "previous_main": "4c2fa044080004609ea6df45f34b2a784536507a",
+  "changed_paths": [
+    "AGENTS.md"
+  ],
+  "remote_manifest_agents_hash": "b6a5901c4f9eca7e5a44739be650a2c3d45d58b88fc4973c2f29d34d8bb8cbbc",
+  "actual_agents_hash": "c6d4ed2dd71fb07ee22d598e80e302c863c734f2fe489597b57828b2120824f1",
+  "integrity_failure_reproduced": true,
+  "reconciliation": "3-way merge preserved remote preflight and new cooperative harness guidance; no runtime delta",
+  "ci_reported_by_producer": "https://github.com/rotprods/-/actions/runs/34715278567"
+}

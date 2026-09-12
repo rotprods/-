@@ -2,10 +2,10 @@
   "gate_id": "GATE-GRAPH",
   "task_id": "INFRA-005",
   "passed": true,
-  "executed_at": "2026-09-12T18:05:44.487510+00:00",
-  "source_digest": "47d2720c0805ce5f250eac0c2e22002fa5df37e149ec1090c624f663ff5847af",
+  "executed_at": "2026-09-12T22:17:34.886349+00:00",
+  "source_digest": "acbed8e7cae41b340562637ce4833bda7b2f3fe4a33357d5f5a4df9b4fc4d67c",
   "evidence_refs": [
-    "evidence/gate-graph.log"
+    "evidence/gates/INFRA-005-GATE-GRAPH.log"
   ],
   "reviewer": "automated-local-runner",
   "command": [
