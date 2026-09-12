@@ -4,209 +4,159 @@
 **Session:** AURORA-20260912T192957Z-001  
 **Claim:** CLM-AURORA-WORLD-001  
 **Branch:** art/world-aurora-veil-001  
+**Remote checkpoint:** 3D Jutsu `d6488148-8547-4ffe-b63d-e5fbec3a339c` revision 5  
 
 ## North Star
 
 Deliver AURORA VEIL as a complete, physically plausible, unmistakable EXOVANT world package, with planet-scale metadata, three canonical regions, temporal visual grammar, ecology/population, AEON, world-specific asset library, streaming/collision/export strategy, receipts and cold-resume documentation.
 
-## First 10 tasks
+## First 10 tasks — current state
 
-### AUR/WORLD/001 — Atomic ownership claim
-- Priority: P0
-- Owner: AGENT-02-AURORA
-- Output: `production/claims/aurora/CLM-AURORA-WORLD-001.yaml`
-- Dependencies: current branch/PR/claim audit
-- DoD:
-  - no observed Aurora branch/PR before claim;
-  - includes/excludes explicit;
-  - branch and base SHA recorded;
-  - claim persisted before Blender build.
-- Status: DONE
-- Evidence: commit `096745b1305ead0e9b5d04ffdd74b1633bdba300`
+| ID | Priority | Status | Current evidence / remaining DoD |
+|---|---|---|---|
+| AUR/WORLD/001 Atomic ownership claim | P0 | DONE | Claim persisted before Blender. Commit `096745b1305ead0e9b5d04ffdd74b1633bdba300`. |
+| AUR/WORLD/002 World Bible + scale ADR | P0 | DONE | `WORLD_BIBLE.md`, `ADR-AUR-001-planet-scale.md`; canon/proposal boundary explicit. |
+| AUR/WORLD/003 L1 orbital representation | P0 | TODO | Separate orbital shell/atmosphere package still required. |
+| AUR/WORLD/004 Macro map + regional anchors | P0 | REVIEW | 3 anchors + 5.2×3.0 km local macro frame exist; global macro/continent representation still incomplete. |
+| AUR/TERRAIN/005 Three-region terrain macro | P0 | REVIEW | Low-frequency terrain exists; geology/erosion/traversal refinement and final region tiling pending. |
+| AUR/ARCH/006 Camp observatory/refuge kit | P1 | IN_PROGRESS | 48 m ring, 72 m mast, habitats and sync stations exist as blockout; manufacturing-complete modular kit and assembled proof need production pass. |
+| AUR/TEMPORAL/007 Bounded echo grammar | P0 | IN_PROGRESS | 3 fields, 12 anchors, delayed source/state geometry exist; runtime collision/audio/state schema pending. |
+| AUR/AEON/008 Huerto + 50 m arena | P1 | REVIEW_BLOCKOUT | Canon 50 m arena + 3 sectors + 10 machine trees + AEON blockout exist; final hero design/rig/readability pending. |
+| AUR/ECO/009 Ecology/population lineup | P1 | IN_PROGRESS | Semantic proxies exist for NPC/enemies/fauna/Peregrino; final anatomy/silhouette/art approval pending. |
+| AUR/TECH/010 Export/collision/streaming/QA | P0 | IN_PROGRESS | Blend/GLB export PASS, 4 collision proxies, 27 planning cells, scale QA PASS; engine import/perf/human art gate pending. |
 
-### AUR/WORLD/002 — World Bible + scale ADR
-- Priority: P0
-- Output: `WORLD_BIBLE.md`, `ADR-AUR-001-planet-scale.md`
-- Dependencies: AUR/WORLD/001
-- DoD:
-  - canon/proposal/unknown separated;
-  - 0.94 g and 11 °C preserved;
-  - local metre-scale coordinate contract defined;
-  - proposed radius isolated and reversible;
-  - art/realism/temporal contracts documented.
-- Status: IN_PROGRESS
+## Stable DoD references
 
-### AUR/WORLD/003 — L1 orbital representation blockout
-- Priority: P0
-- Output: editable Blender orbital shell + GLB + inspection render
-- Dependencies: AUR/WORLD/002
-- DoD:
-  - shell references proposed radius only as metadata;
-  - atmosphere and aurora are separate objects/layers;
-  - low/mid-frequency topology only;
-  - no hero geometry baked onto planet mesh;
-  - export succeeds without absolute-path dependencies.
-- Status: TODO
+### AUR/WORLD/003
+- editable Blender orbital shell + portable exchange artifact;
+- radius only referenced as `PROPOSAL` until accepted;
+- atmosphere/aurora separate;
+- no hero geometry on orbital mesh;
+- coordinate link to local region anchors documented.
 
-### AUR/WORLD/004 — Macro map + regional anchor contract
-- Priority: P0
-- Output: three regional anchors, macro terrain composition, coordinate metadata
-- Dependencies: AUR/WORLD/002
-- DoD:
-  - Campamento/Llanura/Huerto have stable IDs;
-  - region distances and silhouettes support traversal hierarchy;
-  - landmarks readable from neighboring region vistas;
-  - local tangent frames documented;
-  - no engine-specific streaming feature falsely claimed.
-- Status: TODO
+### AUR/WORLD/004
+- Campamento/Llanura/Huerto stable IDs;
+- macro distances and vista hierarchy defined;
+- local tangent frames preserved;
+- no false engine-specific streaming claim.
 
-### AUR/TERRAIN/005 — Three-region terrain macro blockout
-- Priority: P0
-- Output: metre-scale terrain blockout spanning all three canonical regions
-- Dependencies: AUR/WORLD/004
-- DoD:
-  - macro topography before microdetail;
-  - traversable slopes and route corridors identified;
-  - prairie negative space preserved;
-  - hero-zone boundaries represented;
-  - material assignment semantic, not noise-driven.
-- Status: TODO
+### AUR/TERRAIN/005
+- macro elevation and geological logic before microdetail;
+- route corridors/slopes reviewed;
+- material distribution semantic;
+- hero-zone edges and region tiling documented.
 
-### AUR/ARCH/006 — Campamento observatory/refuge foundation kit
-- Priority: P1
-- Output: modular observatory/refuge blockout kit and constructed proof scene
-- Dependencies: AUR/WORLD/005
-- DoD:
-  - structural load path plausible;
-  - foundations, access, maintenance and cable routing present;
-  - modular grid/pivots documented;
-  - one real assembled observatory building proves the kit;
-  - human scale reference PASS.
-- Status: TODO
+### AUR/ARCH/006
+- plausible foundations/load paths;
+- maintenance access, utilities, drainage/cabling;
+- grid, pivots, variants and transitions documented;
+- one assembled production structure proves kit;
+- human-scale QA.
 
-### AUR/TEMPORAL/007 — Bounded echo visual grammar prototype
-- Priority: P0
-- Output: three bounded echo-sector examples with stable source/repeat state IDs
-- Dependencies: AUR/WORLD/005
-- DoD:
-  - one delay rule per sector;
-  - duplicated state never duplicates whole world;
-  - pre-effect cue readable through shape/motion/sound contract, not color only;
-  - collision policy specified for each state;
-  - persistence explicitly local vs save-state.
-- Status: TODO
+### AUR/TEMPORAL/007
+- one temporal rule per initial encounter sector;
+- local state variants only;
+- non-color-only anticipation cue;
+- explicit per-state collision and persistence;
+- readable delay contract.
 
-### AUR/AEON/008 — Huerto + canonical 50 m AEON arena blockout
-- Priority: P1
-- Output: 50 m arena, three echo sectors, orchard-machine kit, AEON scale envelope
-- Dependencies: AUR/TEMPORAL/007
-- DoD:
-  - 50 m diameter measured;
-  - exactly three primary sector contracts in prototype;
-  - combat floor and exits remain legible;
-  - AEON can occupy all proposed phases without camera collision;
-  - local timeline does not rewrite global save state.
-- Status: TODO
+### AUR/AEON/008
+- 50 m arena exact;
+- three primary echo sectors;
+- combat floor/exits/camera readability;
+- AEON phase-clearance and attack telegraph review;
+- local arena timeline cannot mutate global save state.
 
-### AUR/ECO/009 — Ecology + population scale lineup
-- Priority: P1
-- Output: scale/silhouette blockouts for 4 species, 3 NPCs, 3 adversaries and Peregrino variant
-- Dependencies: AUR/WORLD/005
-- DoD:
-  - every organism has ecological/behavioral role metadata;
-  - silhouettes differentiated without materials;
-  - canonical function represented;
-  - human/vehicle scale comparisons included;
-  - final anatomy/detail not falsely claimed.
-- Status: TODO
+### AUR/ECO/009
+- each organism has ecology/behavior metadata;
+- silhouettes differentiated without materials;
+- canonical roles represented;
+- scale lineups and LOD/crowd policies;
+- final anatomy not claimed from proxies.
 
-### AUR/TECH/010 — Export / collision / streaming / QA receipts
-- Priority: P0
-- Output: validation report, `.blend`, GLB, collision proxies, streaming-cell metadata, renders
-- Dependencies: AUR/WORLD/003..009 as applicable
-- DoD:
-  - Blender scene query validates objects, dimensions and materials;
-  - portable export succeeds;
-  - no missing dependencies;
-  - separate collision strategy demonstrated;
-  - visual evidence generated from delivery camera;
-  - target-engine import/perf remains BLOCKED until appropriate engine/hardware gate if unavailable.
-- Status: TODO
+### AUR/TECH/010
+- source/editable artifact;
+- portable export;
+- dimensions/material/object inventory;
+- separate collision;
+- LOD/HLOD strategy;
+- renders/visual regression baseline;
+- engine import and target-hardware performance before DONE.
 
 ---
 
 ## Multi-week production backlog
 
 ### WAVE 1 — MACRO WORLD
-- AUR/MAP/011 global height/biome mask concept from canonical constraints
-- AUR/MAP/012 Campamento regional terrain pass
-- AUR/MAP/013 Llanura regional terrain pass
-- AUR/MAP/014 Huerto regional terrain pass
-- AUR/VISTA/015 inter-region skyline and landmark proxies
+- AUR/MAP/011 — global height/biome mask concept from canonical constraints — TODO
+- AUR/MAP/012 — Campamento regional terrain pass — IN_PROGRESS
+- AUR/MAP/013 — Llanura regional terrain pass — IN_PROGRESS
+- AUR/MAP/014 — Huerto regional terrain pass — IN_PROGRESS
+- AUR/VISTA/015 — inter-region skyline / landmarks — IN_PROGRESS
 
 ### WAVE 2 — KIT FOUNDATIONS
-- AUR/MAT/020 world material calibration board
-- AUR/ARCH/021 refuge modules
-- AUR/ARCH/022 observatory ring modules
-- AUR/ARCH/023 service/utility modules
-- AUR/INFRA/024 route-recorder beacons
-- AUR/INFRA/025 clock-sync stations
-- AUR/PROC/026 prairie scatter/variation system
-- AUR/PROC/027 cable and instrument routing generator
+- AUR/MAT/020 — calibrated world material board — TODO
+- AUR/ARCH/021 — refuge modules — TODO
+- AUR/ARCH/022 — observatory ring modules — IN_PROGRESS
+- AUR/ARCH/023 — service / utility modules — TODO
+- AUR/INFRA/024 — route-recorder beacons — TODO
+- AUR/INFRA/025 — clock-sync stations — IN_PROGRESS_BLOCKOUT
+- AUR/PROC/026 — prairie scatter / variation system — TODO
+- AUR/PROC/027 — cable / instrument routing generator — TODO
 
 ### WAVE 3 — WORLD POPULATION
-- AUR/PROP/030 camp functional props
-- AUR/PROP/031 market-clock props
-- AUR/ECO/032 two-shadow grass family
-- AUR/ECO/033 chronobutterfly family
-- AUR/ECO/034 aurora antelope family
-- AUR/ECO/035 interval wasp/nest family
-- AUR/NPC/036 Ada Nox
-- AUR/NPC/037 Julián Ré
-- AUR/NPC/038 Cea Hora
-- AUR/ENEMY/039 delayed custodian
-- AUR/ENEMY/040 future looter
-- AUR/ENEMY/041 broken antelope
-- AUR/VEH/042 Peregrino route-recorder variant
+- AUR/PROP/030 — camp functional props — TODO
+- AUR/PROP/031 — market-clock props — TODO
+- AUR/ECO/032 — two-shadow grass family — IN_PROGRESS_BLOCKOUT
+- AUR/ECO/033 — chronobutterfly — IN_PROGRESS_BLOCKOUT
+- AUR/ECO/034 — aurora antelope — IN_PROGRESS_BLOCKOUT
+- AUR/ECO/035 — interval wasp / nest — IN_PROGRESS_BLOCKOUT
+- AUR/NPC/036 — Ada Nox — IN_PROGRESS_PROXY
+- AUR/NPC/037 — Julián Ré — IN_PROGRESS_PROXY
+- AUR/NPC/038 — Cea Hora — IN_PROGRESS_PROXY
+- AUR/ENEMY/039 — delayed custodian — IN_PROGRESS_PROXY
+- AUR/ENEMY/040 — future looter — IN_PROGRESS_PROXY
+- AUR/ENEMY/041 — broken antelope — IN_PROGRESS_PROXY
+- AUR/VEH/042 — Peregrino route-recorder — REVIEW_BLOCKOUT
 
 ### WAVE 4 — HERO CONTENT
-- AUR/AEON/050 AEON primary/secondary forms
-- AUR/AEON/051 AEON mechanical construction pass
-- AUR/AEON/052 AEON rig interface and attack clearance
-- AUR/LANDMARK/053 primary observatory hero landmark
-- AUR/LANDMARK/054 orchard state-preservation tree
+- AUR/AEON/050 — AEON primary/secondary forms — IN_PROGRESS_BLOCKOUT
+- AUR/AEON/051 — AEON mechanical construction — TODO
+- AUR/AEON/052 — AEON rig/attack-clearance interfaces — TODO
+- AUR/LANDMARK/053 — primary observatory hero landmark — IN_PROGRESS_BLOCKOUT
+- AUR/LANDMARK/054 — orchard state-preservation machine tree — IN_PROGRESS_BLOCKOUT
 
 ### WAVE 5 — DETAIL & STORYTELLING
-- AUR/STORY/060 accident echo set
-- AUR/STORY/061 trapped-explorer rescue site
-- AUR/STORY/062 temporal archive consequence states
-- AUR/DECAL/063 maintenance/index marking system
-- AUR/WEAR/064 causal wear masks and authored grime
-- AUR/DEST/065 authored damaged-state variants
+- AUR/STORY/060 — accident echo set — TODO
+- AUR/STORY/061 — trapped-explorer rescue site — TODO
+- AUR/STORY/062 — temporal archive consequence states — IN_PROGRESS_BLOCKOUT
+- AUR/DECAL/063 — maintenance/index markings — TODO
+- AUR/WEAR/064 — causal wear masks — TODO
+- AUR/DEST/065 — authored damaged-state variants — TODO
 
 ### WAVE 6 — OPTIMIZATION
-- AUR/LOD/070 hero LOD policy
-- AUR/LOD/071 architecture HLOD proxies
-- AUR/LOD/072 vegetation/fauna distance strategy
-- AUR/COLL/073 collision simplification pass
-- AUR/STREAM/074 streaming cell/HLOD hierarchy
-- AUR/PERF/075 measured budget table on target hardware
+- AUR/LOD/070 — hero LOD policy — TODO
+- AUR/LOD/071 — architecture HLOD proxies — TODO
+- AUR/LOD/072 — vegetation/fauna distance strategy — TODO
+- AUR/COLL/073 — collision simplification — IN_PROGRESS_BLOCKOUT
+- AUR/STREAM/074 — streaming/HLOD hierarchy — IN_PROGRESS_PLANNING
+- AUR/PERF/075 — measured target-hardware budget table — BLOCKED_TARGET_HARDWARE
 
 ### WAVE 7 — INTEGRATION
-- AUR/INT/080 import into selected production engine
-- AUR/INT/081 scale/material/collision validation
-- AUR/INT/082 temporal-state integration contract
-- AUR/INT/083 mission-route instantiation
-- AUR/INT/084 profiling and regression captures
+- AUR/INT/080 — production engine import — BLOCKED_EXO_012
+- AUR/INT/081 — engine scale/material/collision validation — BLOCKED_EXO_012
+- AUR/INT/082 — temporal-state integration — BLOCKED_ENGINE_INTERFACE
+- AUR/INT/083 — mission-route instantiation — BLOCKED_ENGINE_INTERFACE
+- AUR/INT/084 — profiling/regression captures — BLOCKED_TARGET_RUNTIME
 
 ### WAVE 8 — AAAA POLISH
-- AUR/ART/090 silhouette/readability review
-- AUR/ART/091 material calibration review
-- AUR/ART/092 art-drift gauntlet
-- AUR/QA/093 near/mid/far camera review
-- AUR/QA/094 full World DoD audit
-- AUR/HANDOFF/095 cold-resume package and final handoff
+- AUR/ART/090 — silhouette/readability review — TODO
+- AUR/ART/091 — material calibration review — TODO
+- AUR/ART/092 — art-drift gauntlet — TODO
+- AUR/QA/093 — near/mid/far camera review — TODO_HUMAN
+- AUR/QA/094 — full World DoD audit — TODO
+- AUR/HANDOFF/095 — final cold-resume package — TODO_FINAL
 
 ## Stop condition
 
-Do not mark world DONE while any P0/P1 is open, export/import is unverified where required, a hero asset lacks a manifest, QA fails, art drift remains, or a cross-scope dependency is undocumented.
+The claim remains KEEP / IN_PROGRESS. Do not mark AURORA DONE while any P0/P1 remains open, GATE-ART is pending, production-engine import is blocked, performance is unmeasured, final hero assets lack production topology/materials/LOD, or the radius proposal has not been resolved explicitly.

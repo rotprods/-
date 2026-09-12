@@ -6,12 +6,12 @@ world_id: aurora
 world_name: AURORA VEIL
 category: world_production
 subdomain: full_world_3d
-status: CLAIMED
+status: IN_PROGRESS
 priority: P1
 base_sha: 4c2fa044080004609ea6df45f34b2a784536507a
 branch: art/world-aurora-veil-001
 created_at: 2026-09-12T19:29:57Z
-last_heartbeat: 2026-09-12T19:29:57Z
+last_heartbeat: 2026-09-12T20:00:00Z
 includes:
   - planetary canon proposals where canon is currently silent, isolated behind ADRs
   - orbital representation
@@ -40,7 +40,7 @@ excludes:
   - production-engine selection
   - shared libraries owned by another claim unless consumed read-only
 collision_audit:
-  observed_branches:
+  observed_branches_at_claim:
     - art/terra-reliquary-kit-001
     - art/ares-ix-world-001
     - art/world-khepri-001
@@ -59,13 +59,24 @@ pipeline:
   method_status: PIPELINE_METHOD_NOT_FOUND
   verified_fallback: Higgsfield 3D Jutsu bpy + editable .blend + GLB exchange + evidence
   blender_worker_version: "5.2"
+remote_scene:
+  project_id: d6488148-8547-4ffe-b63d-e5fbec3a339c
+  revision: 5
+  status: WAVE1_MACRO_BLOCKOUT_R4_LIGHTING_QA
+  blend_etag: 828f4cbd201f87fcb232cfed66471131
+  glb_etag: d9f25ec99d93aa9b693f933eeafe9119
+  final_art_claimed: false
 dependencies:
   - design/EXOVANT_BIBLIA.md
   - design/EXOVANT_DATA.json
   - docs/ART_PRODUCTION.md
   - AGENTS.md
   - _project_intelligence/STATE.json
-blocked_by: []
+  - EXO-012 for final production-engine integration
+blocked_by:
+  - production-engine-specific integration and HLOD implementation
+  - target-hardware performance qualification
 claim_notes:
-  - Final engine-specific integration waits for the production-engine decision, but Blender/world production can proceed through portable GLB and documented scene contracts.
-  - Physical planetary parameters absent from canon must remain PROPOSAL until an ADR is accepted.
+  - Final engine-specific integration waits for the production-engine decision, but Blender/world production proceeds through portable GLB and documented scene contracts.
+  - Physical planetary parameters absent from canon remain PROPOSAL until an ADR is accepted.
+  - Human GATE-ART remains pending; current remote world is a semantic macro blockout, not finished AAA/AAAA art.
