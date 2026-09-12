@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "project": "EXOVANT 2950",
+  "world_id": "leviathan",
+  "claim_id": "CLM-W10-WORLD-LEVIATHAN-001",
+  "agent_id": "AGENT-LEVIATHAN-10",
+  "basis": {
+    "remote_project_id": "2577a7b6-ebd7-4d31-a645-620e4b73a95d",
+    "revision": 8,
+    "scene_sequence": 0,
+    "audit_operation": "leviathan-r8-uv-pbr-lod-audit",
+    "uv_quality_operation": "leviathan-r8-uv-quality-dup-audit"
+  },
+  "uv": {
+    "mesh_objects": 260,
+    "mesh_objects_with_uv": 260,
+    "mesh_objects_without_uv": 0,
+    "zero_area_uv_triangles": 0,
+    "uv_loops_outside_0_1": 0,
+    "status": "STRUCTURALLY_PRESENT_NOT_PRODUCTION_UNWRAP_APPROVED",
+    "relative_density_units_per_metre": {
+      "puerto_hero": {"median": 0.147932, "p10": 0.073244, "p90": 0.763282},
+      "jardines_hero": {"median": 0.404062, "p10": 0.148804, "p90": 1.0515},
+      "soma_hero": {"median": 0.15293, "p10": 0.078742, "p90": 0.495711},
+      "macro_other": {"median": 0.016025, "p10": 0.004311, "p90": 0.104135}
+    },
+    "density_note": "Relative UV-units per metre only; no image textures exist, therefore these values are not texels per metre and are not target budgets."
+  },
+  "materials": {
+    "portable_material_roles": 18,
+    "image_textures": 0,
+    "shader_contract": "Principled BSDF constant-role lookdev",
+    "final_pbr_texture_completion": false,
+    "status": "ROLE_LIBRARY_ONLY"
+  },
+  "curves": {
+    "objects": 92,
+    "resolution_u": 4,
+    "bevel_resolution": 3,
+    "policy": "Preserve editable curves in source; evaluated/bake meshes only when texture or runtime requirements demand them."
+  },
+  "lod": {
+    "named_lod_objects": 0,
+    "decimate_modifiers": 0,
+    "hard_budget_status": "BLOCKED_UNTIL_ENGINE_HARDWARE_CAMERA_STREAMING_QUALIFIED",
+    "final_lod_completion": false
+  },
+  "repetition_audit_before_instancing": {
+    "strict_safe_groups": 36,
+    "strict_safe_objects": 174,
+    "potential_redundant_mesh_datablocks": 138,
+    "safety_basis": "matching geometry, topology, UVs, material slots and public attributes; no shape keys, vertex groups or mesh animation"
+  },
+  "gate_truth": {
+    "uv_layer_present": true,
+    "production_uv_pass": false,
+    "pbr_textures_final": false,
+    "lod_final": false,
+    "engine_import_pass": false,
+    "target_hardware_performance_pass": false,
+    "art_review_pass": false
+  },
+  "contract": "art_source/worlds/leviathan/UV_PBR_LOD_CONTRACT.md"
+}
