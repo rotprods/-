@@ -6,21 +6,25 @@ session_id: ART-LEVIATHAN-001-20260912T2123+0200
 branch: art/world-leviathan-001
 status: IN_PROGRESS
 claim_status: KEEP
-remote_blender_revision: 8
+remote_blender_revision: 9
 remote_project_id: 2577a7b6-ebd7-4d31-a645-620e4b73a95d
 cold_rebuild_project_id: 37a931c7-f2e6-46bc-9be0-26077e5de1c1
-cold_rebuild_revision: 6
+cold_rebuild_revision: 7
 fleet:
   registry_main_observed: f78bfdc8bd7b2f6ab52b45d39babcc1589ab3918
   registry_state: reserved
   epoch: 1
   producer_ack_comment: https://github.com/rotprods/-/issues/7#issuecomment-5648464282
   producer_ack_delta_jardines: https://github.com/rotprods/-/issues/7#issuecomment-5648515712
-  producer_ack_delta_soma: published_in_issue_7
+  producer_ack_delta_soma: https://github.com/rotprods/-/issues/7#issuecomment-5648567162
+  ci_manifest_integrator_request: https://github.com/rotprods/-/issues/7#issuecomment-5648779529
   integrator_transition_to_active: pending
   old_manifest_issue_13: RESOLVED_CLOSED
   main_push_gauntlet_run: 34715800243
   main_push_gauntlet_conclusion: success
+  pr10_last_diagnosed_run: 34718006302
+  pr10_python_tests: 75_PASS
+  pr10_failure_class: MANIFEST_DRIFT_ONLY
 
 metrics:
   first_10_task_completion: {done: 3, total: 10, percent_done: 30, review: 7, methodology: "only DONE counts"}
@@ -32,28 +36,66 @@ metrics:
     representative_detail_microsets: 3
     representative_detail_assets: [LEV-ARCH-001, LEV-INF-002, LEV-INF-003, LEV-INF-005, LEV-ECO-001, LEV-ECO-004, LEV-RGN-003, LEV-ENV-002, LEV-ENV-003]
     final_asset_completion_percent: 0
-  materials:
+  uv_pbr_lod:
+    mesh_objects_with_uv: 260
+    mesh_objects_without_uv: 0
+    zero_area_uv_triangles: 0
+    uv_loops_outside_0_1: 0
+    image_textures_present: 0
     portable_material_roles_present: 18
-    new_puerto_roles: [HUM_MAT_BRUSHED_METAL, HUM_MAT_SEAL_RUBBER]
-    new_jardines_roles: [LEV_MAT_MUCOSA_WET, LEV_MAT_NECROTIC, LEV_MAT_ALGA_PRESSURE]
-    new_soma_roles: [LEV_MAT_PRESSURE_LUMEN, LEV_MAT_FIBROUS_TENDON]
+    named_lod_objects: 0
+    decimate_modifiers: 0
     final_calibrated_texture_completion_percent: 0
+    contract: art_source/worlds/leviathan/UV_PBR_LOD_CONTRACT.md
+    receipt: art_source/worlds/leviathan/evidence/uv_pbr_lod_audit_r8.json
   optimization:
     puerto_microset_native_mesh_triangles_measured: 13380
     jardines_microset_evaluated_triangles_measured: 21644
     soma_microset_evaluated_triangles_measured: 34308
+    revision9_instancing:
+      mesh_objects: 260
+      mesh_datablocks_before: 260
+      mesh_datablocks_after: 122
+      datablocks_removed: 138
+      strict_groups_applied: 36
+      blend_bytes_before: 7657188
+      blend_bytes_after: 5597471
+      blend_size_reduction_percent: 26.9
+      glb_bytes_before: 8492516
+      glb_bytes_after: 6603972
+      glb_size_reduction_percent: 22.2
+      render_equivalent_fingerprint: d8b3912446104a1892fc6c759c490f9a77633e2c7d0612d817714baf8af6c19d
+      r8_to_r9_render_equivalent_match: true
+      runtime_performance_claimed: false
+      receipt: art_source/worlds/leviathan/evidence/instancing_optimization_r9.json
     hard_budget_status: UNSET_UNTIL_RUNTIME_AND_TARGET_HARDWARE_QUALIFIED
   integration:
     percent: 60
-    passed: [editable Blender revisions exist, portable GLB exports exist, deterministic semantic cold rebuild exists through SOMA r8]
-    open: [production-engine import/instantiate, runtime collision/traversal smoke test]
+    passed:
+      - editable Blender revisions exist
+      - portable GLB exports exist
+      - high-level deterministic staged build contracts exist through SOMA
+      - primary r8 -> r9 structural instancing preserves audited object/geometry/UV/material fingerprint
+    open:
+      - production-engine import/instantiate
+      - runtime collision/traversal smoke test
+      - strict raw-mesh/UV cold reproducibility outside Puerto
   qa:
     full_pass_gates: 4
     total_gates: 13
     percent_full_pass: 31
     full_pass: [A_CANON foundation, D_GEOMETRY representative foundation, G_SCALE foundation, K_EXPORT representative foundation]
-    additional_pipeline_passes: [master deterministic rebuild, Puerto deterministic rebuild, Jardines deterministic rebuild, SOMA deterministic rebuild, SOMA actual radius gate 28.3m<29m, fleet main continuity CI green]
-    partial_or_open: [B_ART, C_REALISM, E_UV, F_MATERIALS, H_PERFORMANCE, I_LOD, J_COLLISION runtime, L_ENGINE, M_VISUAL_REGRESSION]
+    additional_pipeline_passes:
+      - master semantic rebuild
+      - Puerto strict family rebuild
+      - Jardines high-level semantic rebuild
+      - SOMA high-level semantic rebuild
+      - SOMA actual radius gate 28.3m<29m
+      - revision9 instancing render-equivalent to revision8
+      - UV structural audit has zero degenerate/out-of-range UVs
+      - fleet main continuity CI green
+      - PR10 Python suite 75/75 green
+    partial_or_open: [B_ART, C_REALISM, E_UV, F_MATERIALS, H_PERFORMANCE, I_LOD, J_COLLISION runtime, L_ENGINE, M_VISUAL_REGRESSION, STRICT_RAW_MESH_REPRODUCIBILITY]
 
 priority_state:
   P0_open: [W10/TECH/007, W10/QA/010]
@@ -62,15 +104,18 @@ priority_state:
 completed:
   - authority/fleet bootstrap and atomic claim
   - deterministic master foundation
-  - Puerto representative microset + human-scale defect fix + cold rebuild
-  - Jardines representative channel/algae/gardener microset + truth refinement + cold rebuild
-  - SOMA v1 rejected before execution; v2 encounter environment passes actual-radius and cold-rebuild gates
-  - three canonical region blockouts and deterministic representative stages
+  - Puerto representative microset + human-scale defect fix
+  - Jardines representative channel/algae/gardener microset + truth refinement
+  - SOMA encounter v2 with actual evaluated radius 28.3m inside canonical 29m
+  - three canonical region blockouts and representative stages
   - exact 58m SOMA chamber / stable-vs-visual collision contract
   - 18 portable material roles
+  - UV/PBR/LOD readiness audit and production contract
+  - revision9 safe repeated-mesh instancing optimization on working master
+  - revision9 exact render-equivalent fingerprint match to revision8
   - producer ACK + Jardines + SOMA deltas persisted in issue #7
+  - PR10 CI isolated to manifest drift after 75 passing tests
   - former manifest issue #13 closed after green fleet-harness main
-  - cold handoff updated through revision 8
 
 blocked:
   - {id: LEV-BLK-001, decision: physical planet radius/diameter, impacts: [L0, L1, orbital representation]}
@@ -82,23 +127,31 @@ blocked:
     decision: runtime binary transport + engine availability for this producer session
     impacts: [engine import, native collision/traversal]
     evidence: art_source/worlds/leviathan/evidence/runtime_import_blocker_r5.json
+    confirmation: "blocked by shell, secure-download path and independent browser attempt"
+  - id: LEV-BLK-008
+    decision: strict raw mesh/UV reproducibility for context-dependent Blender primitives
+    impacts: [W10/QA/010, deterministic optimizer replay]
+    evidence: art_source/worlds/leviathan/evidence/instancing_optimization_r9.json
+    classification: OPEN_RAW_PRIMITIVE_REALIZATION_DRIFT
 
 resolved_blockers:
-  - {id: LEV-BLK-006, former_problem: shard-safe global continuity/manifest check, resolution: "fleet harness on main f78bfdc8 with green canonical push CI"}
+  - {id: LEV-BLK-006, former_problem: shard-safe global continuity/manifest architecture, resolution: "fleet harness on main f78bfdc8 with green canonical push CI"}
 
 risks:
-  - direct pixel-level art inspection unavailable in this producer runtime
+  - direct pixel-level art inspection unavailable in this producer runtime despite render artifacts
   - final SOMA anatomy/rig remains blocked
-  - representative regions lack final UV/baked PBR/LOD/engine import
-  - no target-hardware performance budget
+  - image textures are absent; existing UVs/materials are blockout/readiness state, not final PBR
+  - no LOD chain or target-hardware performance budget exists
   - physical planet scale unresolved
   - fleet registry awaits integrator transition reserved->active
+  - strict cold raw-mesh drift exists in Jardines/SOMA/macro primitive realization; Puerto and collision family audits match
 
 next:
+  - replace/canonicalize affected context-dependent primitive construction narrowly in versioned generators, then strict-compare primary/cold
   - ingest fleet integrator ACK/active transition when published
-  - execute runtime import when exact r8 GLB and qualified engine coexist
+  - have integrator regenerate root MANIFEST on PR merge tree; do not rerun known-failing CI blindly
+  - execute runtime import only when exact provider GLB and qualified engine coexist
   - direct art review before final PBR/LOD propagation
-  - split specialist claims only after issue-7 preflight
   - resolve/ADR L0 planet scale before orbital representation
 
-last_heartbeat: 2026-09-12T22:53:00+02:00
+last_heartbeat: 2026-09-12T23:15:00+02:00
