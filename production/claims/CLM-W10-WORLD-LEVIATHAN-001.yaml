@@ -14,15 +14,15 @@ base_sha_at_claim: 4c2fa044080004609ea6df45f34b2a784536507a
 latest_main_observed: f78bfdc8bd7b2f6ab52b45d39babcc1589ab3918
 branch: art/world-leviathan-001
 created_at: 2026-09-12T21:23:00+02:00
-last_heartbeat: 2026-09-12T22:32:00+02:00
+last_heartbeat: 2026-09-12T22:43:00+02:00
 remote_project:
   project_id: 2577a7b6-ebd7-4d31-a645-620e4b73a95d
-  observed_revision: 7
+  observed_revision: 8
   observed_scene_sequence: 0
   observed_active_operation: null
 cold_rebuild_project:
   project_id: 37a931c7-f2e6-46bc-9be0-26077e5de1c1
-  observed_revision: 5
+  observed_revision: 6
 includes:
   - art_source/worlds/leviathan/**
   - leviathan L0-L5 world scale specification and master blockout
@@ -32,11 +32,13 @@ includes:
   - deterministic Blender generator, editable .blend, GLB, previews and validation evidence
   - representative-detail Puerto microset for LEV-ARCH-001, LEV-INF-002 and LEV-INF-003
   - representative-detail Jardines microset for LEV-INF-005, LEV-ECO-001 and LEV-ECO-004
+  - representative-detail SOMA encounter environment for LEV-RGN-003, LEV-ENV-002, LEV-ENV-003 and local LEV-INF-003 variants
 excludes:
   - runtime Godot scenes/scripts and gameplay logic
   - shared STATE/PLAN/HANDOFF/PROGRESS mutation
   - other world-owned paths
   - shared libraries without explicit coordination
+  - final SOMA anatomy, rig or animation
   - Unreal/DLSS/GPU performance claims without qualification
   - production-complete or AAAA-complete claims before all applicable gates
 owned_paths:
@@ -44,6 +46,9 @@ owned_paths:
   - art_source/coordination/ART-LEVIATHAN-001-OWNERSHIP.md
   - production/claims/CLM-W10-WORLD-LEVIATHAN-001.yaml
 published_asset_ids:
+  - LEV-RGN-003
+  - LEV-ENV-002
+  - LEV-ENV-003
   - LEV-ARCH-001
   - LEV-INF-002
   - LEV-INF-003
@@ -54,18 +59,7 @@ published_asset_ids:
   - LEV-MAT-002
   - LEV-TECH-001
 collision_audit:
-  observed_claimed_worlds:
-    - terra
-    - ares
-    - pelagos
-    - khepri
-    - nacre
-    - umbra
-    - sylva
-    - vanta
-    - aurora
-    - elysium
-    - origin
+  observed_claimed_worlds: [terra, ares, pelagos, khepri, nacre, umbra, sylva, vanta, aurora, elysium, origin]
   abandoned_collision:
     world: umbra
     reason: concurrent branch and ownership commit appeared before build
@@ -80,9 +74,10 @@ dependencies:
 blocked_by:
   - ENV_BLOCKED_BINARY_TRANSPORT_AND_RUNTIME
 claim_state_note: >-
-  Physical planet radius, production engine, target hardware budgets, final playable-area dimensions
-  and final SOMA anatomy remain unresolved. Master, Puerto and Jardines production stages are
-  deterministic and Blender-validated through independent cold rebuilds. Runtime import/collision
-  and direct art review remain open. Fleet registry protects the claim as reserved; producer ACK
-  and a later asset-ID delta have been published through issue #7, while the integrator owns the
-  transition to active.
+  Physical planet radius, final production engine, target hardware budgets, final playable-area
+  dimensions and final SOMA anatomy remain unresolved. Master plus Puerto, Jardines and SOMA
+  encounter-environment stages are deterministic and Blender-validated through independent cold
+  rebuilds. SOMA representative environment stays inside the canonical 29 m radius with 0.7 m
+  measured geometry clearance; SOMA_PROXY_NOT_FINAL was not promoted. Runtime import/collision and
+  direct art review remain open. Fleet registry protects the claim as reserved; producer ACK/deltas
+  are in issue #7 and the integrator owns transition to active.
