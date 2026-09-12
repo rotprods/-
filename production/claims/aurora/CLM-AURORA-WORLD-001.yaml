@@ -11,7 +11,7 @@ priority: P1
 base_sha: 4c2fa044080004609ea6df45f34b2a784536507a
 branch: art/world-aurora-veil-001
 created_at: 2026-09-12T19:29:57Z
-last_heartbeat: 2026-09-12T20:18:09Z
+last_heartbeat: 2026-09-12T21:22:00Z
 includes:
   - planetary canon proposals where canon is currently silent, isolated behind ADRs
   - orbital representation
@@ -61,14 +61,18 @@ pipeline:
   blender_worker_version: "5.2"
 remote_scene:
   project_id: d6488148-8547-4ffe-b63d-e5fbec3a339c
-  revision: 7
-  status: WAVE1_ORBITAL_L1_R7_SINGLE_STAR
-  blend_size_bytes: 5859342
-  blend_etag: 7418b326a1a0745688903f0b3fc42b3e
-  glb_size_bytes: 4503316
-  glb_etag: 210ef84a071fb40a3b62c81d73b7b656
+  revision: 8
+  status: WAVE2_CAMP_MODULAR_R8
+  blend_size_bytes: 6581463
+  blend_etag: eea9deb1db85ab6e71c42cd234371093
+  glb_size_bytes: 4684768
+  glb_etag: d7b72b60d8a6a7dee7e72737f1643201
   macro_blockout_preserved: true
   orbital_l1_present: true
+  camp_modular_kit_present: true
+  camp_grid_m: 4
+  camp_refuge_footprint_m: [16, 12]
+  camp_ring_outer_diameter_m: 48
   surface_regression_passed: true
   final_art_claimed: false
 fleet_registry:
@@ -96,4 +100,5 @@ claim_notes:
   - Final engine-specific integration waits for the production-engine decision, but Blender/world production proceeds through portable GLB and documented scene contracts.
   - Physical planetary parameters absent from canon remain PROPOSAL until an ADR is accepted.
   - L1 orbital shell is a display proxy at 1e-4 scale; it does not invent global continental geography.
-  - Human GATE-ART remains pending; current remote world is a semantic macro/orbital blockout, not finished AAA/AAAA art.
+  - Campamento rev8 is a manufacturing-aware modular blockout; final art/UV/PBR/LOD/human review are not claimed.
+  - Human GATE-ART remains pending; current remote world is not finished AAA/AAAA art.
