@@ -3,137 +3,119 @@
 **World:** VANTA  
 **Branch:** `art/world-vanta-001`  
 **Remote Blender project:** `c82188b1-afdc-43f2-828a-5f0e98291f83`  
-**Latest validated revision:** 4  
-**Truth level:** `LOCALLY_VALIDATED_GEOMETRY` — not engine-qualified, not final-art approved.
+**Latest validated revision:** 8  
+**Truth level:** `LOCALLY_VALIDATED_GEOMETRY_AND_BLENDER_ASSEMBLY` — not engine-qualified, not final-art approved.
 
-## Scope closed in this checkpoint
+## Scope
 
-CP4 now has two complementary layers:
+CP4 contains:
 
-1. **Representative vertical microset** built in Puerto de las Manos coordinates:
-   - `VAN_KIT_CRANE_A`
-   - `VAN_KIT_MAG_ANCHOR_A`
-   - `VAN_KIT_DRYDOCK_RIB_A`
-   - `VAN_KIT_STORM_SHELTER_A`
-2. **Metric 4 m snap-kit** with reusable source modules:
-   - `VAN_MOD_FLOOR_4M_A`
-   - `VAN_MOD_WALL_SOLID_4M_A`
-   - `VAN_MOD_WALL_SERVICE_4M_A`
-   - `VAN_MOD_RAIL_4M_A`
-   - `VAN_MOD_PIPE_TRAY_4M_A`
-   - `VAN_MOD_BRACE_4M_A`
-   - `VAN_MOD_STAIR_4M_A`
-   - `VAN_MOD_ROOF_4M_A`
-   - `VAN_MOD_PILLAR_4M_A`
-   - `VAN_MOD_DOOR_4M_A`
-   - `VAN_MOD_MAG_RAIL_4M_A`
-   - `VAN_MOD_BULKHEAD_8M_A`
+- representative Puerto de las Manos vertical microset:
+  - `VAN_KIT_CRANE_A`
+  - `VAN_KIT_MAG_ANCHOR_A`
+  - `VAN_KIT_DRYDOCK_RIB_A`
+  - `VAN_KIT_STORM_SHELTER_A`
+- 12 reusable metric modules on a declared 4 m grid;
+- 48 explicit snap sockets;
+- separate collision proxies;
+- LOD1 proxies;
+- linked Blender assembly/test yard.
 
-Each snap module carries four explicit socket empties, a render hierarchy, separate collision and an LOD1 proxy. Asset IDs remain Vanta-namespaced.
+## Important correction to revision-4 QA
 
-## Revision receipts
+Revision 4 initially passed structural checks for roots, scales, materials, sockets, collision and LOD. A later world-coordinate audit found that this was insufficient: **205 CP4 render children had been parented without preserving their intended world transform**, doubling representative X/Y translations.
 
-### Revision 3 — representative microset
+Example before fix:
 
-Operation: `vanta-cp4-microset-002`
+- `VAN_CRANE_BASE` local = `[-5600,-970,4]`
+- world = `[-11200,-1940,4]`
 
-- 173 CP4-tagged objects created in the first microset pass.
-- 77 crane objects.
-- 19 magnetic-anchor objects.
-- 35 drydock-rib objects.
-- 31 storm-shelter objects.
-- 11 calibration-board objects.
-- 7 separate collision objects.
-- 4 LOD1 proxies.
-- Editable `.blend`: 6,202,289 B, etag `98e19338c29fbf9f5d061735ba229c21`.
-- GLB: 4,382,328 B, etag `8ceb5655ec26a9992b382344c4e3e2d6`.
+This was classified as a **P1 geometry/pipeline defect**. Revision-4 CP4 approval is therefore superseded.
 
-The first three-camera QA batch timed out at 300 s. The scene revision remained valid. A smaller isolated crane proof then succeeded:
+### Revision 5 — parent transform repair
 
-- artifact `vanta_cp4_crane_proof.png`
-- artifact id `c09519f9702b54ce7595e7803f0a35a5`
+Operation `vanta-cp4-parent-fix-001` repaired all 205 affected render children and added hard coordinate guards.
+
+Representative guards now pass exactly:
+
+- crane base `[-5600,-970,4]`
+- magnetic anchor base `[-5200,1100,1.2]`
+- drydock pillar `[-5480,-672,12]`
+- shelter body `[-5550,430,3.2]`
+- floor module deck `[-5480,520,0.22]`
+- solid wall panel `[-5468,520,2]`
+- stair first step `[-5481.8,544,0.2]`
+
+Revision 5 source:
+
+- `.blend` 7,032,696 B · etag `30a2b0a629c7b82513198049b65b4a31`
+- GLB 4,822,424 B · etag `dc1ea5e5b1c5deadfe7237151ec826f5`
+
+### Revision 6 — metric assembly test yard
+
+The first test-yard attempt failed its own seam assertion before commit because its instancer introduced double pitch. It was discarded rather than accepted.
+
+Corrected operation `vanta-cp4-test-yard-002` then passed:
+
+- 19 module-instance markers;
+- 76 linked render meshes;
+- 6 assembled floor tiles;
+- 7 deterministic seam checks;
+- **maximum measured floor gap: 0.000 m**;
+- no off-grid instance roots.
+
+This validates the 4 m contract **inside Blender only**. It does not qualify target-engine snap/import or gameplay collision.
+
+Revision 6 source:
+
+- `.blend` 7,421,204 B · etag `538aed8fd6603a40cfc8a8f2b21b1621`
+- GLB 5,375,388 B · etag `85b835bfbdd33cd862c0e03251ba4fdf`
+
+### Revision 8 regression audit
+
+`vanta-rev8-final-audit-001` confirms that later CP5 work did not regress CP4:
+
+- all seven coordinate guards still exact;
+- 205 corrected parented render children remain valid;
+- all seven test-yard seam gaps remain 0 m;
+- test-yard state remains `LOCALLY_ASSEMBLED`.
+
+Render execution proof also passed at revision 8:
+
+- `vanta_cp4_test_yard.png`
+- artifact `f2ce32a87e098470ed00328fef4cbbb2`
 - 640×480
-- 248,546 B
+- 248,872 B
 
-This proves render execution, not aesthetic approval. Direct art review remains open.
+This proves render execution for the assembled 76-mesh yard. Direct aesthetic approval remains open.
 
-### Revision 4 — snap kit
+## Current CP4 disposition
 
-Operation: `vanta-cp4-snapkit-001`
+**Passed locally:**
 
-- 12 reusable metric modules.
-- 48 explicit snap sockets.
-- 12 module collision proxies.
-- 12 module LOD1 proxies.
-- 4 m declared grid.
-- 711 total scene objects after commit.
-- Editable `.blend`: 7,046,134 B, etag `7617263dce0f383746d5411614908b17`.
-- GLB: 4,842,424 B, etag `0ed964937085dafbcb717b35aacc5163`.
-
-Structural QA operation `vanta-cp4-structural-qa-001` validated all 16 CP4 asset IDs. There were:
-
-- zero failed assets;
-- zero non-unit render-mesh scales;
-- zero materialless render meshes;
-- zero accidental `.001/.002/.003` suffix drift;
-- exactly four sockets on every snap module;
-- at least one independent collision and one LOD1 proxy for every validated asset.
-
-Revision-4 audit:
-
-- 711 objects;
-- 618 meshes;
-- 18 materials;
-- 21 collections;
-- 9 cameras;
-- 9 lights;
-- 315 CP4-tagged objects total;
-- 206 CP4 render meshes;
-- 19 CP4 collision objects;
-- 16 CP4 LOD1 proxies;
-- 16 CP4 roots;
-- 48 snap sockets;
-- 10 calibration objects.
-
-## CP4 gate disposition
-
-**CP4 is now `LOCALLY_VALIDATED_GEOMETRY`**, not fully DONE under the global static-asset DoD.
-
-Passed locally:
-
-- deterministic metre scale;
-- functional pivots/root hierarchy;
-- representative modular geometry;
-- 4 m snap contract;
-- explicit sockets;
+- metric scale and representative world-coordinate guards;
+- root/pivot hierarchy after the rev5 repair;
+- modular render geometry;
+- 4 m grid contract;
+- 48 explicit sockets;
 - separate collision proxies;
 - explicit LOD1 proxies;
-- material-role assignment;
+- applied scale/material/UV structural checks;
+- deterministic Blender assembly with zero measured floor seams;
 - editable `.blend` persistence;
-- portable GLB export;
-- structural naming/scale QA;
+- GLB export existence;
 - isolated render execution.
 
-Still open before final DoD:
+**Still open before global DoD:**
 
-- human/direct visual art approval;
-- UV/trim-sheet production validation;
-- final PBR texture authoring;
-- seam review in assembled engine test yard;
-- actual target-engine snap/import test;
-- collision traversal/playtest;
+- direct/human visual art approval;
+- target-engine snap/import test;
+- engine collision traversal/playtest;
 - close/mid/far review in production engine;
-- triangle/draw/material/texture/memory cost on declared target hardware;
+- engine material semantics;
+- measured tris/draws/materials/textures/memory/GPU cost on declared target hardware;
 - HLOD/instancing runtime qualification.
 
-## CP5 handoff
+GLB export currently emits warnings for unsupported Blender AREA lights and, after CP5, sampler/material-node behavior. These warnings are tracked as engine-portability blockers, not ignored.
 
-The next gate is intentionally narrow:
-
-1. turn the existing calibration precursor into neutral + Vanta-light material boards;
-2. establish the first trim/decal family for steel/rust/yellow paint/impact/weld/frost/grease;
-3. apply that system to the four representative CP4 assets;
-4. verify the microset in close/mid/far views;
-5. only then propagate the material system to the wider Vanta registry.
-
-Evidence source: `art_source/vanta/evidence/remote_blender_rev4.json`.
+Current evidence: `art_source/vanta/evidence/remote_blender_rev8.json`.
