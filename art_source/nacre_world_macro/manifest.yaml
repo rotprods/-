@@ -6,10 +6,14 @@ world_id: nacre
 domain: world_macro
 subdomain: planetary_foundation
 status: IN_PROGRESS
-quality_tier: BLOCKOUT_FOUNDATION
-base_main_sha: 4c2fa044080004609ea6df45f34b2a784536507a
+quality_tier: BLOCKOUT_FOUNDATION_STRUCTURAL
+base_main_sha_at_claim: 4c2fa044080004609ea6df45f34b2a784536507a
+current_main_observed: f78bfdc8bd7b2f6ab52b45d39babcc1589ab3918
 branch: art/world-nacre-001
-updated_at: 2026-09-12T19:59:00Z
+fleet_epoch: 1
+fleet_status_observed: reserved
+fleet_ack: https://github.com/rotprods/-/issues/7#issuecomment-5648339684
+updated_at: 2026-09-12T21:28:30Z
 
 source_authority:
   repository: rotprods/-
@@ -19,11 +23,15 @@ source_authority:
     - AGENTS.md
     - _project_intelligence/STATE.json
     - ARCHITECTURE.md
+    - docs/FLEET_COORDINATION.md
+    - ops/fleet/registry.json
 
 pipeline:
   exact_flu_in_method_found: false
   method_status: PIPELINE_METHOD_NOT_FOUND
   verified_route: Higgsfield 3D Jutsu bpy -> Blender 5.2 -> GLB interchange -> Godot prototype
+  reproducible_generator: art_source/nacre_world_macro/build_macro.py
+  qa_receipt: art_source/nacre_world_macro/qa-r3.yaml
   source_format: blend
   interchange_format: glb
   prototype_engine: Godot 4.7.2
@@ -33,13 +41,13 @@ pipeline:
 remote_blender:
   project_id: a49fc6f3-fedb-40a5-913f-10a08debb0e1
   project_name: EXOVANT 2950 — NACRE World Macro — CLM-NACRE-WORLD-MACRO-001
-  revision: 2
+  revision: 3
   blend:
-    bytes: 2343988
-    etag: 49df1eee4bf980b1da063676015d5835
+    bytes: 2913059
+    etag: 2b5398f1c4bd906874e827daad64428b
   glb:
-    bytes: 2253168
-    etag: 9ab4c7474e11d771957c94da79917795
+    bytes: 3090440
+    etag: 6ccb564c4ada071aeca2270db804ba87
 
 canon_documented:
   galaxy: Andromeda
@@ -74,18 +82,22 @@ unknown_not_canon:
 reversible_proposals:
   shell_city_span_target_m: 1400
   archive_core_diameter_m: 184
-  note: These are blockout parameters for scale communication, not approved planetary canon.
+  bridge_surface_clearance_m: 3.0
+  note: These are blockout parameters for scale/structural communication, not approved planetary canon.
 
-scene_metrics_revision_2:
-  mesh_objects: 69
-  curve_objects: 18
-  vertices_raw: 12830
-  triangles_raw_estimate_pre_modifiers: 25092
-  bounds_min_m: [-697.22, -491.0, -422.79]
-  bounds_max_m: [697.22, 559.02, 422.79]
-  span_m: [1394.44, 1050.02, 845.57]
+scene_metrics_revision_3:
+  mesh_objects: 97
+  curve_objects: 30
+  object_total: 130
   non_unit_scale_objects: 0
   zero_dimension_objects: 0
+  docking_sockets: 21
+  service_rings: 7
+  suspension_tendons: 7
+  growth_strata: 5
+  bridge_links_checked: 10
+  bridge_penetrations: 0
+  bridge_surface_clearance_m_each_endpoint: 3.0
   camera: CAM_NACRE_MACRO
   portable_lights:
     - SUN_MNEME_A
@@ -104,7 +116,7 @@ material_roles:
 asset_coverage:
   - asset_id: NACRE-MACRO-SHELL-001
     category: macro_architecture
-    name: shell-city envelope
+    name: shell-city envelope and growth strata
     tier: D_to_C_blockout
     status: IN_PROGRESS
     dimensions_status: PROPOSAL
@@ -118,18 +130,18 @@ asset_coverage:
     qa: geometry_checkpoint_pass
   - asset_id: NACRE-ARCHIVE-NET-001
     category: archive_infrastructure
-    name: spherical archive chamber network
+    name: spherical archive chamber network with service rings and suspension load paths
     tier: C_blockout
     status: IN_PROGRESS
     dimensions_status: PROPOSAL
-    qa: geometry_checkpoint_pass
+    qa: macro_structural_causality_pass_candidate
   - asset_id: NACRE-BRIDGE-NET-001
     category: infrastructure
-    name: archive bridge and spine network
+    name: surface-connected archive bridge/spine network and docking sockets
     tier: C_blockout
     status: IN_PROGRESS
     dimensions_status: PROPOSAL
-    qa: geometry_checkpoint_pass
+    qa: bridge_attachment_geometry_pass
   - asset_id: NACRE-SCALE-REF-001
     category: qa_reference
     name: human and 100m scale references
@@ -139,27 +151,40 @@ asset_coverage:
 
 verification:
   geometry_export_checkpoint: PASS
-  glb_export_after_portability_fix: PASS
-  unsupported_area_light_warning: FIXED_IN_REVISION_2
-  render_artifact:
-    source_revision: 1
-    name: nacre_macro_r1_qa.png
-    dimensions_px: [960, 540]
-    artifact_id: 1e28cb00be72db164a61b00ae4c1cdf9
-  visual_agent_inspection: BLOCKED_CLIENT_ARTIFACT_NOT_VISUALLY_INSPECTED
+  glb_export_revision_3: PASS
+  unsupported_area_light_warning: FIXED_IN_REVISION_2_AND_ABSENT_R3
+  bridge_attachment_geometry: PASS
+  bridge_penetrations: 0
+  transform_sanity: PASS
+  degenerate_dimension_check: PASS
+  structural_macro_causality: PASS_CANDIDATE
+  revision_2_multiview:
+    operation: nacre-art-review-multiview-r2
+    hero_artifact_id: 587ff0728c5d116a7d82f4955b2431b2
+    side_ortho_artifact_id: 4350ec483a9d546c390adc22ca6b1f1c
+    top_ortho_artifact_id: beb5812d5e3e3dae9d43647a92fe5144
+  revision_3_preview:
+    operation: nacre-qa-r3-geometry-render
+    artifact_id: a5c7c5699ab993db11fb4d5903fb5504
+    name: nacre_r3_structural_hero.png
+    dimensions_px: [640, 360]
+  agent_visual_judgement: NOT_CLAIMED
   human_gate_art: OPEN
   godot_import_gate: OPEN
   collision_gate: OPEN
   lod_gate: OPEN
   performance_gate: OPEN
+  fleet_native_delivery: OPEN
 
 receipts:
   blender_build_operation: nacre-macro-build-v1c
   portability_fix_operation: nacre-portability-fix-r2
-  final_qa_operation: nacre-final-qa-r2
+  revision_2_multiview_operation: nacre-art-review-multiview-r2
+  structural_revision_3_operation: nacre-structural-bridge-fix-r3
+  revision_3_qa_operation: nacre-qa-r3-geometry-render
   failed_noncommitting_attempts:
     - nacre-macro-build-v1: empty scene had no World datablock; no revision committed
     - nacre-macro-build-v1b: Blender 5.2 collection membership API mismatch; no revision committed
 
 claim_status: KEEP
-stop_reason: P1 structural plausibility, visual inspection, runtime import/collision/LOD/performance gates remain open; no DONE claim is permitted.
+stop_reason: Human art approval, Godot import/collision, LOD/streaming, performance and fleet-native binary delivery remain open. No DONE claim is permitted.
