@@ -1,0 +1,183 @@
+{
+  "schema_version": 1,
+  "project": "EXOVANT 2950",
+  "world_id": "leviathan",
+  "claim_id": "CLM-W10-WORLD-LEVIATHAN-001",
+  "agent_id": "AGENT-LEVIATHAN-10",
+  "remote_project": {
+    "provider": "Higgsfield 3D Jutsu",
+    "project_id": "2577a7b6-ebd7-4d31-a645-620e4b73a95d",
+    "blender_version_observed": "5.2.0 LTS",
+    "unit_system_observed": "METRIC",
+    "scale_length_observed": 1.0,
+    "render_engine_observed": "BLENDER_EEVEE",
+    "fps_observed": 24,
+    "final_revision": 2,
+    "scene_sequence": 0
+  },
+  "revision_2_artifacts": {
+    "blend": {
+      "size_bytes": 4034313,
+      "etag": "a2156686fbcad1ff1a36c0b5c7ea7831",
+      "status": "AVAILABLE_REMOTE"
+    },
+    "glb": {
+      "size_bytes": 4397196,
+      "etag": "17a660fe9198015d9e2a01514efdbb10",
+      "status": "AVAILABLE_REMOTE"
+    },
+    "overview_render": {
+      "artifact_id": "f467205d40557710bcd580d10393a1ec",
+      "name": "leviathan_overview_r2.png",
+      "width": 640,
+      "height": 360,
+      "size_bytes": 266922,
+      "etag": "670e209238ca3f45cc99d389f63d7a56",
+      "status": "RENDERED",
+      "agent_pixel_review": "NOT_RUN_CLIENT_LIMITATION"
+    },
+    "soma_gameplay_render": {
+      "artifact_id": "5a66cdc6560bdf42b7a62531d45513a1",
+      "name": "leviathan_soma_gameplay_r2.png",
+      "width": 640,
+      "height": 360,
+      "size_bytes": 192594,
+      "etag": "5d5326836a07bc16fb487a22d64c4291",
+      "status": "RENDERED",
+      "agent_pixel_review": "NOT_RUN_CLIENT_LIMITATION"
+    },
+    "interactive_preview": {
+      "revision": 2,
+      "status": "SHOWN_TO_USER"
+    }
+  },
+  "structural_metrics": {
+    "object_count": 125,
+    "mesh_count": 90,
+    "curve_font_count": 25,
+    "material_count": 11,
+    "camera_count": 4,
+    "light_count": 4,
+    "required_objects_missing": [],
+    "bad_object_scales": [],
+    "zero_polygon_meshes": [],
+    "degenerate_meshes": [],
+    "collision_object_count": 12,
+    "visual_contraction_membrane_count": 3,
+    "visual_contractions_present_in_collision_collection": [],
+    "portable_light_types": ["POINT", "SUN"]
+  },
+  "scale_receipts": {
+    "human_reference_dimensions_m": [0.55, 0.4, 1.85],
+    "soma_arena_ring_dimensions_m": [58.0, 58.0, 6.4],
+    "soma_arena_floor_dimensions_m": [58.0, 58.0, 6.0],
+    "stable_substrate_dimensions_m": [720.0, 480.0, 12.0],
+    "stable_substrate_semantics": "REPRESENTATIVE_AUTHORED_CELL_PROPOSAL_NOT_PLANET_SIZE",
+    "planet_radius_m": "UNKNOWN_BLOCKED_CANON"
+  },
+  "camera_receipts": {
+    "overview_region_centers_in_frame": true,
+    "overview_region_center_ndc": {
+      "R1_PUERTO": [0.171, 0.5842, 816.683],
+      "R2_JARDINES": [0.6598, 0.5665, 796.4401],
+      "R3_SOMA": [0.7661, 0.1135, 531.5576]
+    },
+    "soma_center_in_gameplay_camera": true,
+    "soma_center_ndc": [0.5, 0.5, 55.9017]
+  },
+  "qa_gauntlet": {
+    "A_CANON": {
+      "status": "PASS_FOUNDATION",
+      "note": "Three canonical regions, gravity, temperature, art seed, ecology/adversary names and 58 m SOMA chamber are derived from current design authority. Physical planet radius remains UNKNOWN."
+    },
+    "B_ART": {
+      "status": "REVIEW_REQUIRED",
+      "note": "Material/shape grammar is implemented as a blockout proposal; final art-director visual review is not replaced by this receipt."
+    },
+    "C_REALISM": {
+      "status": "PARTIAL_BLOCKOUT",
+      "note": "Graft/suture/valve/circulation causal roles exist; manufacturing, microstructure, final tissue response and final SOMA anatomy remain incomplete."
+    },
+    "D_GEOMETRY": {
+      "status": "PASS_BLOCKOUT",
+      "note": "Required objects present; no accidental scale, zero-poly meshes or degenerate polygon areas detected in revision 2."
+    },
+    "E_UV": {
+      "status": "NOT_READY",
+      "note": "No final texture/UV pipeline claim at WAVE-1 blockout."
+    },
+    "F_MATERIALS": {
+      "status": "PARTIAL_BLOCKOUT",
+      "note": "11 portable material roles exist; final calibrated textures/channel validation is not complete."
+    },
+    "G_SCALE": {
+      "status": "PASS_BLOCKOUT",
+      "note": "1.85 m human reference and exact 58 m SOMA outer chamber envelope measured."
+    },
+    "H_PERFORMANCE": {
+      "status": "BLOCKED_UNMEASURED",
+      "note": "Target production engine/hardware budgets are not yet qualified."
+    },
+    "I_LOD": {
+      "status": "NOT_READY"
+    },
+    "J_COLLISION": {
+      "status": "PASS_STRUCTURE_ONLY",
+      "note": "Stable collision collection is separate from visual contraction membranes. Runtime character traversal/collision remains NOT_RUN."
+    },
+    "K_EXPORT": {
+      "status": "PASS_BLOCKOUT",
+      "note": "Editable .blend and GLB produced at revision 2. Revision-1 unsupported AREA-light warning was fixed by replacing it with POINT; revision-2 export log no longer reports that warning."
+    },
+    "L_ENGINE": {
+      "status": "NOT_RUN",
+      "note": "No Godot or Unreal import receipt for LEVIATHAN yet."
+    },
+    "M_VISUAL_REGRESSION": {
+      "status": "REVIEW_REQUIRED",
+      "note": "Revision-2 overview and SOMA renders exist, but this client could not directly perform pixel-level visual inspection. Interactive revision-2 preview was surfaced to the user."
+    }
+  },
+  "failures_recovered": [
+    {
+      "operation": "leviathan-master-blockout-v1",
+      "classification": "TOOLING_BOOTSTRAP_FAILURE",
+      "cause": "scene.world was None in the pristine Blender scene",
+      "asset_revision_changed": false,
+      "fix": "Explicitly create a Blender World datablock before assigning world color."
+    },
+    {
+      "operation": "leviathan-verify-render-v1",
+      "classification": "VALIDATOR_FAILURE",
+      "cause": "Pixel-statistics script assumed a populated Render Result buffer and raised IndexError.",
+      "asset_revision_changed": false,
+      "fix": "Separate structural/camera validation from render artifact generation."
+    },
+    {
+      "operation": "revision-1 export audit",
+      "classification": "EXPORT_WARNING",
+      "cause": "AREA light unsupported by glTF export path",
+      "asset_revision_changed": true,
+      "fix": "Converted tissue bounce source to portable POINT light in revision 2."
+    },
+    {
+      "operation": "revision-1 scale audit",
+      "classification": "CANON_SCALE_MISMATCH",
+      "cause": "Arena torus external envelope measured 64.4 m while canonical chamber is 58 m.",
+      "asset_revision_changed": true,
+      "fix": "Rebuilt arena ring to exact 58 m external diameter and floor to 58 x 58 m in revision 2."
+    }
+  ],
+  "overall": {
+    "status": "WAVE1_BLOCKOUT_CHECKPOINT_PASS_WITH_OPEN_GATES",
+    "world_done": false,
+    "claim_should_release": false,
+    "next_blocking_gates": [
+      "agent/human visual review of revision-2 renders/interactive preview",
+      "runtime import and traversal/collision smoke test",
+      "production-engine and target-hardware qualification for budgets",
+      "final SOMA art/anatomy decision",
+      "physical planet scale decision for L0/L1"
+    ]
+  }
+}
