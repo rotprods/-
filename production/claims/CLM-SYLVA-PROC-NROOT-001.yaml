@@ -11,22 +11,25 @@ priority: P1
 branch: agent/sylva-neural-root-001
 base_sha: 4c2fa044080004609ea6df45f34b2a784536507a
 created_at: 2026-09-12T21:23:00+02:00
-last_heartbeat: 2026-09-12T21:42:00+02:00
+last_heartbeat: 2026-09-12T21:47:00+02:00
 source_authority:
   - AGENTS.md
   - _project_intelligence/STATE.json
   - design/EXOVANT_BIBLIA.md
   - design/EXOVANT_DATA.json
 includes:
-  - reusable structural root segment generator
-  - root junction and fork modules
-  - broad traversable root walkway variants
-  - terrace and membrane-anchor interfaces attached to root structures
+  - reusable meso-scale structural root segment generator
+  - reusable 8-14 m root junction and fork modules
+  - broad traversable callus/root walkway variants
+  - terrace and membrane-anchor module interfaces
   - deterministic Blender bpy source generation
   - neutral material IDs for later world lookdev
-  - collision-proxy naming and export metadata
+  - per-module collision-proxy naming and export metadata
   - asset manifest and non-runtime QA tooling for this kit
 excludes:
+  - km-scale regional root-network topology and placement
+  - Puerto/Bosque/VESPER regional anchor placement
+  - macro terrain generation or streaming envelopes
   - VESPER boss model or rig
   - fauna or creatures
   - NPCs or humanoid characters
@@ -37,21 +40,36 @@ excludes:
   - Godot gameplay scripts and current Terra runtime
   - engine migration or Unreal qualification
 collision_audit:
-  checked_branches:
-    - art/terra-reliquary-kit-001
-    - art/ares-ix-world-001
-    - art/ares-ix-world-agent-02
-    - art/world-khepri-001
-    - art/world-pelagos-thalassa-001
-    - art/world-umbra-001
-    - art/world-vanta-001
-  result: NO_SEMANTIC_COLLISION_OBSERVED
-  note: Sylva Prime had no visible active branch at claim time. Existing Terra ownership of art_source/coordination is avoided by using sharded production paths.
+  initial:
+    checked_branches:
+      - art/terra-reliquary-kit-001
+      - art/ares-ix-world-001
+      - art/ares-ix-world-agent-02
+      - art/world-khepri-001
+      - art/world-pelagos-thalassa-001
+      - art/world-umbra-001
+      - art/world-vanta-001
+    result: NO_SEMANTIC_COLLISION_OBSERVED_AT_CLAIM_TIME
+  resync_after_blockout:
+    concurrent_claim: CLM-SYLVA-MACRO-001
+    pr: 3
+    branch: art/world-sylva-prime-macro-001
+    result: PARTIAL_SEMANTIC_OVERLAP_FOUND
+    overlap: "macro claim includes structural root-network and root/membrane proxy language"
+    proposed_boundary:
+      macro_owner: "km/regional terrain and root-network topology, region anchors, macro traversal corridors, placement/streaming envelopes, diagnostic macro proxies"
+      this_claim_owner: "reusable 8-14 m meso module geometry/generator, callus route surfaces, module naming/material interfaces and per-module collision proxies"
+    persistent_coordination:
+      macro_pr_comment_id: 5648260908
+      this_pr_comment_id: 5648261708
+    merge_policy: "Both PRs remain draft until ownership boundary is accepted/reconciled."
 dependencies:
   - documented Sylva route-readability risk and neural-forest asset-kit definition
+  - CLM-SYLVA-MACRO-001 for regional placement/topology interface
 blocked_by:
   - final planet radius and diameter are UNKNOWN and intentionally not required for this atomic kit
   - target GPU budgets remain UNKNOWN pending production-hardware qualification
+  - macro/procedural ownership boundary requires review before merge
 checkpoint:
   remote_project_id: 43cf2b06-c47f-4ccd-ac34-76e9a585225a
   remote_revision: 4
@@ -60,20 +78,23 @@ checkpoint:
   manifest: production/manifests/sylva/procedural/SYL_NEURAL_ROOT_KIT_001.yaml
   generator: art_source/sylva_neural_root_kit/sylva_neural_root_kit.py
   tasks: production/tasks/sylva/SYL_PROC_ROOT_FIRST_10.yaml
+  pull_request: 6
 progress:
   task_pack: 8/10
   structural_blockout: 100%
   collision_proxy_presence: 100%
   final_materials: 0%
   lod_optimization: 0%
-  engine_integration: 0%
+  integration: 0%
   human_art_review: PENDING
 next:
-  - import revision-4 GLB into executable engine and run CharacterBody traversal/collision test
+  - reconcile/accept macro-vs-procedural root ownership boundary with PR 3
+  - run isolated engine traversal/collision test without consuming gameplay ownership
   - feed route-width and collision findings back into generator
-  - complete causal surface/material pass only after traversal macro-shapes are accepted
+  - start causal surface/material pass only after macro placement and traversal shapes are accepted
 release_condition:
   - source generator, manifests and QA receipts committed
   - remote Blender execution verified
+  - macro/procedural ownership boundary accepted or explicit waiver recorded
   - engine traversal/collision checkpoint completed or explicit waiver recorded
   - art review decides whether to release, continue or subdivide this claim
