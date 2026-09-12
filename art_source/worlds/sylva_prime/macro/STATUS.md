@@ -1,171 +1,158 @@
 # STATUS — CLM-SYLVA-MACRO-001
 
 **Agent:** `AGENT-SYLVA-MACRO-01`  
-**Session:** `20260912-SYLVA-MACRO-001`  
 **Branch:** `art/world-sylva-prime-macro-001`  
-**Primary remote Blender:** `05dce898-753d-4ff6-a4b0-31757dc868d8` @ revision `5`  
-**State:** `IN_PROGRESS / VERIFIED R5 CHECKPOINT`
+**Primary Blender:** `05dce898-753d-4ff6-a4b0-31757dc868d8` @ revision `6`  
+**State:** `IN_PROGRESS / VERIFIED R6 CHECKPOINT`  
+**Claim:** `KEEP / CHECKPOINT`
 
-## Scope boundary
+## Current production truth
+
+R6 is a macro/regional **blockout + integration foundation**, not final world art.
 
 Owned here:
-- km-scale local terrain foundation;
-- canonical region anchors and spatial relationships;
-- diagnostic macro-root topology placement;
-- macro traversal corridors;
-- streaming metadata/envelopes;
+- 12 km local authored terrain proposal and macro topography;
+- canonical region anchors/spatial relationships;
+- diagnostic structural-root topology;
+- traversal corridors;
+- streaming envelopes/metadata;
 - macro collision proxies;
-- typed sockets consuming `CLM-SYLVA-PROC-NROOT-001`;
-- Cámara de VESPER macro encounter-layout envelope;
-- L0/L1 planetary-scale decision package, but **not canon promotion**.
+- typed sockets to `CLM-SYLVA-PROC-NROOT-001`;
+- Cámara de VESPER macro encounter layout;
+- reversible L0/L1 planetary-scale decision artifacts.
 
-Explicitly not owned:
-- reusable meso neural-root modules (PR #6);
-- final VESPER;
-- NPC/fauna/vegetation production assets;
-- final architecture/interiors;
-- gameplay/quest/runtime code;
-- final engine/performance decision.
+Excluded:
+- reusable meso root kit (PR #6);
+- final VESPER/NPC/fauna/vegetation/architecture;
+- gameplay/quest code;
+- final materials/LOD/HLOD/performance qualification;
+- planetary canon promotion.
 
-## Current coverage
+## Wave progression
 
-| Task | Priority | State | Evidence |
-|---|---|---|---|
-| Evidence / authority / claim | P0 | DONE | claim + PR #3 + issue #7 + ROT-117 |
-| Metric coordinate contract | P0 | DONE | Blender metadata / World Bible |
-| Macro terrain | P0 | DONE_BLOCKOUT | r5 source lineage |
-| Structural macro-root topology | P0 | REVIEW | 6 primary + 8 secondary diagnostic roots; meso kit delegated |
-| Puerto del Injerto foundation | P1 | REVIEW | blockout + collision + provider sockets |
-| Bosque de las Frases foundation | P1 | REVIEW | 3 route languages + collision + provider sockets |
-| Cámara de VESPER macro layout | P0 | **PASS_BLOCKOUT_R5** | three terraces + two wide connectors + separate collision |
-| Streaming interface | P0 | DONE_PROPOSAL | 16 × 3 km L3 cells + 3 regional envelopes |
-| Root-kit interface | P0 | PASS | 8 typed sockets / 0 provider meshes copied |
-| GLB pre-import contract | P0 | PASS_SELFTEST | r5 validator 7/7 synthetic adversarial cases |
-| Binary recovery / engine import | P0 | ENV_BLOCKED | `qa/ENGINE_IMPORT_ENV_BLOCKER.json` |
-| Human art review | P0 | PENDING | interactive r5 scene available |
-| LOD/HLOD / target performance | P1 | BLOCKED | engine + hardware unresolved |
+- **r1:** local terrain + 3 region foundations + macro-root topology.
+- **r2:** portable lighting + review cameras.
+- **r3:** camera-range correction + validated nonblank file-backed render smoke.
+- **r4:** 16 streaming cells + 3 region envelopes + 8 provider sockets + collision interfaces.
+- **r5:** canon correction: replace single VESPER arena floor with 3 terraces + 2 wide connectors.
+- **r6:** replace sine/cosine blockout terrain with deterministic causal macro model shared by render and collision.
 
-## R5 scene receipts
+## R6 scene metrics
 
-Remote project `05dce898-753d-4ff6-a4b0-31757dc868d8`, revision 5:
+- objects: **149** (r6 terrain metadata adds one scene node over r5);
+- render terrain: **2,401 vertices / 2,304 faces / 4,608 tris**;
+- collision terrain: **33×33 = 1,089 vertices / 1,024 faces / 2,048 tris**;
+- terrain z: **−310.617 m → 519.258 m**;
+- root-bearing macro ridges: **6**;
+- drainage/catchment shaping hypotheses: **2**, explicitly `PROPOSAL_NOT_CANON_WATERWAYS`;
+- 16 proposed L3 streaming cells;
+- 3 regional L4 envelopes;
+- 8 typed provider sockets;
+- 12 macro collision nodes;
+- 3 VESPER terraces + 2 connectors;
+- final VESPER meshes: **0**;
+- provider root-kit meshes copied: **0**.
 
-- **148 objects**;
-- **95 mesh objects**;
-- **8 curves**;
-- **~18,240 blockout triangles**;
-- local authored terrain **12,000 × 12,000 m** (`PROPOSAL`, never planet size);
-- 6 primary + 8 secondary diagnostic macro roots;
-- 4 macro traversal guides, total guide length **7,927.391 m**;
-- 16 proposed L3 streaming cells at 3 km;
-- 3 proposed L4 regional envelopes;
-- 8 typed root-kit sockets;
-- **12** macro collision nodes total;
-- non-unit scales: **0**;
-- non-`SYLVA_` objects: **0**;
-- provider root-kit meshes copied: **0**;
-- final VESPER meshes: **0**.
+### Terrain causality / consistency
 
-### Cámara de VESPER r5 canon correction
+Model: `R6_BIOGEO_CAUSAL_MACRO_V1`.
 
-The previous single circular proxy arena was removed. Required macro layout now exists:
+Render and collision are generated from the exact same deterministic height function:
+- common comparison samples: **289**;
+- max render↔collision height delta: **0 m**;
+- mean delta: **0 m**.
 
-- `SYLVA_VESPER_Terrace_00_ENTRY`: 116 m diameter, z −246 m;
-- `SYLVA_VESPER_Terrace_01_MIDDLE`: 124 m diameter, z −216 m;
-- `SYLVA_VESPER_Terrace_02_UPPER`: 112 m diameter, z −184 m;
-- Connector 00: 142.215 m, 12.178°, 18 m visual / 16 m collision width;
-- Connector 01: 145.685 m, 12.689°, 18 m visual / 16 m collision width;
-- both connectors: `precision_jump_required=false`.
+Measured terrain face slopes:
+- median: **4.939°**;
+- p90: **14.186°**;
+- p95: **20.297°**;
+- max: **51.231°**.
 
-Receipt: `qa/R5_VESPER_CANON_LAYOUT.json`.
+Macro route grades:
+- Route 00: 1,913.113 m @ **2.996°**;
+- Route 01: 2,085.402 m @ **2.199°**;
+- Route 02: 1,930.026 m @ **1.484°**;
+- Route 03: 1,998.850 m @ **15.079°**.
 
-## Remote artifacts r5
+Route 03 must be validated with the real controller/camera before gameplay approval.
 
-- `.blend`: **2,290,409 bytes**, etag `2ccbc1ec2ffd854ae83b5cee197d16de`.
-- GLB: **1,215,672 bytes**, etag `9c288dd826d7cbc3331b849dda1590e5`.
-- VESPER r5 review PNG artifact: `33a52a26511ad4a5e38646eb55cb23a9`.
-- GLB export completed without unsupported-light warnings.
+## VESPER r5/r6 retained contract
 
-## Visual signal QA
+- 3 terraces: 116 m / 124 m / 112 m diameter;
+- connector 00: 142.215 m @ 12.178°;
+- connector 01: 145.685 m @ 12.689°;
+- 18 m visual / 16 m collision width;
+- no precision jump required;
+- obsolete single-floor arena nodes absent.
 
-File-backed VESPER r5 smoke, 320×180:
-- PNG: 81,344 bytes;
-- mean RGB: ~0.21138;
-- variance: ~0.02917;
-- max RGB: ~0.59216;
-- result: `PASS_NONBLANK`.
+## Remote r6 artifacts
 
-This proves image signal only. `GATE-ART` remains pending human review.
+- `.blend`: **2,348,647 bytes**, etag `f82350b275ed699a790d7977be3a1ee1`.
+- GLB: **1,299,444 bytes**, etag `896ae5e1b86cc5874f008872c05235a7`.
+- master terrain review PNG artifact: `8f6c2c0d249577bd9d4e586b6b62145c`.
 
-## GLB contract r5
+Master file-backed render smoke 320×180:
+- PNG: 90,828 bytes;
+- mean RGB ~0.32490;
+- variance ~0.06411;
+- max RGB ~0.78431;
+- `PASS_NONBLANK`.
 
-`validate_glb_contract.py` now requires:
-- 3 VESPER terrace nodes;
-- 2 VESPER connector nodes;
-- 5 VESPER collision nodes;
-- 12 `SYLVA_COL_*` nodes total;
-- no legacy `SYLVA_VESPER_ProxyArenaFloor` / `SYLVA_COL_VESPER_ArenaFloor`.
+This proves render signal only; human art approval remains pending.
 
-Adversarial synthetic gauntlet: **7/7 PASS**, including rejection of a simulated r4 single-floor arena export. The actual r5 GLB still requires byte recovery and execution of the validator against its exact SHA-256.
+## Reproducible build chain
 
-## Traversal scale finding
+1. `generate_sylva_macro.py`
+2. `add_sylva_macro_interfaces.py`
+3. `add_vesper_three_terraces.py`
+4. `refine_macro_terrain_r6.py`
 
-The four diagnostic route guides total **7.927 km**. Current prototype movement is 6 m/s on foot, 3 m/s guarding and 20 m/s in its generic vehicle state. Canon also specifies Sylva's `Vela de Ceniza con agarres de canopy`.
+Integration/QA:
+- `IMPORT_CONTRACT.md`
+- `validate_glb_contract.py` — r5 node contract, still applicable to r6 because r6 changes terrain data, not required node IDs.
+- `qa/GLB_CONTRACT_SELFTEST_R5.json` — 7/7 synthetic adversarial cases.
+- `qa/R5_VESPER_CANON_LAYOUT.json`
+- `qa/R6_TERRAIN_CAUSALITY.json`
+- `qa/ENGINE_IMPORT_ENV_BLOCKER.json`
 
-Interpretation: do **not** automatically compress the macro world. Future pacing should distinguish local pedestrian loops from macro vehicle/transit corridors and be validated in engine.
+## Planetary scale
 
-## Planetary-scale decision package
+`ADR-001_PLANETARY_SCALE_PROPOSAL.md` recommends Option C / 1.20 R⊕ as a reversible design proposal preserving the documented 1.12 g bulk target. It is **not canon**.
 
-Physical radius/diameter remain unapproved canon. A reversible ADR now exists:
-- `ADR-001_PLANETARY_SCALE_PROPOSAL.md`
-- `planetary_scale_options.json`
+Orbital project `c796230b-0463-4e17-9446-2e746c5c4933` remains **empty revision 0** and must not be mutated until fleet registry readback includes that project ID.
 
-Recommended proposal only: `SYL_SCALE_C_BROAD_BIOGENIC`, 1.20 R⊕, preserving the documented 1.12 g target under a spherical bulk approximation. `canonicalized=false`.
+## Fleet state
 
-A separate orbital Blender project was created **empty only**:
-`c796230b-0463-4e17-9446-2e746c5c4933` @ revision 0.
-
-It must remain unmodified until the fleet integrator adds that project ID to the active reservation. Generator exists but has not been executed: `generate_orbital_scale_proposal_c.py`.
-
-## Fleet governance
-
-- Branch incorporated `main@f78bfdc8bd7b2f6ab52b45d39babcc1589ab3918` via one-way sync PR #19.
-- Producer ACK epoch 1 posted to issue #7: comment `5648367024`.
-- Additional empty orbital project registration request: comment `5648418266`.
-- Latest readback still showed the producer claim as `reserved` / `ack:null`; producer must not mutate `ops/fleet/registry.json`.
-- Requested registry path expansion for macro manifest/r5 delivery receipts is still awaiting integrator publication.
+- branch synced with `main@f78bfdc8bd7b2f6ab52b45d39babcc1589ab3918`;
+- latest compare before r6 work: 36 ahead / 0 behind;
+- producer ACK issue #7 comment `5648367024`;
+- orbital registration request `5648418266`;
+- latest main registry still showed claim `reserved` / `ack:null`;
+- producer does not edit `ops/fleet/registry.json`.
 
 ## Open P0
 
-1. Integrator readback: claim active ACK + path expansion + orbital project ID.
-2. Recover exact r5 `.blend` + GLB into a delivery checkout.
-3. Run r5 GLB validator on exact recovered bytes and bind SHA-256.
-4. Import into pinned Godot 4.7.2/current executable runtime.
-5. Traverse Puerto → Bosque → all three VESPER terraces with normal controls/collision.
+1. Fleet integrator ACK/path/project-ID readback.
+2. Recover exact r6 `.blend` + GLB to a delivery checkout.
+3. Run GLB validator against exact recovered r6 bytes and bind SHA-256.
+4. Import into pinned Godot 4.7.2/current runtime.
+5. Traverse Puerto → Bosque → all VESPER terraces; specifically attack the 15.079° final macro route and connector transitions.
 6. Human art-direction review.
-7. Explicit creative decision before promoting any planetary radius.
+7. Explicit decision before planetary-scale promotion.
 
 ## Gates
 
 | Gate | State |
 |---|---|
-| CANON regional layout | PASS_BLOCKOUT |
-| PLANETARY SIZE | PROPOSAL_PENDING_DECISION |
-| OWNERSHIP / SHARD | PASS_LOCAL; FLEET ACK READBACK PENDING |
-| GEOMETRY / NAMESPACE / SCALE | PASS_BLOCKOUT_R5 |
-| VESPER THREE-TERRACE LAYOUT | PASS_BLOCKOUT_R5 |
-| STREAMING INTERFACE | PASS_PROPOSAL |
-| ROOT-KIT SOCKET CONTRACT | PASS |
-| COLLISION PROXY PRESENCE | PASS_BLOCKOUT |
-| GLB CONTRACT LOGIC | PASS_SELFTEST_7_OF_7 |
-| EXPORT | PASS_REMOTE_GLB |
-| EDITABLE SOURCE | PASS_REMOTE_BLEND |
-| BINARY RECOVERY | ENV_BLOCKED |
-| ART | PENDING_HUMAN_REVIEW |
-| ENGINE IMPORT | NOT_RUN |
-| GAMEPLAY TRAVERSAL / COLLISION | NOT_RUN |
-| LOD/HLOD | NOT_IMPLEMENTED |
-| PERFORMANCE | BLOCKED_TARGET_HARDWARE |
-
-## Claim
-
-`KEEP / CHECKPOINT` — materially advanced and technically coherent, but not DONE and not merge-ready as final world art.
+| Regional canon / VESPER layout | PASS_BLOCKOUT_R6 |
+| Terrain render↔collision consistency | PASS_R6 |
+| Namespace / unit transforms | PASS_R6 |
+| Root-kit ownership boundary | PASS |
+| Streaming/collision interfaces | PASS_PROPOSAL |
+| GLB contract logic | PASS_SELFTEST_7_OF_7 |
+| Remote export/editable source | PASS |
+| Binary recovery | ENV_BLOCKED |
+| Engine import/traversal | NOT_RUN |
+| Human art review | PENDING |
+| LOD/HLOD/performance | BLOCKED |
+| Planet radius canon | PROPOSAL_PENDING_DECISION |
