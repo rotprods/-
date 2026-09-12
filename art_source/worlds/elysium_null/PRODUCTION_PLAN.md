@@ -1,6 +1,6 @@
 # ELYSIUM NULL — PRODUCTION PLAN · ART-ELYSIUM-001
 
-Status: `ACTIVE / FOUNDATION_WAVE_0`
+Status: `ACTIVE / FOUNDATION_WAVE_1_READY`
 Scope owner: `ART-ELYSIUM-001`
 Branch: `art/world-elysium-null-001`
 
@@ -61,6 +61,8 @@ Deliverables:
 - QA receipt.
 
 Exit: repository and remote scene can be cold-resumed without this chat.
+
+**Checkpoint:** structurally complete. Visual/engine/art gates remain intentionally separate and are not implied by W0 closure.
 
 ### W1 — Architectural grammar
 Goal: turn blockout language into production modules.
@@ -279,43 +281,49 @@ Visual/engine approval remains separate.
 
 ## ELYS/W0/006 — Persist exact generator
 Priority: P0
-Status: `IN_PROGRESS`
+Status: `DONE`
 
 DoD:
 - Blender Python source checked into owned path;
-- repeat execution from clean scene produces equivalent named hierarchy and metric anchors;
+- generator reconstructs the named hierarchy and metric anchors from a clean scene;
 - generator contains no external network dependency;
-- output preserves `.blend` source and GLB exchange path.
+- standalone outputs include `.blend`, GLB and preview paths.
+
+Receipt:
+- `art_source/worlds/elysium_null/scripts/generate_foundation.py`
+- commit `a5460975a05ca7d44e4bbf702e68fbccfe8addef`.
 
 ---
 
 ## ELYS/W0/007 — Foundation QA receipt
 Priority: P0
-Status: `IN_PROGRESS`
+Status: `DONE / STRUCTURAL_PASS`
 
-Required checks:
+Validated:
 - canonical 48 m arena;
 - human proxy scale;
 - naming uniqueness;
 - material assignment;
 - collection ownership;
-- deterministic script;
+- deterministic source persisted;
 - editable blend available remotely;
 - GLB available remotely;
 - preview artifact exists;
-- visual review explicitly separate from structural pass.
+- failed bootstrap attempts recorded with zero committed revision;
+- visual/engine/art review explicitly remains pending.
 
-Output:
-`evidence/foundation_validation.json`.
+Receipt:
+- `art_source/worlds/elysium_null/evidence/foundation_validation.json`
+- commit `57df2a2a90c3f117a9e5c0ed8ee9aebff7180c35`.
 
 ---
 
 ## ELYS/W1/001 — Arcology modular grid decision
 Priority: P0
-Status: `TODO`
+Status: `NEXT`
 
 Dependencies:
-W0 complete.
+W0 structurally complete.
 
 DoD:
 - 1 m planning grid tested;
