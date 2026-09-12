@@ -1,0 +1,30 @@
+{
+  "bytes": 7459372,
+  "sha256": "b002bf6cfd02a37fd17de23541c28b2599c4b42f01adc49545056f37ce9a1a58",
+  "nodes": 74,
+  "meshes": 57,
+  "materials": 9,
+  "triangle_primitives": 57,
+  "indexed_or_vertex_triangles": 84926,
+  "animations": 0,
+  "scope": "GLB interchange integrity only. Native import, human art review and GPU performance separate.",
+  "passed": true,
+  "errors": [],
+  "assembly_roots": [
+    "BIO_TERRA_WitnessRoots",
+    "ENV_TERRA_CrownSpine",
+    "ENV_TERRA_Foundation_10x8",
+    "ENV_TERRA_RibPilaster_L",
+    "ENV_TERRA_RibPilaster_R",
+    "ENV_TERRA_SluiceWall_8x4",
+    "KIT_TERRA_SupplyPipe_3m",
+    "PR_TERRA_ArchiveCradle",
+    "PR_TERRA_RegulatorValve",
+    "PR_TERRA_ResonanceRegulator",
+    "PR_TERRA_ServiceConsole"
+  ],
+  "uv_primitives": 57,
+  "collision_source_meshes": 11,
+  "textured_materials": 4,
+  "embedded_images": 12
+}

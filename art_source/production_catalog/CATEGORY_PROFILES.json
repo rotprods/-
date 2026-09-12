@@ -1,0 +1,417 @@
+{
+  "schema_version": 1,
+  "status": "planned",
+  "profiles": {
+    "level": {
+      "deliverables": [
+        "escena de montaje editable y lista de instancias de módulos aprobados",
+        "capas de navegación, colisión, iluminación y encuentros",
+        "recorrido capturado con métricas y puntos de cámara"
+      ],
+      "rig": "sin esqueleto de nivel; mecanismos referencian su rig propio",
+      "lod": "celdas y distancias de carga por línea de visión; instancias y oclusión antes de duplicar geometría",
+      "collision": "colisión transitable continua; evitar colisión detallada en dressing",
+      "acceptance": [
+        "escala métrica y orientación importadas sin correcciones ad hoc",
+        "normales, tangentes, UV y triángulos sin degenerados o caras interiores accidentales",
+        "sin dependencias de red en runtime; fuente y exportación recuperables",
+        "desgaste causal, materiales legibles y calidad revisada en escena, no por número de polígonos",
+        "landmark, ruta alternativa y retorno reconocibles desde cámara de juego",
+        "recorrido completo sin cámaras atrapadas ni cambios de colisión sin anuncio"
+      ]
+    },
+    "environment": {
+      "deliverables": [
+        "fuente .blend editable con colecciones SOURCE/HIGH/EXPORT/COLLISION",
+        "GLB de intercambio; texturas empacadas o rutas relativas documentadas",
+        "UV y mapas PBR base-color, normal tangent-space, ORM y emisión si procede",
+        "ficha de dimensiones, pivote, sockets, materiales, triángulos, variantes y hashes",
+        "capturas de cerca/medio/lejos con cámara y luz declaradas; recibo de importación y revisión"
+      ],
+      "rig": "rígido; piezas móviles con pivotes separados, nunca soldadas al decorado",
+      "lod": "propuesta inicial 100/50/20% de geometría visible, conservando contorno; elegir distancias por error proyectado tras benchmark",
+      "collision": "mallas convexas/cajas separadas por módulo; suelo y escalones probados con controlador real",
+      "acceptance": [
+        "escala métrica y orientación importadas sin correcciones ad hoc",
+        "normales, tangentes, UV y triángulos sin degenerados o caras interiores accidentales",
+        "sin dependencias de red en runtime; fuente y exportación recuperables",
+        "desgaste causal, materiales legibles y calidad revisada en escena, no por número de polígonos",
+        "encaje de módulo y socket en retícula sin grietas visibles",
+        "LOD no elimina borde transitable ni señal de interacción"
+      ]
+    },
+    "props": {
+      "deliverables": [
+        "fuente .blend editable con colecciones SOURCE/HIGH/EXPORT/COLLISION",
+        "GLB de intercambio; texturas empacadas o rutas relativas documentadas",
+        "UV y mapas PBR base-color, normal tangent-space, ORM y emisión si procede",
+        "ficha de dimensiones, pivote, sockets, materiales, triángulos, variantes y hashes",
+        "capturas de cerca/medio/lejos con cámara y luz declaradas; recibo de importación y revisión"
+      ],
+      "rig": "rígido o jerarquía de bisagras si abre/gira; sockets de manos solo cuando jugable",
+      "lod": "instanciar repetidos; detalle pequeño en normal map; 3 escalas de distancia a validar",
+      "collision": "convexa simple si bloquea; sin colisión de dressing diminuto; collider de interacción separado",
+      "acceptance": [
+        "escala métrica y orientación importadas sin correcciones ad hoc",
+        "normales, tangentes, UV y triángulos sin degenerados o caras interiores accidentales",
+        "sin dependencias de red en runtime; fuente y exportación recuperables",
+        "desgaste causal, materiales legibles y calidad revisada en escena, no por número de polígonos",
+        "función y propiedad comprensibles; espacios de agarre y tapa mecánicamente posibles"
+      ]
+    },
+    "biota": {
+      "deliverables": [
+        "fuente .blend editable con colecciones SOURCE/HIGH/EXPORT/COLLISION",
+        "GLB de intercambio; texturas empacadas o rutas relativas documentadas",
+        "UV y mapas PBR base-color, normal tangent-space, ORM y emisión si procede",
+        "ficha de dimensiones, pivote, sockets, materiales, triángulos, variantes y hashes",
+        "capturas de cerca/medio/lejos con cámara y luz declaradas; recibo de importación y revisión",
+        "anatomía 3 vistas y poses extremas; ciclos si móvil"
+      ],
+      "rig": "familia anatómica declarada por especie; crecimiento estático no exige RIG_BIOTA aunque el catálogo original lo cite",
+      "lod": "LOD por silueta; reducir huesos lejanos si no altera locomoción; no clonar una anatomía para otra especie",
+      "collision": "cápsula/cajas para fauna móvil; vegetación baja sin bloqueo; hitboxes solo para interacción diseñada",
+      "acceptance": [
+        "escala métrica y orientación importadas sin correcciones ad hoc",
+        "normales, tangentes, UV y triángulos sin degenerados o caras interiores accidentales",
+        "sin dependencias de red en runtime; fuente y exportación recuperables",
+        "desgaste causal, materiales legibles y calidad revisada en escena, no por número de polígonos",
+        "función ecológica reconocible y conducta diferenciada",
+        "apoyos, pliegues y deformación sin penetraciones graves; señal de comportamiento no solo cromática"
+      ]
+    },
+    "npc": {
+      "deliverables": [
+        "fuente .blend editable con colecciones SOURCE/HIGH/EXPORT/COLLISION",
+        "GLB de intercambio; texturas empacadas o rutas relativas documentadas",
+        "UV y mapas PBR base-color, normal tangent-space, ORM y emisión si procede",
+        "ficha de dimensiones, pivote, sockets, materiales, triángulos, variantes y hashes",
+        "capturas de cerca/medio/lejos con cámara y luz declaradas; recibo de importación y revisión",
+        "rig, pesos, expresiones y sockets; ropa en poses de conversación y trabajo"
+      ],
+      "rig": "RIG_HUMAN para humanos; excepciones no humanas especificadas por ID",
+      "lod": "60–100k tri de humano cercano como banda provisional de la biblia; ajustar por cámara real y multitud",
+      "collision": "cápsula de locomoción separada de ropa/cabello; interacción de conversación fuera de la malla",
+      "acceptance": [
+        "escala métrica y orientación importadas sin correcciones ad hoc",
+        "normales, tangentes, UV y triángulos sin degenerados o caras interiores accidentales",
+        "sin dependencias de red en runtime; fuente y exportación recuperables",
+        "desgaste causal, materiales legibles y calidad revisada en escena, no por número de polígonos",
+        "identidad de frente/perfil/espalda, oficio y conflicto material visibles",
+        "cara, manos y vestuario no se degradan en plano de conversación"
+      ]
+    },
+    "enemy": {
+      "deliverables": [
+        "fuente .blend editable con colecciones SOURCE/HIGH/EXPORT/COLLISION",
+        "GLB de intercambio; texturas empacadas o rutas relativas documentadas",
+        "UV y mapas PBR base-color, normal tangent-space, ORM y emisión si procede",
+        "ficha de dimensiones, pivote, sockets, materiales, triángulos, variantes y hashes",
+        "capturas de cerca/medio/lejos con cámara y luz declaradas; recibo de importación y revisión",
+        "rig y clips con eventos de anticipación/ataque/recuperación",
+        "sockets de daño y fijación para pruebas en motor"
+      ],
+      "rig": "rig por anatomía y mecanismo de ataque; no animar directamente damage o quest flags",
+      "lod": "enemigo ordinario 20–60k tri provisional; medir tres atacantes con entorno; reducción sin perder telegraph",
+      "collision": "hit/hurtboxes explícitas y distintas de colisión locomotora; arma visual no decide daño automáticamente",
+      "acceptance": [
+        "escala métrica y orientación importadas sin correcciones ad hoc",
+        "normales, tangentes, UV y triángulos sin degenerados o caras interiores accidentales",
+        "sin dependencias de red en runtime; fuente y exportación recuperables",
+        "desgaste causal, materiales legibles y calidad revisada en escena, no por número de polígonos",
+        "leer preparación, alcance y recuperación contra fondo planetario",
+        "prueba extrema y fase de ataque bajo cámara cercana/muro/dos atacantes"
+      ]
+    },
+    "boss": {
+      "deliverables": [
+        "fuente .blend editable con colecciones SOURCE/HIGH/EXPORT/COLLISION",
+        "GLB de intercambio; texturas empacadas o rutas relativas documentadas",
+        "UV y mapas PBR base-color, normal tangent-space, ORM y emisión si procede",
+        "ficha de dimensiones, pivote, sockets, materiales, triángulos, variantes y hashes",
+        "capturas de cerca/medio/lejos con cámara y luz declaradas; recibo de importación y revisión",
+        "esqueleto/jerarquía articulada, sockets de fijación y set de ataques",
+        "separación visible de fases y zona vulnerable en plano de combate"
+      ],
+      "rig": "rig único de carga y contacto; ventanas de ataque alineadas con contrato de gameplay",
+      "lod": "ATLAS 150–300k tri provisional de biblia; otros jefes sin presupuesto aprobado; evaluar coste de huesos, sombras y materiales",
+      "collision": "cuerpo, apoyos, armas y núcleo con volúmenes explícitos; colisión de arena independiente",
+      "acceptance": [
+        "escala métrica y orientación importadas sin correcciones ad hoc",
+        "normales, tangentes, UV y triángulos sin degenerados o caras interiores accidentales",
+        "sin dependencias de red en runtime; fuente y exportación recuperables",
+        "desgaste causal, materiales legibles y calidad revisada en escena, no por número de polígonos",
+        "silueta, apoyos y eje de ataque legibles desde bajo el torso",
+        "todas las fases conservan salidas y un objetivo de fijación útil",
+        "aprobación humana de arte y sesión de rendimiento en hardware objetivo pendientes hasta recibo"
+      ]
+    },
+    "vfx": {
+      "deliverables": [
+        "gráfica/material de efectos editable en motor",
+        "mallas emisoras o atlas originales con fuente .blend cuando corresponda",
+        "tabla de inicio/duración/estado/evento y fallback de accesibilidad"
+      ],
+      "rig": "sin rig propio; sockets de origen compartidos con animación",
+      "lod": "presupuesto por cobertura en pantalla y emisores simultáneos, no por triángulos; variantes low/medium con misma señal",
+      "collision": "ninguna colisión derivada de partículas; volumen peligroso viene del gameplay",
+      "acceptance": [
+        "escala métrica y orientación importadas sin correcciones ad hoc",
+        "normales, tangentes, UV y triángulos sin degenerados o caras interiores accidentales",
+        "sin dependencias de red en runtime; fuente y exportación recuperables",
+        "desgaste causal, materiales legibles y calidad revisada en escena, no por número de polígonos",
+        "cinco familias por mundo: estado normal, activación, peligro, transición, recuperación",
+        "señal redundante de forma/sonido; bloom y transparencias no borran enemigo ni suelo"
+      ]
+    },
+    "audio": {
+      "deliverables": [
+        "sesión DAW/fuentes grabadas o síntesis editables",
+        "stems/loops PCM y eventos de motor con procedencia",
+        "mezcla/captura y ficha de loops, loudness y licencia"
+      ],
+      "rig": "no aplica; sincronía con marcadores de animación",
+      "lod": "variantes de mezcla/distancia y voces simultáneas; no LOD de malla",
+      "collision": "no aplica; fuentes espaciales referencian geometría autorizada",
+      "acceptance": [
+        "loops sin clics y transiciones de estado coherentes",
+        "prioridad de telegraphs frente a música/ambiente; subtítulos/alternativas cuando haga falta",
+        "no afirmar audio producido por disponer de una escena Blender"
+      ]
+    },
+    "minigame": {
+      "deliverables": [
+        "fuente .blend editable con colecciones SOURCE/HIGH/EXPORT/COLLISION",
+        "GLB de intercambio; texturas empacadas o rutas relativas documentadas",
+        "UV y mapas PBR base-color, normal tangent-space, ORM y emisión si procede",
+        "ficha de dimensiones, pivote, sockets, materiales, triángulos, variantes y hashes",
+        "capturas de cerca/medio/lejos con cámara y luz declaradas; recibo de importación y revisión",
+        "estados físicos y pictogramas; contrato de interacción y feedback para integrador"
+      ],
+      "rig": "pivotes mecánicos en controles; no necesita humano nuevo",
+      "lod": "conservar marcas de estado y contorno del control a distancia de interacción",
+      "collision": "zona de interacción y bloqueador separados; límites de aproximación sin atrapar cámara",
+      "acceptance": [
+        "escala métrica y orientación importadas sin correcciones ad hoc",
+        "normales, tangentes, UV y triángulos sin degenerados o caras interiores accidentales",
+        "sin dependencias de red en runtime; fuente y exportación recuperables",
+        "desgaste causal, materiales legibles y calidad revisada en escena, no por número de polígonos",
+        "cada cambio de estado es visible por posición además de color",
+        "operación asistida y repetición no duplican recompensa; ingeniería valida lógica"
+      ]
+    },
+    "weapon": {
+      "deliverables": [
+        "fuente .blend editable con colecciones SOURCE/HIGH/EXPORT/COLLISION",
+        "GLB de intercambio; texturas empacadas o rutas relativas documentadas",
+        "UV y mapas PBR base-color, normal tangent-space, ORM y emisión si procede",
+        "ficha de dimensiones, pivote, sockets, materiales, triángulos, variantes y hashes",
+        "capturas de cerca/medio/lejos con cámara y luz declaradas; recibo de importación y revisión",
+        "agarres, sockets de punta/filo, centro de giro y rango nominal"
+      ],
+      "rig": "socket(s) de mano y mecanismo solo si móvil; mismo contrato para variante",
+      "lod": "LOD conserva alcance/silueta; detalle cercano por mapa, no filigrana geométrica indiscriminada",
+      "collision": "trazas/hitboxes provienen de contrato de ataque; malla decorativa no amplía daño",
+      "acceptance": [
+        "escala métrica y orientación importadas sin correcciones ad hoc",
+        "normales, tangentes, UV y triángulos sin degenerados o caras interiores accidentales",
+        "sin dependencias de red en runtime; fuente y exportación recuperables",
+        "desgaste causal, materiales legibles y calidad revisada en escena, no por número de polígonos",
+        "manos caben en empuñadura, arma no atraviesa cuerpo en pose extrema",
+        "familia y variante reconocibles antes de leer el nombre"
+      ]
+    },
+    "vehicle": {
+      "deliverables": [
+        "fuente .blend editable con colecciones SOURCE/HIGH/EXPORT/COLLISION",
+        "GLB de intercambio; texturas empacadas o rutas relativas documentadas",
+        "UV y mapas PBR base-color, normal tangent-space, ORM y emisión si procede",
+        "ficha de dimensiones, pivote, sockets, materiales, triángulos, variantes y hashes",
+        "capturas de cerca/medio/lejos con cámara y luz declaradas; recibo de importación y revisión",
+        "interior/exterior y acceso a puestos cuando se usan",
+        "rig de suspensión/puertas/entrada-salida y puntos de cámara"
+      ],
+      "rig": "piezas rígidas articuladas; ruedas, estabilizadores, puertas y asiento según vehículo",
+      "lod": "LOD exterior/interior separados; oclusión de cabina y componentes invisibles; budgets medidos después",
+      "collision": "convexas separadas y zonas de embarque/escape; colliders de pasajeros y cámara ensayados",
+      "acceptance": [
+        "escala métrica y orientación importadas sin correcciones ad hoc",
+        "normales, tangentes, UV y triángulos sin degenerados o caras interiores accidentales",
+        "sin dependencias de red en runtime; fuente y exportación recuperables",
+        "desgaste causal, materiales legibles y calidad revisada en escena, no por número de polígonos",
+        "escala demostrada con asiento/acceso humano",
+        "trayectoria de entrada/salida y reinicio no dejan jugador atrapado; integrador valida físicas"
+      ]
+    },
+    "armor": {
+      "deliverables": [
+        "fuente .blend editable con colecciones SOURCE/HIGH/EXPORT/COLLISION",
+        "GLB de intercambio; texturas empacadas o rutas relativas documentadas",
+        "UV y mapas PBR base-color, normal tangent-space, ORM y emisión si procede",
+        "ficha de dimensiones, pivote, sockets, materiales, triángulos, variantes y hashes",
+        "capturas de cerca/medio/lejos con cámara y luz declaradas; recibo de importación y revisión",
+        "piezas por slot, ajuste sobre cuerpo base y máscara de ocultación"
+      ],
+      "rig": "mismo rig humano y sockets del héroe; partes blandas con pesos; rígidas ancladas",
+      "lod": "LOD compatible con cuerpo; piezas de facción comparten materiales/trim cuando procede",
+      "collision": "sin colisión física por cada hebilla; no extender cápsula locomotora",
+      "acceptance": [
+        "escala métrica y orientación importadas sin correcciones ad hoc",
+        "normales, tangentes, UV y triángulos sin degenerados o caras interiores accidentales",
+        "sin dependencias de red en runtime; fuente y exportación recuperables",
+        "desgaste causal, materiales legibles y calidad revisada en escena, no por número de polígonos",
+        "hombros/codos/caderas/rodillas libres en extremos y combinación de slots",
+        "clase social y función de protección legibles en silueta"
+      ]
+    },
+    "tool": {
+      "deliverables": [
+        "fuente .blend editable con colecciones SOURCE/HIGH/EXPORT/COLLISION",
+        "GLB de intercambio; texturas empacadas o rutas relativas documentadas",
+        "UV y mapas PBR base-color, normal tangent-space, ORM y emisión si procede",
+        "ficha de dimensiones, pivote, sockets, materiales, triángulos, variantes y hashes",
+        "capturas de cerca/medio/lejos con cámara y luz declaradas; recibo de importación y revisión",
+        "gesto de uso, agarres, sockets y estados de feedback"
+      ],
+      "rig": "jerarquía simple para tapas/actuadores; agarre de mano asignado",
+      "lod": "priorizar lectura del extremo funcional y control frente a detalle ornamental",
+      "collision": "detector de uso separado; no bloquear navegación por piezas pequeñas",
+      "acceptance": [
+        "escala métrica y orientación importadas sin correcciones ad hoc",
+        "normales, tangentes, UV y triángulos sin degenerados o caras interiores accidentales",
+        "sin dependencias de red en runtime; fuente y exportación recuperables",
+        "desgaste causal, materiales legibles y calidad revisada en escena, no por número de polígonos",
+        "interacción comprensible sin texto diminuto; identidad distinta a un arma"
+      ]
+    },
+    "character": {
+      "deliverables": [
+        "fuente .blend editable con colecciones SOURCE/HIGH/EXPORT/COLLISION",
+        "GLB de intercambio; texturas empacadas o rutas relativas documentadas",
+        "UV y mapas PBR base-color, normal tangent-space, ORM y emisión si procede",
+        "ficha de dimensiones, pivote, sockets, materiales, triángulos, variantes y hashes",
+        "capturas de cerca/medio/lejos con cámara y luz declaradas; recibo de importación y revisión",
+        "anatomía base, rig, sockets, pesos, poses extremas y variaciones compatibles"
+      ],
+      "rig": "RIG_HUMAN estable; protagonista con relicario de pecho y apariencia configurable",
+      "lod": "base hero 60–100k tri provisional; multitud requiere presupuesto específico inferior y reducción de huesos",
+      "collision": "cápsula independiente del mesh y hitboxes separadas",
+      "acceptance": [
+        "escala métrica y orientación importadas sin correcciones ad hoc",
+        "normales, tangentes, UV y triángulos sin degenerados o caras interiores accidentales",
+        "sin dependencias de red en runtime; fuente y exportación recuperables",
+        "desgaste causal, materiales legibles y calidad revisada en escena, no por número de polígonos",
+        "ropa y armas de familias compatibles sin cambiar anatomía base",
+        "silueta y proporción humana consistentes en todas las vistas"
+      ]
+    },
+    "vegetation": {
+      "deliverables": [
+        "fuente .blend editable con colecciones SOURCE/HIGH/EXPORT/COLLISION",
+        "GLB de intercambio; texturas empacadas o rutas relativas documentadas",
+        "UV y mapas PBR base-color, normal tangent-space, ORM y emisión si procede",
+        "ficha de dimensiones, pivote, sockets, materiales, triángulos, variantes y hashes",
+        "capturas de cerca/medio/lejos con cámara y luz declaradas; recibo de importación y revisión",
+        "gramática de distribución y familias de viento"
+      ],
+      "rig": "sin rig obligatorio; viento por vértice/huesos solo si el motor lo soporta y se mide",
+      "lod": "geometría cercana, tarjetas lejanas o densidad reducida; comparar overdraw y sombras",
+      "collision": "solo troncos/masas que bloqueen; relleno no obstaculiza cámara",
+      "acceptance": [
+        "escala métrica y orientación importadas sin correcciones ad hoc",
+        "normales, tangentes, UV y triángulos sin degenerados o caras interiores accidentales",
+        "sin dependencias de red en runtime; fuente y exportación recuperables",
+        "desgaste causal, materiales legibles y calidad revisada en escena, no por número de polígonos",
+        "variantes por parentesco/ecología, no ruido aleatorio",
+        "silueta con cámara de juego y movimiento sin vibración de texturas"
+      ]
+    },
+    "materials": {
+      "deliverables": [
+        "biblioteca .blend editable de materiales y muestras calibradas",
+        "texturas PBR horneadas y presets portables; fuente de bake",
+        "tabla de color space, texel density, packing, roughness y hashes"
+      ],
+      "rig": "no aplica",
+      "lod": "mips y tamaños de textura; shader de intercambio sencillo y capa avanzada del motor por separado",
+      "collision": "no aplica",
+      "acceptance": [
+        "metalness físicamente coherente y roughness sin brillo plástico uniforme",
+        "referencia luz neutra y escena de juego; bake contrastado con fuente procedural",
+        "UV medidos; 512 px/m entorno y 1024 px/m props de mano son hipótesis iniciales, no gates de hardware"
+      ]
+    },
+    "animation": {
+      "deliverables": [
+        "fuente .blend con rig/controladores y acciones nombradas",
+        "GLB/acciones exportadas y tabla fps/rango/root motion/contactos",
+        "captura de reproducción dentro del motor"
+      ],
+      "rig": "biblioteca enlazada a rig canónico; no retarget sin prueba de contactos",
+      "lod": "reducción de keys/huesos cuando conserve evento y contacto; LOD de animación medido",
+      "collision": "colisión no horneada; eventos de gameplay tienen contrato separado",
+      "acceptance": [
+        "pies/manos sin deslizamiento visible en clips representativos",
+        "anticipación/impacto/recuperación coinciden con marcadores; frame rate declarado",
+        "cantidad de clips del catálogo es objetivo, no evidencia de producción"
+      ]
+    },
+    "ui": {
+      "deliverables": [
+        "fuentes vectoriales/layouts editables e iconos",
+        "recursos de motor con estados teclado/ratón/mando",
+        "capturas a resoluciones/escala de UI y checklist de navegación"
+      ],
+      "rig": "no aplica",
+      "lod": "variantes de resolución/vector; no LOD de malla",
+      "collision": "no aplica",
+      "acceptance": [
+        "texto legible y controles remapeados representados correctamente",
+        "color redundante con forma/texto; foco y navegación accesibles",
+        "Blender solo puede aportar objeto/render auxiliar, no cerrar esta disciplina"
+      ]
+    },
+    "narrative": {
+      "deliverables": [
+        "documentos de canon y tabla localizable con IDs",
+        "estados de misión, procedencia y control de versiones",
+        "matriz de condiciones/contradicciones y revisión de lectura"
+      ],
+      "rig": "no aplica",
+      "lod": "no aplica",
+      "collision": "no aplica",
+      "acceptance": [
+        "coherencia con doce mundos y decisiones; no promover texto propuesto como diálogo grabado",
+        "IDs estables y referencias de misión verificadas; arte ilustra sin modificar canon"
+      ]
+    },
+    "system": {
+      "deliverables": [
+        "contrato técnico y recursos de referencia para arte",
+        "interfaz y ejemplos de integración verificables por ingeniería",
+        "recibo de prueba correspondiente al sistema"
+      ],
+      "rig": "según contrato; el catálogo de arte no reemplaza implementación",
+      "lod": "según sistema y hardware declarado",
+      "collision": "según sistema; probado con recursos de referencia",
+      "acceptance": [
+        "responsable de gameplay/ingeniería acepta la interfaz sin sobrescribir su trabajo",
+        "no cerrar un sistema porque su brief artístico exista",
+        "runtime offline y datos versionados"
+      ]
+    }
+  },
+  "shared_delivery_rules": {
+    "axis": "Blender +Z arriba, metros; export glTF +Y arriba mediante exportador. Validar referencia 1 m y humano de 1,85 m.",
+    "naming": "IDs estables, nombres semánticos; colecciones fuente separadas de exportación y colisión.",
+    "textures": "base-color/emisión sRGB; normal/ORM datos lineales; normales tangentes y canal verde verificado al importar. Texturas baked para GLB, sin suponer equivalencia de shaders procedurales.",
+    "production_claim": "AAAA+ es ambición visual. No categoría certificada ni gate superado. planned no entrega modelos ni demuestra hiperrealismo.",
+    "acceptance_order": [
+      "dirección y proporción",
+      "geometría/UV/materiales",
+      "rig y animación si aplica",
+      "colisión/LOD/importación",
+      "revisión humana y rendimiento objetivo"
+    ]
+  }
+}

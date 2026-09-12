@@ -1,0 +1,205 @@
+{
+  "schema_version": 1,
+  "authority": "Art workstream projection; canonical campaign graph is _project_intelligence/graph.json",
+  "nodes": [
+    {
+      "id": "BIO_TERRA_WitnessRoots",
+      "type": "asset_candidate",
+      "catalog_parent": "BIO_terra_4",
+      "status": "candidate_locally_validated",
+      "source": "delivery.json"
+    },
+    {
+      "id": "ENV_TERRA_CrownSpine",
+      "type": "asset_candidate",
+      "catalog_parent": "KIT_terra",
+      "status": "candidate_locally_validated",
+      "source": "delivery.json"
+    },
+    {
+      "id": "ENV_TERRA_Foundation_10x8",
+      "type": "asset_candidate",
+      "catalog_parent": "KIT_terra",
+      "status": "candidate_locally_validated",
+      "source": "delivery.json"
+    },
+    {
+      "id": "ENV_TERRA_RibPilaster_L",
+      "type": "asset_candidate",
+      "catalog_parent": "KIT_terra",
+      "status": "candidate_locally_validated",
+      "source": "delivery.json"
+    },
+    {
+      "id": "ENV_TERRA_RibPilaster_R",
+      "type": "asset_candidate",
+      "catalog_parent": "KIT_terra",
+      "status": "candidate_locally_validated",
+      "source": "delivery.json"
+    },
+    {
+      "id": "ENV_TERRA_SluiceWall_8x4",
+      "type": "asset_candidate",
+      "catalog_parent": "KIT_terra",
+      "status": "candidate_locally_validated",
+      "source": "delivery.json"
+    },
+    {
+      "id": "KIT_TERRA_SupplyPipe_3m",
+      "type": "asset_candidate",
+      "catalog_parent": "KIT_terra",
+      "status": "candidate_locally_validated",
+      "source": "delivery.json"
+    },
+    {
+      "id": "PR_TERRA_ArchiveCradle",
+      "type": "asset_candidate",
+      "catalog_parent": "PROPS_terra",
+      "status": "candidate_locally_validated",
+      "source": "delivery.json"
+    },
+    {
+      "id": "PR_TERRA_RegulatorValve",
+      "type": "asset_candidate",
+      "catalog_parent": "MINI_terra",
+      "status": "candidate_locally_validated",
+      "source": "delivery.json"
+    },
+    {
+      "id": "PR_TERRA_ResonanceRegulator",
+      "type": "asset_candidate",
+      "catalog_parent": "MINI_terra",
+      "status": "candidate_locally_validated",
+      "source": "delivery.json"
+    },
+    {
+      "id": "PR_TERRA_ServiceConsole",
+      "type": "asset_candidate",
+      "catalog_parent": "PROPS_terra",
+      "status": "candidate_locally_validated",
+      "source": "delivery.json"
+    },
+    {
+      "id": "EXO-006-ART-001",
+      "type": "workunit",
+      "status": "checkpoint"
+    },
+    {
+      "id": "ART_REVIEW",
+      "type": "gate",
+      "status": "pending"
+    }
+  ],
+  "edges": [
+    {
+      "source": "EXO-006-ART-001",
+      "target": "BIO_TERRA_WitnessRoots",
+      "type": "PRODUCES_CANDIDATE"
+    },
+    {
+      "source": "EXO-006-ART-001",
+      "target": "ENV_TERRA_CrownSpine",
+      "type": "PRODUCES_CANDIDATE"
+    },
+    {
+      "source": "EXO-006-ART-001",
+      "target": "ENV_TERRA_Foundation_10x8",
+      "type": "PRODUCES_CANDIDATE"
+    },
+    {
+      "source": "EXO-006-ART-001",
+      "target": "ENV_TERRA_RibPilaster_L",
+      "type": "PRODUCES_CANDIDATE"
+    },
+    {
+      "source": "EXO-006-ART-001",
+      "target": "ENV_TERRA_RibPilaster_R",
+      "type": "PRODUCES_CANDIDATE"
+    },
+    {
+      "source": "EXO-006-ART-001",
+      "target": "ENV_TERRA_SluiceWall_8x4",
+      "type": "PRODUCES_CANDIDATE"
+    },
+    {
+      "source": "EXO-006-ART-001",
+      "target": "KIT_TERRA_SupplyPipe_3m",
+      "type": "PRODUCES_CANDIDATE"
+    },
+    {
+      "source": "EXO-006-ART-001",
+      "target": "PR_TERRA_ArchiveCradle",
+      "type": "PRODUCES_CANDIDATE"
+    },
+    {
+      "source": "EXO-006-ART-001",
+      "target": "PR_TERRA_RegulatorValve",
+      "type": "PRODUCES_CANDIDATE"
+    },
+    {
+      "source": "EXO-006-ART-001",
+      "target": "PR_TERRA_ResonanceRegulator",
+      "type": "PRODUCES_CANDIDATE"
+    },
+    {
+      "source": "EXO-006-ART-001",
+      "target": "PR_TERRA_ServiceConsole",
+      "type": "PRODUCES_CANDIDATE"
+    },
+    {
+      "source": "BIO_TERRA_WitnessRoots",
+      "target": "ART_REVIEW",
+      "type": "REQUIRES"
+    },
+    {
+      "source": "ENV_TERRA_CrownSpine",
+      "target": "ART_REVIEW",
+      "type": "REQUIRES"
+    },
+    {
+      "source": "ENV_TERRA_Foundation_10x8",
+      "target": "ART_REVIEW",
+      "type": "REQUIRES"
+    },
+    {
+      "source": "ENV_TERRA_RibPilaster_L",
+      "target": "ART_REVIEW",
+      "type": "REQUIRES"
+    },
+    {
+      "source": "ENV_TERRA_RibPilaster_R",
+      "target": "ART_REVIEW",
+      "type": "REQUIRES"
+    },
+    {
+      "source": "ENV_TERRA_SluiceWall_8x4",
+      "target": "ART_REVIEW",
+      "type": "REQUIRES"
+    },
+    {
+      "source": "KIT_TERRA_SupplyPipe_3m",
+      "target": "ART_REVIEW",
+      "type": "REQUIRES"
+    },
+    {
+      "source": "PR_TERRA_ArchiveCradle",
+      "target": "ART_REVIEW",
+      "type": "REQUIRES"
+    },
+    {
+      "source": "PR_TERRA_RegulatorValve",
+      "target": "ART_REVIEW",
+      "type": "REQUIRES"
+    },
+    {
+      "source": "PR_TERRA_ResonanceRegulator",
+      "target": "ART_REVIEW",
+      "type": "REQUIRES"
+    },
+    {
+      "source": "PR_TERRA_ServiceConsole",
+      "target": "ART_REVIEW",
+      "type": "REQUIRES"
+    }
+  ]
+}

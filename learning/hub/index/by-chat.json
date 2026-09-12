@@ -3,6 +3,9 @@
     "agents/codex-root/chats/EXO-004-INPUT-001/events/LRN-EXO-20260912-INPUT-BOUNDARY.json",
     "agents/codex-root/chats/EXO-004-INPUT-001/events/LRN-EXO-20260912-INPUT-PREFERENCES.json"
   ],
+  "EXO-006-ART-001": [
+    "agents/codex-root/chats/EXO-006-ART-001/events/LRN-EXO-20260912-ART-INTERCHANGE.json"
+  ],
   "INFRA-005-CONTRACT": [
     "agents/codex-root/chats/INFRA-005-CONTRACT/events/LRN-EXO-20260912-CI-BOOTSTRAP-VERIFIED.json",
     "agents/codex-root/chats/INFRA-005-CONTRACT/events/LRN-EXO-20260912-CI-BOOTSTRAP.json"

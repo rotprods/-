@@ -1,0 +1,23 @@
+diff --git a/scripts/world.gd b/scripts/world.gd
+index 11bab11..daacafd 100644
+--- a/scripts/world.gd
++++ b/scripts/world.gd
+@@ -156,7 +156,9 @@ func register(id: String, label: String, pos: Vector3, radius: float = 3.0) -> v
+ 	interactables.append({"id":id,"label":label,"position":pos,"radius":radius})
+ 
+ func configure_input() -> void:
+-	if "--test-input" in OS.get_cmdline_user_args():
++	if "--test-route" in OS.get_cmdline_user_args():
++		controls = Controls.new("user://exovant-test-route-controls.json")
++	elif "--test-input" in OS.get_cmdline_user_args():
+ 		controls = Controls.new("user://exovant-test-input-controls.json")
+ 	elif "--test-world" in OS.get_cmdline_user_args():
+ 		controls = Controls.new("user://exovant-test-world-controls.json")
+@@ -167,6 +169,7 @@ func _ready() -> void:
+ 	capture_mode = "--capture" in OS.get_cmdline_user_args()
+ 	if "--test-world" in OS.get_cmdline_user_args(): storage = SaveStore.new("user://exovant-test-world.json")
+ 	if "--test-input" in OS.get_cmdline_user_args(): storage = SaveStore.new("user://exovant-test-input.json")
++	if "--test-route" in OS.get_cmdline_user_args(): storage = SaveStore.new("user://exovant-test-route.json")
+ 	var saved := storage.load_game()
+ 	if not saved.is_empty(): progress.restore(saved)
+ 	build_environment()

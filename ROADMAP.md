@@ -16,7 +16,7 @@
 | INFRA-005 Base operativa recuperable y proyecciones conectadas | P0 |  | in_review |
 | EXO-004 Complete playability route, input and guidance | P1 |  | in_review |
 | EXO-005 Player combat and animation pass | P2 | EXO-004 | planned |
-| EXO-006 Portal asset production pass | P2 |  | planned |
+| EXO-006 Portal asset production pass | P2 |  | in_review |
 | EXO-007 Terra art direction proof | P2 | EXO-004, EXO-006 | planned |
 | EXO-008 ATLAS authored encounter | P2 | EXO-005, EXO-007 | planned |
 | EXO-009 Archive route alternatives | P2 | EXO-004 | planned |

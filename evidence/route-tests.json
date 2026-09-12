@@ -1,0 +1,41 @@
+{
+  "attack_inputs": 0,
+  "boss_phases_observed": [],
+  "dodge_inputs": 99,
+  "failed": 1,
+  "healing_inputs": 0,
+  "milestones": [
+    {
+      "flags": {},
+      "flasks": 3,
+      "health": 100.0,
+      "id": "fresh_spawn",
+      "memories": 0,
+      "position": "(0.0, -0.02, 18.0)",
+      "stamina": 100.0,
+      "tick": 23
+    },
+    {
+      "flags": {
+        "met_ines": true
+      },
+      "flasks": 3,
+      "health": 100.0,
+      "id": "ines",
+      "memories": 100,
+      "position": "(4.668021, -0.024141, 15.04273)",
+      "stamina": 100.0,
+      "tick": 181
+    },
+    {
+      "failure": "Combat did not resolve: custodian_0",
+      "position": "(26.95768, -0.024059, 25.42709)",
+      "tick": 12325
+    }
+  ],
+  "passed": 3,
+  "physics_frames": 12325,
+  "physics_hz": 60,
+  "scope": "Automated scene-aware driver with synthetic InputEvents; no state/health/damage/transform injection. Normal death and save-load relocation are allowed. Not a human playtest or a hardware/feel benchmark.",
+  "suite": "fresh_terra_route"
+}

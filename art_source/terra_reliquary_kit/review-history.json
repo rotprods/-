@@ -1,0 +1,62 @@
+{
+  "run": "EXO-006-ART-001",
+  "iterations": [
+    {
+      "revision": 1,
+      "check": "GLB + native Godot import",
+      "result": "failed",
+      "cause": "Presentation ground lacks UV0. Four PBR texture families survive import.",
+      "correction": "refine_delivery.py adds ground UV and separates valve and collision"
+    },
+    {
+      "revision": 1,
+      "check": "1200x850 remote Eevee render",
+      "result": "timed_out",
+      "provider_code": "EXECUTION_TIMEOUT",
+      "provider_limit_ms": 300000,
+      "correction": "Reconcile settled project, inspect settings, lower samples/resolution; do not repeat identical expensive render."
+    },
+    {
+      "revision": 2,
+      "check": "Eevee640x452 / native import",
+      "result": "passed_with_visual_findings",
+      "findings": [
+        "Pedestal underside not contacting presentation ground",
+        "Valve split into independent pivot; 11 collision sources recognized in Godot"
+      ]
+    },
+    {
+      "revision": 3,
+      "check": "Eevee close-up",
+      "result": "needs_normal_correction",
+      "findings": [
+        "Cylinders visibly faceted",
+        "Gauge and repair plates present",
+        "Fix using smooth normals and 35 degree hard edges, preserving geometry"
+      ]
+    },
+    {
+      "revision": 3,
+      "check": "Isolated Godot visual render",
+      "result": "blocked_display",
+      "error": "Xvfb could not establish listening sockets; Godot X11 unavailable",
+      "recovery": "Use a functioning local display or review on target host. Headless import/physics gates work; remote Blender renders work."
+    },
+    {
+      "revision": 4,
+      "check": "Blender delivery/close-up + actual Godot import and floor ray",
+      "result": "passed_with_production_limitations",
+      "findings": [
+        "Cylindrical normals smoother; construction edges remain sharp",
+        "Ground contact corrected",
+        "46 native render mesh surfaces and 11 collision shapes; PBR maps preserved"
+      ],
+      "pending": [
+        "human art review",
+        "target GPU",
+        "Godot visual capture display recovery",
+        "UV2 and authored LOD transition review"
+      ]
+    }
+  ]
+}

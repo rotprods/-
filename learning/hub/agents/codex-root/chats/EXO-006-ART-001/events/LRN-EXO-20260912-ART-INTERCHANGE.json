@@ -1,0 +1,83 @@
+{
+  "_meta": {
+    "content_digest": "f6a9b2df6e42e3accbf200b7477e419c291c3c41937532f512fb8706b029c4b6",
+    "persisted_at": "2026-09-12T19:29:01.023969Z"
+  },
+  "analysis": {
+    "confidence": 0.94,
+    "family_or_pattern": "asset_interchange_and_visual_acceptance",
+    "generalization_boundary": "This Terra kit in Blender5.2/Godot4.7.2; no universal artistic or hardware approval",
+    "mechanism": "Run separate geometry, material portability, physical import and visual checks. Preserve sources, isolate moving subparts and reduce render cost after reconciling provider timeout. Mark hard-edge normals intentionally rather than adding polygons.",
+    "non_applicable_cases": [
+      "Unobserved Unreal import",
+      "Human facial topology/skin rigs"
+    ],
+    "symptom": "Successful Blender export did not ensure presentation UV or smooth close-up normals; high-sample render timed out"
+  },
+  "authority_after": "L2-persisted",
+  "authority_before": "L1-retrieved",
+  "event_class": "correction",
+  "evidence": [
+    {
+      "claim": "Packed PBR maps and 11 collision proxies survive actual Godot import; floor ray passes",
+      "kind": "test",
+      "ref": "art_source/terra_reliquary_kit/native-asset-check.json"
+    },
+    {
+      "claim": "Render timeout, missing UV and faceting identified; bounded corrections recorded",
+      "kind": "log",
+      "ref": "art_source/terra_reliquary_kit/review-history.json"
+    }
+  ],
+  "knowledge_relation": {
+    "relation": "EXTENDS",
+    "targets": [
+      "LRN-EXO-20260912-ART",
+      "LRN-EXO-20260912-BLENDER",
+      "LRN-EXO-20260912-COLLISION"
+    ]
+  },
+  "learning_id": "LRN-EXO-20260912-ART-INTERCHANGE",
+  "promotion": {
+    "reason": "Repeat native import/UV/material/collision checks on later art deliveries",
+    "target_ref": "art_source/terra_reliquary_kit/native_asset_check.gd",
+    "target_type": "test"
+  },
+  "provenance": {
+    "agent_id": "codex-root",
+    "chat_id": "EXO-006-ART-001",
+    "chat_id_source": "session-alias",
+    "run_id": "EXO-006-ART-001"
+  },
+  "revalidation_condition": "Changed model, exporter, engine, texture pipeline or target hardware",
+  "scope": {
+    "artifacts": [
+      "art_source/terra_reliquary_kit"
+    ],
+    "level": "project",
+    "project": "EXOVANT 2950",
+    "repository": "rotprods/-"
+  },
+  "status": "persisted",
+  "timestamp": "2026-09-12T19:29:00.949874+00:00",
+  "unknowns": [
+    "Human approval",
+    "Target GPU cost",
+    "Adoption by external agent"
+  ],
+  "verification": {
+    "adversarial_review": {
+      "evidence_ref": "art_source/terra_reliquary_kit/review-history.json",
+      "notes": "Missing presentation UV, display failure, timeout, flat cylindrical normals and floating plinth were separated from artistic approval",
+      "status": "pass"
+    },
+    "anti_recurrence_control": "art_source/terra_reliquary_kit/audit_candidate.py",
+    "retrieval_test": {
+      "status": "pending"
+    },
+    "runtime_test": {
+      "evidence_ref": "art_source/terra_reliquary_kit/native-asset-check.json",
+      "status": "pass"
+    }
+  }
+}

@@ -4135,6 +4135,15 @@
       "artifact_path": "learning/hub/agents/codex-root/chats/EXO-004-INPUT-001/events/LRN-EXO-20260912-INPUT-PREFERENCES.json"
     },
     {
+      "id": "LRN-EXO-20260912-ART-INTERCHANGE",
+      "type": "learning",
+      "label": "asset_interchange_and_visual_acceptance",
+      "epistemic": "fact",
+      "status": "persisted",
+      "provenance": "learning/hub/agents/codex-root/chats/EXO-006-ART-001/events/LRN-EXO-20260912-ART-INTERCHANGE.json",
+      "artifact_path": "learning/hub/agents/codex-root/chats/EXO-006-ART-001/events/LRN-EXO-20260912-ART-INTERCHANGE.json"
+    },
+    {
       "id": "LRN-EXO-20260912-CI-BOOTSTRAP-VERIFIED",
       "type": "learning",
       "label": "unqualified_dependency_bootstrap",
@@ -4346,7 +4355,7 @@
       "type": "workunit",
       "label": "Portal asset production pass",
       "epistemic": "proposal",
-      "status": "planned",
+      "status": "in_review",
       "provenance": "_project_intelligence/PLAN.json",
       "artifact_path": "_project_intelligence/PLAN.json"
     },
@@ -7532,6 +7541,18 @@
     {
       "id": "LRN-EXO-20260912-INPUT-PREFERENCES::CHECKED_BY::governance",
       "source": "LRN-EXO-20260912-INPUT-PREFERENCES",
+      "target": "governance",
+      "type": "CHECKED_BY"
+    },
+    {
+      "id": "project:exovant::LEARNS::LRN-EXO-20260912-ART-INTERCHANGE",
+      "source": "project:exovant",
+      "target": "LRN-EXO-20260912-ART-INTERCHANGE",
+      "type": "LEARNS"
+    },
+    {
+      "id": "LRN-EXO-20260912-ART-INTERCHANGE::CHECKED_BY::governance",
+      "source": "LRN-EXO-20260912-ART-INTERCHANGE",
       "target": "governance",
       "type": "CHECKED_BY"
     },

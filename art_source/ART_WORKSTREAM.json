@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "scope": "Blender asset workstream only",
+  "north_star": "Original coherent physically credible EXOVANT assets that read in third-person combat and preserve editable sources across all twelve worlds",
+  "branch": "art/terra-reliquary-kit-001",
+  "canonical_campaign_state": "_project_intelligence/STATE.json",
+  "checkpoints": [
+    {
+      "id": "ART-CATALOG-001",
+      "goal": "All original asset rows have a production brief",
+      "status": "locally_validated",
+      "evidence": "production_catalog/COVERAGE_EVIDENCE.json"
+    },
+    {
+      "id": "ART-KIT-001",
+      "goal": "Representative Terra source, portable material and physical candidate",
+      "status": "checkpoint",
+      "evidence": "terra_reliquary_kit/delivery.json"
+    },
+    {
+      "id": "ART-KIT-002",
+      "goal": "Approve wear/UV/LOD and interaction clearance under gameplay camera",
+      "status": "planned",
+      "done_when": [
+        "human art approval",
+        "actual game-camera views",
+        "LOD transitions reviewed",
+        "target frame-time/memory recorded"
+      ]
+    },
+    {
+      "id": "ART-TERRA-CHAR-001",
+      "goal": "Ines, custodian, avatar and ATLAS hero topology/rig/animation",
+      "status": "planned",
+      "done_when": [
+        "silhouettes reviewed",
+        "deformation test",
+        "combat telegraph and sockets",
+        "textures and performance approved"
+      ]
+    },
+    {
+      "id": "ART-WORLDS-002-012",
+      "goal": "Produce remaining world-specific kits following qualified patterns",
+      "status": "planned",
+      "done_when": [
+        "all per-row contracts met",
+        "regions integrated",
+        "human art and hardware gates met"
+      ]
+    }
+  ],
+  "iteration_protocol": [
+    "inspect source and ownership",
+    "reserve one scoped unit",
+    "model and preserve source",
+    "export and attack anomalies",
+    "native import/material/collision",
+    "visual review",
+    "checkpoint and handoff"
+  ],
+  "pauses": [
+    "conflicting writer ownership",
+    "unknown paid generation budget",
+    "human or hardware gate required for done"
+  ],
+  "schedule": "Weeks-scale production roadmap; dates and throughput uncommitted until representative kit productivity and reviews measured",
+  "task_lists": "production_catalog/ASSET_MANIFEST.json and CATEGORY_PROFILES.json"
+}
