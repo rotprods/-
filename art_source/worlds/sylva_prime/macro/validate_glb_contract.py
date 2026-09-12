@@ -7,6 +7,7 @@ import. It does NOT validate visual art, physics behavior, gameplay traversal or
 Usage:
     python3 validate_glb_contract.py path/to/sylva.glb
     python3 validate_glb_contract.py path/to/sylva.glb --expected-sha256 HASH --json-out report.json
+    python3 validate_glb_contract.py --self-test
 """
 from __future__ import annotations
 
@@ -15,6 +16,7 @@ import hashlib
 import json
 import struct
 import sys
+import tempfile
 from collections import Counter
 from pathlib import Path
 
@@ -194,13 +196,108 @@ def validate(doc: dict, meta: dict, strict_namespace: bool = True) -> dict:
     }
 
 
+def _synthetic_names() -> list[str]:
+    names = set(EXPECTED_EXACT)
+    names.update(f"SYLVA_STREAM_L3_X{x}Y{y}" for x in range(4) for y in range(4))
+    names.update(f"SYLVA_SOCKET_TEST_{i:02d}" for i in range(8))
+    names.update(f"SYLVA_COL_ROUTE_{i:02d}" for i in range(4))
+    names.update(f"SYLVA_TRAV_PathGuide_{i:02d}" for i in range(4))
+    names.update(f"SYLVA_ROOT_PRIMARY_R{i:02d}" for i in range(1, 7))
+    names.update(f"SYLVA_ROOT_SECONDARY_{i:02d}" for i in range(8))
+    return sorted(names)
+
+
+def _write_synthetic_glb(path: Path, names: list[str]) -> None:
+    doc = {
+        "asset": {"version": "2.0", "generator": "SYLVA_CONTRACT_SELF_TEST"},
+        "scene": 0,
+        "scenes": [{"nodes": list(range(len(names)))}],
+        "nodes": [{"name": name} for name in names],
+        "meshes": [{"name": "SYLVA_SELFTEST_MESH", "primitives": []}],
+        "materials": [{"name": "SYLVA_SELFTEST_MAT"}],
+    }
+    body = json.dumps(doc, separators=(",", ":"), ensure_ascii=False).encode("utf-8")
+    body += b" " * ((4 - len(body) % 4) % 4)
+    chunk = struct.pack("<II", len(body), JSON_CHUNK) + body
+    data = struct.pack("<4sII", MAGIC, GLB_VERSION, 12 + len(chunk)) + chunk
+    path.write_bytes(data)
+
+
+def self_test() -> dict:
+    cases: dict[str, bool] = {}
+    details: dict[str, object] = {}
+    with tempfile.TemporaryDirectory(prefix="sylva-glb-contract-") as tmp:
+        root = Path(tmp)
+        valid_path = root / "valid.glb"
+        valid_names = _synthetic_names()
+        _write_synthetic_glb(valid_path, valid_names)
+        doc, meta = read_glb(valid_path)
+        valid_report = validate(doc, meta)
+        cases["valid_contract_passes"] = valid_report["passed"] is True
+        details["valid_prefix_counts"] = valid_report["prefix_counts"]
+
+        missing_socket = root / "missing-socket.glb"
+        _write_synthetic_glb(missing_socket, [n for n in valid_names if n != "SYLVA_SOCKET_TEST_07"])
+        doc2, meta2 = read_glb(missing_socket)
+        report2 = validate(doc2, meta2)
+        cases["missing_socket_fails"] = report2["passed"] is False and "SYLVA_SOCKET_" in report2["bad_prefix_counts"]
+
+        foreign = root / "foreign.glb"
+        _write_synthetic_glb(foreign, valid_names + ["OTHER_WORLD_NODE"])
+        doc3, meta3 = read_glb(foreign)
+        report3 = validate(doc3, meta3)
+        cases["foreign_namespace_fails"] = report3["passed"] is False and "OTHER_WORLD_NODE" in report3["namespace_violations"]
+
+        provider = root / "provider-dup.glb"
+        provider_name = sorted(FORBIDDEN_PROVIDER_NODE_NAMES)[0]
+        _write_synthetic_glb(provider, valid_names + [provider_name])
+        doc4, meta4 = read_glb(provider)
+        report4 = validate(doc4, meta4)
+        cases["provider_duplication_fails"] = report4["passed"] is False and provider_name in report4["forbidden_provider_nodes"]
+
+        corrupt = root / "corrupt.glb"
+        corrupt.write_bytes(b"not-a-glb")
+        try:
+            read_glb(corrupt)
+            corrupt_failed = False
+        except ValueError:
+            corrupt_failed = True
+        cases["corrupt_header_fails"] = corrupt_failed
+
+        expected = "0" * 64
+        cases["sha_mismatch_detected"] = sha256_file(valid_path) != expected
+
+    passed = all(cases.values())
+    return {
+        "schema_version": 1,
+        "contract": "CLM-SYLVA-MACRO-001/R4",
+        "self_test_passed": passed,
+        "cases": cases,
+        "details": details,
+        "note": "Synthetic transport/contract tests only; actual r4 GLB still requires binary recovery and execution.",
+    }
+
+
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser()
-    parser.add_argument("glb", type=Path)
+    parser.add_argument("glb", type=Path, nargs="?")
     parser.add_argument("--expected-sha256")
     parser.add_argument("--json-out", type=Path)
     parser.add_argument("--allow-non-sylva-nodes", action="store_true")
+    parser.add_argument("--self-test", action="store_true")
     args = parser.parse_args(argv)
+
+    if args.self_test:
+        report = self_test()
+        encoded = json.dumps(report, ensure_ascii=False, indent=2, sort_keys=True) + "\n"
+        if args.json_out:
+            args.json_out.parent.mkdir(parents=True, exist_ok=True)
+            args.json_out.write_text(encoded, encoding="utf-8")
+        sys.stdout.write(encoded)
+        return 0 if report["self_test_passed"] else 1
+
+    if args.glb is None:
+        parser.error("glb is required unless --self-test is used")
 
     report: dict
     try:
