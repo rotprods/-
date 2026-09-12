@@ -1,0 +1,99 @@
+claim_id: CLM-SYLVA-MACRO-001
+agent_id: AGENT-SYLVA-MACRO-01
+session_id: 20260912-SYLVA-MACRO-001
+scope_key: world-sylva/world-macro-terrain-regional-foundation
+world_id: sylva
+world_name: SYLVA PRIME
+domain: world_macro_terrain
+subdomain: regional_foundation
+status: CLAIMED
+priority: P0
+branch: art/world-sylva-prime-macro-001
+base_branch: main
+base_sha: 4c2fa044080004609ea6df45f34b2a784536507a
+created_at: 2026-09-12T21:10:00+02:00
+last_heartbeat: 2026-09-12T21:10:00+02:00
+
+north_star: >-
+  Deliver the metric-scale, reproducible spatial foundation for SYLVA PRIME: canonical regions,
+  macro terrain/root structure, readable traversal corridors, landmark silhouettes and technical
+  interfaces for later terrain, architecture, ecology and encounter teams, without inventing
+  unresolved planetary canon.
+
+includes:
+  - local metric coordinate convention for the authored Sylva foundation
+  - macro terrain/root-network blockout
+  - Puerto del Injerto regional foundation
+  - Bosque de las Frases regional foundation
+  - Camara de VESPER regional foundation and boss-space envelope only
+  - primary traversal corridors and scale references
+  - root/membrane/scaffold proxy families needed to prove spatial language
+  - Blender source, deterministic generator, portable GLB and verification evidence
+  - collision/streaming/LOD interface specification at blockout level
+
+excludes:
+  - final VESPER creature/boss model, rig, animation or attacks
+  - final NPC characters: Edda Jun, Siete-en-Uno, Nico Fer
+  - final wildlife or vegetation species assets
+  - final architecture/interior kits beyond macro spatial proxies
+  - final materials/textures beyond diagnostic lookdev materials
+  - gameplay scripts, quests, dialogue or runtime state
+  - global engine migration decisions
+  - Terra, Ares IX, Pelagos, Umbra, Khepri or Vanta assets
+
+canonical_sources:
+  - AGENTS.md
+  - _project_intelligence/STATE.json
+  - _project_intelligence/PLAN.json
+  - HANDOFF.md
+  - MEMORY.md
+  - GOALS.md
+  - ROADMAP.md
+  - design/EXOVANT_BIBLIA.md
+  - design/EXOVANT_DATA.json
+  - docs/ART_PRODUCTION.md
+  - learning/hub/agents/codex-root/chats/exovant-persistence-20260912/events/LRN-EXO-20260912-BLENDER.json
+
+canon_facts:
+  galaxy: ANDROMEDA
+  system: Dendra
+  faction: Coro Micelial
+  gravity: '1.12 g (proposal revised in canon)'
+  temperature_reference: '34 C'
+  regions:
+    - Puerto del Injerto
+    - Bosque de las Frases
+    - Camara de VESPER
+  gameplay_rule: >-
+    The vegetal network shares information with local delay; damaging one root causes a response
+    elsewhere, telegraphed through color, sound and messengers.
+  art_kit: 'Bosque neural: structural roots, membranes, graft scaffolds and layered foliage.'
+
+unknowns:
+  - planetary radius
+  - planetary diameter
+  - global continental layout
+  - exact atmosphere composition
+  - axial parameters
+  - total authored surface area
+  - production-engine world-streaming implementation
+  - target GPU budgets
+
+blocked_by: []
+dependencies:
+  - future engine target qualification for final streaming/performance gates
+  - creative-director decision if planetary radius becomes gameplay-relevant
+
+collision_audit:
+  checked_branches: true
+  checked_open_prs: true
+  semantic_collision_found: false
+  occupied_worlds_observed:
+    - terra
+    - ares
+    - pelagos
+    - umbra
+    - khepri
+    - vanta
+
+claim_status: KEEP
