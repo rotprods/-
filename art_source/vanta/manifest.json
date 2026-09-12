@@ -16,7 +16,13 @@
     "linear_issue": "ROT-114",
     "parent_issue": "ROT-109",
     "scope": "VANTA art/modeling only",
-    "exclusions": ["terra", "ares", "pelagos", "gameplay implementation", "planetary travel framework"],
+    "exclusions": [
+      "terra",
+      "ares",
+      "pelagos",
+      "gameplay implementation",
+      "planetary travel framework"
+    ],
     "integration_policy": "PR only; no force push; reconcile ownership before editing shared assets"
   },
   "remote_source": {
@@ -24,14 +30,14 @@
     "project_id": "c82188b1-afdc-43f2-828a-5f0e98291f83",
     "project_url": "https://higgsfield.ai/3d-jutsu/c82188b1-afdc-43f2-828a-5f0e98291f83",
     "blender_version": "5.2.0 LTS",
-    "revision": 2,
+    "revision": 4,
     "editable_blend": {
-      "size_bytes": 3976733,
-      "etag": "24cf39e31bc8fc31a595be3f6089f6fd"
+      "size_bytes": 7046134,
+      "etag": "7617263dce0f383746d5411614908b17"
     },
     "portable_glb": {
-      "size_bytes": 2369648,
-      "etag": "e0ac09d2bb0b30cfe01f67d0b6586da8"
+      "size_bytes": 4842424,
+      "etag": "0ed964937085dafbcb717b35aacc5163"
     }
   },
   "scale": {
@@ -43,20 +49,42 @@
     "authored_district_m": [24000, 24000],
     "streaming_cell_m": [4000, 4000],
     "streaming_cell_count": 36,
+    "cp4_snap_grid_m": 4,
     "ferrum_arena_diameter_m": 72,
     "ferrum_arena_status": "CANON",
     "ferrum_target_height_m": 30,
     "ferrum_height_status": "PRODUCTION_PROPOSAL"
   },
   "regions": [
-    {"id": "port_of_hands", "name": "Puerto de las Manos", "state": "BLOCKOUT"},
-    {"id": "iron_rain", "name": "Lluvia de Hierro", "state": "BLOCKOUT"},
-    {"id": "fallen_ring", "name": "Anillo Caído", "state": "BLOCKOUT"}
+    {
+      "id": "port_of_hands",
+      "name": "Puerto de las Manos",
+      "state": "BLOCKOUT_PLUS_CP4_VERTICAL_SLICE"
+    },
+    {
+      "id": "iron_rain",
+      "name": "Lluvia de Hierro",
+      "state": "BLOCKOUT"
+    },
+    {
+      "id": "fallen_ring",
+      "name": "Anillo Caído",
+      "state": "BLOCKOUT"
+    }
   ],
   "targets": {
     "npcs": ["Mika Drav", "Ciro Fenn", "Bel Orta"],
-    "enemies": ["Cobrador de astillero", "Enjambre de remaches", "Remolcador automatizado"],
-    "biota": ["Litófago magnético", "Raya de limaduras", "Cuervo de remache", "Bacteria de escoria"],
+    "enemies": [
+      "Cobrador de astillero",
+      "Enjambre de remaches",
+      "Remolcador automatizado"
+    ],
+    "biota": [
+      "Litófago magnético",
+      "Raya de limaduras",
+      "Cuervo de remache",
+      "Bacteria de escoria"
+    ],
     "vehicle": ["Remolcador Drav"],
     "boss": ["FERRUM"]
   },
@@ -77,21 +105,75 @@
       "decals": 30
     }
   },
+  "cp4": {
+    "status": "LOCALLY_VALIDATED_GEOMETRY",
+    "representative_microset": [
+      "VAN_KIT_CRANE_A",
+      "VAN_KIT_MAG_ANCHOR_A",
+      "VAN_KIT_DRYDOCK_RIB_A",
+      "VAN_KIT_STORM_SHELTER_A"
+    ],
+    "snap_modules": [
+      "VAN_MOD_FLOOR_4M_A",
+      "VAN_MOD_WALL_SOLID_4M_A",
+      "VAN_MOD_WALL_SERVICE_4M_A",
+      "VAN_MOD_RAIL_4M_A",
+      "VAN_MOD_PIPE_TRAY_4M_A",
+      "VAN_MOD_BRACE_4M_A",
+      "VAN_MOD_STAIR_4M_A",
+      "VAN_MOD_ROOF_4M_A",
+      "VAN_MOD_PILLAR_4M_A",
+      "VAN_MOD_DOOR_4M_A",
+      "VAN_MOD_MAG_RAIL_4M_A",
+      "VAN_MOD_BULKHEAD_8M_A"
+    ],
+    "snap_socket_count": 48,
+    "collision_object_count": 19,
+    "lod1_proxy_count": 16,
+    "render_mesh_count": 206,
+    "calibration_object_count": 10,
+    "direct_visual_art_review": "OPEN",
+    "engine_snap_import": "UNQUALIFIED",
+    "collision_playtest": "UNQUALIFIED",
+    "performance": "UNQUALIFIED"
+  },
   "reproducibility": {
     "blockout_generator": "art_source/vanta/pipeline/vanta_blockout.py",
     "production_system": "art_source/vanta/VANTA_WORLD_PRODUCTION.md",
-    "evidence": "art_source/vanta/evidence/remote_blender_rev2.json"
+    "cp4_status": "art_source/vanta/CP4_STATUS.md",
+    "evidence_rev2": "art_source/vanta/evidence/remote_blender_rev2.json",
+    "evidence_rev4": "art_source/vanta/evidence/remote_blender_rev4.json"
   },
   "current_scene": {
-    "revision": 2,
-    "objects": 388,
-    "macro_revision_1_meshes": 245,
-    "materials": 8,
-    "collections": 15,
+    "revision": 4,
+    "objects": 711,
+    "meshes": 618,
+    "materials": 18,
+    "collections": 21,
+    "cameras": 9,
+    "lights": 9,
     "ferrum_named_parts": 43,
+    "cp4_tagged_objects": 315,
     "render_evidence": [
-      {"name": "vanta_master_blockout.png", "artifact_id": "55e6eec9287c17b69c6c261c0d581781", "resolution": [960, 540]},
-      {"name": "vanta_ferrum_arena.png", "artifact_id": "0761e510e83a252022b488bfbccfacb4", "resolution": [960, 540]}
+      {
+        "name": "vanta_master_blockout.png",
+        "artifact_id": "55e6eec9287c17b69c6c261c0d581781",
+        "resolution": [960, 540],
+        "revision": 2
+      },
+      {
+        "name": "vanta_ferrum_arena.png",
+        "artifact_id": "0761e510e83a252022b488bfbccfacb4",
+        "resolution": [960, 540],
+        "revision": 2
+      },
+      {
+        "name": "vanta_cp4_crane_proof.png",
+        "artifact_id": "c09519f9702b54ce7595e7803f0a35a5",
+        "resolution": [640, 480],
+        "revision": 3,
+        "aesthetic_review": "OPEN"
+      }
     ]
   },
   "checkpoints": {
@@ -99,8 +181,8 @@
     "CP1_canon_scale_art_direction": "DOCUMENTED_REVIEW_OPEN",
     "CP2_macro_world_blockout": "IMPLEMENTED_GEOMETRY_REVIEW_OPEN",
     "CP3_silhouette_targets": "IMPLEMENTED_GEOMETRY_REVIEW_OPEN",
-    "CP4_modular_construction_kit": "OPEN",
-    "CP5_material_trim_decal_system": "OPEN",
+    "CP4_modular_construction_kit": "LOCALLY_VALIDATED_GEOMETRY_ENGINE_GATES_OPEN",
+    "CP5_material_trim_decal_system": "CALIBRATION_PRECURSOR_ONLY",
     "CP6_port_of_hands_final_art": "OPEN",
     "CP7_iron_rain_final_art": "OPEN",
     "CP8_fallen_ring_final_art": "OPEN",
@@ -113,6 +195,8 @@
     "editable_source_exists": true,
     "portable_glb_exists": true,
     "macro_scale_locally_validated": true,
+    "cp4_structural_qa_pass": true,
+    "cp4_snap_contract_locally_validated": true,
     "visual_render_created": true,
     "visual_aesthetic_pass": false,
     "final_hero_assets_complete": false,
@@ -122,11 +206,12 @@
     "aaa_quality_claim": false
   },
   "next": [
-    "Run and persist generated 327-row registry outputs",
-    "Build CP4 modular snap kit and pivot validator",
-    "Build CP5 neutral PBR calibration board, trims and decals",
-    "Take one Puerto microset to final representative quality before scaling detail to the whole planet",
-    "Review deterministic close/mid/far cameras in an inspectable client",
-    "Integrate only after engine target and budget gates are empirically qualified"
+    "Generate and persist the 327-row registry outputs",
+    "Promote the CP5 calibration precursor into neutral-light and Vanta-light boards",
+    "Author the first trim/decal family for steel, rust, yellow paint, welds, impacts, frost and grease",
+    "Apply CP5 materials to the four CP4 representative assets",
+    "Run deterministic close/mid/far review on the CP4 vertical slice",
+    "Run target-engine snap/import and collision traversal before declaring CP4 globally DONE",
+    "Propagate only after art, engine and performance gates pass"
   ]
 }
