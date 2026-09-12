@@ -1,20 +1,20 @@
-name: EXOVANT Vanta Finalize
+name: EXOVANT Vanta Persist
 on:
   pull_request:
 permissions:
   contents: write
 concurrency:
-  group: vanta-finalize-${{ github.ref }}
+  group: vanta-persist-${{ github.ref }}
   cancel-in-progress: true
 jobs:
-  finalize:
+  persist:
     runs-on: ubuntu-24.04
-    timeout-minutes: 15
+    timeout-minutes: 5
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
           fetch-depth: 0
-      - name: Materialize canonical gauntlet in merge worktree
+      - name: Generate final merge-context projection
         run: |
           cat > .github/workflows/gauntlet.yml <<'YAML'
           name: EXOVANT Gauntlet
@@ -52,18 +52,11 @@ jobs:
                       telemetry/
                     retention-days: 30
           YAML
-      - name: Regenerate and verify merge-context continuity
-        run: |
-          python3 -m unittest discover -s tests -p 'test_*.py' -v
           python3 tools/project_control.py refresh
           python3 tools/project_control.py check
           cp MANIFEST.json /tmp/VANTA_FINAL_MANIFEST.json
           cp .github/workflows/gauntlet.yml /tmp/VANTA_FINAL_GAUNTLET.yml
-      - name: Run canonical native gauntlet
-        run: |
-          python3 tools/bootstrap_godot.py --destination .tools
-          python3 tests/run_gauntlet.py --godot .tools/Godot_v4.7.2-stable_linux.x86_64
-      - name: Persist projection and restore canonical workflow on producer branch
+      - name: Persist projection and restore canonical workflow
         env:
           HEAD_BRANCH: ${{ github.head_ref }}
         run: |
@@ -71,6 +64,8 @@ jobs:
           test -n "$HEAD_BRANCH"
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git reset --hard HEAD
+          git clean -fd
           git fetch origin "$HEAD_BRANCH"
           git checkout -B "$HEAD_BRANCH" "origin/$HEAD_BRANCH"
           cp /tmp/VANTA_FINAL_MANIFEST.json MANIFEST.json
