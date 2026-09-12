@@ -1,0 +1,71 @@
+claim_id: CLM-AURORA-WORLD-001
+agent_id: AGENT-02-AURORA
+session_id: AURORA-20260912T192957Z-001
+scope_key: aurora/world-production
+world_id: aurora
+world_name: AURORA VEIL
+category: world_production
+subdomain: full_world_3d
+status: CLAIMED
+priority: P1
+base_sha: 4c2fa044080004609ea6df45f34b2a784536507a
+branch: art/world-aurora-veil-001
+created_at: 2026-09-12T19:29:57Z
+last_heartbeat: 2026-09-12T19:29:57Z
+includes:
+  - planetary canon proposals where canon is currently silent, isolated behind ADRs
+  - orbital representation
+  - macro world and regional terrain
+  - Campamento del Segundo Día
+  - Llanura de las Repeticiones
+  - Huerto de AEON
+  - world-specific architecture and interiors
+  - infrastructure and utilities
+  - landmarks and vista assets
+  - world-specific material library
+  - vegetation and ecology
+  - fauna and hero creatures
+  - Aurora NPC and humanoid visual production
+  - world-specific wardrobe and equipment
+  - world-specific ground/air machinery and vehicles
+  - props and environmental storytelling
+  - decals, authored destruction states and debris
+  - Aurora LOD/HLOD/collision/streaming/export QA
+excludes:
+  - Terra and Terra Reliquary assets
+  - Ares IX and MOL-9 assets
+  - Pelagos, Umbra, Sylva Prime, Khepri, Nacre, Vanta, Leviathan, Elysium Null and Origin
+  - global player gameplay code
+  - global planetary travel framework
+  - production-engine selection
+  - shared libraries owned by another claim unless consumed read-only
+collision_audit:
+  observed_branches:
+    - art/terra-reliquary-kit-001
+    - art/ares-ix-world-001
+    - art/world-khepri-001
+    - art/world-leviathan-001
+    - art/world-nacre-001
+    - art/world-pelagos-thalassa-001
+    - art/world-sylva-prime-macro-001
+    - art/world-umbra-001
+    - art/world-vanta-001
+  aurora_branch_before_claim: none
+  aurora_pr_before_claim: none
+  result: NO_OBSERVED_COLLISION
+pipeline:
+  approximate_user_name_searched: "Flu In / Flow In"
+  exact_repo_method_found: null
+  method_status: PIPELINE_METHOD_NOT_FOUND
+  verified_fallback: Higgsfield 3D Jutsu bpy + editable .blend + GLB exchange + evidence
+  blender_worker_version: "5.2"
+dependencies:
+  - design/EXOVANT_BIBLIA.md
+  - design/EXOVANT_DATA.json
+  - docs/ART_PRODUCTION.md
+  - AGENTS.md
+  - _project_intelligence/STATE.json
+blocked_by: []
+claim_notes:
+  - Final engine-specific integration waits for the production-engine decision, but Blender/world production can proceed through portable GLB and documented scene contracts.
+  - Physical planetary parameters absent from canon must remain PROPOSAL until an ADR is accepted.
