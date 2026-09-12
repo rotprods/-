@@ -95,7 +95,7 @@
         {
           "id": "M-RESTORE",
           "target": "Clon limpio → motor fijado → tests → arranque, sin caché ni chat",
-          "status": "qualifying"
+          "status": "empirically_qualified_at_d8fdc7c"
         }
       ]
     },
@@ -278,7 +278,7 @@
         "G-TECH"
       ],
       "depends_on": [],
-      "status": "in_progress",
+      "status": "in_review",
       "owner_role": "technical_director",
       "acceptance": [
         "Clonar y comprobar fuentes y binarios sin contexto previo",
@@ -295,10 +295,22 @@
         "GATE-RESTORE",
         "GATE-ASSET"
       ],
-      "evidence": [],
+      "evidence": [
+        "evidence/gates/INFRA-005-GATE-CONTROL.json",
+        "evidence/gates/INFRA-005-GATE-NATIVE.json",
+        "evidence/gates/INFRA-005-GATE-GRAPH.json",
+        "evidence/gates/INFRA-005-GATE-CI.json",
+        "evidence/gates/INFRA-005-GATE-RESTORE.json",
+        "evidence/gates/INFRA-005-GATE-ASSET.json"
+      ],
       "estimate_person_hours": null,
       "estimate_status": "actual time not retroactively invented",
-      "max_failed_iterations": 6
+      "max_failed_iterations": 6,
+      "pending_verification": [
+        "First scheduled execution from main has not been observed",
+        "Mem routing note pending provider rate limit; optional mirror, not a product blocker"
+      ],
+      "closeout": "_project_intelligence/runs/INFRA-005-CONTRACT/closeout.json"
     },
     {
       "id": "EXO-004",

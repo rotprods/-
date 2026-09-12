@@ -1,0 +1,8 @@
+{
+  "passed": true,
+  "bytes": 3853786,
+  "sha256": "e6694a2990810777976fe5f57e499fa5d8d0184f4416fb7cdd1793166cae84b3",
+  "manifest_files_verified": 147,
+  "source_commit": "d8fdc7c16d277beb164e81d48c6156924f07ef0c",
+  "route": "Drive raw file through supported base64 response; internal file URI is not an HTTP URL"
+}

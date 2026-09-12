@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "items": [
+    {
+      "id": "SYNC-MEM-EXOVANT",
+      "provider": "Mem",
+      "status": "pending_rate_limit",
+      "attempts_observed": 2,
+      "last_error": "Mem is rate-limiting requests",
+      "action": "Create routing note only after read/search reconciliation; use stable ID from private registry",
+      "blocking_game_development": false,
+      "retry_policy": "at most one attempt per scheduled activation; no tight retry loop"
+    }
+  ]
+}

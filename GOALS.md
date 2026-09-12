@@ -37,7 +37,7 @@ Crear una campaña 3D soulslike interplanetaria original, ambientada en 2950, do
 - Guardados versionados, recuperación y migraciones probadas
 
 - M-FRAME: Objetivo propuesto 60 FPS a resolución/preset/hardware por fijar; p95/p99 y stutter registrados [requires_target_hardware]
-- M-RESTORE: Clon limpio → motor fijado → tests → arranque, sin caché ni chat [qualifying]
+- M-RESTORE: Clon limpio → motor fijado → tests → arranque, sin caché ni chat [empirically_qualified_at_d8fdc7c]
 
 ## G-OPS · Desarrollo persistente y auditable
 

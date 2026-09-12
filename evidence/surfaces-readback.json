@@ -1,0 +1,33 @@
+{
+  "observed_at": "2026-09-12T18:12:56.286008+00:00",
+  "github": {
+    "status": "published_and_read_back",
+    "commit": "d8fdc7c16d277beb164e81d48c6156924f07ef0c",
+    "ci": "success",
+    "cold_restore": true
+  },
+  "linear": {
+    "status": "read_back",
+    "milestones": 6,
+    "issues": 17
+  },
+  "drive": {
+    "status": "uploaded_and_restored",
+    "source_snapshot": "d8fdc7c16d277beb164e81d48c6156924f07ef0c",
+    "manifest_files_verified": 147,
+    "dossier_metadata_verified": true
+  },
+  "rot_knowledge": {
+    "status": "index_read_back",
+    "blob": "558e65ad8db6e0f1e6d3430d42b998d29e08ee41"
+  },
+  "game_dev_mcp_hub": {
+    "status": "integration_read_back",
+    "blob": "4cf0e4d7254c820ad997c5c76b8446f01f5042c6"
+  },
+  "mem": {
+    "status": "pending_rate_limit",
+    "attempts": 2
+  },
+  "scope": "Provider persistence; does not prove future scheduler execution"
+}

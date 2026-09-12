@@ -4,7 +4,7 @@
   "date": "2026-09-12",
   "global_goal": "Original 3D interplanetary soulslike based on the existing twelve-world preproduction plan",
   "current_wave": "Operational development infrastructure and verified recovery",
-  "status": "INFRASTRUCTURE_QUALIFYING",
+  "status": "OPERATIONAL_INFRASTRUCTURE_WITH_PENDING_EXTERNAL_VERIFICATION",
   "engine": "Godot 4.7.2.stable.official.ed1daf0bf",
   "production_engine_decision": "Unreal remains the plan's principal candidate; Godot is the executable prototype, not an irreversible replacement",
   "authority": [
@@ -41,8 +41,8 @@
     "human playtest",
     "continuous worker availability"
   ],
-  "next_workunit": "INFRA-005",
-  "next_action": "Finish infrastructure gates, sync readbacks and restore; then EXO-004",
+  "next_workunit": "EXO-004",
+  "next_action": "EXO-004: complete the fresh-game route without debug and fix observed friction; verify first scheduled execution and retry queued Mem mirror separately.",
   "evidence": [
     "evidence/gauntlet.json",
     "evidence/state-tests.json",
@@ -64,7 +64,7 @@
   },
   "automation": {
     "requested": true,
-    "status": "PAUSED_UNTIL_NEW_CHECKPOINT_QUALIFIED",
+    "status": "PROMPT_PREPARED_PENDING_REENABLE",
     "cadence": "hourly",
     "first_scheduled_execution_verified": false,
     "max_same_problem_iterations_before_reassessment": 6
@@ -88,9 +88,9 @@
       "suite": "native_scene_integration"
     },
     "native_gates": {
-      "run_id": "native-20260912T172839697786Z",
-      "executed_at": "2026-09-12T17:28:50.945172+00:00",
-      "source_digest": "065073f02c50b656b1a3c689360a4bc4c6551091700245dce09e3b38aa01dc36",
+      "run_id": "native-20260912T180737399878Z",
+      "executed_at": "2026-09-12T18:07:48.825862+00:00",
+      "source_digest": "47d2720c0805ce5f250eac0c2e22002fa5df37e149ec1090c624f663ff5847af",
       "gates": [
         {
           "gate": "import",
@@ -116,14 +116,18 @@
       "passed": true
     },
     "continuity": {
-      "executed_at": "2026-09-12T17:28:39.315025+00:00",
+      "current_receipt": "evidence/gates/INFRA-005-GATE-CONTROL.json",
+      "tests": 34,
       "passed": true,
-      "command": "python3 -m unittest discover -s tests -p test_governance.py -v",
-      "tests": 15,
-      "source_digest": "065073f02c50b656b1a3c689360a4bc4c6551091700245dce09e3b38aa01dc36"
+      "source_digest": "47d2720c0805ce5f250eac0c2e22002fa5df37e149ec1090c624f663ff5847af",
+      "historical_receipt": "evidence/governance.json"
     },
     "learning_retrieval": "evidence/learning-retrieval.json",
-    "ci_repair": "evidence/ci-repair-readback.json"
+    "ci_repair": "evidence/ci-repair-readback.json",
+    "infrastructure_control": "evidence/gates/INFRA-005-GATE-CONTROL.json",
+    "ci_current_source": "evidence/ci-contract-readback.json",
+    "remote_restore": "evidence/remote-restore.json",
+    "drive_restore": "evidence/drive-restore.json"
   },
   "cold_resume": {
     "source_archive_reimport": true,
@@ -131,7 +135,7 @@
     "note": "Fresh extraction without .godot cache; HUD-only adjustment additionally rendered and smoke-tested."
   },
   "source_repository": "https://github.com/rotprods/-",
-  "updated_at": "2026-09-12T18:05:44.250089+00:00",
+  "updated_at": "2026-09-12T18:18:44.932523+00:00",
   "learning": {
     "authority": "learning/hub",
     "scope": "project",
@@ -147,9 +151,16 @@
   "tool_telemetry": "telemetry/tool_calls.jsonl",
   "publication": {
     "repository": "rotprods/-",
-    "initial_parent": "2bc78fc3c283e4dad0e93a49fbb3457732b2b322",
-    "checkpoint": "EXO-PERSISTENCE-004",
-    "readback_receipt": "provider receipt and next persistence checkpoint"
+    "source_checkpoint": "d8fdc7c16d277beb164e81d48c6156924f07ef0c",
+    "verified_ci": "evidence/ci-contract-readback.json",
+    "verified_recovery": "evidence/remote-restore.json",
+    "final_metadata_commit": "use git HEAD; no self-referential commit hash"
   },
-  "project_contract": "_project_intelligence/PLAN.json"
+  "project_contract": "_project_intelligence/PLAN.json",
+  "pending": [
+    "Mem routing note: provider rate limit",
+    "First scheduled activation: not yet observed",
+    "Full human playthrough and production GPU qualification"
+  ],
+  "last_run": "_project_intelligence/runs/INFRA-005-CONTRACT/closeout.json"
 }

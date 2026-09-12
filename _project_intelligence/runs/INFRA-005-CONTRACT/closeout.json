@@ -1,0 +1,15 @@
+{
+  "task_id": "INFRA-005",
+  "outcome": "checkpoint",
+  "evidence": [
+    "evidence/gates/INFRA-005-GATE-CONTROL.json",
+    "evidence/gates/INFRA-005-GATE-NATIVE.json",
+    "evidence/gates/INFRA-005-GATE-GRAPH.json",
+    "evidence/gates/INFRA-005-GATE-CI.json",
+    "evidence/gates/INFRA-005-GATE-RESTORE.json",
+    "evidence/gates/INFRA-005-GATE-ASSET.json"
+  ],
+  "source_digest": "47d2720c0805ce5f250eac0c2e22002fa5df37e149ec1090c624f663ff5847af",
+  "next_action": "EXO-004: complete the fresh-game route without debug and fix observed friction; verify first scheduled execution and retry queued Mem mirror separately.",
+  "executed_at": "2026-09-12T18:18:45.021511+00:00"
+}

@@ -21,3 +21,7 @@ El fallo de GitHub Actions se reprodujo localmente: HTTP 403 del endpoint de des
 ## INFRA-005 · contrato y herramientas
 
 Añadidos PLAN con 6 objetivos, 6 fases, 17 unidades y 10 gates; GOALS/ROADMAP generados; control de escritor local y cierre con evidencia; graph drift check; auditoría GLB; paquete reproducible y restore remoto; telemetry opt-in de conectores; pruebas adversariales adicionales. Linear refleja seis hitos y diecisiete tareas. Integraciones documentales publicadas en game-dev-mcp-hub y rot.knowledge. Mem devolvió rate limit en el primer intento; no se declara sincronizado. Cierre global de infraestructura todavía en cualificación.
+
+## Verificación externa de INFRA-005
+
+Commit d8fdc7c: CI success, clon limpio con integridad/control/native PASS. Drive: snapshot descargado de nuevo, SHA256 idéntico y 147 entradas del manifiesto verificadas. Contratos de Linear leídos: 6 hitos, 17 tareas. Índices de estudio y aprendizaje leídos tras escritura. Mem sigue pendiente por rate limit tras dos intentos; queda en cola. La primera ejecución programada aún no está demostrada.

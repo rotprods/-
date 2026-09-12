@@ -1,0 +1,12 @@
+{
+  "gate_id": "GATE-RESTORE",
+  "task_id": "INFRA-005",
+  "passed": true,
+  "executed_at": "2026-09-12T18:08:33.146347+00:00",
+  "source_digest": "47d2720c0805ce5f250eac0c2e22002fa5df37e149ec1090c624f663ff5847af",
+  "evidence_refs": [
+    "evidence/remote-restore.json"
+  ],
+  "reviewer": "automated-cold-restore",
+  "qualified_commit": "d8fdc7c16d277beb164e81d48c6156924f07ef0c"
+}

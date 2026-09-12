@@ -18,3 +18,5 @@ Leer `learning/README.md` y recuperar el evento por ID antes de reutilizar una c
 | Hay MCP en un repositorio | Exigir endpoint alcanzable, política y smoke actual | LRN-EXO-20260912-CAPABILITY |
 
 Preferencias: español claro; ejecutar trabajo autorizado; máximo detalle artístico dentro de una producción verificable; no reiniciar la planificación; diseño original inspirado en cualidades de exploración, atmósfera y combate, sin copiar personajes, mapas o assets de otros juegos. Mantener doce mundos como horizonte y una región representativa como siguiente demostración.
+
+CI: recuperar LRN-EXO-20260912-CI-BOOTSTRAP y CI-BOOTSTRAP-VERIFIED antes de cambiar descargas. Un 403 real se corrigió fijando el release oficial y verificando bytes; siete tests adversariales y CI independiente sostienen L3 del mecanismo acotado. Total actual: 14 eventos; solo uno L3.

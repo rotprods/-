@@ -4301,7 +4301,7 @@
       "type": "workunit",
       "label": "Base operativa recuperable y proyecciones conectadas",
       "epistemic": "proposal",
-      "status": "in_progress",
+      "status": "in_review",
       "provenance": "_project_intelligence/PLAN.json",
       "artifact_path": "_project_intelligence/PLAN.json"
     },
