@@ -11,7 +11,7 @@
     "linear": "ROT-119",
     "pr": 16,
     "last_reconciled_main": "b74bd7072a7b2c68c4453402fbffe9d20bfb4de0",
-    "reconciliation_merge": "PENDING_CURRENT_RESYNC_COMMIT_READBACK",
+    "reconciliation_merge": "4678d0ddf6d74cce663ceb39ddbd205a30aa91da",
     "previous_reconciliation_merge": "bfff105fb5e46d31e064a22f33053e43b132df19",
     "no_force_update": true,
     "custody_contract": "MR-EXO-001"
@@ -84,7 +84,7 @@
     "claim_collision": "PASS_RESERVED_TO_THIS_OWNER",
     "fleet_owner_ack_published": "PASS",
     "fleet_registry_ack_readback": "PENDING_INTEGRATOR",
-    "branch_reconciled_to_main": "PASS_AT_B74BD707_PENDING_MERGE_SHA_READBACK",
+    "branch_reconciled_to_main": "PASS_AT_B74BD707_MERGE_4678D0D",
     "metric_scale": "PASS",
     "object_scale": "PASS",
     "zero_dimension": "PASS",
