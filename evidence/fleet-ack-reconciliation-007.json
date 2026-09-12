@@ -1,0 +1,41 @@
+{
+  "run": "INFRA-005-REMEDIATION-007",
+  "acks": [
+    {
+      "claim": "CLM-NACRE-WORLD-MACRO-001",
+      "evidence": "https://github.com/rotprods/-/issues/7#issuecomment-5648339684",
+      "epoch": 1,
+      "status": "active",
+      "runtime_worker_health": "unknown"
+    },
+    {
+      "claim": "CLM-W04-WORLD-UMBRA-001",
+      "evidence": "https://github.com/rotprods/-/issues/7#issuecomment-5648349781",
+      "epoch": 1,
+      "status": "active",
+      "runtime_worker_health": "unknown"
+    },
+    {
+      "claim": "CLM-SYLVA-MACRO-001",
+      "evidence": "https://github.com/rotprods/-/issues/7#issuecomment-5648367024",
+      "epoch": 1,
+      "status": "active",
+      "runtime_worker_health": "unknown"
+    },
+    {
+      "claim": "CLM-AURORA-WORLD-001",
+      "evidence": "https://github.com/rotprods/-/issues/7#issuecomment-5648367254",
+      "epoch": 1,
+      "status": "active",
+      "runtime_worker_health": "unknown"
+    },
+    {
+      "claim": "CLM-PEL-WORLD-001",
+      "evidence": "https://github.com/rotprods/-/issues/7#issuecomment-5648578777",
+      "epoch": 1,
+      "status": "active",
+      "runtime_worker_health": "unknown"
+    }
+  ],
+  "limits": "Published ACK is cooperative ownership, not proof of live worker or exclusive provider enforcement. Sylva remote fence retained. Binary recovery and hardware gates remain open."
+}
