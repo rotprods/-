@@ -9,6 +9,15 @@ claim_status: KEEP
 remote_blender_revision: 5
 remote_project_id: 2577a7b6-ebd7-4d31-a645-620e4b73a95d
 cold_rebuild_project_id: 37a931c7-f2e6-46bc-9be0-26077e5de1c1
+fleet:
+  registry_main_observed: f78bfdc8bd7b2f6ab52b45d39babcc1589ab3918
+  registry_state: reserved
+  epoch: 1
+  producer_ack_comment: https://github.com/rotprods/-/issues/7#issuecomment-5648464282
+  integrator_transition_to_active: pending
+  old_manifest_issue_13: RESOLVED_CLOSED
+  main_push_gauntlet_run: 34715800243
+  main_push_gauntlet_conclusion: success
 
 metrics:
   first_10_task_completion:
@@ -66,6 +75,7 @@ metrics:
     additional_pipeline_passes:
       - master deterministic semantic rebuild
       - Puerto staged deterministic semantic rebuild
+      - fleet main continuity push CI green
     partial_or_open:
       - B_ART
       - C_REALISM
@@ -116,6 +126,8 @@ completed:
   - editable .blend and GLB revision-5 receipts
   - structural/scale/camera/cost QA
   - revision-3 overview/Puerto/Jardines/SOMA render receipts produced
+  - producer ACK published to fleet coordination issue #7
+  - old manifest-sharding blocker issue #13 closed after green fleet-harness main
 
 blocked:
   - id: LEV-BLK-001
@@ -133,10 +145,19 @@ blocked:
   - id: LEV-BLK-005
     decision: final playable-region dimensions
     impacts: [streaming topology, authored density]
+  - id: LEV-BLK-007
+    decision: runtime binary transport + engine availability for this producer session
+    impacts: [engine import, native collision/traversal]
+    evidence: art_source/worlds/leviathan/evidence/runtime_import_blocker_r5.json
+
+resolved_blockers:
   - id: LEV-BLK-006
-    decision: shard-safe global continuity/manifest check
-    impacts: [PR CI readiness]
-    related_issue: 13
+    former_problem: shard-safe global continuity/manifest check
+    resolution: fleet harness and exact generated-manifest guard integrated on main f78bfdc8; canonical push CI success
+    evidence:
+      - docs/FLEET_COORDINATION.md
+      - issue: 13
+      - workflow_run: 34715800243
 
 risks:
   - revision-3 visual renders exist but direct pixel-level art inspection remains unavailable in this agent runtime
@@ -145,13 +166,14 @@ risks:
   - no engine import receipt exists for LEVIATHAN yet
   - no target-hardware performance budget exists
   - physical planet scale is intentionally unresolved
-  - global CI continuity gate is not shard-safe yet and may fail art-only branches despite isolated ownership
+  - fleet registry still awaits integrator transition from reserved to active after producer ACK
 
 next:
-  - qualify runtime import path and execute scale/material/collision traversal smoke import
+  - continue non-blocked representative-detail work in Jardines Inmunes while runtime transport remains blocked
+  - qualify runtime import path once exact GLB bytes and engine coexist in one execution environment
   - continue Puerto vertical microset through final UV/PBR/LOD only after runtime path is proven
   - perform direct human/art review when revision-5 visual inspection surface is available
-  - split next atomic production claims for final SOMA, characters/NPCs, ecology or additional architecture only after issue-7 preflight
+  - split next specialist claims only after issue-7 preflight and current world-owner coordination
   - resolve/ADR L0 physical planet scale before orbital representation work
 
-last_heartbeat: 2026-09-12T22:19:00+02:00
+last_heartbeat: 2026-09-12T22:24:00+02:00
