@@ -14,25 +14,33 @@ base_sha_at_claim: 4c2fa044080004609ea6df45f34b2a784536507a
 latest_main_observed: f78bfdc8bd7b2f6ab52b45d39babcc1589ab3918
 branch: art/world-leviathan-001
 created_at: 2026-09-12T21:23:00+02:00
-last_heartbeat: 2026-09-12T22:43:00+02:00
+last_heartbeat: 2026-09-12T23:15:00+02:00
 remote_project:
   project_id: 2577a7b6-ebd7-4d31-a645-620e4b73a95d
-  observed_revision: 8
+  observed_revision: 9
   observed_scene_sequence: 0
   observed_active_operation: null
+  working_master_note: >-
+    Revision 9 is revision 8 plus deterministic repeated-mesh datablock sharing; object-level
+    render-equivalent geometry/UV/material fingerprint is unchanged from revision 8.
 cold_rebuild_project:
   project_id: 37a931c7-f2e6-46bc-9be0-26077e5de1c1
-  observed_revision: 6
+  observed_revision: 7
+  note: >-
+    High-level staged contracts are recoverable, but strict raw primitive mesh/UV realization differs
+    in selected Jardines/SOMA/macro primitive families and is an open QA defect.
 includes:
   - art_source/worlds/leviathan/**
   - leviathan L0-L5 world scale specification and master blockout
   - canonical region blockouts and coverage manifests
   - local environment/architecture/material/prop/ecology/NPC/enemy/vehicle proxy families
   - SOMA arena/environment proxy interfaces
-  - deterministic Blender generator, editable .blend, GLB, previews and validation evidence
+  - deterministic Blender generators, editable .blend, GLB, previews and validation evidence
   - representative-detail Puerto microset for LEV-ARCH-001, LEV-INF-002 and LEV-INF-003
   - representative-detail Jardines microset for LEV-INF-005, LEV-ECO-001 and LEV-ECO-004
   - representative-detail SOMA encounter environment for LEV-RGN-003, LEV-ENV-002, LEV-ENV-003 and local LEV-INF-003 variants
+  - engine-neutral UV/PBR/LOD production readiness contract
+  - safe repeated-mesh instancing optimization and receipts
 excludes:
   - runtime Godot scenes/scripts and gameplay logic
   - shared STATE/PLAN/HANDOFF/PROGRESS mutation
@@ -73,11 +81,14 @@ dependencies:
   - learning/hub/agents/codex-root/chats/exovant-persistence-20260912/events/LRN-EXO-20260912-BLENDER.json
 blocked_by:
   - ENV_BLOCKED_BINARY_TRANSPORT_AND_RUNTIME
+  - STRICT_RAW_PRIMITIVE_REALIZATION_DRIFT
 claim_state_note: >-
   Physical planet radius, final production engine, target hardware budgets, final playable-area
-  dimensions and final SOMA anatomy remain unresolved. Master plus Puerto, Jardines and SOMA
-  encounter-environment stages are deterministic and Blender-validated through independent cold
-  rebuilds. SOMA representative environment stays inside the canonical 29 m radius with 0.7 m
-  measured geometry clearance; SOMA_PROXY_NOT_FINAL was not promoted. Runtime import/collision and
-  direct art review remain open. Fleet registry protects the claim as reserved; producer ACK/deltas
-  are in issue #7 and the integrator owns transition to active.
+  dimensions and final SOMA anatomy remain unresolved. Puerto is strictly stable in family-level
+  raw replay checks; Jardines/SOMA/macro retain a narrower raw primitive mesh/UV replay defect that
+  was exposed by the revision-9 instancing audit and is not hidden by the older semantic fingerprint.
+  Working-master revision 9 safely reduces mesh datablocks 260->122 while preserving the revision-8
+  audited object/geometry/UV/material fingerprint exactly. Runtime import/collision and direct art
+  review remain open. PR #10 Python suite is 75/75 green; current PR failure is root MANIFEST drift
+  awaiting integrator aggregate refresh. Fleet registry protects the claim as reserved; producer
+  ACK/deltas are in issue #7 and integrator owns transition to active.
