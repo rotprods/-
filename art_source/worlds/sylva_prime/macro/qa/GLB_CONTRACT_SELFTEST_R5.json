@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "receipt_id": "CLM-SYLVA-MACRO-001-GLB-CONTRACT-R5-001",
+  "claim_id": "CLM-SYLVA-MACRO-001",
+  "agent_id": "AGENT-SYLVA-MACRO-01",
+  "contract": "CLM-SYLVA-MACRO-001/R5",
+  "validator": "art_source/worlds/sylva_prime/macro/validate_glb_contract.py",
+  "validator_commit": "cb53fead2dc2c0f64dd2d08667714eb97fe8e546",
+  "execution_scope": "independent mirrored execution of the persisted r5 contract invariants in local Python stdlib runtime",
+  "status": "PASS",
+  "cases": {
+    "valid_r5_contract_passes": true,
+    "missing_socket_fails": true,
+    "foreign_namespace_fails": true,
+    "provider_duplication_fails": true,
+    "legacy_r4_single_floor_fails": true,
+    "corrupt_header_fails": true,
+    "sha_mismatch_detected": true
+  },
+  "passed": 7,
+  "failed": 0,
+  "r5_delta_under_test": {
+    "expected_collision_prefix_count": 12,
+    "requires_three_vesper_terraces": true,
+    "requires_two_vesper_connectors": true,
+    "forbids_legacy_nodes": [
+      "SYLVA_VESPER_ProxyArenaFloor",
+      "SYLVA_COL_VESPER_ArenaFloor"
+    ]
+  },
+  "limitations": [
+    "This receipt validates the r5 parser/contract invariants using synthetic GLB inputs; it is not an execution against the actual revision-5 GLB bytes.",
+    "Actual r5 GLB recovery remains ENV_BLOCKED in the current sandbox and must be validated after byte recovery.",
+    "No engine import, collision traversal, human art approval or GPU benchmark is implied."
+  ]
+}
