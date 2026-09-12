@@ -1,0 +1,72 @@
+{
+  "_meta": {
+    "content_digest": "788677550da7c410ae84eb0da51ff8fe66726344d73b4cabc183034f0f5bd6d4",
+    "persisted_at": "2026-09-12T17:00:38.277430Z"
+  },
+  "analysis": {
+    "confidence": 0.8,
+    "family_or_pattern": "remote-editable-art-pipeline",
+    "generalization_boundary": "3D Jutsu proyecto de portal rev2; no implica GPU/VRAM conocidas ni acceso remoto a Unreal.",
+    "mechanism": "La ejecución bpy remota produce geometría editable; una imagen de referencia por sí sola no crea un asset jugable.",
+    "non_applicable_cases": [
+      "Generalización universal sin otra evidencia"
+    ],
+    "symptom": "Cuando hace falta modelado editable sin Mac conectado"
+  },
+  "authority_after": "L2-persisted",
+  "authority_before": "L1-retrieved",
+  "event_class": "tool-routing",
+  "evidence": [
+    {
+      "claim": "Cuando hace falta modelado editable sin Mac conectado — Usar la ruta Blender remota cualificada y guardar fuente, generador, GLB y evidencia.",
+      "digest": "30f911665b3710734a508b28b9a6c62fe724fbb88db8cc1bbd0267286ba968bc",
+      "freshness": "2026-09-12; snapshot at event creation",
+      "kind": "source-file",
+      "ref": "art_source/reliquary_gate/validation.json"
+    }
+  ],
+  "knowledge_relation": {
+    "relation": "NEW",
+    "targets": []
+  },
+  "learning_id": "LRN-EXO-20260912-BLENDER",
+  "promotion": {
+    "reason": "Usar la ruta Blender remota cualificada y guardar fuente, generador, GLB y evidencia.",
+    "target_ref": "docs/ART_PRODUCTION.md",
+    "target_type": "runbook"
+  },
+  "provenance": {
+    "agent_id": "codex-root",
+    "chat_id": "exovant-persistence-20260912",
+    "chat_id_source": "session-alias",
+    "run_id": "EXO-PERSISTENCE-004"
+  },
+  "revalidation_condition": "Cambio de entorno, motor, control afectado o evidencia que contradiga la conclusión.",
+  "scope": {
+    "artifacts": [
+      "art_source/reliquary_gate/validation.json",
+      "docs/ART_PRODUCTION.md"
+    ],
+    "level": "project",
+    "project": "EXOVANT 2950",
+    "repository": "rotprods/-"
+  },
+  "status": "persisted",
+  "timestamp": "2026-09-12T17:00:38.277321+00:00",
+  "unknowns": [
+    "3D Jutsu proyecto de portal rev2; no implica GPU/VRAM conocidas ni acceso remoto a Unreal."
+  ],
+  "verification": {
+    "adversarial_review": {
+      "status": "pending"
+    },
+    "anti_recurrence_control": "docs/ART_PRODUCTION.md",
+    "retrieval_test": {
+      "status": "pending"
+    },
+    "runtime_test": {
+      "notes": "Los recibos existentes sostienen la observación; el evento requiere su propia revalidación.",
+      "status": "pending"
+    }
+  }
+}

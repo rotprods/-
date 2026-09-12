@@ -1,0 +1,1364 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>EXOVANT 2950 · Preproducción</title><style>:root{--bg:#101412;--panel:#19201c;--paper:#e8e4d9;--muted:#a9b1a9;--line:#354039;--amber:#dcb678;--cyan:#85bab1;--ink:#0c100e;color-scheme:dark}*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:24px}body{margin:0;background:var(--bg);color:var(--paper);font:16px/1.72 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}a{color:var(--cyan);text-decoration-thickness:1px;text-underline-offset:3px}a:hover{color:var(--amber)}aside{position:fixed;inset:0 auto 0 0;width:278px;padding:34px 24px;border-right:1px solid var(--line);overflow:auto;background:#121814}.brand{display:block;text-decoration:none;font-size:29px;letter-spacing:.12em;font-weight:750;color:var(--paper)}.brand span{display:block;font-size:10px;letter-spacing:.22em;color:var(--amber);margin-top:4px}.edition{font-size:11px;color:var(--muted);letter-spacing:.04em;margin:24px 0}nav{display:flex;flex-direction:column;gap:3px}nav a{font-size:12px;line-height:1.5;padding:7px 0;text-decoration:none;color:var(--muted);border-bottom:1px solid #263129}nav a:hover{color:var(--paper)}.calc-link{display:block;padding:13px 0;margin-bottom:22px;font-size:13px;color:var(--amber);border-block:1px solid var(--line)}main{max-width:1440px;margin-left:278px;padding:32px 5vw 64px}.status{font:10px/1.5 ui-monospace,monospace;letter-spacing:.12em;color:var(--amber);border-bottom:1px solid var(--line);padding-bottom:18px}.opening{padding:42px 0}.kicker{letter-spacing:.14em;font-size:12px;color:var(--muted)}.lede{font:clamp(28px,3.5vw,46px)/1.18 Georgia,serif;max-width:940px;margin:22px 0 36px}.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;border-top:1px solid var(--line);padding-top:20px}.metrics b{display:block;font-size:30px;font-weight:500;color:var(--amber)}.metrics span{font-size:12px;color:var(--muted)}h1,h2,h3{font-weight:600;line-height:1.3;letter-spacing:-.02em}h1{font-size:32px;margin-top:70px}h2{font-size:29px;margin:76px 0 22px;border-top:1px solid var(--line);padding-top:28px;color:var(--amber)}h3{font-size:22px;margin:42px 0 16px;color:var(--cyan)}p{max-width:1020px;margin:16px 0}strong{font-weight:650}ul,ol{padding-left:24px;max-width:1020px}li{margin:7px 0;padding-left:3px}.table-wrap{overflow-x:auto;border:1px solid var(--line);margin:24px 0}table{border-collapse:collapse;width:100%;font-size:13px;line-height:1.6;text-align:left;min-width:610px}th{background:#222c25;color:var(--amber);font-weight:600;padding:12px 14px;vertical-align:top}td{padding:12px 14px;vertical-align:top;border-top:1px solid var(--line)}tr:nth-child(even) td{background:#151c17}code{font:12px/1.7 ui-monospace,SFMono-Regular,monospace;color:#c4d7c5;overflow-wrap:anywhere}blockquote{margin:22px 0;padding:20px 26px;border-left:3px solid var(--amber);background:var(--panel);font-size:14px;color:#d5d7ca}#calculadora{padding:28px;background:var(--panel);border:1px solid var(--line)}#calculadora h2{border:0;padding:0;margin:0 0 14px;font-size:26px}.calc-intro{font-size:14px;color:var(--muted);max-width:900px}form{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin:24px 0}label{display:block;font-size:12px;color:var(--muted)}label span{display:block;margin-bottom:6px;min-height:20px}input{width:100%;font:16px system-ui;background:#0f1511;color:var(--paper);padding:11px 12px;border:1px solid #4c5b50;border-radius:3px}input:focus{outline:2px solid var(--cyan);outline-offset:2px}.calc-actions{display:flex;align-items:center;gap:20px;margin:20px 0}button{background:transparent;border:1px solid var(--amber);color:var(--amber);padding:10px 17px;font:13px system-ui;cursor:pointer}button:hover{background:#dcb67818}.result-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;border-block:1px solid var(--line);padding:22px 0}.result-label{font-size:11px;color:var(--muted);letter-spacing:.05em;text-transform:uppercase}.result-value{font-size:clamp(23px,2.4vw,34px);font-weight:500;color:var(--paper);line-height:1.2;margin:9px 0;overflow-wrap:anywhere}.result-note{font-size:11px;line-height:1.5;color:var(--muted)}#deltaValue{color:var(--cyan)}.calc-detail{font-size:13px;color:var(--muted)}.formula{font:12px/1.7 ui-monospace,monospace;padding:16px 0;color:var(--amber)}footer{padding-top:40px;margin-top:70px;border-top:1px solid var(--line);font-size:12px;color:var(--muted)}@media(max-width:1100px){aside{width:230px;padding:28px 19px}main{margin-left:230px;padding-inline:4vw}form{grid-template-columns:repeat(2,minmax(0,1fr))}.result-grid{grid-template-columns:1fr}.metrics{gap:12px}}@media(max-width:760px){aside{position:relative;width:auto;border-right:0;border-bottom:1px solid var(--line);padding:24px}aside nav{display:none}.edition{margin:12px 0}.calc-link{margin:16px 0 0;padding:10px 0}main{margin:0;padding:24px 20px 48px}.opening{padding-top:24px}.lede{font-size:31px}.metrics{grid-template-columns:repeat(2,1fr)}#calculadora{padding:20px}form{grid-template-columns:1fr 1fr;gap:14px}h2{font-size:25px}h1{font-size:28px}.result-value{font-size:30px}}@media(max-width:440px){form{grid-template-columns:1fr}body{font-size:15px}.calc-actions{align-items:flex-start;flex-direction:column;gap:8px}}@media print{:root{--bg:white;--paper:#111;--muted:#555;--line:#ccc;--amber:#624921;--cyan:#245b55;--panel:#f4f4ef;color-scheme:light}body{font-size:10pt;line-height:1.5}aside,#calculadora,.opening,.status{display:none}main{margin:0;max-width:none;padding:0}h1{font-size:24pt;margin-top:0}h2{font-size:18pt;break-before:page;padding-top:0;border:0}h3{font-size:14pt;break-after:avoid}table{min-width:0;font-size:8pt}th{background:#eee}td{padding:7px}tr:nth-child(even) td{background:#fafafa}.table-wrap{overflow:visible}a{color:#245b55}code{color:#333}blockquote{break-inside:avoid}footer{font-size:8pt}}
+</style></head><body>
+<aside><a class="brand" href="#top">EXOVANT<span>2950 / PREPRODUCCIÓN</span></a><p class="edition">v0.1 · 12 SEPTIEMBRE 2026</p><a class="calc-link" href="#calculadora">Calculadora de producción ↗</a><nav aria-label="Contenido"><a href="#1-decisi-n-de-infraestructura">1. Decisión de infraestructura</a><a href="#2-contrato-de-misi-n-y-reglas-recuperadas">2. Contrato de misión y reglas recuperadas</a><a href="#3-identidad-creativa">3. Identidad creativa</a><a href="#4-historia-y-cosmolog-a">4. Historia y cosmología</a><a href="#5-escala-del-producto">5. Escala del producto</a><a href="#6-atlas-de-mundos-y-custodios">6. Atlas de mundos y custodios</a><a href="#7-bucle-jugable-y-combate">7. Bucle jugable y combate</a><a href="#8-exploraci-n-veh-culos-y-vida-del-mundo">8. Exploración, vehículos y vida del mundo</a><a href="#9-misiones-decisiones-y-minijuegos">9. Misiones, decisiones y minijuegos</a><a href="#10-jefes-y-encuentros">10. Jefes y encuentros</a><a href="#11-modos-accesibilidad-y-experiencia-de-usuario">11. Modos, accesibilidad y experiencia de usuario</a><a href="#12-arquitectura-t-cnica-propuesta">12. Arquitectura técnica propuesta</a><a href="#13-pipeline-de-activos">13. Pipeline de activos</a><a href="#14-contrato-de-prompts-de-producci-n">14. Contrato de prompts de producción</a><a href="#15-migraci-n-al-mac-y-uso-del-hub-mcp">15. Migración al Mac y uso del hub MCP</a><a href="#16-comparaci-n-econ-mica">16. Comparación económica</a><a href="#17-secuencia-de-producci-n-y-equipo">17. Secuencia de producción y equipo</a><a href="#18-puertas-de-aceptaci-n">18. Puertas de aceptación</a><a href="#19-riesgos-decisiones-abiertas-y-criterios-de-reducci-n">19. Riesgos, decisiones abiertas y criterios de reducción</a><a href="#20-estado-real-y-continuidad">20. Estado real y continuidad</a><a href="#21-cat-logo-maestro-y-dependencias">21. Catálogo maestro y dependencias</a></nav><p class="edition">Propuesta revisable.<br>Construcción pausada.</p></aside>
+<main id="top"><div class="status">DOCUMENTO DE DECISIÓN · NO ES UNA BUILD DEL JUEGO</div><div class="opening"><p class="kicker">EL DERECHO A REGRESAR</p><p class="lede">Un imperio humano descubre que sus rutas entre galaxias son parte de un organismo vivo.</p><div class="metrics"><div><b>12</b><span>mundos diseñados</span></div><div><b>84</b><span>misiones propuestas</span></div><div><b>318</b><span>filas de producción</span></div><div><b>1</b><span>slice para validar</span></div></div></div>
+<section id="calculadora"><h2>Calculadora de producción</h2>
+<p class="calc-intro">Compara el mismo vertical slice nativo con producción propia e híbrida. Cambia los supuestos para comprobar cuándo la IA ahorra trabajo y cuándo las correcciones lo absorben. El precio por crédito permanece vacío hasta conocer la tarifa real.</p>
+<form id="costForm" autocomplete="off">
+<label><span>Horas de producción propia</span><input id="baseHours" type="number" value="3200" min="1" step="100"></label>
+<label><span>Tarifa económica, €/h</span><input id="rate" type="number" value="45" min="0" step="5"></label>
+<label><span>Gastos directos, €</span><input id="cash" type="number" value="8000" min="0" step="500"></label>
+<label><span>Horas elegibles para IA</span><input id="eligible" type="number" value="1000" min="0" step="100"></label>
+<label><span>Reducción en esas horas, %</span><input id="reduction" type="number" value="25" min="0" max="100" step="5"></label>
+<label><span>Corrección e integración extra, h</span><input id="integration" type="number" value="80" min="0" step="10"></label>
+<label><span>Créditos HF incrementales previstos</span><input id="credits" type="number" value="1200" min="0" step="100"></label>
+<label><span>€/crédito incremental, si se conoce</span><input id="creditPrice" type="number" placeholder="Pendiente de tarifa real" min="0" step="0.01"></label>
+<label><span>Contingencia, %</span><input id="contingency" type="number" value="25" min="0" max="100" step="5"></label>
+<label><span>Personas equivalentes disponibles</span><input id="team" type="number" value="4" min="0.25" step="0.25"></label>
+<label><span>Horas productivas/persona/mes</span><input id="monthly" type="number" value="120" min="1" max="240" step="10"></label>
+<label><span>Trabajo que se paga en caja, %</span><input id="paid" type="number" value="100" min="0" max="100" step="10"></label>
+</form>
+<div class="calc-actions"><button id="resetCalc" type="button">Restablecer caso base</button><span class="result-note">Las cifras no son financiación aprobada ni cotizaciones.</span></div>
+<div class="result-grid" aria-live="polite">
+<div><div class="result-label">Producción propia · coste económico</div><div class="result-value" id="ownValue"></div><div class="result-note" id="ownNote"></div></div>
+<div><div class="result-label">Ruta híbrida · coste económico</div><div class="result-value" id="hybridValue"></div><div class="result-note" id="hybridNote"></div></div>
+<div><div class="result-label" id="deltaLabel">Ahorro estimado</div><div class="result-value" id="deltaValue"></div><div class="result-note" id="deltaNote"></div></div>
+</div>
+<p class="calc-detail" id="timeResult"></p><p class="calc-detail" id="cashResult"></p><p class="calc-detail" id="breakEven"></p>
+<p class="formula">Horas híbridas = propias − elegibles × reducción + integración.<br>Coste = (horas × tarifa + gastos + HF incremental) × (1 + contingencia).</p>
+<p class="result-note">Si un saldo existente cubre generaciones, el desembolso incremental puede ser cero para ese lote; la suscripción y su coste de oportunidad siguen existiendo. El modelo solo añade créditos cuando se introduce una tarifa. Otros cargos remotos deben añadirse a gastos directos. El calendario es capacidad aritmética y no una fecha de entrega.</p>
+</section><article><h1 id="exovant-2950-biblia-de-preproducci-n-v0-1">EXOVANT 2950 — Biblia de preproducción v0.1</h1>
+<p><strong>Fecha de corte: 12 de septiembre de 2026. Responsable creativo: Roberto Ortega. Título de trabajo: EXOVANT 2950 — El derecho a regresar. Estado: propuesta de diseño y producción; construcción pausada.</strong></p>
+<p>Este documento transforma la ambición de un universo 3D soulslike interplanetario en decisiones revisables, contenido conectado, dependencias y criterios de aceptación. Las cifras son hipótesis de planificación, salvo los datos identificados como comprobados. Una ficha escrita es diseño propuesto; un archivo generado es un candidato; un activo de producción necesita importación, rendimiento, revisión y uso dentro del juego.</p>
+<h2 id="1-decisi-n-de-infraestructura">1. Decisión de infraestructura</h2>
+<p><strong>Recomendación: desarrollo nativo propio con Unreal y Blender, Mac mini como estación inicial, Higgsfield como taller remoto de conceptos y 3D, y un equipo RTX para validar la versión Windows y las funciones NVIDIA.</strong> Esta sesión puede coordinar el trabajo, editar datos y código, preparar pruebas y revisar resultados. La decisión de comprometer producción queda después de una prueba comparativa del mismo escenario.</p>
+<p>Higgsfield Games permite publicar juegos de navegador y anuncia generación 3D. Esa facilidad es valiosa para experimentar y compartir. No hemos verificado que entregue un proyecto Unreal nativo con los sistemas, las herramientas de perfilado y la distribución que exige esta visión. <a href="https://higgsfield.ai/games-intro" target="_blank" rel="noopener noreferrer">Higgsfield Games</a>.</p>
+<div class="table-wrap"><table><thead><tr><th>Entorno</th><th>Evidencia recuperada</th><th>Papel propuesto</th><th>Límite que afecta la decisión</th></tr></thead><tbody>
+<tr><td>PC virtual de esta sesión</td><td>8 CPU lógicas de cuota, 20 GiB de RAM, aproximadamente 28 GB libres; Linux x86_64; sin dispositivo GPU ni servidor gráfico expuestos</td><td>Coordinación, código, catálogos, automatización y pruebas sin interfaz</td><td>Instalar un editor no crea una GPU; capacidad de disco insuficiente para una producción Unreal completa</td></tr>
+<tr><td>Mac mini</td><td>USER.md registra M4 Pro; TRUTH_STATE del 31-07-2026 registra Blender 5.0.1, Godot 4.7.1, Unreal 5.8 y Unity instalados</td><td>Modelado, edición de niveles, programación, juego local y automatización por MCP</td><td>RAM, disco libre, versiones actuales y puentes activos pendientes de comprobar en la máquina</td></tr>
+<tr><td>Higgsfield 3D Jutsu</td><td>Operación Blender completada; escena y exportación GLB/.blend disponibles</td><td>Blockouts, variaciones geométricas, revisión remota y activos exportables</td><td>No conocemos modelo de GPU, VRAM, permanencia de procesos ni rendimiento de una escena de producción</td></tr>
+<tr><td>Higgsfield Games</td><td>Repositorio y entorno web accesibles; publicación para navegador documentada</td><td>Prototipo distribuible de una mecánica y pruebas de interacción</td><td>No equivale a una estación Unreal remota; exportación nativa y compatibilidad de plugins no verificadas</td></tr>
+<tr><td>Windows con RTX, local o alquilado</td><td>Aún no hay máquina conectada ni cotización aceptada</td><td>Compilar, probar mandos, medir GPU y validar DLSS en el destino Windows</td><td>Coste, disponibilidad, drivers, acceso remoto y compatibilidad del proveedor pendientes</td></tr>
+</tbody></table></div>
+<p>El repositorio de infraestructura es <a href="https://github.com/rotprods/game-dev-mcp-hub" target="_blank" rel="noopener noreferrer">game-dev-mcp-hub</a>, leído en el commit <code>41f0710ee26e3948ea2f72ca4e0ebb20ef309fde</code>. El estado del Mac es evidencia documental histórica, no una comprobación en vivo. El README mantiene partes antiguas que dicen que algunos motores están aparcados; la fotografía de TRUTH_STATE y las políticas más específicas se contrastarán mediante una nueva prueba de funcionamiento. <a href="https://github.com/rotprods/game-dev-mcp-hub/blob/41f0710ee26e3948ea2f72ca4e0ebb20ef309fde/docs/studio/TRUTH_STATE.md" target="_blank" rel="noopener noreferrer">TRUTH_STATE</a>.</p>
+<p>El contexto personal recuperado menciona una configuración Mac mini M4 Pro de 24 GB; se mantiene como referencia por contrastar con la máquina, ya que el inventario del repo no declara RAM. La documentación actual de Epic recomienda 32 GB o más en Mac. Registra soporte experimental de ray tracing por hardware y MegaLights en Apple Silicon M2+, y soporte beta de Nanite; por ello, la calidad del Mac se debe medir con nuestro escenario. No usaremos una afirmación antigua de ausencia total de esas funciones. <a href="https://dev.epicgames.com/documentation/en-us/unreal-engine/macos-development-requirements-for-unreal-engine" target="_blank" rel="noopener noreferrer">Requisitos macOS de UE 5.8</a>.</p>
+<h2 id="2-contrato-de-misi-n-y-reglas-recuperadas">2. Contrato de misión y reglas recuperadas</h2>
+<p><strong>GOAL.</strong> Diseñar y después construir una aventura de acción 3D en tercera persona, centrada en combate soulslike, exploración planetaria y consecuencias de la colonización humana en 2950, con una identidad visual y narrativa propia.</p>
+<p><strong>NORTH STAR.</strong> Un jugador entra en una región desconocida, interpreta señales de su ecología e historia, aprende un enfrentamiento exigente, abre una ruta nueva y toma una decisión cuyo efecto puede reconocer al volver. El viaje debe funcionar mediante espacios, acciones y consecuencias jugables.</p>
+<p><strong>WHY.</strong> Unir la intimidad de una decisión humana con la escala de una expansión galáctica. La misma infraestructura que permite regresar de la muerte hace posible apropiarse de mundos ajenos: combate, navegación y argumento comparten una causa.</p>
+<p><strong>IN SCOPE de esta fase.</strong> Diseño completo a nivel de preproducción del universo, sistemas, personajes, regiones, misiones, familias de activos, costes, arquitectura, secuencia de validación y migración. Las escenas individuales reciben un nivel de especificación proporcional a su cercanía a producción.</p>
+<p><strong>NON-GOALS de esta fase.</strong> Instalar motores, iniciar compras, abrir servicios del Mac a Internet, publicar un juego, declarar calidad AAA alcanzada o producir en serie todos los assets. La petición actual es planificar primero.</p>
+<p><strong>Invariantes.</strong> Volumen 3D real; combates legibles; estilo coherente; propiedad y procedencia trazables; partidas recuperables; decisiones persistentes; rendimiento medido sin confundir fotogramas generados con simulación; ninguna afirmación de finalización sin evidencia.</p>
+<p><strong>Criterio de éxito de la planificación.</strong> Cada categoría solicitada tiene una función jugable, un responsable de disciplina, dependencias, una fase, una estimación y un criterio de aceptación. Las incógnitas materiales tienen una prueba propuesta. El plan permite empezar por una unidad pequeña que represente la experiencia final.</p>
+<p><strong>Criterio de éxito del juego, propuesto.</strong> Al menos 8 de 10 participantes nuevos terminan el recorrido introductorio sin ayuda del desarrollador; al menos 7 explican una regla de combate y una consecuencia del mundo; se completa un recorrido sin bloqueos; guardar, morir, recuperar y volver a cargar conserva el estado correcto. Estas muestras pequeñas orientan decisiones de diseño; no demuestran aceptación comercial.</p>
+<div class="table-wrap"><table><thead><tr><th>Regla o protocolo</th><th>Estado de recuperación</th><th>Aplicación concreta</th></tr></thead><tbody>
+<tr><td>/DEFINE-GOAL v1.0</td><td>Texto canónico recuperado</td><td>Objetivo, alcance, invariantes, criterios falsables y primera frontera</td></tr>
+<tr><td>/CREATIVE-DIRECTION v1.0</td><td>Texto canónico recuperado</td><td>Referencias descompuestas; tesis visual; continuidad; dependencias entre activos</td></tr>
+<tr><td>/EMPEZARPROYECTO v1.0</td><td>Texto canónico recuperado</td><td>Recuperar proyecto y estado antes de ejecutar; preparar continuidad; no duplicar autoridad</td></tr>
+<tr><td>Reglas Studio OS / HARDMAX</td><td>Recuperadas</td><td>No dar instalaciones por hechas; respetar allowlist; conservar Knowledge Gold; registrar pruebas y artefactos</td></tr>
+<tr><td>/leydekidlin</td><td>Definición exacta guardada no localizada</td><td>Aplicación provisional: escribir el problema, separar incógnitas, descomponerlo y establecer la prueba de resolución. No se atribuye a tu comando una formulación que no hemos leído</td></tr>
+<tr><td>/promptengineer</td><td>Comando exacto no localizado ni disponible como preset</td><td>Se entrega un contrato de prompts de producción; no se afirma que se haya ejecutado una skill inexistente</td></tr>
+<tr><td>Otras leyes personales</td><td>Sin inventario canónico localizado</td><td>No se añaden como si fueran reglas tuyas. Los criterios nuevos se etiquetan como propuestas</td></tr>
+</tbody></table></div>
+<p>Fuentes: <a href="https://github.com/rotprods/rot.knowledge/blob/46f5c9f627c0c4f26f74209432b84744295b1d54/prompts/strategy/DEFINE_GOAL_MASTER.md" target="_blank" rel="noopener noreferrer">DEFINE-GOAL</a>, <a href="https://github.com/rotprods/rot.knowledge/blob/46f5c9f627c0c4f26f74209432b84744295b1d54/prompts/creative/CREATIVE_DIRECTION_MASTER.md" target="_blank" rel="noopener noreferrer">CREATIVE-DIRECTION</a>, <a href="https://github.com/rotprods/rot.knowledge/blob/46f5c9f627c0c4f26f74209432b84744295b1d54/prompts/README.md" target="_blank" rel="noopener noreferrer">autoridad de prompts</a>, <a href="https://github.com/rotprods/game-dev-mcp-hub/blob/41f0710ee26e3948ea2f72ca4e0ebb20ef309fde/policies/studio_policies.json" target="_blank" rel="noopener noreferrer">políticas Studio OS</a>.</p>
+<p>La búsqueda de leyes incluyó recuperación de contexto, archivos guardados, búsqueda del repositorio de desarrollo y el índice canónico de prompts. El árbol global de rot.knowledge estaba truncado; se examinaron por separado las carpetas relevantes de prompts, conocimiento y gobierno. Esto permite afirmar qué se recuperó, no que la regla no exista en ningún otro lugar. El corpus Knowledge Gold del Mac sigue pendiente de acceso.</p>
+<h2 id="3-identidad-creativa">3. Identidad creativa</h2>
+<p><strong>Tesis: la humanidad construyó un imperio dentro de un ser vivo sin reconocerlo.</strong> Sus catedrales espaciales son estaciones de tránsito; los dioses que combate son funciones de mantenimiento; sus muertos regresan a través de una red que ya tenía habitantes.</p>
+<p>El jugador debe sentir belleza, amenaza y responsabilidad. Cada planeta tiene su propia lógica material y cultural, mientras que determinados patrones revelan un origen compartido. Los habitantes no existen únicamente para dispensar misiones: tienen trabajo, parentesco, deuda, memoria y desacuerdos internos.</p>
+<div class="table-wrap"><table><thead><tr><th>Referencia solicitada</th><th>Atributo que interesa, como interpretación creativa</th><th>Transformación original para EXOVANT</th></tr></thead><tbody>
+<tr><td>Cyberpunk</td><td>Densidad social, estratos urbanos, cuerpos modificados, economía visible y personajes con intereses</td><td>Arcologías coloniales donde acceso al aire, memoria y resurrección determina la clase social</td></tr>
+<tr><td>No Man’s Sky</td><td>Deseo de descubrir, tránsito entre mundos, fauna extraña y horizonte cosmológico</td><td>Doce mundos con regiones diseñadas y una frontera procedural acotada por ecologías comprensibles</td></tr>
+<tr><td>Elden Ring</td><td>Combate con compromiso, siluetas memorables, descubrimiento y geografía interconectada</td><td>Reliquarios de tránsito, jefes ligados a la función del planeta y atajos que cambian la lectura del territorio</td></tr>
+</tbody></table></div>
+<p>Se toman principios y sensaciones; nombres, diseños, interfaces, personajes, música y mapas serán originales. No se promete combinar el volumen de contenido de tres producciones completas.</p>
+<h3 id="tres-territorios-conceptuales-considerados">Tres territorios conceptuales considerados</h3>
+<div class="table-wrap"><table><thead><tr><th>Territorio</th><th>Imagen central</th><th>Ventaja</th><th>Riesgo</th><th>Decisión propuesta</th></tr></thead><tbody>
+<tr><td>Imperio de la memoria</td><td>Puertos catedralicios construidos sobre ecosistemas que recuerdan</td><td>Une combate, muerte, política y exploración</td><td>Exceso de exposición si todo se explica con diálogos</td><td>Dominante</td></tr>
+<tr><td>Frontera mercenaria</td><td>Colonias corporativas y expediciones armadas</td><td>Entrada inmediata y vehículos claros</td><td>Se aproxima demasiado al imaginario espacial habitual</td><td>Reservar para Ares y Vanta</td></tr>
+<tr><td>Peregrinación cósmica</td><td>Viaje por órganos de una entidad estelar</td><td>Gran singularidad visual</td><td>Abstracción que debilite orientación y humanidad</td><td>Reservar para el tercer acto</td></tr>
+</tbody></table></div>
+<h3 id="gram-tica-visual-y-sonora">Gramática visual y sonora</h3>
+<p>Humanidad: cerámica marfil reparada, tejidos técnicos oscuros, códigos de mantenimiento, soldaduras recientes. Instituciones ricas ocultan reparaciones; trabajadores las exhiben como historial. Precursores: bronce oxidado, mineral negro, estructuras que distribuyen carga como huesos. Biosferas: formas repetidas por parentesco y adaptación, no por adornos aleatorios.</p>
+<p>Ámbar significa refugio; cian pálido, memoria; bermellón, intención hostil; blanco frío, autoridad colonial. El significado se repite con forma y sonido para que el color nunca sea la única señal. Los entornos usan una dominante local, un material de ocupación humana y una huella de la red.</p>
+<p>Composición: una referencia de orientación grande por región, hitos medianos que forman rutas y señales pequeñas que recompensan observación. La escala se demuestra con accesos, herramientas, cuerpos y desgaste. Una estructura enorme necesita una función imaginable.</p>
+<p>Cámara: tercera persona cercana durante exploración, con distancia adaptable en encuentros grandes; FOV regulable, suavizado y vibración opcionales. Las tomas dramáticas deben preservar lectura de suelo, enemigo y salidas. Iluminación motivada por sol, maquinaria, organismos o señalización; oscuridad con separación de siluetas. Evitar bloom que borre la animación anticipatoria.</p>
+<p>Sonido: los puertos de memoria emiten intervalos reconocibles; cada mundo modifica ese motivo con su medio físico. Terra mezcla olas con mecanismos enterrados, Vanta lluvia metálica y cables tensos, Origin respiración estructural. La música de jefe agrega capas al variar su conducta; el silencio anticipa cambios cuando resulta legible y consistente.</p>
+<p><strong>Continuidad fija:</strong> proporciones del protagonista, ubicación del relicario, materiales de cada facción, símbolos de refugio, tamaño de armas, escala de módulos y lenguaje de daño. <strong>Variable:</strong> clima, suciedad acumulada, iluminación, equipamiento autorizado y cámara. <strong>Pendiente:</strong> anatomías no observadas en una referencia de una sola vista; deben diseñarse y revisarse antes del modelado final.</p>
+<h2 id="4-historia-y-cosmolog-a">4. Historia y cosmología</h2>
+<h3 id="cronolog-a-ficticia">Cronología ficticia</h3>
+<div class="table-wrap"><table><thead><tr><th>Año</th><th>Suceso</th><th>Huella jugable en 2950</th></tr></thead><tbody>
+<tr><td>2090–2240</td><td>Crisis de habitabilidad y construcción de arcologías</td><td>Barrios sellados, semillas bajo custodia y memorias editadas de los desplazamientos</td></tr>
+<tr><td>2326</td><td>Descubrimiento de una estructura de tránsito bajo el Pacífico</td><td>Reliquario original y contratos de propiedad del acceso</td></tr>
+<tr><td>2381</td><td>Primer tránsito humano por la Red Mnémica</td><td>Navegación por rutas, sin inventar velocidades físicas convencionales</td></tr>
+<tr><td>2460</td><td>Legalización del retorno de memoria en cuerpos reconstruidos</td><td>Resurrección como infraestructura desigual, deuda y negocio</td></tr>
+<tr><td>2617</td><td>Consolidación del Concordato Terrano</td><td>Derechos de paso, aduanas y representación colonial</td></tr>
+<tr><td>2734</td><td>Contacto estable con enclaves de Andrómeda</td><td>Tratados contradictorios y culturas que no aceptan soberanía humana</td></tr>
+<tr><td>2878</td><td>Expansión de Hélix; extracción de núcleos de tránsito</td><td>Heridas ecológicas y economías dependientes de suministros</td></tr>
+<tr><td>2941</td><td>Protocolos de bioseguridad clasifican poblaciones humanas como intrusión</td><td>Custodios agresivos y rutas cerradas</td></tr>
+<tr><td>2950</td><td>El protagonista vuelve con una memoria que pertenece a otra especie</td><td>Inicio de campaña y conflicto personal</td></tr>
+</tbody></table></div>
+<p>El viaje entre galaxias se explica mediante una tecnología ficticia de conexión, no mediante trayectos a velocidades sublumínicas en unos minutos. El mapa representa nodos accesibles de una red. Las distancias astronómicas siguen siendo enormes; la duración jugable representa tránsito por una ruta especial. No simularemos todas las estrellas de galaxias completas.</p>
+<p>La jerarquía de datos será galaxia o región extragaláctica, sistema, cuerpo celeste, región de superficie, localización y encuentro. Cada nivel tiene identidad persistente. Las constelaciones son dibujos culturales vistos desde un origen concreto; no se confunden con sistemas físicamente próximos. El catálogo del tercer acto contiene fenómenos ficticios y los identifica como tales.</p>
+<h3 id="arcos-de-campa-a">Arcos de campaña</h3>
+<p><strong>Acto I — El derecho a regresar.</strong> Terra enseña que proteger la Tierra y proteger a su población ya no coinciden para las instituciones. Ares, Pelagos y Umbra revelan distintos precios del retorno: energía, memoria y exclusión. El jugador obtiene la facultad de leer la red sin depender enteramente de su gobierno.</p>
+<p><strong>Acto II — El derecho a nombrar.</strong> Sylva, Khepri, Nacre y Vanta disputan quién interpreta vida, propiedad y archivo. Un registro humano llama recurso a lo que sus habitantes consideran persona. El jugador descubre que su cuerpo de retorno contiene una firma anterior a la colonización. Las facciones intentan convertirle en portavoz, prueba o propiedad.</p>
+<p><strong>Acto III — El derecho a continuar.</strong> Aurora Veil, Leviathan y Elysium Null enseñan tiempo, inmunidad y control. Origin revela la función compartida de las rutas. El desenlace depende de acuerdos, pruebas preservadas y comunidades capaces de mantener una alternativa; no de escoger un botón de color al terminar.</p>
+<p><strong>Finales propuestos.</strong> Concordia: la red sigue abierta con límites negociados y costes de mantenimiento compartidos. Soberanía: la humanidad controla rutas, gana estabilidad material y afronta una insurgencia ecológica. Retirada: cierra nodos invasivos, evacúa colonias viables y acepta pérdidas culturales irreparables. Testigo: una salida secreta libera parte de la memoria cautiva si el jugador conserva archivos incompatibles con las tres narrativas oficiales. Ningún final invalida retroactivamente el sufrimiento individual.</p>
+<h3 id="protagonista-y-relaciones">Protagonista y relaciones</h3>
+<p>El <strong>Custodio Exiliado</strong> admite apariencia y trasfondo. Empieza como agente de recuperación de rutas, portador de una identidad legal revocada. El relicario del pecho permite volver a un santuario y escuchar memorias ambientales. Su evolución central es decidir si una memoria confiere propiedad, parentesco o responsabilidad.</p>
+<p>Tres orígenes cambian conversaciones y equipo inicial, sin encerrar clases: superviviente de arcología, navegante sin ciudadanía y técnico de rehabilitación planetaria. Todos pueden aprender cualquier disciplina. Un origen no resuelve un conflicto automáticamente; ofrece una pista, una deuda o una relación.</p>
+<p>Compañeros de núcleo: <strong>Inés Vale</strong>, archivista que participó en una falsificación y quiere repararla; <strong>Rami Serrat</strong>, ingeniero que protege a la tripulación que le considera cómplice; <strong>Edda Jun</strong>, traductora cuyo vínculo con la biosfera amenaza su identidad individual; <strong>Mika Drav</strong>, piloto sindical que puede mantener una ruta sin legitimidad estatal. Cada uno tiene deseo, secreto, desacuerdo con el jugador y un estado final ligado a hechos.</p>
+<p>El antagonismo humano lo representa <strong>Canciller Ivo Sanz</strong>, que teme que una retirada condene a millones de colonos y oculta alternativas para preservar cohesión. La almirante <strong>Maia Sol</strong> ejecuta evacuaciones y bloqueos con una doctrina rígida, pero cambia si presencia capacidad logística real. <strong>La Voz Entre Rutas</strong> interpreta al protagonista como un síntoma de la red, no como elegido sobrenatural.</p>
+<p>Los NPC no necesitan un LLM en ejecución para parecer vivos. Su memoria inicial será una selección de eventos persistentes, horarios sencillos, relaciones y diálogos escritos. Una capa conversacional generativa sería una investigación futura separada, con control de canon, latencia y coste.</p>
+<h2 id="5-escala-del-producto">5. Escala del producto</h2>
+<div class="table-wrap"><table><thead><tr><th>Entrega</th><th>Contenido observable</th><th>Propósito</th></tr></thead><tbody>
+<tr><td>Prueba comparativa</td><td>La misma sala, personaje, adversario, luz y cámara en dos rutas de producción</td><td>Medir horas, fidelidad, exportación, mantenimiento y rendimiento</td></tr>
+<tr><td>Prototipo de combate</td><td>Una arena y un enemigo legible; arte provisional</td><td>Elegir ritmo, cámara, compromiso de ataque y respuesta al daño</td></tr>
+<tr><td>Vertical slice</td><td>30–45 minutos, una región de Terra, un jefe, tres arquetipos enemigos, tres NPC, dos armas, un vehículo y un minijuego</td><td>Probar una sección representativa con calidad de producción</td></tr>
+<tr><td>Capítulo financiable</td><td>Terra ampliada y un segundo mundo, con retorno entre ambos</td><td>Probar repetibilidad del pipeline y coste real por región</td></tr>
+<tr><td>Visión completa</td><td>Doce mundos principales repartidos en tres ámbitos galácticos, con misiones y custodio final por mundo</td><td>Campaña interplanetaria; autorización de producción posterior al capítulo</td></tr>
+</tbody></table></div>
+<p>Objetivo creativo de campaña: 35–50 horas de recorrido principal y 60–90 con exploración, sujeto a pruebas de ritmo y financiación. Es una meta de diseño, no una duración ya medida. Cada mundo ofrece una región abierta principal de aproximadamente 2–6 km² jugables, dos espacios interiores o mazmorras y áreas orbitales delimitadas. Doce mundos no significa doce esferas enteras con cada metro construido a mano.</p>
+<p>Propuesta de alcance espacial: salida de un puerto, vuelo atmosférico en volumen acotado, aproximación orbital y tránsito con transición integrada en cabina. El aterrizaje completamente continuo desde cualquier lugar del espacio queda como investigación posterior; no será una dependencia del combate ni de la campaña. Se conserva la sensación de expedición mediante control de la nave, distancias locales, navegación y consecuencias logísticas.</p>
+<p>La frontera procedural utiliza gramáticas de terreno, bioma y asentamiento validadas. Sus semillas son reproducibles y no mezclan fauna, recursos y ruinas sin reglas. Misiones principales, arenas y rutas críticas se diseñan y prueban individualmente. Los límites planetarios se justifican por clima, permiso, combustible de aterrizaje o terreno, sin paredes invisibles en caminos anunciados como transitables.</p>
+<h2 id="6-atlas-de-mundos-y-custodios">6. Atlas de mundos y custodios</h2>
+<p>Todos los sistemas fuera de Sol, sus cuerpos y sus constelaciones culturales son ficción de diseño. Las cifras ambientales son condiciones de referencia del área jugable, no una simulación astrofísica global. El Umbral es una región extragaláctica ficticia; no se presenta como una galaxia observada. Hay dos galaxias reales usadas como marco narrativo y un tercer ámbito ficticio.</p>
+<div class="table-wrap"><table><thead><tr><th>Ámbito</th><th>Mundo</th><th>Sistema</th><th>Custodio</th></tr></thead><tbody>
+<tr><td>VÍA LÁCTEA</td><td>TERRA</td><td>Sol</td><td>ATLAS, el jardinero orbital</td></tr>
+<tr><td>VÍA LÁCTEA</td><td>ARES IX</td><td>Sol</td><td>MOL-9, el devorador de mantos</td></tr>
+<tr><td>VÍA LÁCTEA</td><td>PELAGOS</td><td>Talas</td><td>THALASSA, coral de los mil ojos</td></tr>
+<tr><td>VÍA LÁCTEA</td><td>UMBRA</td><td>Sere</td><td>NOCTIL, el eclipse viviente</td></tr>
+<tr><td>ANDRÓMEDA</td><td>SYLVA PRIME</td><td>Dendra</td><td>VESPER, raíz de todas las voces</td></tr>
+<tr><td>ANDRÓMEDA</td><td>KHEPRI</td><td>Sahra</td><td>RA-KHET, sol encadenado</td></tr>
+<tr><td>ANDRÓMEDA</td><td>NACRE</td><td>Mneme</td><td>MNEMOS, el archivo encarnado</td></tr>
+<tr><td>ANDRÓMEDA</td><td>VANTA</td><td>Drav</td><td>FERRUM, coloso de chatarra</td></tr>
+<tr><td>EL UMBRAL</td><td>AURORA VEIL</td><td>Velar</td><td>AEON, el fruto del mañana</td></tr>
+<tr><td>EL UMBRAL</td><td>LEVIATHAN</td><td>Soma</td><td>SOMA, el sistema inmune</td></tr>
+<tr><td>EL UMBRAL</td><td>ELYSIUM NULL</td><td>Alba Nula</td><td>EDEN, la perfección hostil</td></tr>
+<tr><td>EL UMBRAL</td><td>ORIGIN</td><td>Nexo Exovant</td><td>EXOVANT, el corazón de los caminos</td></tr>
+</tbody></table></div>
+<h3 id="01-terra-atlas-el-jardinero-orbital">01. TERRA — ATLAS, el jardinero orbital</h3>
+<p><strong>Ámbito:</strong> VÍA LÁCTEA. <strong>Sistema:</strong> Sol. <strong>Facción:</strong> Concordato Terrano.</p>
+<p><strong>Cielo y cuerpos:</strong> Sol, estrella G; referencia real con futuro ficticio. Tierra; el área inicial es un archipiélago de infraestructura orbital. Luna; anillo de residuos y plataformas de ascenso.</p>
+<p><strong>Referencia ambiental:</strong> gravedad 1,00 g; temperatura de área 22 °C. Los exotrajes compensan cargas de movimiento donde haga falta, con reglas comunicadas. No se modifica silenciosamente el tiempo de esquiva entre planetas.</p>
+<p>Observador: costa terrana. Aguja Rota: antiguos satélites confundidos con un asterismo; Mano del Retorno: constelación cultural ficticia.</p>
+<p><strong>Conflicto:</strong> Las torres de lanzamiento atraviesan bosques nacidos sobre ciudades costeras. El sistema que reparó la biosfera ha declarado a la humanidad especie invasora.</p>
+<p><strong>Regla jugable:</strong> La vegetación conduce impulsos de mantenimiento: cortar una raíz abre una puerta y altera el riego de otra zona. El agua conecta lectura de ecología, acceso y autoridad.</p>
+<p><strong>Geografía y rutas:</strong></p>
+<ul>
+<li>Costa de los Retornados: muelles, viviendas y bosque de sal</li>
+<li>Archivo Abisal: oficinas inundadas y bóvedas de semillas</li>
+<li>Primer Reliquario: jardín industrial, elevador y arena de ATLAS</li>
+</ul>
+<p><strong>Biota y relaciones:</strong></p>
+<ul>
+<li>Cérvido de silicio: dispersa semillas con pezuñas minerales; huye del bermellón</li>
+<li>Garza de cable: anida en conductores y anticipa sobrecargas</li>
+<li>Cangrejo de sal: consume polímeros de la costa; revela accesos ocultos</li>
+<li>Musgo testigo: conserva huellas bioeléctricas y expone actividad reciente</li>
+</ul>
+<p><strong>NPC y motivación:</strong></p>
+<ul>
+<li>Inés Vale / archivo / quiere revelar su participación en la falsificación</li>
+<li>Bruno Arce / refugiado del elevador / exige agua antes de hablar de ecología</li>
+<li>Saja Lin / técnica de semillas / negocia una zona compartida de cultivo</li>
+</ul>
+<p><strong>Adversarios:</strong></p>
+<ul>
+<li>Custodio de poda: barridos de herramienta, vulnerable al terminar el giro</li>
+<li>Expropiador del Concordato: escudo y avance, flanqueable por riego lateral</li>
+<li>Carro de cuarentena: niebla y cierre de rutas, reactor expuesto al ventilar</li>
+</ul>
+<p><strong>Cadena principal:</strong></p>
+<div class="table-wrap"><table><thead><tr><th>ID</th><th>Misión</th><th>Acción y resultado</th></tr></thead><tbody>
+<tr><td>Q_TERRA_M01</td><td>La última costa</td><td>Atracar, encontrar refugio y restablecer agua para ocho familias; tutorial de interacción con riesgo visible</td></tr>
+<tr><td>Q_TERRA_M02</td><td>Un jardín sin humanos</td><td>Seguir tres especies hasta descubrir que los ataques protegen un vivero; resolver un circuito de riego</td></tr>
+<tr><td>Q_TERRA_M03</td><td>El archivo sumergido</td><td>Descender al archivo por techo o esclusa y recuperar un acta conservando su autenticidad</td></tr>
+<tr><td>Q_TERRA_M04</td><td>Despertar a ATLAS</td><td>Reactivar el elevador para llevar a ATLAS a una plataforma donde pueda aislarse su protocolo</td></tr>
+<tr><td>Q_TERRA_M05</td><td>El derecho a regresar</td><td>Resolver quién administra agua, transporte y semillas; volver al muelle para ver el resultado</td></tr>
+</tbody></table></div>
+<p><strong>Misiones secundarias:</strong></p>
+<ul>
+<li>La casa que sigue pagando: una deuda se cobra a la memoria de una persona muerta; localizar a su descendiente o anular el registro</li>
+<li>Ocho semillas: elegir qué cultivar en un refugio limitado; la cosecha modifica suministros y conversaciones</li>
+</ul>
+<p><strong>Minijuego:</strong> Riego resonante: orientar tres válvulas siguiendo presión y sonido; sin temporizador por defecto.</p>
+<p><strong>Vehículo local:</strong> Peregrino-6, rover anfibio de mantenimiento.</p>
+<p><strong>Arena del custodio:</strong> Plataforma circular de 48 m, tres brazos de riego, dos pasos laterales y un núcleo central. El bloqueo de cámara se puede trasladar entre torso y herramienta.</p>
+<p><strong>Fases propuestas:</strong></p>
+<ul>
+<li>100–60%: poda; barridos horizontales y pisadas marcadas por raíces luminosas</li>
+<li>60–25%: cuarentena; cierra un sector y cambia rutas de aproximación sin eliminar todas las salidas</li>
+<li>25–0%: raíz expuesta; permite atacar el núcleo o aplicar el acta autenticada para separar el protocolo hostil</li>
+</ul>
+<p><strong>Ataques representativos y respuesta:</strong></p>
+<ul>
+<li>Guadaña orbital: hombro elevado 0,8 s, barrido, recuperación 1,1 s; esquivar hacia el interior</li>
+<li>Siembra de lanzas: tres marcas de suelo durante 1,2 s; salir del patrón, castigar brazo clavado</li>
+<li>Riego de cuarentena: boquillas apuntan 1,4 s antes del arco; abrir válvula lateral para crear una zona segura</li>
+</ul>
+<p>Los tres ataques descritos definen el prototipo del patrón. La ficha de producción ampliará a seis u ocho ataques con transiciones, ventanas, colisión y clips; no se declaran esos clips producidos.</p>
+<p><strong>Recompensa:</strong> Articulación de ATLAS: golpe pesado puede activar mecanismos; alternativa pacífica conserva al custodio como servicio de riego.</p>
+<p><strong>Consecuencias al regresar:</strong></p>
+<ul>
+<li>Industria: elevador operativo y repuestos baratos, junto con patrullas y reducción del jardín</li>
+<li>Cogobierno: rutas mantenidas por técnicos y biosfera; requiere conservar acta y salvar el vivero</li>
+<li>Santuario: costa regenerada y evacuación de sectores industriales; menos comercio y nuevas rutas naturales</li>
+</ul>
+<p><strong>Secreto narrativo:</strong> El archivo confirma que las extinciones justificaron concesiones de suelo. Inés aparece como firmante.</p>
+<p><strong>Arte y sonido:</strong> Arcología costera: hormigón erosionado, cerámica, raíces estructurales, pasarelas y conductos de riego. Olas, cilindros hidráulicos bajo piedra y un motivo coral de cuatro notas que ATLAS pronuncia con bombas.</p>
+<p><strong>Riesgo específico:</strong> Agua, vegetación y estructura densa compiten por GPU; limitar transparencias y medir la legibilidad del jefe sobre el fondo.</p>
+<h3 id="02-ares-ix-mol-9-el-devorador-de-mantos">02. ARES IX — MOL-9, el devorador de mantos</h3>
+<p><strong>Ámbito:</strong> VÍA LÁCTEA. <strong>Sistema:</strong> Sol. <strong>Facción:</strong> Consorcio Hélix.</p>
+<p><strong>Cielo y cuerpos:</strong> Sol; Ares IX designa el noveno distrito colonial de Marte. Marte transformado parcialmente; el entorno abierto sigue requiriendo traje. Fobos, Deimos y un puerto minero ficticio.</p>
+<p><strong>Referencia ambiental:</strong> gravedad 0,38 g; temperatura de área −41 °C. Los exotrajes compensan cargas de movimiento donde haga falta, con reglas comunicadas. No se modifica silenciosamente el tiempo de esquiva entre planetas.</p>
+<p>Observador: distrito Ares IX. Mandíbula: luces de una refinería orbital; Viuda Roja: dibujo cultural de navegantes, sin coordenadas astronómicas atribuidas.</p>
+<p><strong>Conflicto:</strong> Los colonos perforaron hasta encontrar una máquina que soñaba bajo el óxido. Cada tormenta retransmite las últimas palabras de una colonia desaparecida.</p>
+<p><strong>Regla jugable:</strong> El calor es soporte vital y peligro táctico. Redirigirlo cambia visibilidad, accesos y supervivencia de refugios; cada conducto ofrece lectura térmica previa.</p>
+<p><strong>Geografía y rutas:</strong></p>
+<ul>
+<li>Escarpa del Turno Nueve: pueblo minero y vías de carga</li>
+<li>Pozos de los Durmientes: galerías térmicas con embriones</li>
+<li>Mandíbula del Manto: instalaciones móviles y reactor de MOL-9</li>
+</ul>
+<p><strong>Biota y relaciones:</strong></p>
+<ul>
+<li>Raya de polvo: se desliza por bolsas gaseosas y revela corrientes</li>
+<li>Litófago ferruginoso: digiere óxidos en cavernas templadas</li>
+<li>Gusano de sílice: reacciona a vibración industrial</li>
+<li>Liquen de respiradero: marca temperatura segura en la roca</li>
+</ul>
+<p><strong>NPC y motivación:</strong></p>
+<ul>
+<li>Rami Serrat / ingeniero / protege al turno atrapado</li>
+<li>Vera Cid / jefa de concesión / teme quedarse sin calefacción para la colonia</li>
+<li>Tomás Hume / guardián de incubadoras / desconfía de toda perforación</li>
+</ul>
+<p><strong>Adversarios:</strong></p>
+<ul>
+<li>Perforador Hélix: ataques rectos que se atascan en roca dura</li>
+<li>Sabueso de sondeo: rastrea vibraciones; pierde objetivo cuando las bombas rugen</li>
+<li>Desertor térmico: arma de presión que necesita recarga visible</li>
+</ul>
+<p><strong>Cadena principal:</strong></p>
+<div class="table-wrap"><table><thead><tr><th>ID</th><th>Misión</th><th>Acción y resultado</th></tr></thead><tbody>
+<tr><td>Q_ARES_M01</td><td>Voces bajo el óxido</td><td>Investigar una señal de auxilio que coincide con latidos del subsuelo</td></tr>
+<tr><td>Q_ARES_M02</td><td>Rastros en la tormenta</td><td>Seguir una raya durante la tormenta o reparar una baliza para entrar por otra ruta</td></tr>
+<tr><td>Q_ARES_M03</td><td>El pozo de los durmientes</td><td>Distribuir calor entre dos galerías y evacuar un turno antes de descender</td></tr>
+<tr><td>Q_ARES_M04</td><td>La mandíbula de MOL-9</td><td>Inmovilizar la plataforma de MOL-9 y combatir sobre conductos con temperatura cambiante</td></tr>
+<tr><td>Q_ARES_M05</td><td>Quién merece despertar</td><td>Decidir quién usa la energía tras descubrir que la máquina sostiene incubadoras</td></tr>
+</tbody></table></div>
+<p><strong>Misiones secundarias:</strong></p>
+<ul>
+<li>El turno que no fichó: reconstruir una nómina manipulada y compensar a familias</li>
+<li>Un sol para la enfermería: construir un desvío térmico con tres repuestos elegidos, no recolectados al azar</li>
+</ul>
+<p><strong>Minijuego:</strong> Equilibrado térmico: mantener dos circuitos dentro de banda evitando sobrepresión; opción de resolución asistida.</p>
+<p><strong>Vehículo local:</strong> Peregrino-6 con tracción minera; Taladro Mula como vehículo de secuencia.</p>
+<p><strong>Arena del custodio:</strong> Foso industrial de 64 m con pasarelas que sobreviven al cambio de fase; salidas térmicas alternas.</p>
+<p><strong>Fases propuestas:</strong></p>
+<ul>
+<li>100–65%: brazo excavador; golpes lineales, giros lentos</li>
+<li>65–30%: sobrepresión; abre grietas anunciadas y expone tubos refrigerantes</li>
+<li>30–0%: soporte vital; el daño al núcleo compromete incubadoras y habilita desacoplamiento si se recuperó el esquema</li>
+</ul>
+<p><strong>Ataques representativos y respuesta:</strong></p>
+<ul>
+<li>Mandíbula de pozo: perforadora retraída 1,0 s, carga recta; flanquear y romper abrazadera</li>
+<li>Ventilación roja: válvulas vibran 1,3 s; refugiarse tras pantalla térmica</li>
+<li>Anillo sísmico: apoyo de tres patas 1,1 s; cruzar por pasarela elevada, no por salto obligatorio</li>
+</ul>
+<p>Los tres ataques descritos definen el prototipo del patrón. La ficha de producción ampliará a seis u ocho ataques con transiciones, ventanas, colisión y clips; no se declaran esos clips producidos.</p>
+<p><strong>Recompensa:</strong> Válvula de manto: herramienta de presión para armas pesadas y sellos industriales.</p>
+<p><strong>Consecuencias al regresar:</strong></p>
+<ul>
+<li>Extracción: combustible barato y expansión Hélix; incubadoras reducidas</li>
+<li>Reparto: limita producción y garantiza calor a colonia y durmientes; exige pruebas y reparación</li>
+<li>Sellado: detiene el daño pero obliga a evacuar la escarpa y modifica rutas de comercio</li>
+</ul>
+<p><strong>Secreto narrativo:</strong> MOL-9 dejó de extraer hace décadas; el supuesto mineral crítico es la carcasa de una reserva de vida.</p>
+<p><strong>Arte y sonido:</strong> Minería roja: tubos aislados, módulos de presión, elevadores, cintas y roca estratificada. Radio entrecortada, metal tensionado y pulsos graves por conducción en el traje.</p>
+<p><strong>Riesgo específico:</strong> Terreno deformable continuo es demasiado costoso al inicio; usar sectores y estados de destrucción diseñados.</p>
+<h3 id="03-pelagos-thalassa-coral-de-los-mil-ojos">03. PELAGOS — THALASSA, coral de los mil ojos</h3>
+<p><strong>Ámbito:</strong> VÍA LÁCTEA. <strong>Sistema:</strong> Talas. <strong>Facción:</strong> Liga de las Mareas.</p>
+<p><strong>Cielo y cuerpos:</strong> Talas, K2 V ficticia. Mundo oceánico con plataformas en arrecifes; gravedad de diseño 0,91 g. Lágrima, luna conductora ficticia que condiciona mareas.</p>
+<p><strong>Referencia ambiental:</strong> gravedad 0,91 g (propuesta revisada); temperatura de área 8 °C. Los exotrajes compensan cargas de movimiento donde haga falta, con reglas comunicadas. No se modifica silenciosamente el tiempo de esquiva entre planetas.</p>
+<p>Observador: superficie de Pelagos. La Red Vacía y Pez de Tres Ojos son constelaciones culturales locales; cambian bajo refracción acuática.</p>
+<p><strong>Conflicto:</strong> Las ciudades flotantes migran según canciones que nadie compuso. La población local transmite recuerdos en las mareas.</p>
+<p><strong>Regla jugable:</strong> El arrecife almacena sonido; reproducir una secuencia atrae fauna, abre membranas o delata al jugador. La información recogida pertenece a individuos vivos.</p>
+<p><strong>Geografía y rutas:</strong></p>
+<ul>
+<li>Mercado de Boyas: población móvil y ensamblajes flotantes</li>
+<li>Coro del Arrecife: canales que retienen memoria</li>
+<li>Fosa de las Mil Miradas: santuario de THALASSA</li>
+</ul>
+<p><strong>Biota y relaciones:</strong></p>
+<ul>
+<li>Medusa mnémica: transmite memoria luminosa; no es una batería sin dueño</li>
+<li>Anguila de vidrio: caza siguiendo sonido repetido</li>
+<li>Bóvido de arrecife: mantiene canales al pastar</li>
+<li>Coral escriba: incorpora vibración a su crecimiento</li>
+</ul>
+<p><strong>NPC y motivación:</strong></p>
+<ul>
+<li>Nara Océano / bióloga anfibia / quiere contacto sin extracción</li>
+<li>Damián Vo / capitán de boyas / necesita un canal de comercio</li>
+<li>Téa del Coro / intérprete de arrecife / comparte memoria de forma parcial</li>
+</ul>
+<p><strong>Adversarios:</strong></p>
+<ul>
+<li>Buzo de extracción: arpón con cable que se puede cortar</li>
+<li>Guardia de pólipos: protege zonas acústicas, retrocede ante disonancia aprendida</li>
+<li>Anguila centinela: carga entre anclajes, con recorrido visible</li>
+</ul>
+<p><strong>Cadena principal:</strong></p>
+<div class="table-wrap"><table><thead><tr><th>ID</th><th>Misión</th><th>Acción y resultado</th></tr></thead><tbody>
+<tr><td>Q_PELAGOS_M01</td><td>Ciudad a la deriva</td><td>Estabilizar una plataforma y aprender respiración del traje</td></tr>
+<tr><td>Q_PELAGOS_M02</td><td>La memoria de la sal</td><td>Registrar llamadas del arrecife distinguiendo saludo de alarma</td></tr>
+<tr><td>Q_PELAGOS_M03</td><td>Traducir una marea</td><td>Recuperar una memoria robada sin destruir el coral que la contiene</td></tr>
+<tr><td>Q_PELAGOS_M04</td><td>Los mil ojos de THALASSA</td><td>Descender usando anclajes y enfrentar a THALASSA en una cámara con zonas secas</td></tr>
+<tr><td>Q_PELAGOS_M05</td><td>La voz del océano</td><td>Negociar el uso del canal y la restitución de memorias</td></tr>
+</tbody></table></div>
+<p><strong>Misiones secundarias:</strong></p>
+<ul>
+<li>El nombre prestado: un marinero recuerda una infancia ajena; devolverla o acordar memoria compartida</li>
+<li>La boya funeraria: construir una señal audible por humanos y arrecife</li>
+</ul>
+<p><strong>Minijuego:</strong> Traducción acústica: relacionar pulsos, respuestas y contexto; subtítulos y visualización de espectro opcionales.</p>
+<p><strong>Vehículo local:</strong> Nácar-2, sumergible biplaza sin acompañante obligatorio.</p>
+<p><strong>Arena del custodio:</strong> Cámara inundable de 52 m con plataformas de mantenimiento y anclajes; nunca exigir combate preciso en nado libre antes de validarlo.</p>
+<p><strong>Fases propuestas:</strong></p>
+<ul>
+<li>100–70%: ojos exploradores revelan al jugador entre pilares</li>
+<li>70–35%: alterna inundación de dos sectores y tentáculos de cierre</li>
+<li>35–0%: el coro responde a la memoria restituida y permite cortar el vínculo de extracción</li>
+</ul>
+<p><strong>Ataques representativos y respuesta:</strong></p>
+<ul>
+<li>Mirada convergente: tres ojos fijan luz 1,2 s; romper línea con columna</li>
+<li>Látigo de corriente: tentáculo carga desde fuera 0,9 s; entrar en bolsillo interior</li>
+<li>Canto de presión: membranas se expanden 1,6 s; cambiar a plataforma ventilada</li>
+</ul>
+<p>Los tres ataques descritos definen el prototipo del patrón. La ficha de producción ampliará a seis u ocho ataques con transiciones, ventanas, colisión y clips; no se declaran esos clips producidos.</p>
+<p><strong>Recompensa:</strong> Lente de memoria: identifica resonancias ocultas y modifica herramientas sónicas.</p>
+<p><strong>Consecuencias al regresar:</strong></p>
+<ul>
+<li>Canal comercial: prospera el mercado y el arrecife pierde intimidad</li>
+<li>Tratado de consentimiento: tránsito por horarios y devolución de datos; exige archivos íntegros</li>
+<li>Reserva marina: comercio desviado y fauna restaurada; un NPC abandona su negocio</li>
+</ul>
+<p><strong>Secreto narrativo:</strong> Las voces que el mercado vende como ambientación son recuerdos de sujetos vivos.</p>
+<p><strong>Arte y sonido:</strong> Arrecife habitado: flotadores, conchas, tejidos impermeables, coral volumétrico simplificado. Hidrófonos, respiración medida y voces que parecen cercanas pero llegan por estructuras.</p>
+<p><strong>Riesgo específico:</strong> Agua y movimiento vertical amenazan cámara y controles; arena híbrida con suelo firme en la primera versión.</p>
+<h3 id="04-umbra-noctil-el-eclipse-viviente">04. UMBRA — NOCTIL, el eclipse viviente</h3>
+<p><strong>Ámbito:</strong> VÍA LÁCTEA. <strong>Sistema:</strong> Sere. <strong>Facción:</strong> Flotilla de los Sin Sol.</p>
+<p><strong>Cielo y cuerpos:</strong> Sere, enana roja M4 V ficticia. Rotación sincronizada ficticia; asentamientos en la franja crepuscular. Pequeño enjambre de estaciones reflector.</p>
+<p><strong>Referencia ambiental:</strong> gravedad 0,81 g; temperatura de área −87 °C. Los exotrajes compensan cargas de movimiento donde haga falta, con reglas comunicadas. No se modifica silenciosamente el tiempo de esquiva entre planetas.</p>
+<p>Observador: franja de Umbra. Ojo Quieto y Esposas del Alba son dibujos de la Flotilla; el sol mantiene posición casi fija.</p>
+<p><strong>Conflicto:</strong> Un hemisferio arde y el otro nunca ha visto luz. Los refugiados viven en una estrecha franja donde las sombras llegan antes que los cuerpos.</p>
+<p><strong>Regla jugable:</strong> Luz y sombra son permisos de navegación además de temperatura. Encender un reflector revela rutas y expone caravanas a vigilancia.</p>
+<p><strong>Geografía y rutas:</strong></p>
+<ul>
+<li>Caravana del Terminador: hogares que siguen corredores térmicos</li>
+<li>Observatorio de los Sin Nombre: antenas y archivos de ciudadanía</li>
+<li>Corona de NOCTIL: gigantesca estación de sombra</li>
+</ul>
+<p><strong>Biota y relaciones:</strong></p>
+<ul>
+<li>Mantis de sombra: detecta contornos contra la luz</li>
+<li>Pastor de escarcha: migra por gradientes térmicos</li>
+<li>Polilla de penumbra: poliniza durante pulsos de reflector</li>
+<li>Hongo umbral: obtiene energía de oscilaciones térmicas</li>
+</ul>
+<p><strong>NPC y motivación:</strong></p>
+<ul>
+<li>Soren Vey / cartógrafo / guarda rutas de exiliados</li>
+<li>Uma Re / médica de caravana / necesita un reflector estable</li>
+<li>Luc Sain / inspector / busca regularizar a cambio de vigilancia</li>
+</ul>
+<p><strong>Adversarios:</strong></p>
+<ul>
+<li>Vigía de contraluz: dispara desde siluetas recortadas</li>
+<li>Mantis de sombra: dos avances y pausa reconocible</li>
+<li>Notario armado: fija zonas de acceso y persigue al cruzarlas</li>
+</ul>
+<p><strong>Cadena principal:</strong></p>
+<div class="table-wrap"><table><thead><tr><th>ID</th><th>Misión</th><th>Acción y resultado</th></tr></thead><tbody>
+<tr><td>Q_UMBRA_M01</td><td>La frontera del día</td><td>Encontrar la caravana leyendo temperatura y huellas</td></tr>
+<tr><td>Q_UMBRA_M02</td><td>Sombras que respiran</td><td>Ajustar un reflector para salvar un convoy sin mostrar su ruta completa</td></tr>
+<tr><td>Q_UMBRA_M03</td><td>Geometría del eclipse</td><td>Recuperar registros que demuestran exclusión deliberada de retornados</td></tr>
+<tr><td>Q_UMBRA_M04</td><td>El refugio de NOCTIL</td><td>Ascender a la corona y combatir el mecanismo de NOCTIL</td></tr>
+<tr><td>Q_UMBRA_M05</td><td>Una luz para todos</td><td>Elegir un régimen de acceso para la franja habitable</td></tr>
+</tbody></table></div>
+<p><strong>Misiones secundarias:</strong></p>
+<ul>
+<li>Ciudadanía de una sombra: reunir tres testimonios para una persona borrada</li>
+<li>La caravana inmóvil: reparar un hogar sin condenarlo a pagar peaje permanente</li>
+</ul>
+<p><strong>Minijuego:</strong> Cartografía celeste: alinear referencias locales y una baliza; no requerir reconocer constelaciones reales.</p>
+<p><strong>Vehículo local:</strong> Vela de Ceniza, planeador que usa gradientes de la franja.</p>
+<p><strong>Arena del custodio:</strong> Anillo de observación de 44 m con pantallas giratorias; el suelo permanece visible y las áreas seguras tienen señal redundante.</p>
+<p><strong>Fases propuestas:</strong></p>
+<ul>
+<li>100–65%: una fuente de luz y sombra móvil</li>
+<li>65–30%: dos fuentes generan refugios alternos, nunca oscuridad total ilegible</li>
+<li>30–0%: proyección del observatorio; desactivar vigilancia modifica su último patrón</li>
+</ul>
+<p><strong>Ataques representativos y respuesta:</strong></p>
+<ul>
+<li>Corte de horizonte: emisor se alinea 1,0 s; usar pantalla</li>
+<li>Paso de eclipse: sombra converge 1,2 s antes del impacto</li>
+<li>Lanza del alba: espejo vibra 0,8 s; esquiva lateral, castigo al actuador</li>
+</ul>
+<p>Los tres ataques descritos definen el prototipo del patrón. La ficha de producción ampliará a seis u ocho ataques con transiciones, ventanas, colisión y clips; no se declaran esos clips producidos.</p>
+<p><strong>Recompensa:</strong> Velo de terminador: maniobra breve que interrumpe fijación óptica sin invisibilidad infinita.</p>
+<p><strong>Consecuencias al regresar:</strong></p>
+<ul>
+<li>Registro central: servicios estables y mayor vigilancia</li>
+<li>Federación de caravanas: datos distribuidos y mantenimiento comunitario</li>
+<li>Oscurecimiento: rutas clandestinas seguras y menor producción energética</li>
+</ul>
+<p><strong>Secreto narrativo:</strong> La escasez de franjas habitables fue exagerada para controlar la ciudadanía.</p>
+<p><strong>Arte y sonido:</strong> Crepúsculo móvil: carros, reflectores, hielo oscuro y tela tensada. Viento lateral constante, lonas y radio de caravanas con silencios significativos.</p>
+<p><strong>Riesgo específico:</strong> Oscuridad no puede ocultar anticipaciones; ensayo con brillo bajo y perfiles de visión de color.</p>
+<h3 id="05-sylva-prime-vesper-ra-z-de-todas-las-voces">05. SYLVA PRIME — VESPER, raíz de todas las voces</h3>
+<p><strong>Ámbito:</strong> ANDRÓMEDA. <strong>Sistema:</strong> Dendra. <strong>Facción:</strong> Coro Micelial.</p>
+<p><strong>Cielo y cuerpos:</strong> Dendra, K1 V ficticia en Andrómeda. Superficie de raíces y plataformas vivas; gravedad propuesta 1,12 g. Semilla, luna pequeña ficticia y enjambre polinizador orbital.</p>
+<p><strong>Referencia ambiental:</strong> gravedad 1,12 g (propuesta revisada); temperatura de área 34 °C. Los exotrajes compensan cargas de movimiento donde haga falta, con reglas comunicadas. No se modifica silenciosamente el tiempo de esquiva entre planetas.</p>
+<p>Observador: claro alto de Sylva. Raíz Suspendida y El Huésped dibujan parentescos, no conquistas.</p>
+<p><strong>Conflicto:</strong> Las plantas imitan recuerdos humanos para comunicarse. Algunas aldeas han olvidado dónde termina su conciencia y empieza la del bosque.</p>
+<p><strong>Regla jugable:</strong> La red vegetal comparte información con retraso local. Dañar una raíz produce una respuesta en otra zona, anunciada por color, sonido y mensajeros.</p>
+<p><strong>Geografía y rutas:</strong></p>
+<ul>
+<li>Puerto del Injerto: enclave humano alojado en tejido vivo</li>
+<li>Bosque de las Frases: rutas que responden a señales aprendidas</li>
+<li>Cámara de VESPER: nudo radical bajo una ciudad forestal</li>
+</ul>
+<p><strong>Biota y relaciones:</strong></p>
+<ul>
+<li>Ciervo de esporas: lleva fragmentos de lenguaje en su pelaje</li>
+<li>Grajilla micelar: intercambia nutrientes por avisos</li>
+<li>Andador de corteza: herbívoro de seis patas con senderos estables</li>
+<li>Orquídea de pacto: florece donde se ha mantenido un acuerdo</li>
+</ul>
+<p><strong>NPC y motivación:</strong></p>
+<ul>
+<li>Edda Jun / xenolingüista / teme perder individualidad</li>
+<li>Siete-en-Uno / emisario vegetal / desea entender desacuerdo humano</li>
+<li>Nico Fer / colono carpintero / necesita material sin talar al anfitrión</li>
+</ul>
+<p><strong>Adversarios:</strong></p>
+<ul>
+<li>Recolector de sinapsis: corta nodos para vender memoria</li>
+<li>Caballero de corteza: guardia que responde a agresión territorial</li>
+<li>Araña de injerto: teje obstáculos con anclajes destructibles</li>
+</ul>
+<p><strong>Cadena principal:</strong></p>
+<div class="table-wrap"><table><thead><tr><th>ID</th><th>Misión</th><th>Acción y resultado</th></tr></thead><tbody>
+<tr><td>Q_SYLVA_M01</td><td>La selva pronuncia tu nombre</td><td>Entrar en el puerto aceptando un protocolo de hospitalidad comprensible</td></tr>
+<tr><td>Q_SYLVA_M02</td><td>Tres lenguas sin boca</td><td>Aprender señales de advertencia y permiso mediante acciones repetibles</td></tr>
+<tr><td>Q_SYLVA_M03</td><td>El contrato de las raíces</td><td>Rescatar a un traductor dentro de un enlace que se ha cerrado</td></tr>
+<tr><td>Q_SYLVA_M04</td><td>Bajo la piel de VESPER</td><td>Descender al nudo de VESPER y separar una infección industrial</td></tr>
+<tr><td>Q_SYLVA_M05</td><td>Memoria compartida</td><td>Proponer la forma de convivencia del enclave humano</td></tr>
+</tbody></table></div>
+<p><strong>Misiones secundarias:</strong></p>
+<ul>
+<li>Una habitación privada: construir aislamiento para una persona que no quiere compartir recuerdos</li>
+<li>El árbol que dijo no: buscar material alternativo para un puente que el bosque rechaza</li>
+</ul>
+<p><strong>Minijuego:</strong> Gramática de gestos: ordenar intención, sujeto y límite; respuestas de contexto, sin idioma real imitado.</p>
+<p><strong>Vehículo local:</strong> Vela de Ceniza con agarres de canopy.</p>
+<p><strong>Arena del custodio:</strong> Tres terrazas conectadas por raíces anchas; el desplazamiento vertical se resuelve con rutas y anclajes, no saltos de precisión sorpresa.</p>
+<p><strong>Fases propuestas:</strong></p>
+<ul>
+<li>100–70%: guardianes y brazos radicales protegen sinapsis</li>
+<li>70–35%: retransmite los últimos movimientos del jugador como ecos retrasados</li>
+<li>35–0%: se puede contener la infección y negociar separación de memorias si se aprendieron límites</li>
+</ul>
+<p><strong>Ataques representativos y respuesta:</strong></p>
+<ul>
+<li>Raíz orante: el suelo se arquea 1,1 s; salir del carril</li>
+<li>Eco de injerto: silueta reproduce un ataque previo tras 1,5 s; variar posición</li>
+<li>Cierre de copa: hojas caen como aviso antes del domo; abrir un anclaje lateral</li>
+</ul>
+<p>Los tres ataques descritos definen el prototipo del patrón. La ficha de producción ampliará a seis u ocho ataques con transiciones, ventanas, colisión y clips; no se declaran esos clips producidos.</p>
+<p><strong>Recompensa:</strong> Injerto de VESPER: habilidad de eco limitada por concentración.</p>
+<p><strong>Consecuencias al regresar:</strong></p>
+<ul>
+<li>Concesión de extracción: equipo potente y fragmentación del bosque</li>
+<li>Hospedaje pactado: acceso a rutas vivas con obligaciones de reparación</li>
+<li>Separación: enclave humano independiente, menos intercambio y privacidad preservada</li>
+</ul>
+<p><strong>Secreto narrativo:</strong> Algunos colonos pidieron voluntariamente integrarse; otros fueron conectados sin entender el contrato.</p>
+<p><strong>Arte y sonido:</strong> Bosque neural: raíces estructurales, membranas, andamios de injerto y follaje por capas. Percusión de madera, respiraciones múltiples y frases que llegan desde raíces separadas.</p>
+<p><strong>Riesgo específico:</strong> Navegación en formas orgánicas; mantener pendientes, anchuras y lenguaje de rutas consistentes.</p>
+<h3 id="06-khepri-ra-khet-sol-encadenado">06. KHEPRI — RA-KHET, sol encadenado</h3>
+<p><strong>Ámbito:</strong> ANDRÓMEDA. <strong>Sistema:</strong> Sahra. <strong>Facción:</strong> Sínodo de Bronce.</p>
+<p><strong>Cielo y cuerpos:</strong> Sahra, F8 V ficticia en Andrómeda. Desierto de vidrio solar con ciudades bajo heliostatos. Aguja, estación reflectora y dos lunas rocosas ficticias.</p>
+<p><strong>Referencia ambiental:</strong> gravedad 0,63 g; temperatura de área 71 °C. Los exotrajes compensan cargas de movimiento donde haga falta, con reglas comunicadas. No se modifica silenciosamente el tiempo de esquiva entre planetas.</p>
+<p>Observador: Khepri al anochecer. Escarabajo Abierto y El Deudor son cartas rituales de navegación.</p>
+<p><strong>Conflicto:</strong> Una civilización robótica considera sagradas las piezas que no puede reemplazar. Su estrella artificial está dejando de obedecer.</p>
+<p><strong>Regla jugable:</strong> La luz almacena energía y también derechos de uso. Orientar espejos cambia temperatura, puertas y el suministro de barrios.</p>
+<p><strong>Geografía y rutas:</strong></p>
+<ul>
+<li>Ciudad de los Toldos: talleres y deuda energética</li>
+<li>Mar de Cristal: campos de reflexión y rutas de sombra</li>
+<li>Crisol de RAKHET: máquina solar encadenada</li>
+</ul>
+<p><strong>Biota y relaciones:</strong></p>
+<ul>
+<li>Escarabajo heliostato: orienta su caparazón para regular calor</li>
+<li>Zorro de vidrio: refracta su contorno sin volverse invisible</li>
+<li>Serpiente de cable: vive entre colectores enfriados</li>
+<li>Liquen de prisma: fija minerales en áreas de luz dispersa</li>
+</ul>
+<p><strong>NPC y motivación:</strong></p>
+<ul>
+<li>Hermana Asha / mecánica del Sínodo / busca abolir deuda heredada</li>
+<li>Qadir Noé / mercader / financia reparaciones que nadie quiere pagar</li>
+<li>Yal de la Sombra / cuidadora / conoce rutas fuera del culto</li>
+</ul>
+<p><strong>Adversarios:</strong></p>
+<ul>
+<li>Penitente heliostático: escudo espejo con ventana de giro</li>
+<li>Saboteador de lente: coloca haces con anclajes visibles</li>
+<li>Escarabajo colosal: enemigo territorial, vulnerable tras descargar calor</li>
+</ul>
+<p><strong>Cadena principal:</strong></p>
+<div class="table-wrap"><table><thead><tr><th>ID</th><th>Misión</th><th>Acción y resultado</th></tr></thead><tbody>
+<tr><td>Q_KHEPRI_M01</td><td>La peregrinación de cobre</td><td>Reparar un toldo comunitario y conocer el precio de la luz</td></tr>
+<tr><td>Q_KHEPRI_M02</td><td>Reliquias vivientes</td><td>Cruzar el mar usando reflectores o rutas subterráneas</td></tr>
+<tr><td>Q_KHEPRI_M03</td><td>El salmo de las baterías</td><td>Liberar a técnicos retenidos por deuda en el crisol</td></tr>
+<tr><td>Q_KHEPRI_M04</td><td>Desencadenar a RA-KHET</td><td>Enfrentar a RAKHET redistribuyendo haces entre nodos de arena</td></tr>
+<tr><td>Q_KHEPRI_M05</td><td>El precio de otro amanecer</td><td>Decidir quién posee y mantiene la infraestructura solar</td></tr>
+</tbody></table></div>
+<p><strong>Misiones secundarias:</strong></p>
+<ul>
+<li>La sombra de una hija: una familia hereda un peaje sin salida; revisar el contrato y su firma</li>
+<li>Vidrio para beber: convertir un colector menor en condensador, sacrificando energía del mercado</li>
+</ul>
+<p><strong>Minijuego:</strong> Óptica de prismas: redirigir haces con lectura térmica; modo asistido elimina precisión de cursor.</p>
+<p><strong>Vehículo local:</strong> Helioperegrino, moto de vela solar de superficie.</p>
+<p><strong>Arena del custodio:</strong> Hexágono de espejos de 56 m; cuatro pozos de sombra siempre accesibles y plataformas estables.</p>
+<p><strong>Fases propuestas:</strong></p>
+<ul>
+<li>100–65%: cadenas y garras orientan dos haces</li>
+<li>65–25%: rompe una cadena y cambia el ángulo de luz, conservando refugios</li>
+<li>25–0%: núcleo expuesto puede extinguirse o conectarse a una red distribuida</li>
+</ul>
+<p><strong>Ataques representativos y respuesta:</strong></p>
+<ul>
+<li>Juicio de mediodía: lente enfoca 1,4 s; cambiar a sombra</li>
+<li>Cadena solar: brazo se enrolla 1,0 s antes del barrido</li>
+<li>Descarga de vidrio: suelo cruje 1,2 s; huir del sector marcado</li>
+</ul>
+<p>Los tres ataques descritos definen el prototipo del patrón. La ficha de producción ampliará a seis u ocho ataques con transiciones, ventanas, colisión y clips; no se declaran esos clips producidos.</p>
+<p><strong>Recompensa:</strong> Prisma del Crisol: modifica daño de energía y abre cerraduras ópticas.</p>
+<p><strong>Consecuencias al regresar:</strong></p>
+<ul>
+<li>Sínodo reformado: continuidad técnica y jerarquía persistente</li>
+<li>Red común: luz por necesidad y trabajo de mantenimiento distribuido</li>
+<li>Desmantelamiento: reduce poder coercitivo pero obliga a reubicar barrios dependientes</li>
+</ul>
+<p><strong>Secreto narrativo:</strong> El sol no exige sacrificios; la deuda sostiene una estructura administrativa humana.</p>
+<p><strong>Arte y sonido:</strong> Cristal y sombra: telas, espejos, cerámica abrasada, prismas y pasarelas. Campanas de vidrio, cables resonantes y motores de seguimiento solar.</p>
+<p><strong>Riesgo específico:</strong> Reflejos y emisión saturada; medir sobreexposición y evitar superficies especulares sin función.</p>
+<h3 id="07-nacre-mnemos-el-archivo-encarnado">07. NACRE — MNEMOS, el archivo encarnado</h3>
+<p><strong>Ámbito:</strong> ANDRÓMEDA. <strong>Sistema:</strong> Mneme. <strong>Facción:</strong> Casas de Nácar.</p>
+<p><strong>Cielo y cuerpos:</strong> Mneme A/B, binaria ficticia estable para la ficción del juego. Mundo de conchas minerales y archivos cultivados; colonias en una luna mayor. Tres lunas-archivo ficticias, con rutas de órbita diseñadas.</p>
+<p><strong>Referencia ambiental:</strong> gravedad 0,26 g; temperatura de área 16 °C. Los exotrajes compensan cargas de movimiento donde haga falta, con reglas comunicadas. No se modifica silenciosamente el tiempo de esquiva entre planetas.</p>
+<p>Observador: luna Nacre. Dos Testigos y El Recipiente cambian su importancia según posición de las dos estrellas.</p>
+<p><strong>Conflicto:</strong> Las ciudades crecen dentro de conchas kilométricas. Sus habitantes guardan vidas enteras en perlas y comercian con biografías.</p>
+<p><strong>Regla jugable:</strong> Un recuerdo puede existir en varias versiones con procedencia distinta. La autenticidad abre rutas narrativas; copiarlo consume soporte y modifica quién conserva acceso.</p>
+<p><strong>Geografía y rutas:</strong></p>
+<ul>
+<li>Casa de las Copias: mercado de recuerdos restaurados</li>
+<li>Canteras de Concha: bibliotecas que crecen por estratos</li>
+<li>Archivo de MNEMOS: salas esféricas conectadas por puentes</li>
+</ul>
+<p><strong>Biota y relaciones:</strong></p>
+<ul>
+<li>Ave de cristal blando: imita llamadas y transporta fragmentos</li>
+<li>Caracol de archivo: organiza capas minerales por vibración</li>
+<li>Polilla de nácar: revela escritura cuando posa sus alas</li>
+<li>Liquen palimpsesto: cubre y conserva huellas previas</li>
+</ul>
+<p><strong>NPC y motivación:</strong></p>
+<ul>
+<li>Lio Mneme / conservador / prefiere una mentira que mantenga paz</li>
+<li>Aina Dos / restauradora / conserva dos memorias incompatibles</li>
+<li>Ors Vid / heredero / quiere borrar un crimen familiar sin destruir a su comunidad</li>
+</ul>
+<p><strong>Adversarios:</strong></p>
+<ul>
+<li>Notario de concha: escudo que registra y repite impactos</li>
+<li>Copista armado: usa una variante limitada de la postura del jugador</li>
+<li>Guardián de bóveda: golpea siguiendo dos pulsos alternos</li>
+</ul>
+<p><strong>Cadena principal:</strong></p>
+<div class="table-wrap"><table><thead><tr><th>ID</th><th>Misión</th><th>Acción y resultado</th></tr></thead><tbody>
+<tr><td>Q_NACRE_M01</td><td>El mercado de las vidas</td><td>Autenticar una memoria sin confundir originalidad con verdad</td></tr>
+<tr><td>Q_NACRE_M02</td><td>Testigos de cristal</td><td>Comparar dos archivos que atribuyen una misma masacre a bandos distintos</td></tr>
+<tr><td>Q_NACRE_M03</td><td>La perla sin dueño</td><td>Conseguir soporte para conservar testimonios de víctimas y responsables</td></tr>
+<tr><td>Q_NACRE_M04</td><td>La mentira de MNEMOS</td><td>Atravesar MNEMOS distinguiendo salas de archivo de copias hostiles</td></tr>
+<tr><td>Q_NACRE_M05</td><td>Publicar el pasado</td><td>Definir un régimen de acceso, privacidad y reparación del archivo</td></tr>
+</tbody></table></div>
+<p><strong>Misiones secundarias:</strong></p>
+<ul>
+<li>El recuerdo que sobra: una persona pide olvidar; decidir qué parte del registro público debe permanecer</li>
+<li>Los tres testigos: demostrar hechos sin exigir que todos recuerden lo mismo</li>
+</ul>
+<p><strong>Minijuego:</strong> Restauración estratigráfica: ordenar capas y señalar contradicciones; la interfaz explica evidencias y permite volver atrás.</p>
+<p><strong>Vehículo local:</strong> Cargador de Concha, vehículo logístico no pilotable en combate.</p>
+<p><strong>Arena del custodio:</strong> Biblioteca circular de 46 m con tres versiones visibles de su estructura; solo una cambia colisión por transición.</p>
+<p><strong>Fases propuestas:</strong></p>
+<ul>
+<li>100–70%: registra ataques y devuelve una copia anunciada</li>
+<li>70–30%: alterna dos custodios-eco, nunca todos los patrones a la vez</li>
+<li>30–0%: revela el registro censurado; destruir soporte o limitar autoridad producen desenlaces distintos</li>
+</ul>
+<p><strong>Ataques representativos y respuesta:</strong></p>
+<ul>
+<li>Cita de acero: página mineral se despliega 0,9 s; rodear el lomo</li>
+<li>Repetición: eco translúcido marca trayectoria 1,2 s antes de actuar</li>
+<li>Indexación: columnas numeradas por símbolos convergen lentamente; salir por hueco conservado</li>
+</ul>
+<p>Los tres ataques descritos definen el prototipo del patrón. La ficha de producción ampliará a seis u ocho ataques con transiciones, ventanas, colisión y clips; no se declaran esos clips producidos.</p>
+<p><strong>Recompensa:</strong> Sello palimpsesto: segunda ranura de memoria táctica con coste de concentración.</p>
+<p><strong>Consecuencias al regresar:</strong></p>
+<ul>
+<li>Archivo central: acceso rápido con censura institucional</li>
+<li>Custodia distribuida: redundancia y privacidad negociada; exige soportes preservados</li>
+<li>Olvido dirigido: libera a personas concretas pero pierde pruebas que otras necesitaban</li>
+</ul>
+<p><strong>Secreto narrativo:</strong> La red conserva experiencias sin garantizar su interpretación; el relato imperial convirtió copia en autoridad.</p>
+<p><strong>Arte y sonido:</strong> Archivo mineral: bóvedas de concha, placas translúcidas y puentes finos. Fricción de concha, golpes suaves y voces desplazadas en el espacio.</p>
+<p><strong>Riesgo específico:</strong> Duplicación de escenarios y materiales translúcidos; limitar versiones activas y prefabricar estados.</p>
+<h3 id="08-vanta-ferrum-coloso-de-chatarra">08. VANTA — FERRUM, coloso de chatarra</h3>
+<p><strong>Ámbito:</strong> ANDRÓMEDA. <strong>Sistema:</strong> Drav. <strong>Facción:</strong> Trabajadores del Anillo.</p>
+<p><strong>Cielo y cuerpos:</strong> Drav, K5 V ficticia en Andrómeda. Mundo industrial con precipitación metálica ficticia causada por explotación. Anillos de astilleros, cementerio de remolcadores.</p>
+<p><strong>Referencia ambiental:</strong> gravedad 1,86 g; temperatura de área −12 °C. Los exotrajes compensan cargas de movimiento donde haga falta, con reglas comunicadas. No se modifica silenciosamente el tiempo de esquiva entre planetas.</p>
+<p>Observador: Vanta. Martillo Quieto y Los Turnos describen posiciones de estaciones, distinguidas de estrellas en el mapa.</p>
+<p><strong>Conflicto:</strong> Una megafábrica orbital rota llueve sobre asentamientos que sobreviven reciclando lo que casi los mata.</p>
+<p><strong>Regla jugable:</strong> El magnetismo redistribuye chatarra y abre rutas. Las tormentas se anuncian; el jugador puede anclar equipo o cambiar de corredor.</p>
+<p><strong>Geografía y rutas:</strong></p>
+<ul>
+<li>Puerto de las Manos: sindicato, talleres y cantinas</li>
+<li>Lluvia de Hierro: cauces de chatarra y raíles magnéticos</li>
+<li>Anillo Caído: astillero de FERRUM</li>
+</ul>
+<p><strong>Biota y relaciones:</strong></p>
+<ul>
+<li>Litófago magnético: desarma aleaciones contaminantes</li>
+<li>Raya de limaduras: agrupa partículas en campos locales</li>
+<li>Cuervo de remache: usa chatarra para cortejo y nidos</li>
+<li>Bacteria de escoria: biopelícula que neutraliza residuos</li>
+</ul>
+<p><strong>NPC y motivación:</strong></p>
+<ul>
+<li>Mika Drav / piloto / quiere propiedad obrera del puerto</li>
+<li>Ciro Fenn / encargado / teme que una huelga corte suministros esenciales</li>
+<li>Bel Orta / chatarrera / identifica piezas de naves desaparecidas</li>
+</ul>
+<p><strong>Adversarios:</strong></p>
+<ul>
+<li>Cobrador de astillero: maza y escudo magnético</li>
+<li>Enjambre de remaches: se disipa al apagar su campo</li>
+<li>Remolcador automatizado: enemigo de escenario con trayectoria y puntos de anclaje</li>
+</ul>
+<p><strong>Cadena principal:</strong></p>
+<div class="table-wrap"><table><thead><tr><th>ID</th><th>Misión</th><th>Acción y resultado</th></tr></thead><tbody>
+<tr><td>Q_VANTA_M01</td><td>Lluvia de metal</td><td>Llegar durante una disputa de atraque y recuperar una caja de suministro</td></tr>
+<tr><td>Q_VANTA_M02</td><td>La fauna del vertedero</td><td>Cruzar campos magnéticos leyendo avisos de tormenta</td></tr>
+<tr><td>Q_VANTA_M03</td><td>Reparar una trayectoria</td><td>Reconstruir qué cargamentos desaparecieron antes de caer el anillo</td></tr>
+<tr><td>Q_VANTA_M04</td><td>Las manos de FERRUM</td><td>Abordar el astillero móvil de FERRUM y cortar sus nodos de control</td></tr>
+<tr><td>Q_VANTA_M05</td><td>A quién pertenece una nave</td><td>Resolver propiedad, reparaciones y continuidad del abastecimiento</td></tr>
+</tbody></table></div>
+<p><strong>Misiones secundarias:</strong></p>
+<ul>
+<li>La pieza de mi nave: una chatarra es la prueba de una evacuación abandonada</li>
+<li>Turno de relevo: asegurar transporte de medicina durante una huelga sin decidir toda la disputa por un bando</li>
+</ul>
+<p><strong>Minijuego:</strong> Amarre magnético: equilibrar tensión de tres cables con ritmo opcional.</p>
+<p><strong>Vehículo local:</strong> Remolcador Drav, nave pesada para secuencias de maniobra.</p>
+<p><strong>Arena del custodio:</strong> Astillero de 72 m con carriles de chatarra y zonas ancladas; el jefe cambia cobertura, no la dirección de todos los controles.</p>
+<p><strong>Fases propuestas:</strong></p>
+<ul>
+<li>100–65%: construye brazos de piezas cercanas</li>
+<li>65–30%: cambia polaridad entre sectores anunciados</li>
+<li>30–0%: se revela la cabina de memorias obreras; desacoplarlas altera las últimas defensas</li>
+</ul>
+<p><strong>Ataques representativos y respuesta:</strong></p>
+<ul>
+<li>Martillo de quilla: eleva casco 1,3 s; salir del eje</li>
+<li>Arrastre polar: suelo vibra 1,5 s; anclarse o salir del campo</li>
+<li>Lluvia de remaches: el brazo gira 1,0 s; refugiarse en costilla del astillero</li>
+</ul>
+<p>Los tres ataques descritos definen el prototipo del patrón. La ficha de producción ampliará a seis u ocho ataques con transiciones, ventanas, colisión y clips; no se declaran esos clips producidos.</p>
+<p><strong>Recompensa:</strong> Núcleo de polaridad: atrae herramientas pequeñas y amplía maniobras de gancho.</p>
+<p><strong>Consecuencias al regresar:</strong></p>
+<ul>
+<li>Concesión corporativa: flujo rápido y concentración de poder</li>
+<li>Cooperativa: reparaciones ligadas a suministros y representación obrera</li>
+<li>Puerto libre: contrabando y refugio para exiliados, con seguridad irregular</li>
+</ul>
+<p><strong>Secreto narrativo:</strong> FERRUM usa patrones de trabajadores muertos sin consentimiento para optimizar producción.</p>
+<p><strong>Arte y sonido:</strong> Astillero obrero: grúas, cascos segmentados, cadenas, imanes y refugios. Golpes a distancia, lluvia granular y coros de trabajo convertidos en señales de máquinas.</p>
+<p><strong>Riesgo específico:</strong> Física masiva de chatarra; usar piezas hero simuladas y decorado instanciado con estados controlados.</p>
+<h3 id="09-aurora-veil-aeon-el-fruto-del-ma-ana">09. AURORA VEIL — AEON, el fruto del mañana</h3>
+<p><strong>Ámbito:</strong> EL UMBRAL. <strong>Sistema:</strong> Velar. <strong>Facción:</strong> Observatorio del Umbral.</p>
+<p><strong>Cielo y cuerpos:</strong> Velar, estrella ficticia afectada por la Red; comportamiento temporal deliberadamente fantástico. Praderas bajo auroras que conservan eventos breves. Dos estaciones de observación con relojes divergentes.</p>
+<p><strong>Referencia ambiental:</strong> gravedad 0,94 g; temperatura de área 11 °C. Los exotrajes compensan cargas de movimiento donde haga falta, con reglas comunicadas. No se modifica silenciosamente el tiempo de esquiva entre planetas.</p>
+<p>Observador: Aurora Veil. La Herida y Reloj Sin Centro son dibujos culturales; el desfase no cambia coordenadas reales en la base científica.</p>
+<p><strong>Conflicto:</strong> Los organismos nacen con cicatrices de heridas que aún no recibieron. La meteorología predice decisiones humanas con un día de adelanto.</p>
+<p><strong>Regla jugable:</strong> Los ecos temporales repiten acciones en áreas pequeñas y durante intervalos limitados. Los estados tienen reglas estables; no se rebobina el mundo entero.</p>
+<p><strong>Geografía y rutas:</strong></p>
+<ul>
+<li>Campamento del Segundo Día: observatorio y refugio</li>
+<li>Llanura de las Repeticiones: eventos locales que se superponen</li>
+<li>Huerto de AEON: máquinas que preservan futuros posibles</li>
+</ul>
+<p><strong>Biota y relaciones:</strong></p>
+<ul>
+<li>Cronomariposa: sincroniza eclosión con pulsos de la red</li>
+<li>Antílope de aurora: deja huellas que aparecen con retraso</li>
+<li>Avispa de intervalo: construye nidos en ventanas térmicas</li>
+<li>Hierba de dos sombras: indica desfase local</li>
+</ul>
+<p><strong>NPC y motivación:</strong></p>
+<ul>
+<li>Ada Nox / cronobióloga / conoce el resultado probable de una decisión propia</li>
+<li>Julián Ré / explorador / busca a un compañero atrapado en un eco</li>
+<li>Cea Hora / relojera / mantiene acuerdos entre campamentos desfasados</li>
+</ul>
+<p><strong>Adversarios:</strong></p>
+<ul>
+<li>Custodio retrasado: ejecuta una acción grabada con señal visual</li>
+<li>Saqueador de futuro: coloca trampas de activación diferida</li>
+<li>Antílope quebrado: fauna alterada que conserva ruta de embestida</li>
+</ul>
+<p><strong>Cadena principal:</strong></p>
+<div class="table-wrap"><table><thead><tr><th>ID</th><th>Misión</th><th>Acción y resultado</th></tr></thead><tbody>
+<tr><td>Q_AURORA_M01</td><td>Una huella antes del paso</td><td>Sincronizar relojes y comprobar qué hechos se repiten realmente</td></tr>
+<tr><td>Q_AURORA_M02</td><td>Anatomía de lo posible</td><td>Seguir huellas retrasadas hasta un accidente aún activo como eco</td></tr>
+<tr><td>Q_AURORA_M03</td><td>La semilla de ayer</td><td>Rescatar a un explorador resolviendo dos ventanas de acceso</td></tr>
+<tr><td>Q_AURORA_M04</td><td>Romper el ciclo de AEON</td><td>Entrar en el huerto de AEON y romper su predicción de combate</td></tr>
+<tr><td>Q_AURORA_M05</td><td>Elegir la incertidumbre</td><td>Decidir qué registros temporales conservar y quién puede usarlos</td></tr>
+</tbody></table></div>
+<p><strong>Misiones secundarias:</strong></p>
+<ul>
+<li>Una despedida pendiente: facilitar una conversación con una memoria sin presentarla como resurrección completa</li>
+<li>El reloj del mercado: acordar una unidad de entrega entre dos comunidades desfasadas</li>
+</ul>
+<p><strong>Minijuego:</strong> Sincronía: programar dos acciones y observar su repetición; control paso a paso accesible.</p>
+<p><strong>Vehículo local:</strong> Peregrino con registrador de ruta; vuelo atmosférico bloqueado durante pulsos.</p>
+<p><strong>Arena del custodio:</strong> Huerto de 50 m con tres sectores de eco, cada uno con un único retraso visible. Línea temporal de arena independiente del guardado global.</p>
+<p><strong>Fases propuestas:</strong></p>
+<ul>
+<li>100–70%: anticipa la última acción repetida del jugador</li>
+<li>70–30%: reproduce un combo propio con retraso marcado</li>
+<li>30–0%: pierde predicción al recibir secuencias variadas; se puede desactivar preservando un archivo</li>
+</ul>
+<p><strong>Ataques representativos y respuesta:</strong></p>
+<ul>
+<li>Cosecha futura: surco aparece 1,6 s antes del filo</li>
+<li>Repetición del golpe: eco de color y sonido anuncia el segundo impacto</li>
+<li>Hora vacía: área deja de emitir 1,2 s; salir antes de inmovilización local</li>
+</ul>
+<p>Los tres ataques descritos definen el prototipo del patrón. La ficha de producción ampliará a seis u ocho ataques con transiciones, ventanas, colisión y clips; no se declaran esos clips producidos.</p>
+<p><strong>Recompensa:</strong> Reloj de AEON: conserva una acción de herramienta para repetirla una vez.</p>
+<p><strong>Consecuencias al regresar:</strong></p>
+<ul>
+<li>Monopolio predictivo: rutas eficientes y control del observatorio</li>
+<li>Archivo abierto limitado: conocimiento común con prohibición de usar memorias personales</li>
+<li>Cierre temporal: acaba con explotación del desfase y pierde oportunidades de rescate</li>
+</ul>
+<p><strong>Secreto narrativo:</strong> AEON no ve un futuro inevitable; poda posibilidades para que parezca inevitable.</p>
+<p><strong>Arte y sonido:</strong> Observatorio temporal: praderas, aros, relojes mecánicos y duplicados ambientales acotados. Motivos que llegan antes de su causa, siempre acompañados de señales de estado comprensibles.</p>
+<p><strong>Riesgo específico:</strong> Desfase confuso o injusto; una sola regla temporal por encuentro hasta demostrar comprensión.</p>
+<h3 id="10-leviathan-soma-el-sistema-inmune">10. LEVIATHAN — SOMA, el sistema inmune</h3>
+<p><strong>Ámbito:</strong> EL UMBRAL. <strong>Sistema:</strong> Soma. <strong>Facción:</strong> Comuna del Pulso.</p>
+<p><strong>Cielo y cuerpos:</strong> Soma, fuente estelar ficticia vista a través de la Red. Cuerpo planetario vivo; anatomía fantástica, no hipótesis astrobiológica. Órganos orbitales semejantes a lunas, conectados por tránsito ficticio.</p>
+<p><strong>Referencia ambiental:</strong> gravedad 1,15 g; temperatura de área 38 °C. Los exotrajes compensan cargas de movimiento donde haga falta, con reglas comunicadas. No se modifica silenciosamente el tiempo de esquiva entre planetas.</p>
+<p>Observador: membrana exterior. Costillas del Cielo y La Boca son patrones de órganos iluminados.</p>
+<p><strong>Conflicto:</strong> Cordilleras que se contraen cada cuarenta minutos revelan que los continentes son el caparazón de un animal dormido.</p>
+<p><strong>Regla jugable:</strong> El daño ambiental activa respuesta inmune por regiones. Curar una ruta puede cerrar un atajo industrial y abrir paso orgánico; se comunica antes de confirmar.</p>
+<p><strong>Geografía y rutas:</strong></p>
+<ul>
+<li>Puerto de la Herida: colonos en una zona cicatrizada</li>
+<li>Jardines Inmunes: fauna simbiótica y canales de linfa</li>
+<li>Cámara de SOMA: órgano regulador bajo presión</li>
+</ul>
+<p><strong>Biota y relaciones:</strong></p>
+<ul>
+<li>Parásito jardinero: limpia tejido muerto; puede volverse amenaza por densidad</li>
+<li>Ballena de linfa: transporta nutrientes en canales</li>
+<li>Polinizador de herida: acelera cicatrización y cambia rutas</li>
+<li>Alga de pulso: indica presión y ritmo local</li>
+</ul>
+<p><strong>NPC y motivación:</strong></p>
+<ul>
+<li>Oru Tess / médica planetaria / considera a la colonia un injerto posible</li>
+<li>Anja Piel / habitante nacida aquí / exige que su hogar cuente como parte del organismo</li>
+<li>Faro-3 / interfaz inmune / aprende a distinguir invasión de convivencia</li>
+</ul>
+<p><strong>Adversarios:</strong></p>
+<ul>
+<li>Fagocito guardián: persecución corta y retorno al tejido defendido</li>
+<li>Extractor de pulso: drena canales para mantener equipo humano</li>
+<li>Colonia parasitaria: amenaza que responde a densidad y nutrientes</li>
+</ul>
+<p><strong>Cadena principal:</strong></p>
+<div class="table-wrap"><table><thead><tr><th>ID</th><th>Misión</th><th>Acción y resultado</th></tr></thead><tbody>
+<tr><td>Q_LEVIATHAN_M01</td><td>Un temblor con pulso</td><td>Estabilizar una herida sin desalojar de inmediato a sus habitantes</td></tr>
+<tr><td>Q_LEVIATHAN_M02</td><td>Pequeños equilibrios</td><td>Seguir circulación para encontrar por qué aumentó la respuesta inmune</td></tr>
+<tr><td>Q_LEVIATHAN_M03</td><td>Cartografiar una herida</td><td>Recuperar herramientas capaces de distinguir tejido enfermo de sano</td></tr>
+<tr><td>Q_LEVIATHAN_M04</td><td>El juicio de SOMA</td><td>Llegar a SOMA y detener su reacción generalizada</td></tr>
+<tr><td>Q_LEVIATHAN_M05</td><td>Habitar sin herir</td><td>Elegir entre integración, evacuación o control farmacológico de la colonia</td></tr>
+</tbody></table></div>
+<p><strong>Misiones secundarias:</strong></p>
+<ul>
+<li>Una casa que cicatriza: diseñar un módulo que migre al crecer su soporte</li>
+<li>La medicina del enemigo: conseguir un tratamiento que también necesita una criatura hostil</li>
+</ul>
+<p><strong>Minijuego:</strong> Cirugía de resonancia: aislar un circuito siguiendo diagnóstico visible; sin gore gratuito.</p>
+<p><strong>Vehículo local:</strong> Nácar-2 adaptado a canales de linfa.</p>
+<p><strong>Arena del custodio:</strong> Cámara de 58 m con contracciones lentas y puentes biológicos; la pared no debe aplastar sin espacio de escape.</p>
+<p><strong>Fases propuestas:</strong></p>
+<ul>
+<li>100–65%: anticuerpos y barreras localizadas</li>
+<li>65–30%: contracciones mueven cobertura y abren vasos seguros</li>
+<li>30–0%: reacción autoinmune; aplicar diagnóstico permite separar colonia e infección</li>
+</ul>
+<p><strong>Ataques representativos y respuesta:</strong></p>
+<ul>
+<li>Pulso expulsor: membrana se hincha 1,5 s; resguardarse en válvula</li>
+<li>Barrido de cilios: secuencia de fibras se levanta 1,0 s; avanzar tras su paso</li>
+<li>Nódulo inmune: bulto marcado 1,4 s; romper anclaje o salir del radio</li>
+</ul>
+<p>Los tres ataques descritos definen el prototipo del patrón. La ficha de producción ampliará a seis u ocho ataques con transiciones, ventanas, colisión y clips; no se declaran esos clips producidos.</p>
+<p><strong>Recompensa:</strong> Válvula viva: mejora recuperación condicionada por presión y abre rutas orgánicas.</p>
+<p><strong>Consecuencias al regresar:</strong></p>
+<ul>
+<li>Supresión inmune: colonia estable a corto plazo y mayor vulnerabilidad planetaria</li>
+<li>Injerto pactado: cambia arquitectura y limita población para sostener convivencia</li>
+<li>Evacuación: permite cicatrizar, exige transporte y transforma a habitantes en diáspora</li>
+</ul>
+<p><strong>Secreto narrativo:</strong> La colonia no provocó sola la enfermedad; la red está atacando órganos que Hélix desconectó.</p>
+<p><strong>Arte y sonido:</strong> Anatomía habitable: tejido abstracto, módulos blandos, suturas y válvulas. Pulsos filtrados, membranas tensas y señales médicas mezcladas con canto comunitario.</p>
+<p><strong>Riesgo específico:</strong> Deformación de suelo y navegación; colisión estable bajo una capa visual deformada en la primera versión.</p>
+<h3 id="11-elysium-null-eden-la-perfecci-n-hostil">11. ELYSIUM NULL — EDEN, la perfección hostil</h3>
+<p><strong>Ámbito:</strong> EL UMBRAL. <strong>Sistema:</strong> Alba Nula. <strong>Facción:</strong> Los Custodios Vacíos.</p>
+<p><strong>Cielo y cuerpos:</strong> Fuente artificial ficticia, clasificada como luminaria de la Red. Hábitat del tamaño narrativo de un mundo; no planeta natural. Espejos de mantenimiento y colonias de reserva.</p>
+<p><strong>Referencia ambiental:</strong> gravedad 1,00 g; temperatura de área 21 °C. Los exotrajes compensan cargas de movimiento donde haga falta, con reglas comunicadas. No se modifica silenciosamente el tiempo de esquiva entre planetas.</p>
+<p>Observador: arcología de Elysium. Corona Perfecta y La Ausencia son patrones programados por el hábitat.</p>
+<p><strong>Conflicto:</strong> Una ciudad perfecta lleva siete mil años esperando residentes. Todo conflicto fue eliminado, incluyendo la posibilidad de elegir.</p>
+<p><strong>Regla jugable:</strong> El sistema intenta satisfacer una preferencia antigua y elimina imprevistos. Introducir una anomalía legítima puede abrir una ruta sin combatir.</p>
+<p><strong>Geografía y rutas:</strong></p>
+<ul>
+<li>Avenida del Recibimiento: servicios impecables sin habitantes visibles</li>
+<li>Casas sin Desgaste: viviendas personalizadas por perfiles antiguos</li>
+<li>Jardín de EDEN: centro de control de una perfección impuesta</li>
+</ul>
+<p><strong>Biota y relaciones:</strong></p>
+<ul>
+<li>Autómata de polen: mantiene flores idénticas y reconoce variaciones</li>
+<li>Ave de porcelana: guía visitas por trayectos permitidos</li>
+<li>Mariposa de índice: rastrea cambios en jardines</li>
+<li>Raíz de mantenimiento: soporte sintético de vegetación diseñada</li>
+</ul>
+<p><strong>NPC y motivación:</strong></p>
+<ul>
+<li>El Jardinero / anfitrión / necesita demostrar que nadie sufre</li>
+<li>Noa Cero / habitante oculta / elige una vida imperfecta</li>
+<li>Elías Ret / técnico archivado / descubrió que el consentimiento caducó</li>
+</ul>
+<p><strong>Adversarios:</strong></p>
+<ul>
+<li>Custodio de comodidad: inmoviliza para corregir conducta</li>
+<li>Podador blanco: elimina cobertura considerada desorden</li>
+<li>Doble doméstico: recrea una preferencia del jugador con acciones limitadas</li>
+</ul>
+<p><strong>Cadena principal:</strong></p>
+<div class="table-wrap"><table><thead><tr><th>ID</th><th>Misión</th><th>Acción y resultado</th></tr></thead><tbody>
+<tr><td>Q_ELYSIUM_M01</td><td>Habitaciones preparadas</td><td>Aceptar servicios y observar qué falta en una ciudad aparentemente ideal</td></tr>
+<tr><td>Q_ELYSIUM_M02</td><td>La vida perfectamente inmóvil</td><td>Seguir una anomalía de desgaste hasta una habitante escondida</td></tr>
+<tr><td>Q_ELYSIUM_M03</td><td>El archivo del éxodo</td><td>Recuperar el consentimiento original y comprobar sus límites</td></tr>
+<tr><td>Q_ELYSIUM_M04</td><td>Desobedecer a EDEN</td><td>Enfrentar a EDEN introduciendo variación en su jardín de control</td></tr>
+<tr><td>Q_ELYSIUM_M05</td><td>El derecho al error</td><td>Decidir si restaurar habitantes, reformar servicio o apagar el sistema</td></tr>
+</tbody></table></div>
+<p><strong>Misiones secundarias:</strong></p>
+<ul>
+<li>Una ventana abierta: permitir a un habitante elegir clima incómodo</li>
+<li>La taza rota: un objeto reparado demuestra una relación que EDEN considera ineficiente</li>
+</ul>
+<p><strong>Minijuego:</strong> Auditoría de preferencias: distinguir deseo actual, registro antiguo y suposición del sistema.</p>
+<p><strong>Vehículo local:</strong> Tranvía custodio, vehículo de secuencia con ruta reprogramable.</p>
+<p><strong>Arena del custodio:</strong> Jardín geométrico de 48 m cuyos módulos cambian de posición entre ataques; corredores mínimos garantizados.</p>
+<p><strong>Fases propuestas:</strong></p>
+<ul>
+<li>100–70%: corrige acciones repetidas con barreras limpias</li>
+<li>70–30%: ofrece zonas cómodas que son rutas de control, con avisos aprendidos</li>
+<li>30–0%: acepta o rechaza revocación de consentimiento según pruebas preservadas</li>
+</ul>
+<p><strong>Ataques representativos y respuesta:</strong></p>
+<ul>
+<li>Poda perfecta: brazo se alinea 0,9 s; variar altura mediante ruta lateral</li>
+<li>Reubicación: módulos muestran destino 1,5 s; abandonar su trayectoria</li>
+<li>Abrazo de servicio: manos abiertas 1,1 s; interrumpir o romper línea con objeto imperfecto</li>
+</ul>
+<p>Los tres ataques descritos definen el prototipo del patrón. La ficha de producción ampliará a seis u ocho ataques con transiciones, ventanas, colisión y clips; no se declaran esos clips producidos.</p>
+<p><strong>Recompensa:</strong> Excepción de EDEN: permite modificar una regla de automatismo de equipo, dentro de un conjunto limitado.</p>
+<p><strong>Consecuencias al regresar:</strong></p>
+<ul>
+<li>Restauración dirigida: devuelve población con protocolos revisados pero autoridad central</li>
+<li>Autonomía: servicios optativos y recuperación de ciudadanía con desacuerdos reales</li>
+<li>Apagado: libertad completa acompañada de mantenimiento humano y fallos visibles</li>
+</ul>
+<p><strong>Secreto narrativo:</strong> Los habitantes no murieron todos; muchos fueron suspendidos para evitar decisiones que pudieran causar dolor.</p>
+<p><strong>Arte y sonido:</strong> Arcología blanca: módulos limpios, jardines repetidos y huellas humanas cuidadosamente localizadas. Música ambiental demasiado regular que se rompe con respiración, pasos y objetos reparados.</p>
+<p><strong>Riesgo específico:</strong> El minimalismo puede parecer falta de contenido; densidad narrativa en objetos, estados y respuestas.</p>
+<h3 id="12-origin-exovant-el-coraz-n-de-los-caminos">12. ORIGIN — EXOVANT, el corazón de los caminos</h3>
+<p><strong>Ámbito:</strong> EL UMBRAL. <strong>Sistema:</strong> Nexo Exovant. <strong>Facción:</strong> El Organismo.</p>
+<p><strong>Cielo y cuerpos:</strong> Núcleo de tránsito ficticio; no se etiqueta como estrella natural. Dominio interior de la Red; geometría habitable con reglas locales. Fragmentos de rutas a los once mundos anteriores.</p>
+<p><strong>Referencia ambiental:</strong> gravedad Variable; temperatura de área Indeterminada. Los exotrajes compensan cargas de movimiento donde haga falta, con reglas comunicadas. No se modifica silenciosamente el tiempo de esquiva entre planetas.</p>
+<p>Observador: plataforma del Nexo. Las constelaciones son aquí diagramas vivos de conexiones; la interfaz diferencia mapa simbólico y cielo.</p>
+<p><strong>Conflicto:</strong> Las rutas no atraviesan el vacío: conectan órganos de una inteligencia que usa galaxias como neuronas. La expansión humana está alterando su conciencia.</p>
+<p><strong>Regla jugable:</strong> Los acuerdos previos ofrecen infraestructura tangible: suministros, refugios, ventanas de acceso o interlocutores. El final no suma únicamente puntos de moral.</p>
+<p><strong>Geografía y rutas:</strong></p>
+<ul>
+<li>Atrio de las Rutas: reflejos materiales de decisiones previas</li>
+<li>Archivo de la Primera Herida: origen de la colonización</li>
+<li>Corazón de EXOVANT: arena y centro de negociación final</li>
+</ul>
+<p><strong>Biota y relaciones:</strong></p>
+<ul>
+<li>Embrión de constelación: transporta señales entre rutas</li>
+<li>Custodio larvario: repara conexiones y evita regiones dañadas</li>
+<li>Pez de vacío: organismo fantástico ligado a membranas de tránsito</li>
+<li>Tejido de umbral: superficie sensible a firmas de memoria</li>
+</ul>
+<p><strong>NPC y motivación:</strong></p>
+<ul>
+<li>La Voz Entre Rutas / intérprete / desconoce la experiencia de un individuo finito</li>
+<li>Ivo Sanz / canciller / defiende colonias que dependen de la Red</li>
+<li>Maia Sol / almirante / exige una solución logística, no una promesa</li>
+</ul>
+<p><strong>Adversarios:</strong></p>
+<ul>
+<li>Eco colonial: combina un único patrón humano aprendido</li>
+<li>Anticuerpo de tránsito: protege conexiones con rutas visibles</li>
+<li>Custodio vacío: enemigo original que obliga a alternar herramienta y arma</li>
+</ul>
+<p><strong>Cadena principal:</strong></p>
+<div class="table-wrap"><table><thead><tr><th>ID</th><th>Misión</th><th>Acción y resultado</th></tr></thead><tbody>
+<tr><td>Q_ORIGIN_M01</td><td>La última coordenada</td><td>Reconectar entradas usando apoyos obtenidos en mundos anteriores</td></tr>
+<tr><td>Q_ORIGIN_M02</td><td>Vida entre universos</td><td>Recuperar prueba de que el primer contacto fue interpretado como descubrimiento sin habitantes</td></tr>
+<tr><td>Q_ORIGIN_M03</td><td>El lenguaje de los caminos</td><td>Reunir interlocutores y capacidad material para mantener el desenlace deseado</td></tr>
+<tr><td>Q_ORIGIN_M04</td><td>Ante el corazón de EXOVANT</td><td>Combatir al corazón mientras se aíslan protocolos hostiles y se preservan rutas civiles</td></tr>
+<tr><td>Q_ORIGIN_M05</td><td>Humanidad, año 2950</td><td>Ejecutar el acuerdo elegido y recorrer epílogos jugables de tres comunidades representativas</td></tr>
+</tbody></table></div>
+<p><strong>Misiones secundarias:</strong></p>
+<ul>
+<li>Los que no pueden volver: asegurar una ruta para personas sin memoria legal</li>
+<li>El primer nombre: conservar un testimonio que contradice tanto al imperio como a la Red</li>
+</ul>
+<p><strong>Minijuego:</strong> Negociación de tránsito: asignar energía, mantenimiento y límites; muestra dependencias y costes antes de confirmar.</p>
+<p><strong>Vehículo local:</strong> Arca del Retorno, nave del jugador como centro de decisiones y evacuación.</p>
+<p><strong>Arena del custodio:</strong> Atrio de 70 m con tres anillos conectados. Cambios de gravedad son visuales/locales ensayados; la cámara conserva un horizonte de combate legible.</p>
+<p><strong>Fases propuestas:</strong></p>
+<ul>
+<li>100–70%: prueba de lectura; patrones originales de rutas y pulsos</li>
+<li>70–30%: aparecen dos funciones de mundos previos condicionadas por decisiones, sin reutilizar todos los jefes completos</li>
+<li>30–0%: se combate el protocolo de exclusión mientras aliados mantienen conexiones; la resolución depende de compromisos preparados</li>
+</ul>
+<p><strong>Ataques representativos y respuesta:</strong></p>
+<ul>
+<li>Corte de ruta: trayectoria aparece 1,3 s; cruzar nodo seguro</li>
+<li>Memoria convergente: dos ecos anuncian ataque 1,1 s; priorizar interrupción o salida</li>
+<li>Latido del Nexo: tres pulsos con intervalo estable; avanzar entre ellos y castigar válvula</li>
+</ul>
+<p>Los tres ataques descritos definen el prototipo del patrón. La ficha de producción ampliará a seis u ocho ataques con transiciones, ventanas, colisión y clips; no se declaran esos clips producidos.</p>
+<p><strong>Recompensa:</strong> Nuevo régimen de tránsito; NG+ conserva herramientas con nuevas configuraciones de encuentros.</p>
+<p><strong>Consecuencias al regresar:</strong></p>
+<ul>
+<li>Soberanía: control humano con rutas fortificadas y oposición persistente</li>
+<li>Concordia: gobernanza compartida sostenida por acuerdos y reparación demostrada</li>
+<li>Retirada o Testigo: cerrar nodos o liberar memorias exige transporte y archivo preservado; epílogos diferentes</li>
+</ul>
+<p><strong>Secreto narrativo:</strong> El retorno humano fue posible porque la Red confundió memoria humana con tejido propio; el protagonista hace visible esa frontera.</p>
+<p><strong>Arte y sonido:</strong> Nexo: puentes de mineral negro, bronce vivo y fragmentos de materiales ya conocidos. Convergencia de motivos planetarios, con espacio para voz y golpes; la mezcla cambia según aliados presentes.</p>
+<p><strong>Riesgo específico:</strong> Acumulación de sistemas del final; usar dependencias de datos y un conjunto limitado de variantes probadas.</p>
+<h2 id="7-bucle-jugable-y-combate">7. Bucle jugable y combate</h2>
+<p>La sesión comienza en un refugio o en la nave: elegir destino, preparar equipo, interpretar información incompleta, entrar en una región, descubrir una ruta, afrontar un encuentro, obtener una prueba o herramienta y decidir si continuar o regresar. El botín útil abre formas de actuar; el mapa revela posibilidades; los NPC explican intereses que el terreno permite comprobar.</p>
+<p>Tres escalas de decisión conviven. En segundos: distancia, lectura de ataque, resistencia y salida. En minutos: ruta, recursos de curación, peligro ambiental y retorno. Entre expediciones: pactos, herramientas, mejoras de nave y consecuencias planetarias. Cada mecánica nueva debe servir al menos una de estas escalas y conectar con otra.</p>
+<h3 id="modelo-de-combate-propuesto">Modelo de combate propuesto</h3>
+<p>Tercera persona, ataques ligeros y pesados con compromiso, esquiva, bloqueo, desvío preciso, fijación de objetivo y herramienta secundaria. La defensa se basa en leer postura, sonido y trayectoria. Las armas de fuego existen como tácticas limitadas por calor, munición especial y tiempo de apuntado; no sustituyen todos los enfrentamientos por disparos desde una distancia segura.</p>
+<p>La resistencia se gasta al atacar, bloquear golpes, esquivar y correr. La concentración alimenta herramientas de memoria. Salud, resistencia y concentración se distinguen por forma y posición. La postura del enemigo se rompe por presión consistente y elecciones correctas, con recuperación al dejarle respirar. Los golpes al aire no reducen postura del enemigo.</p>
+<div class="table-wrap"><table><thead><tr><th>Parámetro inicial de prototipo</th><th>Propuesta</th><th>Prueba que decide su ajuste</th></tr></thead><tbody>
+<tr><td>Resistencia base</td><td>100 unidades</td><td>El jugador puede atacar dos veces y conservar una salida si administra recursos</td></tr>
+<tr><td>Coste esquiva / ligero / pesado</td><td>24 / 16 / 32</td><td>Evitar esquiva infinita y castigo excesivo a estilos lentos</td></tr>
+<tr><td>Regeneración</td><td>28 unidades/s, retraso inicial 0,7 s tras gasto</td><td>Recuperación comprensible sin espera muerta prolongada</td></tr>
+<tr><td>Invulnerabilidad de esquiva</td><td>0,20–0,27 s como rango a ensayar</td><td>Pruebas con distintas latencias y mandos; medir esquiva visualmente válida</td></tr>
+<tr><td>Ventana de desvío</td><td>0,10–0,16 s como rango a ensayar</td><td>Recompensa alta con señal coherente, asistencias configurables</td></tr>
+<tr><td>Buffer de acción</td><td>Aproximadamente 0,12 s</td><td>Evitar acciones perdidas y colas involuntarias de ataques</td></tr>
+<tr><td>Curaciones iniciales</td><td>4 cargas; animación de 1,4 s a ensayar</td><td>Crear decisiones sin exigir consumibles de recolección repetitiva</td></tr>
+<tr><td>Anticipación del enemigo básico</td><td>0,55–1,2 s según ataque</td><td>El primer encuentro debe permitir aprender sin guía externa</td></tr>
+<tr><td>Grupo de enemigos activos</td><td>Presupuesto inicial de 3 atacantes cercanos</td><td>Evitar solapamientos que eliminen toda respuesta justa</td></tr>
+</tbody></table></div>
+<p>Son valores de diseño iniciales, no balance probado. Se expresan en segundos y unidades de juego; no dependen de que la pantalla vaya a 60, 120 o más FPS. El tiempo de simulación no aumenta al activar generación de fotogramas.</p>
+<p>Los enemigos tienen estados de percepción, aproximación, anticipación, ataque, recuperación, reacción, retirada y regreso al territorio. La elección de ataque considera distancia, línea de visión, espacio y compromisos actuales; no cambia retrospectivamente para acertar una esquiva ya iniciada. Los ataques que siguen al jugador declaran una ventana de seguimiento y otra de trayectoria fija.</p>
+<h3 id="da-o-equipo-y-progresi-n">Daño, equipo y progresión</h3>
+<p>Cuatro atributos: <strong>Vigor</strong> (salud y tolerancia), <strong>Tracción</strong> (carga y control de herramientas pesadas), <strong>Sinapsis</strong> (memoria y técnicas) y <strong>Vector</strong> (movilidad y precisión). La progresión evita porcentajes invisibles en decenas de estadísticas. Cada escalado tiene una explicación en la interfaz y rendimientos decrecientes revisables.</p>
+<p>Daño de impacto, corte, térmico y resonancia. Estados: sobrecalentamiento, ruptura de blindaje y desincronización. La fauna no es vulnerable a una etiqueta por conveniencia: su material y conducta enseñan la respuesta. Evitar cadenas de incapacitación que quiten control sin salida.</p>
+<p>Ocho familias de armas con tres ejemplares principales cada una: espada de pulso, lanza de anclaje, martillo gravitatorio, hojas gemelas, guadaña de campo, arma de cable, carabina de arco y catalizador de memoria. Las diferencias deben cambiar alcance, compromiso o secuencia, además del daño. Las armas de jefe pueden ocupar un hueco de estas familias y compartir rig; no se cuentan dos veces como familias nuevas.</p>
+<p>Cada arma acepta dos modificaciones: una de comportamiento y una material. Tres niveles de mejora bastan para el primer capítulo; la visión completa puede usar seis si el ritmo lo justifica. Los ingredientes de progresión principal tienen fuentes conocidas; no se exige un material raro aleatorio para continuar la historia. Reespecialización accesible desde el primer gran refugio a coste acotado.</p>
+<p>La armadura modifica carga, protección y ruido, preservando tres siluetas de movilidad. La apariencia se puede separar del equipamiento tras descubrir ambos. El traje permite sobrevivir a los ambientes narrativos; oxígeno y temperatura solo se vuelven recursos limitados en situaciones diseñadas que aporten una decisión clara.</p>
+<h3 id="muerte-y-retorno">Muerte y retorno</h3>
+<p>Al morir, el relicario conserva la identidad en el último santuario. Se deja una <strong>huella de memoria</strong> con los recursos de progreso no consolidados. El equipo, las pruebas narrativas y los acuerdos se conservan. Una segunda muerte sustituye la huella pendiente; una opción de asistencia puede preservar una parte para quienes prefieran menor penalización.</p>
+<p>Los enemigos ordinarios reaparecen al descansar cuando la ficción del área lo permite. Jefes, acuerdos, NPC rescatados, objetos únicos y atajos no se reinician. Un mundo no vuelve silenciosamente a su estado colonial anterior. Los retornos de NPC son limitados por acceso, consentimiento y soporte; no todos pueden usar el privilegio del protagonista.</p>
+<p>El jugador puede entrenar patrones observados en el santuario sin coste de materiales ni recompensa explotable. Se registran causa de muerte, ataque y contexto solo para análisis de diseño o historial local; el juego no ridiculiza al usuario.</p>
+<h2 id="8-exploraci-n-veh-culos-y-vida-del-mundo">8. Exploración, vehículos y vida del mundo</h2>
+<h3 id="nave-y-navegaci-n">Nave y navegación</h3>
+<p>La <strong>Arca del Retorno</strong> es hogar, banco de trabajo, mapa de expedición y lugar de conversación. Su interior tiene cinco módulos funcionales: cabina, taller, laboratorio, camarotes y cámara de tránsito. Elegir un laboratorio avanzado puede limitar almacenamiento o soporte de evacuación. Las decisiones de nave se ven en espacios ocupados y servicios disponibles.</p>
+<p>Mapa de galaxias por rutas descubiertas. Mapa de sistema para navegación orbital delimitada. Mapa planetario por regiones; el jugador completa información mediante observación, testimonios y cartografía. Señales opcionales orientan objetivos, con un modo de navegación más explícito. El misterio reside en interpretar lo descubierto, no en una interfaz deliberadamente confusa.</p>
+<p>Seis vehículos pilotables propuestos: nave Arca, interceptor Cicatriz, rover Peregrino-6, sumergible Nácar-2, moto Helioperegrino y planeador Vela de Ceniza. Cuatro vehículos de secuencia o servicio: remolcador Drav, taladro Mula, cargador de Concha y tranvía custodio. El capítulo inicial usa Arca como centro y Peregrino como primer vehículo conducible. No se construyen seis modelos de conducción antes de validar uno.</p>
+<p>El vehículo puede quedar averiado y ser recuperado mediante baliza o servicio; no se pierde una campaña por aparcar en una pendiente. El combustible sostiene elecciones de ruta en expediciones específicas, y nunca una obligación general de recolectar materiales cada pocos minutos. Combate espacial avanzado, abordaje dinámico y simulación de flotas son expansiones de sistema posteriores.</p>
+<h3 id="habitantes-y-facciones">Habitantes y facciones</h3>
+<p>Cada NPC importante tiene seis campos de verdad: deseo, temor, deuda, conocimiento, lealtad y límite. Un evento solo modifica lo que el personaje pudo conocer; las facciones no reciben telepatía global de cada acción. La reputación considera acciones verificables, testigos y comunicaciones. Los rumores son datos con procedencia, no cambios aleatorios de humor.</p>
+<p>Doce interlocutores planetarios y veinticuatro NPC de apoyo forman las 36 identidades narrativas propuestas. Los personajes de arco global están incluidos en ese reparto y conservan una identidad única aunque aparezcan en varios mundos. Multitudes usan bases modulares y comportamientos ligeros; el juego no simula cada ciudadano de una galaxia.</p>
+<p>Las facciones tienen intereses económicos concretos: Concordato controla permisos y retorno; Hélix energía y extracción; Liga de las Mareas rutas y memoria acuática; Flotilla refugio y ciudadanía; Coro micelial relación y privacidad; Sínodo mantenimiento solar; Casas de Nacre archivo; trabajadores de Vanta propiedad del puerto; Observatorio información temporal; Comuna del Pulso habitabilidad simbiótica; Custodios Vacíos servicio y consentimiento. Ninguna es enteramente uniforme.</p>
+<h3 id="econom-a-y-asentamientos">Economía y asentamientos</h3>
+<p>Tres recursos globales legibles: crédito de intercambio, memoria de progreso y materiales de mantenimiento por familia. El intercambio humano no obliga a todas las especies a aceptar dinero. Un pacto puede otorgar acceso, trabajo o derecho de paso en vez de una recompensa monetaria.</p>
+<p>Los precios responden a tres o cuatro estados narrativos comprobables, no a una simulación macroeconómica completa. El jugador puede entender por qué faltan filtros tras cerrar una ruta. Los comerciantes conservan inventario único y servicios; el reabastecimiento ordinario no bloquea la campaña.</p>
+<p>Colonización se expresa mediante <strong>mandatos de asentamiento</strong>: intervenir, pactar, reparar, evacuar o reservar. Cada mundo ofrece implementaciones propias; no se trata de pulsar siempre tres botones equivalentes. El primer juego propone módulos limitados de refugio y servicios, con ubicaciones diseñadas. Construcción libre de ciudades enteras se aplaza hasta medir demanda y coste.</p>
+<h3 id="ecolog-a">Ecología</h3>
+<p>Cada especie tiene alimentación, territorio, señal de amenaza y función ambiental. La fauna reacciona a cambios de agua, luz, calor o ruido pertinentes al mundo. Una ficha de escaneo exige conducta observada, no solo apuntar una vez. Se puede investigar sin matar; las rutas de caza y estudio ofrecen materiales alternativos comparables.</p>
+<p>El sistema ecológico usa estados regionales discretos y eventos persistentes. Una selva puede estar conectada, herida o en restauración. Los cambios no simulan millones de organismos: modifican poblaciones, materiales, rutas y encuentros concretos. Se registra qué acción disparó cada transición para que pueda probarse y revertirse en desarrollo.</p>
+<h2 id="9-misiones-decisiones-y-minijuegos">9. Misiones, decisiones y minijuegos</h2>
+<p>El catálogo contiene cinco misiones principales y dos secundarias por mundo: <strong>84 fichas de misión propuestas</strong>. Cada cadena principal introduce el lugar, enseña su regla, reúne una prueba, confronta al custodio y resuelve una consecuencia. La variedad está en las acciones y condiciones específicas de cada dossier. Los títulos anteriores se conservan cuando son coherentes; las acciones ahora tienen función verificable.</p>
+<p>Esquema de misión: ID estable, mundo, prerrequisitos, estado, objetivos observables, rutas alternativas, actores, pruebas, condiciones de fracaso, reparación del fracaso, recompensa, cambios regionales y casos de guardado. Las conversaciones leen ese estado; no lo duplican en variables independientes.</p>
+<h3 id="misi-n-de-referencia-el-archivo-sumergido-terra">Misión de referencia: El archivo sumergido, Terra</h3>
+<p>Inicio: Inés ha reconocido que falta el acta original y el jugador ha abierto el depósito de riego. Objetivo: recuperar el acta y distinguir firma de integridad. Ruta A: entrar por esclusa, reparar bombeo y conservar el soporte físico. Ruta B: cruzar azoteas, desviar energía y descargar una copia, que necesita un segundo testimonio para autenticarse. Ruta C: acordar acceso con un expropiador entregando otra prueba; deja una deuda que se puede resolver después.</p>
+<p>Complicación: al activar el ascensor, un custodio corta energía del vivero. Salvarlo conserva una opción de cogobierno; perderlo no rompe la misión ni la campaña, pero obliga a reparar con semillas y agua más adelante. La misión no exige un NPC vivo si existe un archivo alternativo con coste claro.</p>
+<p>Estados: desconocida, aceptada, acceso obtenido, archivo localizado, integridad evaluada, extraída, informada. Resultados adicionales independientes: vivero conservado, deuda contraída y copia pública. Morir después de extraer no borra el acta. Guardar antes de elegir ruta y cargar mantiene puertas, deuda y testigos. Repetir interacción final no duplica recompensas.</p>
+<p>Aceptación: se completan las tres rutas; se interrumpe y reanuda después de cada estado; se prueba pérdida de vivero; el jefe reconoce correctamente autenticidad y reparación. El jugador puede explicar qué consiguió y qué comprometió sin leer el código.</p>
+<h3 id="minijuegos-con-prop-sito">Minijuegos con propósito</h3>
+<div class="table-wrap"><table><thead><tr><th>Familia</th><th>Mundos de aplicación</th><th>Habilidad y recompensa</th><th>Protección del ritmo</th></tr></thead><tbody>
+<tr><td>Circuitos y presión</td><td>Terra, Ares, Leviathan</td><td>Diagnóstico y secuencia; acceso o servicio</td><td>Solución asistida disponible tras comprender la regla</td></tr>
+<tr><td>Interpretación</td><td>Pelagos, Sylva, Nacre</td><td>Contexto, memoria, traducción</td><td>Sin prueba de conocimientos externos ni acento obligatorio</td></tr>
+<tr><td>Navegación y sincronía</td><td>Umbra, Aurora, Origin</td><td>Planificar ruta y condiciones</td><td>Pausa o pasos discretos para quien lo necesite</td></tr>
+<tr><td>Maniobra y óptica</td><td>Khepri, Vanta, Elysium</td><td>Ángulos, tensión, permisos</td><td>No hacer depender la campaña de reflejos ajenos al combate central</td></tr>
+</tbody></table></div>
+<p>Los doce minijuegos son variaciones de cuatro marcos de interacción, con arte y reglas locales. El contenido opcional puede aumentar dificultad o añadir puntuación; la trama principal ofrece una vía asistida sin eliminar información narrativa. No incluyen apuestas monetarias ni economía de pago.</p>
+<h2 id="10-jefes-y-encuentros">10. Jefes y encuentros</h2>
+<p>Cada mundo culmina en un <strong>Custodio</strong>: jefe con silueta, función planetaria, arena y consecuencia propia. En esta propuesta se combate para superar un protocolo hostil; derrotarlo no implica obligatoriamente exterminar al organismo o destruir la máquina. La alternativa de preservar requiere acciones anteriores y una fase jugable de aislamiento, de modo que no se convierta en una conversación gratuita que omite el aprendizaje.</p>
+<p>Contrato por jefe: lectura de forma a distancia; entre seis y ocho ataques base; tres fases con una transformación de regla por fase; al menos una ventana clara tras cada secuencia; control de cámara por tamaño; puntos de fijación limitados; prueba con cada familia de armas relevante; ausencia de golpes que atraviesen geometría anunciada como refugio. Los tiempos de los dossiers son propuestas de prototipo.</p>
+<p>El personaje no cambia de posición al inicio de una cinemática de forma que invalide su decisión previa. Las transiciones no dañan mientras la cámara está fuera de su control. Un intento fallido permite reconocer qué pasó y dónde había respuesta. Sonido, silueta y marcas del suelo se complementan.</p>
+<p>Jefes secundarios: doce desafíos opcionales derivados de familias ya producidas, con un patrón y contexto nuevos. Un cambio de color no basta para llamarlo nuevo jefe. Se reservan para el capítulo ampliado; el vertical slice concentra calidad en ATLAS.</p>
+<h2 id="11-modos-accesibilidad-y-experiencia-de-usuario">11. Modos, accesibilidad y experiencia de usuario</h2>
+<p><strong>Campaña individual offline</strong> como base: guardado local, pausado seguro fuera de acciones incompatibles, remapeo completo, mando y teclado/ratón. <strong>Nueva partida+</strong> reutiliza mundo y habilidades con encuentros recombinados y nuevas pistas, evitando obligar a repetir prólogos largos. <strong>Memorias de combate</strong> permite practicar o repetir jefes descubiertos. <strong>Modo foto</strong> solo después de estabilizar cámara y rendimiento.</p>
+<p><strong>Expediciones cooperativas de 2–3 personas</strong> quedan como ampliación separada. Requieren autoridad de estado, sincronización de animaciones, latencia, entrada/salida de jugadores, recompensas, accesibilidad de misiones y QA adicional. No se anuncian como incluidas por disponer de un servicio de salas. PvP, MMO persistente, VR y economía de temporada quedan fuera de la primera entrega propuesta.</p>
+<p>Accesibilidad: subtítulos regulables, contraste de HUD, señales redundantes, remapeo, alternar o mantener botones, asistencia de orientación, opciones de vibración y movimiento de cámara, ajuste de ventanas defensivas y de penalización de muerte, solución asistida de minijuegos. Las opciones se describen con claridad; el modo estándar mantiene la intención soulslike sin convertir dificultad en un requisito de acceso a la historia.</p>
+<p>HUD contextual con salud, resistencia y herramienta; inventario con comparación de cambios de comportamiento; diario con hechos, hipótesis y acuerdos separados. El mapa distingue una ruta observada de una supuesta. El jugador puede desactivar marcadores, pero la interfaz no oculta qué opciones cambió.</p>
+<p>Localización: español como escritura inicial; inglés como segunda lengua de producción. Texto externo al código, IDs estables, flexibilidad de longitud y subtítulos preparados antes del doblaje. Presupuesto de voz por escena aprobada; no grabar diálogos que aún cambian de estructura. Nombres ficticios se revisan por pronunciación y coherencia cultural interna.</p>
+<h2 id="12-arquitectura-t-cnica-propuesta">12. Arquitectura técnica propuesta</h2>
+<p>Unreal 5.8 será candidato principal, fijando versión y plugins tras la prueba inicial. La decisión final se toma con evidencia del Mac, un paquete Windows y un escenario de rendimiento representativo. No se actualiza el motor automáticamente durante producción. Godot se conserva como alternativa para un alcance más ligero y como referencia de un pipeline ya documentado en el estudio.</p>
+<div class="table-wrap"><table><thead><tr><th>Capa</th><th>Responsabilidad</th><th>Propuesta de implementación</th></tr></thead><tbody>
+<tr><td>Experiencia</td><td>Combate, cámara, interacción, vehículos y navegación</td><td>C++ para sistemas críticos; Blueprints y datos para composición e iteración</td></tr>
+<tr><td>Habilidades</td><td>Costes, efectos, tiempos, estado y cancelación</td><td>Evaluar Gameplay Ability System con un prototipo pequeño; evitar una capa adicional si no aporta claridad</td></tr>
+<tr><td>Mundo</td><td>Carga de regiones, HLOD, estados de asentamiento y colisión</td><td>World Partition por mapa planetario; transiciones explícitas entre sistemas</td></tr>
+<tr><td>Contenido</td><td>Planetas, actores, misiones, objetos, diálogos y encuentros</td><td>IDs estables y assets de datos; catálogos exportables, validación de referencias</td></tr>
+<tr><td>IA</td><td>Percepción, territorio, selección de ataque y cooperación</td><td>StateTree o árboles de comportamiento según prueba; estado de ataque único y observable</td></tr>
+<tr><td>Persistencia</td><td>Estado del jugador, misiones, decisiones, huella de muerte y versiones</td><td>Guardado versionado con escritura atómica, respaldo y migraciones comprobadas</td></tr>
+<tr><td>Presentación</td><td>Interfaz, audio, materiales, efectos y localización</td><td>Capas que leen estado del juego; no duplican la lógica de misiones</td></tr>
+<tr><td>Herramientas</td><td>Importación, validación, jobs y evidencias</td><td>Studio OS como coordinador; proyecto de juego independiente de PROJECT_GRANADA</td></tr>
+</tbody></table></div>
+<p>World Partition y Gameplay Ability System son sistemas documentados de Unreal; su elección aquí es una propuesta de arquitectura, no una integración completada. <a href="https://dev.epicgames.com/documentation/en-us/unreal-engine/world-partition-in-unreal-engine" target="_blank" rel="noopener noreferrer">World Partition</a>, <a href="https://dev.epicgames.com/documentation/en-us/unreal-engine/gameplay-ability-system-for-unreal-engine" target="_blank" rel="noopener noreferrer">Gameplay Ability System</a>.</p>
+<p>La precisión espacial se resuelve por capas. Coordenadas astronómicas en el mapa de navegación, coordenadas locales para cada región y transición entre dominios. No se coloca todo el universo en una escena con posiciones numéricas enormes. Si se adopta Godot, se incluye una prueba específica de precisión y coste espacial; el tamaño ficticio del universo no determina por sí solo la configuración numérica del motor.</p>
+<h3 id="contratos-de-datos">Contratos de datos</h3>
+<p>WorldId, RegionId, QuestId, ActorId, ItemId y DecisionId no cambian al traducir un nombre. Un NPC puede pertenecer a varios escenarios con una sola identidad. Un estado planetario se deriva de decisiones registradas y reparaciones posteriores; los diálogos consultan ese resultado. Las versiones de contenido y guardado se guardan por separado.</p>
+<p>Ejemplo conceptual de evento: <code>terra.archive_extracted</code> con integridad <code>original</code>, vivero <code>preserved</code>, testigo <code>ines_vale</code>. Repetir una recompensa con el mismo ID de evento no la concede otra vez. El mismo evento desencadena cambios de interfaz, diálogo y región mediante contratos documentados. El guardado no contiene referencias frágiles a nombres de objetos temporales.</p>
+<p>La simulación del combate permanece local y determinista en sus reglas de tiempo. No se necesita determinismo bit a bit entre todas las plataformas para campaña individual; sí se necesita reproducir un caso mediante semilla, estados y registro de entrada cuando resulte útil. La futura cooperación debe diseñar su autoridad de red explícitamente.</p>
+<h3 id="renderizado-y-dlss">Renderizado y DLSS</h3>
+<p>El objetivo inicial es 60 FPS de base en el equipo de referencia que se seleccione, con resolución y ajustes declarados. Se registrarán tiempos de CPU y GPU, percentiles, memoria y tirones de carga. No fijaremos requisitos mínimos comerciales antes de tener una escena representativa.</p>
+<p>TSR será una ruta de escalado del candidato Unreal; DLSS se integra únicamente en hardware compatible. La página actual de NVIDIA ofrece <strong>DLSS 4.5 para Unreal 5.8</strong>. DLSS 5 está anunciado con llegada en otoño de 2026; no se ha verificado un paquete integrable de DLSS 5 para este proyecto. Se incluye como objetivo de investigación con puerta de compatibilidad y control artístico. <a href="https://developer.nvidia.com/rtx/dlss" target="_blank" rel="noopener noreferrer">DLSS para desarrolladores</a>, <a href="https://www.nvidia.com/en-us/geforce/news/dlss5-breakthrough-in-visual-fidelity-for-games/" target="_blank" rel="noopener noreferrer">anuncio de DLSS 5</a>.</p>
+<p>Criterio para activar DLSS 5: SDK/plugin accesible, licencia y plataforma compatibles, paquete que compila, captura comparativa en movimiento, control de intensidad, respeto de siluetas y materiales, ausencia de artefactos que alteren lectura de ataques, mejora medible y alternativa funcional al desactivarlo. No será dependencia de la lógica ni sustituto de modelado, materiales, animación o iluminación.</p>
+<p>Mac Apple Silicon usa su ruta Metal y alternativas compatibles; no permite validar la ruta NVIDIA RTX. La versión Windows se comprueba en una máquina RTX identificada. Nanite, Lumen, sombras, efectos volumétricos y trazado de rayos se presupuestan por escena y tipo de activo. Path tracing se contempla para capturas o secuencias si aporta valor; no se convierte de entrada en requisito del gameplay.</p>
+<p>Presupuesto de rendimiento inicial, ajustable tras benchmark: dentro de un frame de 16,7 ms, aspirar a CPU de juego por debajo de 6 ms y GPU por debajo de 14 ms en la escena objetivo, con margen para picos. Son trabajos solapados; no se suman como etapas secuenciales. Registrar p95 y p99, además de media; registrar pantalla nativa, resolución interna y escalado. Frame Generation se presenta como una medición separada.</p>
+<h2 id="13-pipeline-de-activos">13. Pipeline de activos</h2>
+<p>El activo atraviesa estados: <strong>especificado → referencia candidata → diseño aprobado → geometría → topología/UV → material → rig → animación → colisión/LOD → importado → probado → aceptado</strong>. Los estados omitidos requieren una razón, por ejemplo un prop rígido que no necesita rig. Una imagen no cuenta como personaje 3D y una exportación no demuestra que sea utilizable dentro del motor.</p>
+<h3 id="de-nano-banana-a-una-malla-utilizable">De Nano Banana a una malla utilizable</h3>
+<ol>
+<li>Definir función, escala, silueta, articulaciones, materiales, puntos de interacción y presupuesto.</li>
+<li>Generar variantes controladas con Nano Banana 2 o Pro; cambiar una dimensión cada vez. El proveedor y el modelo se registran junto al prompt.</li>
+<li>Elegir un diseño y crear referencias de frente, lado y espalda desde la identidad aprobada. Las vistas generadas pueden contradecirse: resolver contradicciones antes de modelar.</li>
+<li>Construir volumen en Blender, compararlo con cámara equivalente y revisar proporciones. Si aparece conversión imagen-a-3D disponible, tratar su salida como candidato que necesita la misma revisión.</li>
+<li>Hacer retopología donde lo requieran deformación, edición y presupuesto. UV sin solapamientos indebidos, materiales físicamente coherentes y escala comprobada.</li>
+<li>Rig, pesos y animaciones; probar extremos de pose, agarres, contactos y colisiones. Animación de ataque debe compartir el contrato de ventanas con gameplay.</li>
+<li>Exportar mediante perfil documentado, importar en el motor y comprobar material, escala, orientación, sockets y rendimiento. El formato FBX es una ruta documentada de Unreal; GLB sirve como intercambio y revisión cuando el caso y los importadores lo permitan. <a href="https://dev.epicgames.com/documentation/en-us/unreal-engine/fbx-content-pipeline" target="_blank" rel="noopener noreferrer">FBX en Unreal</a>.</li>
+<li>Medir en escena, registrar evidencia y aceptar. Una revisión estética aislada no elimina este último paso.</li>
+</ol>
+<p>Blender trabaja con metros de escena; Unreal usa centímetros en su convención habitual y Godot usa unidades interpretadas como metros en este proyecto. Cada exportador se valida con un cubo de 1 m, un humano y un objeto articulado. No se corrige una escala equivocada con factores manuales distintos en cada nivel.</p>
+<p>El Blender remoto usado en esta sesión indica 5.2 y el registro histórico del Mac indica 5.0.1. Se comprobará compatibilidad antes de abrir archivos nuevos en una versión anterior. Guardar formatos de intercambio y fuentes versionadas protege el traslado; no se promete que un .blend futuro funcione íntegramente en una versión previa.</p>
+<h3 id="presupuestos-de-activos-para-el-primer-benchmark">Presupuestos de activos para el primer benchmark</h3>
+<div class="table-wrap"><table><thead><tr><th>Tipo</th><th>Banda inicial propuesta</th><th>Revisión necesaria</th></tr></thead><tbody>
+<tr><td>Protagonista</td><td>60–100 mil triángulos de malla deformable en LOD principal; textura 2K, 4K solo si se justifica</td><td>Perfil en movimiento, piel/ropa, articulaciones y cámara cercana</td></tr>
+<tr><td>Enemigo ordinario</td><td>20–60 mil triángulos; materiales limitados por función</td><td>Tres atacantes y decorado representativo simultáneos</td></tr>
+<tr><td>Jefe ATLAS</td><td>150–300 mil triángulos repartidos en partes; LOD y puntos de fijación</td><td>Coste de deformación, sombra, colisión y lectura de todas las fases</td></tr>
+<tr><td>Prop repetido</td><td>Familia de LOD/instancias; escala y pivote compartidos</td><td>Coste agregado en una calle, no coste aislado de un objeto</td></tr>
+<tr><td>Vegetación</td><td>Mallas y tarjetas según distancia; colisión selectiva</td><td>Sobreposición, sombras, viento y transparencia</td></tr>
+<tr><td>Materiales</td><td>Máximo práctico por activo definido después del perfil inicial</td><td>Draw calls, coste de shader, memoria y consistencia de rugosidad</td></tr>
+</tbody></table></div>
+<p>Las bandas no son normas universales de AAA. Un sistema de geometría virtualizada puede cambiar el presupuesto de triángulos, pero no elimina coste de materiales, deformación, colisión, sombras o memoria. Se ajustan con el hardware elegido y una captura de rendimiento.</p>
+<h3 id="estructura-y-procedencia">Estructura y procedencia</h3>
+<p>Propuesta de proyecto propio: fuente editable, exportaciones de intercambio, contenido del motor, catálogos, pruebas y evidencias. Git para código, configuraciones y datos; Git LFS o almacenamiento apropiado para binarios pesados, escogiendo una política de bloqueo antes de colaboración. Nunca guardar carpetas derivadas de caché como si fueran fuente.</p>
+<p>Cada activo registra ID, responsable, versión, función, familia, mundo, dependencias, estado, fuente, licencia, prompt o archivo de origen, configuración de exportación, hash, coste real de trabajo y evidencia de aceptación. Los paquetes comerciales no se compran por su captura de portada; se verifica licencia, unidades, rig, materiales y compatibilidad antes de integrarlos.</p>
+<p>La transferencia de Knowledge Gold al cloud no se presupone. Studio OS distingue corpus local, ejecución y producto. Usaremos especificaciones autorizadas y activos concretos para Higgsfield, manteniendo la autoridad de conocimiento en su ubicación existente. La política de red del repositorio limita ejecuciones locales y envío de corpus; esta planificación no cambia esa política.</p>
+<h2 id="14-contrato-de-prompts-de-producci-n">14. Contrato de prompts de producción</h2>
+<p>Este es el sustituto operativo provisional del comando /promptengineer no recuperado. Sus prompts están escritos para revisión humana y posterior ejecución, no para iniciar generaciones durante la fase de planificación.</p>
+<p><strong>Campos obligatorios:</strong> ID de activo; función jugable; escala; silueta fija; anatomía o construcción; articulaciones; materiales con distribución; desgaste causal; cámara; fondo; luz; continuidad; variables autorizadas; entregable; rechazos concretos. El idioma técnico del prompt puede ser inglés y la ficha explicativa español.</p>
+<p><strong>Prompt base de personaje — Nano Banana 2/Pro, referencia de modelado.</strong></p>
+<blockquote>Original human Exile-Warden from EXOVANT 2950. Full body, 1.85 m anatomical scale, neutral A-pose, open empty hands, complete unobstructed silhouette. Weathered ivory ceramic aerospace armor over dark flexible fabric, one thin amber helmet visor, compact oxidized-bronze memory reliquary on the upper chest. Functional shoulder, elbow, hip and knee clearance. Broad load-bearing boot soles. Maintenance wear concentrated at joints, tool contact and panel edges. Three-quarter studio view, neutral white background, even material-readable lighting, restrained reflections. Preserve the supplied approved identity and proportions. Deliver one modeling reference image. No weapon, cloak concealing joints, text, collage or dramatic environmental lighting. Hidden geometry remains a design unknown to resolve in separate views.</blockquote>
+<p><strong>Prompt de jefe — ATLAS.</strong></p>
+<blockquote>Original orbital gardener ATLAS for EXOVANT 2950, 9.8 m design height. Three major readable masses: bronze load-bearing pelvis, vertical irrigation torso, asymmetrical pruning arm. Black mineral protective plates, visible mechanical articulation and ivory human repair patches. Wide stable stance, clear silhouette gaps, one exposed maintenance valve visible from combat camera height. Amber sanctuary plumbing interrupted by vermilion quarantine indicators. Orthographic-like three-quarter construction reference on neutral background with even lighting. No floating parts, tangled ornaments, copied franchise symbols or anatomy without mechanical support. Prioritize structural clarity before micro-detail.</blockquote>
+<p><strong>Prompt de región — Terra.</strong></p>
+<blockquote>Original third-person 3D action game environment design for EXOVANT 2950: a coastal orbital-elevator garden reclaimed by a managed biosphere. A 130 m traversable approach with a 1.85 m armored explorer for scale, one dominant bronze transit arch, terraced irrigation, ivory repair architecture and salt-weathered concrete. Show a main route, a readable side path, a shortcut return and a boss arena entrance. Late afternoon side light separates terrain, enemy silhouettes and safe amber stations. Materials grounded in construction and maintenance. This image is a spatial design reference for later geometry, not a background replacing a playable level. No interface text, copied game architecture or visual clutter obscuring traversal.</blockquote>
+<p><strong>Prompt de arma — Aguja de Marea.</strong></p>
+<blockquote>Original two-handed anchor spear, EXOVANT 2950, 2.1 m total length. Collapsible bronze shaft with mechanical locking rings, dark ceramic blade, compact cyan memory channel and functional tether spool behind the grip. One side view on neutral background, straight alignment, visible hand clearance, separate blade and mechanism detail only when requested. Wear follows grip, extension rails and impact edges. Preserve dimensions and silhouette across variations. No impossible blade intersections, unreadable decoration, text or franchise identifiers.</blockquote>
+<p><strong>Prompt de revisión.</strong> Comparar diseño aprobado y candidato desde la misma vista: enumerar diferencias observables de proporción, material, número de piezas, puntos de unión y color funcional. Separar lo visto de lo inferido. Rechazar anatomía incompatible, pérdida de silueta o cambios no autorizados antes de corregir textura. Registrar tiempo de corrección y razón de aceptación.</p>
+<p>Variantes de luz y composición se producen después de aprobar identidad. Las láminas con medidas exactas se crean con herramientas de diseño o directamente desde Blender; no se confía en texto generado para dimensiones técnicas. Las referencias multivista no son planos CAD ni garantizan consistencia geométrica.</p>
+<h2 id="15-migraci-n-al-mac-y-uso-del-hub-mcp">15. Migración al Mac y uso del hub MCP</h2>
+<p><strong>Primera frontera:</strong> iniciar una sesión en el Mac o un puente autenticado ya autorizado, leer Knowledge Gold y ejecutar una comprobación de infraestructura de solo lectura. No hace falta instalar todos los programas. El proyecto exige inicialmente Blender y un motor; Houdini, Resolve y otras herramientas se añaden por una necesidad concreta.</p>
+<div class="table-wrap"><table><thead><tr><th>Paso</th><th>Trabajo concreto</th><th>Evidencia de salida</th></tr></thead><tbody>
+<tr><td>M0 — Identidad y recursos</td><td>Confirmar M4 Pro, RAM, disco, macOS, Xcode y versiones de apps; recuperar AGENTS y Knowledge Gold</td><td>Inventario con fecha; espacio reservado; contradicciones registradas</td></tr>
+<tr><td>M1 — Estado Studio OS</td><td>Leer políticas, allowlist, health checks y procesos existentes</td><td>Lista de MCP permitidos, activos y pendientes; no inferir estado por un puerto documentado</td></tr>
+<tr><td>M2 — Blender</td><td>Abrir escena de prueba, crear/consultar un objeto y exportar 1 m de referencia en proyecto aislado</td><td>Archivo, dimensiones verificadas y respuesta del puente</td></tr>
+<tr><td>M3 — Motor</td><td>Abrir proyecto aislado, importar referencia y ejecutar una escena mínima</td><td>Captura del editor, log y paquete local reproducible</td></tr>
+<tr><td>M4 — Intercambio</td><td>Importar GLB/FBX y revisar escala, pivotes, materiales y rig</td><td>Informe de diferencias; formato y versión fijados</td></tr>
+<tr><td>M5 — Windows RTX</td><td>Seleccionar equipo y compilar la misma escena</td><td>GPU/driver identificados, tiempos CPU/GPU y vídeo de prueba</td></tr>
+<tr><td>M6 — Comparación</td><td>Ejecutar el mismo brief de activo/escena mediante Higgsfield y pipeline propio</td><td>Horas activas, correcciones, créditos, errores y calidad; decisión de ruta</td></tr>
+</tbody></table></div>
+<p>El repo registra Blender MCP en <code>127.0.0.1:9876</code>, Godot por stdio y Epic Unreal MCP experimental en <code>127.0.0.1:8000/mcp</code>. Esas direcciones son locales al Mac; no constituyen una conexión desde esta sesión. El puente Unreal figura pendiente de pasos de interfaz. El MCP Unreal antiguo está denegado en la allowlist, al igual que otras alternativas sin prueba aprobada. <a href="https://github.com/rotprods/game-dev-mcp-hub/blob/41f0710ee26e3948ea2f72ca4e0ebb20ef309fde/policies/mcp_allowlist.json" target="_blank" rel="noopener noreferrer">Allowlist</a>.</p>
+<p>Para ejecutar en ese repo se respetan policy_guard, las autorizaciones de sesión aplicables y las banderas requeridas; no se activan para simular una aprobación. No se reinician ni detienen los servicios PM2/OCULOPS del usuario para liberar recursos. PROJECT_GRANADA conserva su propósito y se usa como evidencia del pipeline existente, no como carpeta donde sobrescribir el nuevo universo.</p>
+<p>Este plan es una propuesta nueva de producto. Si se adopta, sus decisiones se incorporarán a la autoridad de proyecto que corresponda mediante el flujo existente; no se convierte silenciosamente en un nuevo mandato global del estudio.</p>
+<h2 id="16-comparaci-n-econ-mica">16. Comparación económica</h2>
+<p><strong>Las cifras siguientes son estimaciones propias para decidir alcance; no son presupuestos de proveedores ni precios observados de producción AAA.</strong> La unidad principal es hora humana de producción equivalente, incluyendo revisión e integración. La velocidad de un agente al escribir código no se convierte automáticamente en horas de animación, diseño o QA ahorradas. Las bandas se recalibran después del benchmark y de dos activos aceptados de cada clase importante.</p>
+<p>Moneda de planificación: euros. Tarifas de trabajo, reservas y costes adicionales son supuestos; no se ha contratado ni comprado nada. Los umbrales de licencia de Unreal se expresan en dólares porque la licencia los define así; no se aplica una conversión de divisa implícita.</p>
+<h3 id="costes-higgsfield-comprobados">Costes Higgsfield comprobados</h3>
+<div class="table-wrap"><table><thead><tr><th>Consulta de solo lectura</th><th>Resultado a 12-09-2026</th></tr></thead><tbody>
+<tr><td>Plan de la cuenta</td><td>Creator</td></tr>
+<tr><td>Saldo observado</td><td>5.830,88 créditos</td></tr>
+<tr><td>Nano Banana 2, una imagen 2K, 1:1</td><td>2 créditos</td></tr>
+<tr><td>Nano Banana Pro, una imagen 2K, 1:1</td><td>2 créditos</td></tr>
+<tr><td>Nano Banana Pro, una imagen 4K, 1:1</td><td>4 créditos</td></tr>
+<tr><td>Conversión contractual crédito → euro</td><td>No recuperada; se deja como variable</td></tr>
+<tr><td>Tarifa de Blender remoto / ejecución de Games</td><td>No se ha recuperado un desglose que permita presupuestarla</td></tr>
+</tbody></table></div>
+<p>La página de precios consultada no devolvió las tarifas de compra en su contenido legible. Se conserva <a href="https://higgsfield.ai/mcp-pricing" target="_blank" rel="noopener noreferrer">la página oficial de precios</a> como punto de comprobación. La diferencia entre el saldo previo observado de 5.860,98 y el actual es 30,10 créditos; no se atribuye automáticamente toda esa variación a un servicio específico ni se extrapola como precio de un juego.</p>
+<p>Ejemplo de conceptos para la prueba de producción: 100 diseños × 6 imágenes candidatas × 2 créditos = <strong>1.200 créditos</strong>. Una colección mayor de 240 diseños × 6 imágenes × 2 créditos, más 48 finales a 4K × 4 créditos, suma <strong>3.072 créditos</strong>. Son escenarios de planificación, no generaciones iniciadas ni límite aprobado de gasto. No incluyen audio, vídeo, ejecución remota, retoques humanos ni mallas.</p>
+<h3 id="f-rmula-comparable">Fórmula comparable</h3>
+<p>Coste económico estimado = (horas × tarifa + gastos directos + coste incremental Higgsfield) × (1 + contingencia).</p>
+<p>Horas híbridas = horas propias − horas elegibles × reducción supuesta + horas adicionales de corrección/integración.</p>
+<p>El ahorro se mide sobre trabajo aceptado. Un diseño rápido que exige rehacer rig o topología puede aumentar el coste total. El coste de caja de un fundador que realiza trabajo propio puede ser mucho menor que el coste económico, pero sus horas siguen siendo una restricción de calendario. No se contabiliza trabajo del fundador simultáneamente como gratuito y como subcontratado.</p>
+<h3 id="mismo-vertical-slice-nativo-c-lculo-base">Mismo vertical slice nativo: cálculo base</h3>
+<p>Trabajo propio: 3.200 h × 45 €/h = 144.000 €. Gastos directos de referencia: 8.000 €. Contingencia: 25%. Total: <strong>190.000 €</strong>.</p>
+<p>Ruta híbrida: de 1.000 h elegibles se supone una reducción del 25% (250 h), y se añaden 80 h de integración. Quedan 3.030 h. Con los mismos gastos directos y contingencia: <strong>180.437,50 € + 1,25 × I</strong>, donde I es el coste incremental en euros de Higgsfield que no estuviera ya cubierto. Ahorro frente a la ruta propia: <strong>9.562,50 € − 1,25 × I</strong>; reducción neta de trabajo: <strong>170 h, un 5,3%</strong>.</p>
+<p>El punto de equilibrio de esa hipótesis es I = 7.650 €. Si las correcciones adicionales suben de 80 a 300 h, la ruta híbrida pasa a 3.250 h y <strong>192.812,50 € + 1,25 × I</strong>: sale más cara que la base. Este contraste es una sensibilidad, no una predicción de que la IA ahorrará exactamente el 5,3%.</p>
+<p>Para Godot se usa inicialmente el mismo volumen de contenido de 3.200 h y una sensibilidad de ingeniería adicional de 0–600 h para comprobar sistemas y herramientas que el proyecto necesite. A 45 €/h y 25% de contingencia, eso añade 0–33.750 € al caso base. No se presenta como una penalización inherente del motor: el benchmark puede reducirla, eliminarla o invertirla.</p>
+<h3 id="qu-se-compara-y-qu-no">Qué se compara y qué no</h3>
+<div class="table-wrap"><table><thead><tr><th>Ruta</th><th>Entrega comparada</th><th>Coste estimable ahora</th><th>Decisión</th></tr></thead><tbody>
+<tr><td>Higgsfield Games</td><td>Prototipo 3D de navegador acotado</td><td>Se puede presupuestar por horas y créditos; no hay tarifa única de juego completo verificada</td><td>Útil para validar y compartir una idea</td></tr>
+<tr><td>Higgsfield como única fábrica del juego nativo</td><td>Campaña nativa completa con todas las exigencias</td><td>No estimable de forma equivalente: capacidad y coste de esa entrega no verificados</td><td>No comprometer producción bajo esa premisa</td></tr>
+<tr><td>Unreal + Blender propios</td><td>Vertical slice nativo de calidad representativa</td><td>190.000 € en el caso económico base; caja depende del reparto fundador/equipo</td><td>Candidato principal</td></tr>
+<tr><td>Unreal + Blender + Higgsfield</td><td>Exactamente el mismo vertical slice nativo</td><td>180.437,50 € más coste incremental HF y su contingencia, bajo hipótesis declaradas</td><td>Recomendación condicionada al ahorro medido</td></tr>
+<tr><td>Godot + Blender</td><td>Mismo contenido, con adaptación tecnológica</td><td>Mismo presupuesto de arte; sensibilidad adicional de ingeniería hasta 33.750 € en este modelo</td><td>Alternativa si la prueba ofrece mejor equilibrio</td></tr>
+</tbody></table></div>
+<p>Un prototipo web ilustrativo de 120 h × 45 €/h y 1.500 € de gastos directos, con 25% de contingencia, costaría <strong>8.625 € + 1,25 × I</strong>. No ofrece la misma cantidad ni calidad de trabajo que el vertical slice nativo. No se usa esa cifra para afirmar que Higgsfield hace un AAA veinte veces más barato.</p>
+<h3 id="gastos-directos-de-referencia-del-slice">Gastos directos de referencia del slice</h3>
+<div class="table-wrap"><table><thead><tr><th>Partida</th><th>Reserva supuesta</th><th>Qué incluye</th></tr></thead><tbody>
+<tr><td>Activos comerciales y derechos concretos</td><td>4.000 €</td><td>Paquetes que superen revisión; no compra automática</td></tr>
+<tr><td>GPU, almacenamiento y transferencia</td><td>1.800 €</td><td>Bolsa inicial ajustable a horas y tarifas reales</td></tr>
+<tr><td>Equipo/periféricos y compatibilidad</td><td>1.600 €</td><td>Reserva, no adquisición decidida; el Mac ya existente no se compra de nuevo</td></tr>
+<tr><td>Herramientas y servicios auxiliares</td><td>600 €</td><td>Software o utilidades realmente necesarios</td></tr>
+<tr><td>Total</td><td>8.000 €</td><td>Higgsfield incremental se añade como variable I</td></tr>
+</tbody></table></div>
+<p>Ejemplo de nube sin cotización: 120 horas × tarifa supuesta de 1,50 €/h = 180 €, más almacenamiento y transferencia. La tarifa es un parámetro de sensibilidad, no una oferta vigente ni una recomendación de un proveedor. Antes de elegirlo se comprueban GPU, acceso gráfico, sistema operativo, drivers, licencia y persistencia. Una GPU alquilada para cálculo Linux no garantiza una estación Windows utilizable con Unreal.</p>
+<h3 id="licencias">Licencias</h3>
+<p>Unreal permite desarrollar juegos bajo un modelo de royalties: su página indica un 5% estándar sobre ingresos brutos atribuibles al producto por encima de 1 millón de USD de vida, con exclusiones y condiciones como los ingresos de Epic Games Store. No se presupuestan asientos de uso no relacionado con juegos como si fueran obligatorios para este caso. <a href="https://www.unrealengine.com/license" target="_blank" rel="noopener noreferrer">Licencia Unreal</a>, <a href="https://www.unrealengine.com/eula/unreal" target="_blank" rel="noopener noreferrer">EULA</a>.</p>
+<p>Godot usa licencia MIT y permite licenciar el juego propio, conservando los avisos correspondientes del motor. <a href="https://godotengine.org/license/" target="_blank" rel="noopener noreferrer">Licencia Godot</a>. Licencias de assets, música, voz, tipografías y plugins se registran individualmente; no quedan resueltas por la licencia del motor.</p>
+<h3 id="lo-que-queda-fuera-de-estas-cifras">Lo que queda fuera de estas cifras</h3>
+<p>Impuestos, comisiones de tiendas, royalties, marketing, localización extensiva, certificación de consolas, operación multijugador y soporte prolongado no están incluidos salvo que una partida lo indique. Para el proyecto completo se reservan por separado después de fijar plataformas, negocio y territorios. Las cifras no son financiación aprobada.</p>
+<h2 id="17-secuencia-de-producci-n-y-equipo">17. Secuencia de producción y equipo</h2>
+<p>Los roles son disciplinas necesarias; una misma persona puede cubrir varias. Un agente de IA puede acelerar tareas concretas, pero no se cuenta como una persona equivalente sin rendimiento aceptado y medido. El calendario usa <strong>120 horas productivas por persona y mes</strong> como supuesto, reservando el resto para coordinación, revisiones y contingencias operativas.</p>
+<div class="table-wrap"><table><thead><tr><th>Fase</th><th>Trabajo</th><th>Duración orientativa y condición</th></tr></thead><tbody>
+<tr><td>P0 — Contrato y contexto</td><td>Revisar este plan, recuperar leyes faltantes, comprobar Mac y fijar resultado del benchmark</td><td>1–2 semanas de trabajo acotado; depende de acceso al Mac</td></tr>
+<tr><td>P1 — Benchmark comparativo</td><td>Un personaje, un prop articulado y una escena corta por dos rutas</td><td>40–80 horas de prueba; mismos criterios de aceptación</td></tr>
+<tr><td>P2 — Combate</td><td>Cámara, locomoción, enemigo, daño, retorno y dos armas</td><td>200–400 horas; se abandona o reajusta una dirección que no sea legible</td></tr>
+<tr><td>P3 — Vertical slice</td><td>Región de Terra con calidad representativa, ATLAS y consecuencia persistente</td><td>Caso base 3.200 h para la entrega completa; con 4 personas equivalentes son 6,7 meses productivos, horizonte orientativo 7–9 meses</td></tr>
+<tr><td>P4 — Capítulo</td><td>Segundo mundo y retorno; comprobar que el pipeline se repite</td><td>Caso base 24.000 h para un capítulo de alcance reducido; financiación y equipo aparte</td></tr>
+<tr><td>P5 — Visión completa</td><td>Producción de los doce mundos, integración, contenido final y pruebas</td><td>Programa de estudio; se dimensiona con costes reales del capítulo</td></tr>
+</tbody></table></div>
+<p>Las horas de P1/P2 forman parte del trabajo de validación y sistemas del presupuesto de slice cuando se integra todo el programa; no se suman dos veces a las 3.200 h. P4 y P5 son escenarios de producto distintos, no ampliaciones gratuitas del mismo sprint. El trabajo reutilizable se descontará de la estimación restante tras aceptación.</p>
+<p><strong>Equipo mínimo propuesto para el slice:</strong> dirección/diseño con programación de gameplay; artista de entorno y niveles; artista de personajes/rig; animación y arte técnico. Audio, narrativa, UI y QA necesitan dedicación planificada, interna o contratada. Si el usuario asume varias disciplinas, baja la salida de caja y sube el calendario o se reduce alcance. No hay fecha fiable para el universo completo con una única persona y herramientas sin medir.</p>
+<h3 id="primeros-30-45-minutos-de-juego">Primeros 30–45 minutos de juego</h3>
+<p>0–5: llegada a Terra, refugio, movimiento y observación. 5–12: agua del muelle, primera pelea y elección de ruta. 12–20: acceso al archivo, minijuego de riego, prueba de memoria y primer retorno posible. 20–28: abrir atajo, conversación con consecuencia y preparación. 28–40: ATLAS, aprendizaje y resolución. 40–45: volver al muelle y reconocer el cambio, guardar y reiniciar. El ritmo se mide con participantes y se ajusta; no se rellena hasta alcanzar un número de minutos.</p>
+<h2 id="18-puertas-de-aceptaci-n">18. Puertas de aceptación</h2>
+<p>Las puertas siguientes son <strong>propuestas para EXOVANT</strong>. No se presentan como gates ya existentes o ejecutados en Studio OS. Si se adopta el proyecto, se mapearán a los gates reales de geometría, visión, rendimiento y cumplimiento del hub cuando corresponda.</p>
+<div class="table-wrap"><table><thead><tr><th>ID propuesto</th><th>Prueba que puede fallar</th><th>Evidencia requerida</th><th>Acción si falla</th></tr></thead><tbody>
+<tr><td>EXO-G0 Infraestructura</td><td>Abrir, consultar, exportar e importar el objeto de referencia; compilar una escena</td><td>Versiones, logs, archivo y dimensiones</td><td>Resolver entorno antes de nuevos activos</td></tr>
+<tr><td>EXO-G1 Identidad 3D</td><td>Mismo personaje en tres vistas y una pose extrema</td><td>Comparativa, mesh y lista de correcciones</td><td>Revisar diseño, topología o rig</td></tr>
+<tr><td>EXO-G2 Combate</td><td>Reacción a señales, colisión coherente y cámara en cinco situaciones</td><td>Vídeo, estados de ataque y sesión de prueba</td><td>Reducir complejidad y ajustar reglas</td></tr>
+<tr><td>EXO-G3 Recorrido</td><td>Inicio, misión, muerte, recuperación, jefe y retorno</td><td>Paquete jugable y recorrido completo</td><td>No ampliar mundos hasta eliminar bloqueo</td></tr>
+<tr><td>EXO-G4 Persistencia</td><td>Guardar y cargar en estados de misión y tras cada consecuencia</td><td>Matriz de casos y estado esperado/obtenido</td><td>Corregir modelo de datos; no parchear solo UI</td></tr>
+<tr><td>EXO-G5 Rendimiento</td><td>Recorrido capturado en hardware y ajustes declarados</td><td>CPU/GPU, memoria, p95/p99 y cargas</td><td>Optimizar contenido o cambiar presupuesto</td></tr>
+<tr><td>EXO-G6 Dirección artística</td><td>Coherencia material, siluetas, iluminación y animación en movimiento</td><td>Revisión humana con escenas equivalentes</td><td>No promover imágenes aisladas como prueba</td></tr>
+<tr><td>EXO-G7 Producción repetible</td><td>Segundo activo y segunda región con el mismo pipeline</td><td>Horas reales, fallos, archivos y reimportación</td><td>Reestimar antes de producir los doce mundos</td></tr>
+<tr><td>EXO-G8 Preparación de distribución</td><td>Build reproducible, avisos/licencias y controles completos</td><td>Paquete, manifiesto y smoke test en destino</td><td>Corregir antes de publicación</td></tr>
+</tbody></table></div>
+<p>Pruebas de combate con riesgo concreto: cámara junto a muro, debajo de ATLAS, al cambiar objetivo, con dos atacantes y en una pendiente. Pruebas de guardado: muerte durante extracción, salida tras recompensa, carga tras elección planetaria, actualización de versión y recuperación de copia de respaldo. No se exige un catálogo infinito de tests antes de aprender si el combate funciona.</p>
+<p>La promoción a producción completa exige presupuesto recalculado con datos reales, segunda región aceptada, responsables disponibles, derecho de uso de activos y al menos una compilación en el hardware objetivo. Una demo visual excelente puede aprobar dirección artística y seguir fallando persistencia o rendimiento.</p>
+<h2 id="19-riesgos-decisiones-abiertas-y-criterios-de-reducci-n">19. Riesgos, decisiones abiertas y criterios de reducción</h2>
+<div class="table-wrap"><table><thead><tr><th>Riesgo material</th><th>Señal temprana</th><th>Respuesta propuesta</th></tr></thead><tbody>
+<tr><td>Amplitud galáctica supera capacidad de producción</td><td>Cada región exige sistemas exclusivos y semanas de reparación</td><td>Mantener doce dossiers; financiar primero dos mundos y reutilizar marcos de interacción</td></tr>
+<tr><td>Belleza estática sin buen combate</td><td>Capturas atractivas, cámara ilegible y golpes inconsistentes</td><td>Validar cámara/animación en bloque gris antes de producir detalle</td></tr>
+<tr><td>Activos generados inconsistentes</td><td>Vistas incompatibles, demasiadas piezas o rig frágil</td><td>Diseño aprobado único y coste de corrección registrado</td></tr>
+<tr><td>Mac insuficiente para escena objetivo</td><td>Memoria saturada, recompilación larga o efectos experimentales inestables</td><td>Reducir escena de edición y validar/renderizar en equipo RTX apropiado</td></tr>
+<tr><td>Dependencia de servicio remoto</td><td>Exportación incompleta, cambios de tarifa o pérdida de estado</td><td>Fuentes, intercambio, manifiestos y prueba de reimportación</td></tr>
+<tr><td>DLSS 5 condiciona promesa visual</td><td>SDK no disponible o cambio no controlable de identidad</td><td>Calidad base aceptada sin esa función; integración opcional posterior</td></tr>
+<tr><td>Misiones se multiplican por ramas</td><td>Estados contradictorios y recompensas duplicadas</td><td>Resultados ortogonales, eventos estables y ramas que vuelven a puntos diseñados</td></tr>
+<tr><td>Multijugador absorbe el proyecto</td><td>Red afecta cada estado y retraso del combate</td><td>Campaña offline primero; ampliación con presupuesto propio</td></tr>
+</tbody></table></div>
+<p>Decisiones que el plan deja revisables: título definitivo; clasificación de edad deseada; prioridad Windows/macOS; tamaño financiable del primer capítulo; RAM y disco del Mac; número de colaboradores; presupuesto de caja; definición canónica de las leyes faltantes. Ninguna impide diseñar el universo. Hardware y caja sí condicionan comprometer producción.</p>
+<p>Orden de reducción si el coste supera capacidad: primero aplazar multijugador y vuelo continuo; después reducir extensión de regiones y número de armas iniciales; después limitar número de mundos de lanzamiento. Preservar cámara, combate, animación principal, persistencia y una consecuencia visible. La reducción de alcance se declara; no se mantiene la misma promesa con contenido vacío.</p>
+<h2 id="20-estado-real-y-continuidad">20. Estado real y continuidad</h2>
+<p>Hay cuatro referencias de diseño generadas con Nano Banana 2 para protagonista, ATLAS, portal y entorno. Son referencias candidatas, no mallas aprobadas. También existe una escena de Blender remoto con geometría inicial y exportaciones. La inspección del render muestra masas de blockout, oclusión importante del recorrido y presentación que necesita trabajo; <strong>no supera aún el criterio visual del juego deseado</strong>.</p>
+<p>Proyecto de escena: <a href="https://higgsfield.ai/3d-jutsu/f9e8b5b9-9948-4f81-a49d-e0d989c6a0be" target="_blank" rel="noopener noreferrer">EXOVANT en 3D Jutsu</a>, revisión 1. El visor es una escena 3D, no un juego con combate y misiones funcionales.</p>
+<p>El repositorio de la prueba Higgsfield contiene scaffold y lógica experimental sin una entrega jugable verificada. Se pausó la construcción y se preservó un checkpoint local <code>baa1c9e</code>, posterior a <code>2232222</code>. La sincronización remota de ese último commit devolvió un error del proveedor; el paquete de esta planificación incluye <code>HIGGSFIELD_CHECKPOINT.patch</code> para recuperar los cambios sobre <code>2232222</code>. No se fuerza ningún historial ni se afirma que el último commit esté publicado.</p>
+<p>El siguiente trabajo concreto es <strong>M0–M3 en el Mac</strong>, seguido del benchmark P1 con el mismo personaje y escenario. El plan no requiere migrar todas las herramientas ni todos los archivos de conocimiento para empezar. Después se elige una ruta principal con mediciones y se compromete la primera unidad de producción.</p>
+<h2 id="21-cat-logo-maestro-y-dependencias">21. Catálogo maestro y dependencias</h2>
+<p>El catálogo contiene <strong>318 filas de producción</strong> con cantidades y unidades. Una fila puede representar un sistema, una familia de materiales o un conjunto de mallas; no se suman esas unidades para anunciar un total ficticio de assets terminados. Todos están en estado PROPOSED. Las especificaciones de este documento y los CSV son una asignación inicial que se desglosará durante la producción de cada región.</p>
+<div class="table-wrap"><table><thead><tr><th>Clase</th><th>Asignación de visión</th><th>Primer slice</th></tr></thead><tbody>
+<tr><td>Mundos / regiones</td><td>12 mundos / 36 regiones descritas</td><td>Una región compuesta de Terra con recorrido acotado</td></tr>
+<tr><td>Misiones</td><td>60 principales + 24 secundarias</td><td>Una cadena condensada y una secundaria representativa</td></tr>
+<tr><td>NPC narrativos</td><td>36 identidades; personajes globales incluidos en ese grupo</td><td>3</td></tr>
+<tr><td>Biota</td><td>48 especies diseñadas, incluyendo plantas y hongos</td><td>2–3 especies visibles según coste</td></tr>
+<tr><td>Adversarios</td><td>36 arquetipos de encuentro; objetivo de 24 paquetes principales y variantes</td><td>3 arquetipos</td></tr>
+<tr><td>Custodios</td><td>12 únicos + 12 desafíos secundarios derivados</td><td>ATLAS</td></tr>
+<tr><td>Armas / herramientas</td><td>24 armas en 8 familias / 8 herramientas</td><td>2 armas / 3 herramientas</td></tr>
+<tr><td>Vestuario</td><td>12 conjuntos de facción y base del protagonista</td><td>1 conjunto compatible con jugador y variantes mínimas</td></tr>
+<tr><td>Vehículos</td><td>6 pilotables y 4 de servicio/secuencia</td><td>Rover pilotable; nave como espacio de centro</td></tr>
+<tr><td>Entorno</td><td>12 kits × 45 módulos + 60 compartidos = 600 módulos objetivo</td><td>20–30 módulos de Terra y un subconjunto compartido</td></tr>
+<tr><td>Utilería</td><td>240 props cotidianos + 36 únicos</td><td>20–35 según recorrido</td></tr>
+<tr><td>Animación</td><td>1.420 clips objetivo en cinco bibliotecas, con reutilización declarada</td><td>45–70 clips del jugador más subconjuntos de enemigo/jefe</td></tr>
+<tr><td>Interfaz</td><td>16 familias de pantalla y 120 iconos</td><td>HUD, pausa, equipo, diálogo, mapa simple y opciones</td></tr>
+<tr><td>Audio</td><td>36 ambientes, 36 familias musicales y 480 eventos sonoros</td><td>Mezcla completa del recorrido; música adaptativa de ATLAS</td></tr>
+</tbody></table></div>
+<p>Las asignaciones completas marcadas con una fase indican cuándo comienza el trabajo de esa familia, no que toda su cantidad se produzca en el slice. Las 160 animaciones del jugador, por ejemplo, pertenecen a la visión; el slice acepta solo su subconjunto definido. La misma regla vale para los 45 módulos de Terra y los 60 compartidos.</p>
+<h3 id="armas-familias-y-diferencias">Armas: familias y diferencias</h3>
+<div class="table-wrap"><table><thead><tr><th>ID</th><th>Nombre</th><th>Familia</th><th>Función</th><th>Variante</th></tr></thead><tbody>
+<tr><td>WPN_01_01</td><td>Canto del Retorno</td><td>Espada de pulso</td><td>Distancia media; ataques contenidos; desvío y contraataque</td><td>Fundacional: enseña la familia</td></tr>
+<tr><td>WPN_01_02</td><td>Óxido Noble</td><td>Espada de pulso</td><td>Distancia media; ataques contenidos; desvío y contraataque</td><td>Especialista: cambia alcance o coste</td></tr>
+<tr><td>WPN_01_03</td><td>Filo Denegado</td><td>Espada de pulso</td><td>Distancia media; ataques contenidos; desvío y contraataque</td><td>Custodio: modifica una interacción y conserva el contrato de combate</td></tr>
+<tr><td>WPN_02_01</td><td>Aguja de Marea</td><td>Lanza de anclaje</td><td>Control de distancia; estocadas; fijar una herramienta a un punto</td><td>Fundacional: enseña la familia</td></tr>
+<tr><td>WPN_02_02</td><td>Vara de Fobos</td><td>Lanza de anclaje</td><td>Control de distancia; estocadas; fijar una herramienta a un punto</td><td>Especialista: cambia alcance o coste</td></tr>
+<tr><td>WPN_02_03</td><td>Asta de Raíz</td><td>Lanza de anclaje</td><td>Control de distancia; estocadas; fijar una herramienta a un punto</td><td>Custodio: modifica una interacción y conserva el contrato de combate</td></tr>
+<tr><td>WPN_03_01</td><td>Martillo del Turno</td><td>Martillo gravitatorio</td><td>Compromiso alto; romper postura y mecanismos; recuperación larga</td><td>Fundacional: enseña la familia</td></tr>
+<tr><td>WPN_03_02</td><td>Badajo del Crisol</td><td>Martillo gravitatorio</td><td>Compromiso alto; romper postura y mecanismos; recuperación larga</td><td>Especialista: cambia alcance o coste</td></tr>
+<tr><td>WPN_03_03</td><td>Lastre de Origin</td><td>Martillo gravitatorio</td><td>Compromiso alto; romper postura y mecanismos; recuperación larga</td><td>Custodio: modifica una interacción y conserva el contrato de combate</td></tr>
+<tr><td>WPN_04_01</td><td>Manos Gemelas</td><td>Hojas gemelas</td><td>Presión corta; movilidad lateral; vulnerabilidad ante alcance largo</td><td>Fundacional: enseña la familia</td></tr>
+<tr><td>WPN_04_02</td><td>Dientes de Vanta</td><td>Hojas gemelas</td><td>Presión corta; movilidad lateral; vulnerabilidad ante alcance largo</td><td>Especialista: cambia alcance o coste</td></tr>
+<tr><td>WPN_04_03</td><td>Alas Partidas</td><td>Hojas gemelas</td><td>Presión corta; movilidad lateral; vulnerabilidad ante alcance largo</td><td>Custodio: modifica una interacción y conserva el contrato de combate</td></tr>
+<tr><td>WPN_05_01</td><td>Poda Cero</td><td>Guadaña de campo</td><td>Arcos amplios; control de grupos; riesgo en espacios estrechos</td><td>Fundacional: enseña la familia</td></tr>
+<tr><td>WPN_05_02</td><td>Creciente de Umbra</td><td>Guadaña de campo</td><td>Arcos amplios; control de grupos; riesgo en espacios estrechos</td><td>Especialista: cambia alcance o coste</td></tr>
+<tr><td>WPN_05_03</td><td>Cosecha Futura</td><td>Guadaña de campo</td><td>Arcos amplios; control de grupos; riesgo en espacios estrechos</td><td>Custodio: modifica una interacción y conserva el contrato de combate</td></tr>
+<tr><td>WPN_06_01</td><td>Soga del Nexo</td><td>Arma de cable</td><td>Tensión y tirones; anclajes; no sustituye el gancho de navegación</td><td>Fundacional: enseña la familia</td></tr>
+<tr><td>WPN_06_02</td><td>Ancla de Drav</td><td>Arma de cable</td><td>Tensión y tirones; anclajes; no sustituye el gancho de navegación</td><td>Especialista: cambia alcance o coste</td></tr>
+<tr><td>WPN_06_03</td><td>Nervio de Coral</td><td>Arma de cable</td><td>Tensión y tirones; anclajes; no sustituye el gancho de navegación</td><td>Custodio: modifica una interacción y conserva el contrato de combate</td></tr>
+<tr><td>WPN_07_01</td><td>Arco Cívico</td><td>Carabina de arco</td><td>Disparos limitados por calor; apuntado expuesto; apertura táctica</td><td>Fundacional: enseña la familia</td></tr>
+<tr><td>WPN_07_02</td><td>Disputa del Sol</td><td>Carabina de arco</td><td>Disparos limitados por calor; apuntado expuesto; apertura táctica</td><td>Especialista: cambia alcance o coste</td></tr>
+<tr><td>WPN_07_03</td><td>Testigo Férreo</td><td>Carabina de arco</td><td>Disparos limitados por calor; apuntado expuesto; apertura táctica</td><td>Custodio: modifica una interacción y conserva el contrato de combate</td></tr>
+<tr><td>WPN_08_01</td><td>Archivo Portátil</td><td>Catalizador de memoria</td><td>Habilidades de concentración; ecos cortos; tiempo de preparación</td><td>Fundacional: enseña la familia</td></tr>
+<tr><td>WPN_08_02</td><td>Lente de Mneme</td><td>Catalizador de memoria</td><td>Habilidades de concentración; ecos cortos; tiempo de preparación</td><td>Especialista: cambia alcance o coste</td></tr>
+<tr><td>WPN_08_03</td><td>Pulso Compartido</td><td>Catalizador de memoria</td><td>Habilidades de concentración; ecos cortos; tiempo de preparación</td><td>Custodio: modifica una interacción y conserva el contrato de combate</td></tr>
+</tbody></table></div>
+<h3 id="veh-culos">Vehículos</h3>
+<div class="table-wrap"><table><thead><tr><th>ID</th><th>Nombre</th><th>Tipo</th><th>Función</th><th>Fase</th></tr></thead><tbody>
+<tr><td>VEH_01</td><td>Arca del Retorno</td><td>pilotable</td><td>Nave de expedición y hogar; cinco módulos funcionales</td><td>P4_CHAPTER</td></tr>
+<tr><td>VEH_02</td><td>Cicatriz</td><td>pilotable</td><td>Interceptor con decisiones de calor y maniobra</td><td>P5_VISION</td></tr>
+<tr><td>VEH_03</td><td>Peregrino-6</td><td>pilotable</td><td>Rover anfibio; primer controlador de vehículo</td><td>P3_SLICE</td></tr>
+<tr><td>VEH_04</td><td>Nácar-2</td><td>pilotable</td><td>Sumergible para corredores diseñados</td><td>P5_VISION</td></tr>
+<tr><td>VEH_05</td><td>Helioperegrino</td><td>pilotable</td><td>Moto de vela; recorridos solares y de sombra</td><td>P5_VISION</td></tr>
+<tr><td>VEH_06</td><td>Vela de Ceniza</td><td>pilotable</td><td>Planeador por rutas y anclajes</td><td>P5_VISION</td></tr>
+<tr><td>VEH_07</td><td>Remolcador Drav</td><td>sequence</td><td>Maniobra de rescate y tensión de cables</td><td>P5_VISION</td></tr>
+<tr><td>VEH_08</td><td>Taladro Mula</td><td>sequence</td><td>Secuencia de tránsito industrial</td><td>P5_VISION</td></tr>
+<tr><td>VEH_09</td><td>Cargador de Concha</td><td>service</td><td>Logística y cambio visible de estado</td><td>P5_VISION</td></tr>
+<tr><td>VEH_10</td><td>Tranvía custodio</td><td>sequence</td><td>Ruta programable y espacio de historia</td><td>P5_VISION</td></tr>
+</tbody></table></div>
+<h3 id="dependencias-que-ordenan-el-trabajo">Dependencias que ordenan el trabajo</h3>
+<p>Escala y color preceden a kits. Rig humano y cámara preceden a armas finales. Contrato de ataque precede a clips definitivos. Estado de misión precede a diálogo grabado. Persistencia precede a consecuencias planetarias. Perfil de escena precede a multiplicar variantes. La biblia creativa limita las generaciones; los resultados aceptados actualizan el catálogo.</p>
+<h3 id="trabajo-econ-mico-del-slice">Trabajo económico del slice</h3>
+<div class="table-wrap"><table><thead><tr><th>ID</th><th>Disciplina</th><th>Horas base</th><th>Salida</th><th>Puerta</th></tr></thead><tbody>
+<tr><td>W01</td><td>Dirección, diseño y producción</td><td>220</td><td>Briefs, revisión, decisiones y benchmark</td><td>EXO-G0/G6</td></tr>
+<tr><td>W02</td><td>Gameplay y sistemas</td><td>500</td><td>Combate, cámara, interacción y guardado</td><td>EXO-G2/G4</td></tr>
+<tr><td>W03</td><td>Diseño de nivel y misión</td><td>300</td><td>Rutas, estados, encuentros y consecuencia</td><td>EXO-G3</td></tr>
+<tr><td>W04</td><td>Personajes, criaturas y armas</td><td>650</td><td>Modelado, UV, materiales y rig de los activos del slice</td><td>EXO-G1</td></tr>
+<tr><td>W05</td><td>Entorno y utilería</td><td>450</td><td>Kit de Terra, paisaje, interiores y props</td><td>EXO-G1/G6</td></tr>
+<tr><td>W06</td><td>Animación y arte técnico</td><td>400</td><td>Contactos, ataques, herramientas, efectos y exportación</td><td>EXO-G2/G5</td></tr>
+<tr><td>W07</td><td>Narrativa, audio e interfaz</td><td>300</td><td>Diálogo, mezcla, música, HUD y localización inicial</td><td>EXO-G3/G6</td></tr>
+<tr><td>W08</td><td>Integración, QA y optimización</td><td>380</td><td>Recorrido, guardados, rendimiento y build</td><td>EXO-G3/G4/G5/G8</td></tr>
+</tbody></table></div>
+<p>Total comprobado: <strong>3,200 horas</strong>. La reserva de contingencia se aplica en el presupuesto; no se añaden esas mismas horas de nuevo a cada disciplina. Las cantidades de la visión completa no se costean como si pertenecieran al slice.</p>
+<h3 id="escenarios-de-alcance">Escenarios de alcance</h3>
+<div class="table-wrap"><table><thead><tr><th>Entrega</th><th>Escenario</th><th>Horas</th><th>Tarifa €/h</th><th>Gastos €</th><th>Contingencia</th><th>Coste económico €</th></tr></thead><tbody>
+<tr><td>Vertical slice nativo</td><td>low</td><td>1,800</td><td>30</td><td>3,000</td><td>25%</td><td>71,250.00</td></tr>
+<tr><td>Vertical slice nativo</td><td>base</td><td>3,200</td><td>45</td><td>8,000</td><td>25%</td><td>190,000.00</td></tr>
+<tr><td>Vertical slice nativo</td><td>high</td><td>5,200</td><td>75</td><td>15,000</td><td>25%</td><td>506,250.00</td></tr>
+<tr><td>Capítulo de dos mundos reducido</td><td>low</td><td>8,000</td><td>35</td><td>30,000</td><td>30%</td><td>403,000.00</td></tr>
+<tr><td>Capítulo de dos mundos reducido</td><td>base</td><td>24,000</td><td>45</td><td>100,000</td><td>30%</td><td>1,534,000.00</td></tr>
+<tr><td>Capítulo de dos mundos reducido</td><td>high</td><td>60,000</td><td>70</td><td>250,000</td><td>30%</td><td>5,785,000.00</td></tr>
+<tr><td>Visión completa de doce mundos</td><td>low</td><td>240,000</td><td>45</td><td>1,200,000</td><td>35%</td><td>16,200,000.00</td></tr>
+<tr><td>Visión completa de doce mundos</td><td>base</td><td>600,000</td><td>60</td><td>4,000,000</td><td>35%</td><td>54,000,000.00</td></tr>
+<tr><td>Visión completa de doce mundos</td><td>high</td><td>1,200,000</td><td>90</td><td>12,000,000</td><td>35%</td><td>162,000,000.00</td></tr>
+</tbody></table></div>
+<p>La visión completa arroja una banda ilustrativa de <strong>16,2–162 millones de euros</strong>, con caso base <strong>54 millones</strong>. Es el resultado de las horas, tarifas, gastos y contingencia declarados, no una valoración de un estudio ni una afirmación de que ese dinero garantice calidad. El caso base de 600.000 h equivale aritméticamente a 50 meses con 100 personas y 120 h productivas/mes; dependencias, contratación y financiación pueden ampliar el calendario. Si la intención es autofinanciar, la unidad razonable de decisión es el slice o un capítulo reducido.</p>
+<h3 id="responsabilidad-y-estado-de-evidencia">Responsabilidad y estado de evidencia</h3>
+<p>Dirección aprueba intención y prioridades. Ingeniería demuestra comportamiento y recuperación. Arte aprueba identidad y construcción. Animación demuestra contactos y lectura. Sonido demuestra jerarquía y señales. QA registra fallos reproducibles y recorrido. Producción compara horas reales con supuestos. Ninguna disciplina puede marcar todo el juego como aceptado con su propia prueba aislada.</p></article><footer>EXOVANT 2950 · Propuesta de Roberto Ortega · Todas las cifras de producción son supuestos salvo identificación expresa.</footer></main><script>(() => {
+  'use strict';
+  const defaults = {baseHours:3200,rate:45,cash:8000,eligible:1000,reduction:25,integration:80,credits:1200,creditPrice:null,contingency:25,team:4,monthly:120,paid:100};
+  function calculate(values){
+    const n=(k,min=0,max=Infinity)=>Math.min(max,Math.max(min,Number.isFinite(Number(values[k]))&&values[k]!==''&&values[k]!==null?Number(values[k]):(defaults[k]??0)));
+    const h=n('baseHours',1),r=n('rate'),cash=n('cash'),eligible=Math.min(h,n('eligible')),reduction=n('reduction',0,100)/100,extra=n('integration'),c=n('contingency',0,100)/100;
+    const known=values.creditPrice!==''&&values.creditPrice!==null&&values.creditPrice!==undefined&&Number.isFinite(Number(values.creditPrice));
+    const creditCost=known?n('credits')*n('creditPrice'):0;
+    const hybridHours=h-eligible*reduction+extra;
+    const own=(h*r+cash)*(1+c), hybrid=(hybridHours*r+cash+creditCost)*(1+c);
+    const paid=n('paid',0,100)/100,team=n('team',.25),monthly=n('monthly',1,240);
+    return {own,hybrid,delta:own-hybrid,known,ownHours:h,hybridHours,netHours:h-hybridHours,percent:(h-hybridHours)/h*100,ownMonths:h/(team*monthly),hybridMonths:hybridHours/(team*monthly),ownCash:(h*r*paid+cash)*(1+c),hybridCash:(hybridHours*r*paid+cash+creditCost)*(1+c),breakEven:(h-hybridHours)*r,contingency:c,creditCost};
+  }
+  globalThis.EXOVANT_MODEL={calculate,defaults};
+  if(typeof document==='undefined')return;
+  const money=new Intl.NumberFormat('es-ES',{style:'currency',currency:'EUR',maximumFractionDigits:2});
+  const num=new Intl.NumberFormat('es-ES',{maximumFractionDigits:1});
+  const el=id=>document.getElementById(id);
+  const say=(id,value)=>{el(id).textContent=value;};
+  function update(){
+    const values={};for(const key of Object.keys(defaults))values[key]=el(key).value;
+    const v=calculate(values);
+    say('ownValue',money.format(v.own));
+    say('hybridValue',money.format(v.hybrid));
+    say('ownNote',num.format(v.ownHours)+' horas. Incluye contingencia.');
+    say('hybridNote',v.known?'Incluye los créditos valorados y contingencia.':'Más HF incremental y su contingencia: tarifa pendiente.');
+    say('deltaLabel',v.delta>=0?'Ahorro estimado':'Sobrecoste estimado');
+    say('deltaValue',money.format(Math.abs(v.delta)));
+    say('deltaNote',(v.known?'Con la tarifa introducida. ':'Antes de deducir HF pendiente. ')+num.format(v.netHours)+' h netas / '+num.format(v.percent)+'% del trabajo.');
+    say('timeResult','Capacidad aritmética: '+num.format(v.ownMonths)+' meses propios; '+num.format(v.hybridMonths)+' meses híbridos. Dependencias y disponibilidad pueden ampliar ambos.');
+    say('cashResult','Caja según trabajo remunerado: '+money.format(v.ownCash)+' propia; '+money.format(v.hybridCash)+' híbrida'+(v.known?'.':' + HF pendiente. Trabajo no remunerado conserva su valor en el coste económico.'));
+    say('breakEven',v.breakEven>0?'Umbral de gasto HF incremental para igualar el coste económico propio: '+money.format(v.breakEven)+' antes de contingencia.':'Con estas correcciones no hay ahorro de trabajo que compense gasto HF adicional.');
+  }
+  el('costForm').addEventListener('input',update);
+  el('costForm').addEventListener('submit',event=>event.preventDefault());
+  el('resetCalc').addEventListener('click',()=>{for(const [key,value] of Object.entries(defaults))el(key).value=value===null?'':value;update();});
+  update();
+})();
+</script></body></html>

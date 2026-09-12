@@ -1,0 +1,28 @@
+{
+  "run_id": "native-20260912T172839697786Z",
+  "executed_at": "2026-09-12T17:28:50.945172+00:00",
+  "source_digest": "065073f02c50b656b1a3c689360a4bc4c6551091700245dce09e3b38aa01dc36",
+  "gates": [
+    {
+      "gate": "import",
+      "passed": true,
+      "exit_code": 0
+    },
+    {
+      "gate": "state-tests",
+      "passed": true,
+      "exit_code": 0
+    },
+    {
+      "gate": "world-tests",
+      "passed": true,
+      "exit_code": 0
+    },
+    {
+      "gate": "smoke",
+      "passed": true,
+      "exit_code": 0
+    }
+  ],
+  "passed": true
+}

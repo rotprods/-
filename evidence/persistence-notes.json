@@ -1,0 +1,24 @@
+{
+  "date": "2026-09-12",
+  "failures": [
+    {
+      "tool": "git CLI",
+      "scope": "authenticated private clone / push",
+      "result": "no credential helper; public clone works",
+      "route": "authorized GitHub connector writes"
+    },
+    {
+      "tool": "GitHub fetch_blob",
+      "scope": "binary GLB read",
+      "result": "UTF8 decoder cannot represent GLB",
+      "route": "Git object SHA plus public clone binary hash verification"
+    },
+    {
+      "tool": "exec stdout",
+      "scope": "multi-MB base64 transfer",
+      "result": "single large output truncated",
+      "route": "bounded chunks with exact base64 length check"
+    }
+  ],
+  "coverage": "Selected verified incidents; not an exhaustive historical call log"
+}

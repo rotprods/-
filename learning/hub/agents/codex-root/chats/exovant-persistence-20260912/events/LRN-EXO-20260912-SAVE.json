@@ -1,0 +1,72 @@
+{
+  "_meta": {
+    "content_digest": "fd45e04e75c2af349e9e44cfffc0cf0a8986cdcf885fe73632c0ecfb9c724231",
+    "persisted_at": "2026-09-12T17:00:38.280005Z"
+  },
+  "analysis": {
+    "confidence": 0.8,
+    "family_or_pattern": "save-corruption-recovery",
+    "generalization_boundary": "Sobre de guardado v1 de un proceso; no prueba atomicidad multiusuario ni migraciones futuras.",
+    "mechanism": "El parseo de conveniencia emitía errores nativos durante una condición esperada; separar parseo, validación y recuperación conserva semántica y señales.",
+    "non_applicable_cases": [
+      "Generalización universal sin otra evidencia"
+    ],
+    "symptom": "Cuando un JSON corrupto activa recuperación"
+  },
+  "authority_after": "L2-persisted",
+  "authority_before": "L1-retrieved",
+  "event_class": "failure",
+  "evidence": [
+    {
+      "claim": "Cuando un JSON corrupto activa recuperación — Usar el código de error del parser y recuperar sólo un respaldo validado.",
+      "digest": "23192b9a128b3845b2e16650bff33e2e9ee65e87667ac4061291b862bd450cce",
+      "freshness": "2026-09-12; snapshot at event creation",
+      "kind": "source-file",
+      "ref": "evidence/state-tests.json"
+    }
+  ],
+  "knowledge_relation": {
+    "relation": "NEW",
+    "targets": []
+  },
+  "learning_id": "LRN-EXO-20260912-SAVE",
+  "promotion": {
+    "reason": "Usar el código de error del parser y recuperar sólo un respaldo validado.",
+    "target_ref": "tests/test_state.gd",
+    "target_type": "runbook"
+  },
+  "provenance": {
+    "agent_id": "codex-root",
+    "chat_id": "exovant-persistence-20260912",
+    "chat_id_source": "session-alias",
+    "run_id": "EXO-PERSISTENCE-004"
+  },
+  "revalidation_condition": "Cambio de entorno, motor, control afectado o evidencia que contradiga la conclusión.",
+  "scope": {
+    "artifacts": [
+      "evidence/state-tests.json",
+      "tests/test_state.gd"
+    ],
+    "level": "project",
+    "project": "EXOVANT 2950",
+    "repository": "rotprods/-"
+  },
+  "status": "persisted",
+  "timestamp": "2026-09-12T17:00:38.279928+00:00",
+  "unknowns": [
+    "Sobre de guardado v1 de un proceso; no prueba atomicidad multiusuario ni migraciones futuras."
+  ],
+  "verification": {
+    "adversarial_review": {
+      "status": "pending"
+    },
+    "anti_recurrence_control": "tests/test_state.gd",
+    "retrieval_test": {
+      "status": "pending"
+    },
+    "runtime_test": {
+      "notes": "Los recibos existentes sostienen la observación; el evento requiere su propia revalidación.",
+      "status": "pending"
+    }
+  }
+}

@@ -1,0 +1,149 @@
+{
+  "project": "EXOVANT 2950",
+  "checkpoint": "EXO-PERSISTENCE-004",
+  "date": "2026-09-12",
+  "global_goal": "Original 3D interplanetary soulslike based on the existing twelve-world preproduction plan",
+  "current_wave": "Persistence, bounded learning and production capability qualification",
+  "status": "PROTOTYPE_WITH_PERSISTENT_CONTROL",
+  "engine": "Godot 4.7.2.stable.official.ed1daf0bf",
+  "production_engine_decision": "Unreal remains the plan's principal candidate; Godot is the executable prototype, not an irreversible replacement",
+  "authority": [
+    "latest user instructions",
+    "AGENTS.md",
+    "_project_intelligence/STATE.json",
+    "HANDOFF.md",
+    "design/EXOVANT_BIBLIA.md",
+    "design/EXOVANT_DATA.json"
+  ],
+  "source_protocol": "https://github.com/rotprods/rot.knowledge/blob/e8be6757b80eeab243c3f7000e343be076bd8642/prompts/engineering/GAUNTLET_LOOP_MASTER.md",
+  "implemented": [
+    "third-person controller",
+    "physical collision",
+    "melee stamina guard dodge heal lock-on",
+    "custodian AI",
+    "Atlas three parameter phases and two attack families",
+    "three NPC dialogues",
+    "three-valve puzzle",
+    "archive quest",
+    "two persistent outcomes",
+    "basic rover controller",
+    "versioned recoverable save",
+    "Blender portal import and traversable ramp"
+  ],
+  "not_claimed": [
+    "full game",
+    "AAA visual quality",
+    "twelve worlds implemented",
+    "30-45 minute production slice",
+    "Unreal integration",
+    "DLSS integration",
+    "GPU performance target",
+    "human playtest",
+    "continuous worker availability"
+  ],
+  "next_workunit": "EXO-004-playability",
+  "next_action": "Validate a complete manual route with no setup teleports, then implement gamepad/remapping and directional guidance from measured friction before adding a second region",
+  "evidence": [
+    "evidence/gauntlet.json",
+    "evidence/state-tests.json",
+    "evidence/world-tests.json",
+    "evidence/runtime.png",
+    "evidence/visual-run.log"
+  ],
+  "persistence": {
+    "canonical": "GitHub rotprods/- main",
+    "state_file": "_project_intelligence/STATE.json",
+    "single_writer": true,
+    "concurrency_control": "normal fast-forward push against observed parent; reconcile remote changes",
+    "projections": [
+      "Linear project EXOVANT 2950",
+      "Drive folder EXOVANT 2950",
+      "Mem routing note"
+    ],
+    "historical_packages": "Earlier Library checkpoints are recovery history, superseded as source authority."
+  },
+  "automation": {
+    "requested": true,
+    "status": "MIGRATION_PAUSED_PENDING_REMOTE_RESTORE",
+    "cadence": "hourly",
+    "first_scheduled_execution_verified": false,
+    "max_same_problem_iterations_before_reassessment": 6
+  },
+  "validation": {
+    "state": {
+      "engine": "4.7.2-stable (official)",
+      "failed": 0,
+      "passed": 26,
+      "suite": "state_and_recovery"
+    },
+    "world": {
+      "failed": 0,
+      "note": "Automated integration with controlled setup; not a full human playthrough or GPU benchmark",
+      "passed": 19,
+      "portal_final_position": [
+        0.0,
+        1.48030650615692,
+        -85.5567245483398
+      ],
+      "suite": "native_scene_integration"
+    },
+    "native_gates": {
+      "run_id": "native-20260912T172839697786Z",
+      "executed_at": "2026-09-12T17:28:50.945172+00:00",
+      "source_digest": "065073f02c50b656b1a3c689360a4bc4c6551091700245dce09e3b38aa01dc36",
+      "gates": [
+        {
+          "gate": "import",
+          "passed": true,
+          "exit_code": 0
+        },
+        {
+          "gate": "state-tests",
+          "passed": true,
+          "exit_code": 0
+        },
+        {
+          "gate": "world-tests",
+          "passed": true,
+          "exit_code": 0
+        },
+        {
+          "gate": "smoke",
+          "passed": true,
+          "exit_code": 0
+        }
+      ],
+      "passed": true
+    },
+    "continuity": {
+      "executed_at": "2026-09-12T17:28:39.315025+00:00",
+      "passed": true,
+      "command": "python3 -m unittest discover -s tests -p test_governance.py -v",
+      "tests": 15,
+      "source_digest": "065073f02c50b656b1a3c689360a4bc4c6551091700245dce09e3b38aa01dc36"
+    },
+    "learning_retrieval": "evidence/learning-retrieval.json"
+  },
+  "cold_resume": {
+    "source_archive_reimport": true,
+    "all_native_gates": true,
+    "note": "Fresh extraction without .godot cache; HUD-only adjustment additionally rendered and smoke-tested."
+  },
+  "source_repository": "https://github.com/rotprods/-",
+  "updated_at": "2026-09-12T16:53:44.346796+00:00",
+  "learning": {
+    "authority": "learning/hub",
+    "scope": "project",
+    "authority_level": "L2-persisted",
+    "global_enforcement_claimed": false
+  },
+  "capability_report": "docs/HARDWARE.md",
+  "graph": "_project_intelligence/graph.json",
+  "tool_telemetry": "telemetry/tool_calls.jsonl",
+  "publication": {
+    "repository": "rotprods/-",
+    "initial_parent": "2bc78fc3c283e4dad0e93a49fbb3457732b2b322",
+    "checkpoint": "EXO-PERSISTENCE-004",
+    "readback_receipt": "provider receipt and next persistence checkpoint"
+  }
+}

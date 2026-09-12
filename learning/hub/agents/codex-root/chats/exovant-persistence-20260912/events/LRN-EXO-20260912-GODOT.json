@@ -1,0 +1,72 @@
+{
+  "_meta": {
+    "content_digest": "07ca86f81745cb6130bdc02f41b5ce4425bc568cf69eaacce036f1ceb505bed0",
+    "persisted_at": "2026-09-12T17:00:38.274805Z"
+  },
+  "analysis": {
+    "confidence": 0.8,
+    "family_or_pattern": "native-runtime-capability",
+    "generalization_boundary": "Godot 4.7.2 Linux en este entorno; no generalizar a Unreal ni a todas las VMs.",
+    "mechanism": "Un binario autónomo no necesita una instalación global para ejecutar escenas headless.",
+    "non_applicable_cases": [
+      "Generalización universal sin otra evidencia"
+    ],
+    "symptom": "Cuando parece que la VM sólo permite documentos"
+  },
+  "authority_after": "L2-persisted",
+  "authority_before": "L1-retrieved",
+  "event_class": "success",
+  "evidence": [
+    {
+      "claim": "Cuando parece que la VM sólo permite documentos — Comprobar ejecutable portátil y ejecutar import, estado, integración y smoke.",
+      "digest": "d0024949b556f084048ea34d30bdb37568be33838a244bcaca0e921f2ee46bd9",
+      "freshness": "2026-09-12; snapshot at event creation",
+      "kind": "source-file",
+      "ref": "evidence/gauntlet.json"
+    }
+  ],
+  "knowledge_relation": {
+    "relation": "NEW",
+    "targets": []
+  },
+  "learning_id": "LRN-EXO-20260912-GODOT",
+  "promotion": {
+    "reason": "Comprobar ejecutable portátil y ejecutar import, estado, integración y smoke.",
+    "target_ref": "tests/run_gauntlet.py",
+    "target_type": "runbook"
+  },
+  "provenance": {
+    "agent_id": "codex-root",
+    "chat_id": "exovant-persistence-20260912",
+    "chat_id_source": "session-alias",
+    "run_id": "EXO-PERSISTENCE-004"
+  },
+  "revalidation_condition": "Cambio de entorno, motor, control afectado o evidencia que contradiga la conclusión.",
+  "scope": {
+    "artifacts": [
+      "evidence/gauntlet.json",
+      "tests/run_gauntlet.py"
+    ],
+    "level": "project",
+    "project": "EXOVANT 2950",
+    "repository": "rotprods/-"
+  },
+  "status": "persisted",
+  "timestamp": "2026-09-12T17:00:38.274221+00:00",
+  "unknowns": [
+    "Godot 4.7.2 Linux en este entorno; no generalizar a Unreal ni a todas las VMs."
+  ],
+  "verification": {
+    "adversarial_review": {
+      "status": "pending"
+    },
+    "anti_recurrence_control": "tests/run_gauntlet.py",
+    "retrieval_test": {
+      "status": "pending"
+    },
+    "runtime_test": {
+      "notes": "Los recibos existentes sostienen la observación; el evento requiere su propia revalidación.",
+      "status": "pending"
+    }
+  }
+}

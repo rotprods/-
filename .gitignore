@@ -1,0 +1,11 @@
+.godot/
+.tools/
+__pycache__/
+*.pyc
+.env
+.env.*
+*.tmp
+*.bak
+*.blend1
+exports/
+.DS_Store

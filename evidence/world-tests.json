@@ -1,0 +1,11 @@
+{
+  "failed": 0,
+  "note": "Automated integration with controlled setup; not a full human playthrough or GPU benchmark",
+  "passed": 19,
+  "portal_final_position": [
+    0.0,
+    1.48030650615692,
+    -85.5567245483398
+  ],
+  "suite": "native_scene_integration"
+}

@@ -1,0 +1,242 @@
+[
+  {
+    "from": "LRN-EXO-20260912-ART",
+    "to": "exovant-persistence-20260912",
+    "type": "OCCURRED_IN_CHAT"
+  },
+  {
+    "from": "LRN-EXO-20260912-ART",
+    "to": "codex-root",
+    "type": "EXECUTED_BY"
+  },
+  {
+    "from": "LRN-EXO-20260912-ART",
+    "to": "art_source/reliquary_gate/reliquary-gate-final.png",
+    "type": "EVIDENCED_BY"
+  },
+  {
+    "from": "LRN-EXO-20260912-ART",
+    "to": "detail-without-readability",
+    "type": "INSTANCE_OF"
+  },
+  {
+    "from": "LRN-EXO-20260912-BLENDER",
+    "to": "exovant-persistence-20260912",
+    "type": "OCCURRED_IN_CHAT"
+  },
+  {
+    "from": "LRN-EXO-20260912-BLENDER",
+    "to": "codex-root",
+    "type": "EXECUTED_BY"
+  },
+  {
+    "from": "LRN-EXO-20260912-BLENDER",
+    "to": "art_source/reliquary_gate/validation.json",
+    "type": "EVIDENCED_BY"
+  },
+  {
+    "from": "LRN-EXO-20260912-BLENDER",
+    "to": "remote-editable-art-pipeline",
+    "type": "INSTANCE_OF"
+  },
+  {
+    "from": "LRN-EXO-20260912-CAPABILITY",
+    "to": "exovant-persistence-20260912",
+    "type": "OCCURRED_IN_CHAT"
+  },
+  {
+    "from": "LRN-EXO-20260912-CAPABILITY",
+    "to": "codex-root",
+    "type": "EXECUTED_BY"
+  },
+  {
+    "from": "LRN-EXO-20260912-CAPABILITY",
+    "to": "docs/HARDWARE.md",
+    "type": "EVIDENCED_BY"
+  },
+  {
+    "from": "LRN-EXO-20260912-CAPABILITY",
+    "to": "catalog-runtime-confusion",
+    "type": "INSTANCE_OF"
+  },
+  {
+    "from": "LRN-EXO-20260912-COLLISION",
+    "to": "exovant-persistence-20260912",
+    "type": "OCCURRED_IN_CHAT"
+  },
+  {
+    "from": "LRN-EXO-20260912-COLLISION",
+    "to": "codex-root",
+    "type": "EXECUTED_BY"
+  },
+  {
+    "from": "LRN-EXO-20260912-COLLISION",
+    "to": "evidence/world-tests.json",
+    "type": "EVIDENCED_BY"
+  },
+  {
+    "from": "LRN-EXO-20260912-COLLISION",
+    "to": "visual-physics-contract-gap",
+    "type": "INSTANCE_OF"
+  },
+  {
+    "from": "LRN-EXO-20260912-COVER",
+    "to": "exovant-persistence-20260912",
+    "type": "OCCURRED_IN_CHAT"
+  },
+  {
+    "from": "LRN-EXO-20260912-COVER",
+    "to": "codex-root",
+    "type": "EXECUTED_BY"
+  },
+  {
+    "from": "LRN-EXO-20260912-COVER",
+    "to": "evidence/world-tests.json",
+    "type": "EVIDENCED_BY"
+  },
+  {
+    "from": "LRN-EXO-20260912-COVER",
+    "to": "damage-through-cover",
+    "type": "INSTANCE_OF"
+  },
+  {
+    "from": "LRN-EXO-20260912-DISPLAY",
+    "to": "exovant-persistence-20260912",
+    "type": "OCCURRED_IN_CHAT"
+  },
+  {
+    "from": "LRN-EXO-20260912-DISPLAY",
+    "to": "codex-root",
+    "type": "EXECUTED_BY"
+  },
+  {
+    "from": "LRN-EXO-20260912-DISPLAY",
+    "to": "evidence/visual-run.log",
+    "type": "EVIDENCED_BY"
+  },
+  {
+    "from": "LRN-EXO-20260912-DISPLAY",
+    "to": "sandbox-display-lifecycle",
+    "type": "INSTANCE_OF"
+  },
+  {
+    "from": "LRN-EXO-20260912-GODOT",
+    "to": "exovant-persistence-20260912",
+    "type": "OCCURRED_IN_CHAT"
+  },
+  {
+    "from": "LRN-EXO-20260912-GODOT",
+    "to": "codex-root",
+    "type": "EXECUTED_BY"
+  },
+  {
+    "from": "LRN-EXO-20260912-GODOT",
+    "to": "evidence/gauntlet.json",
+    "type": "EVIDENCED_BY"
+  },
+  {
+    "from": "LRN-EXO-20260912-GODOT",
+    "to": "native-runtime-capability",
+    "type": "INSTANCE_OF"
+  },
+  {
+    "from": "LRN-EXO-20260912-MESA",
+    "to": "exovant-persistence-20260912",
+    "type": "OCCURRED_IN_CHAT"
+  },
+  {
+    "from": "LRN-EXO-20260912-MESA",
+    "to": "codex-root",
+    "type": "EXECUTED_BY"
+  },
+  {
+    "from": "LRN-EXO-20260912-MESA",
+    "to": "evidence/visual-run.log",
+    "type": "EVIDENCED_BY"
+  },
+  {
+    "from": "LRN-EXO-20260912-MESA",
+    "to": "software-renderer-misclassification",
+    "type": "INSTANCE_OF"
+  },
+  {
+    "from": "LRN-EXO-20260912-PERSISTENCE",
+    "to": "exovant-persistence-20260912",
+    "type": "OCCURRED_IN_CHAT"
+  },
+  {
+    "from": "LRN-EXO-20260912-PERSISTENCE",
+    "to": "codex-root",
+    "type": "EXECUTED_BY"
+  },
+  {
+    "from": "LRN-EXO-20260912-PERSISTENCE",
+    "to": "HANDOFF.md",
+    "type": "EVIDENCED_BY"
+  },
+  {
+    "from": "LRN-EXO-20260912-PERSISTENCE",
+    "to": "stale-resume-authority",
+    "type": "INSTANCE_OF"
+  },
+  {
+    "from": "LRN-EXO-20260912-SAVE",
+    "to": "exovant-persistence-20260912",
+    "type": "OCCURRED_IN_CHAT"
+  },
+  {
+    "from": "LRN-EXO-20260912-SAVE",
+    "to": "codex-root",
+    "type": "EXECUTED_BY"
+  },
+  {
+    "from": "LRN-EXO-20260912-SAVE",
+    "to": "evidence/state-tests.json",
+    "type": "EVIDENCED_BY"
+  },
+  {
+    "from": "LRN-EXO-20260912-SAVE",
+    "to": "save-corruption-recovery",
+    "type": "INSTANCE_OF"
+  },
+  {
+    "from": "LRN-EXO-20260912-SCHEDULER",
+    "to": "exovant-persistence-20260912",
+    "type": "OCCURRED_IN_CHAT"
+  },
+  {
+    "from": "LRN-EXO-20260912-SCHEDULER",
+    "to": "codex-root",
+    "type": "EXECUTED_BY"
+  },
+  {
+    "from": "LRN-EXO-20260912-SCHEDULER",
+    "to": "evidence/automation.json",
+    "type": "EVIDENCED_BY"
+  },
+  {
+    "from": "LRN-EXO-20260912-SCHEDULER",
+    "to": "scheduled-versus-executed",
+    "type": "INSTANCE_OF"
+  },
+  {
+    "from": "LRN-EXO-20260912-TELEMETRY",
+    "to": "exovant-persistence-20260912",
+    "type": "OCCURRED_IN_CHAT"
+  },
+  {
+    "from": "LRN-EXO-20260912-TELEMETRY",
+    "to": "codex-root",
+    "type": "EXECUTED_BY"
+  },
+  {
+    "from": "LRN-EXO-20260912-TELEMETRY",
+    "to": "docs/TOOL_TELEMETRY.md",
+    "type": "EVIDENCED_BY"
+  },
+  {
+    "from": "LRN-EXO-20260912-TELEMETRY",
+    "to": "observability-coverage-gap",
+    "type": "INSTANCE_OF"
+  }
+]

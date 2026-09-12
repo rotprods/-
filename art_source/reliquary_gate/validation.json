@@ -1,0 +1,53 @@
+{
+  "project_id": "989aa82f-9eb8-4fd9-b475-87347ce834f9",
+  "revision": 2,
+  "glb_bytes": 5920808,
+  "glb_version": 2,
+  "nodes": 417,
+  "meshes": 410,
+  "materials": 16,
+  "indexed_triangles_in_mesh_definitions": 142916,
+  "animations": [
+    {
+      "name": "Alignment collar / animated 8 degree sweep",
+      "channels": 1
+    }
+  ],
+  "blender_rotation_samples_degrees": [
+    0,
+    8,
+    0
+  ],
+  "sample_frames": [
+    1,
+    60,
+    120
+  ],
+  "engine_tested": false,
+  "files": {
+    "reliquary_gate.py": {
+      "bytes": 13231,
+      "sha256": "6f3f221c42051eb491a19a3365a76e45a839aef49a4cad0f9a3c43eebb0d43ee"
+    },
+    "EXOVANT_Reliquary_Gate.glb": {
+      "bytes": 5920808,
+      "sha256": "a3dd85c9d236020676ee20ad7308d36e7269a404812cdfc4694b99c5af2a399f"
+    },
+    "EXOVANT_Reliquary_Gate.blend": {
+      "bytes": 4706195,
+      "sha256": "b7d21862b4ba19caaca3a8522939abd2cfb230061eb8514c8fe494b15057ede5"
+    },
+    "refine_gate.py": {
+      "bytes": 902,
+      "sha256": "4b8563f72d391d9c5ad5125eb879b1aa784b94ac9469fc0de01d2f3ed9a305a6"
+    },
+    "reliquary-gate-beauty.png": {
+      "bytes": 1485217,
+      "sha256": "db0fbe01c25aefb50b3142a2cabba1f48e32f506fe5e040f1644cf68ace30c9e"
+    },
+    "reliquary-gate-final.png": {
+      "bytes": 1488266,
+      "sha256": "a2640eb8746b1935ec64b3799ba5a2ad209de2ba2ad36ddbed2838dc39ccec47"
+    }
+  }
+}

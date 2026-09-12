@@ -1,0 +1,30 @@
+{
+  "coverage": "partial; instrumented rows only; no historical total inferred",
+  "recorded_calls": 8,
+  "by_tool_outcome": [
+    {
+      "tool": "godot.import",
+      "status": "returned",
+      "task_outcome": "verified_success",
+      "count": 2
+    },
+    {
+      "tool": "godot.smoke",
+      "status": "returned",
+      "task_outcome": "verified_success",
+      "count": 2
+    },
+    {
+      "tool": "godot.state-tests",
+      "status": "returned",
+      "task_outcome": "verified_success",
+      "count": 2
+    },
+    {
+      "tool": "godot.world-tests",
+      "status": "returned",
+      "task_outcome": "verified_success",
+      "count": 2
+    }
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "_meta": {
+    "content_digest": "f801ab47a42bea48d2cb9f91ccb46ecdf690900da72c789082fe4124f7a853f0",
+    "persisted_at": "2026-09-12T17:00:38.290231Z"
+  },
+  "analysis": {
+    "confidence": 0.8,
+    "family_or_pattern": "observability-coverage-gap",
+    "generalization_boundary": "Ledger opt-in del proyecto; no se afirma hook universal sobre Work Mode o MCP externos.",
+    "mechanism": "Un retorno exitoso del transporte puede envolver un fallo de proveedor; ausencia de fila no significa ausencia de uso histórico.",
+    "non_applicable_cases": [
+      "Generalización universal sin otra evidencia"
+    ],
+    "symptom": "Cuando se piden totales y aprendizaje de herramientas"
+  },
+  "authority_after": "L2-persisted",
+  "authority_before": "L1-retrieved",
+  "event_class": "workflow-pattern",
+  "evidence": [
+    {
+      "claim": "Cuando se piden totales y aprendizaje de herramientas — Contar sólo filas instrumentadas y separar retorno técnico de resultado verificado.",
+      "digest": "f0fa5098ca492e719802c02a8ebde6aa0b7f549f96a4b99c802d9ea3c250f605",
+      "freshness": "2026-09-12; snapshot at event creation",
+      "kind": "source-file",
+      "ref": "docs/TOOL_TELEMETRY.md"
+    }
+  ],
+  "knowledge_relation": {
+    "relation": "NEW",
+    "targets": []
+  },
+  "learning_id": "LRN-EXO-20260912-TELEMETRY",
+  "promotion": {
+    "reason": "Contar sólo filas instrumentadas y separar retorno técnico de resultado verificado.",
+    "target_ref": "tools/tool_ledger.py",
+    "target_type": "runbook"
+  },
+  "provenance": {
+    "agent_id": "codex-root",
+    "chat_id": "exovant-persistence-20260912",
+    "chat_id_source": "session-alias",
+    "run_id": "EXO-PERSISTENCE-004"
+  },
+  "revalidation_condition": "Cambio de entorno, motor, control afectado o evidencia que contradiga la conclusión.",
+  "scope": {
+    "artifacts": [
+      "docs/TOOL_TELEMETRY.md",
+      "tools/tool_ledger.py"
+    ],
+    "level": "project",
+    "project": "EXOVANT 2950",
+    "repository": "rotprods/-"
+  },
+  "status": "persisted",
+  "timestamp": "2026-09-12T17:00:38.290097+00:00",
+  "unknowns": [
+    "Ledger opt-in del proyecto; no se afirma hook universal sobre Work Mode o MCP externos."
+  ],
+  "verification": {
+    "adversarial_review": {
+      "status": "pending"
+    },
+    "anti_recurrence_control": "tools/tool_ledger.py",
+    "retrieval_test": {
+      "status": "pending"
+    },
+    "runtime_test": {
+      "notes": "Los recibos existentes sostienen la observación; el evento requiere su propia revalidación.",
+      "status": "pending"
+    }
+  }
+}

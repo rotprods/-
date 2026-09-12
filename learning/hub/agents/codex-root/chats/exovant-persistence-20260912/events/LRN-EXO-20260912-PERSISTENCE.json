@@ -1,0 +1,72 @@
+{
+  "_meta": {
+    "content_digest": "4d3b80fb4cfac2339220597664b70e11d6e408950a21990692546935d6a4f3ba",
+    "persisted_at": "2026-09-12T17:00:38.286954Z"
+  },
+  "analysis": {
+    "confidence": 0.8,
+    "family_or_pattern": "stale-resume-authority",
+    "generalization_boundary": "Proyecto EXOVANT; aún verificar primer clon remoto de esta migración y futuras sesiones independientes.",
+    "mechanism": "Archivos locales y copias sin identidad/versionado pueden divergir; Git conserva padre e historial y las proyecciones apuntan a ese estado.",
+    "non_applicable_cases": [
+      "Generalización universal sin otra evidencia"
+    ],
+    "symptom": "Cuando se retoma tras pérdida de scratch o cambio de sesión"
+  },
+  "authority_after": "L2-persisted",
+  "authority_before": "L1-retrieved",
+  "event_class": "persistence-defect",
+  "evidence": [
+    {
+      "claim": "Cuando se retoma tras pérdida de scratch o cambio de sesión — Clonar la fuente canónica, recuperar estado y verificar fuentes antes de continuar.",
+      "digest": "ec3c0268d15e4edd734672c069d7eefab18daf4e9e88b2afa1090fbbdeba7687",
+      "freshness": "2026-09-12; snapshot at event creation",
+      "kind": "source-file",
+      "ref": "HANDOFF.md"
+    }
+  ],
+  "knowledge_relation": {
+    "relation": "NEW",
+    "targets": []
+  },
+  "learning_id": "LRN-EXO-20260912-PERSISTENCE",
+  "promotion": {
+    "reason": "Clonar la fuente canónica, recuperar estado y verificar fuentes antes de continuar.",
+    "target_ref": "docs/RECOVERY.md",
+    "target_type": "runbook"
+  },
+  "provenance": {
+    "agent_id": "codex-root",
+    "chat_id": "exovant-persistence-20260912",
+    "chat_id_source": "session-alias",
+    "run_id": "EXO-PERSISTENCE-004"
+  },
+  "revalidation_condition": "Cambio de entorno, motor, control afectado o evidencia que contradiga la conclusión.",
+  "scope": {
+    "artifacts": [
+      "HANDOFF.md",
+      "docs/RECOVERY.md"
+    ],
+    "level": "project",
+    "project": "EXOVANT 2950",
+    "repository": "rotprods/-"
+  },
+  "status": "persisted",
+  "timestamp": "2026-09-12T17:00:38.286862+00:00",
+  "unknowns": [
+    "Proyecto EXOVANT; aún verificar primer clon remoto de esta migración y futuras sesiones independientes."
+  ],
+  "verification": {
+    "adversarial_review": {
+      "status": "pending"
+    },
+    "anti_recurrence_control": "docs/RECOVERY.md",
+    "retrieval_test": {
+      "status": "pending"
+    },
+    "runtime_test": {
+      "notes": "Los recibos existentes sostienen la observación; el evento requiere su propia revalidación.",
+      "status": "pending"
+    }
+  }
+}

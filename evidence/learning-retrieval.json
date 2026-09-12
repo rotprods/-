@@ -1,0 +1,21 @@
+{
+  "passed": true,
+  "learning_ids": [
+    "LRN-EXO-20260912-ART",
+    "LRN-EXO-20260912-BLENDER",
+    "LRN-EXO-20260912-CAPABILITY",
+    "LRN-EXO-20260912-COLLISION",
+    "LRN-EXO-20260912-COVER",
+    "LRN-EXO-20260912-DISPLAY",
+    "LRN-EXO-20260912-GODOT",
+    "LRN-EXO-20260912-MESA",
+    "LRN-EXO-20260912-PERSISTENCE",
+    "LRN-EXO-20260912-SAVE",
+    "LRN-EXO-20260912-SCHEDULER",
+    "LRN-EXO-20260912-TELEMETRY"
+  ],
+  "hub_audit": [],
+  "lifecycle_audit": [],
+  "scope": "fresh LearningHub instance on persisted files; not a future independent agent",
+  "authority_promotion": false
+}

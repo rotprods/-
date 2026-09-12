@@ -1,0 +1,17 @@
+{
+  "agent_id": "codex-root",
+  "base_commit": "2bc78fc3c283e4dad0e93a49fbb3457732b2b322",
+  "chat_id": "exovant-persistence-20260912",
+  "chat_id_source": "session-alias",
+  "prior_learning_search": "EXOVANT searches in rot.knowledge and Mem returned no hits; hub created in this run",
+  "protocols_retrieved": [
+    "APRENDE",
+    "APRENDE_ENFORCEMENT",
+    "COS_GRAPH_ENGINE_V2",
+    "GRAPHIFY",
+    "GAUNTLET_LOOP",
+    "continuous-learning-v2"
+  ],
+  "run_id": "EXO-PERSISTENCE-004",
+  "timing_note": "Receipt assembled after protocol retrieval and initial project preparation; not evidence of a pre-tool universal hook."
+}

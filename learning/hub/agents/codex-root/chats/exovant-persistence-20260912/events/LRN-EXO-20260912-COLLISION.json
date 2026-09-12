@@ -1,0 +1,72 @@
+{
+  "_meta": {
+    "content_digest": "b02dce317eb226048e9562d07eb90040242720c83f91691ee52a698954627a82",
+    "persisted_at": "2026-09-12T17:00:38.278962Z"
+  },
+  "analysis": {
+    "confidence": 0.8,
+    "family_or_pattern": "visual-physics-contract-gap",
+    "generalization_boundary": "Geometría, cápsula y parámetros probados; repetir tras escala, rampa o cambio de motor.",
+    "mechanism": "El desnivel y la terminación temprana de la rampa bloqueaban la cápsula aunque la malla visual pareciera continua.",
+    "non_applicable_cases": [
+      "Generalización universal sin otra evidencia"
+    ],
+    "symptom": "Cuando un portal parece transitable en el render"
+  },
+  "authority_after": "L2-persisted",
+  "authority_before": "L1-retrieved",
+  "event_class": "failure",
+  "evidence": [
+    {
+      "claim": "Cuando un portal parece transitable en el render — Probar desplazamiento de CharacterBody a través de rampa y descansillo.",
+      "digest": "b95b1ae6058e16fd7f3fc061b602a290baf88bb4eeb8019a9ab91feebbab58db",
+      "freshness": "2026-09-12; snapshot at event creation",
+      "kind": "source-file",
+      "ref": "evidence/world-tests.json"
+    }
+  ],
+  "knowledge_relation": {
+    "relation": "NEW",
+    "targets": []
+  },
+  "learning_id": "LRN-EXO-20260912-COLLISION",
+  "promotion": {
+    "reason": "Probar desplazamiento de CharacterBody a través de rampa y descansillo.",
+    "target_ref": "tests/test_world.gd",
+    "target_type": "runbook"
+  },
+  "provenance": {
+    "agent_id": "codex-root",
+    "chat_id": "exovant-persistence-20260912",
+    "chat_id_source": "session-alias",
+    "run_id": "EXO-PERSISTENCE-004"
+  },
+  "revalidation_condition": "Cambio de entorno, motor, control afectado o evidencia que contradiga la conclusión.",
+  "scope": {
+    "artifacts": [
+      "evidence/world-tests.json",
+      "tests/test_world.gd"
+    ],
+    "level": "project",
+    "project": "EXOVANT 2950",
+    "repository": "rotprods/-"
+  },
+  "status": "persisted",
+  "timestamp": "2026-09-12T17:00:38.278697+00:00",
+  "unknowns": [
+    "Geometría, cápsula y parámetros probados; repetir tras escala, rampa o cambio de motor."
+  ],
+  "verification": {
+    "adversarial_review": {
+      "status": "pending"
+    },
+    "anti_recurrence_control": "tests/test_world.gd",
+    "retrieval_test": {
+      "status": "pending"
+    },
+    "runtime_test": {
+      "notes": "Los recibos existentes sostienen la observación; el evento requiere su propia revalidación.",
+      "status": "pending"
+    }
+  }
+}

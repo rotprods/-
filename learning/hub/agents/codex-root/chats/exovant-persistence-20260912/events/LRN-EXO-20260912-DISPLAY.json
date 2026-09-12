@@ -1,0 +1,72 @@
+{
+  "_meta": {
+    "content_digest": "8129f4d787845ee8191c1cef6ddf86426415c795055d7334b33c0f235043ad04",
+    "persisted_at": "2026-09-12T17:00:38.282171Z"
+  },
+  "analysis": {
+    "confidence": 0.8,
+    "family_or_pattern": "sandbox-display-lifecycle",
+    "generalization_boundary": "Entorno observado; no instrucción general para exponer X11 o desactivar autenticación.",
+    "mechanism": "Las restricciones de AF_UNIX y el aislamiento del loopback entre comandos impiden una conexión que en un escritorio normal funcionaría.",
+    "non_applicable_cases": [
+      "Generalización universal sin otra evidencia"
+    ],
+    "symptom": "Cuando el display virtual falla por sockets"
+  },
+  "authority_after": "L2-persisted",
+  "authority_before": "L1-retrieved",
+  "event_class": "workflow-pattern",
+  "evidence": [
+    {
+      "claim": "Cuando el display virtual falla por sockets — Mantener Xvfb y juego en la misma invocación y usar autenticación temporal.",
+      "digest": "49b889f71af6beb9df799832ed28668307778d11c1c13eaf4e1ab5cdf32a52f9",
+      "freshness": "2026-09-12; snapshot at event creation",
+      "kind": "source-file",
+      "ref": "evidence/visual-run.log"
+    }
+  ],
+  "knowledge_relation": {
+    "relation": "NEW",
+    "targets": []
+  },
+  "learning_id": "LRN-EXO-20260912-DISPLAY",
+  "promotion": {
+    "reason": "Mantener Xvfb y juego en la misma invocación y usar autenticación temporal.",
+    "target_ref": "tests/capture_visual.py",
+    "target_type": "runbook"
+  },
+  "provenance": {
+    "agent_id": "codex-root",
+    "chat_id": "exovant-persistence-20260912",
+    "chat_id_source": "session-alias",
+    "run_id": "EXO-PERSISTENCE-004"
+  },
+  "revalidation_condition": "Cambio de entorno, motor, control afectado o evidencia que contradiga la conclusión.",
+  "scope": {
+    "artifacts": [
+      "evidence/visual-run.log",
+      "tests/capture_visual.py"
+    ],
+    "level": "project",
+    "project": "EXOVANT 2950",
+    "repository": "rotprods/-"
+  },
+  "status": "persisted",
+  "timestamp": "2026-09-12T17:00:38.282093+00:00",
+  "unknowns": [
+    "Entorno observado; no instrucción general para exponer X11 o desactivar autenticación."
+  ],
+  "verification": {
+    "adversarial_review": {
+      "status": "pending"
+    },
+    "anti_recurrence_control": "tests/capture_visual.py",
+    "retrieval_test": {
+      "status": "pending"
+    },
+    "runtime_test": {
+      "notes": "Los recibos existentes sostienen la observación; el evento requiere su propia revalidación.",
+      "status": "pending"
+    }
+  }
+}

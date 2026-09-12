@@ -1,0 +1,25 @@
+{
+  "gates": [
+    {
+      "gate": "import",
+      "passed": true,
+      "exit_code": 0
+    },
+    {
+      "gate": "state-tests",
+      "passed": true,
+      "exit_code": 0
+    },
+    {
+      "gate": "world-tests",
+      "passed": true,
+      "exit_code": 0
+    },
+    {
+      "gate": "smoke",
+      "passed": true,
+      "exit_code": 0
+    }
+  ],
+  "passed": true
+}

@@ -1,0 +1,72 @@
+{
+  "_meta": {
+    "content_digest": "11c788b2231a6e818c852bcfdae718ba27a70481571e17f11dcfba8eb4b34745",
+    "persisted_at": "2026-09-12T17:00:38.276379Z"
+  },
+  "analysis": {
+    "confidence": 0.8,
+    "family_or_pattern": "software-renderer-misclassification",
+    "generalization_boundary": "Este renderer y esta VM; no extrapolar sus FPS a hardware dedicado.",
+    "mechanism": "llvmpipe implementa la rasterización en CPU; la API gráfica no identifica el procesador que realiza el trabajo.",
+    "non_applicable_cases": [
+      "Generalización universal sin otra evidencia"
+    ],
+    "symptom": "Cuando una captura OpenGL se interpreta como GPU"
+  },
+  "authority_after": "L2-persisted",
+  "authority_before": "L1-retrieved",
+  "event_class": "performance-pattern",
+  "evidence": [
+    {
+      "claim": "Cuando una captura OpenGL se interpreta como GPU — Leer renderer, dispositivos y límites antes de afirmar aceleración.",
+      "digest": "49b889f71af6beb9df799832ed28668307778d11c1c13eaf4e1ab5cdf32a52f9",
+      "freshness": "2026-09-12; snapshot at event creation",
+      "kind": "source-file",
+      "ref": "evidence/visual-run.log"
+    }
+  ],
+  "knowledge_relation": {
+    "relation": "NEW",
+    "targets": []
+  },
+  "learning_id": "LRN-EXO-20260912-MESA",
+  "promotion": {
+    "reason": "Leer renderer, dispositivos y límites antes de afirmar aceleración.",
+    "target_ref": "docs/HARDWARE.md",
+    "target_type": "runbook"
+  },
+  "provenance": {
+    "agent_id": "codex-root",
+    "chat_id": "exovant-persistence-20260912",
+    "chat_id_source": "session-alias",
+    "run_id": "EXO-PERSISTENCE-004"
+  },
+  "revalidation_condition": "Cambio de entorno, motor, control afectado o evidencia que contradiga la conclusión.",
+  "scope": {
+    "artifacts": [
+      "evidence/visual-run.log",
+      "docs/HARDWARE.md"
+    ],
+    "level": "project",
+    "project": "EXOVANT 2950",
+    "repository": "rotprods/-"
+  },
+  "status": "persisted",
+  "timestamp": "2026-09-12T17:00:38.276292+00:00",
+  "unknowns": [
+    "Este renderer y esta VM; no extrapolar sus FPS a hardware dedicado."
+  ],
+  "verification": {
+    "adversarial_review": {
+      "status": "pending"
+    },
+    "anti_recurrence_control": "docs/HARDWARE.md",
+    "retrieval_test": {
+      "status": "pending"
+    },
+    "runtime_test": {
+      "notes": "Los recibos existentes sostienen la observación; el evento requiere su propia revalidación.",
+      "status": "pending"
+    }
+  }
+}

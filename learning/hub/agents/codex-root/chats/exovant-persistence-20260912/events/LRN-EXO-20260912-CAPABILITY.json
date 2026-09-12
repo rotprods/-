@@ -1,0 +1,72 @@
+{
+  "_meta": {
+    "content_digest": "4d85e6fdde9adddcabb0a320fb5c271945dacd36fd70c2526435e38a7f02245a",
+    "persisted_at": "2026-09-12T17:00:38.291835Z"
+  },
+  "analysis": {
+    "confidence": 0.8,
+    "family_or_pattern": "catalog-runtime-confusion",
+    "generalization_boundary": "game-dev-mcp-hub y su inventario histórico; la sesión actual sólo cualifica sus pruebas reales.",
+    "mechanism": "Código fuente e inventario histórico describen disponibilidad potencial, no proceso alcanzable ni permiso de ejecución.",
+    "non_applicable_cases": [
+      "Generalización universal sin otra evidencia"
+    ],
+    "symptom": "Cuando el catálogo enumera una aplicación o MCP"
+  },
+  "authority_after": "L2-persisted",
+  "authority_before": "L1-retrieved",
+  "event_class": "tool-routing",
+  "evidence": [
+    {
+      "claim": "Cuando el catálogo enumera una aplicación o MCP — Verificar política, máquina, endpoint y smoke actuales antes de declararlo operativo.",
+      "digest": "20222b45d7eedd5fef1eb83c510744a3b350aeaff7787427917390c28c97e341",
+      "freshness": "2026-09-12; snapshot at event creation",
+      "kind": "source-file",
+      "ref": "docs/HARDWARE.md"
+    }
+  ],
+  "knowledge_relation": {
+    "relation": "NEW",
+    "targets": []
+  },
+  "learning_id": "LRN-EXO-20260912-CAPABILITY",
+  "promotion": {
+    "reason": "Verificar política, máquina, endpoint y smoke actuales antes de declararlo operativo.",
+    "target_ref": "docs/RECOVERY.md",
+    "target_type": "runbook"
+  },
+  "provenance": {
+    "agent_id": "codex-root",
+    "chat_id": "exovant-persistence-20260912",
+    "chat_id_source": "session-alias",
+    "run_id": "EXO-PERSISTENCE-004"
+  },
+  "revalidation_condition": "Cambio de entorno, motor, control afectado o evidencia que contradiga la conclusión.",
+  "scope": {
+    "artifacts": [
+      "docs/HARDWARE.md",
+      "docs/RECOVERY.md"
+    ],
+    "level": "project",
+    "project": "EXOVANT 2950",
+    "repository": "rotprods/-"
+  },
+  "status": "persisted",
+  "timestamp": "2026-09-12T17:00:38.291673+00:00",
+  "unknowns": [
+    "game-dev-mcp-hub y su inventario histórico; la sesión actual sólo cualifica sus pruebas reales."
+  ],
+  "verification": {
+    "adversarial_review": {
+      "status": "pending"
+    },
+    "anti_recurrence_control": "docs/RECOVERY.md",
+    "retrieval_test": {
+      "status": "pending"
+    },
+    "runtime_test": {
+      "notes": "Los recibos existentes sostienen la observación; el evento requiere su propia revalidación.",
+      "status": "pending"
+    }
+  }
+}

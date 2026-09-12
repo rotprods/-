@@ -1,0 +1,128 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://rot.knowledge/schemas/learning-event.schema.json",
+  "title": "LearningEvent",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["learning_id", "timestamp", "event_class", "status", "scope", "authority_before", "authority_after", "evidence", "analysis", "knowledge_relation", "promotion", "verification", "unknowns", "provenance"],
+  "properties": {
+    "_meta": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["content_digest", "persisted_at"],
+      "properties": {
+        "content_digest": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+        "persisted_at": {"type": "string", "format": "date-time"}
+      }
+    },
+    "learning_id": {"type": "string", "pattern": "^LRN-[A-Za-z0-9._:-]+$"},
+    "timestamp": {"type": "string", "format": "date-time"},
+    "event_class": {"enum": ["failure", "success", "correction", "incident", "review-finding", "workflow-pattern", "tool-routing", "authority-defect", "persistence-defect", "security-defect", "performance-pattern"]},
+    "status": {"enum": ["observed", "evidence-pending", "evidenced", "analyzed", "candidate", "persisted", "verified", "enforced", "proven-in-use", "rejected", "duplicate", "conflicted", "superseded", "stale", "revalidation-required", "observed-no-promotable-learning"]},
+    "scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["level"],
+      "properties": {
+        "level": {"enum": ["local", "project", "repository", "cross-repository", "ecosystem"]},
+        "repository": {"type": ["string", "null"]},
+        "project": {"type": ["string", "null"]},
+        "tool": {"type": ["string", "null"]},
+        "artifacts": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+        "session": {"type": ["string", "null"]}
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["agent_id", "chat_id", "chat_id_source"],
+      "properties": {
+        "agent_id": {"type": "string", "pattern": "^[A-Za-z0-9._:-]+$", "minLength": 1},
+        "chat_id": {"type": "string", "pattern": "^[A-Za-z0-9._:-]+$", "minLength": 1},
+        "chat_id_source": {"enum": ["platform", "user-supplied", "session-alias"]},
+        "parent_agent_id": {"type": ["string", "null"]},
+        "run_id": {"type": ["string", "null"]}
+      }
+    },
+    "authority_before": {"$ref": "#/$defs/authority"},
+    "authority_after": {"$ref": "#/$defs/authority"},
+    "evidence": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["kind", "ref", "claim"],
+        "properties": {
+          "kind": {"enum": ["runtime", "test", "repository", "log", "source-file", "issue", "pull-request", "review", "conversation", "external-primary", "external-secondary"]},
+          "ref": {"type": "string", "minLength": 1},
+          "claim": {"type": "string", "minLength": 1},
+          "digest": {"type": ["string", "null"]},
+          "freshness": {"type": ["string", "null"]}
+        }
+      }
+    },
+    "analysis": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["mechanism", "family_or_pattern", "generalization_boundary", "confidence"],
+      "properties": {
+        "symptom": {"type": ["string", "null"]},
+        "proximate_cause": {"type": ["string", "null"]},
+        "root_cause": {"type": ["string", "null"]},
+        "enabling_condition": {"type": ["string", "null"]},
+        "mechanism": {"type": "string", "minLength": 1},
+        "family_or_pattern": {"type": "string", "minLength": 1},
+        "generalization_boundary": {"type": "string", "minLength": 1},
+        "non_applicable_cases": {"type": "array", "items": {"type": "string"}},
+        "confidence": {"type": "number", "minimum": 0, "maximum": 1}
+      }
+    },
+    "knowledge_relation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["relation"],
+      "properties": {
+        "relation": {"enum": ["NEW", "DUPLICATE", "EXTENDS", "CONTRADICTS", "SUPERSEDES", "REVALIDATES"]},
+        "targets": {"type": "array", "items": {"type": "string"}, "uniqueItems": true}
+      }
+    },
+    "promotion": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["target_type", "target_ref"],
+      "properties": {
+        "target_type": {"enum": ["none", "test", "invariant", "guardrail", "linter", "prompt", "skill", "routing-rule", "adr", "playbook", "state-rule", "benchmark", "eval", "runbook", "security-control", "graph"]},
+        "target_ref": {"type": ["string", "null"]},
+        "reason": {"type": ["string", "null"]}
+      }
+    },
+    "verification": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["retrieval_test", "runtime_test", "adversarial_review"],
+      "properties": {
+        "retrieval_test": {"$ref": "#/$defs/check"},
+        "runtime_test": {"$ref": "#/$defs/check"},
+        "adversarial_review": {"$ref": "#/$defs/check"},
+        "anti_recurrence_control": {"type": ["string", "null"]}
+      }
+    },
+    "unknowns": {"type": "array", "items": {"type": "string"}},
+    "revalidation_condition": {"type": ["string", "null"]}
+  },
+  "$defs": {
+    "authority": {"type": "string", "enum": ["L0-recollection", "L1-retrieved", "L2-persisted", "L3-verified", "L4-enforced", "L5-proven-in-use"]},
+    "check": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status"],
+      "properties": {
+        "status": {"enum": ["not-applicable", "pending", "pass", "fail", "refused"]},
+        "evidence_ref": {"type": ["string", "null"]},
+        "notes": {"type": ["string", "null"]}
+      }
+    }
+  }
+}
+

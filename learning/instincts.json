@@ -1,0 +1,110 @@
+[
+  {
+    "id": "godot",
+    "trigger": "Cuando parece que la VM sólo permite documentos",
+    "action": "Comprobar ejecutable portátil y ejecutar import, estado, integración y smoke.",
+    "confidence": 0.8,
+    "scope": "project",
+    "learning_id": "LRN-EXO-20260912-GODOT",
+    "global_promotion": false
+  },
+  {
+    "id": "mesa",
+    "trigger": "Cuando una captura OpenGL se interpreta como GPU",
+    "action": "Leer renderer, dispositivos y límites antes de afirmar aceleración.",
+    "confidence": 0.8,
+    "scope": "project",
+    "learning_id": "LRN-EXO-20260912-MESA",
+    "global_promotion": false
+  },
+  {
+    "id": "blender",
+    "trigger": "Cuando hace falta modelado editable sin Mac conectado",
+    "action": "Usar la ruta Blender remota cualificada y guardar fuente, generador, GLB y evidencia.",
+    "confidence": 0.8,
+    "scope": "project",
+    "learning_id": "LRN-EXO-20260912-BLENDER",
+    "global_promotion": false
+  },
+  {
+    "id": "collision",
+    "trigger": "Cuando un portal parece transitable en el render",
+    "action": "Probar desplazamiento de CharacterBody a través de rampa y descansillo.",
+    "confidence": 0.8,
+    "scope": "project",
+    "learning_id": "LRN-EXO-20260912-COLLISION",
+    "global_promotion": false
+  },
+  {
+    "id": "save",
+    "trigger": "Cuando un JSON corrupto activa recuperación",
+    "action": "Usar el código de error del parser y recuperar sólo un respaldo validado.",
+    "confidence": 0.8,
+    "scope": "project",
+    "learning_id": "LRN-EXO-20260912-SAVE",
+    "global_promotion": false
+  },
+  {
+    "id": "cover",
+    "trigger": "Cuando el enemigo aplica daño por distancia",
+    "action": "Comprobar visibilidad física contra cobertura antes del daño.",
+    "confidence": 0.8,
+    "scope": "project",
+    "learning_id": "LRN-EXO-20260912-COVER",
+    "global_promotion": false
+  },
+  {
+    "id": "display",
+    "trigger": "Cuando el display virtual falla por sockets",
+    "action": "Mantener Xvfb y juego en la misma invocación y usar autenticación temporal.",
+    "confidence": 0.8,
+    "scope": "project",
+    "learning_id": "LRN-EXO-20260912-DISPLAY",
+    "global_promotion": false
+  },
+  {
+    "id": "art",
+    "trigger": "Cuando los detalles se tapan o la UI pierde lectura",
+    "action": "Revisar la cámara real y comparar antes/después de iluminación, posición y HUD.",
+    "confidence": 0.8,
+    "scope": "project",
+    "learning_id": "LRN-EXO-20260912-ART",
+    "global_promotion": false
+  },
+  {
+    "id": "persistence",
+    "trigger": "Cuando se retoma tras pérdida de scratch o cambio de sesión",
+    "action": "Clonar la fuente canónica, recuperar estado y verificar fuentes antes de continuar.",
+    "confidence": 0.8,
+    "scope": "project",
+    "learning_id": "LRN-EXO-20260912-PERSISTENCE",
+    "global_promotion": false
+  },
+  {
+    "id": "scheduler",
+    "trigger": "Cuando un proveedor confirma una tarea recurrente",
+    "action": "Registrar creación, activación y ejecución como hechos distintos.",
+    "confidence": 0.8,
+    "scope": "project",
+    "learning_id": "LRN-EXO-20260912-SCHEDULER",
+    "global_promotion": false
+  },
+  {
+    "id": "telemetry",
+    "trigger": "Cuando se piden totales y aprendizaje de herramientas",
+    "action": "Contar sólo filas instrumentadas y separar retorno técnico de resultado verificado.",
+    "confidence": 0.8,
+    "scope": "project",
+    "learning_id": "LRN-EXO-20260912-TELEMETRY",
+    "global_promotion": false
+  },
+  {
+    "id": "capability",
+    "trigger": "Cuando el catálogo enumera una aplicación o MCP",
+    "action": "Verificar política, máquina, endpoint y smoke actuales antes de declararlo operativo.",
+    "confidence": 0.8,
+    "scope": "project",
+    "learning_id": "LRN-EXO-20260912-CAPABILITY",
+    "global_promotion": false
+  }
+]

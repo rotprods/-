@@ -1,0 +1,7 @@
+{
+  "executed_at": "2026-09-12T17:28:39.315025+00:00",
+  "passed": true,
+  "command": "python3 -m unittest discover -s tests -p test_governance.py -v",
+  "tests": 15,
+  "source_digest": "065073f02c50b656b1a3c689360a4bc4c6551091700245dce09e3b38aa01dc36"
+}

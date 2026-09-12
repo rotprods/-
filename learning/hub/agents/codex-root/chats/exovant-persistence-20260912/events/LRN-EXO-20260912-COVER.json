@@ -1,0 +1,72 @@
+{
+  "_meta": {
+    "content_digest": "332a8a56deb3f1742eb2472b70929ca29542e7c92b2893eee26d23b4d8bdba19",
+    "persisted_at": "2026-09-12T17:00:38.281114Z"
+  },
+  "analysis": {
+    "confidence": 0.8,
+    "family_or_pattern": "damage-through-cover",
+    "generalization_boundary": "Ataques y máscara actuales; proyectiles, explosiones indirectas y paredes móviles requieren su diseño propio.",
+    "mechanism": "Distancia y altura no modelan obstáculos: se necesitó raycast sobre la capa de sólidos.",
+    "non_applicable_cases": [
+      "Generalización universal sin otra evidencia"
+    ],
+    "symptom": "Cuando el enemigo aplica daño por distancia"
+  },
+  "authority_after": "L2-persisted",
+  "authority_before": "L1-retrieved",
+  "event_class": "failure",
+  "evidence": [
+    {
+      "claim": "Cuando el enemigo aplica daño por distancia — Comprobar visibilidad física contra cobertura antes del daño.",
+      "digest": "b95b1ae6058e16fd7f3fc061b602a290baf88bb4eeb8019a9ab91feebbab58db",
+      "freshness": "2026-09-12; snapshot at event creation",
+      "kind": "source-file",
+      "ref": "evidence/world-tests.json"
+    }
+  ],
+  "knowledge_relation": {
+    "relation": "NEW",
+    "targets": []
+  },
+  "learning_id": "LRN-EXO-20260912-COVER",
+  "promotion": {
+    "reason": "Comprobar visibilidad física contra cobertura antes del daño.",
+    "target_ref": "tests/test_world.gd",
+    "target_type": "runbook"
+  },
+  "provenance": {
+    "agent_id": "codex-root",
+    "chat_id": "exovant-persistence-20260912",
+    "chat_id_source": "session-alias",
+    "run_id": "EXO-PERSISTENCE-004"
+  },
+  "revalidation_condition": "Cambio de entorno, motor, control afectado o evidencia que contradiga la conclusión.",
+  "scope": {
+    "artifacts": [
+      "evidence/world-tests.json",
+      "tests/test_world.gd"
+    ],
+    "level": "project",
+    "project": "EXOVANT 2950",
+    "repository": "rotprods/-"
+  },
+  "status": "persisted",
+  "timestamp": "2026-09-12T17:00:38.281007+00:00",
+  "unknowns": [
+    "Ataques y máscara actuales; proyectiles, explosiones indirectas y paredes móviles requieren su diseño propio."
+  ],
+  "verification": {
+    "adversarial_review": {
+      "status": "pending"
+    },
+    "anti_recurrence_control": "tests/test_world.gd",
+    "retrieval_test": {
+      "status": "pending"
+    },
+    "runtime_test": {
+      "notes": "Los recibos existentes sostienen la observación; el evento requiere su propia revalidación.",
+      "status": "pending"
+    }
+  }
+}

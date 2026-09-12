@@ -1,0 +1,16 @@
+{
+  "exovant-persistence-20260912": [
+    "agents/codex-root/chats/exovant-persistence-20260912/events/LRN-EXO-20260912-ART.json",
+    "agents/codex-root/chats/exovant-persistence-20260912/events/LRN-EXO-20260912-BLENDER.json",
+    "agents/codex-root/chats/exovant-persistence-20260912/events/LRN-EXO-20260912-CAPABILITY.json",
+    "agents/codex-root/chats/exovant-persistence-20260912/events/LRN-EXO-20260912-COLLISION.json",
+    "agents/codex-root/chats/exovant-persistence-20260912/events/LRN-EXO-20260912-COVER.json",
+    "agents/codex-root/chats/exovant-persistence-20260912/events/LRN-EXO-20260912-DISPLAY.json",
+    "agents/codex-root/chats/exovant-persistence-20260912/events/LRN-EXO-20260912-GODOT.json",
+    "agents/codex-root/chats/exovant-persistence-20260912/events/LRN-EXO-20260912-MESA.json",
+    "agents/codex-root/chats/exovant-persistence-20260912/events/LRN-EXO-20260912-PERSISTENCE.json",
+    "agents/codex-root/chats/exovant-persistence-20260912/events/LRN-EXO-20260912-SAVE.json",
+    "agents/codex-root/chats/exovant-persistence-20260912/events/LRN-EXO-20260912-SCHEDULER.json",
+    "agents/codex-root/chats/exovant-persistence-20260912/events/LRN-EXO-20260912-TELEMETRY.json"
+  ]
+}

@@ -1,0 +1,22 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+PASS Player stands on a real collider
+PASS W movement advances character in physics
+PASS Boundary collider blocks traversal
+PASS Ines interaction starts mission
+PASS Valve UI buttons resolve actual mission
+PASS Archive interaction preserves authentic acta
+PASS Attack cannot be duplicated during its commitment
+PASS Attack animation window damages boss exactly once
+PASS Dodge invulnerability rejects incoming damage
+PASS Frontal guard spends stamina and reduces damage
+PASS Solid cover blocks an enemy strike
+PASS Enemy telegraph leads to damage and punish window
+PASS Atlas changes phase at the health thresholds
+PASS Boss defeat advances the campaign
+PASS Consequence UI persists chosen outcome
+PASS Death after ending preserves outcome and creates recoverable echo
+PASS World interaction recovers echo exactly once
+PASS Portal threshold is physically traversable
+PASS World writes a recoverable campaign save
+{"failed":0,"note":"Automated integration with controlled setup; not a full human playthrough or GPU benchmark","passed":19,"portal_final_position":[0.0,1.48030650615692,-85.5567245483398],"suite":"native_scene_integration"}

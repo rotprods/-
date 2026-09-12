@@ -1,0 +1,30 @@
+{
+  "authority-defect": [
+    "agents/codex-root/chats/exovant-persistence-20260912/events/LRN-EXO-20260912-SCHEDULER.json"
+  ],
+  "failure": [
+    "agents/codex-root/chats/exovant-persistence-20260912/events/LRN-EXO-20260912-COLLISION.json",
+    "agents/codex-root/chats/exovant-persistence-20260912/events/LRN-EXO-20260912-COVER.json",
+    "agents/codex-root/chats/exovant-persistence-20260912/events/LRN-EXO-20260912-SAVE.json"
+  ],
+  "performance-pattern": [
+    "agents/codex-root/chats/exovant-persistence-20260912/events/LRN-EXO-20260912-MESA.json"
+  ],
+  "persistence-defect": [
+    "agents/codex-root/chats/exovant-persistence-20260912/events/LRN-EXO-20260912-PERSISTENCE.json"
+  ],
+  "review-finding": [
+    "agents/codex-root/chats/exovant-persistence-20260912/events/LRN-EXO-20260912-ART.json"
+  ],
+  "success": [
+    "agents/codex-root/chats/exovant-persistence-20260912/events/LRN-EXO-20260912-GODOT.json"
+  ],
+  "tool-routing": [
+    "agents/codex-root/chats/exovant-persistence-20260912/events/LRN-EXO-20260912-BLENDER.json",
+    "agents/codex-root/chats/exovant-persistence-20260912/events/LRN-EXO-20260912-CAPABILITY.json"
+  ],
+  "workflow-pattern": [
+    "agents/codex-root/chats/exovant-persistence-20260912/events/LRN-EXO-20260912-DISPLAY.json",
+    "agents/codex-root/chats/exovant-persistence-20260912/events/LRN-EXO-20260912-TELEMETRY.json"
+  ]
+}
