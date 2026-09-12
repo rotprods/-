@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "checkpoint": "PELAGOS-THALASSA-LOD-001",
+  "task_id": "PEL/TECH/022",
+  "world_id": "pelagos",
+  "claim_id": "CLM-PEL-WORLD-001",
+  "agent_id": "AGENT-PELAGOS-01",
+  "status": "IN_PROGRESS",
+  "claim": "THALASSA now has engine-agnostic semantic LOD1/LOD2 visual foundations that reduce geometric cost while preserving measured silhouette extent and canonical identity cues. Runtime switching and performance are not claimed.",
+  "remote_3d": {
+    "project_id": "39930c08-62bb-4034-b35d-70d0ce51c9d9",
+    "revision": 25,
+    "build_operation": "pelagos.thalassa.lod-foundation.v1",
+    "structural_verification": "pelagos.thalassa.lod-verify.r25",
+    "visual_verification": "pelagos.thalassa.lod-visual.r25"
+  },
+  "lod": {
+    "LOD0": {
+      "asset_id": "PEL-BOSS-THALASSA",
+      "visual_mesh_tris_est": 49120,
+      "bbox_m": [46.141, 43.5, 22.798],
+      "policy": "full HERO_ENGINEERING_BLOCKOUT_V1 excluding separate collision/arena helpers"
+    },
+    "LOD1": {
+      "asset_id": "PEL-BOSS-THALASSA-LOD1",
+      "object_count": 59,
+      "mesh_tris_est": 20816,
+      "reduction_vs_lod0_percent": 57.62,
+      "bbox_m": [43.5, 43.5, 22.798],
+      "bbox_ratio_vs_lod0": [0.943, 1.0, 1.0],
+      "policy": "major core/collar/membranes, 16 R0 eyes, alternating buttresses, two of four segments per tentacle, all eight tips, partial extraction hardware"
+    },
+    "LOD2": {
+      "asset_id": "PEL-BOSS-THALASSA-LOD2",
+      "object_count": 25,
+      "mesh_tris_est": 2184,
+      "reduction_vs_lod0_percent": 95.55,
+      "bbox_m": [42.329, 42.329, 20.433],
+      "bbox_ratio_vs_lod0": [0.917, 0.973, 0.896],
+      "policy": "low-poly core/basal/crown/collar, eight 3-point tentacles, eight macro eyes and four pressure-membrane markers"
+    }
+  },
+  "identity_gate": {
+    "lod1_r0_eye_count": 16,
+    "lod2_macro_eye_count": 8,
+    "lod2_tentacle_count": 8,
+    "lod2_pressure_membrane_count": 4,
+    "human_extraction_collar_preserved": true
+  },
+  "qa": {
+    "missing_materials": 0,
+    "nonunit_mesh_scales": 0,
+    "lod1_hidden_by_default": true,
+    "lod2_hidden_by_default": true,
+    "collision_policy": "reuse separate source collision proxy; visual LOD does not mutate gameplay collision",
+    "switch_thresholds": "UNKNOWN_PENDING_ENGINE_CAMERA_PROFILE",
+    "selection_metric": "ENGINE_SCREEN_SIZE_OR_DISTANCE_TO_BE_QUALIFIED",
+    "engine_switching": "NOT_IMPLEMENTED",
+    "performance": "NOT_PROFILED",
+    "human_visual_approval": "PENDING"
+  },
+  "visual_artifacts": [
+    {"lod":"LOD0","artifact_id":"771c93c69fe53342df6c69f20b0178c1","name":"qa_thalassa_lod0_r25_wb.png","resolution":[512,512]},
+    {"lod":"LOD1","artifact_id":"9937d0ab2d79bf95c3dadb6840a6f74b","name":"qa_thalassa_lod1_r25_wb.png","resolution":[512,512]},
+    {"lod":"LOD2","artifact_id":"4749ce0562a258b9c97a34e35a1f4a5f","name":"qa_thalassa_lod2_r25_wb.png","resolution":[512,512]}
+  ],
+  "reason_not_done": "EXO-012 engine choice remains planned; runtime LOD switching, GPU profiling, engine camera validation and human GATE-ART are mandatory before final LOD approval."
+}
