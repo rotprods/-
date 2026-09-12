@@ -1,0 +1,27 @@
+{
+  "run": "INFRA-005-VISUAL-005",
+  "base_commit": "97fb47472a654112779655d4d537851e709f269a",
+  "passed": true,
+  "executed_at": "2026-09-12T21:43:21.813696+00:00",
+  "mechanism": [
+    "Portable Ubuntu Xvfb/libxfont2/xkbcomp/libxkbfile dependencies",
+    "Xvfb requires /usr/bin/xkbcomp; symlink to project binary supplied without overwriting existing file",
+    "Headless editor import before graphical capture",
+    "Existing capture_visual.py starts authenticated Xvfb and Godot in same process tree"
+  ],
+  "renderer": "Mesa llvmpipe CPU",
+  "runtime_png_sha256": "5f3c6b3f9d50a8e1a9d58356b5fe96b0e97c5a7cc4cc0e1b25daa6fbf701b618",
+  "script_errors": 0,
+  "not_claimed": [
+    "GPU performance",
+    "human playtest",
+    "AAA art",
+    "normal traversal: capture mode repositions player",
+    "permanent environment"
+  ],
+  "remaining": [
+    "Capture script currently accepts process exit 0 despite logged script errors; inspect log and output before acceptance",
+    "Dependencies and /usr/bin symlink must be restored on a new VM"
+  ],
+  "bundle_url": "https://drive.google.com/file/d/1QX0YqQRq8A0xYVSk--TEPNaMrMJ2C0SI/view"
+}

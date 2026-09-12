@@ -28,3 +28,5 @@ Flota: recuperar LRN-EXO-20260912-FLEET-CAS. Leer issue #7 y ops/fleet/registry.
 Entregas GLB: un hash correcto y una cabecera coherente no garantizan integridad del contenedor completo. Recorrer todos los chunks; rechazar truncado, overflow, desalineación y duplicados JSON/BIN, conservando extensiones desconocidas válidas. Regresión acotada en evidence/delivery-container-regression.json; no promoción del aprendizaje ni validación artística por este control.
 
 Admisión y consumo: recuperar LRN-EXO-20260912-OWNER-ADMISSION (L2, adopción externa pendiente). El owner conserva modelado/recuperación/validación; el integrador necesita entrega o bloqueo concreto. Pausa horaria registrada en issue #7 comentario 5648819121. Capacidad de ejecución se prueba por operación; no confundir error de ruta, display y GPU.
+
+VISUAL-005: graphical Godot capture qualified here after resolving absolute xkbcomp dependency and importing cold-clone assets. See evidence/visual-display-qualified.json and visual-display-runbook.md. CPU llvmpipe only; existing capture repositions player. Capture exit code can hide script errors: inspect log and fresh PNG.
