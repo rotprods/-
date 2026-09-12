@@ -40,7 +40,7 @@ Original reservation predates the fleet harness and that chronology is preserved
 
 Owner ACK is already published at issue #7 comment `5648349781`. Current registry readback still has UMBRA as `reserved / ack=null`; that transition is integrator-owned. Do not rewrite `main:ops/fleet/registry.json` from this branch.
 
-The branch was reconciled with `main@ca224a78c72512770cb599e82977623c4b8aa76d` using normal two-parent merge `58e54c25965a21e6a39b2bd3e309281be01b1166`; no force update. Immediately before Wave-1 source persistence, PR #16 was `mergeable=true`, `behind_by=0`, and changed only UMBRA paths plus generated `MANIFEST.json`.
+The branch was first reconciled with `main@ca224a78c72512770cb599e82977623c4b8aa76d` through merge `58e54c25965a21e6a39b2bd3e309281be01b1166`. During Wave 1, `main` advanced five commits with runtime/capture evidence; UMBRA was resynced again with `main@758a9b6326a7d061f1e304abe9b1593b6b2d1a66` through normal two-parent merge `bfff105fb5e46d31e064a22f33053e43b132df19`. No force update was used. The merge tree uses current `main` as authority for global/runtime paths and overlays only the UMBRA-owned semantic paths.
 
 ## Wave 0 checkpoint
 
