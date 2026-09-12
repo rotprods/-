@@ -1,0 +1,105 @@
+{
+  "schema_version": 1,
+  "world_id": "aurora",
+  "claim_id": "CLM-AURORA-WORLD-001",
+  "task_id": "AUR/PROC/027",
+  "remote_project_id": "d6488148-8547-4ffe-b63d-e5fbec3a339c",
+  "remote_revision": 19,
+  "contract": "AUR-PROC-ROUTING-v1-r19",
+  "quality_claim": "TECHNICALLY_VERIFIED_SERVICE_BLOCKOUT; FINAL_ELECTRICAL_AND_ART_PENDING",
+  "foundation_contact": {
+    "pad_count": 20,
+    "pad_bottom_offset_min_m": -0.08,
+    "pad_bottom_offset_max_m": 0.932,
+    "foundation_pier_count": 19,
+    "pier_length_min_m": 0.109,
+    "pier_length_max_m": 0.982,
+    "pier_ground_embed_m": 0.05,
+    "floor_bottom_clearance_examples_m": [1.427, 0.710],
+    "clock_base_embed_m": 0.08,
+    "beacon_embed_m": 0.05
+  },
+  "routing": {
+    "power": {
+      "object": "AUR_ROUTE_POWER_TRAY_TO_CLOCK",
+      "length_m": 14.155,
+      "radius_m": 0.045,
+      "clearance_min_m": 0.65,
+      "clearance_max_m": 2.951,
+      "material": "AUR_MAT_CABLE_POWER_JACKET",
+      "min_bend_radius_target_m": 0.22,
+      "electrical_class": "UNSPECIFIED_PENDING_ELECTRICAL_CANON"
+    },
+    "data_a": {
+      "object": "AUR_ROUTE_DATA_A_CLOCK_TO_BEACONS",
+      "length_m": 77.621,
+      "radius_m": 0.022,
+      "control_points": 14,
+      "clearance_min_m": 0.45,
+      "clearance_max_m": 0.45,
+      "material": "AUR_MAT_CABLE_DATA_JACKET"
+    },
+    "data_b": {
+      "object": "AUR_ROUTE_DATA_B_CLOCK_TO_BEACONS",
+      "length_m": 77.549,
+      "radius_m": 0.022,
+      "control_points": 14,
+      "clearance_min_m": 0.45,
+      "clearance_max_m": 0.45,
+      "material": "AUR_MAT_CABLE_DATA_JACKET"
+    }
+  },
+  "socket_contract": "AUR-SOCKET-SERVICE-v1-r19",
+  "socket_owners": [
+    "AUR_PROOF_SERVICE_TRAY_3",
+    "AUR_CLOCK_SYNC_PROOF_BASE",
+    "AUR_ROUTE_BEACON_PROOF_0",
+    "AUR_ROUTE_BEACON_PROOF_1",
+    "AUR_ROUTE_BEACON_PROOF_2",
+    "AUR_ROUTE_BEACON_PROOF_3"
+  ],
+  "supports": {
+    "cable_stake_instances": 4,
+    "shared_mesh": "AUR_CABLE_STAKE_SHARED_MESH_R18",
+    "source_object_present": false,
+    "approx_spacing_m": 18
+  },
+  "routing_collection": {
+    "name": "23_CAMP_SERVICE_ROUTING",
+    "accidental_objects": [],
+    "area_lights": []
+  },
+  "render": {
+    "name": "aurora_r19_service_routing.png",
+    "artifact_id": "f02832c9aff87f1e8adccdd9d1f86faa",
+    "resolution": [480,270],
+    "mean": 0.1982,
+    "p01": 0.0104,
+    "p50": 0.1979,
+    "p99": 0.3615,
+    "black_clip": 0.0088,
+    "white_clip": 0.0
+  },
+  "portable_artifacts_revision_19": {
+    "blend": {"size_bytes": 7834756, "etag": "4dbd645392bbbc4a913990b280a8beda"},
+    "glb": {"size_bytes": 5187076, "etag": "39e4703128cdbbf4742310bb709d5fe0"}
+  },
+  "failure_history": [
+    "r17 audit discovered proof assembly was ~16-17m below r14 terrain because 15B_PROOF_ASSEMBLY was omitted from earlier reground scope",
+    "r18 attempted root+children shift but parented AUR_PROOF_* children received double displacement; audit rejected it",
+    "r19 repaired 77 child local Z transforms, retained root pad plane once, generated 19 variable foundation piers and rebuilt only the power route from live sockets"
+  ],
+  "gates": {
+    "PROOF_TERRAIN_CONTACT": "PASS_BLOCKOUT",
+    "FOUNDATION_SUPPORT": "PASS_BLOCKOUT",
+    "SOCKET_TRACEABILITY": "PASS",
+    "POWER_CLEARANCE": "PASS_BLOCKOUT",
+    "DATA_CLEARANCE": "PASS",
+    "MESH_INSTANCING": "PASS",
+    "EXPORT_OBJECT_HYGIENE": "PASS",
+    "FINAL_ELECTRICAL_SPEC": "PENDING",
+    "FINAL_BEND_GEOMETRY": "PENDING",
+    "RUNTIME_INTERACTION": "BLOCKED_ENGINE_INTERFACE",
+    "ART": "PENDING_HUMAN_VISUAL_REVIEW"
+  }
+}
