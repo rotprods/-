@@ -20,6 +20,8 @@ blender:
   structural_qa: PASS
   machine_visual_qa: PASS
   route_clearance_qa: PASS
+  heliostat_contact_qa: PASS
+  portable_blockout_qa: PASS
   semantic_reproducibility: PASS
   semantic_sha256: 04c527c61ee814753f09e9c0f651495ad80ed51aafc48c77b6acb4e82a3612ec
   art_review: PENDING_HUMAN
@@ -27,9 +29,13 @@ blender:
   glb_bytes: 822272
 visual:
   latest_render_operation: khepri.visual.r4.gauntlet
-  r3_render_operation: khepri.visual.r3.gauntlet
+  overview_artifact: 6526469581c767eb9e18ca73de270031
+  overview_bytes: 700678
+  gameplay_artifact: f07432f0acc50e5ccddab570cbae0f6f
+  gameplay_bytes: 747184
   resolution: [1280, 720]
-  status: R4_RENDER_PENDING_OPERATION_SETTLEMENT_OR_HUMAN_PIXEL_REVIEW
+  machine_status: PASS
+  human_status: PENDING_HUMAN_PIXEL_REVIEW
 terrain:
   global_slope_p95_deg: 9.91
   global_slope_max_deg: 11.56
@@ -43,6 +49,20 @@ route_interface:
   audited_clearance_m: [6.9963, 7.0043]
   max_error_m: 0.0043
   below_terrain_samples: 0
+heliostat_macro:
+  count: 32
+  mast_ground_contact_error_m: [-0.000004, 0.000004]
+  panel_center_above_mast_top_m: 6.0
+  min_pairwise_spacing_m: 490.0
+  shared_mast_meshes: 1
+  shared_panel_meshes: 1
+portability:
+  materials: 5
+  nonportable_material_nodes: 0
+  external_images: 0
+  absolute_image_paths: 0
+  unsupported_light_types: 0
+  unused_datablocks: 0
 ci:
   inspected_pr_merge_run: 34720826636
   python_tests: 82/82_PASS
@@ -55,7 +75,7 @@ progress:
   materials_percent: 25
   optimization_percent: 100
   integration_percent: 50
-  qa_percent: 97
+  qa_percent: 98
 scope_note: "Progress percentages apply only to the atomic world-macro blockout claim."
 completed:
   - repository_bootstrap
@@ -72,16 +92,18 @@ completed:
   - terrain_conforming_route_r4
   - provider_blend_glb_export
   - cold_project_semantic_reproducibility_r4
+  - r4_overview_gameplay_renders
+  - heliostat_macro_contact_audit
+  - portable_blockout_audit
 blocked:
   - HUMAN_VISUAL_REVIEW
   - BINARY_PERSISTENCE_TRANSPORT
   - EXACT_MANIFEST_REFRESH_IN_REAL_COMBINED_CHECKOUT
 in_progress:
   - RECONCILE_WITH_FLEET_QUALIFIED_MAIN
-  - R4_RENDER_EVIDENCE
 next:
   - "Consume integrator transaction: current green main + owned KHEPRI overlay + project_control refresh + guard-git + PR exact CI."
-  - "Settle/persist R4 overview and gameplay renders; human GATE-ART remains independent."
+  - "Do not rerun failing CI until MANIFEST changes; 82/82 tests already pass and rerun would waste Actions budget."
   - "Do not add new world density until P0 reconciliation is closed; after that continue macro-only interfaces or shard downstream domains."
-last_heartbeat: "2026-09-12T22:01:20Z"
+last_heartbeat: "2026-09-12T22:10:00Z"
 claim_status: KEEP_REVIEW
