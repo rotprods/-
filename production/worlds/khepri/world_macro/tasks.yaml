@@ -15,13 +15,13 @@ tasks:
     priority: P0
     status: DONE
     objective: Generate L1 orbital proxy and L2 representative macro terrain.
-    evidence: {terrain_dimensions_m: [6400.0, 4800.0, 228.805], master_project: 040f0c45-83a7-483c-9ee7-1e31c640a587, revision: 3}
+    evidence: {terrain_dimensions_m: [6400.0, 4800.0, 228.805], master_project: 040f0c45-83a7-483c-9ee7-1e31c640a587, revision: 4}
     dod_result: PASS_BLOCKOUT
   - id: KHP/WM/006
     priority: P1
     status: DONE
     objective: Establish mission-derived macro route interfaces.
-    evidence: {anchors: [KHP_WM_ROUTE_SHADE, KHP_WM_ROUTE_GLASS_SEA, KHP_WM_ROUTE_CRUCIBLE, KHP_WM_ROUTE_RAKHET], segment_distances_m: [2125.99, 1783.94, 1838.65]}
+    evidence: {anchors: [KHP_WM_ROUTE_SHADE, KHP_WM_ROUTE_GLASS_SEA, KHP_WM_ROUTE_CRUCIBLE, KHP_WM_ROUTE_RAKHET], route_points_r4: 576, clearance_target_m: 7.0}
     dod_result: PASS_INTERFACE_ONLY
   - id: KHP/WM/007
     priority: P1
@@ -40,14 +40,14 @@ tasks:
     status: REVIEW
     objective: Visual macro validation.
     evidence:
-      render_operation: khepri.visual.r2.gauntlet
       machine_visual_r3: PASS
+      r3_render_operation: khepri.visual.r3.gauntlet
       overview_lens_mm: 32.0
       overview_clip_end_m: 12000.0
       all_route_anchors_in_frame: true
       all_route_anchors_within_clip: true
-      human_guide_visible_in_gameplay_camera: true
       human_guide_projected_height_px_at_720p: 84.7
+      r4_render_operation: khepri.visual.r4.gauntlet
       human_gate: PENDING
     dod_result: MACHINE_VISUAL_PASS_HUMAN_ART_REVIEW_PENDING
   - id: KHP/WM/010
@@ -55,11 +55,11 @@ tasks:
     status: IN_PROGRESS
     objective: Persist portable artifacts and delivery evidence.
     evidence:
-      master_revision: 3
-      blend_bytes: 1357838
-      blend_etag: 3ffea751fa6b48b11fb86d80507c016a
-      glb_bytes: 703040
-      glb_etag: 06690127aa85172b5caa64f98c1441ab
+      master_revision: 4
+      blend_bytes: 1379495
+      blend_etag: 6d81d2c81e19a841056f018926e32944
+      glb_bytes: 822272
+      glb_etag: 40d610951c4f0d8d3d83c7d4e67519dc
       blocker: BINARY_PERSISTENCE_TRANSPORT
     dod_result: PARTIAL_PROVIDER_RECOVERY_ONLY
   - id: KHP/WM/011
@@ -67,31 +67,46 @@ tasks:
     status: DONE
     objective: Prove clean-project reproducibility from versioned logic.
     evidence:
-      cold_r2_project: d13625de-15d1-440b-8345-2c9fbc27d69e
-      cold_r3_project: 4c01fdbb-7093-4229-9a49-8237583280bc
-      master_r3_semantic_sha256: 7d80db30181cde1bded58d357384095c07cce0d2ca65e1b728b841aa93b252ca
-      cold_r3_semantic_sha256: 7d80db30181cde1bded58d357384095c07cce0d2ca65e1b728b841aa93b252ca
-      master_r3_blend_bytes: 1357838
-      cold_r3_blend_bytes: 1357838
-      master_r3_glb_bytes: 703040
-      cold_r3_glb_bytes: 703040
+      cold_project: 4c01fdbb-7093-4229-9a49-8237583280bc
+      cold_revision_r4: 3
+      master_r4_semantic_sha256: 04c527c61ee814753f09e9c0f651495ad80ed51aafc48c77b6acb4e82a3612ec
+      cold_r4_semantic_sha256: 04c527c61ee814753f09e9c0f651495ad80ed51aafc48c77b6acb4e82a3612ec
+      master_r4_blend_bytes: 1379495
+      cold_r4_blend_bytes: 1379495
+      master_r4_glb_bytes: 822272
+      cold_r4_glb_bytes: 822272
     dod_result: SEMANTIC_REPRODUCIBILITY_PASS
   - id: KHP/WM/012
     priority: P0
     status: IN_PROGRESS
     objective: Reconcile producer branch with fleet-qualified main and restore exact PR CI.
-    dependencies: [KHP/WM/011]
     evidence:
-      current_main: f78bfdc8bd7b2f6ab52b45d39babcc1589ab3918
-      main_gauntlet_run: 34715800243
+      current_main: 758a9b6326a7d061f1e304abe9b1593b6b2d1a66
+      main_gauntlet_run: 34720800915
       main_gauntlet_status: SUCCESS
       fleet_claim_status: active
-    dod:
-      - clean combined tree contains current main plus only KHEPRI owned paths and exact generated MANIFEST
-      - no old producer global STATE/PLAN projection replaces current main
-      - PR Gauntlet succeeds on exact reconciled SHA
-    dod_result: PENDING_INTEGRATOR_RECONCILIATION
-progress_metrics: {asset_coverage_percent: 100, modeling_percent: 100, materials_percent: 25, optimization_percent: 100, integration_percent: 50, qa_percent: 95}
+      inspected_pr_merge_run: 34720826636
+      python_tests: 82/82 PASS
+      only_failure: MANIFEST_DRIFT_KHEPRI_OWNED_PATHS
+    dod_result: PENDING_EXACT_MANIFEST_REFRESH
+  - id: KHP/WM/013
+    priority: P1
+    status: DONE
+    objective: Audit macro terrain slope risk and make QA route physically conform to terrain.
+    evidence:
+      slope_operation: khepri.terrain.slope.audit.r3
+      route_slope_p95_deg: 10.08
+      route_slope_max_deg: 10.64
+      pre_fix_clearance_m: [-23.36, 83.22]
+      pre_fix_below_terrain_samples: 152
+      refiner: art_source/khepri/world_macro/refine_route_r4.py
+      post_fix_operation: khepri.route.clearance.audit.r4
+      post_fix_clearance_m: [6.9963, 7.0043]
+      post_fix_below_terrain_samples: 0
+      post_fix_max_error_m: 0.0043
+      semantic_sha256_master_cold: 04c527c61ee814753f09e9c0f651495ad80ed51aafc48c77b6acb4e82a3612ec
+    dod_result: PASS_INTERFACE_GEOMETRY_ONLY
+progress_metrics: {asset_coverage_percent: 100, modeling_percent: 100, materials_percent: 25, optimization_percent: 100, integration_percent: 50, qa_percent: 97}
 metrics_scope_note: "Percentages apply only to CLM-KHEPRI-WMACRO-001 blockout scope, never full KHEPRI or campaign."
 priority_open: {P0: 2, P1: 1, P2: 0, P3: 0}
-last_heartbeat: "2026-09-12T21:42:00Z"
+last_heartbeat: "2026-09-12T22:01:00Z"
