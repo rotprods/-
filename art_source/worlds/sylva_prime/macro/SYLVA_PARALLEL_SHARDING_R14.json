@@ -1,0 +1,229 @@
+{
+  "schema_version": 1,
+  "world": "sylva",
+  "status": "SHARDING_PROPOSAL_NOT_CLAIMS",
+  "registry_evidence": {
+    "known_registered_sylva_claims": [
+      "CLM-SYLVA-MACRO-001",
+      "CLM-SYLVA-PROC-NROOT-001"
+    ],
+    "rule": "Every candidate must re-read latest main registry/PRs/branches immediately before reserve. This file does not prove a candidate remains globally free."
+  },
+  "existing_boundaries": {
+    "CLM-SYLVA-MACRO-001": "macro terrain, region composition, routes, streaming/collision interfaces, provider sockets; no final hero/content assets",
+    "CLM-SYLVA-PROC-NROOT-001": "reusable meso neural-root module grammar + module collision/material interfaces"
+  },
+  "candidates": [
+    {
+      "candidate_claim_id": "CLM-SYLVA-ARCH-PUERTO-001",
+      "scope": "sylva/puerto/architecture/living-human-enclave",
+      "domain": "architecture_infrastructure",
+      "readiness": "READY_FOR_LIVE_CLAIM_AUDIT",
+      "priority": "P1",
+      "suggested_path": "art_source/worlds/sylva_prime/puerto/architecture/",
+      "includes": ["structural system", "graft-human interface", "circulation", "utilities", "drainage", "maintenance", "modular exterior kit"],
+      "excludes": ["macro terrain/routes", "PR6 reusable root modules", "interiors", "NPCs", "final world materials library"],
+      "consumes": ["CLM-SYLVA-MACRO-001 Puerto foundation", "ART_DIRECTION_BIBLE_R14.md", "PR6 modules when provider-ready"],
+      "dod_focus": "buildable architecture with real structural/utilities logic, kit rules, collision/LOD/export, in-context integration"
+    },
+    {
+      "candidate_claim_id": "CLM-SYLVA-INTERIOR-PUERTO-001",
+      "scope": "sylva/puerto/interiors/core-kit",
+      "domain": "interior_kits",
+      "readiness": "NOT_READY_REQUIREMENT_ENUMERATION",
+      "priority": "P2",
+      "suggested_path": "art_source/worlds/sylva_prime/puerto/interiors/",
+      "includes": ["required habitation/work/maintenance interiors", "doors/transitions", "utilities", "modular interior kit"],
+      "excludes": ["exterior structural shell", "NPCs/props unless separately coordinated"],
+      "blocked_by": ["architecture shell/grid", "gameplay/narrative interior list"]
+    },
+    {
+      "candidate_claim_id": "CLM-SYLVA-BOSQUE-FINAL-001",
+      "scope": "sylva/bosque/biome-composition/final-route-landmarks",
+      "domain": "biome_composition_environment",
+      "readiness": "READY_FOR_LIVE_CLAIM_AUDIT_WITH_PROVIDER_DEPENDENCY",
+      "priority": "P1",
+      "suggested_path": "art_source/worlds/sylva_prime/bosque/environment/",
+      "includes": ["final route-landmark composition", "Phrase Node/Halo final design", "membrane/biome context", "signal readability environment pass"],
+      "excludes": ["macro route centerlines", "reusable root modules", "final vegetation species library", "gameplay signal code"],
+      "consumes": ["r13 Bosque foundation", "PR6 modules", "ART_DIRECTION_BIBLE_R14.md"],
+      "risk": "Bosque is a four-L2 streaming junction; do not move it to simplify implementation."
+    },
+    {
+      "candidate_claim_id": "CLM-SYLVA-VESPER-CONTEXT-001",
+      "scope": "sylva/vesper/environment/forest-city-context",
+      "domain": "hero_landmark_environment",
+      "readiness": "READY_FOR_LIVE_CLAIM_AUDIT",
+      "priority": "P1",
+      "suggested_path": "art_source/worlds/sylva_prime/vesper/environment/",
+      "includes": ["forest-city root context", "buttress/tower/membrane environment", "arena vista composition", "non-boss environmental storytelling"],
+      "excludes": ["three-terrace macro topology", "final VESPER creature", "gameplay attacks"],
+      "consumes": ["r13 VESPER layout", "ART_DIRECTION_BIBLE_R14.md"]
+    },
+    {
+      "candidate_claim_id": "CLM-SYLVA-VESPER-HERO-001",
+      "scope": "sylva/vesper/hero-creature/boss",
+      "domain": "hero_creatures",
+      "readiness": "READY_FOR_LIVE_CLAIM_AUDIT",
+      "priority": "P0_WORLD_CONTENT",
+      "suggested_path": "art_source/worlds/sylva_prime/vesper/hero_creature/",
+      "includes": ["anatomy", "high/low", "retopo", "UV/PBR", "rig/deformation", "LOD", "hit/collision interfaces", "neutral/context lookdev"],
+      "excludes": ["arena terrain/environment", "boss gameplay implementation"],
+      "consumes": ["canonical VESPER identity", "r13 arena metrics", "ART_DIRECTION_BIBLE_R14.md"],
+      "dod_focus": "ecologically/structurally plausible boss whose silhouette dominates without destroying arena readability"
+    },
+    {
+      "candidate_claim_id": "CLM-SYLVA-CHAR-EDDA-001",
+      "scope": "sylva/characters/edda-jun",
+      "domain": "humanoid_character",
+      "readiness": "READY_FOR_LIVE_CLAIM_AUDIT",
+      "priority": "P1",
+      "suggested_path": "art_source/worlds/sylva_prime/characters/edda_jun/",
+      "includes": ["body/face/hair", "wardrobe interface", "xenolinguist equipment interfaces", "rig/deformation", "LOD"],
+      "excludes": ["population system", "shared wardrobe library beyond required interface"],
+      "consumes": ["canon motivation", "ART_DIRECTION_BIBLE_R14.md"]
+    },
+    {
+      "candidate_claim_id": "CLM-SYLVA-CHAR-SIETE-001",
+      "scope": "sylva/characters/siete-en-uno",
+      "domain": "hero_nonhuman_character",
+      "readiness": "READY_FOR_LIVE_CLAIM_AUDIT",
+      "priority": "P1",
+      "suggested_path": "art_source/worlds/sylva_prime/characters/siete_en_uno/",
+      "includes": ["nonhuman anatomy/body organization", "material system", "rig/deformation", "LOD", "gesture-readable silhouette"],
+      "excludes": ["generic PR6 structural-root modules", "NPC population system"],
+      "consumes": ["canon emissary concept", "gesture-language rule", "ART_DIRECTION_BIBLE_R14.md"]
+    },
+    {
+      "candidate_claim_id": "CLM-SYLVA-CHAR-NICO-001",
+      "scope": "sylva/characters/nico-fer",
+      "domain": "humanoid_character",
+      "readiness": "READY_FOR_LIVE_CLAIM_AUDIT",
+      "priority": "P1",
+      "suggested_path": "art_source/worlds/sylva_prime/characters/nico_fer/",
+      "includes": ["body/face/hair", "workwear", "carpentry/graft tool interfaces", "rig/deformation", "LOD"],
+      "excludes": ["shared tool library unless separately claimed"],
+      "consumes": ["canon carpenter/material conflict", "ART_DIRECTION_BIBLE_R14.md"]
+    },
+    {
+      "candidate_claim_id": "CLM-SYLVA-FAUNA-001",
+      "scope": "sylva/fauna/wildlife-set-01",
+      "domain": "fauna_wildlife",
+      "readiness": "READY_FOR_LIVE_CLAIM_AUDIT",
+      "priority": "P1",
+      "suggested_path": "art_source/worlds/sylva_prime/fauna/",
+      "includes": ["Ciervo de esporas", "Grajilla micelar", "Andador de corteza", "anatomy", "locomotion", "rig", "LOD", "material interfaces"],
+      "excludes": ["behavior/gameplay code", "vegetation"],
+      "consumes": ["canon ecological roles", "ART_DIRECTION_BIBLE_R14.md"],
+      "dod_focus": "ecological role and locomotion must drive anatomy; no familiar-animal-plus-decoration shortcuts"
+    },
+    {
+      "candidate_claim_id": "CLM-SYLVA-VEGETATION-001",
+      "scope": "sylva/vegetation/species-and-foliage-library",
+      "domain": "vegetation",
+      "readiness": "READY_FOR_LIVE_CLAIM_AUDIT",
+      "priority": "P1",
+      "suggested_path": "art_source/worlds/sylva_prime/vegetation/",
+      "includes": ["Orquídea de pacto", "supporting foliage species set", "age/health variants", "wind/LOD/impostor interfaces", "distribution assets"],
+      "excludes": ["macro structural roots", "runtime ecology logic"],
+      "consumes": ["canon Orquídea role", "biome art direction", "r13 terrain/stream cells"]
+    },
+    {
+      "candidate_claim_id": "CLM-SYLVA-VEH-VELA-001",
+      "scope": "sylva/vehicles/vela-de-ceniza",
+      "domain": "vehicle",
+      "readiness": "READY_FOR_MECHANISM_DESIGN_LIVE_CLAIM_AUDIT",
+      "priority": "P1",
+      "suggested_path": "art_source/worlds/sylva_prime/vehicles/vela_de_ceniza/",
+      "includes": ["canopy grip mechanism", "propulsion", "steering/braking", "rider access", "moving-part rig", "damage zones", "LOD/collision"],
+      "excludes": ["vehicle gameplay physics/controller"],
+      "blocked_by_for_final_dimensions": ["movement mode / route-canopy clearance qualification"],
+      "consumes": ["canon canopy-grip vehicle", "ART_DIRECTION_BIBLE_R14.md"]
+    },
+    {
+      "candidate_claim_id": "CLM-SYLVA-MATERIALS-001",
+      "scope": "sylva/materials/production-surface-library",
+      "domain": "materials_surfaces",
+      "readiness": "READY_FOR_PHYSICAL_LIBRARY_LIVE_CLAIM_AUDIT",
+      "priority": "P1",
+      "suggested_path": "art_source/worlds/sylva_prime/materials/",
+      "includes": ["root fiber", "young growth", "callus", "membrane", "soil/substrate", "graft metal", "human ceramic/textile", "signal states"],
+      "excludes": ["diagnostic macro materials ownership rewrite", "asset-specific hero skin where owned elsewhere"],
+      "blocked_by_for_final_shader_budget": ["target renderer/hardware"],
+      "consumes": ["ART_DIRECTION_BIBLE_R14.md"]
+    },
+    {
+      "candidate_claim_id": "CLM-SYLVA-PROPS-001",
+      "scope": "sylva/props/functional-set-dressing",
+      "domain": "props_set_dressing",
+      "readiness": "NOT_READY_TAXONOMY_REQUIRED",
+      "priority": "P2",
+      "suggested_path": "art_source/worlds/sylva_prime/props/",
+      "includes": ["maintenance", "xenolinguist", "carpentry/graft", "habitation", "route/signal support props"],
+      "excludes": ["character-specific hero equipment already owned elsewhere", "architecture kit"],
+      "blocked_by": ["regional architecture and gameplay interaction inventory"]
+    },
+    {
+      "candidate_claim_id": "CLM-SYLVA-POPULATION-001",
+      "scope": "sylva/npc-population/archetypes",
+      "domain": "npc_population_systems",
+      "readiness": "NOT_READY_CHARACTER_ARCHITECTURE_DEPENDENCIES",
+      "priority": "P2",
+      "suggested_path": "art_source/worlds/sylva_prime/population/",
+      "includes": ["body archetypes", "variation rules", "crowd LOD interfaces", "spawn/residency-ready asset sets"],
+      "excludes": ["hero NPCs", "gameplay spawn code"],
+      "blocked_by": ["shared character skeleton/body strategy", "Puerto population/space requirements", "wardrobe library"]
+    },
+    {
+      "candidate_claim_id": "CLM-SYLVA-WARDROBE-001",
+      "scope": "sylva/wardrobe/coro-colonist-equipment",
+      "domain": "wardrobe_equipment",
+      "readiness": "PARTIAL_REQUIREMENTS",
+      "priority": "P2",
+      "suggested_path": "art_source/worlds/sylva_prime/wardrobe/",
+      "includes": ["colonist workwear", "xenolinguist interfaces", "graft-worker protection", "accessory variants"],
+      "excludes": ["hero face/body assets", "interactive tools"],
+      "blocked_by": ["character base/skeleton strategy"]
+    },
+    {
+      "candidate_claim_id": "CLM-SYLVA-TOOLS-001",
+      "scope": "sylva/tools/interactive-equipment",
+      "domain": "tools_interactive_equipment",
+      "readiness": "NOT_READY_GAMEPLAY_REQUIREMENTS",
+      "priority": "P2",
+      "suggested_path": "art_source/worlds/sylva_prime/tools/",
+      "includes": ["graft maintenance tools", "carpentry alternatives", "xenolinguist gesture/signal equipment"],
+      "excludes": ["gameplay code", "generic props without interaction"],
+      "blocked_by": ["interaction spec"]
+    },
+    {
+      "candidate_claim_id": "CLM-SYLVA-STORY-DETAIL-001",
+      "scope": "sylva/storytelling/decals-damage-repair",
+      "domain": "destruction_decals_storytelling",
+      "readiness": "NOT_READY_FINAL_SURFACES_DEPENDENCY",
+      "priority": "P3",
+      "suggested_path": "art_source/worlds/sylva_prime/story_detail/",
+      "includes": ["graft scars", "repair history", "damage/debris variants", "causal residue/deposition", "narrative set dressing"],
+      "excludes": ["random grunge pass", "global materials"],
+      "blocked_by": ["final architecture/material/prop families"]
+    },
+    {
+      "candidate_claim_id": "CLM-SYLVA-TECHART-INTEGRATION-001",
+      "scope": "sylva/technical-art/engine-integration",
+      "domain": "technical_art_lod_collision_streaming_export_qa",
+      "readiness": "NOT_READY_TARGET_ENGINE_HARDWARE",
+      "priority": "P0_FOR_FINAL_DELIVERY",
+      "suggested_path": "production/worlds/sylva/technical_art/",
+      "includes": ["native import", "LOD/HLOD qualification", "stream residency", "collision", "profiling", "visual regression", "delivery receipts"],
+      "excludes": ["changing art ownership", "global engine decisions"],
+      "blocked_by": ["qualified engine path", "target hardware/preset", "production assets ready for integration"]
+    }
+  ],
+  "recommended_parallel_order": [
+    "Wave A now: VESPER hero creature; three hero NPCs; fauna; vegetation; Puerto architecture; Bosque final environment; VESPER context; physical material library; Vela mechanism design.",
+    "Wave B after dependencies: Puerto interiors; wardrobe; props/tools; population system.",
+    "Wave C after final surfaces/content: storytelling/damage/decals.",
+    "Wave D after engine/hardware qualification: final technical-art/HLOD/performance integration."
+  ],
+  "hard_rule": "A future agent must reserve exactly one atomic candidate after live collision audit; do not convert this proposal into claims in bulk."
+}
