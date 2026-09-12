@@ -1,0 +1,139 @@
+{
+  "schema_version": 1,
+  "receipt_id": "ART-ELYSIUM-001-FOUNDATION-R1",
+  "world": "elysium",
+  "world_name": "ELYSIUM NULL",
+  "status": "STRUCTURAL_PASS_VISUAL_ENGINE_REVIEW_PENDING",
+  "date": "2026-09-12",
+  "repository": "rotprods/-",
+  "branch": "art/world-elysium-null-001",
+  "base_main_sha": "4c2fa044080004609ea6df45f34b2a784536507a",
+  "remote_scene": {
+    "provider": "Higgsfield 3D Jutsu",
+    "project_id": "00152eea-2da0-40ec-8666-78d6764c718f",
+    "revision": 1,
+    "blender_version": "5.2.0 LTS",
+    "unit_system": "METRIC",
+    "scale_length": 1.0,
+    "render_engine": "BLENDER_EEVEE"
+  },
+  "attempts": [
+    {
+      "operation_id": "ART-ELYSIUM-001.foundation-v1",
+      "result": "FAILED_NO_COMMIT",
+      "mechanism": "Fresh empty project had scene.world == null; generator attempted to set world.color without first creating a World datablock.",
+      "revision_after": 0,
+      "corrective_action": "Create and configure WORLD_Elysium_Null explicitly."
+    },
+    {
+      "operation_id": "ART-ELYSIUM-001.foundation-v1b",
+      "result": "FAILED_NO_COMMIT",
+      "mechanism": "Blender 5.2 bpy_prop_collection membership check expected a collection name, not a Collection object.",
+      "revision_after": 0,
+      "corrective_action": "Use scene.collection.children.get(collection.name) as the guard."
+    },
+    {
+      "operation_id": "ART-ELYSIUM-001.foundation-v1c",
+      "result": "SUCCEEDED",
+      "revision_after": 1,
+      "scene_sequence_after": 0
+    }
+  ],
+  "structural_metrics": {
+    "object_count": 153,
+    "mesh_count": 149,
+    "vertex_count": 4724,
+    "polygon_count": 5618,
+    "material_count": 9,
+    "objects_without_material": 0,
+    "duplicate_object_names": false,
+    "scene_bounds_m": {
+      "min": [-36.0, -130.0, -0.9],
+      "max": [36.0, 132.0, 46.0],
+      "size": [72.0, 262.0, 46.9]
+    }
+  },
+  "metric_checks": {
+    "REF_HUMAN_1p85m": {
+      "dimensions_m": [0.52, 0.52, 1.85],
+      "location_m": [0.0, -112.0, 0.925],
+      "passed": true
+    },
+    "AVN_BASE_260x72m": {
+      "dimensions_m": [72.0, 260.0, 0.9],
+      "location_m": [0.0, 0.0, -0.45],
+      "epistemic": "PROPOSAL",
+      "passed": true
+    },
+    "EDEN_ARENA_48M_CANON": {
+      "dimensions_m": [48.0, 48.0, 0.55],
+      "location_m": [0.0, 108.0, -0.05],
+      "epistemic": "CANON_SIZE",
+      "passed": true
+    },
+    "VEH_TRAM_CUSTODIAN_PROXY": {
+      "dimensions_m": [4.3, 12.0, 2.6],
+      "epistemic": "PROPOSAL_DIMENSIONS",
+      "passed": true
+    },
+    "EDEN_CORE_PROXY": {
+      "dimensions_m": [5.6, 5.6, 16.0],
+      "epistemic": "PROPOSAL_FORM_AND_DIMENSIONS",
+      "passed": true
+    }
+  },
+  "collection_counts": {
+    "00_REFERENCE": 2,
+    "10_AVENIDA": 18,
+    "20_ARCOLOGY": 54,
+    "30_GARDENS": 50,
+    "40_EDEN": 20,
+    "50_HUMAN_TRACE": 5,
+    "90_LIGHTS_CAM": 4
+  },
+  "artifacts": {
+    "editable_blend": {
+      "available_in_remote_revision": true,
+      "size_bytes": 2175334,
+      "etag": "fd042c9f116b3db59e5edbb35478eb2f"
+    },
+    "portable_glb": {
+      "available_in_remote_revision": true,
+      "size_bytes": 1964224,
+      "etag": "77d47145daa0fc11675e6920cf81db63"
+    },
+    "preview": {
+      "artifact_id": "643e165b70feb97ddfd3b9fd19225435",
+      "name": "elysium_foundation_v1.png",
+      "width": 1280,
+      "height": 720,
+      "size_bytes": 955713,
+      "etag": "02afba2894d2dbccf546134c6f7a0763"
+    },
+    "generator_source": "art_source/worlds/elysium_null/scripts/generate_foundation.py"
+  },
+  "gates": {
+    "canonical_metric_anchor": "PASS",
+    "scale_proxy": "PASS",
+    "naming_uniqueness": "PASS",
+    "material_assignment": "PASS",
+    "collection_hierarchy": "PASS",
+    "editable_source_available": "PASS_REMOTE",
+    "portable_exchange_available": "PASS_REMOTE",
+    "deterministic_generator_persisted": "PASS_SOURCE_PERSISTED",
+    "visual_art_direction": "PENDING_GATED_REVIEW",
+    "collision": "PENDING",
+    "engine_import": "PENDING",
+    "performance": "PENDING_TARGET_HARDWARE",
+    "gate_asset_project_native": "PENDING_RUNTIME_WITH_REPO_CHECKOUT",
+    "gate_art": "PENDING_CREATIVE_ENGINE_REVIEW"
+  },
+  "non_claims": [
+    "This receipt does not assert AAA final quality.",
+    "This receipt does not assert world completion.",
+    "The two failed operations created no committed scene revision.",
+    "The preview existing is not equivalent to GATE-ART approval.",
+    "No production GPU benchmark was performed.",
+    "No Godot or Unreal import test was performed in this run."
+  ]
+}
