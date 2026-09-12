@@ -29,3 +29,9 @@ Commit d8fdc7c: CI success, clon limpio con integridad/control/native PASS. Driv
 ## EXO-004-INPUT-001 · Controles y jugabilidad inicial
 
 Implementados movimiento y cámara analógicos, botones de combate, navegación/foco de menús, remapeo persistente y ayudas dinámicas. Corregidos el rechazo de preferencias JSON válidas, la comparación de botones tras recarga y la documentación equivocada de guardia/esquiva. 34 tests Python + 26 estado + 19 integración + 33 input pasan; cinco gates nativos. Recorrido real por inputs desde spawn hasta Inés, sin teletransporte ni avance de estado artificial. UI renderizada en Mesa a 1280×720 y comprobada dentro del viewport; no aprobación artística AAA. EXO-004 permanece en revisión: falta la ruta completa y prueba humana/con mando físico. Mem volvió a limitar solicitudes; cola conserva el tercer intento sin insistir.
+
+## INFRA-005-FLEET-001 · Producción paralela y reparación de main
+
+Implementado registro de 13 frentes productores, un tombstone Ares y la unidad integradora; normalización de mundos, conflictos de rutas/ámbitos/proyectos/asset IDs/ramas, ACK y fencing por epoch, guard de cambios Git y recibos de entrega. 41 casos adversariales incluyen dos procesos concurrentes y Git bare real; encontrado y corregido reuse de observación remota al liberar varios proyectos. Primer ACK real de Khepri incorporado. Origin reservado, no libre.
+
+Main avanzó durante el trabajo de 4c2fa044 a 196ef814 con solo AGENTS modificado y MANIFEST viejo. Reproducido mismatch de hash, conservado el preflight mediante merge de tres vías y regenerada integridad. El guard admite manifiesto regenerado EXACTO en ramas artísticas, sin dar propiedad de STATE/herramientas globales. 75 tests Python y 78 nativos aprobados con recibos finales; CI del commit final se verifica después de publicar. No se modifica geometría ni gameplay en esta unidad.

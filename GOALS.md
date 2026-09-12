@@ -47,6 +47,7 @@ Crear una campaña 3D soulslike interplanetaria original, ambientada en 2950, do
 
 - M-DOD: 100% tareas cerradas referencian criterios y recibos válidos [enforced_by_project_tool]
 - M-RECOVERY: RPO de un checkpoint publicado; recuperar antes de la siguiente unidad de trabajo [policy]
+- M-FLEET: No conflicting declared paths/projects/asset IDs; producer ACK plus source-bound handoff for each imported claim [locally_validated_partial_owner_adoption]
 
 ## G-RELEASE · Campaña publicable y mantenible
 
