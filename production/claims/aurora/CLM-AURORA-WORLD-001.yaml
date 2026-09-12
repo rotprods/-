@@ -11,7 +11,7 @@ priority: P1
 base_sha: 4c2fa044080004609ea6df45f34b2a784536507a
 branch: art/world-aurora-veil-001
 created_at: 2026-09-12T19:29:57Z
-last_heartbeat: 2026-09-12T21:47:00Z
+last_heartbeat: 2026-09-12T22:03:00Z
 includes:
   - planetary canon proposals where canon is currently silent, isolated behind ADRs
   - orbital representation
@@ -46,34 +46,32 @@ pipeline:
   blender_worker_version: "5.2"
 remote_scene:
   project_id: d6488148-8547-4ffe-b63d-e5fbec3a339c
-  revision: 14
-  status: WAVE2_TERRAIN_RELIEF_R14_CONTACT_EXPORT_QA
-  blend_size_bytes: 7573464
-  blend_etag: 5c0ecf64eca2587d4304030f11923bc3
-  glb_size_bytes: 5114780
-  glb_etag: 7fe7cebfe2c60d7aa13f484ad721d85d
+  revision: 19
+  status: WAVE2_CAMP_PROOF_HIERARCHY_ROUTING_R19
+  blend_size_bytes: 7834756
+  blend_etag: 4dbd645392bbbc4a913990b280a8beda
+  glb_size_bytes: 5187076
+  glb_etag: 39e4703128cdbbf4742310bb709d5fe0
   orbital_l1_present: true
   camp_modular_kit_present: true
-  temporal_contract_present: true
   temporal_contract_version: AUR-TEMPORAL-v1-r12
-  terrain_contract_present: true
   terrain_contract_version: AUR-TERRAIN-RELIEF-v2-r14
-  terrain_dimensions_m: [5200, 3000, 53.61]
-  terrain_slope_p95_deg: 4.278
-  terrain_rollback: DETERMINISTIC_INVERSE_RELIEF_V2
-  temporal_fields_grounded: true
-  qa_geometry_export_pollution: false
+  material_contract_version: AUR-MAT-v1-r15
+  service_routing_contract_version: AUR-PROC-ROUTING-v1-r19
+  proof_foundation_piers: 19
+  data_ground_clearance_m: 0.45
+  power_ground_clearance_min_m: 0.65
   final_art_claimed: false
 fleet_registry:
   authority: main:ops/fleet/registry.json
-  observed_main: f78bfdc8bd7b2f6ab52b45d39babcc1589ab3918
+  observed_main: 758a9b6326a7d061f1e304abe9b1593b6b2d1a66
   claim_epoch: 1
   observed_status: reserved
   owner_identity_confirmed: true
   ack_comment: https://github.com/rotprods/-/issues/7#issuecomment-5648367254
   requested_transition: active
   producer_edits_shared_registry: false
-  note: integrator must apply registry transition and preserve epoch; producer branch does not overwrite shared registry
+  note: integrator applies registry transition; producer does not overwrite shared registry
 dependencies:
   - design/EXOVANT_BIBLIA.md
   - design/EXOVANT_DATA.json
@@ -87,8 +85,6 @@ blocked_by:
   - target-hardware performance qualification
 claim_notes:
   - Physical planetary parameters absent from canon remain PROPOSAL until an ADR is accepted.
-  - L1 orbital shell is display-only and does not invent global geography.
-  - Campamento rev8+ is a manufacturing-aware modular blockout; final PBR/UV/art gates remain open.
-  - Temporal rev12+ is a runtime-neutral local state/collision contract; engine implementation, audio and human comprehension testing remain open.
-  - Terrain rev14 is a reversible macro morphology proposal; lithology, microdetail, final material blend, nav/traversal and human art review remain open.
-  - Human GATE-ART remains pending; current world is not finished AAA/AAAA art.
+  - Current orbital, terrain, Camp, temporal, manufactured material and service-routing surfaces are technical candidates, not final art.
+  - Natural terrain lithology remains undecided and is not inferred from manufactured foundation material.
+  - HUMAN GATE-ART remains pending; current world is not finished AAA/AAAA art.
