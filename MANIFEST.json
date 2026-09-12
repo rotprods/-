@@ -3,7 +3,7 @@
   "files": {
     ".gitattributes": "c1c7c7e64f1f9832eb318a0a7ba6d4256df753599c4702034511769f548a9c38",
     ".github/pull_request_template.md": "c3489a84e824a10f2923e51295039d55b299db4b6b6dcc74836cccb334e7ddda",
-    ".github/workflows/gauntlet.yml": "18f1fc60324b52906fe95cf19be8ce7eb4da00d7389a8f158896f02f63c3aed2",
+    ".github/workflows/gauntlet.yml": "2a1bfda8121e8ac94d4f1456937a349ea03af98d82e745296aaec380d532b0e0",
     ".gitignore": "1ba70f64aefe75fb51d4d4840e7c5f22f7857b4dc1a478146b14f7e75b705e7a",
     "AGENTS.md": "b872f84f54b2fc249100a05ef40e0b43c7a84085ae11de27d8cbe83daf4ccf6e",
     "ARCHITECTURE.md": "f5358acca43108596f9d1b76da76eb0381f5b4b1c58669a50b96e0fa6d7c0d32",
