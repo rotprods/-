@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "task": "INFRA-005-FLEET-001 adversarial test review",
+  "reviewer": "/root/fleet_tests",
+  "executed_at": "2026-09-12T19:57:19.923044+00:00",
+  "command": "python -m unittest discover -s tests -p test_fleet_control.py -v",
+  "passed": true,
+  "tests": 41,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "duration_seconds": 0.941,
+  "sha256": {
+    "tools/fleet_control.py": "59ae210cfaddb3c398e53f95c49ac0d0c2dcf30355811fd1971820c21e32efc1",
+    "tests/test_fleet_control.py": "8e0cd33c7303bcee169a12216d6454d0e75d20ce23065c0c82e7d5cbd55468cd"
+  },
+  "verified": [
+    "canonical world aliases collide in semantic namespaces",
+    "exclusive paths, semantic facets, provider project IDs, asset IDs, branches reject collisions",
+    "abandoned and released claims remain unique tombstones; blocked claims stay reserved",
+    "owner and integer fencing epochs reject stale operations",
+    "two independent processes proposing from the same digest produce exactly one local commit",
+    "real Git bare repository rejects second sibling commit on normal non-force push",
+    "Git-derived changes include rename endpoints, deletions and untracked files",
+    "Git-derived branch cannot be replaced by a caller claim",
+    "path traversal and symlinks outside checkout or into another scope are rejected",
+    "provider project identity, pending operations, revisions, scene sequence and fresh timezone-aware observations checked",
+    "release reconciles each project ID using its own observation",
+    "transport digest binding covers source, GLB and native test receipt; missing evidence is rejected",
+    "malformed registry shape and falsey non-null active-operation structures cannot pass",
+    "exact generated MANIFEST.json can accompany scoped asset changes without acquiring global metadata ownership",
+    "stale manifests, wrong hashes, wrong algorithm and omitted files reject generated projection exemption",
+    "a valid manifest does not conceal a global STATE.json change outside the writer scope"
+  ],
+  "defects_found_and_corrected_by_parent": [
+    "release reused observation of owned project B under project A key and could omit reconciliation of A",
+    "malformed registry object, claim or acknowledgement shape escaped structured failure handling",
+    "boolean schema version compared equal to integer 1",
+    "falsey object/list/number provider operation state could be interpreted as idle",
+    "symlink target inside checkout required a second scope-boundary check"
+  ],
+  "limits": [
+    "No provider mutation or network operation executed by this suite",
+    "Normal Git behavior tested locally; no server authentication or branch protection guarantee inferred",
+    "Cooperative scope checks cannot stop agents bypassing wrapper or prove external agent acknowledgement",
+    "Synthetic transport fixtures do not prove Blender editability, actual engine execution, production art quality or target hardware performance",
+    "Parent owns full qualify, native Godot gates, publication and current registry evidence"
+  ]
+}
