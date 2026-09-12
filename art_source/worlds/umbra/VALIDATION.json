@@ -1,0 +1,94 @@
+{
+  "schema": "exovant.art-validation.v1",
+  "world_id": "WORLD-04",
+  "claim_id": "CLM-W04-WORLD-UMBRA-001",
+  "checkpoint": "WAVE0_BLOCKOUT_001",
+  "environment": {
+    "provider": "Higgsfield 3D Jutsu",
+    "project_id": "7ab99682-8777-4143-8ae0-1fbb178ccafb",
+    "blender_version": "5.2.0 LTS",
+    "units": "METRIC",
+    "scale_length": 1.0,
+    "render_engine": "BLENDER_EEVEE"
+  },
+  "operations": [
+    {
+      "id": "umbra-bootstrap-inspect-001",
+      "type": "query",
+      "status": "succeeded",
+      "revision_before": 0,
+      "scene_sequence_after": 0,
+      "result": "empty metric scene observed"
+    },
+    {
+      "id": "umbra-wave0-blockout-001",
+      "type": "mutation",
+      "status": "failed",
+      "revision_before": 0,
+      "revision_after": null,
+      "failure": "empty scene had no World; attempted use_nodes on None",
+      "classification": "BOOTSTRAP_DEFECT_NO_COMMITTED_REVISION",
+      "correction": "create scene.world explicitly before node configuration"
+    },
+    {
+      "id": "umbra-wave0-blockout-002",
+      "type": "mutation",
+      "status": "succeeded",
+      "revision_before": 0,
+      "revision_after": 1,
+      "scene_sequence_after": 0,
+      "object_count": 96,
+      "mesh_count": 85,
+      "material_count": 9,
+      "blend_size_bytes": 1584746,
+      "blend_etag": "f0b1ad2f8fb5baae1e8cc3f3b60b7b7a",
+      "glb_size_bytes": 819168,
+      "glb_etag": "7a975a092cf47ce2369a30b17124e0e6",
+      "preview": {
+        "artifact_id": "def7a42f2a255d3c7b80bda39dae2015",
+        "name": "umbra_wave0_blockout.png",
+        "size_bytes": 398298,
+        "etag": "16a925648f5a3df28235bfcbe4cf290f",
+        "resolution": [960, 540]
+      }
+    },
+    {
+      "id": "umbra-wave0-qa-001",
+      "type": "query",
+      "status": "succeeded",
+      "revision_before": 1,
+      "mesh_objects": 85,
+      "triangles_evaluated": 12204,
+      "material_slots_total": 85,
+      "bad_object_scales": [],
+      "zero_dimension_meshes": [],
+      "terrain_dimensions_m": [1200, 700, 11.795],
+      "human_dimensions_m": [0.44, 0.44, 1.75],
+      "rover_dimensions_m": [4.6, 2.1, 2.0],
+      "reflector_masts": 4,
+      "caravan_chassis": 5,
+      "cameras": 2,
+      "lights": 7
+    }
+  ],
+  "gates": {
+    "canon_separation": "PASS",
+    "claim_collision": "PASS_AT_OBSERVED_TIME",
+    "metric_scale": "PASS",
+    "object_scale": "PASS",
+    "zero_dimension_mesh": "PASS",
+    "portable_glb_generated": "PASS",
+    "editable_blend_generated": "PASS",
+    "preview_generated": "PASS",
+    "visual_agent_inspection": "REVIEW_NOT_CLAIMED",
+    "topology_final": "NOT_APPLICABLE_BLOCKOUT",
+    "uv_final": "NOT_APPLICABLE_BLOCKOUT",
+    "pbr_final": "NOT_APPLICABLE_BLOCKOUT",
+    "lod": "PENDING_ENGINE_TARGET",
+    "collision": "PENDING_RUNTIME_IMPORT",
+    "engine_import": "BLOCKED_NOT_EXECUTED",
+    "gpu_performance": "BLOCKED_NOT_QUALIFIED",
+    "human_art_review": "PENDING"
+  },
+  "overall": "LOCALLY_VALIDATED_BLOCKOUT_NOT_PRODUCTION_DONE"
+}
