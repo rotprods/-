@@ -7,7 +7,7 @@ north_star: >-
   identity legible, preserves stable gameplay collision beneath deforming visual tissue,
   and establishes the three canonical regions plus the 58 m SOMA encounter interface.
 status: IN_PROGRESS
-last_checkpoint: BLENDER_REVISION_7_JARDINES_MICROSET
+last_checkpoint: BLENDER_REVISION_8_SOMA_ENCOUNTER_MICROSET
 
 first_10_tasks:
   - id: W10/WORLD/001
@@ -35,9 +35,7 @@ first_10_tasks:
     output: [art_source/worlds/leviathan/tools/build_master_scene.py, editable remote .blend, portable GLB]
     dependency: [W10/WORLD/001]
     dod: [metric units verified, semantic hierarchy exists, generator versioned, blend+GLB produced, independent cold rebuild exact semantic match]
-    evidence:
-      - art_source/worlds/leviathan/evidence/cold_rebuild_r3.json
-      - fingerprint: 207649cb10842785dd23c2f3823ec654e265c9bcfbd602d460b067266cbccf9f
+    evidence: [art_source/worlds/leviathan/evidence/cold_rebuild_r3.json]
 
   - id: W10/REGION/004
     title: Puerto de la Herida representative foundation
@@ -45,50 +43,38 @@ first_10_tasks:
     status: REVIEW
     output: [R1 blockout, 24_R1_HERO_GRAFT_MICROSET, art_source/worlds/leviathan/tools/build_puerto_microset.py, art_source/worlds/leviathan/tools/refine_puerto_microset_v2.py]
     dependency: [W10/BLEND/003]
-    dod:
-      - stable traversal deck exists
-      - scar/graft/suture/living-valve language exists with manufacturing causality
-      - representative microset advances beyond primitive blockout
-      - human scale and contact validated
-      - staged cold rebuild exact semantic match
-      - direct art review passes before DONE
-      - runtime import/traversal passes before DONE
+    dod: [stable traversal exists, graft/suture/valve manufacturing logic exists, human scale validated, staged cold rebuild exact, direct art review required, runtime traversal required]
     evidence: [art_source/worlds/leviathan/evidence/puerto_microset_r5.json]
 
   - id: W10/REGION/005
     title: Jardines Inmunes representative foundation
     priority: P1
     status: REVIEW
-    output:
-      - R2 blockout
-      - 25_R2_HERO_LYMPH_MICROSET
-      - art_source/worlds/leviathan/tools/build_jardines_microset.py
-      - art_source/worlds/leviathan/tools/refine_jardines_truth_v2.py
+    output: [R2 blockout, 25_R2_HERO_LYMPH_MICROSET, art_source/worlds/leviathan/tools/build_jardines_microset.py, art_source/worlds/leviathan/tools/refine_jardines_truth_v2.py]
     dependency: [W10/BLEND/003]
-    dod:
-      - stable path remains independent from living visual channel
-      - LEV-INF-005 representative pressure-channel/service interface exists
-      - LEV-ECO-004 pressure-state algae variants exist
-      - LEV-ECO-001 representative functional anatomy exists with proposal dimensions
-      - current creature collision explicitly provisional/core-only
-      - staged cold rebuild exact semantic match
-      - direct art review, rig/gameplay and runtime import remain required before DONE
+    dod: [stable path independent from living visuals, LEV-INF-005/LEV-ECO-004/LEV-ECO-001 represented, creature collision provisional, staged cold rebuild exact, art/rig/runtime required]
     evidence: [art_source/worlds/leviathan/evidence/jardines_microset_r7.json]
 
   - id: W10/REGION/006
     title: Cámara de SOMA encounter foundation
     priority: P1
     status: REVIEW
-    output: R3 blockout + combat-interface collection
+    output:
+      - R3 blockout
+      - 26_R3_SOMA_ENCOUNTER_MICROSET
+      - art_source/worlds/leviathan/tools/build_soma_encounter_microset_v2.py
     dependency: [W10/BLEND/003]
     dod:
-      - exact 58 m external chamber envelope measured
-      - biological bridges and three safe-valve interfaces exist
-      - contraction membranes remain visual-only
-      - SOMA remains explicitly non-final anatomy
-      - representative encounter microset should advance environment without unblocking final SOMA art
-      - direct art review passes before DONE
-    evidence: [art_source/worlds/leviathan/validation.json]
+      - exact 58 m chamber / 29 m radius preserved
+      - visual geometry actual evaluated vertices remain inside 29 m
+      - biological bridges, three refuge valves, contraction telegraphs and regulator cradle exist
+      - all new contraction/bridge visuals remain outside collision authority
+      - SOMA proxy remains final_anatomy=false and unmodified as final art
+      - staged cold rebuild exact semantic match
+      - direct art review and runtime import required before DONE
+    evidence:
+      - art_source/worlds/leviathan/validation.json
+      - art_source/worlds/leviathan/evidence/soma_encounter_microset_r8.json
 
   - id: W10/TECH/007
     title: Qualify scale and stable collision separation
@@ -99,29 +85,31 @@ first_10_tasks:
     dod:
       - 1.85 m reference and 58 m arena measured
       - stable collision and visual-only families enumerated
-      - Puerto and Jardines representative collision contracts measured
+      - Puerto/Jardines/SOMA representative collision contracts measured
       - engine traversal/collision smoke test passes before DONE
     evidence:
       - art_source/worlds/leviathan/validation.json
       - art_source/worlds/leviathan/evidence/puerto_microset_r5.json
       - art_source/worlds/leviathan/evidence/jardines_microset_r7.json
+      - art_source/worlds/leviathan/evidence/soma_encounter_microset_r8.json
       - art_source/worlds/leviathan/evidence/runtime_import_blocker_r5.json
 
   - id: W10/MAT/008
     title: Establish LEVIATHAN material-role library
     priority: P1
     status: REVIEW
-    output: 16 portable material roles plus receipts
+    output: 18 portable material roles plus receipts
     dependency: [W10/WORLD/001, W10/BLEND/003]
     dod:
-      - living host and human graft material roles remain separable
-      - amber/cyan/vermilion follow project signal semantics
-      - Puerto manufacturing roles and Jardines mucosa/necrotic/algae roles exist
+      - living host and human graft roles remain separable
+      - amber/cyan/vermilion semantics preserved
+      - Puerto/Jardines/SOMA representative material roles exist
       - no unsupported texture/UDIM budget invented
       - final calibrated PBR texture pass required before DONE
     evidence:
       - art_source/worlds/leviathan/evidence/puerto_microset_r5.json
       - art_source/worlds/leviathan/evidence/jardines_microset_r7.json
+      - art_source/worlds/leviathan/evidence/soma_encounter_microset_r8.json
 
   - id: W10/ECO/009
     title: Establish ecology and adversary interfaces
@@ -129,19 +117,11 @@ first_10_tasks:
     status: REVIEW
     output: ecology/combat proxy collections + representative Jardines anatomy
     dependency: [W10/REGION/005]
-    dod:
-      - gardener and lymph-whale interfaces represented
-      - pulse-algae family represented
-      - Fagocito/Extractor/Colonia parasitaria proxies represented
-      - gardener role/locomotion/feeding logic documented
-      - all non-final states explicit
-      - final anatomy/rig/animation/gameplay reviews required before DONE
-    evidence:
-      - art_source/worlds/leviathan/MASTER_ASSET_LIST.yaml
-      - art_source/worlds/leviathan/evidence/jardines_microset_r7.json
+    dod: [gardener/lymph-whale/pulse-algae represented, adversary proxies represented, non-final states explicit, final anatomy/rig/animation/gameplay reviews required]
+    evidence: [art_source/worlds/leviathan/MASTER_ASSET_LIST.yaml, art_source/worlds/leviathan/evidence/jardines_microset_r7.json]
 
   - id: W10/QA/010
-    title: Run blockout and representative-detail QA/export receipts
+    title: Run representative-foundation QA/export receipts
     priority: P0
     status: REVIEW
     output:
@@ -149,11 +129,11 @@ first_10_tasks:
       - art_source/worlds/leviathan/evidence/cold_rebuild_r3.json
       - art_source/worlds/leviathan/evidence/puerto_microset_r5.json
       - art_source/worlds/leviathan/evidence/jardines_microset_r7.json
-      - render/export receipts
+      - art_source/worlds/leviathan/evidence/soma_encounter_microset_r8.json
     dependency: [W10/BLEND/003, W10/REGION/004, W10/REGION/005, W10/REGION/006]
     dod:
       - structural/scale/export checks pass
-      - master/Puerto/Jardines staged cold rebuilds match semantically
+      - all staged cold rebuilds match semantically
       - direct visual review receives explicit PASS before DONE
       - engine import remains NOT_RUN until executed
       - performance remains unqualified until target hardware exists
@@ -162,6 +142,7 @@ first_10_tasks:
       - art_source/worlds/leviathan/evidence/cold_rebuild_r3.json
       - art_source/worlds/leviathan/evidence/puerto_microset_r5.json
       - art_source/worlds/leviathan/evidence/jardines_microset_r7.json
+      - art_source/worlds/leviathan/evidence/soma_encounter_microset_r8.json
 
 open_p0: [W10/TECH/007, W10/QA/010]
 open_p1: [W10/REGION/004, W10/REGION/005, W10/REGION/006, W10/MAT/008, W10/ECO/009]
