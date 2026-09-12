@@ -1,0 +1,76 @@
+schema_version: 1
+receipt_id: NACRE-MACRO-QA-R3
+claim_id: CLM-NACRE-WORLD-MACRO-001
+agent_id: AGENT-3D-NACRE-01
+world_id: nacre
+created_from_remote_operation: nacre-qa-r3-geometry-render
+remote_project_id: a49fc6f3-fedb-40a5-913f-10a08debb0e1
+remote_revision: 3
+status: PASS_WITH_OPEN_HUMAN_AND_RUNTIME_GATES
+
+change_under_test:
+  operation: nacre-structural-bridge-fix-r3
+  objective: Replace center-to-center archive bridges with physically readable surface-to-surface interfaces and add macro construction/load-path signals.
+  changes:
+    removed_revision_2_bridge_objects: 22
+    docking_sockets: 21
+    service_rings: 7
+    suspension_tendons: 7
+    growth_strata: 5
+
+geometry:
+  mesh_objects: 97
+  curve_objects: 30
+  object_total: 130
+  non_unit_scale_objects: 0
+  zero_dimension_mesh_or_curve_objects: 0
+  bridge_links_checked: 10
+  bridge_penetrations: 0
+  bridge_surface_clearance_m_each_endpoint: 3.0
+  bridge_clearance_result: PASS
+
+portable_lighting:
+  - name: SUN_MNEME_A
+    type: SUN
+  - name: SUN_MNEME_B
+    type: SUN
+  unsupported_area_light_present: false
+
+remote_artifacts:
+  blend:
+    bytes: 2913059
+    etag: 2b5398f1c4bd906874e827daad64428b
+  glb:
+    bytes: 3090440
+    etag: 6ccb564c4ada071aeca2270db804ba87
+  preview:
+    operation: nacre-qa-r3-geometry-render
+    artifact_id: a5c7c5699ab993db11fb4d5903fb5504
+    name: nacre_r3_structural_hero.png
+    dimensions_px: [640, 360]
+  revision_2_multiview:
+    operation: nacre-art-review-multiview-r2
+    hero_artifact_id: 587ff0728c5d116a7d82f4955b2431b2
+    side_ortho_artifact_id: 4350ec483a9d546c390adc22ca6b1f1c
+    top_ortho_artifact_id: beb5812d5e3e3dae9d43647a92fe5144
+
+qa_gates:
+  canonical_scope: PASS
+  bridge_attachment_geometry: PASS
+  transform_sanity: PASS
+  degenerate_dimension_check: PASS
+  glb_export: PASS
+  portable_light_contract: PASS
+  macro_manufacturing_causality: PASS_CANDIDATE
+  agent_visual_judgement: NOT_CLAIMED
+  human_gate_art: OPEN
+  godot_import: OPEN
+  collision: OPEN
+  lod_hlod_streaming: OPEN
+  performance_target_hardware: OPEN
+
+notes:
+  - The 1400 m shell span and archive placements remain reversible blockout proposals, not planetary canon.
+  - Docking sockets intentionally overlap chamber shells locally as physical joints; bridge decks themselves terminate outside archive volumes.
+  - The visual artifacts exist, but no human creative-director approval is inferred from render generation.
+  - Runtime/native delivery still requires local recovered .blend + GLB and a Godot receipt bound to the exact GLB hash/bytes.
