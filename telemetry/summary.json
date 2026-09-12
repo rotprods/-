@@ -1,42 +1,72 @@
 {
   "coverage": "partial; instrumented rows only; no historical total inferred",
-  "recorded_calls": 59,
+  "recorded_calls": 100,
   "by_tool_outcome": [
     {
       "tool": "godot.import",
       "status": "returned",
       "task_outcome": "verified_success",
-      "count": 6
+      "count": 8
     },
     {
       "tool": "godot.input-tests",
       "status": "returned",
       "task_outcome": "verified_success",
-      "count": 1
+      "count": 3
     },
     {
       "tool": "godot.smoke",
       "status": "returned",
       "task_outcome": "verified_success",
-      "count": 6
+      "count": 8
     },
     {
       "tool": "godot.state-tests",
       "status": "returned",
       "task_outcome": "verified_success",
-      "count": 6
+      "count": 8
     },
     {
       "tool": "godot.world-tests",
       "status": "returned",
       "task_outcome": "verified_success",
-      "count": 6
+      "count": 8
+    },
+    {
+      "tool": "mcp__codex_apps__github_add_comment_to_issue",
+      "status": "returned",
+      "task_outcome": "unverified",
+      "count": 1
     },
     {
       "tool": "mcp__codex_apps__github_create_file",
       "status": "returned",
       "task_outcome": "unverified",
       "count": 2
+    },
+    {
+      "tool": "mcp__codex_apps__github_fetch",
+      "status": "returned",
+      "task_outcome": "unverified",
+      "count": 6
+    },
+    {
+      "tool": "mcp__codex_apps__github_fetch_file",
+      "status": "returned",
+      "task_outcome": "unverified",
+      "count": 2
+    },
+    {
+      "tool": "mcp__codex_apps__higgsfield_scene_builder_3d_get_project",
+      "status": "returned",
+      "task_outcome": "unverified",
+      "count": 13
+    },
+    {
+      "tool": "mcp__codex_apps__linear_get_issue",
+      "status": "returned",
+      "task_outcome": "unverified",
+      "count": 1
     },
     {
       "tool": "mcp__codex_apps__linear_get_project",
@@ -60,25 +90,25 @@
       "tool": "qualify.GATE-ASSET",
       "status": "returned",
       "task_outcome": "verified_success",
-      "count": 2
+      "count": 4
     },
     {
       "tool": "qualify.GATE-CONTROL",
       "status": "returned",
       "task_outcome": "verified_success",
-      "count": 2
+      "count": 4
     },
     {
       "tool": "qualify.GATE-GRAPH",
       "status": "returned",
       "task_outcome": "verified_success",
-      "count": 2
+      "count": 4
     },
     {
       "tool": "qualify.GATE-NATIVE",
       "status": "returned",
       "task_outcome": "verified_success",
-      "count": 2
+      "count": 4
     }
   ]
 }
