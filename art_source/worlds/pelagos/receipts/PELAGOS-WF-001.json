@@ -1,0 +1,102 @@
+{
+  "schema_version": 1,
+  "checkpoint": "PELAGOS-WF-001",
+  "world_id": "pelagos",
+  "claim_id": "CLM-PEL-WORLD-001",
+  "agent_id": "AGENT-PELAGOS-01",
+  "session_id": "PELAGOS-ART-20260912-A",
+  "branch": "art/world-pelagos-thalassa-001",
+  "base_main_sha": "4c2fa044080004609ea6df45f34b2a784536507a",
+  "remote_3d": {
+    "provider": "Higgsfield 3D Jutsu",
+    "project_id": "39930c08-62bb-4034-b35d-70d0ce51c9d9",
+    "project_name": "EXOVANT 2950 — PELAGOS World Master — ART-PELAGOS-001",
+    "blender_version": "5.2.0 LTS",
+    "revision": 1,
+    "mutation_operation": "pelagos.foundation.world.v2",
+    "verification_operation": "pelagos.verify.structure.r1",
+    "previous_failed_operation": {
+      "id": "pelagos.foundation.world.v1",
+      "failure": "empty project had no Blender World datablock; direct scene.world.color access failed",
+      "revision_advanced": false,
+      "control": "explicitly create and node-enable PELAGOS_WORLD_ENV before assigning environment"
+    }
+  },
+  "build": {
+    "claim": "implemented_remote_blockout",
+    "playable_extent_m": [2200, 2200],
+    "planet_radius_km": 6000,
+    "planet_radius_status": "PROPOSAL",
+    "gravity_g": 0.91,
+    "gravity_status": "CANON",
+    "boss_arena_diameter_m": 52,
+    "boss_arena_status": "CANON",
+    "object_count": 268,
+    "mesh_object_count": 139,
+    "curve_object_count": 121,
+    "material_count": 11,
+    "raw_mesh_triangle_estimate": 49320,
+    "world_bbox_m": {
+      "min": [-1100, -1100, -199.09],
+      "max": [1100, 1100, 100],
+      "size": [2200, 2200, 299.09]
+    },
+    "region_centers_m": {
+      "mercado_boyas": [-520, -80, 18],
+      "coro_arrecife": [0, 40, 0],
+      "fosa_mil_miradas": [520, 230, 0],
+      "thalassa_arena": [520, 230, -92]
+    }
+  },
+  "structural_qa": {
+    "missing_asset_id_count": 0,
+    "nonunit_mesh_scale_count": 0,
+    "materialless_mesh_count": 0,
+    "negative_or_zero_dimension_count": 0,
+    "arena_floor_dimensions_m": [52, 52, 3],
+    "market_shell_dimensions_m": [44, 32, 18],
+    "nacar2_hull_dimensions_m": [15, 6.4, 5.4],
+    "status": "PASS_FOR_BLOCKOUT_STRUCTURE"
+  },
+  "artifacts": {
+    "blend": {
+      "size_bytes": 4676986,
+      "etag": "8f3f42050388b19ff99377e98016466e"
+    },
+    "glb": {
+      "size_bytes": 3809932,
+      "etag": "6375470b6e0d59080551ba7eeebff312"
+    },
+    "render": {
+      "name": "pelagos_world_foundation_v001.png",
+      "artifact_id": "a1c1f7f063141a553cca107f91ad4092",
+      "size_bytes": 834986,
+      "width": 1280,
+      "height": 720,
+      "etag": "26d2d90187f17594aac0eff13bd79251"
+    }
+  },
+  "gates": {
+    "canon": "PASS_FOR_BLOCKOUT_WITH_PROPOSALS_LABELED",
+    "scale": "PASS_FOR_BLOCKOUT",
+    "geometry_structure": "PASS_FOR_BLOCKOUT",
+    "materials": "PROXY_ONLY",
+    "uv": "NOT_RUN",
+    "lod": "NOT_RUN",
+    "collision": "INTENT_TAGGED_NOT_ENGINE_TESTED",
+    "export": "GLB_CREATED",
+    "engine_import": "NOT_RUN",
+    "performance": "NOT_RUN",
+    "visual_regression": "PUBLISHED_RENDER_EXISTS_CLIENT_VISUAL_INSPECTION_PENDING",
+    "art_director": "NOT_RUN"
+  },
+  "claim_status": "IN_PROGRESS",
+  "world_status": "NOT_DONE",
+  "next": [
+    "convert Mercado massing into modular structural kit",
+    "author deterministic coral-growth foundation",
+    "upgrade THALASSA anatomy/arena readability",
+    "turn Nacar-2 into functional engineering blockout",
+    "run engine integration gates once target path is available"
+  ]
+}
