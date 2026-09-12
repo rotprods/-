@@ -11,7 +11,7 @@ priority: P1
 base_sha: 4c2fa044080004609ea6df45f34b2a784536507a
 branch: art/world-aurora-veil-001
 created_at: 2026-09-12T19:29:57Z
-last_heartbeat: 2026-09-12T21:31:00Z
+last_heartbeat: 2026-09-12T21:47:00Z
 includes:
   - planetary canon proposals where canon is currently silent, isolated behind ADRs
   - orbital representation
@@ -46,21 +46,23 @@ pipeline:
   blender_worker_version: "5.2"
 remote_scene:
   project_id: d6488148-8547-4ffe-b63d-e5fbec3a339c
-  revision: 12
-  status: WAVE2_TEMPORAL_CONTRACT_R12_METADATA_QA
-  blend_size_bytes: 7561886
-  blend_etag: 9c6a327ccabd8337b26c0ad4c042af5b
-  glb_size_bytes: 5113024
-  glb_etag: be87a2884661cbd3b0abc3052e0e54e8
-  macro_blockout_preserved: true
+  revision: 14
+  status: WAVE2_TERRAIN_RELIEF_R14_CONTACT_EXPORT_QA
+  blend_size_bytes: 7573464
+  blend_etag: 5c0ecf64eca2587d4304030f11923bc3
+  glb_size_bytes: 5114780
+  glb_etag: 7fe7cebfe2c60d7aa13f484ad721d85d
   orbital_l1_present: true
   camp_modular_kit_present: true
   temporal_contract_present: true
   temporal_contract_version: AUR-TEMPORAL-v1-r12
-  temporal_fields: 3
-  temporal_collision_proxies: 6
-  global_rewind: FORBIDDEN
-  save_state_mutation: FORBIDDEN
+  terrain_contract_present: true
+  terrain_contract_version: AUR-TERRAIN-RELIEF-v2-r14
+  terrain_dimensions_m: [5200, 3000, 53.61]
+  terrain_slope_p95_deg: 4.278
+  terrain_rollback: DETERMINISTIC_INVERSE_RELIEF_V2
+  temporal_fields_grounded: true
+  qa_geometry_export_pollution: false
   final_art_claimed: false
 fleet_registry:
   authority: main:ops/fleet/registry.json
@@ -86,6 +88,7 @@ blocked_by:
 claim_notes:
   - Physical planetary parameters absent from canon remain PROPOSAL until an ADR is accepted.
   - L1 orbital shell is display-only and does not invent global geography.
-  - Campamento rev8 is a manufacturing-aware modular blockout; final PBR/UV/art gates remain open.
-  - Temporal rev12 is a runtime-neutral local state/collision contract; engine implementation, audio and human comprehension testing remain open.
+  - Campamento rev8+ is a manufacturing-aware modular blockout; final PBR/UV/art gates remain open.
+  - Temporal rev12+ is a runtime-neutral local state/collision contract; engine implementation, audio and human comprehension testing remain open.
+  - Terrain rev14 is a reversible macro morphology proposal; lithology, microdetail, final material blend, nav/traversal and human art review remain open.
   - Human GATE-ART remains pending; current world is not finished AAA/AAAA art.
