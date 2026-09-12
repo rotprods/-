@@ -1,0 +1,175 @@
+schema_version: 1
+task_pack_id: SYL_PROC_ROOT_FIRST_10
+claim_id: CLM-SYLVA-PROC-NROOT-001
+agent_id: AGENT-SYLVA-ROOT-01
+north_star: "Ship a reusable, physically legible neural-root structural grammar for Sylva Prime with deterministic Blender source, separated collision, evidence and a recoverable handoff."
+
+status_legend:
+  - TODO
+  - IN_PROGRESS
+  - BLOCKED
+  - REVIEW
+  - DONE
+
+tasks:
+  - id: SYL/PROC/001
+    priority: P0
+    objective: Recover repository authority, pipeline, world data and current branch activity.
+    inputs: [AGENTS.md, _project_intelligence/STATE.json, _project_intelligence/PLAN.json, ARCHITECTURE.md, MEMORY.md, design/EXOVANT_BIBLIA.md, design/EXOVANT_DATA.json]
+    output: repository evidence pack and authority chain
+    dependencies: []
+    dod:
+      - canonical repository and base SHA identified
+      - current engine and Blender path identified
+      - unknowns explicitly separated from facts
+      - active branches and PRs inspected
+    evidence:
+      - "repo rotprods/-"
+      - "base 4c2fa044080004609ea6df45f34b2a784536507a"
+    status: DONE
+
+  - id: SYL/PROC/002
+    priority: P0
+    objective: Audit semantic collision and persist an atomic claim.
+    output: production/claims/CLM-SYLVA-PROC-NROOT-001.yaml
+    dependencies: [SYL/PROC/001]
+    dod:
+      - no visible active Sylva branch at claim time
+      - Terra/Ares/Khepri/Pelagos/Umbra/Vanta scopes excluded
+      - included and excluded work written down
+      - branch exists before build
+    evidence:
+      - "commit dbd9c260878e1da3f086694b91f9e178a7c65b16"
+    status: DONE
+
+  - id: SYL/PROC/003
+    priority: P0
+    objective: Prove the isolated remote Blender execution path on a fresh scene.
+    output: dedicated 3D Jutsu project with Blender/runtime guards
+    dependencies: [SYL/PROC/002]
+    dod:
+      - Blender version observed, not assumed
+      - unit system and render engine observed
+      - no other agent scene is mutated
+    evidence:
+      - "project 43cf2b06-c47f-4ccd-ac34-76e9a585225a"
+      - "Blender 5.2.0 LTS"
+    status: DONE
+
+  - id: SYL/PROC/004
+    priority: P1
+    objective: Build deterministic macro root morphology generator.
+    output: editable root meshes with anisotropic fluting and controlled centerlines
+    dependencies: [SYL/PROC/003]
+    dod:
+      - metre-scale geometry
+      - deterministic topology from explicit controls
+      - no random greeble/noise dependency
+      - descriptive object names and claim metadata
+      - source generator persisted
+    evidence:
+      - art_source/sylva_neural_root_kit/sylva_neural_root_kit.py
+      - "remote revision 4"
+    status: DONE
+
+  - id: SYL/PROC/005
+    priority: P1
+    objective: Build traversable root route family A1/A2/A3 and B1 fork.
+    output: straight, curve, rise and fork route modules with callus crowns
+    dependencies: [SYL/PROC/004]
+    dod:
+      - each route has root body plus editable callus surface
+      - player-scale guide exists using 1.85 m / 0.38 m prototype capsule reference
+      - route widths marked PROPOSAL rather than canon
+      - fork resolves into distinct trunk/left/right members
+    evidence:
+      - production/manifests/sylva/procedural/SYL_NEURAL_ROOT_KIT_001.yaml
+    status: DONE
+
+  - id: SYL/PROC/006
+    priority: P1
+    objective: Build non-traversable structural language and interface modules.
+    output: B2 arch, C1 buttress, C2 terrace support and C3 membrane anchor
+    dependencies: [SYL/PROC/004]
+    dod:
+      - arch silhouette reads as spanning load path
+      - buttress reads as vertical transfer
+      - terrace has three-root support logic
+      - membrane anchor has explicit living ring and separate membrane preview
+    evidence:
+      - production/manifests/sylva/procedural/SYL_NEURAL_ROOT_KIT_001.yaml
+    status: DONE
+
+  - id: SYL/PROC/007
+    priority: P1
+    objective: Create separated collision-proxy contract for gameplay-relevant structures.
+    output: COL_* proxy set
+    dependencies: [SYL/PROC/005, SYL/PROC/006]
+    dod:
+      - all required route/structural modules have explicit proxy
+      - proxies are hidden from render and discoverable by naming
+      - collision count and missing targets are machine-checked
+    evidence:
+      - "final QA: collision_proxy_pass=true, collision_count=13"
+    status: DONE
+
+  - id: SYL/PROC/008
+    priority: P1
+    objective: Run technical geometry/export QA and correct detected defects.
+    output: PASS receipt on revision 4
+    dependencies: [SYL/PROC/007]
+    dod:
+      - required modules present
+      - zero-area mesh objects = 0
+      - missing material meshes = 0
+      - non-unit scale objects = 0
+      - claim metadata mismatch = 0
+      - camera center coverage = PASS
+      - GLB export completes
+    evidence:
+      - "operation sylva-root-qa-release-008: PASS=true"
+      - "revision 4 GLB etag d0b02f2cecc40fefd8b7ac5680fee455"
+    status: DONE
+
+  - id: SYL/PROC/009
+    priority: P1
+    objective: Validate the kit in the executable engine with real player traversal and collision.
+    output: engine import scene, traversal log, screenshots and collision defects list
+    dependencies: [SYL/PROC/008]
+    dod:
+      - revision-4 GLB imported into target executable engine
+      - player capsule walks A1/A2/A3 and all B1 branches without hidden blockers
+      - C2 terrace and structural proxies tested against CharacterBody movement
+      - scale and orientation checked after import
+      - any route-width change is fed back to generator and manifest
+    evidence: []
+    blockers:
+      - integration has not yet been executed in this branch
+      - engine remains Godot prototype until EXO-012 production-engine decision
+    status: TODO
+
+  - id: SYL/PROC/010
+    priority: P1
+    objective: Art-direct and productionize the blockout without violating route readability.
+    output: reviewed v2 kit with UV/material/LOD policy and in-engine art approval
+    dependencies: [SYL/PROC/009]
+    dod:
+      - director review at close/medium/far distances
+      - microstructure follows causal growth/moisture/contact logic rather than noise
+      - final material family and texel strategy approved
+      - LOD/HLOD policy set against actual target hardware
+      - GATE-ASSET and GATE-ART receipts attached
+      - claim may transition to REVIEW/RELEASE only after engine integration and art approval
+    evidence: []
+    blockers:
+      - target GPU/performance budget is not fixed
+      - visual art approval is pending
+    status: TODO
+
+progress:
+  task_completion: "8/10"
+  modeling_blockout: "100% for claimed foundation set"
+  materials: "placeholder lookdev only"
+  optimization: "collision simplification only; LOD pending"
+  integration: "0%"
+  qa: "technical Blender QA PASS; engine/art gates pending"
