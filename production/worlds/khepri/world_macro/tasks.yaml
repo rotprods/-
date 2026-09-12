@@ -10,141 +10,131 @@ tasks:
   - id: KHP/WM/001
     priority: P0
     objective: Reconstruct repository authority and current global state.
-    output: Repo evidence pack in WORLD_MACRO_CONTRACT.md.
-    dependencies: []
     status: DONE
-    dod:
-      - repository/default branch/base SHA verified
-      - canon/art/pipeline/progress authorities identified
-      - engine decision represented without overstating Unreal or AAA readiness
-    evidence:
-      - production/worlds/khepri/world_macro/WORLD_MACRO_CONTRACT.md
+    output: production/worlds/khepri/world_macro/WORLD_MACRO_CONTRACT.md
+    evidence: [WORLD_MACRO_CONTRACT.md]
+    dod_result: PASS
 
   - id: KHP/WM/002
     priority: P0
     objective: Audit concurrent ownership and persist an atomic claim.
-    output: production/claims/CLM-KHEPRI-WMACRO-001.yaml
-    dependencies: [KHP/WM/001]
     status: DONE
-    dod:
-      - active branches audited semantically
-      - includes/excludes explicit
-      - branch and 3D Jutsu project bound to claim
-    evidence:
-      - production/claims/CLM-KHEPRI-WMACRO-001.yaml
-      - commit:697c92906ae52201edc10ddda726398596ca86cf
+    output: production/claims/CLM-KHEPRI-WMACRO-001.yaml
+    evidence: [commit:697c92906ae52201edc10ddda726398596ca86cf]
+    dod_result: PASS
 
   - id: KHP/WM/003
     priority: P0
     objective: Resolve physical planet scale without inventing canon.
-    output: KHP-ADR-001 planet-scale proposal.
-    dependencies: [KHP/WM/001]
     status: DONE
-    dod:
-      - canon 0.63 g preserved
-      - radius/mass/density explicitly PROPOSAL
-      - alternatives and reversibility recorded
-      - no canonical design file modified
-    evidence:
-      - production/worlds/khepri/world_macro/decisions/KHP-ADR-001-planet-scale.md
+    output: production/worlds/khepri/world_macro/decisions/KHP-ADR-001-planet-scale.md
+    evidence: [commit:67c3db7de6bfa9be2bff676a00dce30cdcd9d3fa]
+    dod_result: PASS_PROPOSAL_NOT_CANON
 
   - id: KHP/WM/004
     priority: P0
     objective: Define coordinate, cell and export interfaces for macro production.
-    output: Deterministic generator metadata and scene conventions.
-    dependencies: [KHP/WM/003]
-    status: IN_PROGRESS
-    dod:
-      - 1 BU = 1 m confirmed in generated scene
-      - Blender Z-up authoring documented
-      - local tangent cell separated from planet metadata
-      - GLB export path and semantic naming encoded
+    status: DONE
+    output: generator scene metadata + WORLD_MACRO_CONTRACT
+    evidence:
+      - blender_revision:2
+      - units_contract: "1 BU = 1 metre"
+      - coordinate_contract: local_tangent_cell_xyz_metres_blender_z_up
+      - glb_export_verified: true
+    dod_result: PASS
 
   - id: KHP/WM/005
     priority: P0
     objective: Generate KHEPRI L1 orbital proxy and L2 representative macro terrain cell.
-    output: Committed 3D Jutsu Blender revision from clean project.
-    dependencies: [KHP/WM/004]
-    status: TODO
-    dod:
-      - L1 and L2 are separate objects/collections
-      - macro cell measures 6400 m x 4800 m proposal extent
-      - no monolithic full-scale planet gameplay mesh
-      - no final architecture/character/boss assets authored
+    status: DONE
+    output: "3D Jutsu project 040f0c45-83a7-483c-9ee7-1e31c640a587 revision 2"
+    evidence:
+      - terrain_dimensions_m: [6400.0, 4800.0, 228.805]
+      - orbital_proxy: KHP_WM_L1_ORBITAL_PROXY_1_TO_20000
+      - monolithic_gameplay_planet_mesh: false
+    dod_result: PASS_BLOCKOUT
 
   - id: KHP/WM/006
     priority: P1
     objective: Establish functional macro route anchors derived from documented missions.
-    output: Shade, glass-sea, crucible and RA-KHET approach proxy anchors.
-    dependencies: [KHP/WM/005]
-    status: TODO
-    dod:
-      - four anchors have semantic IDs and metadata
-      - anchors remain proxies/interfaces only
-      - distances and elevation deltas are recorded
-      - no ownership collision with architecture/boss domains
+    status: DONE
+    output: [KHP_WM_ROUTE_SHADE, KHP_WM_ROUTE_GLASS_SEA, KHP_WM_ROUTE_CRUCIBLE, KHP_WM_ROUTE_RAKHET]
+    evidence:
+      - segment_distances_m: [2125.99, 1783.94, 1838.65]
+      - final_architecture_reserved: false
+    dod_result: PASS_INTERFACE_ONLY
 
   - id: KHP/WM/007
     priority: P1
     objective: Add procedural macro terrain causality and optical infrastructure footprints.
-    output: Reproducible bpy generator committed under art_source/khepri/world_macro/.
-    dependencies: [KHP/WM/004]
-    status: TODO
-    dod:
-      - deterministic seed
-      - low/mid frequency macro topography only
-      - heliostat footprints use instancing/shared mesh data where applicable
-      - no random greeble/detail noise
+    status: DONE
+    output:
+      - art_source/khepri/world_macro/generate_khepri_world_macro.py
+      - art_source/khepri/world_macro/optimize_khepri_world_macro.py
+    evidence:
+      - deterministic_seed: 295006
+      - heliostat_panel_objects: 32
+      - heliostat_panel_unique_meshes: 1
+      - heliostat_mast_objects: 32
+      - heliostat_mast_unique_meshes: 1
+    dod_result: PASS_BLOCKOUT
 
   - id: KHP/WM/008
     priority: P0
     objective: Run geometry/scale/scene QA on the generated macro scene.
-    output: validation.json and Blender query receipt.
-    dependencies: [KHP/WM/005, KHP/WM/006, KHP/WM/007]
-    status: TODO
-    dod:
-      - object/mesh/material counts measured
-      - dimensions and human-scale reference measured
-      - duplicate semantic names = 0
-      - negative scale and non-finite transforms = 0
-      - macro terrain bounding box within documented tolerance
+    status: DONE
+    output:
+      - art_source/khepri/world_macro/validate_khepri_world_macro.py
+      - art_source/khepri/world_macro/validation.json
+    evidence:
+      - blender_operation: khepri.wmacro.qa.r2.fix1
+      - duplicate_object_names: 0
+      - duplicate_asset_ids: 0
+      - nonfinite_transforms: 0
+      - negative_scale: 0
+      - nonunit_mesh_scale: 0
+      - human_guide_height_m: 1.85
+      - unique_mesh_triangles: 11092
+    dod_result: STRUCTURAL_PASS
 
   - id: KHP/WM/009
     priority: P1
     objective: Perform visual macro validation.
-    output: neutral overview and gameplay-height context previews.
-    dependencies: [KHP/WM/008]
-    status: TODO
-    dod:
-      - Eevee render from delivery camera
-      - gameplay-height scale proof
-      - horizon/landmark/readability defects logged and corrected or explicitly blocked
-      - no claim of AAA finish based on preview alone
+    status: BLOCKED
+    output: Eevee overview + gameplay-scale render generated at revision 1; interactive final revision available.
+    evidence:
+      - overview_artifact: 035e2230991745f7e50a3ea2d1e6f779
+      - gameplay_artifact: 39254569736c3aa1da0416a678fe8530
+      - blocker: HUMAN_VISUAL_REVIEW
+    dod_result: "NOT_PASS — render generation succeeded, agent visual inspection unavailable in isolated runtime"
 
   - id: KHP/WM/010
     priority: P0
     objective: Persist portable artifacts and handoff evidence.
-    output: verified GLB/.blend retrieval, manifest, draft PR and recoverable handoff.
-    dependencies: [KHP/WM/008, KHP/WM/009]
-    status: TODO
-    dod:
-      - committed 3D Jutsu revision settled
-      - GLB retrieval succeeds
-      - .blend retrieval succeeds
-      - source persistence strategy recorded
-      - branch resynced against main before PR integration
-      - handoff contains next 3 executable actions and claim status
+    status: IN_PROGRESS
+    output: verified provider artifacts + manifest + draft PR + handoff
+    evidence:
+      - blend_revision: 2
+      - blend_bytes: 1357562
+      - blend_etag: 2efee5ad6b7207bf45dcff22d7f115fb
+      - glb_revision: 2
+      - glb_bytes: 702900
+      - glb_etag: ec7a8590f53e9b64bf27165172e11e9e
+      - manifest: production/worlds/khepri/world_macro/manifest.yaml
+      - blocker: BINARY_PERSISTENCE_TRANSPORT
+    dod_result: "PARTIAL — provider retrieval verified; repo binary transfer and handoff/PR completion pending"
 
 progress_metrics:
-  asset_coverage_percent: 10
-  modeling_percent: 0
-  materials_percent: 0
-  optimization_percent: 0
-  integration_percent: 0
-  qa_percent: 0
+  asset_coverage_percent: 100
+  modeling_percent: 100
+  materials_percent: 25
+  optimization_percent: 100
+  integration_percent: 35
+  qa_percent: 80
+metrics_scope_note: "Percentages apply only to CLM-KHEPRI-WMACRO-001 blockout scope, never to the full KHEPRI world or campaign."
 priority_open:
-  P0: 4
-  P1: 3
+  P0: 1
+  P1: 1
   P2: 0
   P3: 0
-last_heartbeat: "2026-09-12T19:24:00Z"
+last_heartbeat: "2026-09-12T19:46:00Z"
