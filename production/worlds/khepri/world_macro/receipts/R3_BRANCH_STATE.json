@@ -1,0 +1,13 @@
+{
+  "claim_id": "CLM-KHEPRI-WMACRO-001",
+  "branch": "art/world-khepri-001",
+  "producer_head_at_receipt": "cb09998743aaa38b218094987f143da44e70dcf6",
+  "main_observed": "f78bfdc8bd7b2f6ab52b45d39babcc1589ab3918",
+  "main_gauntlet_run": 34715800243,
+  "main_gauntlet_status": "SUCCESS",
+  "fleet_claim_status": "active",
+  "pr": 8,
+  "pr_state": "draft",
+  "required_next_gate": "reconcile current main + KHEPRI owned paths + exact generated MANIFEST, then exact PR CI SUCCESS",
+  "do_not_merge": true
+}
