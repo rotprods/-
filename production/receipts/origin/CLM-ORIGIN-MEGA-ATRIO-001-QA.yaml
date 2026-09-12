@@ -1,0 +1,132 @@
+schema_version: 1
+receipt_id: CLM-ORIGIN-MEGA-ATRIO-001-QA
+world: ORIGIN
+claim_id: CLM-ORIGIN-MEGA-ATRIO-001
+world_owner_claim: CLM-ORIGIN-WORLD-001
+agent: AGENT-ORIGIN-WORLD-01
+truth_state: locally_validated_blockout
+remote_project_id: 6e64cd59-f1f6-461f-850c-737d098f1723
+final_revision: 2
+blender_version: 5.2.0 LTS
+unit_system: METRIC
+unit_scale: 1.0
+
+operations:
+  - id: origin-atrio-bootstrap-inspect-001
+    type: query
+    result: PASS
+    evidence:
+      - empty initial scene
+      - Blender 5.2.0 LTS
+      - metric / 1.0 scale
+  - id: origin-atrio-blockout-001
+    type: mutation
+    revision_after: 1
+    result: PASS_WITH_FOLLOWUP_QA
+    metrics:
+      object_count: 132
+      mesh_objects: 126
+      materials: 13
+      explicit_collision_proxies: 19
+      visible_approx_triangles: 11436
+      arena_diameter_m: 70
+      ring_radii_m: [35, 24, 13]
+    artifacts:
+      blend_size_bytes: 2364512
+      blend_etag: 7b6225aee5c79dd1435db255855d2462
+      glb_size_bytes: 2756376
+      glb_etag: 4450f246a31eb4288b5f1cab7c66de38
+      preview_png_id: b8263fd4b39131f7e8bb7f1cbe68bfa0
+  - id: origin-atrio-qa-tech-002
+    type: query
+    result: PASS
+    checks:
+      required_asset_ids: PASS
+      collision_coverage: PASS
+      zero_area_meshes: 0
+      missing_materials: 0
+      non_unit_scales: 0
+      claim_mismatch: 0
+      key_center_camera_coverage: PASS
+      player_reference_height_m: 1.85
+  - id: origin-atrio-qa-spatial-003
+    type: query
+    result: FAIL_CORRECTED
+    defects:
+      - id: ORG-QA-F001
+        problem: outer ring production corners outside delivery frame
+        affected:
+          - ORG_ATR_RING_A70_SEG_00
+          - ORG_ATR_RING_A70_SEG_02
+        pre_fix_camera_extents: {xmin: -0.187, xmax: 0.960, ymin: -0.189, ymax: 0.862}
+      - id: ORG-QA-F002
+        problem: support piers floated above preview datum
+        pre_fix_gap_m: 0.020-0.025
+      - id: ORG-QA-F003
+        problem: node collision box corners exceeded 4.0 m visual disc
+        overhang_m: 1.233
+        affected:
+          - ORG_ATR_NODE_SAFE
+          - ORG_ATR_NODE_VALVE
+  - id: origin-atrio-spatial-fix-004
+    type: mutation
+    revision_after: 2
+    result: PASS
+    fixes:
+      - camera moved to [78.75, -91.25, 71.25], lens 45 mm
+      - 12 support piers seated 0.015-0.020 m into datum
+      - node box collisions replaced by 12-sided radius-3.72 m cylinders
+    artifacts:
+      blend_size_bytes: 2369786
+      blend_etag: f17892c2acf59a2dc3fffda6379bf88a
+      glb_size_bytes: 2760416
+      glb_etag: 85905d94d8409d2cfcba2a6ab67bed9b
+      preview_png_id: 8c5f749466f2a4a23d0148758dd4dbf5
+      preview_png_size_bytes: 782102
+      preview_png_etag: dc2823afe1bc61d5e778cf6d13009429
+      preview_png_resolution: [1200, 800]
+  - id: origin-atrio-qa-release-005
+    type: query
+    result: PASS
+    checks:
+      required_asset_coverage: PASS
+      collision_coverage: PASS
+      collision_proxy_count: 19
+      zero_area_meshes: 0
+      mesh_without_material: 0
+      non_unit_scale: 0
+      claim_property_mismatch: 0
+      all_production_corners_in_camera: PASS
+      camera_extents: {xmin: 0.009, xmax: 0.942, ymin: 0.056, ymax: 0.778}
+      support_contact: PASS
+      support_gap_range_m: [-0.020, -0.015]
+      node_collision_inside_visual: PASS
+      visible_approx_triangles: 11436
+
+final_artifacts:
+  blend:
+    revision: 2
+    size_bytes: 2369786
+    etag: f17892c2acf59a2dc3fffda6379bf88a
+  glb:
+    revision: 2
+    size_bytes: 2760416
+    etag: 85905d94d8409d2cfcba2a6ab67bed9b
+  preview_png:
+    id: 8c5f749466f2a4a23d0148758dd4dbf5
+    size_bytes: 782102
+    etag: dc2823afe1bc61d5e778cf6d13009429
+    resolution: [1200, 800]
+
+not_proven:
+  - engine import / CharacterBody traversal
+  - gameplay collision behavior under moving/local gravity
+  - final UVs and PBR textures
+  - LOD/HLOD transitions
+  - target-GPU budget or FPS
+  - GATE-ART human approval
+  - final boss-space composition with EXOVANT present
+  - pixel-level visual QA by this agent; preview was generated, but the current agent surface did not expose artifact pixels for inspection
+
+checkpoint_result: LOCALLY_VALIDATED_BLOCKOUT
+release_result: NOT_DONE
