@@ -6,7 +6,7 @@ world_id: khepri
 region_id: GLOBAL_KHEPRI
 category: world_macro
 subdomain: planetary_foundation
-status: CLAIMED
+status: REVIEW
 priority: P0
 includes:
   - planet-scale representation contract (L0/L1 only)
@@ -30,14 +30,11 @@ branch: art/world-khepri-001
 base_branch: main
 base_sha: 4c2fa044080004609ea6df45f34b2a784536507a
 blender_project_id: 040f0c45-83a7-483c-9ee7-1e31c640a587
+blender_revision: 2
 blender_project_name: "EXOVANT 2950 — KHEPRI World Master — ART-KHEPRI-001"
 pipeline:
   method_status: PIPELINE_METHOD_NOT_FOUND
-  searched_aliases:
-    - "Flu In"
-    - "Flow In"
-    - "flu-in"
-    - "flow-in"
+  searched_aliases: ["Flu In", "Flow In", "flu-in", "flow-in"]
   verified_method: "Higgsfield 3D Jutsu + Blender 5.2.0 LTS + bpy + editable .blend + GLB + validation evidence"
   evidence:
     - docs/ART_PRODUCTION.md
@@ -53,7 +50,30 @@ canon_inputs:
   - docs/ART_PRODUCTION.md
 dependencies:
   - EXO-017 Andromeda chapters (future campaign integration)
-blocked_by: []
+blocked_by:
+  - BINARY_PERSISTENCE_TRANSPORT
+  - HUMAN_VISUAL_REVIEW
+blockers:
+  BINARY_PERSISTENCE_TRANSPORT:
+    decision_needed: "Choose/enable a provider-to-repository binary transfer path for final .blend/GLB persistence."
+    affected_scope: "source artifact archival; not current Blender revision validity"
+    why_blocking: "3D Jutsu serves verified binaries but this runtime cannot resolve the signed object-store host into the GitHub connector."
+    options:
+      - "Persist via a runtime that can download the 3D Jutsu artifact and push Git LFS/binary to the branch."
+      - "Keep provider revision+etag as interim source receipt and import binaries during integration."
+    recommended_option: "Use a controlled integration worker with Git credentials/LFS and preserve revision+etag before upload."
+    reversibility: high
+    work_that_can_continue: "all documentation, blockout QA, downstream interface claims"
+  HUMAN_VISUAL_REVIEW:
+    decision_needed: "Review the interactive scene / render framing for art-direction approval."
+    affected_scope: "GATE-ART only"
+    why_blocking: "Agent runtime cannot fetch the signed PNG artifacts for vision inspection due network isolation."
+    options:
+      - "Human review through 3D Jutsu interactive preview."
+      - "Repeat visual audit in an agent/runtime with artifact image access."
+    recommended_option: "Human review now; machine visual regression later when artifact transport is available."
+    reversibility: high
+    work_that_can_continue: "parallel KHEPRI domain claims using published interfaces"
 created_at: "2026-09-12T19:20:00Z"
-last_heartbeat: "2026-09-12T19:20:00Z"
-claim_status_note: "Atomic macro-world claim. Other agents may claim Khepri domains outside includes; semantic overlap requires coordination before edits."
+last_heartbeat: "2026-09-12T19:46:00Z"
+claim_status_note: "Structural blockout and provider export are validated at Blender revision 2. Keep claim during review; do not release until binary persistence and visual review are reconciled or explicitly waived."
