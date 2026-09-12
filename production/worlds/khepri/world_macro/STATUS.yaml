@@ -5,44 +5,57 @@ agent_id: AGENT-KHEPRI-WMACRO-001
 session_id: SESSION-20260912-KHEPRI-001
 branch: art/world-khepri-001
 pr: 8
-base_at_claim: 4c2fa044080004609ea6df45f34b2a784536507a
-latest_main_observed: f78bfdc8bd7b2f6ab52b45d39babcc1589ab3918
 fleet:
   registry: ops/fleet/registry.json
   claim_status: active
   producer_ack: issue-7-comment-5648289971
   protocol: docs/FLEET_COORDINATION.md
+  latest_qualified_main: 758a9b6326a7d061f1e304abe9b1593b6b2d1a66
+  latest_qualified_main_gauntlet: 34720800915
 blender:
   master_project_id: 040f0c45-83a7-483c-9ee7-1e31c640a587
-  master_revision: 2
-  cold_project_id: d13625de-15d1-440b-8345-2c9fbc27d69e
-  cold_revision: 2
+  master_revision: 4
+  cold_project_id: 4c01fdbb-7093-4229-9a49-8237583280bc
+  cold_revision: 3
   structural_qa: PASS
+  machine_visual_qa: PASS
+  route_clearance_qa: PASS
   semantic_reproducibility: PASS
-  semantic_sha256: 127b35919b9c385ecabd3143942afe498c108e0e753066ab420c1bc323a40771
+  semantic_sha256: 04c527c61ee814753f09e9c0f651495ad80ed51aafc48c77b6acb4e82a3612ec
   art_review: PENDING_HUMAN
-  blend_bytes: 1357562
-  glb_bytes: 702900
+  blend_bytes: 1379495
+  glb_bytes: 822272
 visual:
-  render_operation: khepri.visual.r2.gauntlet
-  overview_artifact: 2e1d37433ac3ceee968443e2f784e651
-  gameplay_artifact: db6d33b28ef50daa2a115ebbcb5aea36
+  latest_render_operation: khepri.visual.r4.gauntlet
+  r3_render_operation: khepri.visual.r3.gauntlet
   resolution: [1280, 720]
-  status: RENDERED_NOT_PIXEL_REVIEWED
+  status: R4_RENDER_PENDING_OPERATION_SETTLEMENT_OR_HUMAN_PIXEL_REVIEW
+terrain:
+  global_slope_p95_deg: 9.91
+  global_slope_max_deg: 11.56
+  route_slope_p95_deg: 10.08
+  route_slope_max_deg: 10.64
+  traversal_claim: false
+route_interface:
+  refinement: R4_TERRAIN_CONFORMING
+  points: 576
+  target_clearance_m: 7.0
+  audited_clearance_m: [6.9963, 7.0043]
+  max_error_m: 0.0043
+  below_terrain_samples: 0
 ci:
-  historical_pr_run: 34715183868
-  historical_pr_status: FAILURE_OLD_MAIN_CONTINUITY
-  repaired_main_sha: f78bfdc8bd7b2f6ab52b45d39babcc1589ab3918
-  repaired_main_run: 34715800243
-  repaired_main_status: SUCCESS
-  classification: PRODUCER_RECONCILIATION_REQUIRED
+  inspected_pr_merge_run: 34720826636
+  python_tests: 82/82_PASS
+  project_control_failure: MANIFEST_DRIFT_ONLY
+  drift_scope: KHEPRI_OWNED_PATHS
+  classification: EXACT_MANIFEST_REFRESH_REQUIRED
 progress:
   asset_coverage_percent: 100
   modeling_percent: 100
   materials_percent: 25
   optimization_percent: 100
-  integration_percent: 45
-  qa_percent: 90
+  integration_percent: 50
+  qa_percent: 97
 scope_note: "Progress percentages apply only to the atomic world-macro blockout claim."
 completed:
   - repository_bootstrap
@@ -54,20 +67,21 @@ completed:
   - deterministic_generator
   - optimization_pass
   - structural_validator
-  - blender_revision_2
-  - glb_export
-  - provider_blend_retrieval
-  - provider_glb_retrieval
-  - cold_project_rebuild
-  - semantic_reproducibility_fingerprint
+  - camera_frustum_and_scale_proof_r3
+  - terrain_slope_audit
+  - terrain_conforming_route_r4
+  - provider_blend_glb_export
+  - cold_project_semantic_reproducibility_r4
 blocked:
   - HUMAN_VISUAL_REVIEW
   - BINARY_PERSISTENCE_TRANSPORT
+  - EXACT_MANIFEST_REFRESH_IN_REAL_COMBINED_CHECKOUT
 in_progress:
   - RECONCILE_WITH_FLEET_QUALIFIED_MAIN
+  - R4_RENDER_EVIDENCE
 next:
-  - "Build a clean combined tree from current main plus only KHEPRI owned paths; regenerate exact MANIFEST and require PR CI SUCCESS."
-  - "Run machine-readable camera/frustum/readability checks while human GATE-ART remains pending."
-  - "After branch reconciliation, continue macro-only terrain/optical interfaces or hand off new KHEPRI domain claims; do not invade final architecture/characters/boss."
-last_heartbeat: "2026-09-12T21:32:30Z"
+  - "Consume integrator transaction: current green main + owned KHEPRI overlay + project_control refresh + guard-git + PR exact CI."
+  - "Settle/persist R4 overview and gameplay renders; human GATE-ART remains independent."
+  - "Do not add new world density until P0 reconciliation is closed; after that continue macro-only interfaces or shard downstream domains."
+last_heartbeat: "2026-09-12T22:01:20Z"
 claim_status: KEEP_REVIEW
