@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "project": "EXOVANT 2950",
+  "world_id": "leviathan",
+  "claim_id": "CLM-W10-WORLD-LEVIATHAN-001",
+  "agent_id": "AGENT-LEVIATHAN-10",
+  "source": {
+    "path": "art_source/worlds/leviathan/tools/optimize_repeated_mesh_instances_v2.py",
+    "commit": "e46804a5bcda06d3dd5480263baf055ca48034db",
+    "signature_contract": "order-invariant local topology/surface + all UV layers + face material + smoothing + sharp-face + edge seam/sharp + mesh custom props",
+    "safety_blocks": ["shape keys", "vertex groups", "mesh animation", "color attributes", "unknown public mesh attributes"]
+  },
+  "primary": {
+    "project_id": "2577a7b6-ebd7-4d31-a645-620e4b73a95d",
+    "revision_before": 9,
+    "revision_after": 10,
+    "operation": "leviathan-r10-instancing-v2",
+    "candidate_groups": 37,
+    "changed_groups": 7,
+    "objects_in_candidate_groups": 199,
+    "mesh_objects": 260,
+    "mesh_datablocks_before": 122,
+    "mesh_datablocks_after": 98,
+    "mesh_datablocks_removed_this_stage": 24,
+    "objects_relinked_this_stage": 30,
+    "blocked_objects": 0,
+    "blend_bytes": 4842680,
+    "blend_etag": "c729b5b6d2f0c06cdcb54ab0b5b44e9d",
+    "glb_bytes": 5617124,
+    "glb_etag": "f2c419c5d1a651de4e7327e45716e1a7"
+  },
+  "cold": {
+    "project_id": "37a931c7-f2e6-46bc-9be0-26077e5de1c1",
+    "revision_before": 7,
+    "revision_after": 8,
+    "operation": "leviathan-cold-r8-instancing-v2",
+    "candidate_groups": 37,
+    "changed_groups": 7,
+    "objects_in_candidate_groups": 199,
+    "mesh_objects": 260,
+    "mesh_datablocks_before": 127,
+    "mesh_datablocks_after": 98,
+    "mesh_datablocks_removed_this_stage": 29,
+    "objects_relinked_this_stage": 31,
+    "blocked_objects": 0,
+    "blend_bytes": 4842680,
+    "blend_etag": "af34bc8355ccf26c833ecc13d5328253",
+    "glb_bytes": 5620428,
+    "glb_etag": "b03d1cec2d5cda510722990d1c4da7ec"
+  },
+  "visual_surface_equivalence": {
+    "baseline_primary_r9_sha256": "1b9d885f7fd612a30c4fd289bbc79da6b06472b710867e8f63bafa9c87827a5d",
+    "primary_r10_sha256": "1b9d885f7fd612a30c4fd289bbc79da6b06472b710867e8f63bafa9c87827a5d",
+    "cold_r8_sha256": "1b9d885f7fd612a30c4fd289bbc79da6b06472b710867e8f63bafa9c87827a5d",
+    "all_match": true,
+    "criterion": "order-invariant evaluated world-space surface including modifiers, UV per triangle corner, face material, smoothing and normal, plus cameras/lights/material node parameters; optimizer metadata and mesh index/datablock identity excluded"
+  },
+  "aggregate_reduction_from_primary_r8": {
+    "mesh_datablocks": {"before": 260, "after": 98, "removed": 162, "reduction_percent": 62.3077},
+    "blend": {"before_bytes": 7657188, "after_bytes": 4842680, "reduction_percent": 36.7564},
+    "glb": {"before_bytes": 8492516, "after_bytes": 5617124, "reduction_percent": 33.858}
+  },
+  "provider_serialization_note": "Primary and cold editable .blend sizes are identical. Portable GLB sizes differ by 3304 bytes despite identical canonical visual-surface fingerprint; binary identity is not used as the visual reproducibility gate.",
+  "gate_truth": {
+    "structural_instancing_optimization_pass": true,
+    "cold_replay_converges_to_same_datablock_count": true,
+    "visual_surface_equivalence_pass": true,
+    "runtime_performance_pass": false,
+    "engine_import_pass": false,
+    "art_review_pass": false
+  },
+  "status": "PASS_SOURCE_EXPORT_OPTIMIZATION_NOT_RUNTIME_QUALIFIED"
+}
