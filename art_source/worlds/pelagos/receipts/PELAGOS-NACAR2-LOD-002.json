@@ -1,0 +1,87 @@
+{
+  "schema_version": 1,
+  "checkpoint": "PELAGOS-NACAR2-LOD-002",
+  "task_id": "PEL/TECH/022",
+  "world_id": "pelagos",
+  "claim_id": "CLM-PEL-WORLD-001",
+  "agent_id": "AGENT-PELAGOS-01",
+  "status": "IN_PROGRESS",
+  "claim": "Nácar-2 now has corrected engine-agnostic semantic visual LOD1/LOD2 foundations with measured extent preserved and shared collision kept independent. Runtime switching, water physics and target-hardware performance are not claimed.",
+  "remote_3d": {
+    "project_id": "39930c08-62bb-4034-b35d-70d0ce51c9d9",
+    "revision": 27,
+    "build_operation": "pelagos.nacar2.lod-foundation.v1",
+    "axis_fix_operation": "pelagos.nacar2.lod2-axisfix.v1",
+    "structural_verification": "pelagos.nacar2.lod-verify.r27",
+    "visual_verification": "pelagos.nacar2.lod-visual.r27"
+  },
+  "lod": {
+    "LOD0": {
+      "asset_id": "PEL-VEH-NACAR2",
+      "visual_tris_est": 19604,
+      "bbox_m": [15.65, 10.8, 7.35],
+      "policy": "full engineering blockout exterior + interior/service detail; collision excluded"
+    },
+    "LOD1": {
+      "asset_id": "PEL-VEH-NACAR2-LOD1",
+      "object_count": 29,
+      "tris_est": 6764,
+      "reduction_vs_lod0_percent": 65.50,
+      "bbox_m": [15.65, 10.8, 7.175],
+      "bbox_ratio_vs_lod0": [1.0, 1.0, 0.976],
+      "policy": "exterior silhouette + propulsion/control surfaces + cheap hydrophone/guards/frame/nav lights; cockpit/service/cargo microdetail removed"
+    },
+    "LOD2": {
+      "asset_id": "PEL-VEH-NACAR2-LOD2",
+      "object_count": 13,
+      "tris_est": 1012,
+      "reduction_vs_lod0_percent": 94.84,
+      "bbox_m": [15.65, 10.8, 7.15],
+      "bbox_ratio_vs_lod0": [1.0, 1.0, 0.973],
+      "policy": "low-poly hull/prow/stern/canopy/sonar/fins + two ducted thrusters + guards + hydrophone identity ring"
+    }
+  },
+  "identity_gate": {
+    "lod2_thruster_ducts": 2,
+    "lod2_thruster_guards": 2,
+    "lod2_lateral_fins": 2,
+    "lod2_vertical_fins": 1,
+    "lod2_hydrophone": 1,
+    "materials_missing": 0,
+    "nonunit_mesh_scales": 0
+  },
+  "collision": {
+    "asset_family": "PEL-VEH-NACAR2-COL",
+    "objects": [
+      "PEL_N2_COLLISION_MainHull",
+      "PEL_N2_COLLISION_Thruster_-1",
+      "PEL_N2_COLLISION_Thruster_1"
+    ],
+    "separate_from_visual_lod": true,
+    "engine_validation": "PENDING"
+  },
+  "incident_and_control": {
+    "defect": "Initial LOD2 rebuilt the pressure hull from object.dimensions of a source cylinder rotated 90 degrees, reinterpreting its 9.4 m longitudinal dimension as vertical height; LOD2 became 29.3 percent taller than LOD0.",
+    "diagnosis_operation": "pelagos.nacar2.lod2-zdiagnose.r26",
+    "control": "derive hull and thruster proxy extents from evaluated source world-space AABB rather than local dimensions",
+    "corrected_source_world_bbox": {
+      "pressure_hull_m": [9.4, 4.7, 4.7],
+      "thruster_duct_each_m": [1.5, 2.1, 2.1]
+    },
+    "result": "PASS_R27"
+  },
+  "visual_artifacts": [
+    {"lod":"LOD0","artifact_id":"56ecde8625acc8f5676a8fe21887d646","name":"qa_nacar2_lod0_r27_wb.png","resolution":[512,512]},
+    {"lod":"LOD1","artifact_id":"f3d54e1ab396191e4a8bf4f3cb2dd147","name":"qa_nacar2_lod1_r27_wb.png","resolution":[512,512]},
+    {"lod":"LOD2","artifact_id":"073c2b80659a3883b9c2ab86f8201fc5","name":"qa_nacar2_lod2_r27_wb.png","resolution":[512,512]}
+  ],
+  "pending": [
+    "engine screen-size/distance switching thresholds",
+    "runtime water/vehicle physics",
+    "engine collision validation",
+    "GPU/performance profile",
+    "material/mip parity in production engine",
+    "human silhouette/art review"
+  ],
+  "reason_not_done": "Production engine EXO-012 remains unresolved; runtime LOD switching, physics, collision, target-hardware performance and human GATE-ART are still mandatory."
+}
