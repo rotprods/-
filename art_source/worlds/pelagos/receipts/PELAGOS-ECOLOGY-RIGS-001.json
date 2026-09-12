@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "checkpoint": "PELAGOS-ECOLOGY-RIGS-001",
+  "task_id": "PEL/ECO/009",
+  "world_id": "pelagos",
+  "claim_id": "CLM-PEL-WORLD-001",
+  "agent_id": "AGENT-PELAGOS-01",
+  "status": "IN_PROGRESS",
+  "claim": "The three locomoting canonical Pelagos fauna families now have anatomy-driven armature foundations and explicit collision/query intent. Coral escriba is intentionally kept static/procedural because deformation is not justified by its current gameplay role.",
+  "remote_3d": {
+    "project_id": "39930c08-62bb-4034-b35d-70d0ce51c9d9",
+    "revision": 28,
+    "build_operation": "pelagos.ecology.rigs.v1",
+    "verification_operation": "pelagos.ecology.rigs-verify.r28"
+  },
+  "rigs": {
+    "PEL-ECO-JELLY-001": {
+      "rig": "PEL_JELLY_RIG",
+      "bone_count": 38,
+      "anatomy_bbox_m": [4.909, 4.909, 8.308],
+      "zero_length_bones": 0,
+      "bones_outside_padded_anatomy": 0,
+      "bone_length_range_m": [0.35, 4.7447],
+      "policy": "bell contraction + six oral-arm chains + twelve sensory-tentacle chains",
+      "collision": "non-blocking bell overlap/query sphere proposal; tentacles have no solid collider"
+    },
+    "PEL-ECO-EEL-001": {
+      "rig": "PEL_ECO_EEL_RIG",
+      "bone_count": 11,
+      "anatomy_bbox_m": [6.339, 1.147, 0.92],
+      "zero_length_bones": 0,
+      "bones_outside_padded_anatomy": 0,
+      "bone_length_range_m": [0.2, 0.6006],
+      "policy": "anguilliform axial chain derived from authored body-segment centers",
+      "collision": "three non-blocking overlap/query segment proxies; solid blocking remains gameplay-dependent"
+    },
+    "PEL-ECO-BOV-001": {
+      "rig": "PEL_BOV_RIG",
+      "bone_count": 22,
+      "anatomy_bbox_m": [5.47, 2.72, 2.537],
+      "zero_length_bones": 0,
+      "bones_outside_padded_anatomy": 0,
+      "bone_length_range_m": [0.25, 0.8485],
+      "policy": "root/spine/head plus six three-bone limb chains for reef-grazing locomotion",
+      "collision": "simple torso + head compound blocking proposal; foot contact semantics pending engine"
+    },
+    "PEL-ECO-SCRIBE-001": {
+      "armature": null,
+      "policy": "NO_ARMATURE_BY_DESIGN_STATIC_PROCEDURAL_GROWTH",
+      "rationale": "Its canonical identity is recording vibration through growth. A deformation rig is not justified until an authored interaction requires it.",
+      "collision": "background non-blocking by default; hero interaction proxy TBD"
+    }
+  },
+  "collision_proxies": {
+    "all_hidden_render": true,
+    "all_unit_scale": true,
+    "jelly_query_count": 1,
+    "glass_eel_query_count": 3,
+    "reef_bovine_blocking_proxy_count": 2
+  },
+  "qa": {
+    "armature_foundation_gate": "PASS",
+    "skin_weights": "NOT_AUTHORED",
+    "deformation_qa": "NOT_RUN",
+    "locomotion_clips": "NOT_AUTHORED",
+    "engine_behavior_physics": "NOT_RUN",
+    "fauna_lod": "NOT_DONE",
+    "engine_collision_semantics": "NOT_RUN",
+    "performance": "NOT_RUN",
+    "human_art_review": "PENDING"
+  },
+  "reason_not_done": "Skinning/deformation, locomotion animation, runtime behavior/physics, fauna LOD, engine collision semantics, performance and human GATE-ART remain open."
+}
