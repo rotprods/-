@@ -1,0 +1,14 @@
+{
+  "task_id": "INFRA-005",
+  "outcome": "checkpoint",
+  "evidence": [
+    "evidence/delivery-container-regression.json",
+    "evidence/gates/INFRA-005-GATE-CONTROL.json",
+    "evidence/gates/INFRA-005-GATE-NATIVE.json",
+    "evidence/gates/INFRA-005-GATE-GRAPH.json",
+    "evidence/gates/INFRA-005-GATE-ASSET.json"
+  ],
+  "source_digest": "7d788a1555d98ed69c11fea738f0535750b9f5f4dd4efd1f494e5ed5246aa592",
+  "next_action": "Recuperar una entrega Khepri fijada con fuente y prueba nativa tras reconciliar su owner; ADOPTION-002 no recuperado. Gameplay EXO-004 y arte Terra PR1 mantienen sus scopes. Mac pendiente de sesión local.",
+  "executed_at": "2026-09-12T21:23:25.119188+00:00"
+}

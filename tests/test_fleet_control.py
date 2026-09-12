@@ -396,6 +396,54 @@ class FleetDeliveries(unittest.TestCase):
         self.assertIn("human approval", result["not_claimed"])
         self.assertIn("target hardware performance", result["not_claimed"])
 
+    def replace_export(self, payload):
+        payload = bytearray(payload)
+        struct.pack_into("<I", payload, 8, len(payload))
+        (self.root / "model.glb").write_bytes(payload)
+        self.delivery["glb"] = self.item("model.glb")
+        self.receipt["artifact_sha256"] = self.sha("model.glb")
+        self.save_receipt()
+
+    def test_truncated_tail_header_with_valid_total_and_hash_is_rejected(self):
+        self.replace_export((self.root / "model.glb").read_bytes() + b"tail")
+        with self.assertRaisesRegex(fleet.FleetError, "chunk header"):
+            fleet.delivery_check(self.root, self.delivery)
+
+    def test_tail_chunk_overflow_with_valid_total_and_hash_is_rejected(self):
+        self.replace_export((self.root / "model.glb").read_bytes()
+                            + struct.pack("<II", 12, 0x004E4942) + b"1234")
+        with self.assertRaisesRegex(fleet.FleetError, "bounds"):
+            fleet.delivery_check(self.root, self.delivery)
+
+    def test_unaligned_chunk_with_valid_total_and_hash_is_rejected(self):
+        self.replace_export((self.root / "model.glb").read_bytes()
+                            + struct.pack("<II", 1, 0x004E4942) + b"x")
+        with self.assertRaisesRegex(fleet.FleetError, "alignment"):
+            fleet.delivery_check(self.root, self.delivery)
+
+    def test_duplicate_json_chunk_is_rejected(self):
+        original = (self.root / "model.glb").read_bytes()
+        self.replace_export(original + original[12:])
+        with self.assertRaisesRegex(fleet.FleetError, "duplicate"):
+            fleet.delivery_check(self.root, self.delivery)
+
+    def test_duplicate_binary_chunk_is_rejected(self):
+        binary = struct.pack("<II", 4, 0x004E4942) + b"1234"
+        self.replace_export((self.root / "model.glb").read_bytes() + binary * 2)
+        with self.assertRaisesRegex(fleet.FleetError, "duplicate"):
+            fleet.delivery_check(self.root, self.delivery)
+
+    def test_unknown_aligned_extension_chunk_is_preserved(self):
+        self.replace_export((self.root / "model.glb").read_bytes()
+                            + struct.pack("<II", 4, 0x12345678) + b"1234")
+        self.assertTrue(fleet.delivery_check(self.root, self.delivery)["passed"])
+
+    def test_receipt_path_map_is_not_a_valid_evidence_list(self):
+        self.receipt["evidence_refs"] = {"engine.log": "not a list"}
+        self.save_receipt()
+        with self.assertRaisesRegex(fleet.FleetError, "list of paths"):
+            fleet.delivery_check(self.root, self.delivery)
+
     def test_modified_blend_or_export_breaks_hash_binding(self):
         for kind, path in (("blend", "source.blend"), ("glb", "model.glb")):
             original = (self.root / path).read_bytes()
