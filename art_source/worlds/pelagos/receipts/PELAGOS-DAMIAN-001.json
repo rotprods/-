@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "checkpoint": "PELAGOS-DAMIAN-001",
+  "task_id": "PEL/CHAR/014",
+  "world_id": "pelagos",
+  "claim_id": "CLM-PEL-WORLD-001",
+  "agent_id": "AGENT-PELAGOS-01",
+  "status": "IN_PROGRESS",
+  "claim": "Damián Vo now has a role-driven character rig foundation; final face/anatomy/surfacing/deformation/animation/engine delivery remains open.",
+  "remote_3d": {
+    "project_id": "39930c08-62bb-4034-b35d-70d0ce51c9d9",
+    "build_revision": 22,
+    "build_operation": "pelagos.damian.character.v1",
+    "structural_verification": "pelagos.damian.verify.r22",
+    "visual_silhouette_verification": "pelagos.damian.visual-wb.r22"
+  },
+  "canon": {
+    "identity": "Damián Vo / capitán de boyas / necesita un canal de comercio"
+  },
+  "foundation": {
+    "asset_id": "PEL-NPC-DAMIAN",
+    "collection": "62_DAMIAN_HERO_V1",
+    "quality_tier": "A",
+    "production_state": "CHARACTER_RIG_FOUNDATION_V1",
+    "object_count": 27,
+    "mesh_count": 24,
+    "curve_count": 1,
+    "armature": "PEL_DAMIAN_RIG",
+    "bone_count": 20,
+    "body_height_m_proposal": 1.76,
+    "equipped_visible_bbox_m": [0.64, 1.44, 1.985],
+    "role_equipment_proposals": [
+      "buoy route radio + route lead",
+      "trade route ledger",
+      "mooring service key",
+      "emergency flotation harness",
+      "mooring-deck grip soles",
+      "repaired ceramic chest plate",
+      "pressure seal collar"
+    ],
+    "epistemic_limits": [
+      "human/humanoid proxy only; no altered physiology claimed",
+      "age, ethnicity, final face, hair and skin remain undefined by canon",
+      "all wardrobe/equipment detail beyond the canon role is a reversible Pelagos art proposal"
+    ]
+  },
+  "qa": {
+    "missing_materials": 0,
+    "nonunit_mesh_scales": 0,
+    "legacy_proxy_visibility_violations": 0,
+    "structural_gate": "PASS_FOR_CHARACTER_FOUNDATION",
+    "silhouette_artifact": {
+      "artifact_id": "58426a8088949194a4996c0740646597",
+      "name": "qa_damian_r22_wb.png",
+      "resolution": [512,512]
+    },
+    "semantic_pixel_review": "PENDING_HUMAN_OR_CLIENT_IMAGE_INSPECTION",
+    "skin_weights_deformation": "NOT_DONE",
+    "final_face_hair_skin": "NOT_DONE",
+    "sculpt_retopology": "NOT_DONE",
+    "uv_bake_final_pbr": "NOT_DONE",
+    "animation": "NOT_DONE",
+    "engine_import_collision": "NOT_RUN",
+    "lod_crowd_variants": "NOT_DONE",
+    "performance": "NOT_RUN",
+    "human_art_review": "PENDING"
+  },
+  "reason_not_done": "Final character direction and production, deformation/animation, engine integration, LOD/performance and human GATE-ART remain open."
+}
