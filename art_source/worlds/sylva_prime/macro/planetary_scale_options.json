@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "world_id": "sylva",
+  "claim_id": "CLM-SYLVA-MACRO-001",
+  "status": "PROPOSAL_PENDING_CREATIVE_DIRECTOR",
+  "canon_constraint": {
+    "surface_gravity_earth": 1.12,
+    "planet_radius": "UNKNOWN_BLOCKED",
+    "planet_diameter": "UNKNOWN_BLOCKED"
+  },
+  "earth_reference": {
+    "mean_radius_km": 6371.0084,
+    "mean_density_g_cm3": 5.5134,
+    "escape_velocity_km_s": 11.19,
+    "source": "NASA/JPL Solar System Dynamics planetary physical parameters"
+  },
+  "derivation": {
+    "mass_earth": "1.12 * radius_earth^2",
+    "density_earth": "1.12 / radius_earth",
+    "note": "Spherical bulk consistency approximation; not an interior-structure model."
+  },
+  "options": [
+    {
+      "id": "SYL_SCALE_A_COMPACT",
+      "radius_earth": 1.05,
+      "radius_km": 6689.55882,
+      "diameter_km": 13379.11764,
+      "circumference_km": 42031.73768933761,
+      "surface_area_km2": 562347563.1592697,
+      "mass_earth": 1.2348,
+      "mean_density_g_cm3": 5.88096,
+      "escape_velocity_km_s": 12.134831420337079,
+      "recommended": false
+    },
+    {
+      "id": "SYL_SCALE_B_BALANCED",
+      "radius_earth": 1.12,
+      "radius_km": 7135.529408,
+      "diameter_km": 14271.058816,
+      "circumference_km": 44833.853535293456,
+      "surface_area_km2": 639826560.7501025,
+      "mass_earth": 1.404928,
+      "mean_density_g_cm3": 5.5134,
+      "escape_velocity_km_s": 12.5328,
+      "recommended": false
+    },
+    {
+      "id": "SYL_SCALE_C_BROAD_BIOGENIC",
+      "radius_earth": 1.2,
+      "radius_km": 7645.21008,
+      "diameter_km": 15290.42016,
+      "circumference_km": 48036.27164495726,
+      "surface_area_km2": 734494776.3712908,
+      "mass_earth": 1.6128,
+      "mean_density_g_cm3": 5.14584,
+      "escape_velocity_km_s": 12.972680463188784,
+      "recommended": true
+    }
+  ],
+  "recommended_option": "SYL_SCALE_C_BROAD_BIOGENIC",
+  "promotion_rule": "Do not write these values into global canon/state until explicit creative/integrator approval."
+}
