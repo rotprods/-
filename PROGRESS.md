@@ -43,3 +43,5 @@ Incremento del control de entrega: recorrido completo de chunks GLB y lista expl
 Corrección del usuario convertida en evento L2 y preflight AGENTS. Objetivo de remediación y criterios por problema dentro de PLAN existente. Difusión por hilo #7; adopción externa pendiente, sin nuevos agentes ni watchers.
 
 VISUAL-005: graphical Godot capture qualified here after resolving absolute xkbcomp dependency and importing cold-clone assets. See evidence/visual-display-qualified.json and visual-display-runbook.md. CPU llvmpipe only; existing capture repositions player. Capture exit code can hide script errors: inspect log and fresh PNG.
+
+MR-EXO-001: contrato de preparación de migración en PLAN y ubicación de assets/aplicaciones en docs/FLEET_COORDINATION.md. Cumplimiento de flota parcial; respaldos de mundos y manifest drift pendientes. No nuevos agentes/automatización; siguiente unidad es una entrega admitida recuperable y CI correcto, no conexión masiva de apps.

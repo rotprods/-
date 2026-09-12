@@ -30,3 +30,5 @@ Entregas GLB: un hash correcto y una cabecera coherente no garantizan integridad
 Admisión y consumo: recuperar LRN-EXO-20260912-OWNER-ADMISSION (L2, adopción externa pendiente). El owner conserva modelado/recuperación/validación; el integrador necesita entrega o bloqueo concreto. Pausa horaria registrada en issue #7 comentario 5648819121. Capacidad de ejecución se prueba por operación; no confundir error de ruta, display y GPU.
 
 VISUAL-005: graphical Godot capture qualified here after resolving absolute xkbcomp dependency and importing cold-clone assets. See evidence/visual-display-qualified.json and visual-display-runbook.md. CPU llvmpipe only; existing capture repositions player. Capture exit code can hide script errors: inspect log and fresh PNG.
+
+MR-EXO-001: contrato de preparación de migración en PLAN y ubicación de assets/aplicaciones en docs/FLEET_COORDINATION.md. Cumplimiento de flota parcial; respaldos de mundos y manifest drift pendientes. No nuevos agentes/automatización; siguiente unidad es una entrega admitida recuperable y CI correcto, no conexión masiva de apps.

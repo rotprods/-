@@ -40,7 +40,9 @@ Original reservation predates the fleet harness and that chronology is preserved
 
 Owner ACK is already published at issue #7 comment `5648349781`. Current registry readback still has UMBRA as `reserved / ack=null`; that transition is integrator-owned. Do not rewrite `main:ops/fleet/registry.json` from this branch.
 
-The branch was first reconciled with `main@ca224a78c72512770cb599e82977623c4b8aa76d` through merge `58e54c25965a21e6a39b2bd3e309281be01b1166`. During Wave 1, `main` advanced five commits with runtime/capture evidence; UMBRA was resynced again with `main@758a9b6326a7d061f1e304abe9b1593b6b2d1a66` through normal two-parent merge `bfff105fb5e46d31e064a22f33053e43b132df19`. No force update was used. The merge tree uses current `main` as authority for global/runtime paths and overlays only the UMBRA-owned semantic paths.
+The branch was first reconciled with `main@ca224a78c72512770cb599e82977623c4b8aa76d` through merge `58e54c25965a21e6a39b2bd3e309281be01b1166`, then with `main@758a9b6326a7d061f1e304abe9b1593b6b2d1a66` through merge `bfff105fb5e46d31e064a22f33053e43b132df19`. After the migration-readiness / asset-custody contract landed, UMBRA was reconciled again with `main@b74bd7072a7b2c68c4453402fbffe9d20bfb4de0`. No force update is permitted; global/runtime paths always come from current main and only UMBRA-owned semantic paths are overlaid.
+
+The current fleet contract additionally requires durable provider-independent custody for final artistic delivery. Higgsfield project URLs and signed artifact links are production evidence, **not an independent backup**. UMBRA therefore cannot pass final 3D delivery until its `.blend`, GLB and dependencies are recovered into Git when transport permits or a persistent EXOVANT Drive bundle with stable ID, exact SHA256/bytes and a versioned receipt.
 
 ## Wave 0 checkpoint
 
@@ -120,21 +122,22 @@ Wave-0 delivery/scale/aerial renders were successfully published, but this sessi
 1. `BLOCK-W04-001`: planet physical radius/orbital representation.
 2. `BLOCK-W04-002`: production engine / target GPU and UMBRA runtime art budgets.
 3. `BLOCK-W04-003`: final NOCTIL design/rig/attack contract.
-4. Human/direct visual review.
-5. Final UVs/PBR/texel density/material budget.
-6. Refuge production modular kit.
-7. Quest-linked terrain/environment cells M01–M04.
-8. Low-light/color-vision/combat-readability acceptance.
-9. Shared-mesh/instancing optimization measurement.
-10. Collision, LOD/HLOD, UMBRA-specific runtime import/traversal/profile receipt.
-11. Integrator registry ACK readback.
+4. `BLOCK-W04-004`: human/direct visual review.
+5. `BLOCK-W04-005`: durable provider-independent binary custody (`.blend` + GLB + dependencies + stable receipt) under MR-EXO-001.
+6. Final UVs/PBR/texel density/material budget.
+7. Refuge production modular kit.
+8. Quest-linked terrain/environment cells M01–M04.
+9. Low-light/color-vision/combat-readability acceptance.
+10. Shared-mesh/instancing optimization measurement.
+11. Collision, LOD/HLOD, UMBRA-specific runtime import/traversal/profile receipt.
+12. Integrator registry ACK readback.
 
 ## Next three actions
 
-1. Build `W04/ARCH/014` refuge modular production kit and `W04/TERRAIN/011` quest-linked terrain cell archetypes; keep physical planet-scale values abstract.
-2. Run `W04/OPT/021` and `W04/VIS/022`: measured instancing optimization plus post-Wave-1 image/readability defect loop; no art PASS without direct evidence.
+1. Close the branch continuity loop against current main, then build `W04/ARCH/014` refuge modular production kit and `W04/TERRAIN/011` quest-linked terrain cell archetypes; keep physical planet-scale values abstract.
+2. Recover a durable binary checkpoint for Wave 1 under MR-EXO-001, then run `W04/OPT/021` and `W04/VIS/022`: measured instancing optimization plus post-Wave-1 image/readability defect loop.
 3. Coordinate `W04/EXPORT/020` with integration owner for bounded GLB import, collision and traversal/profile receipt before locking LOD/GPU budgets.
 
 ## Critical operating rule on resume
 
-Always RESYNC issue #7, `ops/fleet/registry.json`, branches/PRs, current `main`, Linear `ROT-119`, and both Blender project revisions before any new mutation. If `main` advanced, reconcile normally; never force. After any repo-owned source/doc change, regenerate exact root `MANIFEST.json` as the final content change and let the Gauntlet prove continuity rather than rerunning blindly.
+Always RESYNC issue #7, `ops/fleet/registry.json`, branches/PRs, current `main`, Linear `ROT-119`, current fleet custody contract and both Blender project revisions before any new mutation. If `main` advanced, reconcile normally; never force. After any repo-owned source/doc change, regenerate exact root `MANIFEST.json` as the final content change and let the Gauntlet prove continuity rather than rerunning blindly.

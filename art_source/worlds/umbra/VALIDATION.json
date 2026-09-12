@@ -10,10 +10,11 @@
     "registry_readback": "RESERVED_ACK_NULL_PENDING_INTEGRATOR",
     "linear": "ROT-119",
     "pr": 16,
-    "last_reconciled_main": "758a9b6326a7d061f1e304abe9b1593b6b2d1a66",
-    "reconciliation_merge": "bfff105fb5e46d31e064a22f33053e43b132df19",
-    "previous_reconciliation_merge": "58e54c25965a21e6a39b2bd3e309281be01b1166",
-    "no_force_update": true
+    "last_reconciled_main": "b74bd7072a7b2c68c4453402fbffe9d20bfb4de0",
+    "reconciliation_merge": "PENDING_CURRENT_RESYNC_COMMIT_READBACK",
+    "previous_reconciliation_merge": "bfff105fb5e46d31e064a22f33053e43b132df19",
+    "no_force_update": true,
+    "custody_contract": "MR-EXO-001"
   },
   "wave0": {
     "project_id": "7ab99682-8777-4143-8ae0-1fbb178ccafb",
@@ -49,46 +50,13 @@
     "wave1_named_objects": 310,
     "bad_object_scales": 0,
     "zero_dimension_meshes": 0,
-    "primary_blend": {
-      "bytes": 4134586,
-      "etag": "5581ef232d24e37ea589dffe4514eb78"
-    },
-    "primary_glb": {
-      "bytes": 2474196,
-      "etag": "0d351e8a81781acb64cf69db0134e39f"
-    },
-    "replay_blend": {
-      "bytes": 4134586,
-      "etag": "0df978c83f34ff7fdd07463f11ca7ab0"
-    },
-    "replay_glb": {
-      "bytes": 2474196,
-      "etag": "b421bd12c2b6337751cf3f869f5e1b4a"
-    },
+    "primary_blend": {"bytes": 4134586, "etag": "5581ef232d24e37ea589dffe4514eb78"},
+    "primary_glb": {"bytes": 2474196, "etag": "0d351e8a81781acb64cf69db0134e39f"},
+    "replay_blend": {"bytes": 4134586, "etag": "0df978c83f34ff7fdd07463f11ca7ab0"},
+    "replay_glb": {"bytes": 2474196, "etag": "b421bd12c2b6337751cf3f869f5e1b4a"},
     "contact_threshold_abs_m": 0.25,
-    "contact_gaps_m": {
-      "ARCH_REFUGE_HUB_BASE": 0.08,
-      "CARAVAN_00_TRACK_+1": 0.071,
-      "CARAVAN_00_TRACK_-1": 0.129,
-      "CARAVAN_01_TRACK_+1": 0.065,
-      "CARAVAN_01_TRACK_-1": 0.135,
-      "CARAVAN_02_TRACK_+1": 0.014,
-      "CARAVAN_02_TRACK_-1": 0.186,
-      "CARAVAN_03_TRACK_+1": -0.045,
-      "CARAVAN_03_TRACK_-1": 0.245,
-      "CARAVAN_04_TRACK_+1": -0.016,
-      "CARAVAN_04_TRACK_-1": 0.216,
-      "INFRA_REFLECTOR_00_MAST": 0.06,
-      "INFRA_REFLECTOR_01_MAST": 0.06,
-      "INFRA_REFLECTOR_02_MAST": 0.06,
-      "INFRA_REFLECTOR_03_MAST": 0.06
-    },
     "contact_gate": "PASS_ALL_CHECKED_WITHIN_THRESHOLD",
-    "delivery_camera": {
-      "location_m": [80, -1150, 250],
-      "lens_mm": 38,
-      "required_anchors_fully_inside": true
-    },
+    "delivery_camera": {"location_m": [80, -1150, 250], "lens_mm": 38, "required_anchors_fully_inside": true},
     "semantic_clean_replay": "PASS_EXACT_COUNTS_CONTACTS_CAMERA_AND_GLB_SIZE",
     "binary_etag_equality_required": false
   },
@@ -98,28 +66,31 @@
     "python_tests": "PASS_82_OF_82",
     "project_control_check": "PASS",
     "godot_version": "4.7.2",
-    "native_gates": {
-      "import": "PASS",
-      "state-tests": "PASS",
-      "world-tests": "PASS",
-      "input-tests": "PASS",
-      "smoke": "PASS"
-    },
-    "evidence_artifact_id": 10306275373,
-    "post_wave1_status": "PENDING_FINAL_MANIFEST_AND_CI_AT_TIME_OF_THIS_FILE",
-    "note": "Latest post-Wave1 CI is tracked externally on PR #16 / Linear ROT-119 after MANIFEST refresh so this validation file does not self-invalidate the generated manifest."
+    "native_gates": {"import": "PASS", "state-tests": "PASS", "world-tests": "PASS", "input-tests": "PASS", "smoke": "PASS"},
+    "failed_wave1_manifest_run_id": 34721974747,
+    "failed_wave1_manifest_reason": "THREE_TRANSCRIPTION_ERRORS_IN_SHA256_VALUES_ONLY",
+    "failed_wave1_unit_tests": "PASS_82_OF_82",
+    "post_resync_status": "PENDING_FINAL_MANIFEST_AND_CI_AT_TIME_OF_THIS_FILE",
+    "note": "Post-resync CI is tracked externally on PR #16 / Linear ROT-119 after final MANIFEST refresh so this file does not self-invalidate the generated manifest."
+  },
+  "custody": {
+    "provider_source": "HIGGSFIELD_REMOTE_PROJECTS_EXIST",
+    "provider_independent_checkpoint": "BLOCKED_NOT_YET_RECOVERED",
+    "required": ["blend", "glb", "dependencies", "stable_locator", "sha256", "bytes", "versioned_receipt"],
+    "final_delivery_gate": "BLOCKED_MR_EXO_001"
   },
   "gates": {
     "canon_separation": "PASS",
     "claim_collision": "PASS_RESERVED_TO_THIS_OWNER",
     "fleet_owner_ack_published": "PASS",
     "fleet_registry_ack_readback": "PENDING_INTEGRATOR",
-    "branch_reconciled_to_main": "PASS_AT_758A9B6",
+    "branch_reconciled_to_main": "PASS_AT_B74BD707_PENDING_MERGE_SHA_READBACK",
     "metric_scale": "PASS",
     "object_scale": "PASS",
     "zero_dimension": "PASS",
-    "editable_blend": "PASS",
-    "portable_glb": "PASS",
+    "editable_blend_remote": "PASS",
+    "portable_glb_remote": "PASS",
+    "provider_independent_binary_custody": "BLOCKED",
     "wave0_clean_replay": "PASS",
     "wave1_clean_replay": "PASS",
     "terrain_contact": "PASS_WAVE1_CHECKED_SET",
@@ -134,5 +105,5 @@
     "planet_physical_scale": "BLOCKED_CANON",
     "noctil_final_design": "BLOCKED_SPEC"
   },
-  "overall": "REPRODUCIBLE_WAVE1_PRODUCTION_FOUNDATION_WITH_OPEN_ART_RUNTIME_AND_CANON_GATES"
+  "overall": "REPRODUCIBLE_WAVE1_PRODUCTION_FOUNDATION_WITH_OPEN_CUSTODY_ART_RUNTIME_AND_CANON_GATES"
 }
