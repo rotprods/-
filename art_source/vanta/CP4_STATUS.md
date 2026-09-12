@@ -86,3 +86,20 @@ The 711→691 visual-mesh reduction is expected: the 20 former collision render 
 - HLOD/instancing runtime qualification.
 
 Evidence authority: `art_source/vanta/evidence/godot_rev9_native_qualification.json`.
+
+## Revision 10 — bounded CharacterBody traversal
+
+Revision 10 is a texture-payload repair; geometry and the revision-9 `_colonly` collision contract were intentionally left unchanged. The collision slice was nevertheless regression-tested in pinned Godot 4.7.2 with a real `CharacterBody3D` rather than only a ray query.
+
+Two independent executions (GitHub Actions run `34722670811`, job `103631274506`, plus the Higgsfield Linux sandbox) reached the same bounded result on the CP4 test-yard floor:
+
+- `COL_VAN_CP4_TEST_YARD_FLOOR` present with a non-null imported collision shape;
+- capsule `CharacterBody3D` settled on the authored floor;
+- target reached;
+- 323 physics frames recorded on-floor;
+- travel ratio `0.969267592149354` across the 12 m floor collider;
+- no claim is made for the full VANTA route, interactions, combat, HLOD or target-hardware performance.
+
+**CP4 truth after rev10:** `EMPIRICALLY_QUALIFIED_BOUNDED_CHARACTERBODY_TRAVERSAL_GODOT_4_7_2`. Static import/collision and the representative floor traversal are qualified; full gameplay traversal and performance remain open.
+
+Evidence authority: `art_source/vanta/evidence/rev10_texture_engine_qualification.json`.
