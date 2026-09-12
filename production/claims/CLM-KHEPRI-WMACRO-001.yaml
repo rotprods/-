@@ -1,0 +1,59 @@
+claim_id: CLM-KHEPRI-WMACRO-001
+agent_id: AGENT-KHEPRI-WMACRO-001
+session_id: SESSION-20260912-KHEPRI-001
+scope_key: khepri/world-macro/planetary-foundation
+world_id: khepri
+region_id: GLOBAL_KHEPRI
+category: world_macro
+subdomain: planetary_foundation
+status: CLAIMED
+priority: P0
+includes:
+  - planet-scale representation contract (L0/L1 only)
+  - coordinate and local-tangent-cell convention proposal for Khepri art production
+  - macro terrain blockout for one representative production cell
+  - macro landmarks and traversal anchors required to validate scale
+  - world-macro asset manifest and QA evidence for this scope
+excludes:
+  - final regional terrain sculpt
+  - settlement architecture kits
+  - interiors
+  - final materials/textures
+  - characters/NPC production
+  - fauna production
+  - vehicles
+  - RA-KHET final boss model/rig/animation
+  - gameplay systems
+  - edits to canonical design/EXOVANT_DATA.json
+  - edits to global STATE/PLAN unless reconciled by the project single-writer workflow
+branch: art/world-khepri-001
+base_branch: main
+base_sha: 4c2fa044080004609ea6df45f34b2a784536507a
+blender_project_id: 040f0c45-83a7-483c-9ee7-1e31c640a587
+blender_project_name: "EXOVANT 2950 — KHEPRI World Master — ART-KHEPRI-001"
+pipeline:
+  method_status: PIPELINE_METHOD_NOT_FOUND
+  searched_aliases:
+    - "Flu In"
+    - "Flow In"
+    - "flu-in"
+    - "flow-in"
+  verified_method: "Higgsfield 3D Jutsu + Blender 5.2.0 LTS + bpy + editable .blend + GLB + validation evidence"
+  evidence:
+    - docs/ART_PRODUCTION.md
+    - docs/studio/exovant/INTEGRATION.md@rotprods/game-dev-mcp-hub
+canon_inputs:
+  - AGENTS.md
+  - _project_intelligence/STATE.json
+  - _project_intelligence/PLAN.json
+  - HANDOFF.md
+  - MEMORY.md
+  - design/EXOVANT_BIBLIA.md
+  - design/EXOVANT_DATA.json
+  - docs/ART_PRODUCTION.md
+dependencies:
+  - EXO-017 Andromeda chapters (future campaign integration)
+blocked_by: []
+created_at: "2026-09-12T19:20:00Z"
+last_heartbeat: "2026-09-12T19:20:00Z"
+claim_status_note: "Atomic macro-world claim. Other agents may claim Khepri domains outside includes; semantic overlap requires coordination before edits."
