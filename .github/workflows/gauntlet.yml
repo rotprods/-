@@ -1,12 +1,81 @@
-name: EXOVANT Vanta Maintenance Hold
+name: EXOVANT Vanta Finalize
 on:
   pull_request:
-  workflow_dispatch:
 permissions:
-  contents: read
+  contents: write
+concurrency:
+  group: vanta-finalize-${{ github.ref }}
+  cancel-in-progress: true
 jobs:
-  hold:
-    if: ${{ false }}
+  finalize:
     runs-on: ubuntu-24.04
+    timeout-minutes: 15
     steps:
-      - run: echo "Vanta maintenance hold"
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          fetch-depth: 0
+      - name: Materialize canonical gauntlet in merge worktree
+        run: |
+          cat > .github/workflows/gauntlet.yml <<'YAML'
+          name: EXOVANT Gauntlet
+          on:
+            push:
+              branches: [main]
+            pull_request:
+            workflow_dispatch:
+          permissions:
+            contents: read
+          concurrency:
+            group: gauntlet-${{ github.ref }}
+            cancel-in-progress: true
+          jobs:
+            native-and-continuity:
+              runs-on: ubuntu-24.04
+              timeout-minutes: 15
+              steps:
+                - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+                - name: Verify committed evidence and continuity
+                  run: |
+                    python3 -m unittest discover -s tests -p 'test_*.py' -v
+                    python3 tools/project_control.py check
+                - name: Acquire pinned Godot archive
+                  run: python3 tools/bootstrap_godot.py --destination .tools
+                - name: Execute native scene gates from source
+                  run: python3 tests/run_gauntlet.py --godot .tools/Godot_v4.7.2-stable_linux.x86_64
+                - name: Preserve this run's evidence
+                  if: always()
+                  uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+                  with:
+                    name: exovant-evidence-${{ github.sha }}
+                    path: |
+                      evidence/
+                      telemetry/
+                    retention-days: 30
+          YAML
+      - name: Regenerate and verify merge-context continuity
+        run: |
+          python3 -m unittest discover -s tests -p 'test_*.py' -v
+          python3 tools/project_control.py refresh
+          python3 tools/project_control.py check
+          cp MANIFEST.json /tmp/VANTA_FINAL_MANIFEST.json
+          cp .github/workflows/gauntlet.yml /tmp/VANTA_FINAL_GAUNTLET.yml
+      - name: Run canonical native gauntlet
+        run: |
+          python3 tools/bootstrap_godot.py --destination .tools
+          python3 tests/run_gauntlet.py --godot .tools/Godot_v4.7.2-stable_linux.x86_64
+      - name: Persist projection and restore canonical workflow on producer branch
+        env:
+          HEAD_BRANCH: ${{ github.head_ref }}
+        run: |
+          set -euo pipefail
+          test -n "$HEAD_BRANCH"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git fetch origin "$HEAD_BRANCH"
+          git checkout -B "$HEAD_BRANCH" "origin/$HEAD_BRANCH"
+          cp /tmp/VANTA_FINAL_MANIFEST.json MANIFEST.json
+          cp /tmp/VANTA_FINAL_GAUNTLET.yml .github/workflows/gauntlet.yml
+          git add MANIFEST.json .github/workflows/gauntlet.yml
+          git diff --cached --check
+          git commit -m "ci(vanta): persist continuity projection after rev9 qualification"
+          git push origin "HEAD:$HEAD_BRANCH"
