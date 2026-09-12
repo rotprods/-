@@ -1,0 +1,68 @@
+{
+  "claim_id": "CLM-KHEPRI-WMACRO-001",
+  "world_id": "khepri",
+  "wave": "R4_ROUTE_CONFORMING",
+  "master": {
+    "project_id": "040f0c45-83a7-483c-9ee7-1e31c640a587",
+    "revision": 4,
+    "blend_bytes": 1379495,
+    "blend_etag": "6d81d2c81e19a841056f018926e32944",
+    "glb_bytes": 822272,
+    "glb_etag": "40d610951c4f0d8d3d83c7d4e67519dc"
+  },
+  "defect_from_r3": {
+    "route_guide_min_clearance_m": -23.36,
+    "route_guide_max_clearance_m": 83.22,
+    "below_terrain_samples": 152,
+    "audit_samples": 575,
+    "mechanism": "Four-point POLY spline linearly interpolated anchor Z while terrain curvature varied between anchors."
+  },
+  "fix": {
+    "script": "art_source/khepri/world_macro/refine_route_r4.py",
+    "sampling_spacing_m": 10.0,
+    "target_visual_clearance_m": 7.0,
+    "route_points": 576,
+    "role": "QA/interface guide only; not navmesh or road geometry"
+  },
+  "post_fix_clearance_audit": {
+    "operation": "khepri.route.clearance.audit.r4",
+    "audit_samples": 2876,
+    "min_clearance_m": 6.9963,
+    "max_clearance_m": 7.0043,
+    "mean_clearance_m": 7.0001,
+    "max_abs_error_from_target_m": 0.0043,
+    "below_terrain_samples": 0,
+    "outside_6_8m_samples": 0,
+    "passed": true
+  },
+  "terrain_slope_context": {
+    "operation": "khepri.terrain.slope.audit.r3",
+    "global_samples": 4941,
+    "global_mean_deg": 5.59,
+    "global_p95_deg": 9.91,
+    "global_max_deg": 11.56,
+    "route_samples": 575,
+    "route_mean_deg": 6.37,
+    "route_p95_deg": 10.08,
+    "route_max_deg": 10.64,
+    "boundary": "Geometry-only measurement; no character-controller traversal PASS asserted."
+  },
+  "cold_rebuild": {
+    "project_id": "4c01fdbb-7093-4229-9a49-8237583280bc",
+    "revision": 3,
+    "blend_bytes": 1379495,
+    "blend_etag": "7253664e648e119c4db0c06a482ae0b1",
+    "glb_bytes": 822272,
+    "glb_etag": "bb4ea885c907dec5db96334d924511c7",
+    "semantic_sha256_master": "04c527c61ee814753f09e9c0f651495ad80ed51aafc48c77b6acb4e82a3612ec",
+    "semantic_sha256_cold": "04c527c61ee814753f09e9c0f651495ad80ed51aafc48c77b6acb4e82a3612ec",
+    "passed": true
+  },
+  "nonclaims": [
+    "No navmesh/traversal approval",
+    "No collision approval",
+    "No final road or level-design geometry",
+    "No human GATE-ART approval",
+    "No full KHEPRI completion"
+  ]
+}
