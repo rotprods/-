@@ -12,10 +12,11 @@ priority: P0
 branch: art/world-sylva-prime-macro-001
 base_branch: main
 base_sha_at_claim: 4c2fa044080004609ea6df45f34b2a784536507a
-current_main_observed: 196ef814fdc845ec797979906d01dc25009217c7
-merge_state: DIVERGED_RECONCILE_REQUIRED
+main_reconciled_sha: 196ef814fdc845ec797979906d01dc25009217c7
+reconciliation_commit: 429af6bf42ba114cdd2e30fd19974d2bd9009ad4
+merge_state: SYNCED_WITH_MAIN_AT_CHECKPOINT
 created_at: 2026-09-12T21:10:00+02:00
-last_heartbeat: 2026-09-12T21:56:00+02:00
+last_heartbeat: 2026-09-12T21:58:00+02:00
 linear_issue: ROT-117
 coordination_issue: 7
 draft_pr: 3
@@ -92,7 +93,6 @@ unknowns:
 
 blocked_by:
   - BLOCK-SYLVA-001 planetary radius only blocks L0/L1 orbital representation
-  - branch is 1 commit behind current main; reconcile ownership-protocol commit before merge
 
 dependencies:
   - CLM-SYLVA-PROC-NROOT-001 for reusable meso neural-root modules if macro topology advances to production geometry
@@ -119,5 +119,6 @@ receipts:
   status: art_source/worlds/sylva_prime/macro/STATUS.md
   handoff: art_source/worlds/sylva_prime/macro/HANDOFF.md
   linear: ROT-117
+  main_sync_compare: 11 ahead / 0 behind at sync checkpoint
 
 claim_status: KEEP
