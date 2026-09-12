@@ -22,3 +22,5 @@ Preferencias: español claro; ejecutar trabajo autorizado; máximo detalle artí
 CI: recuperar LRN-EXO-20260912-CI-BOOTSTRAP y CI-BOOTSTRAP-VERIFIED antes de cambiar descargas. Un 403 real se corrigió fijando el release oficial y verificando bytes; siete tests adversariales y CI independiente sostienen L3 del mecanismo acotado. Total actual: 14 eventos; solo uno L3.
 
 Entradas: recuperar LRN-EXO-20260912-INPUT-BOUNDARY y INPUT-PREFERENCES. No asumir que el mapa de juego crea navegación UI ni que JSON conserva el tipo entero en comparaciones. Testear eventos físicos sintéticos atravesando UI/escena y recargar preferencias; no confundirlo con probar un mando conectado.
+
+Flota: recuperar LRN-EXO-20260912-FLEET-CAS. Leer issue #7 y ops/fleet/registry.json actuales, cruzar branch/PR/abandono y proveedor. Khepri es primer ACK; Ares PR2 es tombstone; Origin ya tiene owner. No equiparar rama con worker, o una lectura de proyecto B con reconciliación de A. MANIFEST es proyección determinista: regenerar en rama y árbol de integración; no escribir AGENTS en main sin actualizarlo.
