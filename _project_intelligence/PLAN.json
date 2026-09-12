@@ -301,10 +301,11 @@
         "GATE-ASSET"
       ],
       "evidence": [
+        "evidence/delivery-container-regression.json",
         "evidence/gates/INFRA-005-GATE-CONTROL.json",
         "evidence/gates/INFRA-005-GATE-NATIVE.json",
-        "evidence/fleet-adversarial-review.json",
-        "evidence/fleet-main-reconciliation.json"
+        "evidence/gates/INFRA-005-GATE-GRAPH.json",
+        "evidence/gates/INFRA-005-GATE-ASSET.json"
       ],
       "estimate_person_hours": null,
       "estimate_status": "actual time not retroactively invented",
@@ -313,8 +314,8 @@
         "First scheduled execution from main has not been observed",
         "Mem routing note pending provider rate limit; optional mirror, not a product blocker"
       ],
-      "closeout": "_project_intelligence/runs/INFRA-005-FLEET-001/closeout.json",
-      "checkpoint_note": "Fleet implementation and main manifest reconciliation; checkpoint, not global done. Current producer ACK Khepri only."
+      "closeout": "_project_intelligence/runs/INFRA-005-DELIVERY-003/closeout.json",
+      "checkpoint_note": "GLB delivery container regression repair; checkpoint only. ADOPTION-002 source remains unrecovered; producer adoption and Mac qualification remain pending."
     },
     {
       "id": "EXO-004",
