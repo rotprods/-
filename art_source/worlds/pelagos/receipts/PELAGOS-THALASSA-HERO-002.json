@@ -1,0 +1,86 @@
+{
+  "schema_version": 1,
+  "checkpoint": "PELAGOS-THALASSA-HERO-002",
+  "task_id": "PEL/BOSS/008",
+  "world_id": "pelagos",
+  "claim_id": "CLM-PEL-WORLD-001",
+  "agent_id": "AGENT-PELAGOS-01",
+  "status": "IN_PROGRESS",
+  "claim": "hero_engineering_blockout_structurally_validated_not_final_rig_or_encounter",
+  "remote_3d": {
+    "project_id": "39930c08-62bb-4034-b35d-70d0ce51c9d9",
+    "build_revision": 14,
+    "verified_revision": 15,
+    "build_operation": "pelagos.thalassa.hero-blockout.v1",
+    "structural_verification": "pelagos.thalassa.verify.r14",
+    "metadata_light_fix": "pelagos.thalassa.metadata-lightfix.v1",
+    "visual_render_operation": "pelagos.thalassa.visual.r15"
+  },
+  "canon": {
+    "boss": "THALASSA, coral de los mil ojos",
+    "arena_diameter_m": 52.0,
+    "phases": [
+      "100–70%: ojos exploradores revelan al jugador entre pilares",
+      "70–35%: alterna inundación de dos sectores y tentáculos de cierre",
+      "35–0%: el coro responde a la memoria restituida y permite cortar el vínculo de extracción"
+    ],
+    "attacks": {
+      "Mirada convergente": 1.2,
+      "Látigo de corriente": 0.9,
+      "Canto de presión": 1.6
+    }
+  },
+  "measured_blockout": {
+    "dimension_status": "PROPOSAL_MEASURED_BLOCKOUT",
+    "visible_bbox_m": [46.141, 43.5, 22.798],
+    "max_radial_extent_m": 23.166,
+    "arena_radius_m": 26.0,
+    "rest_radial_clearance_m": 2.834,
+    "macro_eye_count": 48,
+    "sensory_pore_ring_count": 12,
+    "tentacle_arm_count": 8,
+    "tentacle_segment_count": 32,
+    "tentacle_joint_count": 24,
+    "pressure_membrane_count": 4,
+    "extraction_bond_cable_count": 6,
+    "movement_model": "ANCHORED_CUSTODIAN_WITH_ARTICULATED_TENTACLES_PROPOSAL"
+  },
+  "readability_contract": {
+    "mirada_convergente": "48 macro eyes split into three groups; 1.2 s canonical telegraph metadata; existing arena columns provide line-of-sight break geometry",
+    "latigo_de_corriente": "8 tentacle sockets, 24 joint sockets and 32 tapered segments; 0.9 s canonical telegraph metadata",
+    "canto_de_presion": "4 pressure membranes and 4 ventilated platform stacks; 1.6 s canonical telegraph metadata",
+    "phase3_extraction_bond": "6 bronze extraction cables + collar expose a physically readable cuttable interface proposal"
+  },
+  "qa": {
+    "missing_asset_ids": 0,
+    "materialless_objects": 0,
+    "nonunit_mesh_scales": 0,
+    "inside_52m_arena_radially": true,
+    "telegraph_metadata_coverage": "PASS",
+    "old_world_foundation_core_hidden": true,
+    "old_world_foundation_eye_proxies_hidden": 18,
+    "old_world_foundation_tentacle_proxies_hidden": 8,
+    "portable_validation_lights": ["PEL_THA_KEY_SPOT", "PEL_THA_RIM_SPOT"],
+    "structural_gate": "PASS_FOR_HERO_BLOCKOUT",
+    "visual_render_generated": true,
+    "visual_human_review": "PENDING",
+    "rig": "SOCKETS_AND_PIVOTS_ONLY",
+    "animation": "NOT_AUTHORED",
+    "runtime_hitboxes": "NOT_AUTHORED",
+    "engine_import": "NOT_RUN",
+    "performance": "NOT_RUN"
+  },
+  "artifacts": {
+    "blend_revision": 15,
+    "blend_size_bytes": 11848022,
+    "glb_revision": 15,
+    "glb_size_bytes": 9667396,
+    "render": {
+      "name": "pelagos_thalassa_hero_blockout_v001.png",
+      "artifact_id": "293f6aadb56ffe7a82b84795bb86b51d",
+      "resolution": [1280, 720],
+      "size_bytes": 708059
+    }
+  },
+  "reason_not_done": "Final anatomy sculpt/retopo, UV/bake/PBR production, armature/deformation, authored attacks/transitions, runtime hitboxes/collision tuning, phase logic, engine encounter integration, performance and human art-direction review remain open."
+}
