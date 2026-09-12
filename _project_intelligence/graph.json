@@ -4153,6 +4153,15 @@
       "artifact_path": "learning/hub/agents/codex-root/chats/INFRA-005-CONTRACT/events/LRN-EXO-20260912-CI-BOOTSTRAP.json"
     },
     {
+      "id": "LRN-EXO-20260912-FLEET-CAS",
+      "type": "learning",
+      "label": "cooperative_fleet_ownership_and_publication_races",
+      "epistemic": "fact",
+      "status": "persisted",
+      "provenance": "learning/hub/agents/codex-root/chats/INFRA-005-FLEET-001/events/LRN-EXO-20260912-FLEET-CAS.json",
+      "artifact_path": "learning/hub/agents/codex-root/chats/INFRA-005-FLEET-001/events/LRN-EXO-20260912-FLEET-CAS.json"
+    },
+    {
       "id": "LRN-EXO-20260912-ART",
       "type": "learning",
       "label": "detail-without-readability",
@@ -4466,6 +4475,150 @@
       "status": "planned",
       "provenance": "_project_intelligence/PLAN.json",
       "artifact_path": "_project_intelligence/PLAN.json"
+    },
+    {
+      "id": "fleet-registry",
+      "type": "artifact",
+      "label": "Reservas cooperativas de producción",
+      "epistemic": "fact",
+      "status": "implemented",
+      "provenance": "ops/fleet/registry.json",
+      "artifact_path": "ops/fleet/registry.json"
+    },
+    {
+      "id": "claim:CLM-AURORA-WORLD-001",
+      "type": "workunit",
+      "label": "CLM-AURORA-WORLD-001 / AGENT-02-AURORA",
+      "epistemic": "proposal",
+      "status": "reserved",
+      "provenance": "ops/fleet/registry.json",
+      "artifact_path": "ops/fleet/registry.json"
+    },
+    {
+      "id": "claim:OBS-ELYSIUM-001",
+      "type": "workunit",
+      "label": "OBS-ELYSIUM-001 / UNCONFIRMED@art/world-elysium-null-001",
+      "epistemic": "proposal",
+      "status": "reserved",
+      "provenance": "ops/fleet/registry.json",
+      "artifact_path": "ops/fleet/registry.json"
+    },
+    {
+      "id": "claim:CLM-KHEPRI-WMACRO-001",
+      "type": "workunit",
+      "label": "CLM-KHEPRI-WMACRO-001 / AGENT-KHEPRI-WMACRO-001",
+      "epistemic": "proposal",
+      "status": "active",
+      "provenance": "ops/fleet/registry.json",
+      "artifact_path": "ops/fleet/registry.json"
+    },
+    {
+      "id": "claim:CLM-W10-WORLD-LEVIATHAN-001",
+      "type": "workunit",
+      "label": "CLM-W10-WORLD-LEVIATHAN-001 / AGENT-LEVIATHAN-10",
+      "epistemic": "proposal",
+      "status": "reserved",
+      "provenance": "ops/fleet/registry.json",
+      "artifact_path": "ops/fleet/registry.json"
+    },
+    {
+      "id": "claim:CLM-NACRE-WORLD-MACRO-001",
+      "type": "workunit",
+      "label": "CLM-NACRE-WORLD-MACRO-001 / AGENT-3D-NACRE-01",
+      "epistemic": "proposal",
+      "status": "reserved",
+      "provenance": "ops/fleet/registry.json",
+      "artifact_path": "ops/fleet/registry.json"
+    },
+    {
+      "id": "claim:CLM-PEL-WORLD-001",
+      "type": "workunit",
+      "label": "CLM-PEL-WORLD-001 / AGENT-PELAGOS-01",
+      "epistemic": "proposal",
+      "status": "reserved",
+      "provenance": "ops/fleet/registry.json",
+      "artifact_path": "ops/fleet/registry.json"
+    },
+    {
+      "id": "claim:CLM-W04-WORLD-UMBRA-001",
+      "type": "workunit",
+      "label": "CLM-W04-WORLD-UMBRA-001 / AGENT-UMBRA-04",
+      "epistemic": "proposal",
+      "status": "reserved",
+      "provenance": "ops/fleet/registry.json",
+      "artifact_path": "ops/fleet/registry.json"
+    },
+    {
+      "id": "claim:OBS-VANTA-001",
+      "type": "workunit",
+      "label": "OBS-VANTA-001 / UNCONFIRMED@art/world-vanta-001",
+      "epistemic": "proposal",
+      "status": "reserved",
+      "provenance": "ops/fleet/registry.json",
+      "artifact_path": "ops/fleet/registry.json"
+    },
+    {
+      "id": "claim:ART-TERRA-KIT-001",
+      "type": "workunit",
+      "label": "ART-TERRA-KIT-001 / CODEX-TERRA-ART-001",
+      "epistemic": "proposal",
+      "status": "reserved",
+      "provenance": "ops/fleet/registry.json",
+      "artifact_path": "ops/fleet/registry.json"
+    },
+    {
+      "id": "claim:OBS-ARES-AGENT02-001",
+      "type": "workunit",
+      "label": "OBS-ARES-AGENT02-001 / UNCONFIRMED@art/ares-ix-world-agent-02",
+      "epistemic": "proposal",
+      "status": "reserved",
+      "provenance": "ops/fleet/registry.json",
+      "artifact_path": "ops/fleet/registry.json"
+    },
+    {
+      "id": "claim:ART-ARES-001-ABANDONED",
+      "type": "workunit",
+      "label": "ART-ARES-001-ABANDONED / UNCONFIRMED@art/ares-ix-world-001",
+      "epistemic": "proposal",
+      "status": "abandoned",
+      "provenance": "ops/fleet/registry.json",
+      "artifact_path": "ops/fleet/registry.json"
+    },
+    {
+      "id": "claim:CLM-SYLVA-MACRO-001",
+      "type": "workunit",
+      "label": "CLM-SYLVA-MACRO-001 / AGENT-SYLVA-MACRO-01",
+      "epistemic": "proposal",
+      "status": "reserved",
+      "provenance": "ops/fleet/registry.json",
+      "artifact_path": "ops/fleet/registry.json"
+    },
+    {
+      "id": "claim:CLM-SYLVA-PROC-NROOT-001",
+      "type": "workunit",
+      "label": "CLM-SYLVA-PROC-NROOT-001 / AGENT-SYLVA-ROOT-01",
+      "epistemic": "proposal",
+      "status": "reserved",
+      "provenance": "ops/fleet/registry.json",
+      "artifact_path": "ops/fleet/registry.json"
+    },
+    {
+      "id": "claim:INFRA-FLEET-001",
+      "type": "workunit",
+      "label": "INFRA-FLEET-001 / CODEX-FLEET-INTEGRATOR-001",
+      "epistemic": "proposal",
+      "status": "active",
+      "provenance": "ops/fleet/registry.json",
+      "artifact_path": "ops/fleet/registry.json"
+    },
+    {
+      "id": "claim:CLM-ORIGIN-WORLD-001",
+      "type": "workunit",
+      "label": "CLM-ORIGIN-WORLD-001 / AGENT-ORIGIN-WORLD-01",
+      "epistemic": "proposal",
+      "status": "reserved",
+      "provenance": "ops/fleet/registry.json",
+      "artifact_path": "ops/fleet/registry.json"
     }
   ],
   "edges": [
@@ -7560,6 +7713,18 @@
       "type": "CHECKED_BY"
     },
     {
+      "id": "project:exovant::LEARNS::LRN-EXO-20260912-FLEET-CAS",
+      "source": "project:exovant",
+      "target": "LRN-EXO-20260912-FLEET-CAS",
+      "type": "LEARNS"
+    },
+    {
+      "id": "LRN-EXO-20260912-FLEET-CAS::CHECKED_BY::governance",
+      "source": "LRN-EXO-20260912-FLEET-CAS",
+      "target": "governance",
+      "type": "CHECKED_BY"
+    },
+    {
       "id": "project:exovant::LEARNS::LRN-EXO-20260912-ART",
       "source": "project:exovant",
       "target": "LRN-EXO-20260912-ART",
@@ -8026,6 +8191,186 @@
       "source": "EXO-019",
       "target": "EXO-018",
       "type": "DEPENDS_ON"
+    },
+    {
+      "id": "project:exovant::COORDINATES_WITH::fleet-registry",
+      "source": "project:exovant",
+      "target": "fleet-registry",
+      "type": "COORDINATES_WITH"
+    },
+    {
+      "id": "fleet-registry::RECORDS::claim:CLM-AURORA-WORLD-001",
+      "source": "fleet-registry",
+      "target": "claim:CLM-AURORA-WORLD-001",
+      "type": "RECORDS"
+    },
+    {
+      "id": "claim:CLM-AURORA-WORLD-001::BOUNDS_WORK_ON::world:aurora",
+      "source": "claim:CLM-AURORA-WORLD-001",
+      "target": "world:aurora",
+      "type": "BOUNDS_WORK_ON"
+    },
+    {
+      "id": "fleet-registry::RECORDS::claim:OBS-ELYSIUM-001",
+      "source": "fleet-registry",
+      "target": "claim:OBS-ELYSIUM-001",
+      "type": "RECORDS"
+    },
+    {
+      "id": "claim:OBS-ELYSIUM-001::BOUNDS_WORK_ON::world:elysium",
+      "source": "claim:OBS-ELYSIUM-001",
+      "target": "world:elysium",
+      "type": "BOUNDS_WORK_ON"
+    },
+    {
+      "id": "fleet-registry::RECORDS::claim:CLM-KHEPRI-WMACRO-001",
+      "source": "fleet-registry",
+      "target": "claim:CLM-KHEPRI-WMACRO-001",
+      "type": "RECORDS"
+    },
+    {
+      "id": "claim:CLM-KHEPRI-WMACRO-001::BOUNDS_WORK_ON::world:khepri",
+      "source": "claim:CLM-KHEPRI-WMACRO-001",
+      "target": "world:khepri",
+      "type": "BOUNDS_WORK_ON"
+    },
+    {
+      "id": "fleet-registry::RECORDS::claim:CLM-W10-WORLD-LEVIATHAN-001",
+      "source": "fleet-registry",
+      "target": "claim:CLM-W10-WORLD-LEVIATHAN-001",
+      "type": "RECORDS"
+    },
+    {
+      "id": "claim:CLM-W10-WORLD-LEVIATHAN-001::BOUNDS_WORK_ON::world:leviathan",
+      "source": "claim:CLM-W10-WORLD-LEVIATHAN-001",
+      "target": "world:leviathan",
+      "type": "BOUNDS_WORK_ON"
+    },
+    {
+      "id": "fleet-registry::RECORDS::claim:CLM-NACRE-WORLD-MACRO-001",
+      "source": "fleet-registry",
+      "target": "claim:CLM-NACRE-WORLD-MACRO-001",
+      "type": "RECORDS"
+    },
+    {
+      "id": "claim:CLM-NACRE-WORLD-MACRO-001::BOUNDS_WORK_ON::world:nacre",
+      "source": "claim:CLM-NACRE-WORLD-MACRO-001",
+      "target": "world:nacre",
+      "type": "BOUNDS_WORK_ON"
+    },
+    {
+      "id": "fleet-registry::RECORDS::claim:CLM-PEL-WORLD-001",
+      "source": "fleet-registry",
+      "target": "claim:CLM-PEL-WORLD-001",
+      "type": "RECORDS"
+    },
+    {
+      "id": "claim:CLM-PEL-WORLD-001::BOUNDS_WORK_ON::world:pelagos",
+      "source": "claim:CLM-PEL-WORLD-001",
+      "target": "world:pelagos",
+      "type": "BOUNDS_WORK_ON"
+    },
+    {
+      "id": "fleet-registry::RECORDS::claim:CLM-W04-WORLD-UMBRA-001",
+      "source": "fleet-registry",
+      "target": "claim:CLM-W04-WORLD-UMBRA-001",
+      "type": "RECORDS"
+    },
+    {
+      "id": "claim:CLM-W04-WORLD-UMBRA-001::BOUNDS_WORK_ON::world:umbra",
+      "source": "claim:CLM-W04-WORLD-UMBRA-001",
+      "target": "world:umbra",
+      "type": "BOUNDS_WORK_ON"
+    },
+    {
+      "id": "fleet-registry::RECORDS::claim:OBS-VANTA-001",
+      "source": "fleet-registry",
+      "target": "claim:OBS-VANTA-001",
+      "type": "RECORDS"
+    },
+    {
+      "id": "claim:OBS-VANTA-001::BOUNDS_WORK_ON::world:vanta",
+      "source": "claim:OBS-VANTA-001",
+      "target": "world:vanta",
+      "type": "BOUNDS_WORK_ON"
+    },
+    {
+      "id": "fleet-registry::RECORDS::claim:ART-TERRA-KIT-001",
+      "source": "fleet-registry",
+      "target": "claim:ART-TERRA-KIT-001",
+      "type": "RECORDS"
+    },
+    {
+      "id": "claim:ART-TERRA-KIT-001::BOUNDS_WORK_ON::world:terra",
+      "source": "claim:ART-TERRA-KIT-001",
+      "target": "world:terra",
+      "type": "BOUNDS_WORK_ON"
+    },
+    {
+      "id": "fleet-registry::RECORDS::claim:OBS-ARES-AGENT02-001",
+      "source": "fleet-registry",
+      "target": "claim:OBS-ARES-AGENT02-001",
+      "type": "RECORDS"
+    },
+    {
+      "id": "claim:OBS-ARES-AGENT02-001::BOUNDS_WORK_ON::world:ares",
+      "source": "claim:OBS-ARES-AGENT02-001",
+      "target": "world:ares",
+      "type": "BOUNDS_WORK_ON"
+    },
+    {
+      "id": "fleet-registry::RECORDS::claim:ART-ARES-001-ABANDONED",
+      "source": "fleet-registry",
+      "target": "claim:ART-ARES-001-ABANDONED",
+      "type": "RECORDS"
+    },
+    {
+      "id": "claim:ART-ARES-001-ABANDONED::BOUNDS_WORK_ON::world:ares",
+      "source": "claim:ART-ARES-001-ABANDONED",
+      "target": "world:ares",
+      "type": "BOUNDS_WORK_ON"
+    },
+    {
+      "id": "fleet-registry::RECORDS::claim:CLM-SYLVA-MACRO-001",
+      "source": "fleet-registry",
+      "target": "claim:CLM-SYLVA-MACRO-001",
+      "type": "RECORDS"
+    },
+    {
+      "id": "claim:CLM-SYLVA-MACRO-001::BOUNDS_WORK_ON::world:sylva",
+      "source": "claim:CLM-SYLVA-MACRO-001",
+      "target": "world:sylva",
+      "type": "BOUNDS_WORK_ON"
+    },
+    {
+      "id": "fleet-registry::RECORDS::claim:CLM-SYLVA-PROC-NROOT-001",
+      "source": "fleet-registry",
+      "target": "claim:CLM-SYLVA-PROC-NROOT-001",
+      "type": "RECORDS"
+    },
+    {
+      "id": "claim:CLM-SYLVA-PROC-NROOT-001::BOUNDS_WORK_ON::world:sylva",
+      "source": "claim:CLM-SYLVA-PROC-NROOT-001",
+      "target": "world:sylva",
+      "type": "BOUNDS_WORK_ON"
+    },
+    {
+      "id": "fleet-registry::RECORDS::claim:INFRA-FLEET-001",
+      "source": "fleet-registry",
+      "target": "claim:INFRA-FLEET-001",
+      "type": "RECORDS"
+    },
+    {
+      "id": "fleet-registry::RECORDS::claim:CLM-ORIGIN-WORLD-001",
+      "source": "fleet-registry",
+      "target": "claim:CLM-ORIGIN-WORLD-001",
+      "type": "RECORDS"
+    },
+    {
+      "id": "claim:CLM-ORIGIN-WORLD-001::BOUNDS_WORK_ON::world:origin",
+      "source": "claim:CLM-ORIGIN-WORLD-001",
+      "target": "world:origin",
+      "type": "BOUNDS_WORK_ON"
     }
   ],
   "hyperedges": []

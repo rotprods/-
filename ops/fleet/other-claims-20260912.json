@@ -1,0 +1,591 @@
+{
+  "schema_version": 1,
+  "observed_at": "2026-09-12T19:46:48.147Z",
+  "repository": "rotprods/-",
+  "base_main": "4c2fa044080004609ea6df45f34b2a784536507a",
+  "audit_mode": "READ_ONLY_GITHUB_PUBLIC_REFS_AND_CANON",
+  "canonical_ids_source": "design/EXOVANT_DATA.json worlds[].id on main",
+  "important_limits": [
+    "GitHub identity rotprods is shared and is not a distinct agent ID",
+    "No provider calls or mutations in this subtask",
+    "Scope claimed does not prove worker activity or quality",
+    "Observed path globs are NOT confirmed ownership locks; explicitly separated",
+    "No external agent acknowledgment collected"
+  ],
+  "claims": [
+    {
+      "world_id": "aurora",
+      "owner": "AGENT-02-AURORA",
+      "claim_id": "CLM-AURORA-WORLD-001",
+      "status": "CLAIMED",
+      "scope_key": "aurora/world-production",
+      "scope_type": "full_world_3d",
+      "owned_paths": [],
+      "observed_paths": [
+        "art_source/aurora_veil/**",
+        "production/claims/aurora/CLM-AURORA-WORLD-001.yaml"
+      ],
+      "paths_status": "World scope explicit; glob paths inferred from changed tree, not explicitly reserved by claim",
+      "includes": [
+        "Aurora orbital/macro/regional terrain",
+        "architecture/interiors/infrastructure/landmarks/materials",
+        "ecology/fauna/NPC/wardrobe/equipment/vehicles",
+        "props/decals/destruction/LOD/collision/export"
+      ],
+      "excludes": [
+        "other worlds",
+        "global player gameplay",
+        "global travel",
+        "engine selection",
+        "shared libraries owned by others"
+      ],
+      "sources": [
+        {
+          "path": "production/claims/aurora/CLM-AURORA-WORLD-001.yaml",
+          "blob_sha": "0fc0ed22d9723db015278a800ec8c59c0467060c",
+          "url": "https://github.com/rotprods/-/blob/10b22780a18df147e7f984681f218abfae55c04e/production/claims/aurora/CLM-AURORA-WORLD-001.yaml"
+        }
+      ],
+      "last_heartbeat": "2026-09-12T19:29:57Z",
+      "branch": "art/world-aurora-veil-001",
+      "head_sha": "10b22780a18df147e7f984681f218abfae55c04e",
+      "worker_status": "UNKNOWN",
+      "pr": [],
+      "changed_files": [
+        {
+          "path": "art_source/aurora_veil/ADR/ADR-AUR-001-planet-scale.md",
+          "blob_sha": "b8b244ad67eef1b04ef7522580b7f3cff60360b8"
+        },
+        {
+          "path": "art_source/aurora_veil/COVERAGE.csv",
+          "blob_sha": "e6021e4fbf2ef124a63dd3f7b255970da7ee77a6"
+        },
+        {
+          "path": "art_source/aurora_veil/MASTER_ASSET_LIST.yaml",
+          "blob_sha": "747c3f4232af11c0bfe355c08c187a4e057ed0c8"
+        },
+        {
+          "path": "art_source/aurora_veil/TASKS.md",
+          "blob_sha": "0fbd4d7fe47aa0fe9eed01a2f845b07bd8703c42"
+        },
+        {
+          "path": "art_source/aurora_veil/WORLD_BIBLE.md",
+          "blob_sha": "a97419db60d611d869f5ee557fefac07b042e6bc"
+        },
+        {
+          "path": "production/claims/aurora/CLM-AURORA-WORLD-001.yaml",
+          "blob_sha": "0fc0ed22d9723db015278a800ec8c59c0467060c"
+        }
+      ]
+    },
+    {
+      "world_id": "elysium",
+      "owner": null,
+      "cell_id": "ART-ELYSIUM-001",
+      "claim_id": null,
+      "status": "ACTIVE / FOUNDATION_WAVE_0_CHECKPOINT",
+      "scope_key": null,
+      "scope_type": "world_production",
+      "owned_paths": [
+        "art_source/worlds/elysium_null/**",
+        "art_source/coordination/ART-ELYSIUM-001-OWNERSHIP.md"
+      ],
+      "paths_status": "Explicit Owned paths",
+      "includes": [
+        "Elysium world-production foundation",
+        "world/asset coverage registry",
+        "modular architecture/ecological systems",
+        "generator/hero location blockout/QA"
+      ],
+      "excludes": [
+        "runtime Godot",
+        "other worlds",
+        "shared STATE/PLAN/HANDOFF"
+      ],
+      "remote_project_id": "00152eea-2da0-40ec-8666-78d6764c718f",
+      "sources": [
+        {
+          "path": "art_source/coordination/ART-ELYSIUM-001-OWNERSHIP.md",
+          "blob_sha": "ccdfcab2f49d2bc5e3599e681f8722f418e086a9",
+          "url": "https://github.com/rotprods/-/blob/38e22fef07156ca7ac349ae34bc530dc5e88c103/art_source/coordination/ART-ELYSIUM-001-OWNERSHIP.md"
+        }
+      ],
+      "reported_evidence": {
+        "revision": 1,
+        "objects": 153,
+        "meshes": 149,
+        "materials": 9,
+        "source_receipt": "art_source/worlds/elysium_null/evidence/foundation_validation.json",
+        "validation": "Owner-reported in persisted ownership; not independently revalidated in this audit"
+      },
+      "gaps": [
+        "No distinct agent_id or CLM claim ID; use cell_id as evidence, do not invent identity"
+      ],
+      "branch": "art/world-elysium-null-001",
+      "head_sha": "38e22fef07156ca7ac349ae34bc530dc5e88c103",
+      "worker_status": "UNKNOWN",
+      "pr": [],
+      "changed_files": [
+        {
+          "path": "art_source/coordination/ART-ELYSIUM-001-OWNERSHIP.md",
+          "blob_sha": "ccdfcab2f49d2bc5e3599e681f8722f418e086a9"
+        },
+        {
+          "path": "art_source/worlds/elysium_null/ASSET_MANIFEST.json",
+          "blob_sha": "ed6300927c5c7437abe87056e962125b0c358c6c"
+        },
+        {
+          "path": "art_source/worlds/elysium_null/PRODUCTION_PLAN.md",
+          "blob_sha": "20f2af15d0d93bf72345b8d99db827903a891c7e"
+        },
+        {
+          "path": "art_source/worlds/elysium_null/WORLD_BIBLE.md",
+          "blob_sha": "ed125ac914cdddc9953eb282a4a6af8dd7f580cb"
+        },
+        {
+          "path": "art_source/worlds/elysium_null/evidence/foundation_validation.json",
+          "blob_sha": "91ffffc9cdcb0d06e8baaf03436846b3972eee14"
+        },
+        {
+          "path": "art_source/worlds/elysium_null/scripts/generate_foundation.py",
+          "blob_sha": "a48b80b33287aa52479e670d771a7524cfaf53cb"
+        }
+      ]
+    },
+    {
+      "world_id": "khepri",
+      "owner": "AGENT-KHEPRI-WMACRO-001",
+      "claim_id": "CLM-KHEPRI-WMACRO-001",
+      "status": "CLAIMED",
+      "scope_key": "khepri/world-macro/planetary-foundation",
+      "scope_type": "world_macro",
+      "owned_paths": [],
+      "observed_paths": [
+        "art_source/khepri/world_macro/**",
+        "production/worlds/khepri/world_macro/**",
+        "production/claims/CLM-KHEPRI-WMACRO-001.yaml"
+      ],
+      "paths_status": "Scope explicit; path globs inferred from changed tree",
+      "includes": [
+        "L0/L1 representation contract",
+        "local tangent coordinate convention",
+        "representative cell macro terrain",
+        "landmark/traversal anchors",
+        "scope manifest/QA"
+      ],
+      "excludes": [
+        "final regional sculpt",
+        "architecture/interiors",
+        "final textures",
+        "NPC/fauna/vehicles",
+        "RA-KHET final model/rig",
+        "gameplay",
+        "global canon/state mutation"
+      ],
+      "remote_project_id": "040f0c45-83a7-483c-9ee7-1e31c640a587",
+      "asset_namespace": "KHP_WM_*",
+      "sources": [
+        {
+          "path": "production/claims/CLM-KHEPRI-WMACRO-001.yaml",
+          "blob_sha": "1d03304bbce17189b703888f83f601b83238d1c8",
+          "url": "https://github.com/rotprods/-/blob/1f5b54702f45f4568ddfb9be1d6310d3fc5d0d81/production/claims/CLM-KHEPRI-WMACRO-001.yaml"
+        },
+        {
+          "path": "production/worlds/khepri/world_macro/WORLD_MACRO_CONTRACT.md",
+          "blob_sha": "e0cce182452fe614decf540b8d9adafce90054db",
+          "url": "https://github.com/rotprods/-/blob/art/world-khepri-001/production/worlds/khepri/world_macro/WORLD_MACRO_CONTRACT.md"
+        }
+      ],
+      "last_heartbeat": "2026-09-12T19:20:00Z",
+      "branch": "art/world-khepri-001",
+      "head_sha": "1f5b54702f45f4568ddfb9be1d6310d3fc5d0d81",
+      "worker_status": "UNKNOWN",
+      "pr": [],
+      "changed_files": [
+        {
+          "path": "art_source/khepri/world_macro/generate_khepri_world_macro.py",
+          "blob_sha": "da43815529221a6fba6a691190cb6db501581bd1"
+        },
+        {
+          "path": "art_source/khepri/world_macro/optimize_khepri_world_macro.py",
+          "blob_sha": "9c9984d1a47c0b125550aa44f6f8320b77ac4cea"
+        },
+        {
+          "path": "art_source/khepri/world_macro/validate_khepri_world_macro.py",
+          "blob_sha": "da3970ad681cd748eeac341ab71ef77896202be7"
+        },
+        {
+          "path": "art_source/khepri/world_macro/validation.json",
+          "blob_sha": "c9ab07af1d5b6c27f9a7509a1883903ef6ba7a68"
+        },
+        {
+          "path": "production/claims/CLM-KHEPRI-WMACRO-001.yaml",
+          "blob_sha": "1d03304bbce17189b703888f83f601b83238d1c8"
+        },
+        {
+          "path": "production/worlds/khepri/world_macro/WORLD_MACRO_CONTRACT.md",
+          "blob_sha": "e0cce182452fe614decf540b8d9adafce90054db"
+        },
+        {
+          "path": "production/worlds/khepri/world_macro/decisions/KHP-ADR-001-planet-scale.md",
+          "blob_sha": "dc880abc7c8ee16b5b3afde9b2ca9bb30d343853"
+        },
+        {
+          "path": "production/worlds/khepri/world_macro/tasks.yaml",
+          "blob_sha": "24af73edcd30a4bdf00e8e640840936051963648"
+        }
+      ]
+    },
+    {
+      "world_id": "leviathan",
+      "owner": "AGENT-LEVIATHAN-10",
+      "claim_id": "CLM-W10-WORLD-LEVIATHAN-001",
+      "status": "CLAIMED / WAVE 0",
+      "scope_key": "world-10/leviathan/world-production/master-foundation",
+      "scope_type": "master_foundation",
+      "owned_paths": [
+        "art_source/worlds/leviathan/**",
+        "art_source/coordination/ART-LEVIATHAN-001-OWNERSHIP.md",
+        "production/claims/CLM-W10-WORLD-LEVIATHAN-001.yaml"
+      ],
+      "paths_status": "Explicit Owned paths",
+      "includes": [
+        "L0-L5 specification/master blockout",
+        "canonical regions",
+        "environment/architecture/material/prop/ecology/NPC/enemy/vehicle proxy families",
+        "SOMA arena/environment interfaces",
+        "generator/Blend/GLB/evidence"
+      ],
+      "excludes": [
+        "runtime/gameplay",
+        "shared STATE/PLAN/HANDOFF/PROGRESS",
+        "other worlds",
+        "shared libraries without coordination"
+      ],
+      "sources": [
+        {
+          "path": "production/claims/CLM-W10-WORLD-LEVIATHAN-001.yaml",
+          "blob_sha": "a46002987e2512c150e8312cef605794943bfbc8",
+          "url": "https://github.com/rotprods/-/blob/035ebd62da8b12a8c874c297067d1114fa2b5827/production/claims/CLM-W10-WORLD-LEVIATHAN-001.yaml"
+        },
+        {
+          "path": "art_source/coordination/ART-LEVIATHAN-001-OWNERSHIP.md",
+          "blob_sha": "53f5d756f960637b908304ec38dfe74e425d122d",
+          "url": "https://github.com/rotprods/-/blob/035ebd62da8b12a8c874c297067d1114fa2b5827/art_source/coordination/ART-LEVIATHAN-001-OWNERSHIP.md"
+        }
+      ],
+      "last_heartbeat": "2026-09-12T21:23:00+02:00",
+      "branch": "art/world-leviathan-001",
+      "head_sha": "035ebd62da8b12a8c874c297067d1114fa2b5827",
+      "worker_status": "UNKNOWN",
+      "pr": [],
+      "changed_files": [
+        {
+          "path": "art_source/coordination/ART-LEVIATHAN-001-OWNERSHIP.md",
+          "blob_sha": "53f5d756f960637b908304ec38dfe74e425d122d"
+        },
+        {
+          "path": "art_source/worlds/leviathan/MASTER_ASSET_LIST.yaml",
+          "blob_sha": "6b189cebe9c11a55a2d0d7a3a511d9cfaccd8ced"
+        },
+        {
+          "path": "art_source/worlds/leviathan/TASKS.yaml",
+          "blob_sha": "432384ae5bde966565b94d7feec924684c6f1e51"
+        },
+        {
+          "path": "art_source/worlds/leviathan/WORLD_BIBLE.md",
+          "blob_sha": "04d7ee7b9093240bf2443adede701113fcb2cdc9"
+        },
+        {
+          "path": "art_source/worlds/leviathan/tools/build_master_scene.py",
+          "blob_sha": "7bedbbf3192f5e7a3d0f7327565fa2d3c8d6d91b"
+        },
+        {
+          "path": "production/claims/CLM-W10-WORLD-LEVIATHAN-001.yaml",
+          "blob_sha": "a46002987e2512c150e8312cef605794943bfbc8"
+        }
+      ]
+    },
+    {
+      "world_id": "nacre",
+      "owner": "AGENT-3D-NACRE-01",
+      "claim_id": "CLM-NACRE-WORLD-MACRO-001",
+      "status": "CLAIMED",
+      "scope_key": "NACRE / WORLD_MACRO / PLANETARY_FOUNDATION",
+      "scope_type": "world_macro",
+      "owned_paths": [],
+      "observed_paths": [
+        "art_source/coordination/CLM-NACRE-WORLD-MACRO-001.md"
+      ],
+      "paths_status": "No asset directory or Owned paths declaration yet; do not invent world-wide path lock",
+      "includes": [
+        "Nacre canon extraction",
+        "world-scale/reference scene",
+        "macro shell-city/environment language",
+        "foundation materials/construction logic",
+        "one independent Blender scene",
+        "scope manifests/task graph/QA/handoff"
+      ],
+      "excludes": [
+        "runtime",
+        "other worlds",
+        "final MNEMOS",
+        "final NPC/humanoid",
+        "final vehicles",
+        "global engine decision",
+        "shared main state"
+      ],
+      "sources": [
+        {
+          "path": "art_source/coordination/CLM-NACRE-WORLD-MACRO-001.md",
+          "blob_sha": "ba854f443a45d486af152fdbb2493360686a51aa",
+          "url": "https://github.com/rotprods/-/blob/22187daddc276c0b736267967527b4d03dc885b6/art_source/coordination/CLM-NACRE-WORLD-MACRO-001.md"
+        }
+      ],
+      "last_heartbeat": "2026-09-12T21:31:00+02:00",
+      "gaps": [
+        "Only claim document published at observed head; provider production not inspected"
+      ],
+      "branch": "art/world-nacre-001",
+      "head_sha": "22187daddc276c0b736267967527b4d03dc885b6",
+      "worker_status": "UNKNOWN",
+      "pr": [],
+      "changed_files": [
+        {
+          "path": "art_source/coordination/CLM-NACRE-WORLD-MACRO-001.md",
+          "blob_sha": "ba854f443a45d486af152fdbb2493360686a51aa"
+        }
+      ]
+    },
+    {
+      "world_id": "pelagos",
+      "owner": "AGENT-PELAGOS-01",
+      "claim_id": "CLM-PEL-WORLD-001",
+      "status": "IN_PROGRESS",
+      "scope_key": "pelagos/world-production",
+      "scope_type": "full_world_master",
+      "owned_paths": [
+        "art_source/worlds/pelagos/**"
+      ],
+      "conditional_paths": [
+        {
+          "path": "assets/worlds/pelagos/**",
+          "condition": "Only after source + provenance + audit receipts"
+        }
+      ],
+      "observed_paths": [
+        "production/claims/CLM-PEL-WORLD-001.yaml"
+      ],
+      "paths_status": "Explicit Owned paths plus conditional export scope",
+      "includes": [
+        "macro bathymetry/regional layout",
+        "Mercado de Boyas",
+        "Coro del Arrecife",
+        "Fosa de las Mil Miradas",
+        "THALASSA boss/arena",
+        "NPC/enemy/fauna",
+        "Nacar-2 water vehicle",
+        "materials/props/LOD/collision/export"
+      ],
+      "excludes": [
+        "other worlds",
+        "shared runtime",
+        "global player systems",
+        "engine decision"
+      ],
+      "remote_project_id": "39930c08-62bb-4034-b35d-70d0ce51c9d9",
+      "sources": [
+        {
+          "path": "production/claims/CLM-PEL-WORLD-001.yaml",
+          "blob_sha": "a75008524a4020429ff3a51f72b511f5753d71ee",
+          "url": "https://github.com/rotprods/-/blob/4b6e6636eb2b4de982915c63b527ec07070ac25b/production/claims/CLM-PEL-WORLD-001.yaml"
+        },
+        {
+          "path": "art_source/worlds/pelagos/OWNERSHIP.md",
+          "blob_sha": "af95000f8c75b08dfd2fcc205a5e9eb072183e8c",
+          "url": "https://github.com/rotprods/-/blob/4b6e6636eb2b4de982915c63b527ec07070ac25b/art_source/worlds/pelagos/OWNERSHIP.md"
+        }
+      ],
+      "last_heartbeat": "2026-09-12T21:30:30+02:00",
+      "notes": [
+        "Nacar-2 is a Pelagos vehicle name, not ownership of Nacre world"
+      ],
+      "branch": "art/world-pelagos-thalassa-001",
+      "head_sha": "4b6e6636eb2b4de982915c63b527ec07070ac25b",
+      "worker_status": "UNKNOWN",
+      "pr": [
+        {
+          "number": 5,
+          "state": "open",
+          "url": "https://github.com/rotprods/-/pull/5",
+          "sha": "4b6e6636eb2b4de982915c63b527ec07070ac25b"
+        }
+      ],
+      "changed_files": [
+        {
+          "path": "art_source/worlds/pelagos/OWNERSHIP.md",
+          "blob_sha": "af95000f8c75b08dfd2fcc205a5e9eb072183e8c"
+        },
+        {
+          "path": "art_source/worlds/pelagos/REPO_EVIDENCE.md",
+          "blob_sha": "7660634d86a1df6da2e32a81f08624ec519959c2"
+        },
+        {
+          "path": "art_source/worlds/pelagos/TASKS.yaml",
+          "blob_sha": "039106eddb2f48cc0dcb190fc96186dfd9b01bed"
+        },
+        {
+          "path": "art_source/worlds/pelagos/WORLD_BIBLE.md",
+          "blob_sha": "d347f61dc120bc5fff953dabfeb6e6ea53c41f27"
+        },
+        {
+          "path": "art_source/worlds/pelagos/decisions/ADR-PEL-001-PLANET-SCALE.md",
+          "blob_sha": "98adb0c1cf1d6cb95c8e73f8e8a916da911b8fde"
+        },
+        {
+          "path": "art_source/worlds/pelagos/manifests/ASSET_REGISTRY.yaml",
+          "blob_sha": "67b6d27cd5a0f2ae431139ecd3c21d28c5fe8c16"
+        },
+        {
+          "path": "art_source/worlds/pelagos/receipts/PELAGOS-WF-001.json",
+          "blob_sha": "e28e8540c374a59308946560a25e54692c8fe1b7"
+        },
+        {
+          "path": "art_source/worlds/pelagos/scripts/build_world_foundation.py",
+          "blob_sha": "9ef522e88c237b4be511575af4ce8d13e208b685"
+        },
+        {
+          "path": "production/claims/CLM-PEL-WORLD-001.yaml",
+          "blob_sha": "a75008524a4020429ff3a51f72b511f5753d71ee"
+        }
+      ]
+    },
+    {
+      "world_id": "umbra",
+      "owner": "AGENT-UMBRA-04",
+      "claim_id": "CLM-W04-WORLD-UMBRA-001",
+      "status": "CLAIMED / WAVE 0",
+      "scope_key": null,
+      "scope_type": "world_production_foundation",
+      "owned_paths": [
+        "art_source/worlds/umbra/**",
+        "art_source/coordination/ART-UMBRA-001-OWNERSHIP.md"
+      ],
+      "paths_status": "Explicit Owned paths",
+      "includes": [
+        "planet/world scale layers",
+        "twilight macro layout/region blockouts",
+        "environment/architecture/infrastructure/caravans/reflectors/dark ice/props/materials",
+        "ecology/NPC/enemy/vehicle proxy families",
+        "NOCTIL arena/silhouette interfaces only",
+        "generator/scene/export/QA"
+      ],
+      "excludes": [
+        "runtime/gameplay",
+        "other worlds",
+        "shared STATE/PLAN/HANDOFF/PROGRESS"
+      ],
+      "sources": [
+        {
+          "path": "art_source/coordination/ART-UMBRA-001-OWNERSHIP.md",
+          "blob_sha": "f6ccd66068d15b486f6e1283f385eb9661b1209c",
+          "url": "https://github.com/rotprods/-/blob/230245872f73d4dcb7f4376a6c1a0c609b5845ac/art_source/coordination/ART-UMBRA-001-OWNERSHIP.md"
+        }
+      ],
+      "gaps": [
+        "Only ownership document published at observed head; no remote ID persisted in this file"
+      ],
+      "branch": "art/world-umbra-001",
+      "head_sha": "230245872f73d4dcb7f4376a6c1a0c609b5845ac",
+      "worker_status": "UNKNOWN",
+      "pr": [],
+      "changed_files": [
+        {
+          "path": "art_source/coordination/ART-UMBRA-001-OWNERSHIP.md",
+          "blob_sha": "f6ccd66068d15b486f6e1283f385eb9661b1209c"
+        }
+      ]
+    },
+    {
+      "world_id": "vanta",
+      "owner": null,
+      "claim_id": null,
+      "status": "PRODUCTION_DESIGN_AND_EDITABLE_BLOCKOUT",
+      "scope_key": null,
+      "scope_type": "world_art_production",
+      "owned_paths": [],
+      "observed_paths": [
+        "art_source/vanta/**"
+      ],
+      "paths_status": "World scope and branch ownership explicit; path glob observed, not explicit Owned paths declaration",
+      "includes": [
+        "Vanta art/modeling production"
+      ],
+      "excludes": [
+        "other world branches",
+        "global gameplay/state",
+        "global travel framework",
+        "shared kits without handoff"
+      ],
+      "asset_namespace": "VAN_*",
+      "linear_issue": "ROT-114",
+      "remote_project_id": "c82188b1-afdc-43f2-828a-5f0e98291f83",
+      "sources": [
+        {
+          "path": "art_source/vanta/manifest.json",
+          "blob_sha": "9434cb454b0dec3dfc9efc965c1c16e7838684cf",
+          "url": "https://github.com/rotprods/-/blob/f59da4f68dbb3eef7d48c2c47e8f0d3ec9f29c89/art_source/vanta/manifest.json"
+        },
+        {
+          "path": "art_source/vanta/VANTA_WORLD_PRODUCTION.md",
+          "blob_sha": "aa51711bd068d9a7e2a0a84b1bbb8f299700026d",
+          "url": "https://github.com/rotprods/-/blob/art/world-vanta-001/art_source/vanta/VANTA_WORLD_PRODUCTION.md"
+        }
+      ],
+      "reported_evidence": {
+        "revision": 2,
+        "objects": 388,
+        "blend_bytes": 3976733,
+        "glb_bytes": 2369648,
+        "receipt": "art_source/vanta/evidence/remote_blender_rev2.json",
+        "validation": "Persisted owner receipt, not independently revalidated in this audit"
+      },
+      "gaps": [
+        "No explicit agent_id or claim_id in manifest/document; do not invent these from branch or same GitHub login"
+      ],
+      "branch": "art/world-vanta-001",
+      "head_sha": "f59da4f68dbb3eef7d48c2c47e8f0d3ec9f29c89",
+      "worker_status": "UNKNOWN",
+      "pr": [
+        {
+          "number": 4,
+          "state": "open",
+          "url": "https://github.com/rotprods/-/pull/4",
+          "sha": "f59da4f68dbb3eef7d48c2c47e8f0d3ec9f29c89"
+        }
+      ],
+      "changed_files": [
+        {
+          "path": "art_source/vanta/VANTA_WORLD_PRODUCTION.md",
+          "blob_sha": "aa51711bd068d9a7e2a0a84b1bbb8f299700026d"
+        },
+        {
+          "path": "art_source/vanta/evidence/remote_blender_rev2.json",
+          "blob_sha": "d7f1ad9f40fc69f4cc79056147667b9cccb84f54"
+        },
+        {
+          "path": "art_source/vanta/manifest.json",
+          "blob_sha": "9434cb454b0dec3dfc9efc965c1c16e7838684cf"
+        },
+        {
+          "path": "art_source/vanta/pipeline/generate_asset_registry.py",
+          "blob_sha": "d74b7ff977dc4f89b5ac132a644a71c50a6b1c58"
+        },
+        {
+          "path": "art_source/vanta/pipeline/vanta_blockout.py",
+          "blob_sha": "61be6a46c78f4f929032a8f8d5e6d7a26d273a20"
+        }
+      ]
+    }
+  ]
+}
