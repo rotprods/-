@@ -1,0 +1,166 @@
+{
+  "schema_version": 1,
+  "project": "EXOVANT 2950",
+  "world_id": "leviathan",
+  "claim_id": "CLM-W10-WORLD-LEVIATHAN-001",
+  "checkpoint": "PUERTO_MICROSET_R5",
+  "ownership_preflight": {
+    "coordination_issue": 7,
+    "issue_state": "OPEN",
+    "registry_state": "LEVIATHAN OCCUPIED by art/world-leviathan-001",
+    "live_branch_check": "art/world-leviathan-001 is the only LEVIATHAN world branch observed",
+    "live_pr_check": "PR #10 is the only open LEVIATHAN PR observed",
+    "collision_found": false,
+    "latest_main_seen_during_wave": "f78bfdc8bd7b2f6ab52b45d39babcc1589ab3918"
+  },
+  "source_stages": [
+    {
+      "path": "art_source/worlds/leviathan/tools/build_master_scene.py",
+      "blob_sha": "7bedbbf3192f5e7a3d0f7327565fa2d3c8d6d91b"
+    },
+    {
+      "path": "art_source/worlds/leviathan/tools/build_puerto_microset.py",
+      "blob_sha": "50c84a72d395856e2fe3a2593431a53e198a8265"
+    },
+    {
+      "path": "art_source/worlds/leviathan/tools/refine_puerto_microset_v2.py",
+      "blob_sha": "80d002267b9e8a0010e9f3e68fc421c1fb37b15a"
+    }
+  ],
+  "master": {
+    "project_id": "2577a7b6-ebd7-4d31-a645-620e4b73a95d",
+    "revision": 5,
+    "blend_size_bytes": 5201628,
+    "blend_etag": "9a8e38ba2269d438f16201e1e487680c",
+    "glb_size_bytes": 5757024,
+    "glb_etag": "94d1d370240c649fcac80e108a118677",
+    "scene_objects": 224,
+    "scene_meshes": 174,
+    "scene_materials": 13,
+    "collections": 11
+  },
+  "cold_rebuild": {
+    "project_id": "37a931c7-f2e6-46bc-9be0-26077e5de1c1",
+    "revision": 3,
+    "pipeline": "empty scene -> master -> Puerto microset -> scale/contact refinement",
+    "scene_objects": 224,
+    "scene_meshes": 174,
+    "scene_materials": 13,
+    "collections": 11,
+    "semantic_fingerprint_excluding_provider_hf_id": "b4fb20302e45afa27bbea9c875cc4cdfc4e2861e61538d1f55405b5f92e1abd5",
+    "semantic_payload_bytes": 59116
+  },
+  "determinism": {
+    "master_semantic_fingerprint_excluding_provider_hf_id": "b4fb20302e45afa27bbea9c875cc4cdfc4e2861e61538d1f55405b5f92e1abd5",
+    "cold_semantic_fingerprint_excluding_provider_hf_id": "b4fb20302e45afa27bbea9c875cc4cdfc4e2861e61538d1f55405b5f92e1abd5",
+    "status": "PASS_EXACT_SEMANTIC_MATCH",
+    "provider_ephemeral_field_excluded": "hf_id"
+  },
+  "asset_families": {
+    "LEV-ARCH-001": {
+      "name": "Soft colony module family / hero graft module A",
+      "state": "REPRESENTATIVE_DETAIL_NOT_FINAL",
+      "manufacturing_logic": "metal pressure frame + replaceable ivory ceramic panels + elastomer seals + exposed service underbelly",
+      "envelope_m": [24.0, 12.0, 10.0],
+      "current_collision_proxy_m": [24.0, 12.0, 9.0],
+      "geometry": {
+        "objects": 57,
+        "meshes": 51,
+        "curves": 6,
+        "vertices": 2048,
+        "polygons": 1838,
+        "triangles": 3908
+      }
+    },
+    "LEV-INF-002": {
+      "name": "Suture clamp modular family / hero representative",
+      "state": "REPRESENTATIVE_DETAIL_NOT_FINAL",
+      "manufacturing_logic": "opposed anchor plates + tension yoke + replaceable bolts + compression pads",
+      "geometry": {
+        "objects": 15,
+        "meshes": 14,
+        "curves": 1,
+        "vertices": 344,
+        "polygons": 200,
+        "triangles": 632
+      }
+    },
+    "LEV-INF-003": {
+      "name": "Living valve family / hero representative",
+      "state": "REPRESENTATIVE_DETAIL_NOT_FINAL",
+      "construction_logic": "human actuator cage compresses living cartilage/membrane iris",
+      "moving_iris_blades": 6,
+      "moving_parts_rig_status": "INTERFACE_TAGGED_RIG_NOT_BUILT",
+      "geometry": {
+        "objects": 25,
+        "meshes": 22,
+        "curves": 3,
+        "vertices": 4448,
+        "polygons": 4292,
+        "triangles": 8840
+      }
+    }
+  },
+  "microset_totals": {
+    "objects": 100,
+    "meshes": 87,
+    "curves": 10,
+    "vertices": 6840,
+    "polygons": 6330,
+    "triangles": 13380,
+    "material_slots": 97,
+    "hard_budget_status": "UNSET_UNTIL_RUNTIME_AND_TARGET_HARDWARE_QUALIFIED"
+  },
+  "materials": {
+    "roles_used": [
+      "HUM_MAT_BRUSHED_METAL",
+      "HUM_MAT_DARK_TECH",
+      "HUM_MAT_IVORY_CERAMIC",
+      "HUM_MAT_SEAL_RUBBER",
+      "LEV_MAT_CARTILAGE",
+      "LEV_MAT_MEMBRANE",
+      "LEV_MAT_VASCULAR",
+      "SIGNAL_AMBER_REFUGE",
+      "SIGNAL_CYAN_MEMORY"
+    ],
+    "new_portable_roles": [
+      "HUM_MAT_BRUSHED_METAL",
+      "HUM_MAT_SEAL_RUBBER"
+    ],
+    "texture_pbr_status": "NOT_FINAL"
+  },
+  "qa": {
+    "required_missing": [],
+    "bad_object_scales": [],
+    "zero_polygon_meshes": [],
+    "degenerate_meshes": [],
+    "materialless_meshes": [],
+    "camera_all_representative_centers_in_frame": true,
+    "inspection_light_type": "SPOT",
+    "portable_export": "PASS_GLTF_EXPORT",
+    "engine_import": "NOT_RUN",
+    "visual_art_review": "REVIEW_REQUIRED"
+  },
+  "human_scale_fix": {
+    "defect_revision": 4,
+    "defect": "service door height 4.35 m and floating sill",
+    "classification": "ARCHITECTURAL_SCALE_CONTACT_DEFECT",
+    "fixed_revision": 5,
+    "door_dimensions_m": [0.28, 1.60, 2.60],
+    "human_reference_height_m": 1.85,
+    "door_height_over_human": 1.405,
+    "core_bottom_z_m": 4.45,
+    "door_bottom_z_m": 4.55,
+    "sill_offset_m": 0.10,
+    "status": "FIXED_AND_REVALIDATED"
+  },
+  "truth": {
+    "art_quality": "REPRESENTATIVE_DETAIL_NOT_FINAL_AAAA",
+    "uv": "NOT_FINAL",
+    "final_pbr_textures": "NOT_FINAL",
+    "lod_hlod": "NOT_READY",
+    "runtime_collision": "NOT_RUN",
+    "performance": "MEASURED_GEOMETRY_COST_ONLY_NO_TARGET_BUDGET",
+    "world_done": false
+  }
+}
