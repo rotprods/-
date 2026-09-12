@@ -1,0 +1,10 @@
+{
+  "task_id": "INFRA-005",
+  "outcome": "checkpoint",
+  "evidence": [
+    "evidence/visual-display-qualified.json"
+  ],
+  "source_digest": "7d788a1555d98ed69c11fea738f0535750b9f5f4dd4efd1f494e5ed5246aa592",
+  "next_action": "Usar captura visual cualificada para una entrega lista; exigir PNG nuevo y log sin errores. Mejorar control de captura para que rechace scripts fallidos. No repetir producción del owner.",
+  "executed_at": "2026-09-12T21:43:22.413082+00:00"
+}

@@ -4162,6 +4162,15 @@
       "artifact_path": "learning/hub/agents/codex-root/chats/INFRA-005-FLEET-001/events/LRN-EXO-20260912-FLEET-CAS.json"
     },
     {
+      "id": "LRN-EXO-20260912-OWNER-ADMISSION",
+      "type": "learning",
+      "label": "duplicate_owner_work_and_unsupported_capability_assumptions",
+      "epistemic": "fact",
+      "status": "persisted",
+      "provenance": "learning/hub/agents/codex-root/chats/INFRA-005-LEARNING-004/events/LRN-EXO-20260912-OWNER-ADMISSION.json",
+      "artifact_path": "learning/hub/agents/codex-root/chats/INFRA-005-LEARNING-004/events/LRN-EXO-20260912-OWNER-ADMISSION.json"
+    },
+    {
       "id": "LRN-EXO-20260912-ART",
       "type": "learning",
       "label": "detail-without-readability",
@@ -7721,6 +7730,18 @@
     {
       "id": "LRN-EXO-20260912-FLEET-CAS::CHECKED_BY::governance",
       "source": "LRN-EXO-20260912-FLEET-CAS",
+      "target": "governance",
+      "type": "CHECKED_BY"
+    },
+    {
+      "id": "project:exovant::LEARNS::LRN-EXO-20260912-OWNER-ADMISSION",
+      "source": "project:exovant",
+      "target": "LRN-EXO-20260912-OWNER-ADMISSION",
+      "type": "LEARNS"
+    },
+    {
+      "id": "LRN-EXO-20260912-OWNER-ADMISSION::CHECKED_BY::governance",
+      "source": "LRN-EXO-20260912-OWNER-ADMISSION",
       "target": "governance",
       "type": "CHECKED_BY"
     },

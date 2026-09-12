@@ -38,3 +38,8 @@ Main avanzó durante el trabajo de 4c2fa044 a 196ef814 con solo AGENTS modificad
 
 ## INFRA-005-DELIVERY-003
 Incremento del control de entrega: recorrido completo de chunks GLB y lista explícita de evidencias. Seis casos reproducen la aceptación incorrecta en f78bfdc8; 48 tests de flota pasan tras el fix. Sin geometría nueva ni cambios de runtime. ADOPTION-002 no está recuperado. Fuente de evidencia: evidence/delivery-container-regression.json; gates actuales en evidence/gates/INFRA-005-*.json.
+
+## INFRA-005-LEARNING-004
+Corrección del usuario convertida en evento L2 y preflight AGENTS. Objetivo de remediación y criterios por problema dentro de PLAN existente. Difusión por hilo #7; adopción externa pendiente, sin nuevos agentes ni watchers.
+
+VISUAL-005: graphical Godot capture qualified here after resolving absolute xkbcomp dependency and importing cold-clone assets. See evidence/visual-display-qualified.json and visual-display-runbook.md. CPU llvmpipe only; existing capture repositions player. Capture exit code can hide script errors: inspect log and fresh PNG.
