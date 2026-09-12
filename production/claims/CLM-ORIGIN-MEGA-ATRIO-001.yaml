@@ -1,0 +1,82 @@
+claim_id: CLM-ORIGIN-MEGA-ATRIO-001
+parent_claim: CLM-ORIGIN-WORLD-001
+agent_id: AGENT-ORIGIN-WORLD-01
+session_id: SES-20260912-ORIGIN-WORLD-001
+claim_type: ATOMIC_SUBCLAIM
+scope_key: world-origin/megastructures/atrio-route-ring-kit
+world_id: origin
+region_id: ATRIO-DE-LAS-RUTAS
+category: megastructures
+subdomain: route_ring_structural_kit
+status: CLAIMED
+priority: P0
+branch: art/world-origin-001
+base_sha: 196ef814fdc845ec797979906d01dc25009217c7
+created_at: 2026-09-12T21:54:00+02:00
+last_heartbeat: 2026-09-12T21:54:00+02:00
+
+north_star: >-
+  Deliver a physically legible, modular, deterministic structural kit for the canonical 70 m
+  three-ring Atrio de las Rutas: black-mineral load paths, living-bronze joints, route apertures,
+  bridge interfaces and collision-ready proxies that read at gameplay distance and can be reused
+  by the ORIGIN world owner without consuming boss, NPC, vehicle or runtime ownership.
+
+stable_asset_ids:
+  - ORG_ATR_RING_A70
+  - ORG_ATR_RING_B52
+  - ORG_ATR_RING_C34
+  - ORG_ATR_BRIDGE_RADIAL_A
+  - ORG_ATR_BRIDGE_RADIAL_B
+  - ORG_ATR_BRIDGE_RADIAL_C
+  - ORG_ATR_NODE_SAFE
+  - ORG_ATR_NODE_VALVE
+  - ORG_ATR_ROUTE_APERTURE
+  - ORG_ATR_SUPPORT_PIER
+
+includes:
+  - three connected structural rings fitting the canonical 70 m arena envelope
+  - radial bridge family and junctions
+  - readable safe-node / valve-node physical interfaces
+  - black-mineral structural material role
+  - living-bronze joint/material role
+  - explicit simplified collision proxies
+  - player scale reference from current prototype
+  - deterministic bpy generator
+  - manifest, metrics, preview and GLB receipts
+
+excludes:
+  - final EXOVANT boss mesh, rig, attacks or effects
+  - Archive of the First Wound final architecture
+  - Heart of EXOVANT final negotiation center
+  - NPCs
+  - fauna
+  - Arca del Retorno
+  - world terrain outside Atrio envelope
+  - final route-state gameplay logic
+  - final texture library or copied materials from prior worlds
+  - engine migration or target-GPU claims
+
+canon_constraints:
+  arena_diameter_m: 70
+  ring_count: 3
+  gravity_behavior: visual/local changes only until runtime qualification
+  combat_horizon: must remain legible
+  material_language:
+    - black mineral
+    - living bronze
+    - bounded echoes of prior-world materials
+
+proposal_constraints:
+  route_clear_width_m: 4.0
+  bridge_clear_width_m: 4.5
+  ring_deck_width_m: 5.0
+  note: dimensions above are proposal values to validate with traversal and camera; only arena envelope and three-ring topology are canon.
+
+release_conditions:
+  - Blender source and generator committed
+  - remote Blender mutation verified
+  - required assets and collision proxies present
+  - no degenerate geometry / missing materials / accidental non-unit scale
+  - GLB export resolves
+  - runtime traversal and human art review remain separate gates
+claim_status: KEEP
