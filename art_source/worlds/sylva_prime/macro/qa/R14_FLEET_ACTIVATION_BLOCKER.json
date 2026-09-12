@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "claim": "CLM-SYLVA-MACRO-001",
+  "writer_fence": "SYLVA-MACRO-WRITER-EPOCH-2-20260912",
+  "accepted_remote_revision": 13,
+  "state": "BLOCKED_FLEET_ACTIVATION_REQUIRED",
+  "published_registry_readback": {
+    "status": "reserved",
+    "ack": null,
+    "project_ids": ["05dce898-753d-4ff6-a4b0-31757dc868d8"]
+  },
+  "safe_work_completed_while_fenced": [
+    "read-only R14 hierarchy/prefetch study",
+    "STREAM_HIERARCHY_R14_PROPOSAL.json",
+    "build_stream_hierarchy_r14.py",
+    "validate_stream_hierarchy_r14.py",
+    "R14_STREAM_HIERARCHY_PREFLIGHT.json",
+    "R14_EXECUTION_GATE.md"
+  ],
+  "mutation_attempted_after_fence": false,
+  "unblock": [
+    "integrator publishes current owner ACK and transitions claim to active",
+    "primary project remains registered to this claim",
+    "single writer epoch is established",
+    "remote readback still revision 13 / sceneSequence 0 / no active operation"
+  ],
+  "truth": "R14 execution is ready but deliberately not run."
+}
