@@ -1,0 +1,181 @@
+schema_version: 1
+manifest_id: SYL_MACRO_FOUNDATION_001
+claim_id: CLM-SYLVA-MACRO-001
+agent_id: AGENT-SYLVA-MACRO-01
+session_id: 20260912-SYLVA-MACRO-001
+world_id: SYLVA-PRIME
+domain: world_macro
+subdomain: terrain_regional_foundation
+status: LOCALLY_VALIDATED_BLOCKOUT_R4
+quality_tier: FOUNDATION_BLOCKOUT
+priority: P0
+
+source_authority:
+  CANON:
+    - AGENTS.md
+    - _project_intelligence/STATE.json
+    - design/EXOVANT_BIBLIA.md
+    - design/EXOVANT_DATA.json
+  DOCUMENTED:
+    - docs/ART_PRODUCTION.md
+    - MEMORY.md
+    - issue:7 world ownership registry
+  OBSERVED:
+    - Blender 5.2.0 LTS via Higgsfield 3D Jutsu
+    - remote project 05dce898-753d-4ff6-a4b0-31757dc868d8 revision 4
+  PROPOSAL:
+    - local authored envelope 12000 m x 12000 m
+    - L3 streaming cells 3000 m x 3000 m
+    - Puerto hero-zone envelope radius 1200 m
+    - Bosque hero-zone envelope radius 1700 m
+    - VESPER hero-zone envelope radius 1200 m
+    - diagnostic route width 6 m
+  UNKNOWN_BLOCKED:
+    - physical planet radius
+    - physical planet diameter
+    - final streaming backend
+    - target GPU/hardware budgets
+    - final production engine decision
+
+pipeline:
+  pipeline_method_search: PIPELINE_METHOD_NOT_FOUND
+  verified_method: "Higgsfield 3D Jutsu -> bpy -> Blender 5.2.0 LTS -> committed .blend + GLB"
+  units: METRIC
+  blender_unit_m: 1.0
+  editable_source: BLEND
+  interchange: GLB
+  base_generator: art_source/worlds/sylva_prime/macro/generate_sylva_macro.py
+  interface_pass: art_source/worlds/sylva_prime/macro/add_sylva_macro_interfaces.py
+  remote_project_id: 05dce898-753d-4ff6-a4b0-31757dc868d8
+  validated_revision: 4
+
+ownership:
+  owns:
+    - km-scale local terrain blockout
+    - region anchors and spatial relationships
+    - macro diagnostic root topology placement
+    - traversal corridors and macro collision proxies
+    - streaming cell/envelope metadata
+    - typed integration sockets to meso root kit
+  excludes:
+    - final VESPER mesh
+    - NPCs
+    - wildlife and vegetation species assets
+    - final architecture/interiors
+    - reusable meso root modules
+    - gameplay/quest/runtime code
+  consumes:
+    claim_id: CLM-SYLVA-PROC-NROOT-001
+    manifest: production/manifests/sylva/procedural/SYL_NEURAL_ROOT_KIT_001.yaml
+    policy: "Consume typed sockets only; do not duplicate provider meshes."
+
+scene_metrics_r4:
+  objects: 136
+  mesh_objects: 84
+  curve_objects: 8
+  triangles_estimate: 15840
+  local_terrain_bounds_m:
+    x: [-6000.0, 6000.0]
+    y: [-6000.0, 6000.0]
+    z: [-344.364, 484.509]
+  primary_macro_roots: 6
+  secondary_macro_roots: 8
+  route_guides: 4
+  streaming_cells: 16
+  region_envelopes: 3
+  rootkit_sockets: 8
+  collision_proxies: 8
+  lowres_terrain_collision_vertices: 289
+  lowres_terrain_collision_faces: 256
+
+regions:
+  - id: SYL_REGION_PUERTO_INJERTO
+    canon_name: Puerto del Injerto
+    status: BLOCKOUT_REVIEW
+    anchor_m: [-3200, -2200, 330]
+    proposed_envelope_radius_m: 1200
+  - id: SYL_REGION_BOSQUE_FRASES
+    canon_name: Bosque de las Frases
+    status: BLOCKOUT_REVIEW
+    anchor_m: [0, 150, 350]
+    proposed_envelope_radius_m: 1700
+  - id: SYL_REGION_CAMARA_VESPER
+    canon_name: Camara de VESPER
+    status: BLOCKOUT_REVIEW
+    anchor_m: [3200, 2300, -220]
+    proposed_envelope_radius_m: 1200
+
+integration_sockets:
+  - socket_id: SYLVA_SOCKET_PUERTO_EXIT_A1
+    provider_asset: SYL_ROOT_A1_STRAIGHT_08M
+  - socket_id: SYLVA_SOCKET_PUERTO_MEMBRANE_C3
+    provider_asset: SYL_ROOT_C3_MEMBRANE_ANCHOR
+  - socket_id: SYLVA_SOCKET_BOSQUE_APPROACH_A2
+    provider_asset: SYL_ROOT_A2_CURVE_12M
+  - socket_id: SYLVA_SOCKET_BOSQUE_FORK_B1
+    provider_asset: SYL_ROOT_B1_FORK
+  - socket_id: SYLVA_SOCKET_BOSQUE_RISE_A3
+    provider_asset: SYL_ROOT_A3_RISE_10M
+  - socket_id: SYLVA_SOCKET_VESPER_APPROACH_A2
+    provider_asset: SYL_ROOT_A2_CURVE_12M
+  - socket_id: SYLVA_SOCKET_VESPER_BUTTRESS_C1
+    provider_asset: SYL_ROOT_C1_BUTTRESS_07M
+  - socket_id: SYLVA_SOCKET_VESPER_MEMBRANE_C3
+    provider_asset: SYL_ROOT_C3_MEMBRANE_ANCHOR
+
+collision_contract:
+  - asset_id: SYLVA_COL_TERRAIN_Macro12km_LowRes_PROPOSAL
+    policy: CUSTOM_LOWRES_HEIGHTFIELD
+  - asset_id: SYLVA_COL_PUERTO_Deck
+    policy: BOX_PROXY
+  - asset_id: SYLVA_COL_BOSQUE_CentralPad
+    policy: CYLINDER_PROXY
+  - asset_id: SYLVA_COL_VESPER_ArenaFloor
+    policy: CYLINDER_PROXY
+  - asset_id: SYLVA_COL_ROUTE_00
+    policy: BOX_CORRIDOR_PROXY
+  - asset_id: SYLVA_COL_ROUTE_01
+    policy: BOX_CORRIDOR_PROXY
+  - asset_id: SYLVA_COL_ROUTE_02
+    policy: BOX_CORRIDOR_PROXY
+  - asset_id: SYLVA_COL_ROUTE_03
+    policy: BOX_CORRIDOR_PROXY
+
+qa_r4:
+  pass: true
+  streaming_grid: PASS
+  socket_contract: PASS
+  collision_metadata: PASS
+  non_unit_scale_count: 0
+  non_namespace_count: 0
+  foreign_rootkit_mesh_count: 0
+  final_scope_violation_count: 0
+  export: PASS_REMOTE_GLB
+  human_art_review: PENDING
+  engine_import: PENDING
+  traversal_collision_runtime: PENDING
+  target_hardware_performance: BLOCKED
+
+artifacts_r4:
+  blend:
+    size_bytes: 2097180
+    etag: 4470d8530489f327fb2d3c33c31e983d
+  glb:
+    size_bytes: 1074844
+    etag: f793339fd893d9829a84a43d21141054
+
+claim_dod_status:
+  authority_recovered: DONE
+  persistent_claim: DONE
+  reproducible_macro_generator: DONE
+  reproducible_interface_pass: DONE
+  macro_terrain_blockout: DONE
+  canonical_region_foundations: DONE_BLOCKOUT
+  streaming_interface: DONE_PROPOSAL
+  collision_proxy_interface: DONE_BLOCKOUT
+  rootkit_integration_contract: DONE
+  technical_qa: PASS_R4
+  human_art_approval: PENDING
+  engine_integration: PENDING
+  performance_qualification: BLOCKED_TARGET_HARDWARE
+  final_world_dod: NOT_DONE
