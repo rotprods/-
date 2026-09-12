@@ -8,12 +8,14 @@ subdomain: planetary_foundation
 status: IN_PROGRESS
 quality_tier: BLOCKOUT_FOUNDATION_STRUCTURAL_REPRODUCIBLE
 base_main_sha_at_claim: 4c2fa044080004609ea6df45f34b2a784536507a
-last_main_resynced: 70fda70cd2120d38fba94e6a66e554e564c6c471
+last_main_resynced: 758a9b6326a7d061f1e304abe9b1593b6b2d1a66
+resync_merge_commit: f14dd03ec2928aa8d080a8c9b61d50877c88c7fe
 branch: art/world-nacre-001
 fleet_epoch: 1
 fleet_status_observed: reserved
 fleet_ack: https://github.com/rotprods/-/issues/7#issuecomment-5648339684
-updated_at: 2026-09-12T21:44:00Z
+fleet_r4_followup: https://github.com/rotprods/-/issues/7#issuecomment-5648897202
+updated_at: 2026-09-12T21:46:00Z
 
 source_authority:
   repository: rotprods/-
@@ -38,19 +40,13 @@ pipeline:
   interchange_format: glb
   prototype_engine: Godot 4.7.2
   production_engine: UNKNOWN_UNQUALIFIED
-  production_engine_note: Unreal 5.8 remains a candidate pending EXO-012; not assumed for this package.
 
 remote_blender:
   project_id: a49fc6f3-fedb-40a5-913f-10a08debb0e1
-  project_name: EXOVANT 2950 — NACRE World Macro — CLM-NACRE-WORLD-MACRO-001
   revision: 4
   build_macro_version: 3
-  blend:
-    bytes: 3500059
-    etag: a365ae84492f4142d949c1033636b092
-  glb:
-    bytes: 3828832
-    etag: 0b6dee01664cb91aae1a4b332e8ae163
+  blend: {bytes: 3500059, etag: a365ae84492f4142d949c1033636b092}
+  glb: {bytes: 3828832, etag: 0b6dee01664cb91aae1a4b332e8ae163}
   semantic_sha256: 48742ba2dc253a626fb807799a55e2c83f2e87f437cf761b66522bac7ba88787
 
 clean_replay:
@@ -74,8 +70,7 @@ canon_documented:
   area_temperature_c: 16
   cultural_material_premise: Cities grow inside kilometre-scale shells; inhabitants preserve lives in pearls and trade biographies.
   archive_mnemos_form: Spherical archive rooms connected by bridges.
-  archive_language: Mineral archive vaults, bounded translucent plates and thin bridges.
-  art_risk: Avoid duplicated scenarios and uncontrolled translucent-material proliferation; bound active versions and prefab states.
+  art_risk: Avoid duplicated scenarios and uncontrolled translucent-material proliferation.
 
 unknown_not_canon:
   - planetary_radius_m
@@ -94,7 +89,7 @@ reversible_proposals:
   shell_city_span_target_m: 1400
   archive_core_diameter_m: 184
   bridge_surface_clearance_m: 3.0
-  note: These are blockout parameters for scale/structural communication, not approved planetary canon.
+  note: blockout interfaces only; not planetary canon
 
 scene_metrics_revision_4:
   object_total: 130
@@ -123,40 +118,11 @@ material_roles:
   - MAT_ScaleHuman
 
 asset_coverage:
-  - asset_id: NACRE-MACRO-SHELL-001
-    category: macro_architecture
-    name: shell-city envelope and growth strata
-    tier: D_to_C_blockout
-    status: IN_PROGRESS
-    dimensions_status: PROPOSAL
-    qa: reproducible_geometry_checkpoint_pass
-  - asset_id: NACRE-MACRO-LINING-001
-    category: macro_architecture
-    name: inner pearl lining
-    tier: D_to_C_blockout
-    status: IN_PROGRESS
-    dimensions_status: PROPOSAL
-    qa: reproducible_geometry_checkpoint_pass
-  - asset_id: NACRE-ARCHIVE-NET-001
-    category: archive_infrastructure
-    name: spherical archive chamber network with service rings and suspension load paths
-    tier: C_blockout
-    status: IN_PROGRESS
-    dimensions_status: PROPOSAL
-    qa: macro_structural_causality_pass_candidate
-  - asset_id: NACRE-BRIDGE-NET-001
-    category: infrastructure
-    name: surface-connected archive bridge/spine network and docking sockets
-    tier: C_blockout
-    status: IN_PROGRESS
-    dimensions_status: PROPOSAL
-    qa: bridge_attachment_geometry_pass
-  - asset_id: NACRE-SCALE-REF-001
-    category: qa_reference
-    name: human and 100m scale references
-    tier: QA
-    status: DONE_FOR_BLOCKOUT
-    qa: scale_reference_present
+  - {asset_id: NACRE-MACRO-SHELL-001, category: macro_architecture, status: IN_PROGRESS, qa: reproducible_geometry_checkpoint_pass}
+  - {asset_id: NACRE-MACRO-LINING-001, category: macro_architecture, status: IN_PROGRESS, qa: reproducible_geometry_checkpoint_pass}
+  - {asset_id: NACRE-ARCHIVE-NET-001, category: archive_infrastructure, status: IN_PROGRESS, qa: macro_structural_causality_pass_candidate}
+  - {asset_id: NACRE-BRIDGE-NET-001, category: infrastructure, status: IN_PROGRESS, qa: bridge_attachment_geometry_pass}
+  - {asset_id: NACRE-SCALE-REF-001, category: qa_reference, status: DONE_FOR_BLOCKOUT, qa: scale_reference_present}
 
 verification:
   geometry_export_checkpoint: PASS
@@ -170,11 +136,7 @@ verification:
   cold_replay_generator: PASS
   semantic_reproducibility: PASS
   generator_bug_blender_5_2_collection_membership: FIXED_AND_REPLAYED
-  revision_4_preview:
-    operation: nacre-r4-canonical-qa
-    artifact_id: 24642ce8001df31f7c50875e79c07c9d
-    name: nacre_r4_canonical_hero.png
-    dimensions_px: [640, 360]
+  revision_4_preview: {operation: nacre-r4-canonical-qa, artifact_id: 24642ce8001df31f7c50875e79c07c9d, dimensions_px: [640, 360]}
   human_gate_art: OPEN
   godot_import_gate: ENV_BLOCKED
   collision_gate: OPEN
@@ -194,7 +156,6 @@ receipts:
   initial_build_operation: nacre-macro-build-v1c
   portability_fix_operation: nacre-portability-fix-r2
   structural_revision_3_operation: nacre-structural-bridge-fix-r3
-  revision_3_qa_operation: nacre-qa-r3-geometry-render
   generator_api_probe: nacre-r3-generator-api-probe
   clean_replay_operation: nacre-r3-clean-replay-fixed-generator
   primary_revision_4_operation: nacre-r4-generator-canonicalization
