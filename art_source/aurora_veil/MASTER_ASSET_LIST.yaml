@@ -1,0 +1,1108 @@
+schema_version: 1
+world_id: aurora
+world_name: AURORA VEIL
+owner: AGENT-02-AURORA
+claim: CLM-AURORA-WORLD-001
+budget_policy: MEASURE_FIRST_TARGET_HARDWARE_PENDING
+entries:
+  - asset_id: AUR-PLN-001
+    region: GLOBAL
+    category: world_macro
+    subcategory: orbital
+    name: Aurora Veil orbital shell
+    description: Low/mid-frequency planetary body; no hero geometry.
+    priority: P0
+    quality_tier: D
+    usage_frequency: orbital_vista
+    real_dimensions: {radius_m: 5900000, status: PROPOSAL}
+    player_distance: orbital
+    dependencies: [ADR-AUR-001]
+    owner: AGENT-02-AURORA
+    status: TODO
+    blend_path: art_source/aurora_veil/blender/orbital/AUR-PLN-001.blend
+    export_path: assets/aurora_veil/orbital/AUR-PLN-001.glb
+    material_set: AUR-MAT-ORBITAL
+    texture_set: TBD
+    poly_budget: MEASURE_FIRST
+    lod_policy: low_mid_frequency_only
+    collision_policy: none
+    rig: none
+    animation_dependency: none
+    physics: none
+    destructible: false
+    reference_set: canon_aurora
+    license: original_project
+    qa_status: TODO
+
+  - asset_id: AUR-ATM-001
+    region: GLOBAL
+    category: world_macro
+    subcategory: atmosphere
+    name: Aurora and atmosphere representation
+    description: Separate aurora/atmosphere layers; GLB portability not assumed for final sky rendering.
+    priority: P1
+    quality_tier: D
+    usage_frequency: persistent
+    real_dimensions: {planet_relative: true}
+    player_distance: orbital_to_surface
+    dependencies: [AUR-PLN-001]
+    owner: AGENT-02-AURORA
+    status: TODO
+    blend_path: art_source/aurora_veil/blender/orbital/AUR-ATM-001.blend
+    export_path: assets/aurora_veil/orbital/AUR-ATM-001.glb
+    material_set: AUR-MAT-ATM
+    texture_set: TBD
+    poly_budget: MEASURE_FIRST
+    lod_policy: engine_specific
+    collision_policy: none
+    rig: none
+    animation_dependency: temporal_environment
+    physics: none
+    destructible: false
+    reference_set: canon_aurora
+    license: original_project
+    qa_status: TODO
+
+  - asset_id: AUR-TER-001
+    region: AUR_R01_CAMP_SECOND_DAY
+    category: terrain
+    subcategory: macro
+    name: Campamento terrain tile family
+    description: Prairie/observatory terrain foundation before microdetail.
+    priority: P0
+    quality_tier: B
+    usage_frequency: high
+    real_dimensions: {tile_planning_m: 256, status: PROPOSAL}
+    player_distance: 0_5km
+    dependencies: [AUR/WORLD/004]
+    owner: AGENT-02-AURORA
+    status: TODO
+    blend_path: art_source/aurora_veil/blender/terrain/AUR-TER-001.blend
+    export_path: assets/aurora_veil/terrain/AUR-TER-001.glb
+    material_set: AUR-MAT-TERRAIN
+    texture_set: TBD
+    poly_budget: MEASURE_FIRST
+    lod_policy: terrain_hierarchy
+    collision_policy: simplified_terrain
+    rig: none
+    animation_dependency: none
+    physics: traversal
+    destructible: false
+    reference_set: canon_region_r01
+    license: original_project
+    qa_status: TODO
+
+  - asset_id: AUR-TER-002
+    region: AUR_R02_REPETITION_PLAIN
+    category: terrain
+    subcategory: macro
+    name: Repetition Plain terrain tile family
+    description: Broad negative-space prairie supporting bounded echo encounters.
+    priority: P0
+    quality_tier: B
+    usage_frequency: high
+    real_dimensions: {tile_planning_m: 256, status: PROPOSAL}
+    player_distance: 0_5km
+    dependencies: [AUR/WORLD/004]
+    owner: AGENT-02-AURORA
+    status: TODO
+    blend_path: art_source/aurora_veil/blender/terrain/AUR-TER-002.blend
+    export_path: assets/aurora_veil/terrain/AUR-TER-002.glb
+    material_set: AUR-MAT-TERRAIN
+    texture_set: TBD
+    poly_budget: MEASURE_FIRST
+    lod_policy: terrain_hierarchy
+    collision_policy: simplified_terrain
+    rig: none
+    animation_dependency: echo_state_overlays
+    physics: traversal
+    destructible: authored_states_only
+    reference_set: canon_region_r02
+    license: original_project
+    qa_status: TODO
+
+  - asset_id: AUR-TER-003
+    region: AUR_R03_AEON_ORCHARD
+    category: terrain
+    subcategory: macro
+    name: AEON Orchard terrain tile family
+    description: Terrain supporting machine-orchard and canonical 50 m arena.
+    priority: P0
+    quality_tier: A
+    usage_frequency: high
+    real_dimensions: {arena_clearance_m: 50, status: CANON}
+    player_distance: 0_3km
+    dependencies: [AUR/WORLD/004]
+    owner: AGENT-02-AURORA
+    status: TODO
+    blend_path: art_source/aurora_veil/blender/terrain/AUR-TER-003.blend
+    export_path: assets/aurora_veil/terrain/AUR-TER-003.glb
+    material_set: AUR-MAT-TERRAIN
+    texture_set: TBD
+    poly_budget: MEASURE_FIRST
+    lod_policy: terrain_hierarchy
+    collision_policy: gameplay_custom
+    rig: none
+    animation_dependency: arena_state
+    physics: traversal_combat
+    destructible: authored_states_only
+    reference_set: canon_region_r03
+    license: original_project
+    qa_status: TODO
+
+  - asset_id: AUR-ARC-001
+    region: AUR_R01_CAMP_SECOND_DAY
+    category: architecture
+    subcategory: hero_observatory
+    name: Primary observatory ring assembly
+    description: Mechanically plausible segmented timing/observation ring with bearings, drives and service access.
+    priority: P0
+    quality_tier: S
+    usage_frequency: landmark
+    real_dimensions: {outer_diameter_m: 48, status: PROPOSAL}
+    player_distance: 1m_10km
+    dependencies: [AUR/ARCH/006]
+    owner: AGENT-02-AURORA
+    status: TODO
+    blend_path: art_source/aurora_veil/blender/architecture/AUR-ARC-001.blend
+    export_path: assets/aurora_veil/architecture/AUR-ARC-001.glb
+    material_set: AUR-MAT-OBSERVATORY
+    texture_set: TBD
+    poly_budget: MEASURE_FIRST
+    lod_policy: LOD0_LOD1_LOD2_HLOD
+    collision_policy: custom_simplified
+    rig: mechanical_optional
+    animation_dependency: ring_calibration
+    physics: static_mechanical
+    destructible: authored_damage_states
+    reference_set: aurora_observatory_original
+    license: original_project
+    qa_status: TODO
+
+  - asset_id: AUR-ARC-002
+    region: AUR_R01_CAMP_SECOND_DAY
+    category: architecture
+    subcategory: landmark
+    name: Observatory mast
+    description: Tall regional orientation landmark; instrument tower, not decorative spire.
+    priority: P1
+    quality_tier: A
+    usage_frequency: landmark
+    real_dimensions: {height_m: 72, status: PROPOSAL}
+    player_distance: 10m_15km
+    dependencies: [AUR-ARC-001]
+    owner: AGENT-02-AURORA
+    status: TODO
+    blend_path: art_source/aurora_veil/blender/architecture/AUR-ARC-002.blend
+    export_path: assets/aurora_veil/architecture/AUR-ARC-002.glb
+    material_set: AUR-MAT-OBSERVATORY
+    texture_set: TBD
+    poly_budget: MEASURE_FIRST
+    lod_policy: LOD0_LOD1_HLOD
+    collision_policy: custom_simplified
+    rig: none
+    animation_dependency: sensors
+    physics: static
+    destructible: false
+    reference_set: aurora_observatory_original
+    license: original_project
+    qa_status: TODO
+
+  - asset_id: AUR-ARC-003
+    region: AUR_R01_CAMP_SECOND_DAY
+    category: architecture
+    subcategory: refuge
+    name: Refuge habitat module kit
+    description: Low horizontal prefabricated shelters with believable foundations, drainage, utilities and maintenance.
+    priority: P1
+    quality_tier: B
+    usage_frequency: repeated
+    real_dimensions: {module_grid_m: 4, nominal_height_m: 3.2, status: PROPOSAL}
+    player_distance: 0_500m
+    dependencies: [AUR/ARCH/006]
+    owner: AGENT-02-AURORA
+    status: TODO
+    blend_path: art_source/aurora_veil/blender/architecture/AUR-ARC-003.blend
+    export_path: assets/aurora_veil/architecture/AUR-ARC-003.glb
+    material_set: AUR-MAT-HABITAT
+    texture_set: TBD
+    poly_budget: MEASURE_FIRST
+    lod_policy: module_LODs_HLOD
+    collision_policy: primitive_compound
+    rig: none
+    animation_dependency: doors
+    physics: static
+    destructible: authored_damage_states
+    reference_set: exovant_human_material_language
+    license: original_project
+    qa_status: TODO
+
+  - asset_id: AUR-ARC-004
+    region: AUR_R01_CAMP_SECOND_DAY
+    category: interiors
+    subcategory: control_room
+    name: Chronobiology control room kit
+    description: Interior kit for timing, weather and echo observation; serviceable instruments and cable logic.
+    priority: P1
+    quality_tier: A
+    usage_frequency: mission
+    real_dimensions: {room_grid_m: 1, status: PROPOSAL}
+    player_distance: 0_30m
+    dependencies: [AUR-ARC-003]
+    owner: AGENT-02-AURORA
+    status: TODO
+    blend_path: art_source/aurora_veil/blender/interiors/AUR-ARC-004.blend
+    export_path: assets/aurora_veil/interiors/AUR-ARC-004.glb
+    material_set: AUR-MAT-INSTRUMENT
+    texture_set: TBD
+    poly_budget: MEASURE_FIRST
+    lod_policy: interior_visibility
+    collision_policy: compound
+    rig: none
+    animation_dependency: instrument_states
+    physics: static
+    destructible: false
+    reference_set: aurora_observatory_original
+    license: original_project
+    qa_status: TODO
+
+  - asset_id: AUR-INF-001
+    region: AUR_R01_CAMP_SECOND_DAY
+    category: infrastructure
+    subcategory: clock_sync
+    name: Clock synchronization station
+    description: Mission-critical mechanical/electronic calibration station for Q_AURORA_M01.
+    priority: P0
+    quality_tier: A
+    usage_frequency: mission
+    real_dimensions: {height_m: 2.2, footprint_m: [2.4,2.4], status: PROPOSAL}
+    player_distance: 0_50m
+    dependencies: [Q_AURORA_M01]
+    owner: AGENT-02-AURORA
+    status: TODO
+    blend_path: art_source/aurora_veil/blender/infrastructure/AUR-INF-001.blend
+    export_path: assets/aurora_veil/infrastructure/AUR-INF-001.glb
+    material_set: AUR-MAT-INSTRUMENT
+    texture_set: TBD
+    poly_budget: MEASURE_FIRST
+    lod_policy: LOD0_LOD1
+    collision_policy: primitive_compound
+    rig: mechanical
+    animation_dependency: calibration
+    physics: interactive
+    destructible: false
+    reference_set: canon_Q_AURORA_M01
+    license: original_project
+    qa_status: TODO
+
+  - asset_id: AUR-INF-002
+    region: GLOBAL
+    category: infrastructure
+    subcategory: navigation
+    name: Route recorder beacon
+    description: Repeating field beacon used by Peregrino and camps; encodes route/timing state.
+    priority: P1
+    quality_tier: B
+    usage_frequency: frequent
+    real_dimensions: {height_m: 1.6, status: PROPOSAL}
+    player_distance: 0_500m
+    dependencies: [AUR-VEH-001]
+    owner: AGENT-02-AURORA
+    status: TODO
+    blend_path: art_source/aurora_veil/blender/infrastructure/AUR-INF-002.blend
+    export_path: assets/aurora_veil/infrastructure/AUR-INF-002.glb
+    material_set: AUR-MAT-INSTRUMENT
+    texture_set: TBD
+    poly_budget: MEASURE_FIRST
+    lod_policy: LOD0_LOD1_LOD2
+    collision_policy: primitive
+    rig: none
+    animation_dependency: pulse_state
+    physics: static
+    destructible: false
+    reference_set: canon_vehicle_route_recorder
+    license: original_project
+    qa_status: TODO
+
+  - asset_id: AUR-INF-003
+    region: AUR_R01_CAMP_SECOND_DAY
+    category: infrastructure
+    subcategory: utilities
+    name: Service trench / cable routing kit
+    description: Power/data/clock distribution with accessible covers, drainage and repair history.
+    priority: P1
+    quality_tier: B
+    usage_frequency: repeated
+    real_dimensions: {grid_m: 2, status: PROPOSAL}
+    player_distance: 0_100m
+    dependencies: [AUR-ARC-003]
+    owner: AGENT-02-AURORA
+    status: TODO
+    blend_path: art_source/aurora_veil/blender/infrastructure/AUR-INF-003.blend
+    export_path: assets/aurora_veil/infrastructure/AUR-INF-003.glb
+    material_set: AUR-MAT-UTILITY
+    texture_set: TBD
+    poly_budget: MEASURE_FIRST
+    lod_policy: modular
+    collision_policy: primitive_compound
+    rig: none
+    animation_dependency: none
+    physics: static
+    destructible: authored_states
+    reference_set: manufacturing_realism
+    license: original_project
+    qa_status: TODO
+
+  - asset_id: AUR-TMP-001
+    region: AUR_R02_REPETITION_PLAIN
+    category: temporal
+    subcategory: field_boundary
+    name: Bounded echo field anchor
+    description: Physical/instrument anchor that makes local temporal volume limits readable without relying on UI alone.
+    priority: P0
+    quality_tier: A
+    usage_frequency: gameplay
+    real_dimensions: {height_m: 2.8, status: PROPOSAL}
+    player_distance: 0_200m
+    dependencies: [AUR/TEMPORAL/007]
+    owner: AGENT-02-AURORA
+    status: TODO
+    blend_path: art_source/aurora_veil/blender/temporal/AUR-TMP-001.blend
+    export_path: assets/aurora_veil/temporal/AUR-TMP-001.glb
+    material_set: AUR-MAT-TEMPORAL
+    texture_set: TBD
+    poly_budget: MEASURE_FIRST
+    lod_policy: LOD0_LOD1_LOD2
+    collision_policy: primitive
+    rig: none
+    animation_dependency: echo_state
+    physics: trigger_interface
+    destructible: false
+    reference_set: canon_temporal_rule
+    license: original_project
+    qa_status: TODO
+
+  - asset_id: AUR-TMP-002
+    region: GLOBAL
+    category: temporal
+    subcategory: state_variant
+    name: Echo-state duplicate contract
+    description: Asset/state data contract for delayed local duplicate; not a whole-world duplicate.
+    priority: P0
+    quality_tier: B
+    usage_frequency: gameplay
+    real_dimensions: {inherits_source_dimensions: true}
+    player_distance: source_dependent
+    dependencies: [AUR-TMP-001]
+    owner: AGENT-02-AURORA
+    status: TODO
+    blend_path: art_source/aurora_veil/blender/temporal/AUR-TMP-002.blend
+    export_path: assets/aurora_veil/temporal/AUR-TMP-002.glb
+    material_set: AUR-MAT-TEMPORAL
+    texture_set: TBD
+    poly_budget: source_dependent
+    lod_policy: mirrors_source
+    collision_policy: explicit_per_state
+    rig: source_dependent
+    animation_dependency: delayed_state
+    physics: local_state
+    destructible: false
+    reference_set: canon_temporal_rule
+    license: original_project
+    qa_status: TODO
+
+  - asset_id: AUR-VEG-001
+    region: GLOBAL
+    category: vegetation
+    subcategory: grass
+    name: Two-shadow grass family
+    description: Canon temporal indicator; grass blades/shadow state communicate local offset.
+    priority: P0
+    quality_tier: B
+    usage_frequency: massive
+    real_dimensions: {height_m_range: [0.25,0.75], status: PROPOSAL}
+    player_distance: 0_500m
+    dependencies: [AUR/ECO/032]
+    owner: AGENT-02-AURORA
+    status: TODO
+    blend_path: art_source/aurora_veil/blender/vegetation/AUR-VEG-001.blend
+    export_path: assets/aurora_veil/vegetation/AUR-VEG-001.glb
+    material_set: AUR-MAT-VEGETATION
+    texture_set: TBD
+    poly_budget: MEASURE_FIRST_INSTANCE
+    lod_policy: cluster_LOD_impostor_if_supported
+    collision_policy: none
+    rig: wind_optional
+    animation_dependency: temporal_shadow_state
+    physics: wind_visual
+    destructible: false
+    reference_set: canon_hierba_dos_sombras
+    license: original_project
+    qa_status: TODO
+
+  - asset_id: AUR-FAU-001
+    region: GLOBAL
+    category: fauna
+    subcategory: insect
+    name: Cronomariposa
+    description: Insect emerging in synchrony with network pulses.
+    priority: P1
+    quality_tier: A
+    usage_frequency: medium
+    real_dimensions: {wingspan_m: 0.18, status: PROPOSAL}
+    player_distance: 0_80m
+    dependencies: [AUR/ECO/033]
+    owner: AGENT-02-AURORA
+    status: TODO
+    blend_path: art_source/aurora_veil/blender/fauna/AUR-FAU-001.blend
+    export_path: assets/aurora_veil/fauna/AUR-FAU-001.glb
+    material_set: AUR-MAT-FAUNA
+    texture_set: TBD
+    poly_budget: MEASURE_FIRST
+    lod_policy: hero_swarm_versions
+    collision_policy: none_or_simple
+    rig: insect_rig
+    animation_dependency: flight_emergence
+    physics: swarm_behavior_interface
+    destructible: false
+    reference_set: canon_cronomariposa
+    license: original_project
+    qa_status: TODO
+
+  - asset_id: AUR-FAU-002
+    region: GLOBAL
+    category: fauna
+    subcategory: ungulate
+    name: Antílope de aurora
+    description: Ungulate whose tracks manifest with delay.
+    priority: P1
+    quality_tier: A
+    usage_frequency: medium
+    real_dimensions: {shoulder_height_m: 1.45, body_length_m: 2.25, status: PROPOSAL}
+    player_distance: 0_500m
+    dependencies: [AUR/ECO/034]
+    owner: AGENT-02-AURORA
+    status: TODO
+    blend_path: art_source/aurora_veil/blender/fauna/AUR-FAU-002.blend
+    export_path: assets/aurora_veil/fauna/AUR-FAU-002.glb
+    material_set: AUR-MAT-FAUNA
+    texture_set: TBD
+    poly_budget: MEASURE_FIRST
+    lod_policy: LOD0_LOD1_LOD2_crowd
+    collision_policy: capsule_compound
+    rig: quadruped
+    animation_dependency: locomotion_tracks
+    physics: fauna_navigation
+    destructible: false
+    reference_set: canon_aurora_antelope
+    license: original_project
+    qa_status: TODO
+
+  - asset_id: AUR-FAU-003
+    region: GLOBAL
+    category: fauna
+    subcategory: insect
+    name: Avispa de intervalo + nest
+    description: Wasp family nesting in thermal windows; nest design encodes usable temperature intervals.
+    priority: P1
+    quality_tier: B
+    usage_frequency: medium
+    real_dimensions: {body_length_m: 0.08, nest_range_m: [0.4,1.2], status: PROPOSAL}
+    player_distance: 0_100m
+    dependencies: [AUR/ECO/035]
+    owner: AGENT-02-AURORA
+    status: TODO
+    blend_path: art_source/aurora_veil/blender/fauna/AUR-FAU-003.blend
+    export_path: assets/aurora_veil/fauna/AUR-FAU-003.glb
+    material_set: AUR-MAT-FAUNA
+    texture_set: TBD
+    poly_budget: MEASURE_FIRST
+    lod_policy: swarm_cluster
+    collision_policy: nest_simple
+    rig: insect_rig
+    animation_dependency: swarm
+    physics: swarm_behavior_interface
+    destructible: nest_authored_state
+    reference_set: canon_interval_wasp
+    license: original_project
+    qa_status: TODO
+
+  - asset_id: AUR-NPC-001
+    region: AUR_R01_CAMP_SECOND_DAY
+    category: character
+    subcategory: npc
+    name: Ada Nox
+    description: Chronobiologist; silhouette prioritizes field science/timing instruments.
+    priority: P1
+    quality_tier: S
+    usage_frequency: narrative
+    real_dimensions: {height_m: TBD_CANON_OR_ART_APPROVAL}
+    player_distance: 0_50m
+    dependencies: [AUR/NPC/036]
+    owner: AGENT-02-AURORA
+    status: TODO
+    blend_path: art_source/aurora_veil/blender/characters/AUR-NPC-001.blend
+    export_path: assets/aurora_veil/characters/AUR-NPC-001.glb
+    material_set: AUR-MAT-CHARACTER
+    texture_set: TBD
+    poly_budget: MEASURE_FIRST
+    lod_policy: character_LODs
+    collision_policy: capsule_hitboxes
+    rig: humanoid
+    animation_dependency: locomotion_dialogue
+    physics: character
+    destructible: false
+    reference_set: canon_Ada_Nox
+    license: original_project
+    qa_status: TODO
+
+  - asset_id: AUR-NPC-002
+    region: GLOBAL
+    category: character
+    subcategory: npc
+    name: Julián Ré
+    description: Explorer; route/rescue field gear and echo-survival equipment.
+    priority: P1
+    quality_tier: A
+    usage_frequency: narrative
+    real_dimensions: {height_m: TBD}
+    player_distance: 0_100m
+    dependencies: [AUR/NPC/037]
+    owner: AGENT-02-AURORA
+    status: TODO
+    blend_path: art_source/aurora_veil/blender/characters/AUR-NPC-002.blend
+    export_path: assets/aurora_veil/characters/AUR-NPC-002.glb
+    material_set: AUR-MAT-CHARACTER
+    texture_set: TBD
+    poly_budget: MEASURE_FIRST
+    lod_policy: character_LODs
+    collision_policy: capsule_hitboxes
+    rig: humanoid
+    animation_dependency: locomotion_rescue
+    physics: character
+    destructible: false
+    reference_set: canon_Julian_Re
+    license: original_project
+    qa_status: TODO
+
+  - asset_id: AUR-NPC-003
+    region: AUR_R01_CAMP_SECOND_DAY
+    category: character
+    subcategory: npc
+    name: Cea Hora
+    description: Clockmaker; maintenance tools and mechanically readable occupational silhouette.
+    priority: P1
+    quality_tier: A
+    usage_frequency: narrative
+    real_dimensions: {height_m: TBD}
+    player_distance: 0_100m
+    dependencies: [AUR/NPC/038]
+    owner: AGENT-02-AURORA
+    status: TODO
+    blend_path: art_source/aurora_veil/blender/characters/AUR-NPC-003.blend
+    export_path: assets/aurora_veil/characters/AUR-NPC-003.glb
+    material_set: AUR-MAT-CHARACTER
+    texture_set: TBD
+    poly_budget: MEASURE_FIRST
+    lod_policy: character_LODs
+    collision_policy: capsule_hitboxes
+    rig: humanoid
+    animation_dependency: locomotion_maintenance
+    physics: character
+    destructible: false
+    reference_set: canon_Cea_Hora
+    license: original_project
+    qa_status: TODO
+
+  - asset_id: AUR-ENM-001
+    region: GLOBAL
+    category: enemy
+    subcategory: custodian
+    name: Custodio retrasado
+    description: Custodian whose recorded action repeats after an explicit readable delay.
+    priority: P1
+    quality_tier: A
+    usage_frequency: combat
+    real_dimensions: {height_m: 2.35, status: PROPOSAL}
+    player_distance: 0_80m
+    dependencies: [AUR/TEMPORAL/007]
+    owner: AGENT-02-AURORA
+    status: TODO
+    blend_path: art_source/aurora_veil/blender/enemies/AUR-ENM-001.blend
+    export_path: assets/aurora_veil/enemies/AUR-ENM-001.glb
+    material_set: AUR-MAT-CUSTODIAN
+    texture_set: TBD
+    poly_budget: MEASURE_FIRST
+    lod_policy: combat_LODs
+    collision_policy: capsule_hitboxes_attack_shapes
+    rig: custodian_rig
+    animation_dependency: delayed_action_set
+    physics: combat
+    destructible: false
+    reference_set: canon_delayed_custodian
+    license: original_project
+    qa_status: TODO
+
+  - asset_id: AUR-ENM-002
+    region: GLOBAL
+    category: enemy
+    subcategory: humanoid
+    name: Saqueador de futuro
+    description: Human/humanoid trap layer using delayed activation hardware.
+    priority: P1
+    quality_tier: A
+    usage_frequency: combat
+    real_dimensions: {height_m: TBD}
+    player_distance: 0_80m
+    dependencies: [AUR/TEMPORAL/007]
+    owner: AGENT-02-AURORA
+    status: TODO
+    blend_path: art_source/aurora_veil/blender/enemies/AUR-ENM-002.blend
+    export_path: assets/aurora_veil/enemies/AUR-ENM-002.glb
+    material_set: AUR-MAT-CHARACTER
+    texture_set: TBD
+    poly_budget: MEASURE_FIRST
+    lod_policy: combat_LODs
+    collision_policy: capsule_hitboxes
+    rig: humanoid
+    animation_dependency: trap_set
+    physics: combat
+    destructible: false
+    reference_set: canon_future_looter
+    license: original_project
+    qa_status: TODO
+
+  - asset_id: AUR-ENM-003
+    region: GLOBAL
+    category: enemy
+    subcategory: fauna
+    name: Antílope quebrado
+    description: Altered antelope preserving a charge route; derived from AUR-FAU-002 anatomy.
+    priority: P1
+    quality_tier: A
+    usage_frequency: combat
+    real_dimensions: {inherits: AUR-FAU-002}
+    player_distance: 0_120m
+    dependencies: [AUR-FAU-002]
+    owner: AGENT-02-AURORA
+    status: TODO
+    blend_path: art_source/aurora_veil/blender/enemies/AUR-ENM-003.blend
+    export_path: assets/aurora_veil/enemies/AUR-ENM-003.glb
+    material_set: AUR-MAT-FAUNA
+    texture_set: TBD
+    poly_budget: MEASURE_FIRST
+    lod_policy: combat_LODs
+    collision_policy: capsule_compound
+    rig: quadruped_shared
+    animation_dependency: charge_route
+    physics: combat_fauna
+    destructible: false
+    reference_set: canon_broken_antelope
+    license: original_project
+    qa_status: TODO
+
+  - asset_id: AUR-VEH-001
+    region: GLOBAL
+    category: vehicle
+    subcategory: rover
+    name: Peregrino route-recorder variant
+    description: Local Peregrino variant with route recorder; flight unavailable during pulses.
+    priority: P1
+    quality_tier: A
+    usage_frequency: traversal
+    real_dimensions: {length_m: 5.8, width_m: 2.7, height_m: 2.4, status: PROPOSAL}
+    player_distance: 0_500m
+    dependencies: [shared_peregrino_interface]
+    owner: AGENT-02-AURORA
+    status: TODO
+    blend_path: art_source/aurora_veil/blender/vehicles/AUR-VEH-001.blend
+    export_path: assets/aurora_veil/vehicles/AUR-VEH-001.glb
+    material_set: AUR-MAT-VEHICLE
+    texture_set: TBD
+    poly_budget: MEASURE_FIRST
+    lod_policy: vehicle_LODs
+    collision_policy: compound
+    rig: wheels_suspension_sensors
+    animation_dependency: traversal
+    physics: vehicle_interface
+    destructible: authored_damage_states
+    reference_set: canon_peregrino_route_recorder
+    license: original_project
+    qa_status: TODO
+
+  - asset_id: AUR-AEO-001
+    region: AUR_R03_AEON_ORCHARD
+    category: hero_creature_machine
+    subcategory: boss
+    name: AEON — el fruto del mañana
+    description: Custodian that prunes possibilities rather than seeing an inevitable future.
+    priority: P0
+    quality_tier: S
+    usage_frequency: boss
+    real_dimensions: {height_envelope_m: [12,18], status: PROPOSAL}
+    player_distance: 0_100m
+    dependencies: [AUR/AEON/050, AUR-TMP-002]
+    owner: AGENT-02-AURORA
+    status: TODO
+    blend_path: art_source/aurora_veil/blender/aeon/AUR-AEO-001.blend
+    export_path: assets/aurora_veil/aeon/AUR-AEO-001.glb
+    material_set: AUR-MAT-AEON
+    texture_set: TBD
+    poly_budget: MEASURE_FIRST
+    lod_policy: hero_LOD0_LOD1_LOD2
+    collision_policy: authored_hitboxes
+    rig: mechanical_biomechanical
+    animation_dependency: boss_attack_set
+    physics: boss_combat
+    destructible: phase_state_components
+    reference_set: canon_AEON
+    license: original_project
+    qa_status: TODO
+
+  - asset_id: AUR-AEO-002
+    region: AUR_R03_AEON_ORCHARD
+    category: machinery
+    subcategory: orchard
+    name: Possible-future preservation machine tree
+    description: Modular orchard machine with foundation, conduit trunk, branching state arms, capsules and service interfaces.
+    priority: P0
+    quality_tier: A
+    usage_frequency: repeated_hero
+    real_dimensions: {height_m_range: [8,22], status: PROPOSAL}
+    player_distance: 0_1km
+    dependencies: [AUR/AEON/008]
+    owner: AGENT-02-AURORA
+    status: TODO
+    blend_path: art_source/aurora_veil/blender/aeon/AUR-AEO-002.blend
+    export_path: assets/aurora_veil/aeon/AUR-AEO-002.glb
+    material_set: AUR-MAT-AEON
+    texture_set: TBD
+    poly_budget: MEASURE_FIRST_INSTANCE
+    lod_policy: module_LODs_HLOD
+    collision_policy: trunk_compound
+    rig: branch_state_optional
+    animation_dependency: state_capsules
+    physics: static_interactive
+    destructible: authored_state
+    reference_set: canon_huerto_AEON
+    license: original_project
+    qa_status: TODO
+
+  - asset_id: AUR-AEO-003
+    region: AUR_R03_AEON_ORCHARD
+    category: landmark
+    subcategory: arena
+    name: AEON 50 m three-sector arena
+    description: Canonical boss arena with three readable echo sectors and local timeline.
+    priority: P0
+    quality_tier: A
+    usage_frequency: boss
+    real_dimensions: {diameter_m: 50, status: CANON}
+    player_distance: 0_200m
+    dependencies: [AUR/TEMPORAL/007]
+    owner: AGENT-02-AURORA
+    status: TODO
+    blend_path: art_source/aurora_veil/blender/aeon/AUR-AEO-003.blend
+    export_path: assets/aurora_veil/aeon/AUR-AEO-003.glb
+    material_set: AUR-MAT-AEON_ARENA
+    texture_set: TBD
+    poly_budget: MEASURE_FIRST
+    lod_policy: arena_visibility
+    collision_policy: custom_gameplay
+    rig: none
+    animation_dependency: sector_states
+    physics: combat
+    destructible: authored_states
+    reference_set: canon_AEON_arena
+    license: original_project
+    qa_status: TODO
+
+  - asset_id: AUR-PRP-001
+    region: AUR_R01_CAMP_SECOND_DAY
+    category: props
+    subcategory: instrument
+    name: Mechanical calibration wheel
+    description: Hand-operated field timing/calibration tool with bearings, detents and wear at contact points.
+    priority: P2
+    quality_tier: A
+    usage_frequency: frequent
+    real_dimensions: {diameter_m: 0.55, status: PROPOSAL}
+    player_distance: 0_20m
+    dependencies: [AUR-INF-001]
+    owner: AGENT-02-AURORA
+    status: TODO
+    blend_path: art_source/aurora_veil/blender/props/AUR-PRP-001.blend
+    export_path: assets/aurora_veil/props/AUR-PRP-001.glb
+    material_set: AUR-MAT-INSTRUMENT
+    texture_set: TBD
+    poly_budget: MEASURE_FIRST
+    lod_policy: LOD0_LOD1
+    collision_policy: primitive
+    rig: mechanical
+    animation_dependency: calibration
+    physics: interactive_optional
+    destructible: false
+    reference_set: manufacturing_realism
+    license: original_project
+    qa_status: TODO
+
+  - asset_id: AUR-PRP-002
+    region: AUR_R01_CAMP_SECOND_DAY
+    category: props
+    subcategory: field_science
+    name: Weather/timing sensor tripod
+    description: Serviceable tripod sensor for observing predictive weather and temporal offset.
+    priority: P2
+    quality_tier: B
+    usage_frequency: repeated
+    real_dimensions: {height_m: 1.8, status: PROPOSAL}
+    player_distance: 0_100m
+    dependencies: [AUR-ARC-001]
+    owner: AGENT-02-AURORA
+    status: TODO
+    blend_path: art_source/aurora_veil/blender/props/AUR-PRP-002.blend
+    export_path: assets/aurora_veil/props/AUR-PRP-002.glb
+    material_set: AUR-MAT-INSTRUMENT
+    texture_set: TBD
+    poly_budget: MEASURE_FIRST
+    lod_policy: LOD0_LOD1_LOD2
+    collision_policy: primitive
+    rig: none
+    animation_dependency: sensor_head
+    physics: static
+    destructible: false
+    reference_set: aurora_observatory_original
+    license: original_project
+    qa_status: TODO
+
+  - asset_id: AUR-STY-001
+    region: AUR_R02_REPETITION_PLAIN
+    category: storytelling
+    subcategory: accident_echo
+    name: Future-accident evidence set
+    description: Stable physical accident set plus bounded repeated-state variants for Q_AURORA_M02.
+    priority: P1
+    quality_tier: A
+    usage_frequency: mission
+    real_dimensions: {site_m: [28,22], status: PROPOSAL}
+    player_distance: 0_100m
+    dependencies: [AUR-TMP-002]
+    owner: AGENT-02-AURORA
+    status: TODO
+    blend_path: art_source/aurora_veil/blender/story/AUR-STY-001.blend
+    export_path: assets/aurora_veil/story/AUR-STY-001.glb
+    material_set: mixed_world
+    texture_set: TBD
+    poly_budget: MEASURE_FIRST
+    lod_policy: set_LODs
+    collision_policy: explicit_per_state
+    rig: source_dependent
+    animation_dependency: echo_event
+    physics: local_state
+    destructible: authored_state
+    reference_set: canon_Q_AURORA_M02
+    license: original_project
+    qa_status: TODO
+
+  - asset_id: AUR-STY-002
+    region: AUR_R02_REPETITION_PLAIN
+    category: storytelling
+    subcategory: rescue_site
+    name: Two-window rescue site
+    description: Rescue architecture/terrain state proving two access windows for Q_AURORA_M03.
+    priority: P1
+    quality_tier: A
+    usage_frequency: mission
+    real_dimensions: {site_m: [42,34], status: PROPOSAL}
+    player_distance: 0_150m
+    dependencies: [AUR-TMP-001]
+    owner: AGENT-02-AURORA
+    status: TODO
+    blend_path: art_source/aurora_veil/blender/story/AUR-STY-002.blend
+    export_path: assets/aurora_veil/story/AUR-STY-002.glb
+    material_set: mixed_world
+    texture_set: TBD
+    poly_budget: MEASURE_FIRST
+    lod_policy: set_LODs
+    collision_policy: explicit_per_window
+    rig: none
+    animation_dependency: access_state
+    physics: traversal
+    destructible: authored_state
+    reference_set: canon_Q_AURORA_M03
+    license: original_project
+    qa_status: TODO
+
+  - asset_id: AUR-STY-003
+    region: AUR_R03_AEON_ORCHARD
+    category: storytelling
+    subcategory: archive
+    name: Temporal archive consequence terminal
+    description: Physical archive/control structure supporting monopoly/open-limited/closure consequence states.
+    priority: P1
+    quality_tier: A
+    usage_frequency: narrative
+    real_dimensions: {height_m: 5.5, status: PROPOSAL}
+    player_distance: 0_100m
+    dependencies: [Q_AURORA_M05]
+    owner: AGENT-02-AURORA
+    status: TODO
+    blend_path: art_source/aurora_veil/blender/story/AUR-STY-003.blend
+    export_path: assets/aurora_veil/story/AUR-STY-003.glb
+    material_set: AUR-MAT-ARCHIVE
+    texture_set: TBD
+    poly_budget: MEASURE_FIRST
+    lod_policy: LOD0_LOD1
+    collision_policy: compound
+    rig: mechanical
+    animation_dependency: consequence_state
+    physics: interactive
+    destructible: false
+    reference_set: canon_Aurora_consequences
+    license: original_project
+    qa_status: TODO
+
+  - asset_id: AUR-DEC-001
+    region: GLOBAL
+    category: decals
+    subcategory: maintenance
+    name: Observatory index and maintenance marking library
+    description: Functional calibration/index/service markings; no decorative random decal noise.
+    priority: P2
+    quality_tier: B
+    usage_frequency: frequent
+    real_dimensions: {scale_by_host_asset: true}
+    player_distance: 0_50m
+    dependencies: [AUR-MAT-020]
+    owner: AGENT-02-AURORA
+    status: TODO
+    blend_path: art_source/aurora_veil/blender/decals/AUR-DEC-001.blend
+    export_path: assets/aurora_veil/decals/AUR-DEC-001.glb
+    material_set: AUR-MAT-DECAL
+    texture_set: TBD
+    poly_budget: negligible_or_decal
+    lod_policy: mip_distance
+    collision_policy: none
+    rig: none
+    animation_dependency: none
+    physics: none
+    destructible: false
+    reference_set: exovant_maintenance_language
+    license: original_project
+    qa_status: TODO
+
+  - asset_id: AUR-DST-001
+    region: GLOBAL
+    category: destruction
+    subcategory: authored_states
+    name: Aurora authored damage-state library
+    description: Controlled damaged variants for infrastructure; avoids uncontrolled runtime fracture as baseline.
+    priority: P2
+    quality_tier: B
+    usage_frequency: selective
+    real_dimensions: {inherits_source_dimensions: true}
+    player_distance: source_dependent
+    dependencies: [source_assets]
+    owner: AGENT-02-AURORA
+    status: TODO
+    blend_path: art_source/aurora_veil/blender/destruction/AUR-DST-001.blend
+    export_path: assets/aurora_veil/destruction/AUR-DST-001.glb
+    material_set: source_plus_damage
+    texture_set: TBD
+    poly_budget: MEASURE_FIRST
+    lod_policy: source_compatible
+    collision_policy: authored_state_proxy
+    rig: source_dependent
+    animation_dependency: state_swap
+    physics: bounded
+    destructible: true
+    reference_set: causal_damage
+    license: original_project
+    qa_status: TODO
+
+  - asset_id: AUR-VIS-001
+    region: GLOBAL
+    category: vista
+    subcategory: skyline
+    name: Inter-region observatory silhouette set
+    description: Distant proxies preserving orientation landmarks and ring silhouettes.
+    priority: P1
+    quality_tier: D
+    usage_frequency: persistent
+    real_dimensions: {source_scaled: true}
+    player_distance: 1km_20km
+    dependencies: [AUR-ARC-001,AUR-ARC-002]
+    owner: AGENT-02-AURORA
+    status: TODO
+    blend_path: art_source/aurora_veil/blender/vista/AUR-VIS-001.blend
+    export_path: assets/aurora_veil/vista/AUR-VIS-001.glb
+    material_set: simplified_world
+    texture_set: TBD
+    poly_budget: MEASURE_FIRST
+    lod_policy: HLOD_proxy
+    collision_policy: none
+    rig: none
+    animation_dependency: none
+    physics: none
+    destructible: false
+    reference_set: aurora_landmarks
+    license: original_project
+    qa_status: TODO
+
+  - asset_id: AUR-TEC-001
+    region: GLOBAL
+    category: technical
+    subcategory: collision
+    name: Aurora collision proxy library
+    description: Separate primitive/convex/custom gameplay collision assets.
+    priority: P0
+    quality_tier: technical
+    usage_frequency: all_gameplay
+    real_dimensions: {matches_render_assets: true}
+    player_distance: NA
+    dependencies: [render_assets]
+    owner: AGENT-02-AURORA
+    status: TODO
+    blend_path: art_source/aurora_veil/blender/technical/AUR-TEC-001.blend
+    export_path: assets/aurora_veil/technical/AUR-TEC-001.glb
+    material_set: debug_only
+    texture_set: none
+    poly_budget: minimum_functional
+    lod_policy: none
+    collision_policy: is_collision
+    rig: none
+    animation_dependency: source_dependent
+    physics: gameplay
+    destructible: false
+    reference_set: docs_ART_PRODUCTION
+    license: original_project
+    qa_status: TODO
+
+  - asset_id: AUR-TEC-002
+    region: GLOBAL
+    category: technical
+    subcategory: HLOD
+    name: Aurora HLOD proxy library
+    description: Distant aggregate proxies generated only after source silhouettes are accepted.
+    priority: P0
+    quality_tier: technical
+    usage_frequency: streaming
+    real_dimensions: {cell_planning_m: 256, status: PROPOSAL}
+    player_distance: 500m_plus
+    dependencies: [approved_source_assets]
+    owner: AGENT-02-AURORA
+    status: TODO
+    blend_path: art_source/aurora_veil/blender/technical/AUR-TEC-002.blend
+    export_path: assets/aurora_veil/technical/AUR-TEC-002.glb
+    material_set: atlased_or_simplified_TBD
+    texture_set: TBD
+    poly_budget: MEASURE_FIRST
+    lod_policy: HLOD
+    collision_policy: none
+    rig: none
+    animation_dependency: none
+    physics: none
+    destructible: false
+    reference_set: world_streaming_contract
+    license: original_project
+    qa_status: TODO
