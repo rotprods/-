@@ -1,10 +1,10 @@
 {
   "project": "EXOVANT 2950",
-  "checkpoint": "INFRA-005-DELIVERY-003",
+  "checkpoint": "INFRA-005-LEARNING-004",
   "date": "2026-09-12",
   "global_goal": "Original 3D interplanetary soulslike based on the existing twelve-world preproduction plan",
   "current_wave": "Bounded GLB delivery container regression repair",
-  "status": "DELIVERY_CONTAINER_LOCALLY_VALIDATED",
+  "status": "LEARNING_PERSISTED_ADOPTION_PENDING",
   "engine": "Godot 4.7.2.stable.official.ed1daf0bf",
   "production_engine_decision": "Unreal remains the plan's principal candidate; Godot is the executable prototype, not an irreversible replacement",
   "authority": [
@@ -52,7 +52,7 @@
     "All world source binaries recovered locally"
   ],
   "next_workunit": "EXO-004",
-  "next_action": "Recuperar una entrega Khepri fijada con fuente y prueba nativa tras reconciliar su owner; ADOPTION-002 no recuperado. Gameplay EXO-004 y arte Terra PR1 mantienen sus scopes. Mac pendiente de sesión local.",
+  "next_action": "Diagnosticar visualización Godot de escena existente como problema compartido. Owners aplican aprendizaje en su próximo handoff; integrador no repite recuperación de assets sin entrega o bloqueo concreto.",
   "evidence": [
     "evidence/gauntlet.json",
     "evidence/state-tests.json",
@@ -73,8 +73,8 @@
     "historical_packages": "Earlier Library checkpoints are recovery history, superseded as source authority."
   },
   "automation": {
-    "requested": true,
-    "status": "ENABLED_MAIN_PROMPT_READ_BACK",
+    "requested": false,
+    "status": "PAUSED_BY_USER_COST_AND_DUPLICATION_DECISION",
     "cadence": "hourly",
     "first_scheduled_execution_verified": false,
     "max_same_problem_iterations_before_reassessment": 6,
@@ -196,7 +196,7 @@
     "Sylva supplier/consumer boundary acknowledgement",
     "World-branch Blend/GLB recovery and native/human art gates"
   ],
-  "last_run": "_project_intelligence/runs/INFRA-005-DELIVERY-003/closeout.json",
+  "last_run": "_project_intelligence/runs/INFRA-005-LEARNING-004/closeout.json",
   "fleet": {
     "registry": "ops/fleet/registry.json",
     "coordination_issue": "https://github.com/rotprods/-/issues/7",

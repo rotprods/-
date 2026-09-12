@@ -38,3 +38,6 @@ El padre 196ef814 modificó AGENTS sin MANIFEST y falló CI. La reconciliación 
 
 ## INFRA-005-DELIVERY-003
 Se rechazaban mal las entregas GLB con cabecera válida y chunks posteriores truncados, desalineados o duplicados. Corregido y cubierto con siete tests adicionales (seis regresiones antes/después y una extensión desconocida válida). No recupera ADOPTION-002 ni acredita fuentes Blender editables. Próximo: admitir una entrega Khepri fijada con prueba nativa real, consultando primero si su owner ya la integró. Mantener gameplay EXO-004 y arte Terra PR1 en sus scopes. Mac requiere sesión y cualificación propias; plan en issue #7 comentario 5648748464.
+
+## Aprendizaje y definición de remediación
+Recuperar LRN-EXO-20260912-OWNER-ADMISSION. Se supera la propuesta de recuperar Khepri por iniciativa del integrador: corresponde al owner salvo necesidad explícita de integración. Automatización pausada. Próxima unidad compartida autorizable: reproducir y resolver visualización Godot de una escena existente aquí; conservar diagnóstico, captura y límites. Consultar contrato de remediación en PLAN.json. Acuses de agentes se incorporan a sus entregas habituales; no se presume aprendizaje universal.

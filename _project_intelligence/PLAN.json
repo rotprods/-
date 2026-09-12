@@ -301,11 +301,7 @@
         "GATE-ASSET"
       ],
       "evidence": [
-        "evidence/delivery-container-regression.json",
-        "evidence/gates/INFRA-005-GATE-CONTROL.json",
-        "evidence/gates/INFRA-005-GATE-NATIVE.json",
-        "evidence/gates/INFRA-005-GATE-GRAPH.json",
-        "evidence/gates/INFRA-005-GATE-ASSET.json"
+        "evidence/owner-admission-retrieval.json"
       ],
       "estimate_person_hours": null,
       "estimate_status": "actual time not retroactively invented",
@@ -314,7 +310,7 @@
         "First scheduled execution from main has not been observed",
         "Mem routing note pending provider rate limit; optional mirror, not a product blocker"
       ],
-      "closeout": "_project_intelligence/runs/INFRA-005-DELIVERY-003/closeout.json",
+      "closeout": "_project_intelligence/runs/INFRA-005-LEARNING-004/closeout.json",
       "checkpoint_note": "GLB delivery container regression repair; checkpoint only. ADOPTION-002 source remains unrecovered; producer adoption and Mac qualification remain pending."
     },
     {
@@ -779,5 +775,64 @@
     "recovery": "preserve checkpoint, reconcile evidence, choose an authorized alternative or register exact blocker",
     "fleet_registry": "ops/fleet/registry.json",
     "parallelism_scope": "max_parallel_workunits governs global integrator PLAN, not separate producer checkouts; cooperative reservations bound those scopes"
+  },
+  "remediation_contract": {
+    "goal": "Resolver los problemas operativos conocidos de EXOVANT con evidencia reproducible y sin duplicar trabajo de owners, preservando NS-EXO.",
+    "north_star": "Un agente nuevo recupera fuente, owner, aprendizaje y siguiente tarea; una entrega se integra con evidencia válida y el juego puede inspeccionarse en los entornos cualificados.",
+    "scope": "Continuidad, consumo, ownership, recepción de assets, visualización local e identificación de gates hardware.",
+    "constraints": [
+      "Runtime offline",
+      "No force ni sobrescritura ajena",
+      "Sin nuevos costes",
+      "Gates humanos/hardware no se simulan",
+      "No workers permanentes presumidos"
+    ],
+    "problems": [
+      {
+        "id": "DUPLICATION",
+        "owner": "integrator",
+        "status": "mitigated",
+        "done_when": "Cada intervención tiene entrega/bloqueo concreto y no repite el trabajo del owner; comprobar en próximas entregas."
+      },
+      {
+        "id": "VISUAL-DISPLAY",
+        "owner": "technical_director",
+        "status": "pending_diagnosis",
+        "done_when": "Escena existente visible y captura reproducible; o bloqueo de plataforma demostrado y ruta alternativa cualificada."
+      },
+      {
+        "id": "RECOVERY",
+        "owner": "each_owner",
+        "status": "partial",
+        "done_when": "Fuentes y exports del checkpoint se restauran; ADOPTION-002 se rescata solo si necesario o se registra descarte explícito."
+      },
+      {
+        "id": "OWNERSHIP-ACK",
+        "owner": "integrator_and_producers",
+        "status": "partial",
+        "done_when": "Entregas admitidas tienen ACK y scope actuales, sin solapes."
+      },
+      {
+        "id": "ASSET-QUALITY",
+        "owner": "each_owner_and_art_director",
+        "status": "pending",
+        "done_when": "Fuentes, importación, colisión y revisión artística en motor pasan gates de su tarea."
+      },
+      {
+        "id": "MEM-MIRROR",
+        "owner": "integrator",
+        "status": "optional_deferred",
+        "done_when": "Nota estable reconciliada y sincronizada sin duplicados; no bloquea producto."
+      },
+      {
+        "id": "HARDWARE",
+        "owner": "qualified_host_operator",
+        "status": "pending",
+        "done_when": "Mediciones reales sobre hardware objetivo y pruebas de mando/plataforma requeridas."
+      }
+    ],
+    "acceptance": "No marcar resuelto un problema por documentarlo; blocked/deferred no equivalen a fixed. Campaña completa conserva gates G-RELEASE.",
+    "first_frontier": "Diagnóstico visual Godot compartido con escena existente, sin rehacer assets.",
+    "adoption": "Owners report learning_id, claim, commit and applied evidence in next normal handoff; missing ACK remains pending."
   }
 }
