@@ -2,37 +2,47 @@
   "schema_version": 1,
   "claim_id": "CLM-SYLVA-MACRO-001",
   "primary_project_id": "05dce898-753d-4ff6-a4b0-31757dc868d8",
-  "accepted_revision": 13,
-  "writer_fence_epoch": 2,
-  "writer_fence_id": "SYLVA-MACRO-WRITER-EPOCH-2-20260912",
+  "accepted_revision_before_wave": 13,
+  "writer_fence_epoch": 3,
+  "writer_fence_id": "SYLVA-MACRO-WRITER-EPOCH-3-R14-20260913",
   "owner": "AGENT-SYLVA-MACRO-01",
+  "writer_session": "20260913-SYLVA-R14-WRITER-001",
   "branch": "art/world-sylva-prime-macro-001",
-  "status": "FROZEN_PENDING_FLEET_ACTIVE",
-  "reason": "Two concurrent continuations mutated the same primary Blender project under the same claim/branch while fleet registry still reported reserved/ack:null. R12/R13 were independently verified and accepted; further multi-writer mutation is prohibited.",
-  "accepted_concurrent_continuation": {
+  "status": "ACTIVE_SINGLE_WRITER_R14",
+  "reason": "Published fleet registry generation 8 now reports CLM-SYLVA-MACRO-001 active with owner ACK epoch 1. Main was synchronized one-way through PR #26. This epoch authorizes exactly one coherent R14 metadata/hierarchy wave on the primary project, subject to fresh provider guards immediately before mutation.",
+  "fleet_activation": {
+    "registry_generation": 8,
+    "claim_status": "active",
+    "ack_owner": "AGENT-SYLVA-MACRO-01",
+    "ack_epoch": 1,
+    "ack_evidence_ref": "https://github.com/rotprods/-/issues/7#issuecomment-5648367024",
+    "registered_project_ids": ["05dce898-753d-4ff6-a4b0-31757dc868d8"],
+    "main_synced_sha": "26ae20f5d1b47d1efa0d54b20124ed93cbc0b43e",
+    "main_to_branch_sync_pr": 26,
+    "branch_behind_after_sync": 0
+  },
+  "accepted_prior_continuation": {
     "r12_contract": "SYLVA_TERRAIN_STREAM_R12",
     "r13_contract": "SYLVA_STREAM_MEMBERSHIP_R13",
-    "r13_git_commit_observed": "41c7eb631cf85cb936cfd79366600bd4051d1111",
     "r13_receipt": "art_source/worlds/sylva_prime/macro/qa/R13_STREAMING_WORLD_PARTITION.json",
-    "independent_qa": {
-      "render_tiles": 16,
-      "collision_tiles": 16,
-      "render_seam_max_delta_m": 0.0,
-      "collision_seam_max_delta_m": 0.0,
-      "membership_missing": 0,
-      "outside_local_patch": 0,
-      "route_collision_nonmanifold_edges": 0,
-      "route_collision_degenerate_faces": 0,
-      "pass": true
-    }
+    "independent_qa_pass": true
+  },
+  "r14_scope": {
+    "target_contract": "SYLVA_STREAM_HIERARCHY_R14",
+    "geometry_mutation_allowed": false,
+    "metadata_hierarchy_mutation_allowed": true,
+    "backend_selection_allowed": false,
+    "hlod_geometry_allowed": false,
+    "provider_root_instancing_allowed": false,
+    "orbital_mutation_allowed": false
   },
   "mutation_rules": [
-    "Do not mutate the primary remote while ops/fleet/registry.json reports this claim reserved or ack:null.",
-    "After registry becomes active, exactly one writer session owns the primary project for a wave.",
-    "A writer must read current branch, claim, this fence, current project revision/scene sequence and ensure no active operation immediately before mutation.",
-    "A second agent must use a separate project plus atomic subclaim or remain read-only; it must not share this primary writer epoch.",
-    "Every accepted mutation must persist generator/receipt/handoff before the next writer epoch is handed off.",
-    "Unexpected revision advancement during a read-only operation is a concurrency incident and freezes mutation until reconciled."
+    "Exactly one writer session owns the primary project for this wave.",
+    "Immediately before mutation read project revision, sceneSequence and activeOperationId; require revision 13, sceneSequence 0 and no active operation.",
+    "If revision or sceneSequence differs, freeze and reconcile rather than guessing.",
+    "R14 may add hierarchy/prefetch/residency metadata only; no terrain, route, collision, region or hero geometry movement.",
+    "Persist generator, QA receipt, STATUS, HANDOFF, claim and this fence after accepted mutation before another writer epoch.",
+    "A second agent must remain read-only or use a separate project plus atomic subclaim."
   ],
   "orbital_project": {
     "project_id": "c796230b-0463-4e17-9446-2e746c5c4933",
@@ -40,10 +50,5 @@
     "status": "EMPTY_PENDING_FLEET_REGISTRY",
     "mutation_allowed": false
   },
-  "fleet_readback_at_fence": {
-    "status": "reserved",
-    "ack": null,
-    "registered_project_ids": ["05dce898-753d-4ff6-a4b0-31757dc868d8"]
-  },
-  "truth": "Cooperative fence. It does not create a provider-level ACL; compliance depends on agents reading repository governance."
+  "truth": "Cooperative single-writer fence for R14. It does not create a provider-level ACL; unexpected remote advancement re-freezes mutation."
 }
