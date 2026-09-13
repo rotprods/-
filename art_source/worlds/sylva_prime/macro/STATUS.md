@@ -2,207 +2,208 @@
 
 **Agent:** `AGENT-SYLVA-MACRO-01`  
 **Branch:** `art/world-sylva-prime-macro-001`  
-**Primary Blender:** `05dce898-753d-4ff6-a4b0-31757dc868d8` @ **revision 15**  
-**State:** `IN_PROGRESS / VERIFIED R15 TECHNICAL CHECKPOINT`  
-**Claim:** `ACTIVE / KEEP`  
-**Fleet epoch:** `1` · owner ACK published  
+**Primary Blender:** `05dce898-753d-4ff6-a4b0-31757dc868d8` @ **revision 17 / sceneSequence 0**  
+**State:** `IN_PROGRESS / VERIFIED R16 TECHNICAL-ART CHECKPOINT`  
+**Claim:** `ACTIVE / KEEP` · fleet epoch 1 / owner ACK published  
 **Latest main synchronized:** `26ae20f5d1b47d1efa0d54b20124ed93cbc0b43e` via PR #26
 
 ## Current truth
 
-This claim owns SYLVA PRIME's metre-scale macro/regional foundation: causal terrain, region placement, terrain-aware route interfaces, VESPER macro encounter layout, streaming/collision contracts and consumer sockets toward the neural-root provider. It is **not final world art**.
+SYLVA PRIME macro foundation is now a stable, sharded, metre-scale technical/art checkpoint. The claim owns terrain, regional spatial composition, macro traversal/root topology, streaming/collision contracts, VESPER macro arena and root-kit consumer interfaces. It does **not** own final architecture/interiors, final VESPER, NPCs, fauna/flora, vehicle, final materials, gameplay/runtime or final HLOD/performance qualification.
 
-Current accepted scene is R15. R14 established backend-neutral L2/L3 hierarchy; R15 corrected its prefetch semantics so **no runtime prefetch policy is falsely approved** before native IO/residency measurements.
-
-PR #6 / `CLM-SYLVA-PROC-NROOT-001` exclusively owns reusable meso neural-root modules. Final VESPER, NPCs, fauna/flora, architecture/interiors, vehicle, final materials/microterrain/foliage, gameplay and final technical-art qualification remain outside this claim.
+Current accepted art wave is **R16**, stored at Blender scene revision **17** because revision16 introduced the root taper and revision17 reconciled the resulting stream-membership metadata.
 
 ## Wave lineage
 
-- r1 — 12 km local terrain blockout + canonical region foundations.
-- r2 — portable lighting/review cameras.
-- r3 — camera-range correction + render-signal QA.
-- r4 — L3 cell interfaces, regional envelopes, sockets and collision interfaces.
-- r5 — canon correction: 3 VESPER terraces + 2 wide connectors.
-- r6 — causal biogeomorphic macro terrain.
-- r7 — root-kit consumer basis + provider-pivot blocker.
-- r8 — semantic socket support map; zero provider transforms snapped.
-- r9 — failed terrain-aware route-collision topology; **forbidden checkpoint**.
-- r10 — terrain-aware navigation + closed-manifold route collisions.
-- r11 — navigation/socket metadata normalized + shared GLB delivery hardening.
-- r12 — monolithic terrain retired; 16 render + 16 collision terrain tiles.
-- r13 — spatial stream membership assigned to owned macro objects.
-- r14 — 4 L2 supercells, neighbor graphs and L3-only hero-residency overlays.
-- r15 — prefetch policy normalized to `RUNTIME_EXPERIMENT_REQUIRED`; four candidate policies retained for native comparison.
+- r1–r4 — macro blockout, cameras, regions, stream/collision/socket interfaces.
+- r5 — canonical three-terrace VESPER layout.
+- r6 — causal biogeomorphic terrain.
+- r7/r8 — root-kit consumer basis + support map; provider kept external.
+- r9 — invalid route-collision attempt; forbidden historical checkpoint.
+- r10 — terrain-aware navigation + manifold route collisions.
+- r11 — metadata normalization + shared GLB transport hardening.
+- r12 — 16 render + 16 collision terrain tiles; monolith retired.
+- r13 — cross-cell spatial membership.
+- r14 — backend-neutral 4×L2 / 16×L3 hierarchy + L3-only hero overlays.
+- r15 — prefetch policy normalized to runtime experiment; no policy prematurely approved.
+- **r16** — load-correlated macro-root taper on R01–R06 with centerlines locked; R01 membership amended after evaluated bounds expanded into two additional L3 cells.
 
-## R15 remote identity
+## R16 remote identity
 
-- `.blend`: **2,848,052 B**, etag `d95ef102d90bf84db182c8d8be85b1bd`;
-- GLB: **1,218,436 B**, etag `d5de5a68ca567167b1f696ceefdba088`;
-- Blender revision: **15**;
-- sceneSequence: **0**.
+Accepted scene revision: **17**.
 
-These are remote-provider identities, not recovered SHA-bound delivery receipts.
+- `.blend`: **2,856,650 B**, etag `5fb0cc50f5e21cb8cc0effd556e35c83`;
+- GLB: **1,220,616 B**, etag `c7d3b8775c0519470d3ccc34bb392f3e`.
 
-## Geometry invariance R13 → R14 → R15
+Remote identities are not recovered SHA-bound delivery receipts.
 
-Deterministic source fingerprint over every MESH/CURVE world transform, mesh topology, curve splines, material names, modifier names/types and render visibility:
+## R16 macro-root biomechanical correction
 
-`003760384ade90b7b0b792de6850a2eae90322d22f2ca246f8211395cb3e6224`
+Contract: `SYLVA_MACRO_ROOT_TAPER_R16`.
 
-Identical at accepted r13, r14 and r15. R14/R15 therefore introduced **metadata/hierarchy only, zero geometry delta**.
+R15 audit showed all six kilometre-scale roots were circular Bezier tubes with radius 1.0 at every control point. R16 preserves every control-point coordinate/end point exactly and changes only per-point curve radius to produce load-correlated macro taper.
 
-Receipt: `qa/R15_PREFETCH_POLICY_NORMALIZATION.json`.
+| Root | Effective radius range | Load/reinforcement anchor |
+|---|---:|---|
+| R01 | 36.00–63.36 m | Puerto / point2 |
+| R02 | 44.64–80.60 m | Bosque / point2 |
+| R03 | 50.40–96.48 m | VESPER / point2 |
+| R04 | 28.08–42.48 m | network midspan |
+| R05 | 22.50–36.00 m | network midspan |
+| R06 | 28.00–51.20 m | VESPER approach / point4 |
 
-## Terrain and partition
+All six centerlines are bit-identical to the R15 coordinates.
 
-Morphology: `R6_BIOGEO_CAUSAL_MACRO_V1`.
+New geometry fingerprint:
+`747a5b10c7344d5e4b0623354927e98faab8df6f44fced81c5f042350f079a89`
 
-### R12 terrain streaming
+The same fingerprint exists at revision16 and revision17, proving the membership reconciliation was metadata-only.
 
-Contract: `SYLVA_TERRAIN_STREAM_R12`.
+### R16 membership reconciliation
 
-Render:
-- 16 × `SYLVA_TERRAIN_L3_X#Y#`;
-- each 3,000 × 3,000 m;
-- 13×13 vertices @ 250 m;
-- total 2,704 verts / 2,304 faces;
-- 285 shared seam samples;
-- max/mean seam Δz = **0 m**.
+Contract: `SYLVA_STREAM_MEMBERSHIP_R16_AMENDMENT`.
 
-Collision:
-- 16 × `SYLVA_COL_TERRAIN_L3_X#Y#`;
-- 9×9 vertices @ 375 m;
-- total 1,296 verts / 1,024 faces;
-- 189 shared seam samples;
-- max/mean seam Δz = **0 m**.
+The widened R01 bound reaches ~51 m into Y2, so R01 residency changed from:
+`X0Y0|X0Y1|X1Y0|X1Y1`
 
-Legacy monoliths remain forbidden.
+to:
+`X0Y0|X0Y1|X0Y2|X1Y0|X1Y1|X1Y2`.
 
-### R13 stream membership
+Final bounds→membership gauntlet:
+- stale primary-root memberships: **0**;
+- max primary-root membership remains 6 cells;
+- R12/R14/R15 contracts preserved.
 
-Contract: `SYLVA_STREAM_MEMBERSHIP_R13`.
+Receipt: `qa/R16_MACRO_ROOT_BIOMECH_ACCEPTANCE.json`.
 
-- 147 spatial objects assigned at the original R13 checkpoint;
-- 0 outside the authored patch;
-- 34 cross-cell objects;
-- max 6 cells touched by one macro object;
-- terrain tiles use authoritative single-cell ownership;
-- large roots/routes use multi-cell bounds membership.
+### R16 known art limit
 
-## R14 hierarchy
+The six roots still use **circular curve bevel cross sections**. R16 fixes macro taper/silhouette causality but is not final buttress/fiber anatomy. No bark, reaction-tissue, callus microstructure, animated growth or dedicated root gameplay collision is claimed.
 
-Contract: `SYLVA_STREAM_HIERARCHY_R14`.
+Do not open a non-circular/buttress R17 mutation without visual review or a dedicated controlled experiment.
 
-- 4 L2 supercells @ 6 km;
-- 16 L3 cells @ 3 km;
-- 4- and 8-neighbor graphs symmetric;
-- backend: `ENGINE_TBD`;
-- HLOD IDs are contract-only; no HLOD geometry exists.
+## Terrain / streaming retained
 
-Hero overlays are **L3-granular**:
-- Puerto: `X0Y1 | X1Y1`, radius proposal 550 m;
-- Bosque: `X1Y1 | X1Y2 | X2Y1 | X2Y2`, radius proposal 200 m;
-- VESPER: `X2Y2 | X3Y2`, radius proposal 400 m.
+### R12 terrain
+- 16 render tiles @3 km; aggregate 2,704 verts / 2,304 faces;
+- 16 collision tiles @3 km; aggregate 1,296 verts / 1,024 faces;
+- render seam 285 samples / collision seam 189 samples;
+- max/mean seam Δz **0 m**;
+- legacy monoliths forbidden.
 
-Bosque covers all four L2 supercells only as metadata; `hero_l2_full_residency_implied=false`. Geography is not moved to simplify streaming.
+### R13 base membership + R16 amendment
+- original spatial objects: 147;
+- outside authored patch: 0;
+- original cross-cell objects: 34;
+- R01 residency amended by R16; aggregate assigned-object count/max-cell count do not change.
 
-## R15 prefetch policy
+### R14 hierarchy
+- 4 L2 supercells @6 km;
+- 16 L3 cells @3 km;
+- symmetric 4/8-neighbor graphs;
+- hero residency is L3-only;
+- Bosque L2 coverage does not imply full L2 residency;
+- HLOD remains contract-only / target-backend pending.
 
+### R15 prefetch
 Contract: `SYLVA_PREFETCH_POLICY_R15`.
 
-State: `RUNTIME_EXPERIMENT_REQUIRED`.  
-Production policy approved: **false**.
+`RUNTIME_EXPERIMENT_REQUIRED`; approved=false.
 
-Candidates:
-1. `P0_CURRENT_ONLY`;
-2. `P1_CURRENT_PLUS_4`;
-3. `P2_CURRENT_PLUS_8`;
-4. `P3_DIRECTIONAL_ROUTE_WINDOW` — primary runtime candidate, not approved.
+Candidates: current-only, +4, +8, directional route-window.
 
-Pressure study upper bound for current+8: **72.8%** of current spatial-object cardinality. Selection rule is to promote the **least-resident** policy that passes real visual/collision/traversal/IO gates.
+R16 membership recalculation:
+- current-only upper bound: 31.97% of current spatial-object cardinality;
+- +4: 62.59%;
+- +8: **72.79%**;
+- directional route-window: **59.18%**.
 
-Exact route seam probes are preserved in `PREFETCH_POLICY_R14_EXPERIMENT.json` and `NATIVE_STREAM_RESIDENCY_TEST_PLAN.md`.
+Conclusion unchanged: P3 directional route-window remains primary runtime candidate only. Promote the least-resident policy that passes native loading/visual/collision/traversal gates.
 
-## Navigation R10 retained
+Receipt: `qa/R16_PREFETCH_PRESSURE_RECALC.json`.
 
-`SYLVA_NAV_R10` / `BALANCED_FOOT_TERRAIN_AWARE_R10`:
-- leg00: 1,963.093 m / max 18.490°;
-- leg01: 2,382.483 m / max 15.131°;
-- leg02: 2,188.103 m / max 7.285°;
-- leg03: 2,364.615 m / max 20.530°;
-- total: **8,898.294 m**.
+## Navigation / VESPER retained
 
-All four route collision ribbons still pass: 0 nonmanifold edges, 0 degenerate faces.
+R10 route chain total: **8,898.294 m**.
+- leg00 1963.093 m / 18.490° max;
+- leg01 2382.483 m / 15.131°;
+- leg02 2188.103 m / 7.285°;
+- leg03 2364.615 m / 20.530°.
 
-## VESPER macro layout retained
+All four route collisions remain closed manifold, 0 degenerate.
 
-- terraces: 116 / 124 / 112 m diameter;
-- connectors: 142.215 m @ 12.178° and 145.685 m @ 12.689°;
-- 18 m visible / 16 m collision width;
+VESPER macro arena remains:
+- terraces 116/124/112 m diameter;
+- connectors 142.215 m @12.178° / 145.685 m @12.689°;
+- 18 m visual / 16 m collision width;
 - no precision jumps;
-- obsolete single-floor arena absent;
 - final VESPER excluded.
+
+## R16 visual signal
+
+Three regional Eevee file-backed renders @256×144 all PASS_NONBLANK:
+- Puerto: 49,208 B;
+- Bosque: 48,550 B;
+- VESPER: 46,959 B.
+
+Receipt: `qa/R16_REGIONAL_VISUAL_SIGNAL_SMOKE.json`.
+
+Signed provider PNGs could not be downloaded into the local visual-inspection runtime due current security boundaries. Therefore framing/material/intersection/root-silhouette **GATE-ART remains PENDING**.
 
 ## Root-kit provider dependency
 
-Consumer contracts:
-- `SYLVA_SOCKET_CONSUMER_V1`;
-- `SYLVA_SOCKET_SUPPORT_MAP_V1`;
-- basis `+X forward / +Z up / metres / scale 1`;
-- sockets: 8;
-- provider instances: 0;
-- provider geometry copied: 0;
-- snapped transforms: 0.
+PR #6 / `CLM-SYLVA-PROC-NROOT-001` owns reusable meso modules. Latest re-audit at HEAD `5ba1ea6758e4c08ed82d95deb96f1bbcae1581f5`:
+- Gauntlet CI: SUCCESS;
+- integration readiness: **BLOCKED**;
+- manifest still has invalid YAML shape around `materials`/`note`;
+- no normalized per-asset pivot/anchor contract;
+- render/collision anchor parity unproven;
+- no pivot-policy version.
 
-Latest provider re-audit: PR #6 HEAD `5ba1ea6758e4c08ed82d95deb96f1bbcae1581f5` has a green Gauntlet, but is still **NOT_READY for consumption** because:
-- current provider manifest still has invalid YAML structure around `materials`/`note`;
-- generator still authors module mesh coordinates in preview/world space and exposes no per-asset pivot normalization/anchor transform;
-- render/collision anchor parity and pivot-policy version are not proven.
+Fresh PR review comment records the blocker. Macro contains 0 provider meshes/instances; eight sockets remain frozen.
 
-Current blocker was re-posted on PR #6. CI PASS is not treated as provider-contract PASS.
+## Production authority
 
-## Production authority created
-
-Current branch now includes:
-- `WORLD_ASSET_COVERAGE_R14.json` — world-wide coverage/gaps;
-- `SYLVA_PARALLEL_SHARDING_R14.json` — proposed non-overlapping future cells, not reservations;
-- `ART_DIRECTION_BIBLE_R14.md` — region/material/shape/lighting/anti-drift rules;
-- `BIOLOGICAL_REALISM_REFERENCE_PACK_R14.md` — plant mechanics translated into modeling rules;
-- `BLENDER_PRODUCTION_STANDARD_R14.md` — geometry/UV/material/collision/export standard;
-- `HLOD_STRATEGY_R14_PROPOSAL.md` — feature-aware HLOD policy, no premature budgets;
-- `PREFETCH_POLICY_R14_EXPERIMENT.json` — native policy experiment design;
-- `NATIVE_STREAM_RESIDENCY_TEST_PLAN.md` — runtime seam/residency gauntlet.
+Core authority pack:
+- `MASTER_ASSET_LIST_R15.json` + `MASTER_ASSET_LIST_R16_AMENDMENT.json`;
+- `WORLD_ASSET_COVERAGE_R14.json`;
+- `SYLVA_PARALLEL_SHARDING_R14.json`;
+- issue #27 — non-reserving atomic ready queue;
+- `ART_DIRECTION_BIBLE_R14.md`;
+- `BIOLOGICAL_REALISM_REFERENCE_PACK_R14.md`;
+- `BLENDER_PRODUCTION_STANDARD_R14.md`;
+- `HLOD_STRATEGY_R14_PROPOSAL.md`;
+- `NATIVE_STREAM_RESIDENCY_TEST_PLAN.md`.
 
 ## Fleet / concurrency
 
-Published registry now reports this claim **ACTIVE**, owner ACK epoch 1. Main was synchronized one-way through PR #26 before R14.
+Fleet claim: **ACTIVE**, epoch1, owner ACK published.
 
-Writer epoch `SYLVA-MACRO-WRITER-EPOCH-3-R14-20260913` is **CLOSED_ACCEPTED_R15**. No new mutation is authorized by that epoch.
+Writer epoch 4 `SYLVA-MACRO-WRITER-EPOCH-4-R16-20260913` is **CLOSED_ACCEPTED_R16**. No new scene mutation is authorized by it.
 
-Orbital project `c796230b-0463-4e17-9446-2e746c5c4933` remains EMPTY r0 and unregistered; do not mutate it.
+Orbital project `c796230b-0463-4e17-9446-2e746c5c4933` remains EMPTY r0/unregistered; do not mutate.
 
-## Delivery / engine status
+## Delivery / engine
 
-Current source-level scene QA: PASS.  
-Exact `.blend`/GLB SHA-bound recovery: **OPEN / environment-dependent**.  
-Native import/residency/traversal: **NOT_RUN** for this exact artifact.  
-Human art review: **PENDING**.  
-Target-hardware HLOD/LOD performance: **BLOCKED_TARGET_HARDWARE**.
-
-Remote GLB existence never substitutes for shared `fleet_control.py delivery`, claim-local GLB validation or native import.
+- source-scene R16 technical QA: PASS;
+- exact R16 `.blend`/GLB SHA-bound delivery: NOT YET QUALIFIED;
+- native engine streaming/traversal: NOT RUN for exact R16 artifact;
+- human macro art review: PENDING;
+- target-hardware HLOD/LOD/performance: BLOCKED;
+- planet radius: proposal pending explicit decision.
 
 ## Open P0/P1
 
 P0:
-1. Recover exact R15 `.blend` + GLB, bind SHA-256, run shared delivery and current claim validator.
-2. Import exact artifact into a qualified runtime and execute the four seam probes + route/VESPER traversal.
-3. Keep PR #6 consumption blocked until manifest + anchors/pivots + collision parity are proven.
-4. Human macro-composition/art-direction review before irreversible density/material waves.
+1. recover exact revision17 binaries, bind SHA-256, run shared delivery + claim validation;
+2. native import and seam/residency/traversal comparison P0/P1/P2/P3;
+3. human art review of macro terrain/root/region silhouette before further root-section refinement;
+4. keep PR #6 consumption blocked until manifest + anchors + parity pass.
 
 P1:
-5. Create/assign future atomic claims from the sharding proposal for final Puerto architecture, materials, vegetation, fauna, NPCs, vehicle and VESPER — only after live collision audit.
-6. Qualify feature-aware HLOD candidates in target renderer/hardware; no global percentage decimation.
-7. Resolve/defer canonical planet scale before orbital/L0-L1 promotion.
+5. activate independent final-content cells from issue #27 after live collision audit;
+6. qualify feature-aware HLOD in target renderer/hardware;
+7. resolve/defer planet scale before L0/L1 promotion.
 
 ## Gates
 
@@ -210,17 +211,17 @@ P1:
 |---|---|
 | Canon regions / VESPER layout | PASS_BLOCKOUT |
 | Terrain causality | PASS_R6 |
-| Terrain partition / seams | PASS_R12_ZERO_DELTA |
-| Stream membership | PASS_R13_SOURCE |
-| L2/L3 hierarchy | PASS_R14_SOURCE |
-| Prefetch semantics | PASS_R15_POLICY_UNAPPROVED |
-| Geometry invariance R13→R15 | PASS_SHA_IDENTICAL |
+| Terrain partition/seams | PASS_R12_ZERO_DELTA |
+| Membership base | PASS_R13 |
+| L2/L3 hierarchy | PASS_R14 |
+| Prefetch semantics | PASS_R15_UNAPPROVED |
+| Macro-root taper | **PASS_R16_SOURCE** |
+| R16 bounds→membership | **PASS_ZERO_STALE** |
 | Navigation/collision topology | PASS_R10 |
-| Root-kit consumer contract | PASS |
-| Root-kit provider contract | BLOCKED |
-| Remote editable/export source | PASS_R15_REMOTE |
+| Provider root-kit | BLOCKED |
+| Remote source/export | PASS_R16_REMOTE |
 | Exact SHA-bound delivery | NOT_YET_QUALIFIED |
 | Native residency/traversal | NOT_RUN |
-| Human art review | PENDING |
-| HLOD/target performance | BLOCKED_TARGET_HARDWARE |
+| Human GATE-ART | PENDING |
+| HLOD/target perf | BLOCKED_TARGET_HARDWARE |
 | Planet radius canon | PROPOSAL_PENDING_DECISION |
