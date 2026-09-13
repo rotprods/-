@@ -12,20 +12,22 @@ priority: P0
 branch: art/world-sylva-prime-macro-001
 base_branch: main
 base_sha_at_claim: 4c2fa044080004609ea6df45f34b2a784536507a
-main_reconciled_sha: 97fb47472a654112779655d4d537851e709f269a
-reconciliation_commit: 1604bd452c6c241155a720d9dc92e6aef73fd717
+main_reconciled_sha: 26ae20f5d1b47d1efa0d54b20124ed93cbc0b43e
+main_sync_pr: 26
 fleet_epoch: 1
-fleet_state_observed: RESERVED_ACK_SENT_PENDING_INTEGRATOR
+fleet_state_observed: ACTIVE_ACK_PUBLISHED
 fleet_ack_comment: 5648367024
+fleet_registry_generation_observed: 8
 coordination_issue: 7
 linear_issue: ROT-117
 draft_pr: 3
-last_checkpoint_revision: 13
+last_checkpoint_revision: 15
 
 north_star: >-
   Deliver a metre-scale, reproducible SYLVA PRIME macro/regional foundation with causal terrain,
-  readable terrain-aware navigation, canonical region/VESPER composition and scalable spatial
-  partitioning, while preserving provider ownership and unresolved planetary canon boundaries.
+  readable terrain-aware navigation, canonical region/VESPER composition, scalable spatial
+  partitioning and evidence-bound interfaces, while preserving provider ownership and unresolved
+  planetary/runtime boundaries.
 
 owns:
   - km/regional terrain and causal macro topography
@@ -35,6 +37,7 @@ owns:
   - Camara de VESPER macro encounter/environment foundation
   - terrain-aware macro navigation centerlines
   - L3 terrain partition and cross-cell membership metadata
+  - L2/L3 hierarchy and backend-neutral residency interfaces
   - macro collision and streaming interfaces
   - diagnostic macro root topology/placement
   - typed consumer sockets and semantic support map for provider root-kit assets
@@ -71,16 +74,19 @@ unknowns:
   - final engine streaming backend
   - target GPU/performance budgets
   - final runtime route movement envelope
+  - native artifact load/residency latency distribution
 
 primary_remote:
   project_id: 05dce898-753d-4ff6-a4b0-31757dc868d8
-  revision: 13
-  build_status: WAVE1K_STREAM_MEMBERSHIP_R13
+  revision: 15
+  scene_sequence: 0
+  build_status: WAVE1M_PREFETCH_POLICY_NORMALIZATION_R15
   state: SETTLED_VERIFIED_TECHNICAL_CHECKPOINT
-  blend_size_bytes: 2777367
-  blend_etag: dcb49cece03e111d066cad486ea77c1d
-  glb_size_bytes: 1204308
-  glb_etag: 695fc7907b522dc42d8f09f697b3d99a
+  blend_size_bytes: 2848052
+  blend_etag: d95ef102d90bf84db182c8d8be85b1bd
+  glb_size_bytes: 1218436
+  glb_etag: d5de5a68ca567167b1f696ceefdba088
+  geometry_fingerprint_sha256: 003760384ade90b7b0b792de6850a2eae90322d22f2ca246f8211395cb3e6224
 
 orbital_scale_candidate:
   project_id: c796230b-0463-4e17-9446-2e746c5c4933
@@ -89,29 +95,29 @@ orbital_scale_candidate:
   mutation_allowed: false
   registry_request_comment: 5648418266
 
-scene_contract_r13:
+scene_contract_r15:
   terrain_model: R6_BIOGEO_CAUSAL_MACRO_V1
   terrain_stream_contract: SYLVA_TERRAIN_STREAM_R12
   stream_membership_contract: SYLVA_STREAM_MEMBERSHIP_R13
+  stream_hierarchy_contract: SYLVA_STREAM_HIERARCHY_R14
+  prefetch_policy_contract: SYLVA_PREFETCH_POLICY_R15
+  prefetch_policy_state: RUNTIME_EXPERIMENT_REQUIRED
+  prefetch_policy_approved: false
   navigation_contract: SYLVA_NAV_R10
   navigation_profile: BALANCED_FOOT_TERRAIN_AWARE_R10
   route_collision_contract: MANIFOLD_RIBBON_R10
   socket_consumer_contract: SYLVA_SOCKET_CONSUMER_V1
   socket_support_map: SYLVA_SOCKET_SUPPORT_MAP_V1
-  objects: 182
-  mesh_objects: 121
-  curve_objects: 12
-  streaming_cells: 16
-  region_envelopes: 3
   terrain_render_tiles: 16
   terrain_collision_tiles: 16
+  l3_stream_cells: 16
+  l2_supercells: 4
+  region_envelopes: 3
   rootkit_sockets: 8
   vesper_terraces: 3
   vesper_connectors: 2
   provider_meshes_copied: 0
-  final_scope_violations: 0
-  non_namespace_objects: 0
-  non_unit_scales: 0
+  geometry_delta_r13_to_r15: false
 
 terrain_streaming_r12:
   tile_size_m: 3000
@@ -128,12 +134,36 @@ terrain_streaming_r12:
   monolithic_terrain_retired: true
 
 stream_membership_r13:
-  assigned_spatial_objects: 147
+  assigned_spatial_objects_at_checkpoint: 147
   outside_local_patch: 0
   cross_cell_objects: 34
   max_cells_per_object: 6
   assignment_method: WORLD_BOUNDS_TO_3KM_L3_CELLS
   terrain_tile_policy: AUTHORITATIVE_SINGLE_CELL
+
+stream_hierarchy_r14:
+  l2_supercells: 4
+  l2_size_m: 6000
+  l3_cells: 16
+  l3_size_m: 3000
+  neighbor_graphs: 4_AND_8_NEIGHBOR_SYMMETRIC
+  hero_residency_granularity: L3_ONLY
+  l2_hero_semantics: COVERAGE_METADATA_ONLY_NOT_FULL_RESIDENCY
+  bosque_resident_l3_cells: [X1Y1, X1Y2, X2Y1, X2Y2]
+  bosque_l2_coverage: [L2_X0Y0, L2_X0Y1, L2_X1Y0, L2_X1Y1]
+  hlod_status: CONTRACT_ONLY_TARGET_BACKEND_PENDING
+
+prefetch_policy_r15:
+  status: RUNTIME_EXPERIMENT_REQUIRED
+  approved: false
+  primary_runtime_candidate: P3_DIRECTIONAL_ROUTE_WINDOW
+  candidates:
+    - P0_CURRENT_ONLY
+    - P1_CURRENT_PLUS_4
+    - P2_CURRENT_PLUS_8
+    - P3_DIRECTIONAL_ROUTE_WINDOW
+  current_plus8_world_fraction_upper_bound_observed: 0.728
+  selection_rule: PROMOTE_LEAST_RESIDENT_POLICY_THAT_PASSES_RUNTIME_VISUAL_COLLISION_TRAVERSAL_GATES
 
 navigation_r10:
   total_length_m: 8898.294
@@ -154,11 +184,13 @@ navigation_r10:
 rootkit_dependency:
   provider_claim: CLM-SYLVA-PROC-NROOT-001
   provider_pr: 6
+  provider_head_reaudited: 5ba1ea6758e4c08ed82d95deb96f1bbcae1581f5
   provider_project: 43cf2b06-c47f-4ccd-ac34-76e9a585225a
   provider_revision_audited_readonly: 4
+  provider_ci_gauntlet: PASS_BUT_NOT_INTEGRATION_READY
   provider_pivot_status: BLOCKED_PROVIDER_NORMALIZATION_REQUIRED
-  provider_manifest_status: BLOCKED_VALIDATION_REQUIRED
-  provider_blocker_comment: 5648741376
+  provider_manifest_status: BLOCKED_YAML_VALIDATION_REQUIRED
+  provider_anchor_parity_status: BLOCKED_NOT_PROVEN
   consumer_basis: '+X forward; +Z up; metres; scale 1'
   support_assignments: 8
   support_transforms_snapped: 0
@@ -176,17 +208,21 @@ planetary_scale_decision:
 
 learning_adoption:
   learning_id: LRN-EXO-20260912-OWNER-ADMISSION
-  source_main: 97fb47472a654112779655d4d537851e709f269a
   receipt: art_source/worlds/sylva_prime/macro/qa/OWNER_ADMISSION_ADOPTION.json
   applies_to_this_owner: true
   universal_adoption_claimed: false
 
+writer_continuity:
+  last_writer_fence_id: SYLVA-MACRO-WRITER-EPOCH-3-R14-20260913
+  last_writer_fence_status: CLOSED_ACCEPTED_R15
+  receipt: art_source/worlds/sylva_prime/macro/qa/R15_PREFETCH_POLICY_NORMALIZATION.json
+
 blocked_by:
   - BLOCK-SYLVA-001 planet-scale promotion requires explicit decision and fleet registration for orbital project
   - BLOCK-SYLVA-002 engine/target hardware blocks final HLOD/LOD/performance budgets
-  - BLOCK-SYLVA-003 sandbox network blocks exact binary recovery/native import; ENV_BLOCKED
-  - BLOCK-SYLVA-004 PR6 provider pivot/anchor + valid manifest required before root-kit instantiation
-  - fleet integrator ACK/path/project-ID readback remains pending
+  - BLOCK-SYLVA-003 exact binary recovery/SHA/native import not yet qualified in this execution environment
+  - BLOCK-SYLVA-004 PR6 provider manifest + pivot/anchor + collision parity required before root-kit instantiation
+  - BLOCK-SYLVA-005 human macro art-direction review pending
 
 dependencies:
   - CLM-SYLVA-PROC-NROOT-001 provider readiness
@@ -199,8 +235,8 @@ receipts:
   r7_rootkit: art_source/worlds/sylva_prime/macro/qa/R7_ROOTKIT_SOCKET_INTEGRATION.json
   r11_navigation: art_source/worlds/sylva_prime/macro/qa/R11_NAVIGATION_AND_ROOTKIT_INTEGRATION.json
   r13_streaming: art_source/worlds/sylva_prime/macro/qa/R13_STREAMING_WORLD_PARTITION.json
+  r15_policy: art_source/worlds/sylva_prime/macro/qa/R15_PREFETCH_POLICY_NORMALIZATION.json
   glb_validator_current: art_source/worlds/sylva_prime/macro/validate_glb_contract_r13.py
-  engine_env_blocker: art_source/worlds/sylva_prime/macro/qa/ENGINE_IMPORT_ENV_BLOCKER.json
   import_contract: art_source/worlds/sylva_prime/macro/IMPORT_CONTRACT.md
   status: art_source/worlds/sylva_prime/macro/STATUS.md
   handoff: art_source/worlds/sylva_prime/macro/HANDOFF.md
