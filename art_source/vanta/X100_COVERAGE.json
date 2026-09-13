@@ -1,0 +1,63 @@
+{
+  "schema": "exovant.vanta.x100-coverage.v1",
+  "world": "VANTA",
+  "protocol": "WORLD_DENSITY_X100_v1",
+  "score_model": "geometric_mean_of_14_normalized_production_dimensions",
+  "heuristic_not_canon": true,
+  "world_completeness": 0.13628837009550168,
+  "world_completeness_percent": 13.6288,
+  "threshold_band": "BLOCKOUT",
+  "scores": {
+    "MACRO_WORLD": 0.28,
+    "MESO_ARCHITECTURE": 0.18,
+    "MICRO_ASSETS": 0.08,
+    "ECOLOGY": 0.03,
+    "CIVILIZATION": 0.12,
+    "GAMEPLAY": 0.10,
+    "MATERIAL_CAUSALITY": 0.18,
+    "VARIATION": 0.16,
+    "TEMPORAL_STATES": 0.18,
+    "STORYTELLING": 0.12,
+    "AUDIO_VISUAL_LANGUAGE": 0.12,
+    "OPTIMIZATION": 0.16,
+    "REUSABILITY": 0.22,
+    "QA": 0.20
+  },
+  "lowest_value_gap": {
+    "dimension": "ECOLOGY",
+    "score": 0.03,
+    "action_after_current_family": "Build the causal ecology graph only after the active culture family reaches its next quality gates."
+  },
+  "active_claim": {
+    "id": "CLM-VANTA-X100-CULTURE-001",
+    "coordination_comment": 5655088194,
+    "prefix": "VAN_X100_CULT_",
+    "families": 12,
+    "source_variants": 36,
+    "states_per_variant": 5,
+    "state_delta_sources": 144,
+    "minimum_source_configurations": 180,
+    "status": "BLOCKOUT_FAMILY_RUNTIME_TRANSPORT_QUALIFIED_QUALITY_GATES_OPEN"
+  },
+  "delivery": {
+    "source_revision": 13,
+    "source_blend_sha256": "2728210dbbf86fbe906170fff87d5ea07959b1b4614d554cca5e9abc4eac4a6d",
+    "provider_glb_sha256": "468beb0cded9936ef39e29afa8000cc68968ef0501e6580f204e13683921af3d",
+    "provider_glb_runtime_clean": false,
+    "selected_runtime_glb_sha256": "ab966191291f1f6abe201e45af8034d24b857b054f171ae03303e673f76bcf47",
+    "selected_runtime_glb_bytes": 2936428,
+    "inactive_state_nodes": 0,
+    "lod_source_nodes": 0,
+    "godot_static_bodies": 36,
+    "godot_collision_shapes": 36,
+    "godot_uv_failures": 0
+  },
+  "open_gates": [
+    "manufacturing hardness",
+    "true LOD reduction",
+    "placement/story tableaux",
+    "human visual approval",
+    "target GPU performance",
+    "Puerto final placement"
+  ]
+}

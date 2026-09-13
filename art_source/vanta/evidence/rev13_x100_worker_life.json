@@ -1,0 +1,100 @@
+{
+  "schema": "exovant.vanta.x100-worker-life-qualification.v1",
+  "claim": "CLM-VANTA-X100-CULTURE-001",
+  "source": {
+    "project_id": "c82188b1-afdc-43f2-828a-5f0e98291f83",
+    "revision": 13,
+    "blender": "5.2.0 LTS",
+    "blend_bytes": 12982848,
+    "blend_sha256": "2728210dbbf86fbe906170fff87d5ea07959b1b4614d554cca5e9abc4eac4a6d",
+    "provider_glb_bytes": 9533012,
+    "provider_glb_sha256": "468beb0cded9936ef39e29afa8000cc68968ef0501e6580f204e13683921af3d",
+    "provider_glb_runtime_clean": false,
+    "provider_glb_reason": "Contains all 144 state delta objects and 36 LOD1 source proxies; provider preview is not runtime authority."
+  },
+  "family": {
+    "archetype_families": 12,
+    "source_variants": 36,
+    "states_per_variant": 5,
+    "state_delta_sources": 144,
+    "minimum_source_configurations": 180,
+    "uv0_validated": true,
+    "collision_proxies": 36,
+    "lod1_source_proxies": 36,
+    "family_complete": false
+  },
+  "export_filter_probe": {
+    "hide_render_filters_delivery": false,
+    "hide_viewport_filters_delivery": false,
+    "hide_set_filters_delivery": false,
+    "collection_hide_viewport_filters_delivery": false,
+    "layer_collection_exclude_filters_delivery": false,
+    "use_selection_filters_delivery": true
+  },
+  "selected_runtime_delivery": {
+    "glb_bytes": 2936428,
+    "glb_sha256": "ab966191291f1f6abe201e45af8034d24b857b054f171ae03303e673f76bcf47",
+    "nodes": 328,
+    "meshes": 196,
+    "materials": 9,
+    "images": 9,
+    "roots": 36,
+    "colliders": 36,
+    "active_state_nodes": 28,
+    "inactive_state_nodes": 0,
+    "lod_source_nodes": 0,
+    "visual_primitives": 256,
+    "uv_bad": 0
+  },
+  "godot_4_7_2": {
+    "passed": true,
+    "static_bodies": 36,
+    "collision_shapes": 36,
+    "mesh_instances": 256,
+    "material_surfaces": 256,
+    "uv_bad": 0,
+    "lod_source_names": 0,
+    "state_nodes": 28,
+    "locker_collision_raycast": true,
+    "locker_collision_name": "COL_VAN_X100_CULT_LOCKER_M"
+  },
+  "qa_route_selected_delivery": {
+    "glb_bytes": 33084,
+    "glb_sha256": "45d1508273fab5ac4d1cc142b9787ecee259711881ff159728d8a1f28dd66f73",
+    "ray_samples": 205,
+    "ray_hits": 205,
+    "coverage": 1.0,
+    "passed": true,
+    "note": "Supplements the stronger existing rev11 continuous CharacterBody kilometre receipt."
+  },
+  "bundle": {
+    "zip_sha256": "aa3bd277dd42dfc738d4d2d31aafabf516927efabd59fdfa272ee84c7967f374",
+    "media_id": "be91ec33-f6af-4d8a-8ada-95b97eb6d152",
+    "url": "https://d2ol7oe51mr4n9.cloudfront.net/user_2zv0ZwTLslDi8yQhQ13R8PX7SVU/be91ec33-f6af-4d8a-8ada-95b97eb6d152.zip"
+  },
+  "runtime_capture": {
+    "sha256": "48ec31847eecae42a1cd721d7763e854350bd6f98628e60471d1e759d5dfbe9f",
+    "media_id": "9fb6e49c-e83b-4a2c-b29b-23e676968d31",
+    "url": "https://d2ol7oe51mr4n9.cloudfront.net/user_2zv0ZwTLslDi8yQhQ13R8PX7SVU/9fb6e49c-e83b-4a2c-b29b-23e676968d31.png",
+    "human_aesthetic_pass": false
+  },
+  "truth": {
+    "runtime_transport_qualified": true,
+    "collision_and_uv_qualified": true,
+    "human_aesthetic_approval": false,
+    "manufacturing_hardness_pass": false,
+    "true_lod_reduction_pass": false,
+    "placement_story_pass": false,
+    "target_gpu_performance_pass": false,
+    "family_complete": false
+  },
+  "open_gates": [
+    "manufacturing-detail/bevel/thickness/fastener/weld refinement",
+    "true reduced LOD meshes",
+    "procedural placement assemblies",
+    "player-scale reach/access review",
+    "human aesthetic/art-direction review",
+    "target GPU frame-time/draw/VRAM/residency",
+    "final Puerto placement"
+  ]
+}
