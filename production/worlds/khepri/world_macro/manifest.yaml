@@ -1,184 +1,233 @@
-schema_version: 1
+schema_version: 2
 world_id: khepri
 scope: world_macro/planetary_foundation
 claim_id: CLM-KHEPRI-WMACRO-001
 agent_id: AGENT-KHEPRI-WMACRO-001
+status: REVIEW
 blender_project_id: 040f0c45-83a7-483c-9ee7-1e31c640a587
-blender_revision: 2
-source_generator:
-  - art_source/khepri/world_macro/generate_khepri_world_macro.py
-  - art_source/khepri/world_macro/optimize_khepri_world_macro.py
-validator: art_source/khepri/world_macro/validate_khepri_world_macro.py
+blender_revision: 4
+cold_project_id: 4c01fdbb-7093-4229-9a49-8237583280bc
+cold_revision: 3
+
+canon_boundary:
+  gravity_g: 0.63
+  temperature_reference_c: 71.0
+  planet_radius_m: 5224000.0
+  planet_radius_status: KHP_ADR_001_PROPOSAL_NOT_CANON
+  coordinate_contract: local_tangent_cell_xyz_metres_blender_z_up
+
+source_pipeline:
+  generator: art_source/khepri/world_macro/generate_khepri_world_macro.py
+  optimizer: art_source/khepri/world_macro/optimize_khepri_world_macro.py
+  route_refiner: art_source/khepri/world_macro/refine_route_r4.py
+  validator: art_source/khepri/world_macro/validate_khepri_world_macro.py
+  semantic_fingerprint: art_source/khepri/world_macro/fingerprint_khepri_world_macro.py
+  split_exporter: art_source/khepri/world_macro/export_stream_units.py
+  terrain_tiling_contract: art_source/khepri/world_macro/terrain_tile_contract.py
+
+provider_artifacts_r4:
+  editable_blend:
+    status: PROVIDER_RECOVERABLE_REPO_ARCHIVAL_BLOCKED
+    bytes: 1379495
+    etag: 6d81d2c81e19a841056f018926e32944
+  whole_scene_glb:
+    status: PROVIDER_RECOVERABLE_REPO_ARCHIVAL_BLOCKED
+    bytes: 822272
+    etag: 40d610951c4f0d8d3d83c7d4e67519dc
+
 assets:
   - asset_id: KHP_WM_PLANET_META
-    world_id: khepri
     region: GLOBAL_KHEPRI
     category: world_macro
     subcategory: planetary_metadata
-    name: KHEPRI Planet Metadata Carrier
-    description: Carries documented gravity/temperature plus explicitly proposed physical-scale values and coordinate contract.
-    priority: P0
     quality_tier: D
-    usage_frequency: global_metadata
-    real_dimensions: none
-    player_distance: not_rendered
-    dependencies: [KHP-ADR-001]
+    priority: P0
     owner: AGENT-KHEPRI-WMACRO-001
     status: REVIEW
-    blend_path: "3D-Jutsu:040f0c45-83a7-483c-9ee7-1e31c640a587@rev2/KHP_WM_PLANET_META"
-    export_path: GLB_extras_metadata
-    material_set: none
-    texture_set: none
-    poly_budget: N_A
-    lod_policy: N_A
+    blender_object: KHP_WM_PLANET_META
+    blend_source: "3D-Jutsu:040f0c45-83a7-483c-9ee7-1e31c640a587@rev4/KHP_WM_PLANET_META"
+    export_contract: GLB_extras_metadata
     collision_policy: none
-    rig: none
-    animation_dependency: none
-    physics: metadata_only
-    destructible: false
-    reference_set: [design/EXOVANT_DATA.json, KHP-ADR-001]
     license: project_original
     qa_status: STRUCTURAL_PASS
 
   - asset_id: KHP_WM_ORBITAL_PROXY
-    world_id: khepri
     region: GLOBAL_KHEPRI
     category: world_macro
     subcategory: orbital_representation
-    name: KHEPRI L1 Orbital Proxy 1:20000
-    description: Lightweight reduced-scale planet representation carrying physical-radius proposal as metadata; explicitly non-collision/gameplay.
-    priority: P0
     quality_tier: D
-    usage_frequency: orbital_vista_validation
-    real_dimensions: "display radius 261.2 m at 1:20000; physical radius proposal 5,224,000 m"
-    player_distance: orbital_only
-    dependencies: [KHP_WM_PLANET_META]
+    priority: P0
     owner: AGENT-KHEPRI-WMACRO-001
     status: REVIEW
-    blend_path: "3D-Jutsu:040f0c45-83a7-483c-9ee7-1e31c640a587@rev2/KHP_WM_L1_ORBITAL_PROXY_1_TO_20000"
-    export_path: preview.glb
-    material_set: KHP_WM_MAT_ORBITAL_PROXY
-    texture_set: none
-    poly_budget: UNQUALIFIED_TARGET_HARDWARE
-    lod_policy: "single blockout proxy; production LOD/HLOD deferred"
+    blender_object: KHP_WM_L1_ORBITAL_PROXY_1_TO_20000
+    blend_source: "3D-Jutsu:040f0c45-83a7-483c-9ee7-1e31c640a587@rev4/KHP_WM_L1_ORBITAL_PROXY_1_TO_20000"
+    display_radius_m: 261.2
+    physical_radius_m_proposal: 5224000.0
+    export_contract: L1_ORBITAL_CENTERED_STANDALONE_GLB
+    authoring_preview_offset_blender_xyz_m: [0.0, 0.0, -1100.0]
+    export_origin_policy: remove_preview_offset_temporarily_then_restore
     collision_policy: none
-    rig: none
-    animation_dependency: none
-    physics: none
-    destructible: false
-    reference_set: [KHP-ADR-001]
+    lod_policy: production_LOD_HLOD_deferred
     license: project_original
-    qa_status: STRUCTURAL_PASS_ART_PENDING
+    qa_status: STRUCTURAL_AND_SPLIT_EXPORT_PASS_ART_PENDING
 
   - asset_id: KHP_WM_TERRAIN_A
-    world_id: khepri
     region: MACROCELL_A
     category: terrain
     subcategory: macro_elevation
-    name: KHEPRI L2 Representative Macrocell A
-    description: Deterministic low/mid-frequency solar-glass desert terrain used to validate macro scale and route interfaces; not final geology.
-    priority: P0
     quality_tier: D
-    usage_frequency: representative_macro_cell
-    real_dimensions: "6400 m × 4800 m × 228.805 m vertical range envelope"
-    player_distance: vista_and_macro_navigation
-    dependencies: [KHP_WM_PLANET_META]
+    priority: P0
     owner: AGENT-KHEPRI-WMACRO-001
     status: REVIEW
-    blend_path: "3D-Jutsu:040f0c45-83a7-483c-9ee7-1e31c640a587@rev2/KHP_WM_L2_MACROCELL_A_TERRAIN"
-    export_path: preview.glb
-    material_set: KHP_WM_MAT_SOLAR_GLASS_BLOCKOUT
-    texture_set: none
-    poly_budget: UNQUALIFIED_TARGET_HARDWARE
-    lod_policy: "production tile/streaming/HLOD deferred; current mesh is validation blockout"
-    collision_policy: "none in this claim; future gameplay cell owner must author collision"
-    rig: none
-    animation_dependency: none
-    physics: none
-    destructible: false
-    reference_set: [design/EXOVANT_BIBLIA.md, design/EXOVANT_DATA.json]
+    blender_object: KHP_WM_L2_MACROCELL_A_TERRAIN
+    blend_source: "3D-Jutsu:040f0c45-83a7-483c-9ee7-1e31c640a587@rev4/KHP_WM_L2_MACROCELL_A_TERRAIN"
+    dimensions_m: [6400.0, 4800.0, 228.805]
+    grid: [81, 61]
+    grid_spacing_m: [80.0, 80.0]
+    height_model_version: KHP_TERRAIN_V1
+    export_contract: L2_MACROCELL_LOCAL_TANGENT_GLB
+    collision_policy: separate_future_gameplay_claim
+    lod_policy: production_tile_streaming_HLOD_deferred
     license: project_original
-    qa_status: STRUCTURAL_PASS_ART_PENDING
+    qa_status: STRUCTURAL_TOPOLOGY_TILING_PASS_ART_PENDING
 
   - asset_id: KHP_WM_HELIOSTAT_FOOTPRINTS
-    world_id: khepri
     region: MACROCELL_A
     category: infrastructure
     subcategory: optical_footprints
-    name: Heliostat Field Footprint Family
-    description: 32 mast + 32 panel proxy placements indicating optical-infrastructure scale only; final architecture excluded.
-    priority: P1
     quality_tier: D
-    usage_frequency: repeated_macro_proxy
-    real_dimensions: "panel proxy 36 m × 2 m × 22 m; mast proxy 36 m tall"
-    player_distance: long_and_mid_distance
-    dependencies: [KHP_WM_TERRAIN_A]
+    priority: P1
     owner: AGENT-KHEPRI-WMACRO-001
     status: REVIEW
-    blend_path: "3D-Jutsu:040f0c45-83a7-483c-9ee7-1e31c640a587@rev2/KHP_WM_30_OPTICAL_FOOTPRINTS"
-    export_path: preview.glb
-    material_set: [KHP_WM_MAT_BRONZE_BLOCKOUT, KHP_WM_MAT_MIRROR_BLOCKOUT]
-    texture_set: none
-    poly_budget: UNQUALIFIED_TARGET_HARDWARE
-    lod_policy: "instanced shared mesh; final architecture owner replaces/consumes footprint"
+    count: 32
+    panel_proxy_dimensions_m: [36.0, 2.0, 22.0]
+    mast_height_m: 36.0
+    shared_panel_meshes: 1
+    shared_mast_meshes: 1
+    mast_ground_contact_error_m: [-0.000004, 0.000004]
+    panel_center_above_mast_top_m: 6.0
+    min_pairwise_spacing_m: 490.0
+    export_contract: INCLUDED_IN_L2_MACROCELL_GLB
     collision_policy: none
-    rig: none
-    animation_dependency: "future solar tracking system"
-    physics: none
-    destructible: false
-    reference_set: [design/EXOVANT_BIBLIA.md]
+    animation_dependency: future_solar_tracking_domain
     license: project_original
-    qa_status: STRUCTURAL_PASS_ART_PENDING
+    qa_status: STRUCTURAL_CONTACT_INSTANCING_PASS_ART_PENDING
 
   - asset_id: KHP_WM_ROUTE_INTERFACES
-    world_id: khepri
     region: MACROCELL_A
     category: technical_integration
-    subcategory: route_anchors
-    name: KHEPRI Functional Route Interfaces
-    description: Four empty-object anchors derived from documented mission functions: shade, glass sea, crucible, RA-KHET approach.
-    priority: P0
+    subcategory: route_anchors_and_qa_guide
     quality_tier: D
-    usage_frequency: cross_domain_interface
-    real_dimensions: none
-    player_distance: N_A
-    dependencies: [KHP_WM_TERRAIN_A]
+    priority: P0
     owner: AGENT-KHEPRI-WMACRO-001
     status: REVIEW
-    blend_path: "3D-Jutsu:040f0c45-83a7-483c-9ee7-1e31c640a587@rev2/KHP_WM_40_ROUTE_INTERFACES"
-    export_path: GLB_extras_metadata
-    material_set: none
-    texture_set: none
-    poly_budget: N_A
-    lod_policy: N_A
+    anchors: [KHP_WM_ROUTE_SHADE, KHP_WM_ROUTE_GLASS_SEA, KHP_WM_ROUTE_CRUCIBLE, KHP_WM_ROUTE_RAKHET]
+    qa_route_object: KHP_WM_ROUTE_GUIDE_ONLY
+    route_points_r4: 576
+    route_segments_r4: 575
+    target_clearance_m: 7.0
+    audited_clearance_m: [6.9963, 7.0043]
+    below_terrain_samples: 0
+    export_contract: "anchors included in L2; QA route curve excluded from L2 package"
     collision_policy: none
-    rig: none
-    animation_dependency: none
-    physics: none
-    destructible: false
-    reference_set: [Q_KHEPRI_M01, Q_KHEPRI_M02, Q_KHEPRI_M03, Q_KHEPRI_M04]
     license: project_original
-    qa_status: STRUCTURAL_PASS
+    qa_status: INTERFACE_CLEARANCE_PASS_ART_PENDING
 
-measured_scene_metrics_rev2:
+measured_scene_metrics_r4:
   objects: 77
+  mesh_objects: 68
   mesh_datablocks: 6
   materials: 5
   curves: 1
   unique_mesh_vertices: 5697
   unique_mesh_triangles: 11092
-  blend_bytes: 1357562
-  glb_bytes: 702900
-  heliostat_panel_objects: 32
-  heliostat_panel_unique_meshes: 1
-  heliostat_mast_objects: 32
-  heliostat_mast_unique_meshes: 1
   human_guide_height_m: 1.85
-  route_anchor_segment_distances_m: [2125.99, 1783.94, 1838.65]
+  route_points: 576
+  route_segments: 575
+  route_segment_length_m: [9.96369, 10.095645]
+
+machine_visual_contract:
+  overview_lens_mm: 32.0
+  overview_clip_end_m: 12000.0
+  all_route_anchors_in_frame: true
+  all_route_anchors_within_clip: true
+  gameplay_lens_mm: 38.0
+  gameplay_clip_end_m: 8000.0
+  human_guide_projected_height_px_at_720p: 84.7
+  status: PASS_MACHINE_ONLY
+  human_art_gate: PENDING
+
+blockout_topology:
+  operation: khepri.topology.audit.r4.20260913
+  zero_area_faces: 0
+  zero_length_edges: 0
+  invalid_face_normals: 0
+  all_nonterrain_meshes_closed_manifold: true
+  terrain_boundary_edges: 280
+  terrain_boundary_status: EXPECTED_OPEN_TILE_PERIMETER
+  route_degenerate_segments: 0
+  status: PASS
+
+split_export:
+  receipt: production/worlds/khepri/world_macro/receipts/R4_STREAM_SPLIT.json
+  l1:
+    centered_bytes: 132916
+    gltf_nodes: 1
+    gltf_meshes: 1
+    gltf_materials: 1
+    cameras: 0
+    external_uris: 0
+    normalized_gltf_master_cold_match: true
+  l2:
+    bytes: 553012
+    gltf_nodes: 69
+    mesh_objects: 65
+    gltf_meshes: 3
+    gltf_materials: 3
+    cameras: 0
+    external_uris: 0
+    qa_route_excluded: true
+    human_guide_excluded: true
+    normalized_gltf_master_cold_match: true
+  status: PASS_PORTABLE_PACKAGING_BOUNDARY_ONLY
+
+terrain_tiling:
+  receipt: production/worlds/khepri/world_macro/receipts/R5_TERRAIN_TILING.json
+  global_coordinate_seam_error_m: 0.0
+  height_seam_error_m: 0.0
+  max_normal_angle_error_deg: 0.0000014787793334710982
+  master_vertices_checked: 4941
+  master_height_model_max_error_m: 0.000007556913914186225
+  flat_cell_corner_sagitta_m_using_proposed_radius: 1.5313937924802303
+  status: PASS_AUTHORING_CONTINUITY_NOT_PLANET_CURVATURE
+
+reproducibility:
+  master_cold_scene_semantic_match: true
+  whole_scene_blend_size_match: true
+  whole_scene_glb_size_match: true
+  gltf_determinism_policy: normalized_structure_plus_blender_semantic_fingerprint_not_binary_sha_identity
+
+ci:
+  qualified_main: be6162064ceb475d5f7a7aa1388a7873f25d3258
+  integration_head: a4cb4d0bdb047efa338eed8ea3d30f94f08177d4
+  integration_gauntlet_run: 34722486412
+  manifest_locked_head: 8022197ec42eae9764d3dab2fcda311d8acad5e2
+  manifest_locked_gauntlet_run: 34722654514
+  exact_pr_ci: SUCCESS
+
+open_gates:
+  - HUMAN_GATE_ART
+  - BINARY_PERSISTENCE_TRANSPORT
+
 nonclaims:
-  - final game-ready budget
-  - final collision
-  - engine integration
-  - artistic approval
-  - final physical planet canon
   - complete KHEPRI world
+  - final game-ready budget
+  - final collision/navmesh
+  - production engine import
+  - final UV/PBR/material library
+  - final terrain geology
+  - final planet curvature or radius canon
+  - production LOD/HLOD/world partition
+  - target-hardware GPU performance
+  - final artistic approval
+  - AAA/AAAA completion

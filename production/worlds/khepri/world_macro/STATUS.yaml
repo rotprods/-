@@ -5,50 +5,58 @@ agent_id: AGENT-KHEPRI-WMACRO-001
 session_id: SESSION-20260912-KHEPRI-001
 branch: art/world-khepri-001
 pr: 8
+
 fleet:
   registry: ops/fleet/registry.json
   claim_status: active
-  producer_ack: issue-7-comment-5648289971
   protocol: docs/FLEET_COORDINATION.md
-  latest_qualified_main: 758a9b6326a7d061f1e304abe9b1593b6b2d1a66
-  latest_qualified_main_gauntlet: 34720800915
+  qualified_main: be6162064ceb475d5f7a7aa1388a7873f25d3258
+  integration_head: a4cb4d0bdb047efa338eed8ea3d30f94f08177d4
+  integration_gauntlet_run: 34722486412
+  manifest_locked_head: 8022197ec42eae9764d3dab2fcda311d8acad5e2
+  manifest_locked_gauntlet_run: 34722654514
+  exact_pr_ci: SUCCESS
+
 blender:
   master_project_id: 040f0c45-83a7-483c-9ee7-1e31c640a587
   master_revision: 4
   cold_project_id: 4c01fdbb-7093-4229-9a49-8237583280bc
   cold_revision: 3
   structural_qa: PASS
+  topology_qa: PASS
   machine_visual_qa: PASS
   route_clearance_qa: PASS
   heliostat_contact_qa: PASS
   portable_blockout_qa: PASS
+  split_export_qa: PASS
+  terrain_tiling_qa: PASS_AUTHORING_CONTINUITY_ONLY
   semantic_reproducibility: PASS
-  semantic_sha256: 04c527c61ee814753f09e9c0f651495ad80ed51aafc48c77b6acb4e82a3612ec
   art_review: PENDING_HUMAN
   blend_bytes: 1379495
+  blend_etag: 6d81d2c81e19a841056f018926e32944
   glb_bytes: 822272
+  glb_etag: 40d610951c4f0d8d3d83c7d4e67519dc
+
 visual:
-  latest_render_operation: khepri.visual.r4.gauntlet
-  overview_artifact: 6526469581c767eb9e18ca73de270031
-  overview_bytes: 700678
-  gameplay_artifact: f07432f0acc50e5ccddab570cbae0f6f
-  gameplay_bytes: 747184
-  resolution: [1280, 720]
   machine_status: PASS
+  fresh_render_operation: khepri.visual.fresh.r4.20260913
+  fresh_resolution: [960, 540]
+  overview_artifact: 57acd2b85cc986ccb1f9ec5502b96b0a
+  overview_bytes: 403017
+  gameplay_artifact: c6bd87b88141e4955efd33a53416ef8b
+  gameplay_bytes: 424972
+  independent_browser_review: NO_EVIDENCE_EMPTY_RESULT
   human_status: PENDING_HUMAN_PIXEL_REVIEW
-terrain:
-  global_slope_p95_deg: 9.91
-  global_slope_max_deg: 11.56
-  route_slope_p95_deg: 10.08
-  route_slope_max_deg: 10.64
-  traversal_claim: false
+
 route_interface:
   refinement: R4_TERRAIN_CONFORMING
   points: 576
+  segments: 575
   target_clearance_m: 7.0
   audited_clearance_m: [6.9963, 7.0043]
   max_error_m: 0.0043
   below_terrain_samples: 0
+
 heliostat_macro:
   count: 32
   mast_ground_contact_error_m: [-0.000004, 0.000004]
@@ -56,27 +64,67 @@ heliostat_macro:
   min_pairwise_spacing_m: 490.0
   shared_mast_meshes: 1
   shared_panel_meshes: 1
-portability:
-  materials: 5
-  nonportable_material_nodes: 0
-  external_images: 0
-  absolute_image_paths: 0
-  unsupported_light_types: 0
-  unused_datablocks: 0
-ci:
-  inspected_pr_merge_run: 34720826636
-  python_tests: 82/82_PASS
-  project_control_failure: MANIFEST_DRIFT_ONLY
-  drift_scope: KHEPRI_OWNED_PATHS
-  classification: EXACT_MANIFEST_REFRESH_REQUIRED
+
+blockout_topology:
+  operation: khepri.topology.audit.r4.20260913
+  mesh_objects: 68
+  unique_mesh_datablocks: 6
+  zero_area_faces: 0
+  zero_length_edges: 0
+  invalid_face_normals: 0
+  nonterrain_closed_manifold: true
+  terrain_open_boundary_edges: 280
+  terrain_boundary_waiver: EXPECTED_TILE_PERIMETER
+  route_degenerate_segments: 0
+  single_material_slot_per_mesh: true
+
+split_export:
+  receipt: production/worlds/khepri/world_macro/receipts/R4_STREAM_SPLIT.json
+  l1:
+    centered_bytes: 132916
+    self_contained: true
+    cameras: 0
+    preview_offset_removed_during_export: true
+    master_cold_normalized_gltf_match: true
+  l2:
+    bytes: 553012
+    nodes: 69
+    mesh_objects: 65
+    gltf_meshes: 3
+    self_contained: true
+    cameras: 0
+    qa_guides_excluded: true
+    master_cold_normalized_gltf_match: true
+
+terrain_tiling:
+  receipt: production/worlds/khepri/world_macro/receipts/R5_TERRAIN_TILING.json
+  grid: [81, 61]
+  grid_spacing_m: [80.0, 80.0]
+  neighbor_coordinate_error_m: 0.0
+  neighbor_height_error_m: 0.0
+  max_neighbor_normal_angle_error_deg: 0.0000014787793334710982
+  master_model_sync_vertices: 4941
+  master_model_max_height_error_m: 0.000007556913914186225
+  proposed_radius_flat_cell_corner_sagitta_m: 1.5313937924802303
+  planet_curvature_gate: NOT_APPROVED
+
+binary_persistence:
+  provider_recovery: PASS
+  browser_download_glb: PASS
+  browser_download_blend: PASS
+  github_upload: BLOCKED
+  blocker: BROWSER_SESSION_UNAUTHENTICATED_AND_NO_REUSABLE_FILE_URI_BRIDGE
+  fleet_delivery_local: NOT_RUN_NO_LOCAL_FILE_HANDLE
+
 progress:
   asset_coverage_percent: 100
   modeling_percent: 100
   materials_percent: 25
   optimization_percent: 100
-  integration_percent: 50
-  qa_percent: 98
-scope_note: "Progress percentages apply only to the atomic world-macro blockout claim."
+  integration_percent: 70
+  qa_percent: 99
+scope_note: "Progress percentages apply only to the atomic world-macro blockout/foundation claim."
+
 completed:
   - repository_bootstrap
   - collision_audit_and_claim
@@ -87,7 +135,7 @@ completed:
   - deterministic_generator
   - optimization_pass
   - structural_validator
-  - camera_frustum_and_scale_proof_r3
+  - camera_frustum_and_scale_proof
   - terrain_slope_audit
   - terrain_conforming_route_r4
   - provider_blend_glb_export
@@ -95,15 +143,19 @@ completed:
   - r4_overview_gameplay_renders
   - heliostat_macro_contact_audit
   - portable_blockout_audit
+  - topology_audit
+  - l1_l2_split_export_audit
+  - seam_safe_terrain_tiling_contract
+  - exact_pr_ci_green
+
 blocked:
-  - HUMAN_VISUAL_REVIEW
+  - HUMAN_GATE_ART
   - BINARY_PERSISTENCE_TRANSPORT
-  - EXACT_MANIFEST_REFRESH_IN_REAL_COMBINED_CHECKOUT
-in_progress:
-  - RECONCILE_WITH_FLEET_QUALIFIED_MAIN
+
 next:
-  - "Consume integrator transaction: current green main + owned KHEPRI overlay + project_control refresh + guard-git + PR exact CI."
-  - "Do not rerun failing CI until MANIFEST changes; 82/82 tests already pass and rerun would waste Actions budget."
-  - "Do not add new world density until P0 reconciliation is closed; after that continue macro-only interfaces or shard downstream domains."
-last_heartbeat: "2026-09-12T22:10:00Z"
+  - "Obtain human/pixel review of revision-4 overview/gameplay renders; do not infer it from machine metrics."
+  - "Bridge exact provider r4 .blend/GLB into repository-controlled storage, compute local SHA256 and run fleet delivery/native import gate."
+  - "After those gates, decide RELEASE vs narrowed follow-up claim; downstream engine/collision/final-art domains remain separate ownership leaves."
+
+last_heartbeat: "2026-09-13T10:58:00Z"
 claim_status: KEEP_REVIEW
