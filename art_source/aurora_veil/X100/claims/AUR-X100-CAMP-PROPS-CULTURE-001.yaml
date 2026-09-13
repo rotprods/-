@@ -1,0 +1,76 @@
+workunit_id: AUR-X100-CAMP-PROPS-CULTURE-001
+parent_claim: CLM-AURORA-WORLD-001
+owner: AGENT-02-AURORA
+branch: art/world-aurora-veil-001
+world_id: aurora
+region_id: AUR_R01_CAMP_SECOND_DAY
+status: IN_PROGRESS
+protocol: EXOVANT-X100-v1
+scope_key: aurora/camp/props-cultural-everyday
+priority: P1_HIGH_MULTIPLIER
+created_at: 2026-09-13T20:36:00+02:00
+remote_project_id: d6488148-8547-4ffe-b63d-e5fbec3a339c
+remote_base_revision: 26
+
+north_star: >-
+  Make Campamento del Segundo Dia recognizable through everyday objects alone: a serviceable culture of clock synchronization, observation, route logging, repair and refuge life. Build a reusable proposal-level prop grammar without promoting unapproved props into canon.
+
+canon_basis:
+  - Campamento del Segundo Dia is an observatory and refuge
+  - two observation stations carry divergent clocks
+  - main mission requires synchronizing clocks and verifying repeated events
+  - the world decision concerns which temporal records are preserved and who may use them
+  - Aurora asset kit includes prairies, rings, mechanical clocks and bounded environmental duplicates
+proposal_boundary:
+  - exact everyday prop types, dimensions and assembly kits are production proposals derived from those functions
+  - they do not establish new factions, rituals, economy, social hierarchy or lore
+
+includes:
+  - clock synchronization and calibration objects
+  - observation instrument service objects
+  - route-recording and temporal-record handling objects
+  - repair and maintenance props
+  - refuge storage, seating and portable-light objects
+  - controlled dimensional and open/closed/service variants where functional
+  - pristine/used/damaged/abandoned history states on selected repeated families
+  - deterministic functional clusters rather than random scatter
+  - LOD, collision and interaction-clearance contracts for selected repeated props
+  - material and manufacturing metadata
+  - X100 QA, generator and receipts
+
+excludes:
+  - new lore or cultural ritual claims
+  - combat equipment
+  - named-character personal belongings without canon
+  - AEON hero content
+  - vegetation and fauna
+  - terrain mutation
+  - temporal runtime code
+  - engine-specific interaction implementation before EXO-012
+
+systemic_target:
+  base_prop_families: 18-24
+  functional_cluster_types: 5
+  proposal_history_states: 4
+  proof_clusters: 15
+  theoretical_cluster_combinations: 100+
+  placement: authored functional sockets around X100 Camp proof district; no random scatter
+
+hardness:
+  - every prop implies a plausible manufacturing process and maintenance access
+  - no decorative sci-fi greeble
+  - used or damaged states occur at contact, load or repair zones rather than uniform grunge
+  - containers open only where handles and hinges logically permit
+  - objects sit on floors, benches or ground with measured contact
+  - clocks and instruments use silhouette and mechanical construction instead of arbitrary emissive UI
+  - material roles reuse Aurora validated material library where possible
+  - final labels, text and icons remain deferred unless canon explicitly defines them
+
+blocked_by:
+  - final UV, bake and texture production
+  - engine interaction and import implementation
+  - target-hardware performance
+  - human GATE-ART
+
+stop_condition: >-
+  Do not mark DONE until base family graph, controlled variants and history states, proof clusters, contact and player-scale QA, LOD/collision/interaction contracts, generator and receipt are persisted. Runtime and human-art gates remain independent blockers.
