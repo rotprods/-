@@ -13,14 +13,100 @@
     "optimization_unit": "atomic asset-family or systemic world cell"
   },
   "subgoals": [
-    {"id":"X100-G1","title":"Default protocol integration","dod":["AGENTS invokes X100 V2 after bootstrap/fleet preflight","DEVELOPMENT_PROTOCOL defines X100+Gauntlet loop","PROTOCOLS documents authority and scope"]},
-    {"id":"X100-G2","title":"Gradient density optimizer","dod":["weighted geometric world score implemented","bottleneck-adaptive weights implemented","candidate ranking penalizes collisions/dependencies/slop/cost","tests green"]},
-    {"id":"X100-G3","title":"Spatial-semantic multi-branch awareness","dod":["all fetched branches represented","fleet claims represented when available","64D deterministic vectors","unknown coordinates remain unknown","nearest-neighbor query and provenance retained"]},
-    {"id":"X100-G4","title":"Lookdev-to-mesh AAA fidelity path","dod":["S/A hero families require look lock unless waiver","image-to-3D output classified base candidate","cleanup/retopo/material/engine/visual regression required before final"]},
-    {"id":"X100-G5","title":"World density execution","dod":["L0-L5 coverage measured per world","15 density passes tracked","family combination yield measured","5/20/75 hero/support/systemic target audited"]},
-    {"id":"X100-G6","title":"Continuous gauntlet","dod":["every wave produces evidence or explicit blocker","world score/gradient recomputed after receipts","next atomic gap selected automatically inside existing authorization"]}
+    {
+      "id": "X100-G1",
+      "title": "Default protocol integration",
+      "dod": [
+        "AGENTS invokes X100 V2 after bootstrap/fleet preflight",
+        "DEVELOPMENT_PROTOCOL defines X100+Gauntlet loop",
+        "PROTOCOLS documents authority and scope"
+      ]
+    },
+    {
+      "id": "X100-G2",
+      "title": "Gradient density optimizer",
+      "dod": [
+        "weighted geometric world score implemented",
+        "bottleneck-adaptive weights implemented",
+        "candidate ranking penalizes collisions/dependencies/slop/cost",
+        "tests green"
+      ]
+    },
+    {
+      "id": "X100-G3",
+      "title": "Spatial-semantic multi-branch awareness",
+      "dod": [
+        "all fetched branches represented",
+        "fleet claims represented when available",
+        "64D deterministic vectors",
+        "unknown coordinates remain unknown",
+        "nearest-neighbor query and provenance retained"
+      ]
+    },
+    {
+      "id": "X100-G4",
+      "title": "Lookdev-to-mesh AAA fidelity path",
+      "dod": [
+        "S/A hero families require look lock unless waiver",
+        "image-to-3D output classified base candidate",
+        "cleanup/retopo/material/engine/visual regression required before final"
+      ]
+    },
+    {
+      "id": "X100-G5",
+      "title": "World density execution",
+      "dod": [
+        "L0-L5 coverage measured per world",
+        "15 density passes tracked",
+        "family combination yield measured",
+        "5/20/75 hero/support/systemic target audited"
+      ]
+    },
+    {
+      "id": "X100-G6",
+      "title": "Continuous gauntlet",
+      "dod": [
+        "every wave produces evidence or explicit blocker",
+        "world score/gradient recomputed after receipts",
+        "next atomic gap selected automatically inside existing authorization"
+      ]
+    }
   ],
-  "gradient_loop": ["RESYNC","BOOTSTRAP","VECTORIZE_BRANCH_SPACE","AUDIT_WORLD","COMPUTE_MULTIPLICATIVE_COMPLETENESS","COMPUTE_BOTTLENECK_GRADIENT","ENUMERATE_UNCLAIMED_GAPS","FLEET_COLLISION_CHECK","CLAIM","LOOK_LOCK_IF_REQUIRED","BUILD_FAMILY","EXPAND_CAUSAL_VARIANTS","SYSTEMIZE","ENGINE_TEST","GAUNTLET","RECEIPT","UPDATE_COVERAGE","RECOMPUTE_GRADIENT","HANDOFF","NEXT"],
-  "stop_conditions": ["OWNERSHIP_CONFLICT","IRREVERSIBLE_CREATIVE_DECISION_REQUIRED","SIGNIFICANT_UNAUTHORIZED_COST","DESTRUCTIVE_RISK","DEMONSTRATED_TECHNICAL_BLOCK","WORLD_AT_REQUIRED_THRESHOLD"],
-  "non_goals": ["maximize raw object count","raw AI mesh as final asset","invent planet geometry or spatial coordinates","overwrite producer claims","treat branch-name inference as canon"]
+  "gradient_loop": [
+    "RESYNC",
+    "BOOTSTRAP",
+    "VECTORIZE_BRANCH_SPACE",
+    "AUDIT_WORLD",
+    "COMPUTE_MULTIPLICATIVE_COMPLETENESS",
+    "COMPUTE_BOTTLENECK_GRADIENT",
+    "ENUMERATE_UNCLAIMED_GAPS",
+    "FLEET_COLLISION_CHECK",
+    "CLAIM",
+    "LOOK_LOCK_IF_REQUIRED",
+    "BUILD_FAMILY",
+    "EXPAND_CAUSAL_VARIANTS",
+    "SYSTEMIZE",
+    "ENGINE_TEST",
+    "GAUNTLET",
+    "RECEIPT",
+    "UPDATE_COVERAGE",
+    "RECOMPUTE_GRADIENT",
+    "HANDOFF",
+    "NEXT"
+  ],
+  "stop_conditions": [
+    "OWNERSHIP_CONFLICT",
+    "IRREVERSIBLE_CREATIVE_DECISION_REQUIRED",
+    "SIGNIFICANT_UNAUTHORIZED_COST",
+    "DESTRUCTIVE_RISK",
+    "DEMONSTRATED_TECHNICAL_BLOCK",
+    "WORLD_AT_REQUIRED_THRESHOLD"
+  ],
+  "non_goals": [
+    "maximize raw object count",
+    "raw AI mesh as final asset",
+    "invent planet geometry or spatial coordinates",
+    "overwrite producer claims",
+    "treat branch-name inference as canon"
+  ]
 }
