@@ -3,8 +3,8 @@
 **World:** VANTA  
 **Branch:** `art/world-vanta-001`  
 **Remote Blender project:** `c82188b1-afdc-43f2-828a-5f0e98291f83`  
-**Latest validated revision:** 9  
-**Truth level:** `EMPIRICALLY_QUALIFIED_GODOT_4_7_2_STATIC_IMPORT_COLLISION` — final art, full gameplay traversal and target-hardware performance remain open.
+**Latest remote revision:** 11  
+**Truth level:** `SOURCE_VALIDATED_REV11_DEDUP_AND_QA_ROUTE / GODOT_BOUNDED_CHARACTERBODY_REV10_QUALIFIED` — the rev11 10.2 km QA route is structurally validated in Blender/GLB, but native kilometre traversal is still pending manual CI promotion; final art and target-hardware performance remain open.
 
 ## Scope
 
@@ -46,9 +46,9 @@ Revision-9 source:
 - GLB: 701 meshes / 832 nodes / 20 materials / 13 images;
 - exactly 20 `_colonly` nodes before import.
 
-## Godot 4.7.2 empirical qualification
+## Godot 4.7.2 empirical qualification through revision 10
 
-GitHub Actions run `34720473947`, job `103625283508`, on a real `ubuntu-24.04` hosted runner completed successfully after the harness typing defect from the preceding run was corrected without changing the Blender asset.
+GitHub Actions run `34720473947`, job `103625283508`, on a real `ubuntu-24.04` hosted runner qualified the rev9 native collision contract.
 
 Native Godot receipt:
 
@@ -62,34 +62,11 @@ Native Godot receipt:
 - raycast collider: `COL_VAN_MOD_FLOOR_4M_A`;
 - all 20 semantic collision-body names recovered by the importer.
 
-The 711→691 visual-mesh reduction is expected: the 20 former collision render meshes are now converted to collision-only bodies by the Godot importer.
+The 711→691 visual-mesh reduction is expected: the 20 former collision render meshes are converted to collision-only bodies by the Godot importer.
 
-## Current CP4 disposition
+### Revision 10 — bounded CharacterBody traversal
 
-**Empirically qualified in Godot 4.7.2 validation runtime:**
-
-- exact GLB transport/hash recovery;
-- native PackedScene import;
-- critical visual-name preservation;
-- source-authored `_colonly` collision conversion;
-- 20 static bodies / 20 collision shapes;
-- one real physics raycast against the floor module;
-- 4 m Blender snap assembly with seven zero-gap seam checks.
-
-**Still open before global static-asset DoD:**
-
-- full player-controller traversal and interaction playtest;
-- production-engine decision (Godot validation is not an engine-selection claim);
-- direct visual/art-direction approval;
-- close/mid/far review in production renderer;
-- measured tris/draws/texture residency/memory/GPU cost on declared target hardware;
-- HLOD/instancing runtime qualification.
-
-Evidence authority: `art_source/vanta/evidence/godot_rev9_native_qualification.json`.
-
-## Revision 10 — bounded CharacterBody traversal
-
-Revision 10 is a texture-payload repair; geometry and the revision-9 `_colonly` collision contract were intentionally left unchanged. The collision slice was nevertheless regression-tested in pinned Godot 4.7.2 with a real `CharacterBody3D` rather than only a ray query.
+Revision 10 retained the revision-9 geometry/collision contract and regression-tested it in pinned Godot 4.7.2 with a real `CharacterBody3D` rather than only a ray query.
 
 Two independent executions (GitHub Actions run `34722670811`, job `103631274506`, plus the Higgsfield Linux sandbox) reached the same bounded result on the CP4 test-yard floor:
 
@@ -97,9 +74,99 @@ Two independent executions (GitHub Actions run `34722670811`, job `103631274506`
 - capsule `CharacterBody3D` settled on the authored floor;
 - target reached;
 - 323 physics frames recorded on-floor;
-- travel ratio `0.969267592149354` across the 12 m floor collider;
-- no claim is made for the full VANTA route, interactions, combat, HLOD or target-hardware performance.
+- travel ratio `0.969267592149354` across the 12 m floor collider.
 
-**CP4 truth after rev10:** `EMPIRICALLY_QUALIFIED_BOUNDED_CHARACTERBODY_TRAVERSAL_GODOT_4_7_2`. Static import/collision and the representative floor traversal are qualified; full gameplay traversal and performance remain open.
+**CP4 truth through rev10:** `EMPIRICALLY_QUALIFIED_BOUNDED_CHARACTERBODY_TRAVERSAL_GODOT_4_7_2`.
 
 Evidence authority: `art_source/vanta/evidence/rev10_texture_engine_qualification.json`.
+
+## Revision 11 — lossless source dedup + kilometre-scale QA traversal spine
+
+Mutation `vanta-rev11-dedup-qa-traversal-spine-003` advanced the remote source from rev10 to rev11 after two prior attempts correctly failed before commit on guard defects. Those failed operations are negative execution history, not revisions.
+
+Exact remote rev11 provider checkpoint currently available:
+
+- `.blend`: **10,162,134 B** · etag `12c55a03e326a0a3e4df352875d065dc`;
+- GLB: **8,823,976 B** · etag `86720d1b76c01894746cbded53510bc6`;
+- binary SHA256 recovery for rev11 remains pending a permitted manual native canary; do not infer it from etag.
+
+### Source datablock dedup
+
+The dedup is deliberately narrower than the complete duplicate-geometry inventory. It only relinks repetitive/procedural families when local geometry, topology, smoothing, material slots, UV contents and semantic mesh attributes match exactly. Editor-only selection attributes are ignored. FERRUM, DRAV, terrain cells, shape-key meshes and unsupported/cross-semantic users are excluded.
+
+Measured result:
+
+- used mesh datablocks before: **635**;
+- after dedup: **412**;
+- after adding the two QA-spine meshes: **414**;
+- objects relinked to shared geometry: **255**;
+- dedup groups committed: **33**;
+- redundant mesh datablocks removed: **223**.
+
+Representative linked families after commit:
+
+- iron sleepers: **44×** one mesh;
+- crane braces: **28×**;
+- modular stair steps: **20×**;
+- ring hull ribs: **18×**;
+- crane ladder rungs: **14×**;
+- modular rail posts: **12×**;
+- route pylons: **11×**.
+
+This is a source-structure optimization. It does **not** by itself claim lower Godot draw calls, HLOD qualification or target-GPU performance.
+
+### QA traversal spine
+
+The old macro route consisted of 11 visual pylons whose bases were all at `z=0`, while the proxy terrain beneath them stepped through top elevations of approximately `+12`, `-4`, `+8` and `+20 m`. It was therefore not a valid traversable surface.
+
+Rev11 adds an explicitly diagnostic route:
+
+- visible `QA_VAN_ROUTE_SPINE`;
+- collision-only `COL_VAN_QA_ROUTE_SPINE_colonly`;
+- collection `24_QA_TRAVERSAL_SPINE`;
+- `CAM_QA_ROUTE_SPINE`;
+- length **10,200 m**;
+- width **12 m**;
+- sampling step **50 m**;
+- 410 vertices / 204 quads on both visual and collision meshes;
+- maximum authored diagnostic slope **4.573921259900861°**;
+- 200 m ramps bridge the macro proxy terrain discontinuities;
+- the 11 route pylons now rest on the QA profile with base elevations `[13, 5, -3, -3, -3, 3, 9, 9, 9, 15, 21] m`.
+
+Precommit temporary GLB structural validation found **626 meshes / 807 nodes / 20 materials / 13 images / 21 `_colonly` nodes**, including both QA route objects. The committed provider GLB has its own byte size above and must not be conflated with the temporary export bytes.
+
+**Important truth boundary:** this spine is `QA_ONLY_NOT_LEVEL_ART`. It tests kilometre-scale collision/traversal and coordinate behavior; it is not the final Puerto→Anillo authored route.
+
+### Native rev11 traversal status
+
+`main` commit `26ae20f5d1b47d1efa0d54b20124ed93cbc0b43e` quarantines automatic gauntlet triggers to `workflow_dispatch` for cost control. The connected GitHub surface in this session can inspect and rerun existing jobs but cannot create a new manual dispatch. Therefore the 10.2 km CharacterBody canary is **not executed yet** and is classified:
+
+`ENV_BLOCKED_BY_MANUAL_CI_PROMOTION_POLICY`
+
+Do not substitute the rev10 12 m traversal receipt for rev11.
+
+## Current CP4 disposition
+
+**Empirically qualified:**
+
+- 4 m modular snap assembly and zero-gap yard seams;
+- native rev9 static collision conversion;
+- rev10 bounded 12 m CharacterBody traversal.
+
+**Source/GLB validated in rev11:**
+
+- guarded lossless datablock sharing for repetitive families;
+- 10.2 km diagnostic visual/collision spine;
+- 21st `_colonly` route collider in structural GLB validation;
+- macro pylon contact correction against the QA profile.
+
+**Still open:**
+
+- manual Godot 4.7.2 canary on the exact committed rev11 GLB for the 10.2 km spine;
+- authored final VANTA route and interaction/combat traversal;
+- direct visual/art-direction approval;
+- HLOD/runtime-instancing qualification;
+- measured frame time, draw calls, residency, memory and GPU cost on declared target hardware;
+- final engine selection.
+
+Evidence authority: `art_source/vanta/evidence/rev11_dedup_route_visual_portability.json`.
