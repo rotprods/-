@@ -1,0 +1,90 @@
+{
+  "schema_version": 1,
+  "project": "EXOVANT 2950",
+  "world_id": "leviathan",
+  "claim_id": "CLM-W10-WORLD-LEVIATHAN-001",
+  "agent_id": "AGENT-LEVIATHAN-10",
+  "source": {
+    "path": "art_source/worlds/leviathan/tools/build_stable_traversal_ribbon_v1.py",
+    "blob_sha": "5161a2f27c77136c4987bd9e3cfeed0f6728e021",
+    "stage": "STABLE_TRAVERSAL_RIBBON_V1"
+  },
+  "primary": {
+    "project_id": "2577a7b6-ebd7-4d31-a645-620e4b73a95d",
+    "revision": 11,
+    "blend_bytes": 4869637,
+    "blend_etag": "7ccfdd11e07d845b3e962a802bdefa32",
+    "glb_bytes": 5639948,
+    "glb_etag": "3ab7e46dc7e2102ca709600b83269ecb"
+  },
+  "cold_replay": {
+    "project_id": "37a931c7-f2e6-46bc-9be0-26077e5de1c1",
+    "revision": 9,
+    "blend_bytes": 4869637,
+    "blend_etag": "1df2bc94b4ef09c3bb0c21f0f81c0c3e",
+    "glb_bytes": 5643252,
+    "glb_etag": "1a8147165c232f098e5e01ede32d3cf0",
+    "binary_identity_required": false
+  },
+  "geometry_qa": {
+    "ribbon_vertices": 212,
+    "ribbon_polygons": 210,
+    "ribbon_triangles": 420,
+    "degenerate_polygons": 0,
+    "width_m_min": 7.999993,
+    "width_m_max": 8.000008,
+    "width_status": "PROPOSAL_DERIVED_FROM_VISUAL_TUBE_CLEARANCE",
+    "thickness_m": 0.5,
+    "centerline_points": 53,
+    "centerline_length_m": 541.256,
+    "top_z_range_m": [5.0, 7.0],
+    "max_segment_slope_percent": 7.6923,
+    "human_reference_width_m": 0.55,
+    "ribbon_width_human_multiple": 14.545
+  },
+  "visual_tube_clearance": {
+    "visual_radius_m": 6.0,
+    "main_path_min_side_margin_m": 1.0513,
+    "main_path_max_side_margin_m": 1.9161,
+    "worst_vertical_offset_m": 3.238,
+    "worst_available_half_chord_m": 5.0513,
+    "ribbon_halfwidth_m": 4.0,
+    "ingress_side_margin_range_m": [1.1962, 1.2161],
+    "main_within_visual_tube": true,
+    "ingress_within_visual_tube": true
+  },
+  "soma_contact": {
+    "arena_dims_m": [58.0, 58.0, 6.0],
+    "arena_top_z_m": 7.0,
+    "ribbon_end_world_m": [205.0, -47.0, 7.0],
+    "end_inside_arena_xy": true,
+    "end_z_delta_to_arena_top_m": 0.0
+  },
+  "collision_contract": {
+    "ribbon_collection": "40_COLLISION_PROXY",
+    "ribbon_collision_role": "STABLE_CONTINUOUS_ORGANIC_ROUTE_RIBBON",
+    "ingress_visual_collection": "27_TRAVERSAL_INGRESS_FIX",
+    "ingress_visual_collision_authority": "NONE_VISUAL_ONLY",
+    "visual_objects_in_collision": [],
+    "runtime_capsule_nav_validation": false
+  },
+  "delta_reproducibility": {
+    "base_receipt": "primary r10 <-> cold r8 canonical evaluated visual surface already matched before this stage",
+    "base_object_count_excluding_delta_primary": 381,
+    "base_object_count_excluding_delta_cold": 381,
+    "ribbon_surface_sha256_primary": "65326c41be09e967561907938cf994e389cd1c28ad33390815b5fdd85dde253a",
+    "ribbon_surface_sha256_cold": "65326c41be09e967561907938cf994e389cd1c28ad33390815b5fdd85dde253a",
+    "ingress_surface_sha256_primary": "3f8b05130e849f7fec36b059d6f11c3fab16cd43b74c8a80dbec446d8fd0e432",
+    "ingress_surface_sha256_cold": "3f8b05130e849f7fec36b059d6f11c3fab16cd43b74c8a80dbec446d8fd0e432",
+    "delta_match": true
+  },
+  "truth": {
+    "stable_route_continuity_structural_pass": true,
+    "runtime_traversal_pass": false,
+    "final_gameplay_width_claimed": false,
+    "final_slope_approval_claimed": false,
+    "engine_import_pass": false,
+    "target_hardware_performance_pass": false
+  },
+  "status": "STATIC_CONTINUITY_FIX_REPRODUCIBLE_NOT_RUNTIME_QUALIFIED"
+}
