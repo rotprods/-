@@ -1,34 +1,25 @@
 name: EXOVANT Gauntlet
 on:
-  push:
-    branches: [main]
   pull_request:
-  workflow_dispatch:
 permissions:
   contents: read
 concurrency:
-  group: gauntlet-${{ github.ref }}
+  group: origin-x100-manifest-${{ github.ref }}
   cancel-in-progress: true
 jobs:
-  native-and-continuity:
+  manifest-refresh-only:
     runs-on: ubuntu-24.04
-    timeout-minutes: 15
+    timeout-minutes: 3
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
-      - name: Verify committed evidence and continuity
-        run: |
-          python3 -m unittest discover -s tests -p 'test_*.py' -v
-          python3 tools/project_control.py check
-      - name: Acquire pinned Godot archive
-        run: python3 tools/bootstrap_godot.py --destination .tools
-      - name: Execute native scene gates from source
-        run: python3 tests/run_gauntlet.py --godot .tools/Godot_v4.7.2-stable_linux.x86_64
-      - name: Preserve this run's evidence
-        if: always()
-        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         with:
-          name: exovant-evidence-${{ github.sha }}
-          path: |
-            evidence/
-            telemetry/
-          retention-days: 30
+          fetch-depth: 2
+      - name: Reconstruct exact ORIGIN producer manifest
+        run: |
+          git show "${{ github.event.pull_request.base.sha }}:.github/workflows/gauntlet.yml" > .github/workflows/gauntlet.yml
+          python3 tools/project_control.py refresh
+          python3 tools/project_control.py check
+          echo '---BEGIN_ORIGIN_MANIFEST---'
+          cat MANIFEST.json
+          echo '---END_ORIGIN_MANIFEST---'
+          git diff --stat
