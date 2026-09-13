@@ -1,0 +1,82 @@
+{
+  "schema_version": 1,
+  "claim_id": "CLM-SYLVA-MACRO-001",
+  "agent_id": "AGENT-SYLVA-MACRO-01",
+  "writer_session": "20260913-SYLVA-R14-WRITER-001",
+  "writer_fence_id": "SYLVA-MACRO-WRITER-EPOCH-3-R14-20260913",
+  "primary_project_id": "05dce898-753d-4ff6-a4b0-31757dc868d8",
+  "accepted_revision": 15,
+  "scene_sequence": 0,
+  "status": "PASS_METADATA_POLICY_NORMALIZATION",
+  "hierarchy_contract_retained": "SYLVA_STREAM_HIERARCHY_R14",
+  "prefetch_policy_contract": "SYLVA_PREFETCH_POLICY_R15",
+  "build_status": "WAVE1M_PREFETCH_POLICY_NORMALIZATION_R15",
+  "remote_artifacts": {
+    "blend": {"size_bytes": 2848052, "etag": "d95ef102d90bf84db182c8d8be85b1bd"},
+    "glb": {"size_bytes": 1218436, "etag": "d5de5a68ca567167b1f696ceefdba088"}
+  },
+  "geometry_invariance": {
+    "baseline_revision": 13,
+    "baseline_sha256": "003760384ade90b7b0b792de6850a2eae90322d22f2ca246f8211395cb3e6224",
+    "revision_14_sha256": "003760384ade90b7b0b792de6850a2eae90322d22f2ca246f8211395cb3e6224",
+    "revision_15_sha256": "003760384ade90b7b0b792de6850a2eae90322d22f2ca246f8211395cb3e6224",
+    "unchanged": true,
+    "scope": "all MESH/CURVE world transforms, mesh vertices/polygons, curve splines, material names, modifier names/types and hide_render"
+  },
+  "policy": {
+    "state": "RUNTIME_EXPERIMENT_REQUIRED",
+    "approved": false,
+    "candidates": [
+      "P0_CURRENT_ONLY",
+      "P1_CURRENT_PLUS_4",
+      "P2_CURRENT_PLUS_8",
+      "P3_DIRECTIONAL_ROUTE_WINDOW"
+    ],
+    "primary_runtime_candidate": "P3_DIRECTIONAL_ROUTE_WINDOW",
+    "selection_rule": "PROMOTE_LEAST_RESIDENT_POLICY_THAT_PASSES_RUNTIME_VISUAL_COLLISION_TRAVERSAL_GATES",
+    "current_plus8_world_fraction_upper_bound_observed": 0.728,
+    "experiment_source": "art_source/worlds/sylva_prime/macro/PREFETCH_POLICY_R14_EXPERIMENT.json",
+    "pressure_source": "art_source/worlds/sylva_prime/macro/qa/R14_PREFETCH_PRESSURE_STUDY.json"
+  },
+  "streaming": {
+    "l2_supercells": 4,
+    "l3_cells": 16,
+    "terrain_render_tiles": 16,
+    "terrain_collision_tiles": 16,
+    "hero_residency_granularity": "L3_ONLY",
+    "bosque_resident_l3_cells": 4,
+    "bosque_l2_coverage_count": 4,
+    "l2_full_residency_implied": false
+  },
+  "hero_contracts": {
+    "PUERTO": {"resident_l3": ["X0Y1", "X1Y1"], "l2_coverage": ["L2_X0Y0"], "approved_prefetch": false},
+    "BOSQUE": {"resident_l3": ["X1Y1", "X1Y2", "X2Y1", "X2Y2"], "l2_coverage": ["L2_X0Y0", "L2_X0Y1", "L2_X1Y0", "L2_X1Y1"], "approved_prefetch": false},
+    "VESPER": {"resident_l3": ["X2Y2", "X3Y2"], "l2_coverage": ["L2_X1Y1"], "approved_prefetch": false}
+  },
+  "route_collision_regression": {
+    "SYLVA_COL_ROUTE_00": {"verts": 28, "faces": 26, "nonmanifold_edges": 0, "degenerate_faces": 0},
+    "SYLVA_COL_ROUTE_01": {"verts": 36, "faces": 34, "nonmanifold_edges": 0, "degenerate_faces": 0},
+    "SYLVA_COL_ROUTE_02": {"verts": 32, "faces": 30, "nonmanifold_edges": 0, "degenerate_faces": 0},
+    "SYLVA_COL_ROUTE_03": {"verts": 36, "faces": 34, "nonmanifold_edges": 0, "degenerate_faces": 0},
+    "pass": true
+  },
+  "scope_regression": {
+    "legacy_monolithic_terrain_present": false,
+    "provider_rootkit_meshes_copied": 0,
+    "geometry_delta": false
+  },
+  "r14_history": {
+    "failed_operation": "sylva-r14-stream-hierarchy-execute-v2",
+    "failure_class": "REPORTING_WRAPPER_FAIL_ZERO_REMOTE_MUTATION",
+    "failure_detail": "result was None when wrapper attempted result.update after the in-memory build; provider did not commit a revision",
+    "reconcile_operation": "sylva-r14-postfail-reconcile",
+    "reconcile_result": "revision 13 retained, R14 metadata absent, geometry fingerprint unchanged",
+    "successful_operation": "sylva-r14-stream-hierarchy-execute-v3",
+    "revision_after": 14,
+    "postcommit_qa": "sylva-r14-postcommit-gauntlet",
+    "semantic_bug_found": "ADJACENT_8 encoded as active policy although later pressure study showed it was only a candidate",
+    "r15_fix_operation": "sylva-r15-prefetch-policy-normalization-v1",
+    "r15_qa_operation": "sylva-r15-final-gauntlet"
+  },
+  "truth_boundary": "PASS proves source-scene hierarchy/policy metadata and geometry invariance. It does not prove runtime streaming latency, memory, pop-in, engine import, human art approval or target-hardware performance."
+}
