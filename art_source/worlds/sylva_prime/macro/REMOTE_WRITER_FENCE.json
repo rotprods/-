@@ -2,14 +2,14 @@
   "schema_version": 1,
   "claim_id": "CLM-SYLVA-MACRO-001",
   "primary_project_id": "05dce898-753d-4ff6-a4b0-31757dc868d8",
-  "accepted_revision_before_wave": 13,
+  "accepted_revision": 15,
+  "accepted_scene_sequence": 0,
   "writer_fence_epoch": 3,
   "writer_fence_id": "SYLVA-MACRO-WRITER-EPOCH-3-R14-20260913",
   "owner": "AGENT-SYLVA-MACRO-01",
   "writer_session": "20260913-SYLVA-R14-WRITER-001",
   "branch": "art/world-sylva-prime-macro-001",
-  "status": "ACTIVE_SINGLE_WRITER_R14",
-  "reason": "Published fleet registry generation 8 now reports CLM-SYLVA-MACRO-001 active with owner ACK epoch 1. Main was synchronized one-way through PR #26. This epoch authorizes exactly one coherent R14 metadata/hierarchy wave on the primary project, subject to fresh provider guards immediately before mutation.",
+  "status": "CLOSED_ACCEPTED_R15",
   "fleet_activation": {
     "registry_generation": 8,
     "claim_status": "active",
@@ -21,28 +21,30 @@
     "main_to_branch_sync_pr": 26,
     "branch_behind_after_sync": 0
   },
-  "accepted_prior_continuation": {
-    "r12_contract": "SYLVA_TERRAIN_STREAM_R12",
-    "r13_contract": "SYLVA_STREAM_MEMBERSHIP_R13",
-    "r13_receipt": "art_source/worlds/sylva_prime/macro/qa/R13_STREAMING_WORLD_PARTITION.json",
-    "independent_qa_pass": true
+  "accepted_wave": {
+    "r14_hierarchy_contract": "SYLVA_STREAM_HIERARCHY_R14",
+    "r15_prefetch_policy_contract": "SYLVA_PREFETCH_POLICY_R15",
+    "r14_revision": 14,
+    "r15_revision": 15,
+    "geometry_fingerprint_before": "003760384ade90b7b0b792de6850a2eae90322d22f2ca246f8211395cb3e6224",
+    "geometry_fingerprint_after": "003760384ade90b7b0b792de6850a2eae90322d22f2ca246f8211395cb3e6224",
+    "geometry_unchanged": true,
+    "qa_receipt": "art_source/worlds/sylva_prime/macro/qa/R15_PREFETCH_POLICY_NORMALIZATION.json",
+    "production_prefetch_policy_approved": false
   },
-  "r14_scope": {
-    "target_contract": "SYLVA_STREAM_HIERARCHY_R14",
-    "geometry_mutation_allowed": false,
-    "metadata_hierarchy_mutation_allowed": true,
-    "backend_selection_allowed": false,
-    "hlod_geometry_allowed": false,
-    "provider_root_instancing_allowed": false,
-    "orbital_mutation_allowed": false
+  "historical_failure": {
+    "operation_id": "sylva-r14-stream-hierarchy-execute-v2",
+    "classification": "REPORTING_WRAPPER_FAIL_ZERO_REMOTE_MUTATION",
+    "reconciled": true,
+    "successful_replacement": "sylva-r14-stream-hierarchy-execute-v3"
   },
-  "mutation_rules": [
-    "Exactly one writer session owns the primary project for this wave.",
-    "Immediately before mutation read project revision, sceneSequence and activeOperationId; require revision 13, sceneSequence 0 and no active operation.",
-    "If revision or sceneSequence differs, freeze and reconcile rather than guessing.",
-    "R14 may add hierarchy/prefetch/residency metadata only; no terrain, route, collision, region or hero geometry movement.",
-    "Persist generator, QA receipt, STATUS, HANDOFF, claim and this fence after accepted mutation before another writer epoch.",
-    "A second agent must remain read-only or use a separate project plus atomic subclaim."
+  "next_writer_rules": [
+    "No new mutation is authorized by this closed epoch.",
+    "Before a new wave, reread latest main, fleet registry, claim, this fence and provider project state.",
+    "Open a new monotonically increasing writer_fence_epoch and nominate exactly one writer session.",
+    "Require current revision 15, sceneSequence 0 and no active operation unless a later accepted checkpoint supersedes them.",
+    "Any unexpected remote revision advance freezes mutation until reconciled.",
+    "A second agent remains read-only or uses a separate registered remote project plus atomic subclaim."
   ],
   "orbital_project": {
     "project_id": "c796230b-0463-4e17-9446-2e746c5c4933",
@@ -50,5 +52,5 @@
     "status": "EMPTY_PENDING_FLEET_REGISTRY",
     "mutation_allowed": false
   },
-  "truth": "Cooperative single-writer fence for R14. It does not create a provider-level ACL; unexpected remote advancement re-freezes mutation."
+  "truth": "Writer epoch 3 is closed after accepted R15. This cooperative fence documents single-writer continuity; it is not a provider-level ACL."
 }
