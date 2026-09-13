@@ -11,24 +11,25 @@ fleet_registry_state_observed: reserved
 fleet_ack_pending_integrator_transition: true
 base_branch: main
 base_sha_at_claim: 4c2fa044080004609ea6df45f34b2a784536507a
-latest_main_observed: be6162064ceb475d5f7a7aa1388a7873f25d3258
+latest_main_observed: 26ae20f5d1b47d1efa0d54b20124ed93cbc0b43e
 branch: art/world-leviathan-001
 created_at: 2026-09-12T21:23:00+02:00
-last_heartbeat: 2026-09-12T23:24:00+02:00
+last_heartbeat: 2026-09-13T12:57:00+02:00
 remote_project:
   project_id: 2577a7b6-ebd7-4d31-a645-620e4b73a95d
-  observed_revision: 10
+  observed_revision: 11
   observed_scene_sequence: 0
   observed_active_operation: null
   working_master_note: >-
-    Revision 10 is revision 8 art plus two deterministic structural instancing stages; no art-shape
-    change is introduced. Order-invariant v2 converges the working master to 98 mesh datablocks.
+    Revision 11 is revision 10 optimized representative art plus deterministic continuous stable
+    traversal ribbon and a visual-only SOMA ingress. The 8 m route width and 7.6923% measured max
+    segment slope remain proposals pending runtime movement/nav validation.
 cold_rebuild_project:
   project_id: 37a931c7-f2e6-46bc-9be0-26077e5de1c1
-  observed_revision: 8
+  observed_revision: 9
   note: >-
-    Independent cold replay also converges to 98 mesh datablocks and the exact same canonical
-    evaluated visual-surface fingerprint as primary revision 10.
+    Independent cold replay preserves the previously certified r10/r8 base and reproduces the r11
+    traversal delta exactly: ribbon and visual-ingress evaluated-surface SHA256 values match primary.
 includes:
   - art_source/worlds/leviathan/**
   - leviathan L0-L5 world scale specification and master blockout
@@ -39,8 +40,9 @@ includes:
   - representative-detail Puerto microset for LEV-ARCH-001, LEV-INF-002 and LEV-INF-003
   - representative-detail Jardines microset for LEV-INF-005, LEV-ECO-001 and LEV-ECO-004
   - representative-detail SOMA encounter environment for LEV-RGN-003, LEV-ENV-002, LEV-ENV-003 and local LEV-INF-003 variants
+  - continuous stable traversal ribbon under LEV-ENV-001 plus visual-only SOMA ingress under LEV-ENV-003
   - engine-neutral UV/PBR/LOD production readiness contract
-  - safe repeated-mesh instancing optimization and reproducibility receipts
+  - safe repeated-mesh instancing optimization, LOD feasibility and reproducibility receipts
 excludes:
   - runtime Godot scenes/scripts and gameplay logic
   - shared STATE/PLAN/HANDOFF/PROGRESS mutation
@@ -55,6 +57,7 @@ owned_paths:
   - production/claims/CLM-W10-WORLD-LEVIATHAN-001.yaml
 published_asset_ids:
   - LEV-RGN-003
+  - LEV-ENV-001
   - LEV-ENV-002
   - LEV-ENV-003
   - LEV-ARCH-001
@@ -73,8 +76,9 @@ collision_audit:
   fleet_registry_status_for_this_claim: reserved
   fleet_registry_ack_for_this_claim: null
   note: >-
-    main@be616206 reconciled five other producer ACKs and metadata-shard policy but LEVIATHAN remains
-    reserved/ack:null. Producer must not self-promote; issue #7 ACK/deltas remain the evidence source.
+    Latest main observed is 26ae20f5 and registry generation 8 still protects LEVIATHAN as
+    reserved/ack:null. Producer ACK plus Jardines/SOMA/traversal deltas are evidence for the
+    integrator; this branch must not mutate main:ops/fleet/registry.json or self-promote.
 dependencies:
   - design/EXOVANT_BIBLIA.md
   - design/EXOVANT_DATA.json
@@ -86,12 +90,12 @@ blocked_by:
   - ENV_BLOCKED_BINARY_TRANSPORT_AND_RUNTIME
 claim_state_note: >-
   Physical planet radius, final production engine, target hardware budgets, final playable-area
-  dimensions and final SOMA anatomy remain unresolved. Primary revision 10 and cold revision 8
-  reproduce the exact same order-invariant evaluated visual surface and both converge to 98 mesh
-  datablocks under optimizer v2. The earlier raw primitive-drift alarm was resolved as internal
-  Blender vertex/face index-order variance, not a geometry/UV/material difference. Runtime import,
-  collision/traversal and direct art review remain open. PR #10's last deeply diagnosed run had all
-  Python tests green and failed only on root MANIFEST aggregation; main@be616206 does not change the
-  exact-root project_control check, so integrator merge-tree refresh remains required. Fleet registry
-  generation 8 still protects this claim as reserved with ack:null; producer ACK/deltas exist in #7
-  and integrator owns transition to active.
+  dimensions and final SOMA anatomy remain unresolved. The optimized r10/r8 representative base is
+  reproducible under the canonical evaluated-surface contract; r11/r9 additionally reproduce the
+  stable traversal ribbon and visual SOMA ingress exactly as a compositional delta. The stable route
+  measures 541.256 m, 8 m proposal width, 1.0513 m minimum side clearance inside the visual tube,
+  7.6923% maximum geometric segment slope and exact z-contact with the SOMA arena top. Runtime
+  capsule/nav/collision traversal and direct art review remain open. Automatic Gauntlet triggers are
+  quarantined on main@26ae20f5 to control CI spend; root MANIFEST must be reconciled on the exact
+  merge tree before a meaningful manual run. Fleet registry generation 8 remains reserved/ack:null;
+  integrator owns transition to active.
