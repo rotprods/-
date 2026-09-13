@@ -1,0 +1,107 @@
+claim_id: CLM-ORIGIN-ARCH-ARCHIVE-001
+parent_claim: CLM-ORIGIN-WORLD-001
+agent_id: AGENT-ORIGIN-WORLD-01
+session_id: SES-20260913-ORIGIN-X100-001
+claim_type: ATOMIC_SUBCLAIM
+scope_key: world-origin/archive-first-wound/structural-architecture-kit
+world_id: origin
+region_id: ARCHIVO-DE-LA-PRIMERA-HERIDA
+category: architecture
+subdomain: reusable_archive_structural_kit
+status: IN_PROGRESS
+truth_state: locally_validated_structural_kit_candidate
+priority: P1
+branch: art/world-origin-001
+created_at: 2026-09-13T20:00:00+02:00
+
+north_star: >-
+  Establish a reusable structural grammar for Archivo de la Primera Herida: recursive load ribs,
+  vault frames, bridge sockets, memory cells, floor/ceiling spines and access thresholds that can
+  form many galleries without consuming Corazón or boss ownership. Dimensions remain proposals
+  until native assembly validates player clearance and camera behavior.
+
+stable_asset_ids:
+  - ORG_ARC_RIB_WALL_A
+  - ORG_ARC_RIB_WALL_B
+  - ORG_ARC_RIB_WALL_C
+  - ORG_ARC_VAULT_FRAME_A
+  - ORG_ARC_VAULT_FRAME_B
+  - ORG_ARC_VAULT_FRAME_C
+  - ORG_ARC_BRIDGE_SOCKET_A
+  - ORG_ARC_BRIDGE_SOCKET_B
+  - ORG_ARC_BRIDGE_SOCKET_C
+  - ORG_ARC_MEMORY_CELL_A
+  - ORG_ARC_MEMORY_CELL_B
+  - ORG_ARC_MEMORY_CELL_C
+  - ORG_ARC_FLOOR_SPINE_A
+  - ORG_ARC_FLOOR_SPINE_B
+  - ORG_ARC_CEILING_RIB_A
+  - ORG_ARC_CEILING_RIB_B
+  - ORG_ARC_CEILING_RIB_C
+  - ORG_ARC_THRESHOLD_A
+  - ORG_ARC_THRESHOLD_B
+  - ORG_ARC_ARCHIVE_CORE_SHELL_A
+  - ORG_ARC_ARCHIVE_CORE_SHELL_B
+
+family_counts:
+  archive_rib_wall: 3
+  archive_vault_frame: 3
+  archive_bridge_socket: 3
+  archive_memory_cell: 3
+  archive_floor_spine: 2
+  archive_ceiling_rib: 3
+  archive_threshold: 2
+  archive_core_shell: 2
+
+includes:
+  - reusable structural modules
+  - causal pristine / used / scarred / repaired / sealed / dormant states
+  - 21 simplified collision proxies
+  - player-scale preview assembly proof
+  - UV0 and clean transforms
+  - portable SPOT / POINT lighting for GLB inspection
+  - LOD strategy metadata
+
+excludes:
+  - final district/world placement
+  - Corazón de EXOVANT
+  - final boss arena or boss assets
+  - final narrative-state logic
+  - final texture maps
+  - target-hardware claims
+
+proposal_constraints:
+  dimensions: all authored module widths/heights are proposal values until engine assembly
+  final_world_placement: false
+  boss_or_heart_included: false
+
+remote_blender:
+  project_id: 9bff5b6c-35a5-4db9-92de-4008a0fc3f4e
+  revision: 2
+  qa_operation: origin-archive-x100-qa-final-007
+  qa_result: PASS
+  stable_asset_count: 21
+  production_mesh_count: 94
+  collision_proxy_count: 21
+  production_approx_triangles: 8688
+  blend_etag: a48cad97a636328a547e93b5c31c8547
+  glb_etag: c05c953804c04f187a10025d4dfe4a1f
+
+checkpoint_completed:
+  - exact stable ID coverage PASS
+  - one collision proxy per stable asset PASS
+  - UV coverage PASS
+  - zero-area UV check PASS
+  - transforms / semantic tags / materials PASS
+  - delivery-camera framing PASS
+  - GLB portable-light contract PASS after replacing AREA lights in revision 2
+
+pending_gates:
+  - native engine assembly / traversal
+  - final world placement
+  - real LOD1 / LOD2 geometry and HLOD test
+  - final texture maps
+  - target-hardware performance
+  - human GATE-ART
+
+claim_status: KEEP
