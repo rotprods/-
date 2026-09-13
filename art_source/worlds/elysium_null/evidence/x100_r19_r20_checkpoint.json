@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "receipt_id": "ART-ELYSIUM-001-X100-R19-R20",
+  "date": "2026-09-13",
+  "world": "ELYSIUM NULL",
+  "project_id": "00152eea-2da0-40ec-8666-78d6764c718f",
+  "r19": {
+    "operation": "ART-ELYSIUM-001.x100-r19b-domestic-kit",
+    "status": "SUCCEEDED",
+    "revision": 19,
+    "domestic_family": {"wall_families": 6, "furniture_families": 6, "lighting_families": 3, "climate_families": 2, "profiles": 4, "states": 4, "valid_wall_configs": 60, "furniture_sets": 20, "credible_config_lower_bound": 19200, "full_recombination_bound": 115200, "assembled_room_examples": 4, "kit_objects": 128, "kit_meshes": 113, "vertices": 1048, "polygons": 750, "lod_meshes": 6, "collision_meshes": 4},
+    "visual_query": {"operation": "ART-ELYSIUM-001.x100-r19-domestic-visual-qa", "room": "DOM_ROOM_02_MAKER", "state": "REPAIRED", "service_face": true, "repair_patch": true, "door_clear_m": [2.2, 2.72], "player_capsule_m": [0.76, 1.85], "door_width_slack_m": 1.44, "door_height_slack_m": 0.87, "artifact_id": "c7494d89c432809065466a2a53bfa383"},
+    "known_failure_before_success": "Initial R19 operation referenced architectural NICHE as a furniture node and failed without committing a revision; graph typing was corrected before R19b."
+  },
+  "r20": {
+    "operation": "ART-ELYSIUM-001.x100-r20-maintenance-root-family",
+    "status": "SUCCEEDED",
+    "revision": 20,
+    "family": {"sizes": 3, "states": 4, "routing_patterns": 3, "attachment_types": 4, "credible_configurations": 144, "render_meshes": 65, "vertices": 2466, "polygons": 2206, "collision_meshes": 3, "lod_meshes": 6}
+  },
+  "non_claims": ["No target-engine traversal/import pass for R19/R20", "No GATE-ART", "Profile archetypes are reversible proposals", "R20 is not the complete ELYSIUM ecology graph", "WORLD_COMPLETENESS estimate is heuristic, not canon"]
+}

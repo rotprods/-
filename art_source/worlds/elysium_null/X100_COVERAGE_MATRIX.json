@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "world": "elysium",
+  "owner": "ART-ELYSIUM-001",
+  "remote_revision": 20,
+  "estimate_kind": "HEURISTIC_GEOMETRIC_MEAN_NOT_CANON",
+  "world_completeness_estimate": 0.3479,
+  "classification": "PLAYABLE_FOUNDATION",
+  "dimensions": {
+    "macro_world": {"score": 0.15, "evidence": "world-scale habitat canon known; total envelope/topology intentionally unresolved"},
+    "meso_architecture": {"score": 0.42, "evidence": "Avenida/Reception modular grammar + hero microset + first Casas domestic kit"},
+    "micro_assets": {"score": 0.28, "evidence": "service interfaces, domestic furniture prototypes, hero repair/detail; cultural breadth still sparse"},
+    "ecology": {"score": 0.28, "evidence": "geometric maintained vegetation + R20 maintenance-root family; fauna/ecology graph mostly open"},
+    "civilization": {"score": 0.38, "evidence": "construction/manufacturing language and R19 ancient-profile domestic grammar"},
+    "gameplay": {"score": 0.24, "evidence": "EDEN state geometry, code-derived player clearances; native ELYSIUM traversal still pending"},
+    "material_causality": {"score": 0.58, "evidence": "layered panel construction, joints, repairs, packed portable PBR candidates"},
+    "variation": {"score": 0.60, "evidence": "R19 and R20 constrained combinatorics replace cosmetic randomization"},
+    "temporal_states": {"score": 0.38, "evidence": "domestic and maintenance-root state contracts; world-history coverage not broad enough"},
+    "storytelling": {"score": 0.28, "evidence": "localized human repair, domestic repair/abandonment witnesses; mission prop sets open"},
+    "audio_visual_language": {"score": 0.18, "evidence": "visual rhythm and lighting language present; systematic audio hooks not represented in 3D manifests"},
+    "optimization": {"score": 0.40, "evidence": "shared meshes, portable PBR, collision separation, vegetation/domestic/root LOD candidates"},
+    "reusability": {"score": 0.72, "evidence": "modular architecture plus high-recombination domestic/root systemic families"},
+    "qa": {"score": 0.44, "evidence": "metric/structural/render audits and CI history; engine/GATE-ART/human review open"}
+  },
+  "highest_value_gaps": [
+    {"rank": 1, "domain": "macro_world", "reason": "lowest 3D production score and multiplicative blocker; needs reversible L0/L1 topology without inventing natural-planet radius"},
+    {"rank": 2, "domain": "audio_visual_language", "reason": "low score; 3D branch can at least publish spatial audio/lighting hooks while audio implementation remains external"},
+    {"rank": 3, "domain": "gameplay", "reason": "native engine traversal/import is still a hard qualification gap"},
+    {"rank": 4, "domain": "micro_assets_storytelling", "reason": "cultural object families and mission evidence sets are still sparse"},
+    {"rank": 5, "domain": "ecology", "reason": "R20 raises infrastructure ecology but pollen automaton, porcelain bird and index butterfly remain open"}
+  ],
+  "x100_systemic_receipts": {
+    "domestic_r19": {"valid_wall_configs": 60, "furniture_sets": 20, "profiles": 4, "states": 4, "credible_lower_bound": 19200, "full_bound_with_lighting_climate": 115200},
+    "maintenance_root_r20": {"sizes": 3, "states": 4, "routing_patterns": 3, "attachment_types": 4, "credible_configurations": 144}
+  }
+}
