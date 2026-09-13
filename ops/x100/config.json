@@ -27,12 +27,30 @@
     "qa"
   ],
   "thresholds": {
-    "blockout": [0, 15],
-    "playable_foundation": [15, 35],
-    "production_world": [35, 65],
-    "dense_aaa_world": [65, 85],
-    "aaaa_candidate": [85, 95],
-    "release_candidate": [95, 100]
+    "blockout": [
+      0,
+      15
+    ],
+    "playable_foundation": [
+      15,
+      35
+    ],
+    "production_world": [
+      35,
+      65
+    ],
+    "dense_aaa_world": [
+      65,
+      85
+    ],
+    "aaaa_candidate": [
+      85,
+      95
+    ],
+    "release_candidate": [
+      95,
+      100
+    ]
   },
   "gradient": {
     "epsilon": 0.025,
@@ -55,7 +73,14 @@
     "slop_risk": 2.0,
     "technical_cost": 0.5
   },
-  "scale_levels": ["L0", "L1", "L2", "L3", "L4", "L5"],
+  "scale_levels": [
+    "L0",
+    "L1",
+    "L2",
+    "L3",
+    "L4",
+    "L5"
+  ],
   "hero_support_systemic_target": {
     "hero": 0.05,
     "support": 0.2,
@@ -68,7 +93,10 @@
     "production_grade_min": 100
   },
   "fidelity": {
-    "hero_tiers": ["S", "A"],
+    "hero_tiers": [
+      "S",
+      "A"
+    ],
     "image_grounded_required_unless_waived": true,
     "pipeline": [
       "LOOK_LOCK",
