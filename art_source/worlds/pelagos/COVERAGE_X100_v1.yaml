@@ -1,0 +1,130 @@
+world: PELAGOS
+protocol: EXOVANT_X100_WORLD_DENSITY_v1
+checkpoint: PELAGOS-X100-COVERAGE-AUDIT-R30
+blender_revision: 30
+status_label: PLAYABLE_FOUNDATION
+estimated_completeness_range: "25-35%"
+qualification: "Production estimate, not engine-qualified"
+
+scene_evidence:
+  objects: 1382
+  meshes: 1048
+  curves: 208
+  armatures: 9
+  materials: 28
+  images: 21
+  collections: 44
+
+scale_layers:
+  L0_planetary:
+    state: FOUNDATION_ONLY
+    evidence: "bathymetry + water proxy + 2.2 km authored cell; planetary numbers/world macro remain mainly Bible/ADR data"
+    gap: "distant vista, atmosphere/weather systems, macro biome transitions, megastructure language"
+  L1_regional:
+    state: PLAYABLE_FOUNDATION
+    evidence: "Mercado, Coro, Fosa triangle; region beacons/routes; bathymetric differentiation"
+    gap: "regional transition families, transport/current corridors, vista composition, stateful routing"
+  L2_district:
+    state: FOUNDATION
+    evidence: "Mercado, Coro, Fosa/THALASSA area are identifiable"
+    gap: "district subzones, service areas, occupation logic, lived-in support systems"
+  L3_architectural:
+    state: UNEVEN_FOUNDATION
+    evidence: "Mercado structural kit + Fosa arena + reef interface proxies"
+    gap: "interiors, pressure transitions, listening/translation spaces, market stalls/shell variants, state variants"
+  L4_prop_ecology:
+    state: ECOLOGY_STRONG_PROPS_WEAK
+    evidence: "hero fauna/coral systems exist; heuristic prop inventory only ~9 meaningful families / ~34 objects"
+    gap: "daily-life, maintenance, storage, custody, navigation/consent, funeral/trade props"
+  L5_microdetail:
+    state: HERO_LOCAL_ONLY
+    evidence: "hero assets contain mechanical/sensory microdetail; material library exists"
+    gap: "world-distributed causal wear, repair history, deposits, contact wear, manufacturing variation"
+
+domain_matrix:
+  architecture:
+    state: FOUNDATION
+    true_family_note: "keyword count inflates family count because individual proxies/IDs are not independent production families"
+    priority: P1
+  infrastructure:
+    state: FOUNDATION
+    priority: P1
+  flora:
+    state: NEAR_ZERO
+    priority: P1
+    note: "Pelagos is reef/ocean; 'flora' may resolve as sessile ecology/algae/mats rather than terrestrial plants"
+  fauna:
+    state: STRONG_FOUNDATION
+    canonical_families: 4
+    priority: P2
+  props:
+    state: CRITICAL_GAP
+    observed_family_count_heuristic: 9
+    observed_object_count_heuristic: 34
+    priority: P0
+  vehicles:
+    state: STRONG_FOUNDATION
+    canonical_families: 1
+    priority: P2
+  machines:
+    state: WEAK
+    observed_family_count_heuristic: 11
+    note: "mostly Nacar-2 subsystems / THALASSA interfaces, not a broad settlement machinery language"
+    priority: P1
+  cultural:
+    state: CRITICAL_GAP
+    note: "keyword count is inflated by NPCs and Mercado structure; culture material objects remain sparse"
+    priority: P0
+  temporal_states:
+    state: CRITICAL_GAP
+    note: "state coverage concentrated in coral; settlement/prop architecture lacks 3-era representation"
+    priority: P0
+  gameplay_affordances:
+    state: FOUNDATION
+    priority: P1
+  material_causality:
+    state: FOUNDATION_LOCAL
+    priority: P1
+  optimization:
+    state: BLENDER_FOUNDATION
+    evidence: "UV debt closed across active families; LOD/collision foundations exist for major hero/ecology/vehicle assets"
+    priority: P1
+  engine_qualification:
+    state: BLOCKED
+    blocker: "EXO-012 production engine decision + target GPU qualification"
+
+highest_value_gap:
+  claim_id: PEL/CIV/PROP-X100-001
+  area: Mercado_de_Boyas
+  objective: "Build a systemic civilization/prop layer that multiplies culture, story-state, gameplay readability and lived-in density simultaneously."
+  required_world_bible_props:
+    - hydrophone/listening hardware
+    - memory recording/containment hardware
+    - archive/memory custody containers
+    - funeral buoy
+    - trading-channel navigation signals
+    - consent/timetable markers
+    - reef-safe clamps
+    - maintenance/service props
+  culture_dna:
+    manufacturing_language: "repair-first; visible replacement panels; ivory technical ceramic/composite over corrosion-resistant frames"
+    construction_logic: "buoyancy, drainage, corrosion resistance, detachable/towable modules, visible service access"
+    ergonomics: "wet/gloved operation; tetherable handles; low center of mass for heavy systems"
+    ornamentation: "minimal/function-led; faction iconography remains UNKNOWN and must not be invented"
+    repair_language: "misfit replacement panels, standardized fasteners, clamps/adapters, field-repair scars"
+    resource_constraints: "salt aerosol, wet/dry cycling, galvanic corrosion, buoyancy mass, maintainability"
+    color_logic: "ivory/dark technical textile/oxidized bronze/amber refuge; living-memory cyan remains biologically motivated"
+    iconography: UNKNOWN
+    social_hierarchy: UNKNOWN
+    technology_level: "advanced aquatic/field-maintainable; exact canon unresolved"
+
+x100_next_wave:
+  - "author base systemic prop kit"
+  - "derive meaningful scale/usage/state variants"
+  - "define placement sockets and deterministic configuration grammar"
+  - "validate 100+ credible configurations"
+  - "build LOD/collision/query policy"
+  - "add causal material-history metadata"
+  - "Workbench silhouette/player-scale QA"
+  - "persist generator + receipt"
+  - "recompute coverage and immediately claim next bottleneck"
