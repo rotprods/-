@@ -4,13 +4,17 @@ owner: AGENT-02-AURORA
 branch: art/world-aurora-veil-001
 world_id: aurora
 region_id: AUR_R01_CAMP_SECOND_DAY
-status: IN_PROGRESS
+status: REVIEW_TECHNICAL_SYSTEMIC
+claim_status: KEEP
 protocol: EXOVANT-X100-v1
 scope_key: aurora/camp/props-cultural-everyday
 priority: P1_HIGH_MULTIPLIER
 created_at: 2026-09-13T20:36:00+02:00
+last_heartbeat: 2026-09-13T20:49:30+02:00
 remote_project_id: d6488148-8547-4ffe-b63d-e5fbec3a339c
 remote_base_revision: 26
+remote_review_revision: 30
+remote_status: X100_CAMP_PROPS_CULTURE_R30_BALANCED_QA
 
 north_star: >-
   Make Campamento del Segundo Dia recognizable through everyday objects alone: a serviceable culture of clock synchronization, observation, route logging, repair and refuge life. Build a reusable proposal-level prop grammar without promoting unapproved props into canon.
@@ -23,7 +27,7 @@ canon_basis:
   - Aurora asset kit includes prairies, rings, mechanical clocks and bounded environmental duplicates
 proposal_boundary:
   - exact everyday prop types, dimensions and assembly kits are production proposals derived from those functions
-  - they do not establish new factions, rituals, economy, social hierarchy or lore
+  - they do not establish new factions, rituals, economy, social hierarchy, named-character possessions, labels or iconography
 
 includes:
   - clock synchronization and calibration objects
@@ -48,23 +52,69 @@ excludes:
   - temporal runtime code
   - engine-specific interaction implementation before EXO-012
 
-systemic_target:
-  base_prop_families: 18-24
-  functional_cluster_types: 5
-  proposal_history_states: 4
-  proof_clusters: 15
-  theoretical_cluster_combinations: 100+
-  placement: authored functional sockets around X100 Camp proof district; no random scatter
+review_receipts:
+  qa: art_source/aurora_veil/X100/QA/camp_props_r30.json
+  generator_body: art_source/aurora_veil/X100/blender/aurora_x100_camp_props_r30.py
+  validated_entrypoint: art_source/aurora_veil/X100/blender/aurora_x100_camp_props_r30_entrypoint.py
+  blend_size_bytes: 12362540
+  blend_etag: 25535c472f0248e457f0f2d47b0ce6d5
+  glb_size_bytes: 6724580
+  glb_etag: 2f0cd89166cb050533840d6cb8b4c455
+  workbench_artifact_id: 3b46875505a412773bfb3233d1a160cc
+  eevee_artifact_id: f046ec46f431250a8b24d70c1813e7f4
 
-hardness:
-  - every prop implies a plausible manufacturing process and maintenance access
-  - no decorative sci-fi greeble
-  - used or damaged states occur at contact, load or repair zones rather than uniform grunge
-  - containers open only where handles and hinges logically permit
-  - objects sit on floors, benches or ground with measured contact
-  - clocks and instruments use silhouette and mechanical construction instead of arbitrary emissive UI
-  - material roles reuse Aurora validated material library where possible
-  - final labels, text and icons remain deferred unless canon explicitly defines them
+technical_review:
+  base_prop_families: 24
+  unique_proof_asset_ids: 24
+  source_dimensions: PASS_24_OF_24
+  manufacturing_metadata_all: true
+  proof_clusters: 15
+  cluster_distribution: "3 each: CALIBRATION / OBSERVATION_SERVICE / ROUTE_RECORD / MAINTENANCE / REFUGE_DOMESTIC"
+  support_contract: "FLOOR / TABLE / TOOL_CHEST"
+  support_failures: 0
+  host_containment_failures: 0
+  history_state_distribution: "PRISTINE 4 / USED 4 / DAMAGED 4 / ABANDONED 3"
+  selected_state_contract_families: 5
+  state_contracts: 20
+  lod_contracts: 27
+  lod_dimension_envelope_pass: true
+  collision_and_clearance_contracts: 27
+  loose_library_state_contract_geometry_in_glb: false
+  photometric_technical_gate: pass
+  human_gate_art: pending
+
+source_reproducibility:
+  base_generator_issue: "Generator body uses Vector in collision placement but omitted the import statement."
+  approved_execution: "Use aurora_x100_camp_props_r30_entrypoint.py; it injects mathutils.Vector before calling build()."
+  hidden_debt: false
+  standalone_base_script_claimed: false
+
+failure_fix_history:
+  - r27: cable-spool dimension mismatch + implicit support heuristics; rejected
+  - r28: cable spool rebuilt + explicit FLOOR/TABLE/TOOL_CHEST support contract introduced
+  - r29: route field-log slate semantic support corrected to TABLE
+  - r30: cable spool floor contact corrected and cluster matrix rebalanced to 3x5 functional types
+
+family_dod:
+  semantic_purpose: PASS_24_FAMILIES
+  stable_ids: PASS
+  dimensions: PASS
+  player_scale: PASS_TECHNICAL
+  manufacturing_logic: PASS_BLOCKOUT_METADATA
+  final_UV0: OPEN
+  final_material_textures: OPEN
+  pivots_transforms: PASS_SOURCE_CONTRACT
+  collision: PASS_CONTRACT_ENGINE_BLOCKED
+  interaction_clearance: PASS_CONTRACT
+  LOD_strategy: PASS_SOURCE_CONTRACT
+  variants_states: PASS_SYSTEMIC_PROOF
+  optimization: PASS_INSTANCING_CONTRACT_ENGINE_PERF_BLOCKED
+  engine_import: BLOCKED_EXO_012
+  visual_QA: TECH_PASS_HUMAN_PENDING
+  technical_QA: PASS_R30
+  source_persisted: PASS_WITH_EXPLICIT_ENTRYPOINT
+  export_persisted_remote: PASS
+  claim_handoff: PASS_THIS_FILE
 
 blocked_by:
   - final UV, bake and texture production
@@ -72,5 +122,10 @@ blocked_by:
   - target-hardware performance
   - human GATE-ART
 
+next_internal_gaps:
+  - fauna production families using only the three canonical Aurora fauna species
+  - destruction/damage family breadth
+  - interior production detail beyond current proof clusters
+
 stop_condition: >-
-  Do not mark DONE until base family graph, controlled variants and history states, proof clusters, contact and player-scale QA, LOD/collision/interaction contracts, generator and receipt are persisted. Runtime and human-art gates remain independent blockers.
+  Workunit remains KEEP / REVIEW_TECHNICAL_SYSTEMIC. Do not mark DONE while final UV/PBR, engine/runtime performance and human art gates remain open. X100 autonomous production proceeds to the next non-overlapping high-value gap.
