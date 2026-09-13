@@ -1,0 +1,78 @@
+workunit_id: AUR-X100-PRAIRIE-ECO-001
+parent_claim: CLM-AURORA-WORLD-001
+owner: AGENT-02-AURORA
+branch: art/world-aurora-veil-001
+world_id: aurora
+region_id: AUR_R02_REPETITION_PLAIN
+status: IN_PROGRESS
+protocol: EXOVANT-X100-v1
+scope_key: aurora/plain/two-shadow-grass-system
+priority: P0_P1_HIGH_MULTIPLIER
+created_at: 2026-09-13T20:19:00+02:00
+remote_project_id: d6488148-8547-4ffe-b63d-e5fbec3a339c
+remote_base_revision: 23
+
+north_star: >-
+  Turn canonical Hierba de dos sombras from sparse proxy objects into a deterministic, physically grounded prairie system that produces large perceived ecological density without inventing new species or random scatter.
+
+canon_basis:
+  species: Hierba de dos sombras
+  canonical_role: indicates local temporal offset
+  region: Llanura de las Repeticiones
+  temporal_rule: local bounded echoes only; no global rewind
+
+includes:
+  - one canonical species with multiple causal morphotypes, not invented species
+  - juvenile / mature-short / mature-tall growth morphotypes
+  - path-trampled / senescent / temporal-edge morphotypes
+  - deterministic terrain-conforming scatter patches
+  - exclusion zones around temporal anchors and authored traversal corridor
+  - extra offset shadow proxy only where a local temporal field justifies it
+  - density falloff and patch-level deterministic seeds
+  - shared material roles and portable mesh output
+  - LOD/impostor strategy contract without engine-specific claims
+  - QA density, contact, triangle and export receipts
+
+excludes:
+  - new plant species
+  - fauna production
+  - terrain topology mutation
+  - temporal runtime mutation
+  - global wind/climate canon claims
+  - engine-specific vegetation renderer before EXO-012
+  - AEON hero content
+
+collision_audit:
+  parent_fleet_claim_status: ACTIVE
+  epoch: 1
+  camp_x100_workunit: REVIEW_TECHNICAL_SYSTEMIC
+  aeon_concurrent_collection: EXCLUDED
+  result: NO_SEMANTIC_COLLISION
+
+systemic_target:
+  source_morphotypes: 6
+  ecological_states: 4
+  authored_patches: 6
+  target_tufts: 900-1200
+  target_blades_per_tuft: 3-6
+  export_strategy: one realized mesh per patch plus optional temporal-shadow mesh
+  object_count_target: low; complexity comes from deterministic mesh generation, not thousands of Blender objects
+
+quality_rules:
+  - every tuft contacts terrain
+  - no scatter inside explicit field-core exclusion volumes
+  - trampled morphotype only near traversal corridor
+  - temporal shadow proxy only inside/near bounded offset fields
+  - no random color/grunge noise used as biological variation
+  - silhouette/height variation tied to growth/use/temporal context
+  - no collision per blade; vegetation collision remains NONE unless gameplay later requires local blockers
+  - source generator persisted before workunit review
+
+blocked_by:
+  - production-engine vegetation/HLOD implementation
+  - final authored vegetation texture/alpha card strategy
+  - target-hardware performance profiling
+  - human GATE-ART
+
+stop_condition: >-
+  Do not mark DONE until deterministic generator, patch manifests, density/contact QA, LOD strategy and export receipt are persisted. Human art/engine/performance remain separate blockers.
