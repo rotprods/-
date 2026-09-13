@@ -2,7 +2,8 @@
   "schema_version": 2,
   "goal_id": "EXO-X100-V2",
   "command": "/EXOVANT-X100",
-  "status": "PROTOCOL_CANDIDATE",
+  "status": "DEFAULT_WHEN_READ_FROM_MAIN",
+  "activation_condition": "This protocol is authoritative as the default selector only when this file is read from the repository main branch after PR #30 merge/readback; on unmerged branches it remains a candidate.",
   "north_star": "Maximize credible playable world depth per production-hour across all twelve EXOVANT worlds without AI slop, ownership collisions, hidden runtime debt, or loss of recoverability.",
   "objective": {
     "world_target_stage": "RELEASE_CANDIDATE_95_PLUS",
