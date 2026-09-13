@@ -9,10 +9,10 @@ status: IN_PROGRESS
 quality_tier: BLOCKOUT_FOUNDATION_STRUCTURAL_COLLISION_REPRODUCIBLE
 branch: art/world-nacre-001
 base_main_sha_at_claim: 4c2fa044080004609ea6df45f34b2a784536507a
-last_main_resynced: 758a9b6326a7d061f1e304abe9b1593b6b2d1a66
-latest_main_observed: 26ae20f5d1b47d1efa0d54b20124ed93cbc0b43e
-branch_resync_required: true
-updated_at: 2026-09-13T10:56:00Z
+last_main_resynced: 26ae20f5d1b47d1efa0d54b20124ed93cbc0b43e
+resync_merge_commit: 32e3488dc4c5715217c571effeeac88c3dd0698e
+branch_resync_required: false
+updated_at: 2026-09-13T11:07:00Z
 
 fleet:
   epoch: 1
@@ -20,6 +20,7 @@ fleet:
   registry_generation_observed: 8
   ack: https://github.com/rotprods/-/issues/7#issuecomment-5648339684
   r4_followup: https://github.com/rotprods/-/issues/7#issuecomment-5648897202
+  r5_followup: https://github.com/rotprods/-/issues/7#issuecomment-5652875105
 
 source_authority:
   repository: rotprods/-
@@ -38,6 +39,8 @@ pipeline:
   verified_route: Higgsfield 3D Jutsu bpy -> Blender 5.2 -> GLB -> Godot 4.7.2 prototype
   macro_generator: art_source/nacre_world_macro/build_macro.py
   collision_generator: art_source/nacre_world_macro/collision_r5.py
+  native_probe_runner: art_source/nacre_world_macro/run_native_probe.py
+  native_probe_project: art_source/nacre_world_macro/native_probe/
   qa_receipts:
     - art_source/nacre_world_macro/qa-r3.yaml
     - art_source/nacre_world_macro/qa-r4.yaml
@@ -108,10 +111,7 @@ collision_contract_r5:
   proxy_count: 12
   containment_violations: 0
   glb_export_presence: PASS
-  included:
-    - 10 archive bridge decks
-    - entry bridge
-    - entry service platform
+  included: [10 archive bridge decks, entry bridge, entry service platform]
   waivers:
     - archive chamber hulls require interior-aware shell collision
     - global shell collision must be regional/tiled, never one monolithic mesh
@@ -122,12 +122,20 @@ lod_contract:
   artist_manual_lods: DEFERRED_UNTIL_PROFILE_EVIDENCE
   hlod_streaming: OPEN
 
+native_probe_contract:
+  runner: art_source/nacre_world_macro/run_native_probe.py
+  project: art_source/nacre_world_macro/native_probe/project.godot
+  assertions: [GLB imports as PackedScene, zero visible NACRE_COLL proxy meshes, at least 12 StaticBody3D, at least 12 CollisionShape3D, macro max span 1200-1600m, at least 5 material roles]
+  receipt: native-receipt.json
+  receipt_fields: [passed, artifact_sha256, artifact_bytes, executed_at, engine, claim_id, checkpoint, import_returncode, probe_returncode, evidence_refs]
+
 verification:
   macro_geometry_export: PASS
   macro_semantic_reproducibility: PASS
   structural_macro_causality: PASS_CANDIDATE
   collision_design_r5: PASS
   collision_reproducibility_r5: PASS
+  git_merge_safety: PASS_AT_MAIN_26AE20F5
   human_gate_art: OPEN
   godot_exact_glb_import: ENV_BLOCKED_ARTIFACT_TRANSPORT
   collision_runtime_traversal: OPEN
@@ -142,9 +150,10 @@ native_delivery_attempt:
   runtime_recipe_available: evidence/visual-display-runbook.md
   blocker: Exact provider GLB cannot currently be transferred into the executable local surface.
   observations:
-    - provider-signed GLB direct browser request returned storage InvalidArgument credential-date mismatch
-    - independent direct fetch surface returned target_unreachable for a freshly issued signed URL
-    - isolated execution container has no general DNS egress
+    - provider-signed GLB live-browser request returned storage InvalidArgument credential-date mismatch
+    - independent direct fetch returned target_unreachable
+    - isolated execution container lacks general DNS egress
+    - container direct-download requires a safe web-opened URL; signed R2 storage URL is rejected by that boundary
   interpretation: Environment/artifact-transport blocker; not asset FAIL and not Godot PASS.
 
 asset_coverage:
@@ -155,4 +164,4 @@ asset_coverage:
   - {asset_id: NACRE-SCALE-REF-001, status: DONE_FOR_BLOCKOUT, qa: scale_reference_present}
 
 claim_status: KEEP
-stop_reason: Human art approval, exact Godot import/runtime traversal, LOD/HLOD/streaming, target performance, delivery manifest refresh and native binary delivery remain open.
+stop_reason: Human art approval, exact Godot import/runtime traversal, current-tree MANIFEST refresh, HLOD/streaming, target performance and fleet-native delivery remain open.
