@@ -18,8 +18,7 @@ Bounded shared integration paths:
 - `AGENTS.md`
 - `docs/DEVELOPMENT_PROTOCOL.md`
 - `docs/PROTOCOLS.md`
-- `tools/graphify_project.py`
 
-Explicit exclusions: producer art branches, Fleet transitions on behalf of owners, STATE/PLAN/MANIFEST replacement, Blender scene mutation, asset production.
+Explicit exclusions: producer art branches, Fleet transitions on behalf of owners, STATE/PLAN/MANIFEST replacement outside the integrator refresh, canonical Graphify schema mutation, Blender scene mutation, asset production.
 
 Status: `PROTOCOL_CANDIDATE`; becomes default only after merge/readback from `main`.
