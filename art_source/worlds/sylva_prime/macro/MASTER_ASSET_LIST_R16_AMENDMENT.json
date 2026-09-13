@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "base_master_asset_list": "MASTER_ASSET_LIST_R15.json",
+  "claim_id": "CLM-SYLVA-MACRO-001",
+  "scene_revision": 17,
+  "status": "OVERRIDE_PATCH",
+  "truth": "This file overrides only the listed R15 asset-family fields. All other MASTER_ASSET_LIST_R15 entries remain unchanged.",
+  "overrides": {
+    "SYL_ROOT_MACRO_TOPOLOGY_R15": {
+      "asset_id_effective": "SYL_ROOT_MACRO_TOPOLOGY_R16",
+      "status": "R16_TAPER_LOCALLY_VALIDATED",
+      "description": "Six kilometre-scale primary root centerlines retained exactly; per-Bezier-point load-correlated taper added in R16. Section remains circular proxy, so final buttress/fiber anatomy is still pending.",
+      "blend_path": "SYLVA_ROOT_PRIMARY_R01..R06 @ primary scene revision17",
+      "export_path": "R17 remote GLB identity (R16 art wave + membership reconciliation)",
+      "lod_policy": "preserve centerline, taper silhouette, load-anchor thickness and horizon function; future feature-aware HLOD only",
+      "collision_policy": "no new dedicated root gameplay collision in R16",
+      "qa_status": "PASS_R16_SOURCE / STALE_MEMBERSHIP_0 / HUMAN_ART_PENDING",
+      "contracts": ["SYLVA_MACRO_ROOT_TAPER_R16", "SYLVA_STREAM_MEMBERSHIP_R16_AMENDMENT"],
+      "effective_radius_ranges_m": {
+        "R01": [36.0, 63.36],
+        "R02": [44.64, 80.60],
+        "R03": [50.40, 96.48],
+        "R04": [28.08, 42.48],
+        "R05": [22.50, 36.00],
+        "R06": [28.00, 51.20]
+      },
+      "remaining_limits": [
+        "circular cross section",
+        "no final bark/fiber/callus microstructure",
+        "no animated growth/deformation",
+        "no human GATE-ART approval"
+      ]
+    },
+    "SYL_PREFETCH_POLICY_R15": {
+      "status": "REVIEW_RUNTIME_REQUIRED_R16_RECALIBRATED",
+      "current_plus8_world_fraction_upper_bound_observed": 0.7278911564625851,
+      "directional_route_window_upper_bound_observed": 0.5918367346938775,
+      "note": "R16 R01 membership amendment did not materially change the R15 policy conclusion. No production policy is approved."
+    }
+  }
+}
