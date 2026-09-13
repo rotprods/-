@@ -2,6 +2,7 @@ snapshot_at: "2026-09-13T18:36:00Z"
 world_id: khepri
 branch_context: art/world-khepri-001
 x100_protocol: ACTIVE
+canon_recovery_2026_09_13: "design/EXOVANT_BIBLIA.md confirms named regions, four biota species, named NPC/adversary anchors and Helioperegrino; ecology is no longer blocked for lack of species canon."
 note: >-
   Branch-local coverage snapshot for coordination. DONE/SYSTEMIC_MACRO_COMPLETE applies only
   to the named family and never means the full KHEPRI world or downstream close-range domain is done.
@@ -150,13 +151,15 @@ coverage:
 
   - region_id: GLOBAL_KHEPRI
     category: vegetation
-    asset_family: flora_system
+    asset_family: prism_lichen_flora_system
     priority: P2
-    status: BLOCKED
+    status: TODO
     owner: UNCLAIMED
     claim: null
-    dependency: canonical_ecology_definition
-    art_status: BLOCKED
+    dependency: documented_prism_lichen_biome_distribution_contract
+    documented_species: [liquen_de_prisma]
+    documented_function: "fija minerales en áreas de luz dispersa"
+    art_status: NOT_STARTED
     modeling_status: NOT_STARTED
     material_status: NOT_STARTED
     optimization_status: NOT_STARTED
@@ -165,13 +168,14 @@ coverage:
 
   - region_id: GLOBAL_KHEPRI
     category: fauna_wildlife
-    asset_family: fauna_system
+    asset_family: documented_khepri_fauna_system
     priority: P2
-    status: BLOCKED
+    status: TODO
     owner: UNCLAIMED
     claim: null
-    dependency: canonical_ecology_definition
-    art_status: BLOCKED
+    dependency: documented_species_behavior_plus_future_ecology_graph
+    documented_species: [escarabajo_heliostato, zorro_de_vidrio, serpiente_de_cable, escarabajo_colosal]
+    art_status: NOT_STARTED
     modeling_status: NOT_STARTED
     material_status: NOT_STARTED
     optimization_status: NOT_STARTED
@@ -225,12 +229,13 @@ coverage:
 
   - region_id: GLOBAL_KHEPRI
     category: vehicles
-    asset_family: ground_air_orbital_transport
+    asset_family: helioperegrino_and_unresolved_transport
     priority: P2
     status: TODO
     owner: UNCLAIMED
     claim: null
-    dependency: transportation_canon
+    dependency: documented_helioperegrino_plus_unresolved_transport_hierarchy
+    documented_vehicle: "Helioperegrino — moto de vela solar de superficie"
     art_status: NOT_STARTED
     modeling_status: NOT_STARTED
     material_status: NOT_STARTED
@@ -253,7 +258,7 @@ coverage:
     integration_status: NOT_STARTED
     qa_status: NOT_STARTED
 
-  - region_id: GLOBAL_KHEPRI
+  - region_id: GLOBA_KHEPRI
     category: technical_art
     asset_family: lod_collision_streaming_export_qa
     priority: P0

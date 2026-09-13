@@ -33,7 +33,7 @@
 - **Atmospheric composition/pressure:** UNKNOWN.
 - **Axial tilt / day length / orbital eccentricity:** UNKNOWN.
 - **Global continental map:** UNKNOWN.
-- **Ocean fraction:** UNKNOWN. The mission text refers to crossing a “mar”; whether this is literal liquid, glass terrain, or a named region requires canon clarification before detailed environmental production — BLOCKED FOR FINAL INTERPRETATION.
+- **Ocean fraction:** UNKNOWN. **Mar de Cristal** is a DOCUMENTED named surface region, but whether its physical medium is literal liquid, vitrified terrain or another optical substrate remains UNKNOWN and BLOCKED FOR FINAL MATERIAL INTERPRETATION.
 
 ## Macrogeography
 
@@ -48,6 +48,16 @@ Mission design requires a spatial chain that can support:
 5. visible infrastructure whose ownership/maintenance can change in the aftermath.
 
 These are **DOCUMENT_DERIVED functional regions**, not final region names or layouts.
+
+### Canonical named surface regions
+
+Recovered directly from `design/EXOVANT_BIBLIA.md`:
+
+- **Ciudad de los Toldos** — talleres y deuda energética — DOCUMENTED.
+- **Mar de Cristal** — campos de reflexión y rutas de sombra — DOCUMENTED.
+- **Crisol de RAKHET** — máquina solar encadenada — DOCUMENTED.
+
+These names/functions are canon-level design inputs. The current macro coordinates remain PROPOSAL interfaces and do not claim final architecture or regional boundaries.
 
 ### Current world-macro interfaces
 
@@ -82,7 +92,7 @@ Canonical biome taxonomy is not fixed in the recovered source. Current productio
 - subterranean route environment — DOCUMENT_DERIVED from mission routing;
 - crucible industrial thermal zone — DOCUMENT_DERIVED from mission routing.
 
-Vegetation species, soil ecology and food-chain structure remain UNKNOWN for this shard.
+Biome taxonomy, soil ecology, population distribution and the complete food-chain structure remain UNKNOWN; documented KHEPRI species are listed under Ecology below.
 
 ## Civilization — Sínodo de Bronce
 
@@ -115,15 +125,36 @@ Required categories to resolve:
 
 ## Transportation
 
-Pedestrian, road, rail, ground vehicle, air and orbital transport systems are not fully specified in recovered KHEPRI canon. Walkways are part of the documented asset-kit language. Final transport hierarchy is UNKNOWN/UNCLAIMED.
+- **Helioperegrino** — moto de vela solar de superficie — DOCUMENTED local vehicle.
+- Walkways are part of the documented KHEPRI asset-kit language.
+- Broader pedestrian/road/rail/air/orbital transport hierarchy remains UNKNOWN/UNCLAIMED; the documented Helioperegrino does not authorize inventing a complete transport network.
 
 ## Ecology
 
-Specific KHEPRI flora/fauna and food-chain data were not recovered with sufficient confidence in this cell. Do not invent them here. A future ecology claim must search canonical data directly and record species/function/provenance before modeling.
+Recovered canonical biota from `design/EXOVANT_BIBLIA.md`:
+
+- **Escarabajo heliostato** — orients its shell to regulate heat — DOCUMENTED.
+- **Zorro de vidrio** — refracts its outline without becoming invisible — DOCUMENTED.
+- **Serpiente de cable** — lives among cooled collectors — DOCUMENTED.
+- **Liquen de prisma** — fixes minerals in areas of dispersed light — DOCUMENTED.
+
+These species unblock an ecology claim, but they do **not** yet define a complete trophic web, reproduction, population density, biome distribution, animation/rig or gameplay statistics. Future ecology production must preserve the documented functions and mark any predator/resource/decomposer relationships beyond them as PROPOSAL until separately canonized.
 
 ## Characters / population
 
-Final KHEPRI NPCs, robotic population archetypes, wardrobe/equipment and crowd systems are outside the world-macro claim. Mission/sidequest text implies households, technicians, market actors and debt administration; this does not authorize final character designs.
+Documented named NPC anchors:
+
+- **Hermana Asha** — mecánica del Sínodo; busca abolir deuda heredada — DOCUMENTED.
+- **Qadir Noé** — mercader; financia reparaciones que nadie quiere pagar — DOCUMENTED.
+- **Yal de la Sombra** — cuidadora; conoce rutas fuera del culto — DOCUMENTED.
+
+Documented adversary archetypes:
+
+- **Penitente heliostático** — escudo espejo con ventana de giro — DOCUMENTED.
+- **Saboteador de lente** — coloca haces con anclajes visibles — DOCUMENTED.
+- **Escarabajo colosal** — territorial; vulnerable tras descargar calor — DOCUMENTED.
+
+Final morphology, rigs, wardrobe/equipment, crowds and combat production remain outside the world-macro claim and UNCLAIMED.
 
 ## Gameplay / mission spatial contract
 
@@ -192,8 +223,8 @@ KHEPRI uses local metre-scale authoring cells so a future engine adapter can imp
 - physical radius promotion or replacement;
 - atmosphere and long-range sky model;
 - literal meaning/material physics of the “glass sea”;
-- canonical macro-region names and global map;
-- detailed ecology;
+- global map and exact boundaries/relationships among the documented named regions;
+- complete ecology graph beyond the four documented KHEPRI species;
 - settlement/city kit ownership;
 - RA-KHET final design/rig;
 - target-engine GPU/streaming qualification.
