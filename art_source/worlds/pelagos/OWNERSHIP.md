@@ -19,5 +19,13 @@ Run scope reserved on 2026-09-12 from `main@4c2fa044080004609ea6df45f34b2a784536
 ## Concurrency contract
 Other world agents should select different world IDs and use `art_source/worlds/<world_id>/**`. Shared standards may be proposed in this branch but must remain world-local until reviewed, to avoid edit collisions across parallel agents.
 
+## Active claim — `/EXOVANT-X100`
+- Claim ID: `PEL/CIV/PROP-X100-001`
+- Scope: Mercado de Boyas civilization/prop systemic kit; daily life, maintenance, storage, memory-custody, consent/trade signalling and funeral-buoy families only.
+- Why now: X100 audit at Blender rev. 30 found ecology/hero engineering materially ahead of prop/cultural/temporal-state coverage. Prop inventory is the highest-value multiplicative gap.
+- Canon constraints: World Bible §7, §8, §13–14. Repair-first manufacturing, corrosion-driven construction, buoyancy/maintainability logic; no invented faction iconography or irreversible lore.
+- DoD: stable IDs; player-scale dimensions; semantic family graph; causal pristine/used/damaged/abandoned states where justified; UV0/material slots/transforms/pivots; collision/query policy; LOD strategy; deterministic placement sockets/rules; 100+ credible kit configurations; structural/visual QA; receipt; reproducible generator.
+- Engine gate: runtime interaction, HLOD/switch thresholds, physics semantics and GPU qualification remain `BLOCKED/PENDING` until production-engine decision.
+
 ## Current status
-`BOOTSTRAP_RESERVED`: ownership is published; canonical world data and art/learning protocols are being recovered before production assets are authored.
+`X100_PRODUCTION_ACTIVE`: world foundation, hero ecology/characters/enemies/vehicle and several Blender-side LOD/collision foundations exist; current work is densifying missing civilization/prop/state layers rather than adding isolated hero assets.
