@@ -41,7 +41,7 @@ Rules:
    - `85–95%` AAAA CANDIDATE
    - `95%+` RELEASE CANDIDATE.
 
-A world cannot compensate for zero ecology, gameplay or QA by overproducing architecture.
+A world cannot compensate for zero ecology, gameplay o QA by overproducing architecture.
 
 ## 3. Gradient / adaptive weight algorithm
 
@@ -108,7 +108,7 @@ Required family outputs:
 - source/export/receipt;
 - owner/claim/provenance.
 
-Graphify remains the project-wide typed graph. X100 adds density, family and vector metadata; it does not create a competing source of truth.
+Graphify remains the project-wide typed graph. X100 adds a separate density/family/vector projection; it does not create a competing source of truth or mutate the canonical graph schema.
 
 ## 6. Combinatorial multiplier
 
@@ -235,7 +235,7 @@ Receipts record which passes apply, pass, fail, or are explicitly waived.
 
 ## 12. Spatial-semantic branch awareness
 
-`tools/x100_spatial.py` builds a deterministic 64-dimensional vector per Fleet claim and fetched non-main branch.
+`ops/x100/x100_spatial.py` builds a deterministic 64-dimensional vector per Fleet claim and fetched non-main branch.
 
 Vector includes:
 - world identity;
@@ -321,7 +321,7 @@ A family is not complete until applicable items have evidence:
 
 semantic purpose, stable ID, dimensions, player scale, silhouette, manufacturing logic, UV0, material slots, pivot, clean transforms, collision, gameplay clearance, LOD strategy, variants, state variants, optimization, engine import, visual QA, technical QA, receipt, persisted source, persisted export and updated claim/handoff.
 
-`tools/x100_control.py family` rejects `raw_ai_mesh_final`.
+`ops/x100/x100_control.py family` rejects `raw_ai_mesh_final`.
 
 ## 16. World audit data contract
 
@@ -356,14 +356,15 @@ Numbers without evidence are estimates, not certification. Use `null` if not mea
 ## 17. Commands
 
 ```bash
-python3 tools/x100_control.py validate-config
-python3 tools/x100_control.py audit path/to/world-x100.json
-python3 tools/x100_control.py rank path/to/world-x100.json path/to/candidates.json
-python3 tools/x100_control.py family path/to/family.json
+python3 ops/x100/x100_control.py validate-config
+python3 ops/x100/x100_control.py audit path/to/world-x100.json
+python3 ops/x100/x100_control.py rank path/to/world-x100.json path/to/candidates.json
+python3 ops/x100/x100_control.py family path/to/family.json
 
-python3 tools/x100_spatial.py build
-python3 tools/x100_spatial.py validate
-python3 tools/x100_spatial.py query claim:CLM-NACRE-WORLD-MACRO-001
+python3 ops/x100/x100_spatial.py build
+python3 ops/x100/x100_spatial.py validate
+python3 ops/x100/x100_spatial.py query claim:CLM-NACRE-WORLD-MACRO-001
+python3 -m unittest ops/x100/tests/test_x100.py
 ```
 
 Then run the existing Fleet and Gauntlet commands.
