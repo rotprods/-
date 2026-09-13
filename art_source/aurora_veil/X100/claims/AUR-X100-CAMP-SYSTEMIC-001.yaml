@@ -1,0 +1,71 @@
+workunit_id: AUR-X100-CAMP-SYSTEMIC-001
+parent_claim: CLM-AURORA-WORLD-001
+owner: AGENT-02-AURORA
+branch: art/world-aurora-veil-001
+world_id: aurora
+region_id: AUR_R01_CAMP_SECOND_DAY
+status: IN_PROGRESS
+protocol: EXOVANT-X100-v1
+scope_key: aurora/camp/systemic-settlement-kit
+priority: P1_HIGH_MULTIPLIER
+created_at: 2026-09-13T20:04:00+02:00
+remote_project_id: d6488148-8547-4ffe-b63d-e5fbec3a339c
+remote_base_revision: 20
+
+north_star: >-
+  Turn Campamento del Segundo Dia from a hero/blockout cluster into a reusable systemic settlement language that can generate 100+ physically plausible configurations while preserving Aurora's existing manufacturing, material, temporal and service-routing contracts.
+
+includes:
+  - AUR-ARC-003 refuge structural/envelope module expansion
+  - AUR-INF-003 service/utility module expansion
+  - small/medium/large footprint rules
+  - pristine/used/damaged/abandoned authored state contracts
+  - traversable/blocked/service/interactive gameplay variants
+  - LOD0/LOD1/LOD2 proxy families where meaningful
+  - simple separate collision proxies
+  - deterministic assembly rules and proof district
+  - material-role reuse from AUR-MAT-v1-r15
+  - manufacturing and wear-causality metadata
+  - X100 coverage receipts and cold-resume docs
+
+excludes:
+  - AEON hero geometry or collection 24_AEON_HERO_R20
+  - terrain topology or global geography
+  - temporal runtime/state implementation
+  - NPC/fauna hero production
+  - global Fleet Registry edits
+  - engine-specific HLOD/import code before EXO-012
+  - new civilization/canon claims
+
+collision_audit:
+  parent_fleet_claim_status: ACTIVE
+  epoch: 1
+  observed_remote_status: WAVE3_AEON_HERO_FORMS_R20
+  aeon_concurrent_work: EXCLUDED
+  result: NO_SEMANTIC_COLLISION_WITH_SELECTED_WORKUNIT
+
+configuration_target:
+  footprint_patterns: 3
+  facade_patterns: 4
+  roof_service_patterns: 3
+  authored_history_states: 4
+  theoretical_combinations: 144
+  proof_configurations_to_instantiate: 12
+
+family_dod:
+  - stable subasset IDs
+  - real metre dimensions
+  - clean transforms on source modules
+  - silhouette/function/manufacturing metadata
+  - shared mesh instancing in proof assemblies
+  - at least 4 causal history states for key envelope/utility modules
+  - LOD0/LOD1/LOD2 contract for selected repeated modules
+  - separate collision proxy family
+  - deterministic placement/assembly rules
+  - one proof district with human-scale clearances
+  - GLB export smoke pass
+  - photometric technical render receipt
+  - human GATE-ART remains separate
+
+stop_condition: >-
+  Do not mark DONE until family graph, variants, states, LOD/collision, proof assembly, QA receipt, generator source and handoff are persisted. Engine import/performance remain explicit blockers rather than fabricated PASS claims.
