@@ -4,10 +4,10 @@ import json,sys
 ROOT=Path(__file__).resolve().parents[1]
 def build(root):
     data=json.loads((root/'design/EXOVANT_DATA.json').read_text());nodes=[];edges=[]
-    def node(id,type,label,epistemic='fact',status='implemented',path=None):
+    def node(id,type,label,epistemic='fact',status='implemented',path=None,**extra):
         n=dict(id=id,type=type,label=label,epistemic=epistemic,status=status,provenance=path or '_project_intelligence/STATE.json')
         if path:n['artifact_path']=path
-        nodes.append(n)
+        n.update(extra);nodes.append(n)
     def edge(a,b,kind):edges.append(dict(id=a+'::'+kind+'::'+b,source=a,target=b,type=kind))
     node('project:exovant','project','EXOVANT 2950',status='implemented_prototype')
     node('catalog','artifact','Catálogo original',path='design/EXOVANT_DATA.json');edge('project:exovant','catalog','PLANNED_BY')
@@ -45,6 +45,29 @@ def build(root):
             edge('fleet-registry',cid,'RECORDS')
             for world in sorted({world_id(s['world']) for s in claim['scopes']}):
                 if world!='studio':edge(cid,'world:'+world,'BOUNDS_WORK_ON')
+
+    # EXOVANT-X100 V2: generated branch/claim awareness projection.
+    # This adds retrieval context; Fleet remains ownership authority.
+    x100_tool=root/'tools/x100_spatial.py'
+    if x100_tool.exists():
+        from x100_spatial import build_index, validate_index
+        spatial=build_index(root)
+        errors=validate_index(spatial)
+        if errors:raise ValueError('invalid X100 spatial index: '+'; '.join(errors))
+        spatial_rel='ops/x100/spatial-index.json';spatial_path=root/spatial_rel
+        spatial_path.parent.mkdir(parents=True,exist_ok=True)
+        spatial_path.write_text(json.dumps(spatial,ensure_ascii=False,indent=2)+'\n')
+        node('x100-protocol','decision','EXOVANT-X100 V2 density optimizer','decision','implemented', 'docs/EXOVANT_X100_V2.md')
+        edge('project:exovant','x100-protocol','USES')
+        node('x100-spatial-index','artifact','X100 spatial-semantic branch/claim projection',status='implemented',path=spatial_rel,vector_length=64)
+        edge('x100-protocol','x100-spatial-index','GENERATES')
+        edge('x100-spatial-index','fleet-registry','DERIVES_OWNERSHIP_CONTEXT_FROM') if any(n['id']=='fleet-registry' for n in nodes) else None
+        for entry in spatial['entries']:
+            sid='spatial:'+entry['id']
+            node(sid,'spatial_ref',entry.get('branch') or entry['id'],entry.get('epistemic','projection'),entry.get('status','unknown'),spatial_rel,world=entry.get('world'),domain=entry.get('domain'),scale=entry.get('scale'),vector=entry.get('vector'),spatial=entry.get('spatial'))
+            edge('x100-spatial-index',sid,'INDEXES')
+            if entry.get('world') and any(n['id']=='world:'+entry['world'] for n in nodes):edge(sid,'world:'+entry['world'],'LOCATED_IN_WORLD')
+            if entry.get('claim_id') and any(n['id']=='claim:'+entry['claim_id'] for n in nodes):edge(sid,'claim:'+entry['claim_id'],'VECTORIZES')
     return {'schema_version':1,'authority':'Projection only; refer to provenance and STATE','generator':'tools/graphify_project.py','update_policy':'after meaningful change; no background global watcher','nodes':nodes,'edges':edges,'hyperedges':[]}
 if __name__=='__main__':
     graph=build(ROOT);(ROOT/'_project_intelligence/graph.json').write_text(json.dumps(graph,ensure_ascii=False,indent=2)+'\n');print(json.dumps({'nodes':len(graph['nodes']),'edges':len(graph['edges'])}))
