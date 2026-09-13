@@ -1,0 +1,92 @@
+claim_id: CLM-ORIGIN-INFRA-ATRIO-SERVICE-001
+parent_claim: CLM-ORIGIN-WORLD-001
+agent_id: AGENT-ORIGIN-WORLD-01
+session_id: SES-20260913-ORIGIN-X100-001
+claim_type: ATOMIC_SUBCLAIM
+scope_key: world-origin/atrio/infrastructure/service-kit
+world_id: origin
+region_id: ATRIO-DE-LAS-RUTAS
+category: infrastructure
+subdomain: maintenance_route_services
+status: IN_PROGRESS
+truth_state: locally_validated_family_candidate
+priority: P1
+branch: art/world-origin-001
+created_at: 2026-09-13T20:00:00+02:00
+
+north_star: >-
+  Multiply Atrio environmental credibility with a reusable maintenance and route-service family
+  that explains power, memory routing, diagnostics, isolation and edge safety while preserving
+  the already-qualified navigation geometry and avoiding random greeble.
+
+stable_asset_ids:
+  - ORG_ATR_SVC_CONDUIT_SPINE_A
+  - ORG_ATR_SVC_CONDUIT_SPINE_B
+  - ORG_ATR_SVC_CONDUIT_SPINE_C
+  - ORG_ATR_SVC_TERMINAL_A
+  - ORG_ATR_SVC_TERMINAL_B
+  - ORG_ATR_SVC_TERMINAL_C
+  - ORG_ATR_SVC_RAIL_A
+  - ORG_ATR_SVC_RAIL_B
+  - ORG_ATR_SVC_RAIL_C
+  - ORG_ATR_SVC_VALVE_HOUSING_A
+  - ORG_ATR_SVC_VALVE_HOUSING_B
+  - ORG_ATR_SVC_BEACON_A
+  - ORG_ATR_SVC_BEACON_B
+  - ORG_ATR_SVC_BEACON_C
+  - ORG_ATR_SVC_PLINTH_A
+  - ORG_ATR_SVC_PLINTH_B
+  - ORG_ATR_SVC_CABLE_TRUNK_A
+  - ORG_ATR_SVC_CABLE_TRUNK_B
+  - ORG_ATR_SVC_CABLE_TRUNK_C
+
+includes:
+  - conduit spines
+  - diagnostic terminals
+  - service rails
+  - valve housings
+  - route-state beacons
+  - maintenance plinths
+  - protected cable trunks
+  - causal pristine / used / scarred / active states
+  - UV0 and clean transforms
+  - LOD strategy metadata
+
+excludes:
+  - changes to qualified Atrio ring, bridge, gap or collision geometry
+  - final reachable-prop collision until gameplay placement requires it
+  - Archive architecture
+  - Corazón de EXOVANT
+  - boss, NPC or quest logic
+  - final texture maps
+  - target-hardware qualification
+
+placement_contract:
+  validated_A70_outer_edge_m: 37.5
+  measured_min_asset_bound_radius_m: 37.9312527094
+  measured_min_clearance_m: 0.4312527094
+  navigation_geometry_modified: false
+
+remote_blender:
+  project_id: 6e64cd59-f1f6-461f-850c-737d098f1723
+  revision: 5
+  qa_operation: origin-x100-atrio-infra-culture-qa-014
+  qa_result: PASS
+
+checkpoint_completed:
+  - 19 stable assets authored
+  - causal variants and states authored
+  - UV coverage PASS
+  - transform and semantic-tag QA PASS
+  - placement outside validated navigation envelope PASS
+  - delivery-camera framing PASS
+
+pending_gates:
+  - real GLB engine import
+  - final reachable collision where required
+  - real LOD1 / LOD2 geometry
+  - final texture maps
+  - target-hardware performance
+  - human GATE-ART
+
+claim_status: KEEP
