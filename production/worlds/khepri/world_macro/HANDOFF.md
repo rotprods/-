@@ -1,160 +1,158 @@
-# KHEPRI World Macro — recoverable handoff
+# KHEPRI World Macro — recoverable handoff / X100 checkpoint
 
 AGENT: `AGENT-KHEPRI-WMACRO-001`  
 SESSION: `SESSION-20260912-KHEPRI-001`  
 CLAIM: `CLM-KHEPRI-WMACRO-001`  
 BRANCH: `art/world-khepri-001`  
 PR: `#8` draft  
-QUALIFIED MAIN: `be6162064ceb475d5f7a7aa1388a7873f25d3258`  
-MANIFEST-LOCKED GREEN HEAD BEFORE DOC SYNC: `8022197ec42eae9764d3dab2fcda311d8acad5e2`  
-EXACT PR GAUNTLET: `34722654514` SUCCESS  
-MASTER 3D PROJECT: `040f0c45-83a7-483c-9ee7-1e31c640a587` rev `4`  
-COLD 3D PROJECT: `4c01fdbb-7093-4229-9a49-8237583280bc` rev `3`  
-CLAIM STATUS: **KEEP / REVIEW**
+X100: **ACTIVE**  
+MASTER 3D PROJECT: `040f0c45-83a7-483c-9ee7-1e31c640a587` rev `8`  
+COLD PROJECT: `4c01fdbb-7093-4229-9a49-8237583280bc` rev `6`  
+CLAIM STATUS: **KEEP / REVIEW**  
+FAMILY STATUS: `KHP_WM_HELIOSTAT_FOOTPRINTS = SYSTEMIC_MACRO_COMPLETE`
 
 ## NORTH STAR
-Deliver KHEPRI `WORLD_MACRO / PLANETARY_FOUNDATION` as a reproducible metre-scale Blender foundation preserving canon, separating L0/L1/L2 scale, exposing stable cross-domain interfaces, and never promoting proposal/blockout values to canon/final art without their gates.
+KHEPRI world-macro is a deterministic metre-scale foundation with stable cross-domain route/tile/export interfaces. `/EXOVANT-X100` now governs expansion: maximize credible world depth per hour through systemic families, causal state variation and procedural recombination, never random clutter or AI slop.
 
 ## CURRENT TRUTH
-This is a deterministic, structurally qualified world-macro blockout/foundation. It is **not KHEPRI DONE**, not final AAAA art, not target-engine-integrated production terrain and not human-art-approved.
+This claim is **not KHEPRI complete** and is not final AAAA art. It now contains a technically qualified macro foundation plus one production-grade systemic support family. Final Glass Sea architecture, PBR material library, production geology, collision, runtime LOD thresholds/HLOD, characters, props, vehicles and final hero landmarks remain separate ownership leaves.
 
-## MASTER R4
-- 77 objects / 6 mesh datablocks / 5 materials / 1 route curve.
-- 5,697 unique mesh vertices / 11,092 unique triangles.
-- Terrain: `6400 × 4800 × 228.805 m`.
-- 1.85 m human QA reference.
-- 32 heliostat panels → one shared panel mesh.
-- 32 heliostat masts → one shared mast mesh.
-- Whole-scene `.blend`: `1,379,495 B`, etag `6d81d2c81e19a841056f018926e32944`.
-- Whole-scene GLB: `822,272 B`, etag `40d610951c4f0d8d3d83c7d4e67519dc`.
+## R8 HEAD — EXACT ARTIFACTS
+- Objects: `228`
+- Mesh datablocks: `22` (10 scene meshes + 12 source-only LOD meshes)
+- Materials: `5`
+- Route curve: `1`
+- Whole-scene GLB: `577,744 B`
+- GLB SHA256: `c9c698734061e481b94347c88d7c076b19c60261c8402548fb8ca1079d7d3579`
+- Editable BLEND: `2,198,165 B`
+- BLEND SHA256: `b2f3e2f8ff90f28a5485dc019efcfa5913def0dbbcfb5e39d883d3c469a25337`
+- Persistent GLB media: `1bed7b1f-0e0a-4cd3-b61b-a62f950b4ff5`
+- Persistent BLEND media: `0988f832-71ab-4c21-9c1e-ecbe3cd08bcb`
+- `fleet_control.py delivery`: PASS `candidate_recovered_with_native_receipt`
 
-## DEFECTS CORRECTED BY GAUNTLET
-1. Empty 3D Jutsu project had no World datablock → generator bootstraps it.
-2. 32 duplicated mast mesh datablocks → one shared mast mesh.
-3. Camera default `clip_end=1000 m` clipped kilometre-scale proof → overview 12 km / gameplay 8 km clip contracts.
-4. Human QA guide outside gameplay frame → positioned 30 m on view axis, ~84.7 px at 720p.
-5. Four-point route ribbon crossed terrain → deterministic 576-point terrain-conforming route at ~7 m clearance.
-6. Raw mesh fingerprint falsely failed from UV-sphere index ordering → geometry-semantic fingerprint separates index order from actual shape/topology-by-coordinate.
-7. Split L1 export leaked authoring-only `Z=-1100 m` preview offset → export-time recenter + exact restoration.
-8. GLB byte hashes differ across independent Blender serialization → normalized glTF JSON + Blender semantic fingerprint used for deterministic semantic gate.
-9. Parallel-shard CI manifest drift → fleet/main reconciliation; exact PR Gauntlet now green.
+## TERRAIN / ROUTE FOUNDATION
+Terrain remains 6.4 km × 4.8 km local tangent authoring cell using `KHP_TERRAIN_V1`.
 
-## R4 ROUTE / CONTACT / PORTABILITY
-Route receipt `R4_ROUTE_CLEARANCE.json`:
+R6 shading/export optimization:
+- flat export positions `19,200` → seam-safe custom-normal export `4,941`;
+- terrain export `520,508 B` → `178,288 B`;
+- whole-scene GLB `822,272 B` → `480,312 B` before X100 density;
+- 9,600 terrain tris unchanged;
+- custom global normal error max ~`0.0368°`;
+- master/cold terrain-normal SHA `ab7b0b20e8f305b2d30504fdf44d6b233f870d960f4b9774ff87ef1504c1b856`.
+
+Route remains deterministic terrain-conforming QA interface:
 - 576 points / 575 segments;
-- target clearance 7 m;
-- audited clearance `6.9963…7.0043 m`;
-- maximum error `4.3 mm`;
-- zero below-terrain samples.
+- 7 m target clearance, audited `6.9963…7.0043 m`;
+- zero below-terrain samples;
+- anchor order SHADE → GLASS_SEA → CRUCIBLE → RAKHET passes containment/ordering gate.
 
-Heliostat receipt `R4_HELIOSTAT_CONTACT.json`:
-- mast-ground contact error approximately `−4…+4 μm`;
-- panel center 6 m above mast top;
-- minimum macro spacing 490 m;
-- shared mesh instancing preserved.
+## X100 OPTICAL FIELD FAMILY
+Tool: `art_source/khepri/world_macro/expand_optical_field_x100.py`  
+Contract: `KHP_OPTICAL_FIELD_X100_V1`
 
-Portability receipt `R4_PORTABILITY.json`:
-- no external image dependency;
-- no absolute image paths;
-- no unsupported light types;
-- no unused mesh/curve/material/camera/light datablocks;
-- blockout materials remain portable Principled roles.
+Implemented configuration axes:
+- 4 layouts: staggered bands / aligned lattice / diagonal bands / radial fan;
+- 3 densities: sparse / production / dense;
+- 3 maintenance corridor patterns: dual NS / single NS / cross;
+- 4 state profiles: operational / maintenance cycle / damage proxy / abandonment proxy;
+- 3 scale mixes: balanced / compact bias / standard bias.
 
-## TOPOLOGY GAUNTLET
-Operation `khepri.topology.audit.r4.20260913` PASS:
-- 68 mesh objects / 6 unique mesh datablocks;
-- zero zero-area faces;
-- zero zero-length edges;
-- zero invalid face normals;
-- every non-terrain mesh closed/manifold;
-- terrain has exactly 280 boundary/non-manifold edges, the expected perimeter of an open 81×61 tile; explicit waiver references terrain tiling contract;
-- route curve has 575 non-degenerate ~10 m segments;
-- one material slot per mesh object.
+Actual configuration space: **432**. Cold pure-contract audit proves every configuration non-empty, with `44…185` placements. This is a real combinatorial system, not a declared multiplier.
 
-This is blockout topology QA only; final UV/retopo/collision/LOD are separate gates.
+Representative macrocell R7/R8:
+- 107 masts + 107 panels;
+- 93 operational + 14 maintenance-cycle assemblies;
+- scale family: compact / standard / wide;
+- 3 shared mast LOD0 meshes + 3 shared panel LOD0 meshes;
+- route clearance min ~144.714 m;
+- anchor clearance min ~269.916 m;
+- pair spacing min ~438.462 m;
+- max accepted terrain slope ~10.794°;
+- mast/terrain contact error about `−7.13…+8.61 μm`;
+- topology has zero degenerate faces/edges.
 
-## SPLIT EXPORT / STREAMING INTERFACE
-`export_stream_units.py` + `R4_STREAM_SPLIT.json` prove separable portable packages without changing the master.
+R7 master/cold semantic fingerprint:
+`01420ed366a7f8443a084332036604c47324d50900ae2033ea4d42059440d1fa`
 
-L1 orbital:
-- standalone centered export;
-- authoring offset `(0,0,-1100)` removed only during export, then restored;
-- 1 object / 1 mesh / 1 material;
-- `132,916 B` master and cold;
-- normalized glTF JSON master/cold hash matches (`5600ba9e…`);
-- no cameras or external URIs.
+### State causality
+Machine gate is authority:
+- operational: normal tracking proxy;
+- maintenance: panel stowed at 72°;
+- damaged proxy: panel 3 m lower + off-axis rotation;
+- abandoned proxy: mast remains, panel absent.
 
-L2 macrocell:
-- terrain + optical footprints + four route anchors;
-- excludes QA route guide, human QA guide, cameras and lights;
-- `553,012 B` master and cold;
-- 69 nodes / 65 mesh objects / only 3 glTF meshes because instancing is preserved;
-- normalized glTF JSON master/cold hash matches (`7c99bfe2…`);
-- no external URIs.
+No random grunge is used. AI state-gallery review says all four states are visually distinct; where its abandoned interpretation conflicted with structure, machine truth overrides vision. Damage/abandonment modes are **proposal QA modes**, not canon events.
 
-This proves portable packaging boundaries, **not production engine streaming**.
+### Density QA
+AI overview density gate PASS, supplemental only:
+- infrastructure read: yes;
+- route legible: yes;
+- controlled variation: yes;
+- clutter fail: no;
+- floating: no;
+- repetition risk: low.
 
-## TERRAIN TILING CONTRACT
-`terrain_tile_contract.py` + `R5_TERRAIN_TILING.json`:
-- tile-local storage, global tangent-grid height evaluation;
-- 81×61 grid at exact 80 m spacing;
-- E/W/N/S border coordinate error `0 m`;
-- border height error `0 m`;
-- global-gradient normal mismatch max ~`1.48e-6°`;
-- master terrain's 4,941 vertices match `KHP_TERRAIN_V1` within max ~`7.6 μm` / mean ~`0.81 μm` float residual.
+Minor follow-up suggestions only: future dense districts may open wider corridor breaks and strengthen route emphasis at cluster crossings. No current blocking defect.
 
-Using the **proposed/non-canon** 5,224 km radius, a flat 6.4×4.8 km cell has ~1.53 m corner sagitta. Therefore this gate proves authoring continuity only; final spherical curvature/world partition remains unresolved.
+## X100 LOD SOURCE FAMILY
+Tool: `art_source/khepri/world_macro/add_optical_lods_x100.py`  
+Contract: `KHP_OPTICAL_LOD_X100_V1`
 
-## CI / FLEET
-Fleet claim is active in `ops/fleet/registry.json` and protects exact KHEPRI paths/project IDs.
+For compact/standard/wide × mast/panel:
+- LOD0: 24 verts / 18 polys;
+- LOD1: 16 verts / 12 polys;
+- LOD2: 8 verts / 6 polys.
 
-- Integration head `a4cb4d0b…` → PR Gauntlet `34722486412` SUCCESS.
-- An accidental post-green receipt was removed rather than forcing another stale manifest.
-- Manifest-locked tree `8022197e…` → PR Gauntlet `34722654514` SUCCESS.
+12 LOD1/LOD2 source meshes are retained through Blender `fake_user`, with **zero object users**. They remain editable source truth and are not instanced in the representative GLB. Script idempotence explicitly distinguishes `fake_user` from object instancing.
 
-Do not treat CI success as art, GPU or engine-import approval.
+Master/cold LOD fingerprint:
+`1c67430d580cae109fa50dfab73e6747304e87b5b3c9bba99e65fa6fe4e80101`
 
-## VISUAL EVIDENCE
-Fresh Eevee query `khepri.visual.fresh.r4.20260913` at 960×540:
-- overview artifact `57acd2b85cc986ccb1f9ec5502b96b0a`, 403,017 B;
-- gameplay artifact `c6bd87b88141e4955efd33a53416ef8b`, 424,972 B.
+Runtime LOD distance thresholds and HLOD remain downstream technical-art ownership; collision remains downstream gameplay ownership.
 
-Machine framing/scale gates PASS. A browser-agent traversed both images for independent review but returned an empty structured result; classify as **NO_EVIDENCE**, not PASS/FAIL. Human/pixel GATE-ART remains open.
+## GODOT NATIVE R8
+Engine: `Godot 4.7.2.stable.official.ed1daf0bf`
 
-## BINARY PERSISTENCE BLOCKER — NARROWED
-Provider r4 `.blend` and GLB remain recoverable. A browser workflow successfully downloaded both exact provider files, so provider egress itself is confirmed. Upload then stopped safely because:
-- browser GitHub session was unauthenticated;
-- no credentials were configured;
-- browser download filesystem did not expose a reusable `file_uri` to the authenticated GitHub connector.
+R8 exact GLB native import:
+- 229 nodes;
+- 219 MeshInstance3D;
+- 107 masts / 107 panels;
+- 3 unique mast Mesh resources / 3 unique panel Mesh resources;
+- 224 stable authored asset IDs / 0 duplicates;
+- terrain 4,941 verts / 4,941 normals / 9,600 tris;
+- `KHP_OPTICAL_LOD_X100_V1` metadata survives;
+- `configuration_count=432` survives;
+- LOD manifest metadata survives.
 
-No GitHub files or branches were modified by that automation. `fleet_control.py delivery` can validate binaries once local but does not transport them. Current blocker is therefore **cross-tool private file handoff**, not asset absence.
+This proves import/resource sharing and metadata integrity, **not target-hardware performance**.
 
-## CANON / DECISIONS
-- KHEPRI canon: Sahra / Andrómeda / Sínodo de Bronce / 0.63 g / 71 °C reference area / solar-glass desert + heliostats / RA-KHET.
-- KHP-ADR-001 radius 5,224 km remains reversible PROPOSAL, not canon.
-- Local tangent metre-scale cells replace any monolithic gameplay-planet mesh.
-- `SHADE`, `GLASS_SEA`, `CRUCIBLE`, `RAKHET` remain cross-domain route interfaces, not final art ownership.
-- Final architecture/materials/characters/fauna/vehicles/RA-KHET belong to separate claims.
+## BINARY DELIVERY
+Technical transport blocker is closed for the current head:
+- exact R8 bytes recovered and SHA-bound;
+- persistent project media exists;
+- Godot native import passes;
+- fleet delivery passes.
 
-## OPEN GATES
-### P0 — BINARY_PERSISTENCE_TRANSPORT
-Need repository-controlled or equivalent private storage of exact R4 `.blend` + GLB, local SHA256, native/import receipt, then fleet delivery gate.
+Remaining corporate Git LFS archival is a storage-policy follow-up, not an asset-loss or execution blocker. Do not push `.blend`/`.glb` as ordinary Git blobs; `.gitattributes` marks them binary/LFS.
 
-### P1 — HUMAN_GATE_ART
-Need human/pixel review of overview/gameplay and explicit defects/approval. Machine visual QA cannot substitute.
+## VISUAL / HUMAN GATE
+Machine + AI density/scale evidence exists. `HUMAN_GATE_ART` remains the only blocking review gate in this claim. Do not promote blockout/support materials to final AAAA art without explicit human/pixel review.
 
-### DOWNSTREAM / OUTSIDE CURRENT DONE CLAIMS
-- target-engine import/instantiate/traversal;
-- production collision/navmesh;
-- final UV/PBR/material library;
-- final terrain/geology;
-- final LOD/HLOD/world partition;
-- target-hardware GPU budget;
-- final planet curvature/canon radius.
+## CI / FINOPS
+Last exact auto-Gauntlet green before cost quarantine: head `8022197e…`, run `34722654514` SUCCESS. Current `main` changed GitHub Actions to `workflow_dispatch` only for cost control. Therefore new branch/document waves require local combined checkout + `project_control` + tests + `fleet guard-git`; do not spend Actions unless a meaningful promotion gate requires it.
 
-## NEXT 3 ACTIONS
-1. Bridge R4 `.blend`/GLB into repository-controlled private storage and execute local SHA256 + fleet delivery/native import gates.
-2. Obtain human/pixel art review of R4 overview/gameplay; mutate only if defects fall inside world-macro ownership.
-3. When those gates are resolved, decide `RELEASE` vs a narrowly defined follow-up claim; do not keep expanding world density under this foundation claim.
+## CANON BOUNDARY
+- KHEPRI: Sahra / Andrómeda / Sínodo de Bronce / 0.63 g / 71 °C reference authored area / solar-glass desert + heliostats / RA-KHET.
+- Proposed radius 5,224 km remains reversible ADR, not canon.
+- Final ecology is blocked pending canonical definition; do not invent flora/fauna merely to fill coverage.
+- X100 damage/abandonment states are systemic proposal modes, not story canon.
 
-CLAIM STATUS: **KEEP / REVIEW**
+## NEXT EXECUTION
+1. Local combined-checkout preflight for current branch vs current main; refresh generated MANIFEST and run tests/project-control/fleet guard without Actions.
+2. RESYNC coverage + fleet.
+3. Reserve the next atomic X100 gap on a new branch. Highest systemic multiplier candidate is `GLOBAL_KHEPRI/materials_surface_library`; if already claimed, take next highest unclaimed gap such as final Glass Sea infrastructure.
+4. Do **not** broaden `CLM-KHEPRI-WMACRO-001` into final materials/architecture/collision ownership.
+
+CLAIM STATUS: **KEEP / REVIEW**  
+FAMILY STATUS: **SYSTEMIC_MACRO_COMPLETE**

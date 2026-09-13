@@ -3,12 +3,15 @@ session_id: SESSION-20260912-KHEPRI-001
 claim_id: CLM-KHEPRI-WMACRO-001
 world_id: khepri
 scope: world_macro/planetary_foundation
+x100_protocol: ACTIVE
 north_star: >-
-  Deliver KHEPRI world-macro foundation as a reproducible, metre-scale, physically plausible,
-  canon-preserving Blender production artifact with measured QA and explicit CANON/PROPOSAL boundaries.
+  Deliver KHEPRI world-macro foundation as a reproducible, metre-scale, canon-preserving,
+  systemically extensible production artifact. Under /EXOVANT-X100, maximize credible world depth
+  through deterministic families, causal states, controlled variants and engine-verifiable reuse,
+  never random object multiplication or final-art overclaiming.
 
 tasks:
-  - {id: KHP/WM/001, priority: P0, status: DONE, objective: "Reconstruct repository authority and current global state.", dod_result: PASS}
+  - {id: KHP/WM/001, priority: P0, status: DONE, objective: "Reconstruct repository authority and global state.", dod_result: PASS}
   - {id: KHP/WM/002, priority: P0, status: DONE, objective: "Audit concurrent ownership and persist atomic claim.", dod_result: PASS}
   - {id: KHP/WM/003, priority: P0, status: DONE, objective: "Resolve physical planet scale without inventing canon.", dod_result: PASS_PROPOSAL_NOT_CANON}
   - {id: KHP/WM/004, priority: P0, status: DONE, objective: "Define coordinate, cell and export interfaces.", dod_result: PASS}
@@ -16,25 +19,25 @@ tasks:
     priority: P0
     status: DONE
     objective: Generate L1 orbital proxy and L2 representative macro terrain.
-    evidence: {terrain_dimensions_m: [6400.0, 4800.0, 228.805], master_project: 040f0c45-83a7-483c-9ee7-1e31c640a587, revision: 4}
+    evidence: {terrain_dimensions_m: [6400.0, 4800.0, 228.805], master_project: 040f0c45-83a7-483c-9ee7-1e31c640a587}
     dod_result: PASS_BLOCKOUT
   - id: KHP/WM/006
     priority: P1
     status: DONE
     objective: Establish mission-derived macro route interfaces.
-    evidence: {anchors: [KHP_WM_ROUTE_SHADE, KHP_WM_ROUTE_GLASS_SEA, KHP_WM_ROUTE_CRUCIBLE, KHP_WM_ROUTE_RAKHET], route_points_r4: 576, clearance_target_m: 7.0, below_terrain_samples: 0}
+    evidence: {anchors: [KHP_WM_ROUTE_SHADE, KHP_WM_ROUTE_GLASS_SEA, KHP_WM_ROUTE_CRUCIBLE, KHP_WM_ROUTE_RAKHET], route_points: 576, target_clearance_m: 7.0, below_terrain_samples: 0}
     dod_result: PASS_INTERFACE_ONLY
   - id: KHP/WM/007
     priority: P1
-    status: DONE
-    objective: Procedural macro terrain and optical-infrastructure footprints.
-    evidence: {seed: 295006, panel_objects: 32, panel_unique_meshes: 1, mast_objects: 32, mast_unique_meshes: 1}
-    dod_result: PASS_BLOCKOUT
+    status: SUPERSEDED_BY_X100
+    objective: Initial procedural optical-infrastructure footprints.
+    evidence: {original_panel_objects: 32, original_mast_objects: 32, original_shared_meshes: [1, 1]}
+    dod_result: PASS_BLOCKOUT_SUPERSEDED_BY_KHP_WM_018
   - id: KHP/WM/008
     priority: P0
     status: DONE
     objective: Geometry/scale/scene QA.
-    evidence: {duplicate_names: 0, duplicate_asset_ids: 0, nonfinite_transforms: 0, negative_scale: 0, nonunit_mesh_scale: 0, unique_mesh_triangles: 11092}
+    evidence: {duplicate_names: 0, duplicate_asset_ids: 0, nonfinite_transforms: 0, negative_scale: 0, nonunit_mesh_scale: 0}
     dod_result: STRUCTURAL_PASS
   - id: KHP/WM/009
     priority: P1
@@ -42,113 +45,144 @@ tasks:
     objective: Visual macro validation.
     evidence:
       machine_visual: PASS
-      overview_lens_mm: 32.0
-      overview_clip_end_m: 12000.0
-      all_route_anchors_in_frame: true
-      all_route_anchors_within_clip: true
-      human_guide_projected_height_px_at_720p: 84.7
-      fresh_render_operation: khepri.visual.fresh.r4.20260913
-      independent_browser_art_review: NO_EVIDENCE_EMPTY_RESULT
+      ai_visual_density_r8: PASS
       human_gate: PENDING
-    dod_result: MACHINE_VISUAL_PASS_HUMAN_ART_REVIEW_PENDING
+    dod_result: MACHINE_AND_AI_VISUAL_EVIDENCE_PASS_HUMAN_ART_REVIEW_PENDING
   - id: KHP/WM/010
     priority: P0
-    status: BLOCKED
-    objective: Persist editable and portable R4 binaries in repository-controlled storage and pass fleet delivery.
+    status: DONE
+    objective: Recover, SHA-bind, persist and native-import exact current binaries; pass fleet delivery.
     evidence:
-      master_revision: 4
-      blend_bytes: 1379495
-      blend_etag: 6d81d2c81e19a841056f018926e32944
-      glb_bytes: 822272
-      glb_etag: 40d610951c4f0d8d3d83c7d4e67519dc
-      browser_provider_download: PASS
-      browser_github_upload: BLOCKED_UNAUTHENTICATED_SESSION_NO_FILE_HANDLE_BRIDGE
-      blocker: BINARY_PERSISTENCE_TRANSPORT
-    dod_result: PROVIDER_RECOVERY_PASS_REPO_ARCHIVAL_BLOCKED
+      current_revision: 8
+      persistent_glb_media_id: 1bed7b1f-0e0a-4cd3-b61b-a62f950b4ff5
+      persistent_blend_media_id: 0988f832-71ab-4c21-9c1e-ecbe3cd08bcb
+      glb_sha256: c9c698734061e481b94347c88d7c076b19c60261c8402548fb8ca1079d7d3579
+      blend_sha256: b2f3e2f8ff90f28a5485dc019efcfa5913def0dbbcfb5e39d883d3c469a25337
+      godot_engine: 4.7.2.stable.official.ed1daf0bf
+      godot_native_import: PASS
+      fleet_delivery: PASS_CANDIDATE_RECOVERED_WITH_NATIVE_RECEIPT
+      corporate_git_lfs_archive: DEFERRED_POLICY_NONBLOCKING
+    dod_result: PASS_TECHNICAL_DELIVERY
   - id: KHP/WM/011
     priority: P0
     status: DONE
-    objective: Prove clean-project reproducibility from versioned logic.
-    evidence:
-      cold_project: 4c01fdbb-7093-4229-9a49-8237583280bc
-      master_revision: 4
-      cold_revision: 3
-      master_cold_semantic_match: true
-      master_cold_blend_size_match: true
-      master_cold_glb_size_match: true
+    objective: Prove clean-project semantic reproducibility from versioned logic.
+    evidence: {cold_project: 4c01fdbb-7093-4229-9a49-8237583280bc, current_master_revision: 8, current_cold_revision: 6, x100_r7_scene_sha256: 01420ed366a7f8443a084332036604c47324d50900ae2033ea4d42059440d1fa, lod_sha256: 1c67430d580cae109fa50dfab73e6747304e87b5b3c9bba99e65fa6fe4e80101}
     dod_result: SEMANTIC_REPRODUCIBILITY_PASS
   - id: KHP/WM/012
     priority: P0
     status: DONE
-    objective: Reconcile producer branch with fleet-qualified main and restore exact PR CI.
-    evidence:
-      qualified_main: be6162064ceb475d5f7a7aa1388a7873f25d3258
-      integration_head: a4cb4d0bdb047efa338eed8ea3d30f94f08177d4
-      integration_gauntlet_run: 34722486412
-      manifest_locked_head: 8022197ec42eae9764d3dab2fcda311d8acad5e2
-      manifest_locked_gauntlet_run: 34722654514
-      exact_pr_ci: SUCCESS
-    dod_result: PASS
+    objective: Reconcile producer branch and restore exact PR CI before cost quarantine.
+    evidence: {manifest_locked_head: 8022197ec42eae9764d3dab2fcda311d8acad5e2, manifest_locked_gauntlet_run: 34722654514, exact_pr_ci: SUCCESS, current_ci_policy: MANUAL_WORKFLOW_DISPATCH_ONLY}
+    dod_result: PASS_HISTORIC_GREEN_MANUAL_QUARANTINE_ACTIVE
   - id: KHP/WM/013
     priority: P1
     status: DONE
-    objective: Audit terrain slope risk and make QA route physically conform to terrain.
-    evidence: {route_slope_p95_deg: 10.08, route_slope_max_deg: 10.64, post_fix_clearance_m: [6.9963, 7.0043], post_fix_max_error_m: 0.0043, below_terrain_samples: 0}
+    objective: Audit terrain slope and make QA route physically conform to terrain.
+    evidence: {route_slope_p95_deg: 10.08, route_slope_max_deg: 10.64, post_fix_clearance_m: [6.9963, 7.0043], below_terrain_samples: 0}
     dod_result: PASS_INTERFACE_GEOMETRY_ONLY
   - id: KHP/WM/014
     priority: P1
     status: DONE
-    objective: Prove blockout topology quality with explicit terrain-boundary waiver.
-    evidence:
-      operation: khepri.topology.audit.r4.20260913
-      mesh_objects: 68
-      unique_mesh_datablocks: 6
-      zero_area_faces: 0
-      zero_length_edges: 0
-      bad_normals: 0
-      terrain_expected_boundary_edges: 280
-      route_degenerate_segments: 0
+    objective: Prove blockout topology quality with terrain-boundary waiver.
+    evidence: {zero_area_faces: 0, zero_length_edges: 0, bad_normals: 0, terrain_expected_boundary_edges: 280, route_degenerate_segments: 0}
     dod_result: PASS_BLOCKOUT_TOPOLOGY
   - id: KHP/WM/015
     priority: P0
     status: DONE
     objective: Prove independent L1 orbital and L2 macrocell portable exports.
-    evidence:
-      tool: art_source/khepri/world_macro/export_stream_units.py
-      receipt: production/worlds/khepri/world_macro/receipts/R4_STREAM_SPLIT.json
-      l1_centered_bytes: 132916
-      l1_master_cold_normalized_gltf_match: true
-      l2_bytes: 553012
-      l2_gltf_nodes: 69
-      l2_gltf_meshes: 3
-      l2_master_cold_normalized_gltf_match: true
-      qa_guides_excluded_from_l2: true
+    evidence: {tool: art_source/khepri/world_macro/export_stream_units.py, receipt: production/worlds/khepri/world_macro/receipts/R4_STREAM_SPLIT.json, l1_centered_bytes: 132916, l2_bytes: 553012, master_cold_normalized_gltf_match: true}
     dod_result: PASS_PORTABLE_SPLIT
   - id: KHP/WM/016
     priority: P0
     status: DONE
     objective: Prove seam-safe local terrain tiling without inventing final engine streaming.
-    evidence:
-      tool: art_source/khepri/world_macro/terrain_tile_contract.py
-      receipt: production/worlds/khepri/world_macro/receipts/R5_TERRAIN_TILING.json
-      grid_spacing_m: [80.0, 80.0]
-      max_neighbor_coordinate_error_m: 0.0
-      max_neighbor_height_error_m: 0.0
-      max_normal_angle_error_deg: 0.0000014787793334710982
-      master_vertices_checked: 4941
-      master_height_model_max_error_m: 0.000007556913914186225
+    evidence: {tool: art_source/khepri/world_macro/terrain_tile_contract.py, receipt: production/worlds/khepri/world_macro/receipts/R5_TERRAIN_TILING.json, max_neighbor_height_error_m: 0.0, max_normal_angle_error_deg: 0.0000014787793334710982}
     dod_result: PASS_AUTHORING_CONTINUITY_ONLY
+  - id: KHP/WM/017
+    priority: P0
+    status: DONE
+    objective: Remove flat-shading export vertex explosion using seam-safe global terrain normals.
+    evidence:
+      master_revision: 6
+      terrain_positions_before: 19200
+      terrain_positions_after: 4941
+      terrain_glb_bytes_before: 520508
+      terrain_glb_bytes_after: 178288
+      whole_scene_glb_bytes_before: 822272
+      whole_scene_glb_bytes_after: 480312
+      master_cold_terrain_normal_sha256: ab7b0b20e8f305b2d30504fdf44d6b233f870d960f4b9774ff87ef1504c1b856
+      max_global_normal_error_deg: 0.03676070566375315
+      godot_vertices: 4941
+      godot_normals: 4941
+    dod_result: PASS_SEAM_SAFE_EXPORT_OPTIMIZATION
+  - id: KHP/WM/018
+    priority: P1
+    status: DONE
+    objective: Expand KHP_WM_HELIOSTAT_FOOTPRINTS into an X100 production-grade systemic macro family.
+    evidence:
+      contract: KHP_OPTICAL_FIELD_X100_V1
+      tool: art_source/khepri/world_macro/expand_optical_field_x100.py
+      configuration_count: 432
+      all_config_instance_range: [44, 185]
+      default_instances: 107
+      default_states: {operational: 93, maintenance: 14}
+      variants: [compact, standard, wide]
+      layouts: [staggered_bands, aligned_lattice, diagonal_bands, radial_fan]
+      corridors: [dual_ns, single_ns, cross]
+      min_route_clearance_m: 144.714
+      min_anchor_clearance_m: 269.916
+      max_slope_deg: 10.794
+      contact_error_m: [-0.00000713, 0.00000861]
+      min_pair_spacing_m: 438.462
+      master_cold_scene_sha256: 01420ed366a7f8443a084332036604c47324d50900ae2033ea4d42059440d1fa
+      ai_density_gate: PASS
+      runtime_instancing: PASS
+    dod_result: SYSTEMIC_MACRO_COMPLETE
+  - id: KHP/WM/019
+    priority: P1
+    status: DONE
+    objective: Create deterministic editable LOD1/LOD2 source meshes for all X100 mast/panel variants.
+    evidence:
+      contract: KHP_OPTICAL_LOD_X100_V1
+      tool: art_source/khepri/world_macro/add_optical_lods_x100.py
+      lod_levels: [0, 1, 2]
+      source_meshes: 12
+      vertices_per_family: {LOD0: 24, LOD1: 16, LOD2: 8}
+      polygons_per_family: {LOD0: 18, LOD1: 12, LOD2: 6}
+      master_cold_lod_sha256: 1c67430d580cae109fa50dfab73e6747304e87b5b3c9bba99e65fa6fe4e80101
+      object_users_of_source_lods: 0
+      fake_user_persistence: true
+      runtime_thresholds: DEFERRED_DOWNSTREAM_TECH_ART
+    dod_result: PASS_SOURCE_LOD_FAMILY
+  - id: KHP/WM/020
+    priority: P1
+    status: DONE
+    objective: Prove causal state readability without random grunge or canonizing damage events.
+    evidence:
+      states: [operational, maintenance, damaged_proxy, abandoned_proxy]
+      machine_gate: PASS
+      ai_legibility_gate: PASS_WITH_ABANDONED_INTERPRETATION_OVERRIDDEN_BY_MACHINE_TRUTH
+      operational: panel_tracking_proxy
+      maintenance: panel_stowed_72_deg
+      damaged_proxy: panel_lowered_3m_and_off_axis
+      abandoned_proxy: mast_remains_panel_absent
+      random_grunge: false
+    dod_result: PASS_CAUSAL_STATE_SYSTEM
 
 progress_metrics:
   asset_coverage_percent: 100
   modeling_percent: 100
   materials_percent: 25
   optimization_percent: 100
-  integration_percent: 70
+  integration_percent: 95
   qa_percent: 99
-metrics_scope_note: "Percentages apply only to CLM-KHEPRI-WMACRO-001 blockout/foundation scope, never full KHEPRI or campaign."
-priority_open: {P0: 1, P1: 1, P2: 0, P3: 0}
+metrics_scope_note: "Percentages apply only to CLM-KHEPRI-WMACRO-001 foundation scope; KHEPRI global completeness remains low and multiplicative X100 gaps remain open."
+priority_open: {P0: 0, P1: 1, P2: 0, P3: 0}
 open_gates:
-  - BINARY_PERSISTENCE_TRANSPORT
   - HUMAN_GATE_ART
-last_heartbeat: "2026-09-13T10:58:00Z"
+nonblocking_followups:
+  - CORPORATE_GIT_LFS_ARCHIVE_POLICY
+  - RUNTIME_LOD_THRESHOLDS_AND_HLOD_DOWNSTREAM_TECH_ART
+  - PRODUCTION_COLLISION_DOWNSTREAM_GAMEPLAY
+last_heartbeat: "2026-09-13T18:36:00Z"

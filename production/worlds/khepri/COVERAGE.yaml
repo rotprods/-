@@ -1,9 +1,10 @@
-snapshot_at: "2026-09-12T19:44:00Z"
+snapshot_at: "2026-09-13T18:36:00Z"
 world_id: khepri
 branch_context: art/world-khepri-001
+x100_protocol: ACTIVE
 note: >-
-  Branch-local coverage snapshot for coordination. It does not override claims created later by other agents.
-  Status UNCLAIMED means no semantically equivalent KHEPRI branch/claim was observed at this snapshot.
+  Branch-local coverage snapshot for coordination. DONE/SYSTEMIC_MACRO_COMPLETE applies only
+  to the named family and never means the full KHEPRI world or downstream close-range domain is done.
 coverage:
   - region_id: GLOBAL_KHEPRI
     category: world_macro
@@ -13,12 +14,33 @@ coverage:
     owner: AGENT-KHEPRI-WMACRO-001
     claim: CLM-KHEPRI-WMACRO-001
     dependency: KHP-ADR-001
-    art_status: BLOCKOUT
-    modeling_status: STRUCTURALLY_VALIDATED
+    art_status: BLOCKOUT_AI_DENSITY_QA_PASS_HUMAN_GATE_PENDING
+    modeling_status: STRUCTURALLY_VALIDATED_X100_MACRO_SUPPORT
     material_status: BLOCKOUT_ONLY
-    optimization_status: PASS_FOR_BLOCKOUT
-    integration_status: PROVIDER_EXPORT_ONLY
-    qa_status: STRUCTURAL_PASS_VISUAL_HUMAN_PENDING
+    optimization_status: TERRAIN_NORMALS_AND_SYSTEMIC_INSTANCING_PASS
+    integration_status: GODOT_NATIVE_IMPORT_PASS
+    qa_status: TECHNICAL_PASS_HUMAN_ART_PENDING
+
+  - region_id: MACROCELL_A
+    category: infrastructure_support
+    asset_family: optical_field_systemic_footprints
+    priority: P1
+    status: DONE
+    owner: AGENT-KHEPRI-WMACRO-001
+    claim: CLM-KHEPRI-WMACRO-001
+    dependency: world_macro/planetary_foundation
+    art_status: SYSTEMIC_MACRO_COMPLETE_BLOCKOUT_VISUAL
+    modeling_status: SYSTEMIC_MACRO_COMPLETE
+    material_status: BLOCKOUT_ROLES_ONLY_DOWNSTREAM_PBR_REQUIRED
+    optimization_status: INSTANCING_LOD_SOURCE_PASS
+    integration_status: GODOT_NATIVE_IMPORT_PASS
+    qa_status: STATE_CAUSALITY_DENSITY_CONTACT_REPRODUCIBILITY_PASS
+    configuration_count: 432
+    default_instances: 107
+    variants: [compact, standard, wide]
+    states: [operational, maintenance, damaged_proxy, abandoned_proxy]
+    lod_levels: [LOD0, LOD1, LOD2]
+    nonclaims: [final_glass_sea_architecture, production_collision, runtime_lod_thresholds, HLOD, final_PBR, optical_physics, human_art_approval]
 
   - region_id: GLOBAL_KHEPRI
     category: terrain_geology
@@ -79,6 +101,7 @@ coverage:
     optimization_status: NOT_STARTED
     integration_status: NOT_STARTED
     qa_status: NOT_STARTED
+    note: X100 macro optical footprints are support/proxy only and do not claim this final domain.
 
   - region_id: CRUCIBLE_FUNCTIONAL
     category: industrial_architecture
@@ -241,6 +264,6 @@ coverage:
     art_status: N_A
     modeling_status: N_A
     material_status: N_A
-    optimization_status: NOT_STARTED
-    integration_status: NOT_STARTED
-    qa_status: NOT_STARTED
+    optimization_status: PARTIAL_SOURCE_LOD_AND_SPLIT_EXPORT_PROVEN
+    integration_status: PARTIAL_GODOT_IMPORT_PROVEN
+    qa_status: RUNTIME_THRESHOLDS_COLLISION_HLOD_TARGET_PERF_NOT_STARTED

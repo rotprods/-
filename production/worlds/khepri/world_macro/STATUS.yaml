@@ -5,48 +5,53 @@ agent_id: AGENT-KHEPRI-WMACRO-001
 session_id: SESSION-20260912-KHEPRI-001
 branch: art/world-khepri-001
 pr: 8
+x100_protocol: ACTIVE
+claim_status: KEEP_REVIEW_SYSTEMIC_MACRO_COMPLETE
 
 fleet:
   registry: ops/fleet/registry.json
   claim_status: active
   protocol: docs/FLEET_COORDINATION.md
-  qualified_main: be6162064ceb475d5f7a7aa1388a7873f25d3258
-  integration_head: a4cb4d0bdb047efa338eed8ea3d30f94f08177d4
-  integration_gauntlet_run: 34722486412
-  manifest_locked_head: 8022197ec42eae9764d3dab2fcda311d8acad5e2
-  manifest_locked_gauntlet_run: 34722654514
-  exact_pr_ci: SUCCESS
+  ci_policy: MANUAL_WORKFLOW_DISPATCH_ONLY_COST_QUARANTINE
+  last_exact_actions_green_head: 8022197ec42eae9764d3dab2fcda311d8acad5e2
+  last_exact_actions_green_run: 34722654514
 
 blender:
   master_project_id: 040f0c45-83a7-483c-9ee7-1e31c640a587
-  master_revision: 4
+  master_revision: 8
   cold_project_id: 4c01fdbb-7093-4229-9a49-8237583280bc
-  cold_revision: 3
+  cold_revision: 6
+  objects: 228
+  mesh_datablocks: 22
+  materials: 5
+  curves: 1
   structural_qa: PASS
   topology_qa: PASS
-  machine_visual_qa: PASS
   route_clearance_qa: PASS
-  heliostat_contact_qa: PASS
-  portable_blockout_qa: PASS
-  split_export_qa: PASS
   terrain_tiling_qa: PASS_AUTHORING_CONTINUITY_ONLY
+  terrain_global_normals_qa: PASS
+  x100_optical_family_qa: SYSTEMIC_MACRO_COMPLETE
+  x100_lod_source_qa: PASS
   semantic_reproducibility: PASS
   art_review: PENDING_HUMAN
-  blend_bytes: 1379495
-  blend_etag: 6d81d2c81e19a841056f018926e32944
-  glb_bytes: 822272
-  glb_etag: 40d610951c4f0d8d3d83c7d4e67519dc
+  blend_bytes: 2198165
+  blend_sha256: b2f3e2f8ff90f28a5485dc019efcfa5913def0dbbcfb5e39d883d3c469a25337
+  glb_bytes: 577744
+  glb_sha256: c9c698734061e481b94347c88d7c076b19c60261c8402548fb8ca1079d7d3579
 
-visual:
-  machine_status: PASS
-  fresh_render_operation: khepri.visual.fresh.r4.20260913
-  fresh_resolution: [960, 540]
-  overview_artifact: 57acd2b85cc986ccb1f9ec5502b96b0a
-  overview_bytes: 403017
-  gameplay_artifact: c6bd87b88141e4955efd33a53416ef8b
-  gameplay_bytes: 424972
-  independent_browser_review: NO_EVIDENCE_EMPTY_RESULT
-  human_status: PENDING_HUMAN_PIXEL_REVIEW
+terrain:
+  dimensions_m: [6400.0, 4800.0, 228.805]
+  grid: [81, 61]
+  grid_spacing_m: [80.0, 80.0]
+  height_model: KHP_TERRAIN_V1
+  shading_contract: SMOOTH_CUSTOM_GLOBAL
+  normal_contract: KHP_GLOBAL_GRADIENT_NORMAL_V1
+  source_vertices: 4941
+  godot_vertices: 4941
+  godot_normals: 4941
+  godot_triangles: 9600
+  terrain_normal_master_cold_sha256: ab7b0b20e8f305b2d30504fdf44d6b233f870d960f4b9774ff87ef1504c1b856
+  final_planet_curvature: NOT_APPROVED
 
 route_interface:
   refinement: R4_TERRAIN_CONFORMING
@@ -54,108 +59,121 @@ route_interface:
   segments: 575
   target_clearance_m: 7.0
   audited_clearance_m: [6.9963, 7.0043]
-  max_error_m: 0.0043
   below_terrain_samples: 0
+  anchor_order: [SHADE, GLASS_SEA, CRUCIBLE, RAKHET]
+  anchor_containment_qa: PASS
 
-heliostat_macro:
-  count: 32
-  mast_ground_contact_error_m: [-0.000004, 0.000004]
-  panel_center_above_mast_top_m: 6.0
-  min_pairwise_spacing_m: 490.0
-  shared_mast_meshes: 1
-  shared_panel_meshes: 1
+x100_optical_field:
+  family_asset_id: KHP_WM_HELIOSTAT_FOOTPRINTS
+  family_status: SYSTEMIC_MACRO_COMPLETE
+  contract: KHP_OPTICAL_FIELD_X100_V1
+  generator: art_source/khepri/world_macro/expand_optical_field_x100.py
+  configuration_count: 432
+  all_configuration_instance_range: [44, 185]
+  default_layout: staggered_bands
+  default_density: production
+  default_corridor: dual_ns
+  default_state_profile: maintenance_cycle
+  default_scale_mix: balanced
+  default_instances: 107
+  default_states: {operational: 93, maintenance: 14}
+  scale_variants: [compact, standard, wide]
+  layouts: [staggered_bands, aligned_lattice, diagonal_bands, radial_fan]
+  corridors: [dual_ns, single_ns, cross]
+  supported_state_profiles: [operational, maintenance_cycle, damage_proxy, abandonment_proxy]
+  min_route_clearance_m: 144.714
+  min_anchor_clearance_m: 269.916
+  min_pair_spacing_m: 438.462
+  max_slope_deg: 10.794
+  ground_contact_error_m: [-0.00000713, 0.00000861]
+  unique_mast_lod0_meshes: 3
+  unique_panel_lod0_meshes: 3
+  master_cold_scene_sha256: 01420ed366a7f8443a084332036604c47324d50900ae2033ea4d42059440d1fa
+  ai_density_gate: PASS
+  ai_density_repetition_risk: LOW
+  ai_density_clutter_fail: false
+  state_machine_gate: PASS
+  state_ai_legibility_gate: PASS_SUPPLEMENTAL
 
-blockout_topology:
-  operation: khepri.topology.audit.r4.20260913
-  mesh_objects: 68
-  unique_mesh_datablocks: 6
-  zero_area_faces: 0
-  zero_length_edges: 0
-  invalid_face_normals: 0
-  nonterrain_closed_manifold: true
-  terrain_open_boundary_edges: 280
-  terrain_boundary_waiver: EXPECTED_TILE_PERIMETER
-  route_degenerate_segments: 0
-  single_material_slot_per_mesh: true
+x100_lod_source:
+  contract: KHP_OPTICAL_LOD_X100_V1
+  generator: art_source/khepri/world_macro/add_optical_lods_x100.py
+  levels: [LOD0, LOD1, LOD2]
+  source_lod_meshes: 12
+  object_users_of_source_lods: 0
+  fake_user_persistence: true
+  family_vertices: {LOD0: 24, LOD1: 16, LOD2: 8}
+  family_polygons: {LOD0: 18, LOD1: 12, LOD2: 6}
+  master_cold_lod_sha256: 1c67430d580cae109fa50dfab73e6747304e87b5b3c9bba99e65fa6fe4e80101
+  runtime_thresholds: DOWNSTREAM_TECH_ART
+  hlod: DOWNSTREAM_TECH_ART
 
-split_export:
-  receipt: production/worlds/khepri/world_macro/receipts/R4_STREAM_SPLIT.json
-  l1:
-    centered_bytes: 132916
-    self_contained: true
-    cameras: 0
-    preview_offset_removed_during_export: true
-    master_cold_normalized_gltf_match: true
-  l2:
-    bytes: 553012
-    nodes: 69
-    mesh_objects: 65
-    gltf_meshes: 3
-    self_contained: true
-    cameras: 0
-    qa_guides_excluded: true
-    master_cold_normalized_gltf_match: true
+runtime_delivery:
+  engine: Godot 4.7.2.stable.official.ed1daf0bf
+  native_import: PASS
+  fleet_delivery: PASS_CANDIDATE_RECOVERED_WITH_NATIVE_RECEIPT
+  persistent_glb_media_id: 1bed7b1f-0e0a-4cd3-b61b-a62f950b4ff5
+  persistent_blend_media_id: 0988f832-71ab-4c21-9c1e-ecbe3cd08bcb
+  godot_nodes: 229
+  godot_mesh_instances: 219
+  godot_masts: 107
+  godot_panels: 107
+  godot_unique_mast_mesh_resources: 3
+  godot_unique_panel_mesh_resources: 3
+  godot_asset_ids: 224
+  godot_duplicate_asset_ids: 0
+  godot_lod_contract: KHP_OPTICAL_LOD_X100_V1
+  godot_configuration_count: 432
+  corporate_git_lfs_archive: DEFERRED_POLICY_NONBLOCKING
 
-terrain_tiling:
-  receipt: production/worlds/khepri/world_macro/receipts/R5_TERRAIN_TILING.json
-  grid: [81, 61]
-  grid_spacing_m: [80.0, 80.0]
-  neighbor_coordinate_error_m: 0.0
-  neighbor_height_error_m: 0.0
-  max_neighbor_normal_angle_error_deg: 0.0000014787793334710982
-  master_model_sync_vertices: 4941
-  master_model_max_height_error_m: 0.000007556913914186225
-  proposed_radius_flat_cell_corner_sagitta_m: 1.5313937924802303
-  planet_curvature_gate: NOT_APPROVED
-
-binary_persistence:
-  provider_recovery: PASS
-  browser_download_glb: PASS
-  browser_download_blend: PASS
-  github_upload: BLOCKED
-  blocker: BROWSER_SESSION_UNAUTHENTICATED_AND_NO_REUSABLE_FILE_URI_BRIDGE
-  fleet_delivery_local: NOT_RUN_NO_LOCAL_FILE_HANDLE
+visual:
+  ai_density_review: PASS
+  infrastructure_read: true
+  route_legible: true
+  controlled_variation: true
+  clutter_fail: false
+  obvious_floating: false
+  repetition_risk: LOW
+  state_gallery_ai_review: PASS_SUPPLEMENTAL
+  state_machine_truth: PASS
+  human_status: PENDING_HUMAN_PIXEL_REVIEW
 
 progress:
   asset_coverage_percent: 100
   modeling_percent: 100
   materials_percent: 25
   optimization_percent: 100
-  integration_percent: 70
+  integration_percent: 95
   qa_percent: 99
-scope_note: "Progress percentages apply only to the atomic world-macro blockout/foundation claim."
+scope_note: >-
+  Percentages apply only to CLM-KHEPRI-WMACRO-001 foundation scope. KHEPRI global X100 completeness
+  remains low because materials, final geology, architecture, props, characters, vehicles and other domains are separate gaps.
 
 completed:
-  - repository_bootstrap
-  - collision_audit_and_claim
-  - fleet_owner_ack_active
-  - planet_scale_adr
-  - world_bible_shard
-  - coverage_matrix
-  - deterministic_generator
-  - optimization_pass
-  - structural_validator
-  - camera_frustum_and_scale_proof
-  - terrain_slope_audit
-  - terrain_conforming_route_r4
-  - provider_blend_glb_export
-  - cold_project_semantic_reproducibility_r4
-  - r4_overview_gameplay_renders
-  - heliostat_macro_contact_audit
-  - portable_blockout_audit
-  - topology_audit
-  - l1_l2_split_export_audit
-  - seam_safe_terrain_tiling_contract
-  - exact_pr_ci_green
+  - deterministic_world_macro_foundation
+  - terrain_conforming_route
+  - seam_safe_tiling_contract
+  - seam_safe_global_terrain_normals
+  - l1_l2_portable_split
+  - native_godot_import
+  - x100_optical_systemic_family
+  - x100_causal_state_system
+  - x100_source_lod_family
+  - x100_ai_density_gate
+  - r8_persistent_binary_delivery
 
 blocked:
   - HUMAN_GATE_ART
-  - BINARY_PERSISTENCE_TRANSPORT
+
+nonblocking_followups:
+  - CORPORATE_GIT_LFS_ARCHIVE_POLICY
+  - RUNTIME_LOD_THRESHOLDS_AND_HLOD_DOWNSTREAM_TECH_ART
+  - PRODUCTION_COLLISION_DOWNSTREAM_GAMEPLAY
+  - FINAL_PBR_MATERIAL_LIBRARY_SEPARATE_CLAIM
 
 next:
-  - "Obtain human/pixel review of revision-4 overview/gameplay renders; do not infer it from machine metrics."
-  - "Bridge exact provider r4 .blend/GLB into repository-controlled storage, compute local SHA256 and run fleet delivery/native import gate."
-  - "After those gates, decide RELEASE vs narrowed follow-up claim; downstream engine/collision/final-art domains remain separate ownership leaves."
+  - "Resync coverage/fleet and reserve the next atomic X100 KHEPRI gap; do not broaden this claim into final Glass Sea/material/architecture ownership."
+  - "Highest systemic multiplier candidate: GLOBAL_KHEPRI materials_surface_library; fallback: GLASS_SEA final infrastructure if already claimed."
+  - "Keep PR #8 draft until HUMAN_GATE_ART or explicit waiver; do not spend Actions while workflow remains manual-only unless a promotion gate needs it."
 
-last_heartbeat: "2026-09-13T10:58:00Z"
-claim_status: KEEP_REVIEW
+last_heartbeat: "2026-09-13T18:36:00Z"
