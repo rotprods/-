@@ -21,4 +21,4 @@ Explicit exclusions: producer art branches, Fleet transitions on behalf of owner
 
 Control-plane decision: optimizer, spatial projection and tests live under `ops/x100/`, intentionally outside `tools/` and root `tests/`, so protocol-only changes do not invalidate Godot runtime source evidence.
 
-Status: `PROTOCOL_CANDIDATE`; becomes default only after merge/readback from `main`.
+Status: `DEFAULT_WHEN_PRESENT_ON_MAIN`; on this feature branch it remains a protocol candidate until PR #30 merge/readback.
