@@ -1,0 +1,55 @@
+{
+  "schema": "exovant.world-density-x100.progress.v1",
+  "world": "UMBRA",
+  "baseline_percent": 18.46,
+  "current_percent": 26.98,
+  "classification": "PLAYABLE_FOUNDATION",
+  "current_factors": {
+    "MACRO_WORLD": 0.18,
+    "MESO_ARCHITECTURE": 0.38,
+    "MICRO_ASSETS": 0.28,
+    "ECOLOGY": 0.02,
+    "CIVILIZATION": 0.26,
+    "GAMEPLAY": 0.45,
+    "MATERIAL_CAUSALITY": 0.36,
+    "VARIATION": 0.24,
+    "TEMPORAL_STATES": 0.20,
+    "STORYTELLING": 0.38,
+    "AUDIO_VISUAL_LANGUAGE": 0.22,
+    "OPTIMIZATION": 0.58,
+    "REUSABILITY": 0.48,
+    "QA": 0.60
+  },
+  "raw_product": 1.0814351649118618e-8,
+  "geometric_mean": 0.26977396486930144,
+  "completed_x100_foundations": [
+    "W04-X100-SERVICE-ECOSYSTEM: 10 systemic service/cultural-utility families, 90 authored size/state prefab roots",
+    "W04-X100-DISTRICT-SERVICE-YARDS: 3 authored systemic compositions, 30 instances, ERA_0/ERA_1/ERA_2",
+    "terrain-conforming hardpack gate: 3 yards, 91 sampled vertices each at +0.04 m",
+    "clearance gate: 5 m center corridors, 0 prefab child mesh intrusions",
+    "root contact gate: +0.03 m terrain datum",
+    "shared-data policy maintained"
+  ],
+  "scene_checkpoint": "X100_SERVICE_YARDS_QA_FIXED_001",
+  "scene_metrics": {
+    "objects": 1577,
+    "mesh_objects": 1428,
+    "materials": 12,
+    "bad_residual_scales": 0,
+    "zero_dimension_meshes": 0
+  },
+  "remaining_dominant_bottlenecks": [
+    "ECOLOGY blocked by canon",
+    "L0 physical planet/global geography blocked by canon",
+    "L3 architecture diversity still low",
+    "damage/abandonment state families incomplete",
+    "L5 joints/fasteners/welds/gaskets/material wear system incomplete",
+    "final UV/PBR/texel density blocked until runtime target contract",
+    "runtime import/collision/LOD/HLOD/profile pending integration",
+    "direct visual/human art review pending",
+    "MR-EXO-001 durable binary custody pending",
+    "final NOCTIL contract blocked"
+  ],
+  "next_highest_value_gap": "W04-X100-DAMAGE-REPAIR-STATES",
+  "stop_condition": "NONE"
+}
