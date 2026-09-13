@@ -21,13 +21,13 @@ Creado para EXOVANT 2950 como evolución explícita del mandato WORLD DENSITY ×
 Relación de autoridad:
 - **Fleet Coordination** decide ownership/claim/epoch/rutas/assets/projects y bloquea colisiones.
 - **EXOVANT-X100 V2** mide cobertura, calcula presión de bottleneck, ordena gaps elegibles, define expansión de families y el fidelity route.
-- **Graphify/COS** representa relaciones y provenance; X100 aporta una proyección vectorial espacial-semántica, no una segunda autoridad.
+- **Graphify/COS** representa relaciones y provenance; X100 aporta una proyección vectorial espacial-semántica separada, no una segunda autoridad ni un nuevo tipo de nodo canónico.
 - **Gauntlet** valida implementación/evidencia; un score X100 alto nunca equivale a PASS.
 - **APRENDE** conserva aprendizajes demostrados; X100 no promueve heurísticas sin evidencia.
 
-Vectorización: `tools/x100_spatial.py` genera 64 dimensiones por claim/rama a partir de mundo, escala L0–L5, dominio, status, bounds físicos explícitos y un tail semántico determinista. Coordenadas desconocidas mantienen `spatial_known=0`; inferencias desde el nombre de rama se etiquetan y no son canon ni ownership.
+Vectorización: `ops/x100/x100_spatial.py` genera 64 dimensiones por claim/rama a partir de mundo, escala L0–L5, dominio, status, bounds físicos explícitos y un tail semántico determinista. Coordenadas desconocidas mantienen `spatial_known=0`; inferencias desde el nombre de rama se etiquetan y no son canon ni ownership.
 
-Optimización: `tools/x100_control.py` implementa media geométrica ponderada, pesos adaptativos por déficit y ranking con hard fence de claims ajenos. Configuración exacta en `ops/x100/config.json`; tests en `tests/test_x100.py`.
+Optimización: `ops/x100/x100_control.py` implementa media geométrica ponderada, pesos adaptativos por déficit y ranking con hard fence de claims ajenos. Configuración exacta en `ops/x100/config.json`; tests en `ops/x100/tests/test_x100.py`.
 
 Fidelity: Tier S/A o familias de identidad fuerte usan por defecto LOOK_LOCK → target visual → image-to-3D base → causality/cleanup/retopo → material → LOD/collision → engine → visual regression. Higgsfield 3D Jutsu puede acelerar la reconstrucción cuando aporta valor; un raw AI mesh nunca se clasifica final.
 
