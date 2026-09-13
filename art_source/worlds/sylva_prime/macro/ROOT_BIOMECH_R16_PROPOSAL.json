@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "claim": "CLM-SYLVA-MACRO-001",
+  "source_revision": 15,
+  "target_contract": "SYLVA_MACRO_ROOT_TAPER_R16",
+  "status": "READY_FOR_SINGLE_WRITER_EXECUTION",
+  "design_basis": [
+    "BIOLOGICAL_REALISM_REFERENCE_PACK_R14.md",
+    "ART_DIRECTION_BIBLE_R14.md",
+    "qa/R16_MACRO_ROOT_BIOMECH_AUDIT.json"
+  ],
+  "principle": "Represent local load reinforcement and distal taper at kilometre scale without moving centerlines or claiming final root cross-section anatomy.",
+  "immutables": [
+    "all six root object names",
+    "all five Bezier control-point coordinates per root",
+    "root endpoints",
+    "terrain R12 geometry",
+    "navigation R10 geometry/collision",
+    "R13 membership",
+    "R14 hierarchy",
+    "R15 prefetch policy semantics",
+    "PR6 provider assets"
+  ],
+  "profiles": {
+    "SYLVA_ROOT_PRIMARY_R01": {"base_bevel_radius_m":48,"anchor":"PUERTO@point2","point_radius_multipliers":[0.75,0.95,1.32,1.05,0.82]},
+    "SYLVA_ROOT_PRIMARY_R02": {"base_bevel_radius_m":62,"anchor":"BOSQUE@point2","point_radius_multipliers":[0.72,0.92,1.30,1.02,0.78]},
+    "SYLVA_ROOT_PRIMARY_R03": {"base_bevel_radius_m":72,"anchor":"VESPER@point2","point_radius_multipliers":[0.70,0.90,1.34,1.04,0.80]},
+    "SYLVA_ROOT_PRIMARY_R04": {"base_bevel_radius_m":36,"anchor":"NETWORK_JUNCTION_MIDSPAN","point_radius_multipliers":[0.78,0.92,1.18,1.08,0.82]},
+    "SYLVA_ROOT_PRIMARY_R05": {"base_bevel_radius_m":30,"anchor":"NETWORK_JUNCTION_MIDSPAN","point_radius_multipliers":[0.75,0.92,1.20,1.10,0.82]},
+    "SYLVA_ROOT_PRIMARY_R06": {"base_bevel_radius_m":40,"anchor":"VESPER_APPROACH@point4","point_radius_multipliers":[0.70,0.82,0.94,1.08,1.28]}
+  },
+  "expected_effective_radius_ranges_m": {
+    "R01": [36.0,63.36],
+    "R02": [44.64,80.60],
+    "R03": [50.40,96.48],
+    "R04": [28.08,42.48],
+    "R05": [22.50,36.00],
+    "R06": [28.00,51.20]
+  },
+  "remaining_proxy_limits": [
+    "cross-section remains circular",
+    "no bark/fiber/callus microstructure",
+    "no animated growth/deformation",
+    "no root-specific collision generated",
+    "no claim of final biological anatomy"
+  ],
+  "acceptance": [
+    "control-point coordinates bit-identical before/after",
+    "all six radius profiles match proposal",
+    "R12/R13/R14/R15 contracts preserved",
+    "route collision remains manifold",
+    "stream membership does not require expansion after new bounds; if it does, update R13 membership explicitly in same wave",
+    "0 provider meshes copied",
+    "new geometry fingerprint recorded",
+    "render signal remains nonblank"
+  ]
+}
