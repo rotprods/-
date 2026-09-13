@@ -6,7 +6,7 @@ It ranks evidence-backed production gaps after ownership has been resolved.
 """
 from __future__ import annotations
 from pathlib import Path
-import argparse, json, math
+import argparse, json, math, sys
 
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_CONFIG = ROOT / "ops/x100/config.json"
@@ -56,7 +56,7 @@ def _coverage_values(coverage, cfg):
     return vals
 
 def world_completeness(coverage, cfg):
-    """Weighted geometric mean. Any exact zero critical dimension makes score zero."""
+    """Weighted geometric mean. Any exact zero dimension makes score zero."""
     vals = _coverage_values(coverage, cfg)
     if any(vals[d] == 0.0 for d in cfg["critical_dimensions"]):
         return 0.0
@@ -178,19 +178,21 @@ def audit_world(doc, cfg):
     try:
         score=world_completeness(coverage,cfg)
         pressure=gradient_pressure(coverage,cfg)
+        measured=True
     except X100Error as e:
         return {"world_id":doc.get("world_id"),"measured":False,"error":str(e),"status":"MEASUREMENT_REQUIRED"}
     scale=doc.get("scale_coverage",{})
     missing_scales=[x for x in cfg["scale_levels"] if not scale.get(x,False)]
-    return {
+    result={
         "world_id":doc.get("world_id"),
-        "measured":True,
+        "measured":measured,
         "world_completeness":round(score*100,4),
         "stage":stage_for_score(score*100,cfg),
         "gradient_pressure":{k:round(v,6) for k,v in pressure.items()},
         "missing_scales":missing_scales,
         "world_density_gate": not missing_scales and score>=0.65,
     }
+    return result
 
 def _main(argv=None):
     p=argparse.ArgumentParser(prog="x100_control.py")
