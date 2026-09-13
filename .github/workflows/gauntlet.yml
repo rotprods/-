@@ -1,8 +1,6 @@
 name: EXOVANT Gauntlet
 on:
-  push:
-    branches: [main]
-  pull_request:
+  # TEMPORARY COST QUARANTINE: explicit manual promotion only.
   workflow_dispatch:
 permissions:
   contents: read
