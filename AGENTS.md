@@ -57,9 +57,9 @@ Tras el bootstrap y **antes de seleccionar nuevo trabajo de mundo/asset**, leer 
 `RESYNC → X100_SPATIAL_BUILD → FLEET_PREFLIGHT → X100_COVERAGE_AUDIT → BOTTLENECK_GRADIENT → ELIGIBLE_GAPS → CLAIM → BUILD → GAUNTLET → RECEIPT → RECOMPUTE → NEXT`.
 
 Reglas de adopción:
-- Ejecutar `python3 tools/x100_spatial.py build` después de recuperar refs/registro actuales. La proyección vectorial sirve para awareness/retrieval; **Fleet sigue siendo autoridad de ownership**.
+- Ejecutar `python3 ops/x100/x100_spatial.py build` después de recuperar refs/registro actuales. La proyección vectorial sirve para awareness/retrieval; **Fleet sigue siendo autoridad de ownership**.
 - Nunca inventar coordenadas: `spatial_known=0` no significa origen. Inferencias desde nombres de rama se etiquetan y no crean ownership.
-- Usar `python3 tools/x100_control.py audit ...` para medir el mundo y `rank ...` para ordenar gaps. Un gap reclamado por otro owner es ineligible aunque tenga mayor score.
+- Usar `python3 ops/x100/x100_control.py audit ...` para medir el mundo y `rank ...` para ordenar gaps. Un gap reclamado por otro owner es ineligible aunque tenga mayor score.
 - Después de cada wave con evidencia, actualizar el audit X100 dentro de una ruta owned y recalcular el gradiente. No declarar WORLD_COMPLETE por cerrar un asset local.
 - Tier S/A o assets de identidad fuerte siguen por defecto `LOOK_LOCK → IMAGE_TARGET → IMAGE_TO_3D_BASE → CLEANUP/RETOPO → MATERIAL → LOD/COLLISION → ENGINE → VISUAL_REGRESSION`. Higgsfield 3D Jutsu es una superficie preferente cuando aporta reconstrucción útil; **raw AI/reconstruction mesh nunca es final**.
 - Kits sistémicos pueden usar modelado procedural/manual en lugar de image-to-3D cuando produzca geometría más limpia/reutilizable; registrar waiver.
