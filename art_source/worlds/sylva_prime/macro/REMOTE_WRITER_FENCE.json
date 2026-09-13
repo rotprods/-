@@ -2,14 +2,14 @@
   "schema_version": 1,
   "claim_id": "CLM-SYLVA-MACRO-001",
   "primary_project_id": "05dce898-753d-4ff6-a4b0-31757dc868d8",
-  "accepted_revision_before_wave": 15,
+  "accepted_revision": 17,
+  "accepted_scene_sequence": 0,
   "writer_fence_epoch": 4,
   "writer_fence_id": "SYLVA-MACRO-WRITER-EPOCH-4-R16-20260913",
   "owner": "AGENT-SYLVA-MACRO-01",
   "writer_session": "20260913-SYLVA-R16-WRITER-001",
   "branch": "art/world-sylva-prime-macro-001",
-  "status": "ACTIVE_SINGLE_WRITER_R16",
-  "reason": "Read-only R15 biomechanical audit proved all six kilometre-scale primary roots were constant-radius circular Bezier tubes. R16 is authorized as a bounded macro-silhouette correction inside existing ownership, with centerlines and all spatial/runtime contracts locked.",
+  "status": "CLOSED_ACCEPTED_R16",
   "fleet_activation": {
     "registry_generation": 8,
     "claim_status": "active",
@@ -18,27 +18,40 @@
     "ack_evidence_ref": "https://github.com/rotprods/-/issues/7#issuecomment-5648367024",
     "registered_project_ids": ["05dce898-753d-4ff6-a4b0-31757dc868d8"],
     "main_synced_sha": "26ae20f5d1b47d1efa0d54b20124ed93cbc0b43e",
-    "branch_behind_before_wave": 0
+    "branch_behind_after_wave": 0
   },
-  "accepted_input": {
-    "revision": 15,
-    "scene_sequence": 0,
-    "build_status": "WAVE1M_PREFETCH_POLICY_NORMALIZATION_R15",
-    "geometry_fingerprint_sha256": "003760384ade90b7b0b792de6850a2eae90322d22f2ca246f8211395cb3e6224",
-    "r15_receipt": "art_source/worlds/sylva_prime/macro/qa/R15_PREFETCH_POLICY_NORMALIZATION.json"
+  "accepted_wave": {
+    "art_contract": "SYLVA_MACRO_ROOT_TAPER_R16",
+    "membership_amendment_contract": "SYLVA_STREAM_MEMBERSHIP_R16_AMENDMENT",
+    "taper_revision": 16,
+    "accepted_revision_after_membership_reconciliation": 17,
+    "geometry_fingerprint_before_r16": "003760384ade90b7b0b792de6850a2eae90322d22f2ca246f8211395cb3e6224",
+    "geometry_fingerprint_after_r16": "747a5b10c7344d5e4b0623354927e98faab8df6f44fced81c5f042350f079a89",
+    "geometry_fingerprint_after_revision17_metadata": "747a5b10c7344d5e4b0623354927e98faab8df6f44fced81c5f042350f079a89",
+    "control_point_coordinates_unchanged": true,
+    "stale_membership_after_reconciliation": 0,
+    "qa_receipt": "art_source/worlds/sylva_prime/macro/qa/R16_MACRO_ROOT_BIOMECH_ACCEPTANCE.json",
+    "visual_signal_receipt": "art_source/worlds/sylva_prime/macro/qa/R16_REGIONAL_VISUAL_SIGNAL_SMOKE.json"
   },
-  "r16_scope": {
-    "target_contract": "SYLVA_MACRO_ROOT_TAPER_R16",
-    "allowed_objects": ["SYLVA_ROOT_PRIMARY_R01", "SYLVA_ROOT_PRIMARY_R02", "SYLVA_ROOT_PRIMARY_R03", "SYLVA_ROOT_PRIMARY_R04", "SYLVA_ROOT_PRIMARY_R05", "SYLVA_ROOT_PRIMARY_R06"],
-    "allowed_changes": ["Bezier point radius", "root custom metadata", "SYLVA_WORLD_ROOT build/contract metadata"],
-    "forbidden_changes": ["Bezier control-point coordinates", "endpoints", "terrain", "routes", "collision", "R13 membership unless bounds prove stale", "R14 hierarchy", "R15 prefetch semantics", "PR6 provider geometry", "orbital project"],
-    "cross_section_truth": "CIRCULAR_PROXY_FINAL_SECTION_PENDING"
+  "accepted_artifacts": {
+    "blend_size_bytes": 2856650,
+    "blend_etag": "5fb0cc50f5e21cb8cc0effd556e35c83",
+    "glb_size_bytes": 1220616,
+    "glb_etag": "c7d3b8775c0519470d3ccc34bb392f3e"
   },
-  "mutation_rules": [
-    "Exactly one writer session owns the primary project for this wave.",
-    "Immediately before mutation require revision 15, sceneSequence 0 and no active operation.",
-    "If provider state differs, freeze and reconcile.",
-    "Persist QA and close this epoch before any later writer wave."
+  "remaining_proxy_limits": [
+    "primary-root cross sections remain circular curve bevels",
+    "no bark/fiber/reaction-tissue/callus microstructure",
+    "no dedicated root gameplay collision",
+    "human GATE-ART pending"
+  ],
+  "next_writer_rules": [
+    "No new mutation is authorized by this closed epoch.",
+    "Before a new wave reread main, fleet registry, claim, this fence and provider project state.",
+    "Open a monotonically increasing writer_fence_epoch and nominate exactly one writer session.",
+    "Require current revision 17, sceneSequence 0 and no active operation unless superseded by a later accepted checkpoint.",
+    "Any unexpected remote revision advance freezes mutation until reconciled.",
+    "A second agent remains read-only or uses a separate registered remote project plus atomic subclaim."
   ],
   "orbital_project": {
     "project_id": "c796230b-0463-4e17-9446-2e746c5c4933",
@@ -46,5 +59,5 @@
     "status": "EMPTY_PENDING_FLEET_REGISTRY",
     "mutation_allowed": false
   },
-  "truth": "Cooperative single-writer fence for the bounded R16 macro-root silhouette wave."
+  "truth": "Writer epoch 4 is closed after accepted R16 at scene revision 17. Cooperative fence only; not provider ACL."
 }
