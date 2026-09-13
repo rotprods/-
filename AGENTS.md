@@ -49,3 +49,19 @@ Protocolos del usuario en rotprods/rot.knowledge: APRENDE_MASTER, APRENDE_ENFORC
 
 ## Admisión y aprendizaje compartido
 Antes de aceptar trabajo, recuperar LRN-EXO-20260912-OWNER-ADMISSION. Cada owner produce, recupera y valida sus assets; el integrador interviene por entrega lista, conflicto entre ámbitos, regresión compartida o decisión necesaria. Reutilizar evidencia ligada a fuente/versión/contexto; repetir gates cuando la integración invalide esa evidencia. No duplicar producción ni crear auditorías para mantener actividad. Cada owner incluye en su próximo handoff normal learning_id, claim, commit, acción aplicada y evidencia, o explica por qué no aplica; no emitir heartbeats extra. Publicación no equivale a lectura/adopción. El integrador horario está pausado por decisión del usuario; no reactivarlo automáticamente. La incidencia visual local puede diagnosticarse como tarea compartida, sin asumir que la VM equivale al Mac o que la ausencia de GPU impide todos los trabajos.
+
+## EXOVANT-X100 V2 — protocolo por defecto para mundos y assets
+
+Tras el bootstrap y **antes de seleccionar nuevo trabajo de mundo/asset**, leer `docs/EXOVANT_X100_V2.md` y `ops/x100/config.json`. El orden obligatorio pasa a ser:
+
+`RESYNC → X100_SPATIAL_BUILD → FLEET_PREFLIGHT → X100_COVERAGE_AUDIT → BOTTLENECK_GRADIENT → ELIGIBLE_GAPS → CLAIM → BUILD → GAUNTLET → RECEIPT → RECOMPUTE → NEXT`.
+
+Reglas de adopción:
+- Ejecutar `python3 tools/x100_spatial.py build` después de recuperar refs/registro actuales. La proyección vectorial sirve para awareness/retrieval; **Fleet sigue siendo autoridad de ownership**.
+- Nunca inventar coordenadas: `spatial_known=0` no significa origen. Inferencias desde nombres de rama se etiquetan y no crean ownership.
+- Usar `python3 tools/x100_control.py audit ...` para medir el mundo y `rank ...` para ordenar gaps. Un gap reclamado por otro owner es ineligible aunque tenga mayor score.
+- Después de cada wave con evidencia, actualizar el audit X100 dentro de una ruta owned y recalcular el gradiente. No declarar WORLD_COMPLETE por cerrar un asset local.
+- Tier S/A o assets de identidad fuerte siguen por defecto `LOOK_LOCK → IMAGE_TARGET → IMAGE_TO_3D_BASE → CLEANUP/RETOPO → MATERIAL → LOD/COLLISION → ENGINE → VISUAL_REGRESSION`. Higgsfield 3D Jutsu es una superficie preferente cuando aporta reconstrucción útil; **raw AI/reconstruction mesh nunca es final**.
+- Kits sistémicos pueden usar modelado procedural/manual en lugar de image-to-3D cuando produzca geometría más limpia/reutilizable; registrar waiver.
+- El objetivo 5/20/75 HERO/SUPPORT/SYSTEMIC y 100+ configuraciones es una guía de planificación, no permiso para ruido. Variación siempre causal.
+- X100 no muta el Fleet registry, no libera claims y no sustituye STATE/PLAN/MANIFEST. Integra selección de trabajo; Fleet controla colisiones; Graphify/COS conserva relaciones; Gauntlet valida evidencia.
