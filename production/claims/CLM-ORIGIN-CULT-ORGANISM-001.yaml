@@ -1,0 +1,87 @@
+claim_id: CLM-ORIGIN-CULT-ORGANISM-001
+parent_claim: CLM-ORIGIN-WORLD-001
+agent_id: AGENT-ORIGIN-WORLD-01
+session_id: SES-20260913-ORIGIN-X100-001
+claim_type: ATOMIC_SUBCLAIM
+scope_key: world-origin/culture/organism-memory-wayfinding
+world_id: origin
+region_id: ATRIO-DE-LAS-RUTAS
+category: cultural_assets
+subdomain: memory_wayfinding_ritual_kit
+status: IN_PROGRESS
+truth_state: locally_validated_family_candidate
+priority: P1
+branch: art/world-origin-001
+created_at: 2026-09-13T20:00:00+02:00
+
+north_star: >-
+  Make El Organismo recognizable from objects alone by establishing a non-textual memory culture:
+  route seals, witness objects, reliquaries, offerings, sockets and portable caskets with causal
+  age/use states and a coherent black-mineral / living-bronze / memory-glass grammar.
+
+stable_asset_ids:
+  - ORG_CULT_ROUTE_SEAL_A
+  - ORG_CULT_ROUTE_SEAL_B
+  - ORG_CULT_ROUTE_SEAL_C
+  - ORG_CULT_MEMORY_RELIQUARY_A
+  - ORG_CULT_MEMORY_RELIQUARY_B
+  - ORG_CULT_MEMORY_RELIQUARY_C
+  - ORG_CULT_VOTIVE_MARKER_A
+  - ORG_CULT_VOTIVE_MARKER_B
+  - ORG_CULT_VOTIVE_MARKER_C
+  - ORG_CULT_WITNESS_STELE_A
+  - ORG_CULT_WITNESS_STELE_B
+  - ORG_CULT_RITUAL_SOCKET_A
+  - ORG_CULT_RITUAL_SOCKET_B
+  - ORG_CULT_RITUAL_SOCKET_C
+  - ORG_CULT_MEMORY_CASKET_A
+  - ORG_CULT_MEMORY_CASKET_B
+  - ORG_CULT_MEMORY_CASKET_C
+
+includes:
+  - route-seal family
+  - memory reliquaries
+  - votive markers
+  - witness stelae
+  - ritual sockets
+  - memory caskets
+  - sealed / used / scarred / layered / dormant / fractured-contained states
+  - UV0 and clean transforms
+  - LOD strategy metadata
+
+excludes:
+  - NPCs
+  - quest-state implementation
+  - boss or Corazón assets
+  - Archive macroarchitecture
+  - final texture maps
+  - target-hardware qualification
+
+placement_contract:
+  validated_B52_outer_edge_m: 26.5
+  measured_min_asset_bound_radius_m: 27.0812839777
+  measured_min_clearance_m: 0.5812839777
+  navigation_geometry_modified: false
+
+remote_blender:
+  project_id: 6e64cd59-f1f6-461f-850c-737d098f1723
+  revision: 5
+  qa_operation: origin-x100-atrio-infra-culture-qa-014
+  qa_result: PASS
+
+checkpoint_completed:
+  - 17 stable assets authored
+  - causal cultural states authored
+  - UV coverage PASS
+  - transform and semantic-tag QA PASS
+  - placement outside validated navigation envelope PASS
+  - delivery-camera framing PASS
+
+pending_gates:
+  - real GLB engine import
+  - collision only where final reachable placement requires it
+  - real LOD1 / LOD2 geometry
+  - final texture maps
+  - human GATE-ART
+
+claim_status: KEEP
