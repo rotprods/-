@@ -19,13 +19,21 @@ Run scope reserved on 2026-09-12 from `main@4c2fa044080004609ea6df45f34b2a784536
 ## Concurrency contract
 Other world agents should select different world IDs and use `art_source/worlds/<world_id>/**`. Shared standards may be proposed in this branch but must remain world-local until reviewed, to avoid edit collisions across parallel agents.
 
+## Completed foundation claim
+- `PEL/CIV/PROP-X100-001` — Mercado civilization/prop systemic kit.
+- Scene checkpoint: rev. 32.
+- Result: 9 semantic families × 3 variants × 4 causal states; 108 direct configurations / ≥432 with cardinal yaw; STRUCTURAL_PASS; source + receipt persisted.
+- Remaining gates: semantic GATE-ART, engine import/runtime interaction/LOD thresholds/target-GPU qualification.
+
 ## Active claim — `/EXOVANT-X100`
-- Claim ID: `PEL/CIV/PROP-X100-001`
-- Scope: Mercado de Boyas civilization/prop systemic kit; daily life, maintenance, storage, memory-custody, consent/trade signalling and funeral-buoy families only.
-- Why now: X100 audit at Blender rev. 30 found ecology/hero engineering materially ahead of prop/cultural/temporal-state coverage. Prop inventory is the highest-value multiplicative gap.
-- Canon constraints: World Bible §7, §8, §13–14. Repair-first manufacturing, corrosion-driven construction, buoyancy/maintainability logic; no invented faction iconography or irreversible lore.
-- DoD: stable IDs; player-scale dimensions; semantic family graph; causal pristine/used/damaged/abandoned states where justified; UV0/material slots/transforms/pivots; collision/query policy; LOD strategy; deterministic placement sockets/rules; 100+ credible kit configurations; structural/visual QA; receipt; reproducible generator.
-- Engine gate: runtime interaction, HLOD/switch thresholds, physics semantics and GPU qualification remain `BLOCKED/PENDING` until production-engine decision.
+- Claim ID: `PEL/MKT/ARCH-X100-002`
+- Scope: Mercado CommandShell interior/service-listening-custody cell; interior architecture only, with modular wall/floor/ceiling/service families, current-state assembly and causal three-era history.
+- Why now: X100 rerank at Blender rev. 32 found `interior_like_objects: 0` and settlement machinery at zero, making L3 interior the largest near-zero multiplicative dimension after prop expansion.
+- Placement: inside `PEL_MKT_CommandShell`; target bay centered near `(-504,-90)` m; floor tied to ring/platform top around z=14 m; connects westward to `PEL_MKT_V1_ServiceChannel_05` / utility system while reserving bridge centerline corridors.
+- Configuration grammar: four wall slots × five panel types with functional constraints = 280 valid wall layouts; × three floor patterns × two ceiling patterns × four temporal states = up to 6,720 credible cell configurations before broader district placement.
+- Canon constraints: repair-first marine construction, corrosion/drainage/buoyancy/maintainability logic, physical custody/listening functions, no invented faction iconography or unsupported social hierarchy.
+- DoD: stable IDs; player-scale clearances; 1.2 m minimum route/threshold clearance; modular snap contract; causal ERA_0/ERA_1/ERA_2 geometry; UV0/materials/clean transforms/pivots; collision/visibility-cell strategy; LOD/HLOD strategy; deterministic grammar; structural QA; visual evidence; receipt; reproducible generator.
+- Engine gate: runtime door/interaction/audio bindings, portal/room culling, HLOD thresholds and GPU qualification remain `BLOCKED/PENDING` until production-engine decision.
 
 ## Current status
-`X100_PRODUCTION_ACTIVE`: world foundation, hero ecology/characters/enemies/vehicle and several Blender-side LOD/collision foundations exist; current work is densifying missing civilization/prop/state layers rather than adding isolated hero assets.
+`X100_PRODUCTION_ACTIVE`: current wave is closing the zero-interior gap inside the Mercado rather than adding isolated exterior hero assets.
