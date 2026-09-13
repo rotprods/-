@@ -142,17 +142,22 @@ Machine + AI density/scale evidence exists. `HUMAN_GATE_ART` remains the only bl
 ## CI / FINOPS
 Last exact auto-Gauntlet green before cost quarantine: head `8022197e…`, run `34722654514` SUCCESS. Current `main` changed GitHub Actions to `workflow_dispatch` only for cost control. Therefore new branch/document waves require local combined checkout + `project_control` + tests + `fleet guard-git`; do not spend Actions unless a meaningful promotion gate requires it.
 
-## CANON BOUNDARY
+## CANON BOUNDARY / RECOVERY
 - KHEPRI: Sahra / Andrómeda / Sínodo de Bronce / 0.63 g / 71 °C reference authored area / solar-glass desert + heliostats / RA-KHET.
 - Proposed radius 5,224 km remains reversible ADR, not canon.
-- Final ecology is blocked pending canonical definition; do not invent flora/fauna merely to fill coverage.
+- Canonical named surface regions recovered: **Ciudad de los Toldos**, **Mar de Cristal**, **Crisol de RAKHET**. Exact map/boundaries remain unknown.
+- Canonical biota recovered: **Escarabajo heliostato**, **Zorro de vidrio**, **Serpiente de cable**, **Liquen de prisma**. These unblock future ecology ownership; the complete trophic web, distributions, rigs and gameplay remain unclaimed/proposal territory.
+- Canonical local vehicle recovered: **Helioperegrino**. Broader transport hierarchy remains unknown/unclaimed.
+- Named NPC/adversary anchors are documented in `WORLD_BIBLE.md`; final character production remains unclaimed.
+- Canon recovery receipt: `production/worlds/khepri/world_macro/receipts/R8_X100_CANON_RECOVERY.json`.
 - X100 damage/abandonment states are systemic proposal modes, not story canon.
 
 ## NEXT EXECUTION
-1. Local combined-checkout preflight for current branch vs current main; refresh generated MANIFEST and run tests/project-control/fleet guard without Actions.
-2. RESYNC coverage + fleet.
-3. Reserve the next atomic X100 gap on a new branch. Highest systemic multiplier candidate is `GLOBAL_KHEPRI/materials_surface_library`; if already claimed, take next highest unclaimed gap such as final Glass Sea infrastructure.
-4. Do **not** broaden `CLM-KHEPRI-WMACRO-001` into final materials/architecture/collision ownership.
+1. RESYNC coverage/fleet and preserve generated MANIFEST through the serialized integrator transaction; no Actions dispatch for docs-only reconciliation.
+2. Highest systemic multiplier remains `GLOBAL_KHEPRI/materials_surface_library`.
+3. Reservation proposal `CLM-KHEPRI-MATERIALS-001` has passed offline fleet CAS/collision validation but is **not yet published in main**. Until `reserved → owner ACK → active` is observable, material work is limited to pre-claim scratch contracts; no repo/provider/material mutation.
+4. Canon recovery also changes ecology/vehicle coverage from false `BLOCKED` to `TODO/UNCLAIMED`; future agents may claim those domains, but this macro agent does not own them.
+5. Do **not** broaden `CLM-KHEPRI-WMACRO-001` into final materials/architecture/ecology/characters/collision ownership.
 
 CLAIM STATUS: **KEEP / REVIEW**  
 FAMILY STATUS: **SYSTEMIC_MACRO_COMPLETE**
