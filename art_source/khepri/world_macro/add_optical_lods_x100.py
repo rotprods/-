@@ -39,11 +39,19 @@ def make_mesh(name, parts, materials):
     return mesh
 
 
+def object_users(mesh):
+    return [obj for obj in bpy.data.objects if getattr(obj, "data", None) == mesh]
+
+
 def ensure_clean():
     for mesh in list(bpy.data.meshes):
         if mesh.name.startswith("KHP_WM_X100_LOD1_") or mesh.name.startswith("KHP_WM_X100_LOD2_"):
-            if mesh.users == 0: bpy.data.meshes.remove(mesh)
-            else: raise RuntimeError("LOD source mesh unexpectedly in use: "+mesh.name)
+            users = object_users(mesh)
+            if users:
+                raise RuntimeError("LOD source mesh unexpectedly instantiated: "+mesh.name+" -> "+",".join(obj.name for obj in users))
+            # Blender ID.users includes the fake-user retention bit; clear it before removal.
+            mesh.use_fake_user=False
+            bpy.data.meshes.remove(mesh)
 
 
 def apply():
@@ -55,10 +63,8 @@ def apply():
     ensure_clean(); rows=[]
     for variant,s in VARIANTS.items():
         h=s["mast_h"]; w=s["mast_w"]; pw=s["panel_w"]; ph=s["panel_h"]; pt=s["panel_t"]
-        # LOD1: base+shaft for mast; optical slab+back spine for panel.
         mast1=make_mesh(f"KHP_WM_X100_LOD1_MAST_{variant.upper()}", [((0,0,-h*.43),(w*1.30,w*1.30,h*.14),0),((0,0,h*.04),(w*.86,w*.86,h*.80),0)], [bronze])
         panel1=make_mesh(f"KHP_WM_X100_LOD1_PANEL_{variant.upper()}", [((0,0,0),(pw,pt,ph),0),((0,-pt*.70,0),(pw*.68,pt*.40,max(.8,ph*.05)),1)], [mirror,bronze])
-        # LOD2: silhouette-only tower and slab.
         mast2=make_mesh(f"KHP_WM_X100_LOD2_MAST_{variant.upper()}", [((0,0,0),(w*.95,w*.95,h),0)], [bronze])
         panel2=make_mesh(f"KHP_WM_X100_LOD2_PANEL_{variant.upper()}", [((0,0,0),(pw,pt,ph),0)], [mirror])
         for level,kind,mesh in [(1,"mast",mast1),(1,"panel",panel1),(2,"mast",mast2),(2,"panel",panel2)]:
@@ -74,8 +80,7 @@ def apply():
 
 
 def audit_contract():
-    # Expected topological reduction from the explicit box-part grammar above.
-    return {"contract":CONTRACT,"variants":3,"lod_levels":[0,1,2],"source_meshes_created":12,"expected_mast_polys":{"lod0":18,"lod1":12,"lod2":6},"expected_panel_polys":{"lod0":18,"lod1":12,"lod2":6},"passed":True,"boundary":"Source LOD family contract only; runtime thresholds, collision and HLOD remain downstream."}
+    return {"contract":CONTRACT,"variants":3,"lod_levels":[0,1,2],"source_meshes_created":12,"expected_mast_polys":{"lod0":18,"lod1":12,"lod2":6},"expected_panel_polys":{"lod0":18,"lod1":12,"lod2":6},"idempotence":"object_users==0; fake_user is retention not instancing","passed":True,"boundary":"Source LOD family contract only; runtime thresholds, collision and HLOD remain downstream."}
 
 if __name__=="__main__":
     print(json.dumps(audit_contract() if bpy is None else apply(),indent=2,sort_keys=True))
