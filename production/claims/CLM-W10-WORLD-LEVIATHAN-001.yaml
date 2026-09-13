@@ -14,22 +14,39 @@ base_sha_at_claim: 4c2fa044080004609ea6df45f34b2a784536507a
 latest_main_observed: 26ae20f5d1b47d1efa0d54b20124ed93cbc0b43e
 branch: art/world-leviathan-001
 created_at: 2026-09-12T21:23:00+02:00
-last_heartbeat: 2026-09-13T12:57:00+02:00
+last_heartbeat: 2026-09-13T13:24:00+02:00
+
 remote_project:
   project_id: 2577a7b6-ebd7-4d31-a645-620e4b73a95d
+  role: WORLD_MASTER
   observed_revision: 11
   observed_scene_sequence: 0
-  observed_active_operation: null
   working_master_note: >-
     Revision 11 is revision 10 optimized representative art plus deterministic continuous stable
-    traversal ribbon and a visual-only SOMA ingress. The 8 m route width and 7.6923% measured max
-    segment slope remain proposals pending runtime movement/nav validation.
+    traversal ribbon and visual-only SOMA ingress. Route width/slope remain proposals pending runtime validation.
+
 cold_rebuild_project:
   project_id: 37a931c7-f2e6-46bc-9be0-26077e5de1c1
+  role: WORLD_COLD_REPLAY
   observed_revision: 9
   note: >-
-    Independent cold replay preserves the previously certified r10/r8 base and reproduces the r11
-    traversal delta exactly: ribbon and visual-ingress evaluated-surface SHA256 values match primary.
+    Independent cold replay preserves the certified r10/r8 base and reproduces the r11 traversal
+    delta exactly under evaluated-surface SHA receipts.
+
+auxiliary_projects:
+  - project_id: 6c67e70a-d29b-4a9d-8387-68ba071d8c3f
+    role: MATERIAL_PBR_CALIBRATION_PRIMARY
+    observed_revision: 5
+    asset_ids: [LEV-MAT-001, LEV-MAT-002]
+    canonical_builder: art_source/worlds/leviathan/tools/build_pbr_calibration_lab_v5_canonical.py
+    truth: PORTABLE_PBR_CALIBRATION_TECHNICAL_PASS_NOT_FINAL_ART
+  - project_id: 21dfcfc6-a181-4300-b6a9-0ee2e09695ee
+    role: MATERIAL_PBR_CALIBRATION_COLD_REPLAY
+    observed_revision: 1
+    asset_ids: [LEV-MAT-001, LEV-MAT-002]
+    canonical_fingerprint: fb881b5d76c3c2fe8f35441b7f27cf4a0ad71db74f69a915eb1d48d966db9230
+    truth: INDEPENDENT_EMPTY_SCENE_REPLAY_MATCH
+
 includes:
   - art_source/worlds/leviathan/**
   - leviathan L0-L5 world scale specification and master blockout
@@ -42,19 +59,25 @@ includes:
   - representative-detail SOMA encounter environment for LEV-RGN-003, LEV-ENV-002, LEV-ENV-003 and local LEV-INF-003 variants
   - continuous stable traversal ribbon under LEV-ENV-001 plus visual-only SOMA ingress under LEV-ENV-003
   - engine-neutral UV/PBR/LOD production readiness contract
+  - isolated deterministic portable PBR calibration laboratory for existing LEV-MAT-001 and LEV-MAT-002 interfaces
   - safe repeated-mesh instancing optimization, LOD feasibility and reproducibility receipts
+
 excludes:
   - runtime Godot scenes/scripts and gameplay logic
   - shared STATE/PLAN/HANDOFF/PROGRESS mutation
   - other world-owned paths
   - shared libraries without explicit coordination
   - final SOMA anatomy, rig or animation
+  - direct propagation of calibration-lab textures into the world master before art+engine approval
+  - shipping texture resolution/UDIM/virtual-texturing policy before target qualification
   - Unreal/DLSS/GPU performance claims without qualification
   - production-complete or AAAA-complete claims before all applicable gates
+
 owned_paths:
   - art_source/worlds/leviathan/
   - art_source/coordination/ART-LEVIATHAN-001-OWNERSHIP.md
   - production/claims/CLM-W10-WORLD-LEVIATHAN-001.yaml
+
 published_asset_ids:
   - LEV-RGN-003
   - LEV-ENV-001
@@ -69,16 +92,25 @@ published_asset_ids:
   - LEV-MAT-001
   - LEV-MAT-002
   - LEV-TECH-001
+
+published_receipts:
+  traversal: art_source/worlds/leviathan/evidence/traversal_ribbon_r11.json
+  canonical_surface: art_source/worlds/leviathan/evidence/canonical_surface_repro_r9.json
+  instancing: art_source/worlds/leviathan/evidence/instancing_optimization_r10_v2.json
+  lod_feasibility: art_source/worlds/leviathan/evidence/lod_feasibility_r10.json
+  pbr_lab: art_source/worlds/leviathan/evidence/pbr_calibration_lab_r5.json
+
 collision_audit:
   observed_claimed_worlds: [terra, ares, pelagos, khepri, nacre, umbra, sylva, vanta, aurora, elysium, origin]
   leviathan_collision_found: false
   fleet_registry_generation_observed: 8
   fleet_registry_status_for_this_claim: reserved
   fleet_registry_ack_for_this_claim: null
+  pbr_auxiliary_ack_comment: https://github.com/rotprods/-/issues/7#issuecomment-5652950795
   note: >-
-    Latest main observed is 26ae20f5 and registry generation 8 still protects LEVIATHAN as
-    reserved/ack:null. Producer ACK plus Jardines/SOMA/traversal deltas are evidence for the
-    integrator; this branch must not mutate main:ops/fleet/registry.json or self-promote.
+    Registry generation 8 protects LEVIATHAN as reserved/ack:null. Producer ACK plus regional,
+    traversal and PBR project deltas are evidence for the integrator; producer must not edit main registry.
+
 dependencies:
   - design/EXOVANT_BIBLIA.md
   - design/EXOVANT_DATA.json
@@ -86,16 +118,17 @@ dependencies:
   - docs/FLEET_COORDINATION.md
   - ops/fleet/registry.json
   - learning/hub/agents/codex-root/chats/exovant-persistence-20260912/events/LRN-EXO-20260912-BLENDER.json
+
 blocked_by:
   - ENV_BLOCKED_BINARY_TRANSPORT_AND_RUNTIME
+
 claim_state_note: >-
   Physical planet radius, final production engine, target hardware budgets, final playable-area
-  dimensions and final SOMA anatomy remain unresolved. The optimized r10/r8 representative base is
-  reproducible under the canonical evaluated-surface contract; r11/r9 additionally reproduce the
-  stable traversal ribbon and visual SOMA ingress exactly as a compositional delta. The stable route
-  measures 541.256 m, 8 m proposal width, 1.0513 m minimum side clearance inside the visual tube,
-  7.6923% maximum geometric segment slope and exact z-contact with the SOMA arena top. Runtime
-  capsule/nav/collision traversal and direct art review remain open. Automatic Gauntlet triggers are
-  quarantined on main@26ae20f5 to control CI spend; root MANIFEST must be reconciled on the exact
-  merge tree before a meaningful manual run. Fleet registry generation 8 remains reserved/ack:null;
-  integrator owns transition to active.
+  dimensions and final SOMA anatomy remain unresolved. The optimized representative world base and
+  continuous traversal delta are reproducible across independent projects. A separate PBR calibration
+  laboratory now proves deterministic durable image-texture generation, packed editable-source
+  persistence, embedded GLB transport and primary/cold replay for LEV-MAT-001/002, but those textures
+  are intentionally not propagated into the world master without direct art and engine validation.
+  Runtime capsule/nav/collision traversal, world-material runtime validation and direct pixel art review
+  remain open. Automatic Gauntlet triggers are quarantined on main@26ae20f5; root MANIFEST must be
+  reconciled on the exact merge tree before a meaningful manual run. Integrator owns registry activation.
