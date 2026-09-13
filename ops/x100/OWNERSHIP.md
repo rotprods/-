@@ -10,15 +10,15 @@ Scope: protocol/tooling only. No world, region, Blender project, asset ID, gamep
 Owned new paths:
 - `docs/EXOVANT_X100_V2.md`
 - `ops/x100/`
-- `tools/x100_control.py`
-- `tools/x100_spatial.py`
-- `tests/test_x100.py`
 
 Bounded shared integration paths:
 - `AGENTS.md`
 - `docs/DEVELOPMENT_PROTOCOL.md`
 - `docs/PROTOCOLS.md`
+- generated `MANIFEST.json` refresh required for merge
 
-Explicit exclusions: producer art branches, Fleet transitions on behalf of owners, STATE/PLAN/MANIFEST replacement outside the integrator refresh, canonical Graphify schema mutation, Blender scene mutation, asset production.
+Explicit exclusions: producer art branches, Fleet transitions on behalf of owners, STATE/PLAN replacement, canonical Graphify schema mutation, Blender scene mutation, asset production.
+
+Control-plane decision: optimizer, spatial projection and tests live under `ops/x100/`, intentionally outside `tools/` and root `tests/`, so protocol-only changes do not invalidate Godot runtime source evidence.
 
 Status: `PROTOCOL_CANDIDATE`; becomes default only after merge/readback from `main`.
