@@ -1,56 +1,80 @@
-# HANDOFF — SYLVA PRIME MACRO FOUNDATION R13
+# HANDOFF — SYLVA PRIME MACRO FOUNDATION R15
 
 AGENT: `AGENT-SYLVA-MACRO-01`  
 SESSION: `20260912-SYLVA-MACRO-001`  
+LATEST WRITER SESSION: `20260913-SYLVA-R14-WRITER-001`  
 CLAIM: `CLM-SYLVA-MACRO-001`  
 BRANCH: `art/world-sylva-prime-macro-001`  
 LINEAR: `ROT-117`  
 DRAFT PR: `#3`  
-PRIMARY BLENDER: `05dce898-753d-4ff6-a4b0-31757dc868d8` @ **revision 13**  
-NORTH STAR: reproducible metre-scale macro/regional foundation for SYLVA PRIME with explicit ownership, physical causality, scalable spatial partitioning and recoverable integration contracts.
+READY QUEUE: `#27`  
+PRIMARY BLENDER: `05dce898-753d-4ff6-a4b0-31757dc868d8` @ **revision 15 / sceneSequence 0**  
+NORTH STAR: reproducible metre-scale macro/regional foundation for SYLVA PRIME with physical causality, canonical spatial composition, scalable streaming interfaces, explicit ownership and evidence-bound recovery.
 
 ## CURRENT TRUTH
 
-- checkpoint: `WAVE1K_STREAM_MEMBERSHIP_R13`;
-- r13 `.blend` + GLB exist remotely and source-level technical QA passes;
+- accepted checkpoint: `WAVE1M_PREFETCH_POLICY_NORMALIZATION_R15`;
+- fleet claim is **ACTIVE**, owner ACK epoch 1 published;
+- primary source + portable GLB exist remotely;
+- geometry is byte-logically invariant at the source-scene fingerprint level from accepted r13 through r15;
+- source technical QA: PASS for current blockout/interface scope;
 - human `GATE-ART`: PENDING;
-- native engine residency/traversal: NOT_RUN / `ENV_BLOCKED` here;
-- PR #6 root-kit provider: NOT_READY due manifest + pivot/anchor gates;
-- planetary Option C: proposal only; orbital project remains EMPTY r0;
-- claim stays `KEEP / CHECKPOINT`.
+- exact SHA-bound binary delivery/native import: NOT YET QUALIFIED here;
+- PR #6 provider: CI green but **NOT_READY for deterministic consumption**;
+- planetary Option C remains a proposal only; orbital project remains EMPTY r0/unregistered;
+- claim stays `KEEP / IN_PROGRESS`.
+
+## RECOVERY ENTRY POINTS
+
+Read in this order:
+1. `STATUS.md`;
+2. `production/claims/CLM-SYLVA-MACRO-001.yaml`;
+3. `REMOTE_WRITER_FENCE.json`;
+4. `IMPORT_CONTRACT.md`;
+5. `MASTER_ASSET_LIST_R15.json`;
+6. `WORLD_ASSET_COVERAGE_R14.json`;
+7. `ART_DIRECTION_BIBLE_R14.md`;
+8. `BLENDER_PRODUCTION_STANDARD_R14.md`;
+9. `qa/R15_PREFETCH_POLICY_NORMALIZATION.json`;
+10. draft PR #3 + ready queue issue #27.
+
+Do not ask where the session stopped; reconstruct from these artifacts and the remote project.
 
 ## OWNER-ADMISSION LEARNING — APPLIED
 
-`learning_id`: `LRN-EXO-20260912-OWNER-ADMISSION`  
-Source: `main@97fb47472a654112779655d4d537851e709f269a`.
+`learning_id`: `LRN-EXO-20260912-OWNER-ADMISSION`.
 
-Applied behavior:
-- this owner produces/recovers/validates its own Sylva macro assets;
-- integrator is used for publication/conflicts/shared regressions/decisions, not routine owner production;
-- PR #6 defects are returned to that provider owner rather than fixed or duplicated here;
-- orbital r0 remains untouched until registry publication;
-- no heartbeat/audit loops are emitted merely to show activity;
-- accidental default-branch publication was repaired through PR #21 without force, then current main governance was resynced through PR #22.
+Applied:
+- owner produces/recovers/validates own macro scope;
+- integrator is used for shared publication/conflict/decisions, not routine producer work;
+- provider defects go back to provider owner instead of being duplicated/fixed across scope;
+- no polling/heartbeat loops merely to show activity;
+- main accidental producer publication was repaired without force;
+- automatic Gauntlet triggers are now quarantined in main; avoid spending CI unless a manual gate is justified.
 
-Evidence:
-- `qa/OWNER_ADMISSION_ADOPTION.json`;
-- `qa/INCIDENT_MAIN_CROSS_SCOPE_20260912.json`;
-- PR #21 merge `5b13d0fcf7d4a32b286d183dddec3d6a846e506d`;
-- PR #22 merge `1604bd452c6c241155a720d9dc92e6aef73fd717`.
+Evidence: `qa/OWNER_ADMISSION_ADOPTION.json`, `qa/INCIDENT_MAIN_CROSS_SCOPE_20260912.json`, PR #21, PR #22, PR #26.
 
 ## OWNERSHIP BOUNDARY
 
 This claim owns:
-- causal macro terrain + local metric world foundation;
-- canonical region placement/spatial composition;
-- terrain-aware navigation centerlines;
-- macro collision/streaming interfaces;
-- VESPER macro encounter layout;
-- diagnostic macro-root topology;
+- R6 causal macro terrain and R12 tile partition;
+- local metric coordinate foundation;
+- Puerto/Bosque/VESPER macro region placement;
+- R10 terrain-aware navigation centerlines and macro route collisions;
+- R13 stream membership;
+- R14 L2/L3 hierarchy + hero-residency interfaces;
+- R15 prefetch experiment semantics;
+- VESPER three-terrace macro encounter layout;
+- diagnostic kilometre-scale root topology;
 - root-kit consumer sockets/support mapping;
-- reversible planetary-scale decision artifacts.
+- macro art/asset/production contracts and QA.
 
-PR #6 / `CLM-SYLVA-PROC-NROOT-001` owns reusable A1/A2/A3/B1/B2/C1/C2/C3 meso module geometry, callus surfaces, module collisions/material interfaces and provider generator. This branch contains **zero provider meshes**.
+PR #6 / `CLM-SYLVA-PROC-NROOT-001` owns:
+- reusable A1/A2/A3/B1/B2/C1/C2/C3 meso root module geometry;
+- provider generator;
+- module callus surfaces/collisions/material interfaces.
+
+This branch has **0 provider meshes instantiated/copied**.
 
 ## BUILD LINEAGE
 
@@ -61,151 +85,178 @@ PR #6 / `CLM-SYLVA-PROC-NROOT-001` owns reusable A1/A2/A3/B1/B2/C1/C2/C3 meso mo
 5. `apply_socket_consumer_contract_r7.py`
 6. `apply_socket_support_map_r8.py`
 7. `build_terrain_aware_routes_r10.py`
-8. r11 metadata normalization
+8. r11 metadata normalization + GLB transport hardening adoption
 9. `split_streaming_terrain_r12.py`
 10. `assign_stream_membership_r13.py`
+11. `build_stream_hierarchy_r14.py`
+12. `normalize_prefetch_policy_r15.py`
 
-## RETAINED FAILURES / CORRECTIONS
+## RETAINED FAILURE EVIDENCE
 
-- r9 route-collision ribbons emitted `mesh not valid`; **never deliver r9**.
-- r10 rebuilt all four route ribbons closed-manifold; 0 nonmanifold edges / 0 degenerate faces.
-- first r12 attempt failed only in QA name parsing (`split('Y')` collided with `SYLVA`); no revision committed.
-- second r12 attempt failed only because seam QA read stale `matrix_world` before depsgraph update; no revision committed.
-- r12 v3 added explicit `view_layer.update()` and then committed successfully with zero seam delta.
+- r9 route collision topology invalid → never deliver r9; fixed by r10.
+- early r12 QA parser/depsgraph attempts failed before commit → retained historically; r12 v3 accepted.
+- first R14 mutation `sylva-r14-stream-hierarchy-execute-v2` failed after in-memory work because the tool wrapper tried `result.update` while `result` was `None`; provider committed **no revision**. `sylva-r14-postfail-reconcile` proved r13 and geometry fingerprint intact. R14 v3 then committed normally.
+- R14 source QA found a semantic bug: +8 residency had been encoded as active policy despite pressure evidence. R15 corrected it metadata-only.
 
-## R7/R8 ROOT-KIT CONSUMER TRUTH
+Do not hide or reclassify these as successful attempts.
 
-Read-only provider r4 audit (`43cf2b06-c47f-4ccd-ac34-76e9a585225a`) found most sampled module geometry **9–17.55 m** from object origin. PR #6 blocker: comment `5648741376`.
+## R15 GEOMETRY INVARIANCE
 
-Consumer contracts:
-- `SYLVA_SOCKET_CONSUMER_V1`;
-- `SYLVA_SOCKET_SUPPORT_MAP_V1`;
-- basis `+X forward / +Z up / metres / scale 1`;
-- support assignments: 8;
-- snapped transforms: 0;
-- provider instances: 0.
+Fingerprint scope: all MESH/CURVE world transforms, mesh vertices/polygons, curve splines, material names, modifier names/types, hide_render.
 
-Do not instantiate until provider manifest parses and per-asset pivots/anchors + collision parity are explicit.
+SHA-256 at accepted r13, r14, r15:
+`003760384ade90b7b0b792de6850a2eae90322d22f2ca246f8211395cb3e6224`
 
-## R10 NAVIGATION RETAINED
+Therefore R14/R15 contain **zero geometry delta**.
 
-`SYLVA_NAV_R10` / `BALANCED_FOOT_TERRAIN_AWARE_R10`:
-- leg00 1,963.093 m / max 18.490°;
-- leg01 2,382.483 m / max 15.131°;
-- leg02 2,188.103 m / max 7.285°;
-- leg03 2,364.615 m / max 20.530°;
-- total **8,898.294 m**.
+## R12/R13 WORLD PARTITION
 
-Stable route IDs and manifold collision ribbons are retained through r13.
+R12:
+- 16 render terrain tiles @ 3 km, 13×13 @250 m;
+- 16 collision terrain tiles @ 3 km, 9×9 @375 m;
+- 285 render seam samples / 189 collision seam samples;
+- max/mean seam Δz **0 m**;
+- monolithic terrain retired.
 
-## R12 TERRAIN STREAMING PARTITION
+R13:
+- original checkpoint 147 spatial objects assigned;
+- 0 outside patch;
+- 34 cross-cell objects;
+- max 6 cells/object;
+- roots/routes retain multi-cell provenance instead of duplicated source geometry.
 
-Contract: `SYLVA_TERRAIN_STREAM_R12`.
+Contracts: `SYLVA_TERRAIN_STREAM_R12`, `SYLVA_STREAM_MEMBERSHIP_R13`.
 
-The R6 causal terrain is now physically partitioned into the existing 4×4 L3 grid instead of being a single runtime mesh.
+## R14 HIERARCHY
 
-Render:
-- 16 × 3 km tiles;
-- 13×13 vertices/tile @ 250 m;
-- total 2,704 verts / 2,304 faces;
-- 285 shared seam points checked;
-- max/mean seam Δz = **0 m**.
+Contract: `SYLVA_STREAM_HIERARCHY_R14`.
 
-Collision:
-- 16 × 3 km tiles;
-- 9×9 vertices/tile @ 375 m;
-- total 1,296 verts / 1,024 faces;
-- 189 shared seam points checked;
-- max/mean seam Δz = **0 m**.
+- 4 × 6 km L2 supercells;
+- 16 × 3 km L3 cells;
+- 4/8-neighbor graphs symmetric;
+- L2 is coverage/HLOD orchestration only;
+- backend remains `ENGINE_TBD`;
+- HLOD is contract-only, no HLOD meshes generated.
 
-Each tile is parented to its authoritative `SYLVA_STREAM_L3_X#Y#` empty, uses cell-local XY coordinates and preserves world Z. Monolithic R6 terrain objects were retired to avoid duplicate export/runtime geometry.
+Hero L3 overlays:
+- Puerto: X0Y1/X1Y1;
+- Bosque: X1Y1/X1Y2/X2Y1/X2Y2;
+- VESPER: X2Y2/X3Y2.
 
-Legacy/forbidden after r12:
-- `SYLVA_TERRAIN_Macro12km_PROPOSAL`;
-- `SYLVA_COL_TERRAIN_Macro12km_LowRes_PROPOSAL`.
+Bosque crosses all four L2 groups as coverage metadata. `hero_l2_full_residency_implied=false`; never move geography merely to simplify streaming.
 
-## R13 STREAM MEMBERSHIP
+## R15 PREFETCH POLICY
 
-Contract: `SYLVA_STREAM_MEMBERSHIP_R13`.
+Contract: `SYLVA_PREFETCH_POLICY_R15`.
 
-- spatial objects assigned: **147**;
-- objects outside local patch: **0**;
-- cross-cell objects: **34**;
-- max cells touched by one object: **6**;
-- terrain tiles use one authoritative owner cell;
-- roots/routes/props/interfaces use world-bounds overlap and may declare several cells.
+State: `RUNTIME_EXPERIMENT_REQUIRED`.  
+Production policy approved: false.
 
-Largest cross-cell assets:
-- `SYLVA_ROOT_PRIMARY_R04`: 6 cells;
-- `SYLVA_ROOT_PRIMARY_R05`: 6 cells;
-- R01/R02/R03/R06: up to 4 cells;
-- route/collision members cross cells where physically required.
+Candidates:
+- P0 current-only;
+- P1 current + four cardinal neighbors;
+- P2 current + eight neighbors;
+- P3 directional previous/current/next route window + contextual L3 hero overlay.
 
-This is backend-neutral metadata; native engine residency/prefetch remains untested.
+P3 is primary **runtime candidate only**. Current+8 observed conservative upper bound: 72.8% of current spatial-object cardinality.
 
-## R13 SCENE / ARTIFACT RECEIPTS
+Promotion rule: choose the least-resident policy that passes measured load/residency latency, visual pop, collision, traversal and reversal/re-entry gates.
 
-Scene QA:
-- objects 182;
-- meshes 121;
-- curves 12;
-- terrain render tiles 16;
-- terrain collision tiles 16;
-- route collisions 4, manifold;
-- VESPER terraces/connectors 3/2;
-- sockets 8;
-- regional envelopes 3;
-- provider meshes 0;
-- final-scope violations 0;
-- namespace/unit-scale violations 0.
+Exact probes: `PREFETCH_POLICY_R14_EXPERIMENT.json` + `NATIVE_STREAM_RESIDENCY_TEST_PLAN.md`.
 
-Remote artifacts:
-- `.blend`: **2,777,367 B**, etag `dcb49cece03e111d066cad486ea77c1d`;
-- GLB: **1,204,308 B**, etag `695fc7907b522dc42d8f09f697b3d99a`.
+## NAVIGATION / VESPER
 
-QA receipt: `qa/R13_STREAMING_WORLD_PARTITION.json`.
+R10 route chain:
+- 00: 1963.093 m / 18.490° max;
+- 01: 2382.483 m / 15.131°;
+- 02: 2188.103 m / 7.285°;
+- 03: 2364.615 m / 20.530°;
+- total 8898.294 m.
 
-## GLB DELIVERY CONTRACT
+All four route collision meshes remain manifold / zero degenerate.
 
-Shared-main delivery hardening from `ca224a78...` is integrated: walk all chunks, 4-byte alignment, chunk bounds, unique JSON/BIN, no external resources and hash-bound native evidence.
+VESPER:
+- three terraces 116/124/112 m diameter;
+- connectors 142.215 m @12.178° and 145.685 m @12.689°;
+- visible/collision width 18/16 m;
+- final boss excluded.
 
-Claim validators:
-- `validate_glb_contract_r10.py`: route topology + historical r10 semantics;
-- `validate_glb_contract_r11.py`: shared transport hardening;
-- `validate_glb_contract_r13.py`: streamed-terrain/current-node semantics + inherited R11 transport and R10 route topology.
+## ROOT-KIT PROVIDER — DO NOT CONSUME YET
 
-The exact r13 GLB has **not** passed local SHA-bound validation because artifact recovery remains network-blocked in this sandbox. Remote export is not delivery PASS.
+Latest re-audit PR #6 HEAD: `5ba1ea6758e4c08ed82d95deb96f1bbcae1581f5`.
 
-Native delivery sequence:
-1. recover exact r13 `.blend` + GLB;
-2. compute SHA-256;
-3. run shared `fleet_control.py delivery` with explicit evidence paths;
-4. run `validate_glb_contract_r13.py` against the same SHA;
-5. import exact artifact in pinned/current qualified engine;
-6. test L3 residency transitions, all route legs and VESPER terraces;
-7. profile only on declared target hardware/preset.
+Gauntlet: SUCCESS. Integration readiness: **FAIL/BLOCKED**.
 
-## FLEET / PLANETARY BOUNDARY
+Current blockers:
+1. current manifest still has invalid YAML structure (`materials` sequence / `note` indentation);
+2. generator still does not normalize per-asset origins or publish deterministic anchor transforms;
+3. render/collision anchor parity unproven;
+4. no pivot-policy/anchor contract version.
 
-- current owner branch was synchronized with `main@97fb47472a654112779655d4d537851e709f269a` before r12/r13;
-- latest fleet readback still exposes this claim as `reserved / ack:null` and only the primary project ID;
-- orbital project `c796230b-0463-4e17-9446-2e746c5c4933` therefore stays **EMPTY r0**;
-- Option C / 1.20 R⊕ remains proposal only;
-- producer does not edit `ops/fleet/registry.json`.
+A fresh review comment was posted on PR #6. Socket transforms remain frozen; provider instances remain 0.
 
-## BLOCKERS
+## PRODUCTION SYSTEM NOW AVAILABLE
 
-1. Fleet ACK/path/orbital-project readback.
-2. PR #6 valid manifest + normalized pivots/anchors + render/collision anchor parity.
-3. Exact r13 binary recovery / SHA / native import.
-4. Human art-direction review.
-5. Target-hardware HLOD/LOD/performance qualification.
-6. Explicit planetary-scale/canon decision before L0/L1 promotion.
+- `MASTER_ASSET_LIST_R15.json` — complete production families with tiers/dimensions/dependencies/owners/LOD/collision/rig/QA states.
+- `WORLD_ASSET_COVERAGE_R14.json` — existing vs missing world coverage.
+- `SYLVA_PARALLEL_SHARDING_R14.json` — proposed atomic cells, not claims.
+- issue #27 — live ready queue for future cells, explicitly non-reserving.
+- `ART_DIRECTION_BIBLE_R14.md` — production art contract.
+- `BIOLOGICAL_REALISM_REFERENCE_PACK_R14.md` — physical plant/growth mechanisms + scientific truth boundary.
+- `BLENDER_PRODUCTION_STANDARD_R14.md` — modeling/UV/material/LOD/collision/export rules.
+- `HLOD_STRATEGY_R14_PROPOSAL.md` — feature-aware HLOD; uniform decimation rejected.
+
+## R15 VISUAL SIGNAL
+
+Master camera file-backed smoke at 240×135:
+- PNG 35,603 B;
+- mean RGB 0.08544;
+- variance 0.001759;
+- max 0.67451;
+- `PASS_NONBLANK`.
+
+Receipt: `qa/R15_VISUAL_SIGNAL_SMOKE.json`.
+
+This is **not** composition/material/art approval; this client could not visually inspect the signed PNG.
+
+## REMOTE ARTIFACTS
+
+R15:
+- `.blend` 2,848,052 B / etag `d95ef102d90bf84db182c8d8be85b1bd`;
+- GLB 1,218,436 B / etag `d5de5a68ca567167b1f696ceefdba088`.
+
+Remote size/etag != recovered SHA-bound delivery PASS.
+
+## WRITER CONTINUITY
+
+Fleet claim is ACTIVE. Writer epoch `SYLVA-MACRO-WRITER-EPOCH-3-R14-20260913` is **CLOSED_ACCEPTED_R15**.
+
+No new mutation is authorized by that epoch. Any next scene wave must:
+1. resync main/fleet/claim/fence;
+2. open a new monotonically increasing writer epoch;
+3. nominate one writer;
+4. require current r15/sceneSequence 0/no active operation, unless a newer accepted checkpoint exists;
+5. persist receipts before handing off.
+
+Orbital project remains EMPTY r0/unregistered and cannot be mutated.
+
+## OPEN BLOCKERS
+
+P0:
+- exact R15 `.blend`/GLB recovery + SHA + shared delivery + native import;
+- native streaming/residency policy comparison at seam probes;
+- PR #6 deterministic provider anchors/manifest;
+- human macro art-direction/composition review.
+
+P1:
+- target-hardware/renderer HLOD and performance qualification;
+- planet-scale decision before L0/L1 promotion;
+- final asset production by future claims from issue #27.
 
 ## NEXT 3 ACTIONS
 
-1. Extend the 4×4 L3 partition into an L2 supercell/prefetch graph without choosing an engine backend, then validate hero-zone containment and cross-cell hotspots.
-2. When artifacts are recoverable, run shared delivery + `validate_glb_contract_r13.py` + native residency/traversal tests on the exact SHA-bound r13 GLB.
-3. Re-audit PR #6 only when that owner publishes a new manifest/pivot checkpoint; otherwise continue macro work without duplicating provider geometry.
+1. On a runtime with artifact access, recover exact R15 binaries; bind hashes; execute shared delivery + claim validation + native R15 metadata import.
+2. Run P0/P1/P2/P3 streaming policies through S-00…S-03 and the full 8.9 km route, instrumenting load-to-ready latency, collision readiness, resident set, memory, frame spikes and pop/reversal behavior.
+3. Continue final-content production through non-overlapping claims from issue #27; do **not** wait on PR #6 for independent materials/props/fauna/flora/character design cells.
 
-CLAIM STATUS: `KEEP / CHECKPOINT`
+CLAIM STATUS: `KEEP / IN_PROGRESS`
