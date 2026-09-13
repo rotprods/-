@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "claim_id": "CLM-SYLVA-MACRO-001",
+  "source_scene_revision": 17,
+  "status": "READ_ONLY_CARDINALITY_RECALC_AFTER_R16_MEMBERSHIP",
+  "operation_id": "sylva-r16-prefetch-pressure-recalc",
+  "spatial_object_count": 147,
+  "route_sequence": ["X0Y1","X1Y1","X1Y2","X2Y2","X3Y2"],
+  "by_route_cell": {
+    "X0Y1": {"current_only":35,"plus4":48,"plus8":64,"route_window":44,"route_window_plus_contextual_hero":44},
+    "X1Y1": {"current_only":16,"plus4":65,"plus8":97,"route_window":58,"route_window_plus_contextual_hero":89},
+    "X1Y2": {"current_only":21,"plus4":62,"plus8":97,"route_window":58,"route_window_plus_contextual_hero":61},
+    "X2Y2": {"current_only":45,"plus4":92,"plus8":107,"route_window":87,"route_window_plus_contextual_hero":99},
+    "X3Y2": {"current_only":47,"plus4":87,"plus8":92,"route_window":83,"route_window_plus_contextual_hero":83}
+  },
+  "policy_cardinality": {
+    "current_only": {"min":16,"max":47,"mean":32.8,"max_fraction_of_world":0.3197278911564626},
+    "current_plus_4": {"min":48,"max":92,"mean":70.8,"max_fraction_of_world":0.6258503401360545},
+    "current_plus_8": {"min":64,"max":107,"mean":91.4,"max_fraction_of_world":0.7278911564625851},
+    "directional_route_window": {"min":44,"max":87,"mean":66.0,"max_fraction_of_world":0.5918367346938775},
+    "directional_window_plus_naive_overlapping_hero_groups": {"min":44,"max":99,"mean":75.2,"max_fraction_of_world":0.673469387755102}
+  },
+  "comparison_to_r15": {
+    "r15_plus8_upper_bound": 0.728,
+    "r16_plus8_upper_bound": 0.7278911564625851,
+    "delta": -0.00010884353741491548,
+    "interpretation": "No material change to R15 conclusion; +8 still approaches 72.8% of world spatial-object cardinality."
+  },
+  "policy_conclusion": {
+    "contract": "SYLVA_PREFETCH_POLICY_R15",
+    "production_policy_approved": false,
+    "primary_runtime_candidate": "P3_DIRECTIONAL_ROUTE_WINDOW",
+    "note": "Contextual hero overlay must be activated by route/approach phase, not simply by all hero groups whose L3 cells overlap the current cell. The naive overlap row is an upper-bound diagnostic, not P3 implementation semantics.",
+    "selection_rule": "PROMOTE_LEAST_RESIDENT_POLICY_THAT_PASSES_RUNTIME_VISUAL_COLLISION_TRAVERSAL_GATES"
+  },
+  "truth_boundary": "Object-cardinality study only; not RAM/VRAM/draw-call/IO/load-latency/frame-time measurement."
+}
