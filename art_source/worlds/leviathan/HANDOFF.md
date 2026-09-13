@@ -4,203 +4,227 @@ AGENT: `AGENT-LEVIATHAN-10`
 SESSION: `ART-LEVIATHAN-001-20260912T2123+0200`  
 CLAIM: `CLM-W10-WORLD-LEVIATHAN-001`  
 BRANCH: `art/world-leviathan-001`  
-MAIN LAST OBSERVED: `be6162064ceb475d5f7a7aa1388a7873f25d3258`  
-CLAIM STATUS: **KEEP / IN_PROGRESS**  
-NORTH STAR: reproducible LEVIATHAN foundation with causal living-world art, stable gameplay collision beneath visual tissue, and recoverable evidence without invented planet/engine budgets.
+MAIN LAST OBSERVED: `26ae20f5d1b47d1efa0d54b20124ed93cbc0b43e`  
+CLAIM STATUS: **KEEP / IN_PROGRESS**
 
-## Authority / fleet
+NORTH STAR: reproducible LEVIATHAN foundation with causal living-world art, stable gameplay collision beneath visual tissue, recoverable source/evidence, and no invented planet/engine budgets.
 
-- Repository authority: `rotprods/-`.
-- Re-run ownership preflight before each significant production wave.
-- Latest registry observed: generation 8 on `main@be616206…`.
-- LEVIATHAN remains `reserved`, `ack:null`; do **not** self-promote to active.
+## 0. Resume protocol
+
+1. Read `AGENTS.md`, `docs/FLEET_COORDINATION.md`, `ops/fleet/registry.json`, issue #7 and this file.
+2. Fetch live `main`, this branch and PR #10 before any mutation.
+3. Primary Blender project: `2577a7b6-ebd7-4d31-a645-620e4b73a95d`.
+4. Independent cold replay: `37a931c7-f2e6-46bc-9be0-26077e5de1c1`.
+5. Do not self-promote fleet registry and do not touch global runtime/shared state from this claim.
+
+## 1. Fleet / CI truth
+
+- Latest main observed: `26ae20f5...`.
+- Fleet registry generation observed: `8`.
+- LEVIATHAN remains `reserved`, `ack:null` despite producer ACK/deltas; integrator owns transition to `active`.
 - Producer ACK: issue #7 comment `5648464282`.
-- Jardines delta: issue #7 comment `5648515712`.
-- SOMA delta: issue #7 comment `5648567162`.
-- PR #10 manifest/integration request: issue #7 comment `5648779529`.
-- Main remediation reconciled five other producers and metadata-shard admission but not this claim yet.
-- Do not edit `main:ops/fleet/registry.json` from this producer branch.
+- Jardines delta: `5648515712`.
+- SOMA delta: `5648567162`.
+- Manifest/integration request: `5648779529`.
+- Main now quarantines automatic Gauntlet triggers to reduce CI spend. Do not burn reruns on a tree known to require root-manifest reconciliation.
+- Last deeply diagnosed PR #10 run `34718006302`: **75/75 Python tests PASS**; only failure was root `MANIFEST.json` drift, causing native Godot stage to skip.
 
-## Canon boundaries
+## 2. Canon boundaries
 
-CANON: LEVIATHAN / Soma / EL UMBRAL / Comuna del Pulso / 1.15 g / 38°C / Puerto de la Herida / Jardines Inmunes / Cámara de SOMA / 58 m SOMA chamber.
+CANON: LEVIATHAN / Soma / EL UMBRAL / Comuna del Pulso / 1.15 g / 38 °C / Puerto de la Herida / Jardines Inmunes / Cámara de SOMA / exact 58 m SOMA chamber.
 
-BLOCKED/UNKNOWN: physical planet radius/diameter, final production engine, target hardware, final playable-region dimensions, final SOMA anatomy.
+BLOCKED/UNKNOWN: physical planet radius/diameter, final production engine, target hardware/preset, final playable-region dimensions, final SOMA anatomy.
 
-PROPOSAL: 720×480 m authored L2 cell and all new representative anatomy dimensions unless separately promoted.
+PROPOSAL: 720×480 m authored cell, representative creature dimensions, traversal width and current authored density unless separately promoted.
 
-## Blender projects / current revisions
+## 3. Remote truth
 
-Primary working master: `2577a7b6-ebd7-4d31-a645-620e4b73a95d` @ **revision 10**.  
-Independent cold project: `37a931c7-f2e6-46bc-9be0-26077e5de1c1` @ **revision 8**.
+Primary working master: **revision 11**.  
+Cold project: **revision 9**.
 
-Primary and cold both contain the same representative art surface and now converge to **98 mesh datablocks** under the order-invariant instancing optimizer v2.
+Primary r11 artifacts:
+- `.blend`: 4,869,637 B / etag `7ccfdd11e07d845b3e962a802bdefa32`;
+- GLB: 5,639,948 B / etag `3ab7e46dc7e2102ca709600b83269ecb`.
 
-## Representative production checkpoints
+Cold r9 artifacts:
+- `.blend`: 4,869,637 B / etag `1df2bc94b4ef09c3bb0c21f0f81c0c3e`;
+- GLB: 5,643,252 B / etag `1a8147165c232f098e5e01ede32d3cf0`.
 
-### Master foundation
-- `build_master_scene.py` cold-rebuilt from empty scene.
-- 1.85 m human scale reference.
-- Stable collision separated from visual tissue/contraction.
-- SOMA chamber corrected to exact 58 m.
-- Non-portable AREA lighting removed.
+Binary GLB equality is not the art reproducibility criterion; evaluated surface/delta equivalence is.
 
-### Puerto — representative r5
+## 4. Representative art checkpoints
+
+### Foundation
+- metre scale and 1.85 m human reference;
+- three canonical regions;
+- exact 58 m SOMA chamber;
+- stable collision intentionally independent from deforming visual tissue;
+- portable GLB lighting.
+
+### Puerto de la Herida
 IDs: `LEV-ARCH-001`, `LEV-INF-002`, `LEV-INF-003`.
-- Human graft module, hero suture clamp, living valve.
-- r4 4.35 m service-door error fixed in r5 to `0.28×1.60×2.60 m`, sill +0.10 m.
-- 100 objects / 87 meshes / 10 curves / 13,380 native-mesh triangles.
-- Receipt: `evidence/puerto_microset_r5.json`.
+- representative human graft module, suture clamp, living valve;
+- service-door defect corrected from 4.35 m to `0.28×1.60×2.60 m`;
+- microset cost: 13,380 native mesh tris;
+- receipt: `evidence/puerto_microset_r5.json`.
 
-### Jardines — representative r7 art stage
+### Jardines Inmunes
 IDs: `LEV-INF-005`, `LEV-ECO-001`, `LEV-ECO-004`.
-- Lymph pressure conduit + independent 34 m stable service walk.
-- Pulse-algae pressure states.
-- Functional gardener proposal: six wet-grip limbs, cleaning rasps, digestive sac, sensory cilia.
-- Truth correction: 2.6 m = core body; articulated envelope `5.35×5.50×3.37 m`; current collision core-only provisional.
-- Evaluated cost including curve tessellation: 21,644 triangles.
-- Receipt: `evidence/jardines_microset_r7.json`.
+- representative lymph pressure conduit + independent stable service walk;
+- pulse algae pressure states;
+- functional gardener proposal;
+- 2.6 m = core body proposal; measured articulated envelope `5.35×5.50×3.37 m`;
+- collision remains core-only provisional pending rig/gameplay;
+- evaluated cost: 21,644 tris;
+- receipt: `evidence/jardines_microset_r7.json`.
 
-### Cámara de SOMA — representative r8 art stage
+### Cámara de SOMA
 IDs/interfaces: `LEV-RGN-003`, `LEV-ENV-002`, `LEV-ENV-003`, local `LEV-INF-003` variant.
-- v1 rejected before execution because contraction envelope could exceed canonical radius.
-- v2 builds cartilage bridges, three safe-valve refuges/bypasses, contraction telegraphs and regulator cradle.
-- `SOMA_PROXY_NOT_FINAL` stays `final_anatomy=false`, dimensions `17×17×22 m`, combat-scale/silhouette only.
-- Authoritative evaluated-vertex max radius `28.3 m`, leaving `0.7 m` inside canonical 29 m.
-- Evaluated cost: 34,308 triangles.
-- Receipt: `evidence/soma_encounter_microset_r8.json`.
+- representative bridges, three safe-valve refuges, contraction telegraphs, regulator cradle;
+- v1 rejected before execution because envelope could violate canonical radius;
+- v2 evaluated max radius `28.3 m`, leaving `0.7 m` inside canonical 29 m;
+- `SOMA_PROXY_NOT_FINAL` remains combat-scale/silhouette only, `final_anatomy=false`;
+- evaluated microset cost: 34,308 tris;
+- receipt: `evidence/soma_encounter_microset_r8.json`.
 
-## Canonical visual reproducibility
+## 5. Structural optimization / reproducibility
 
-An earlier order-sensitive mesh hash reported raw primitive drift between primary and cold. That was investigated rather than accepted.
+`optimize_repeated_mesh_instances_v2.py` uses order-invariant editable-surface signatures.
 
-Complete order-invariant evaluated-surface comparison proves primary/cold are visually equivalent:
-- evaluated world-space triangles;
-- UV per triangle corner;
-- face material;
-- smoothing;
-- evaluated normals;
-- modifiers;
-- cameras, lights and material-node parameters.
+r8 art baseline → r10:
+- 260 mesh objects remain;
+- mesh datablocks `260 -> 98`;
+- 162 duplicate datablocks removed (**62.3077%**);
+- `.blend` `7,657,188 -> 4,842,680 B` (**36.7564%** reduction);
+- GLB `8,492,516 -> 5,617,124 B` (**33.858%** reduction).
 
-Canonical surface fingerprint for primary r9 and cold r7:
-`6c06329ff60fe34383394bece0c80f66bb9e4486793712854e462c3af8eea26a`.
+Primary and cold converged to the same 98 datablocks and canonical evaluated visual surface.
 
-Suspect primitives differed only in internal Blender vertex/face numbering. `LEV-BLK-008` is therefore resolved as `INTERNAL_INDEX_ORDER_VARIANCE`, not geometry/material drift.
+Receipts:
+- `evidence/canonical_surface_repro_r9.json`
+- `evidence/instancing_optimization_r10_v2.json`
 
-Receipt: `evidence/canonical_surface_repro_r9.json`.
+`LEV-BLK-008` is resolved: earlier raw primitive hash drift was internal Blender vertex/face index-order variance, not visual geometry/UV/material drift.
 
-## Revision 10 structural optimization
+## 6. Stable traversal continuity — revision 11
 
-`tools/optimize_repeated_mesh_instances_v2.py` uses an order-invariant editable-surface signature instead of Blender index order.
+Source: `tools/build_stable_traversal_ribbon_v1.py` (blob `5161a2f27c77136c4987bd9e3cfeed0f6728e021`).
 
-Primary r8 art baseline → r10:
-- mesh objects stay `260`;
-- mesh datablocks `260 -> 98` (**162 removed / 62.3077% reduction**);
-- `.blend` `7,657,188 -> 4,842,680 B` (**36.7564% reduction**);
-- GLB `8,492,516 -> 5,617,124 B` (**33.858% reduction**).
+Purpose: replace eight disconnected collision pads as the only traversal authority with one continuous stable ribbon under the existing organic visual tube and connect it to the SOMA floor.
 
-Cold replay also converges to `98` mesh datablocks and identical `.blend` size `4,842,680 B`.
+Measured primary r11:
+- centerline length: **541.256 m**;
+- ribbon width: **8.0 m** proposal;
+- thickness: **0.5 m**;
+- 212 verts / 420 tris;
+- degenerate polygons: **0**;
+- top z: `5 -> 7 m`;
+- max segment slope: **7.6923%**;
+- width / 0.55 m human reference: **14.545×**;
+- minimum real side clearance inside 6 m visual tube after vertical offset: **1.0513 m**;
+- ingress side margin: **1.1962–1.2161 m**;
+- final ribbon point: `[205,-47,7]`, inside SOMA footprint and exactly on arena top;
+- visual ingress is not in collision collection;
+- no visual object leaks into `40_COLLISION_PROXY`.
 
-Primary r9, primary r10 and cold r8 canonical visual-surface fingerprint:
-`1b9d885f7fd612a30c4fd289bbc79da6b06472b710867e8f63bafa9c87827a5d`.
+Cold r9 replay produces exactly the same new surfaces:
+- ribbon SHA: `65326c41be09e967561907938cf994e389cd1c28ad33390815b5fdd85dde253a`;
+- ingress SHA: `3f8b05130e849f7fec36b059d6f11c3fab16cd43b74c8a80dbec446d8fd0e432`.
 
-This is a **source/export structural optimization**, not runtime FPS/GPU evidence.
+Receipt: `evidence/traversal_ribbon_r11.json`.
 
-Receipt: `evidence/instancing_optimization_r10_v2.json`.
+Important: 8 m width and 7.6923% slope are **not final gameplay canon**. Runtime capsule/nav validation remains mandatory.
 
-## UV / PBR / LOD truth
+## 7. UV / PBR / LOD truth
 
-Contract: `UV_PBR_LOD_CONTRACT.md`.  
-Receipt: `evidence/uv_pbr_lod_audit_r8.json`.
+Contract: `UV_PBR_LOD_CONTRACT.md`.
 
-Measured art-surface state:
+Current measured state:
 - 260/260 mesh objects have UV layers;
 - zero zero-area UV triangles;
 - zero UV loops outside 0–1;
-- relative UV density is not normalized;
+- relative texel density not normalized;
 - image textures: **0**;
-- portable material roles: 18 Principled constant-role materials;
-- curves: 92 (`resolution_u=4`, `bevel_resolution=3`);
-- named LOD objects: 0;
-- Decimate modifiers: 0.
+- material roles: 18 constant/portable Principled roles;
+- no committed production LOD chain.
 
-UV presence != approved unwrap, material role != final PBR, and no LOD/performance completion is claimed.
+LOD feasibility was measured query-only with temporary Blender Decimate and approximate bidirectional surface error:
+- large rings/macro shells tolerate aggressive simplification better than small rounded hero/status/ecology parts;
+- a global 50% policy is explicitly rejected;
+- small rounded detail should start around a conservative ~80% probe, still requiring screen-space/art validation.
 
-## Runtime / visual blockers
+Receipt: `evidence/lod_feasibility_r10.json`.
 
-`LEV-BLK-007` binary/runtime colocation was confirmed blocked by three routes: producer shell, secure-download path and independent browser signed-URL attempt. No engine import/collision/traversal PASS exists.
+No final LOD threshold or performance claim exists.
 
-Visual render receipts exist, including r8 overview, Puerto and Jardines PNG artifacts, but this producer surface still cannot inspect their pixel bytes. `B_ART` / visual-regression PASS remains open.
+## 8. Current task truth
 
-## CI truth
+DONE:
+- `W10/WORLD/001`
+- `W10/WORLD/002`
+- `W10/BLEND/003`
 
-Deeply diagnosed PR #10 run `34718006302`:
-- all 75 Python tests PASS;
-- only failure was root `MANIFEST.json` drift for new LEVIATHAN files;
-- native Godot stage skipped only because continuity exited first.
+REVIEW:
+- `W10/REGION/004`
+- `W10/REGION/005`
+- `W10/REGION/006`
+- `W10/TECH/007`
+- `W10/MAT/008`
+- `W10/ECO/009`
+- `W10/QA/010`
 
-Latest `main@be616206…` admits world metadata shards in fleet policy but leaves `tools/project_control.py` exact-root MANIFEST comparison and Gauntlet structure unchanged. Therefore PR integration still requires a real merge-tree `project_control.py refresh` transaction by the integrator; do not synthesize hashes or blind-rerun the known failing tree.
+No region is DONE. Direct art review and runtime integration remain open.
 
-## Current tasks
+## 9. Open blockers
 
-DONE: `W10/WORLD/001`, `W10/WORLD/002`, `W10/BLEND/003`.
-
-REVIEW: `W10/REGION/004`, `005`, `006`, `W10/TECH/007`, `W10/MAT/008`, `W10/ECO/009`, `W10/QA/010`.
-
-No REGION task is DONE because direct art review and runtime integration remain open.
-
-## Open blockers
-
-- `LEV-BLK-001`: planet radius/diameter canon missing.
+- `LEV-BLK-001`: physical planet radius/diameter absent.
 - `LEV-BLK-002`: production engine not qualified.
-- `LEV-BLK-003`: target hardware/preset not qualified; no hard budgets.
+- `LEV-BLK-003`: target hardware/preset not qualified.
 - `LEV-BLK-004`: final SOMA anatomy/art/rig decision.
 - `LEV-BLK-005`: final playable-region dimensions.
-- `LEV-BLK-007`: provider binary transport + qualified runtime colocation unavailable.
+- `LEV-BLK-007`: exact provider binary + qualified runtime cannot yet coexist in this producer surface. Confirmed via shell, secure-download path and independent browser attempt.
 
-Resolved: `LEV-BLK-006` global fleet/manifest architecture; `LEV-BLK-008` suspected raw geometry drift (proved index-order-only).
+Direct pixel-level art review also remains unavailable despite render artifacts; do not claim `B_ART` or visual-regression PASS.
 
-## Explicit non-claims
+## 10. Explicit non-claims
 
 - LEVIATHAN is not DONE or AAAA-complete.
-- No final calibrated image-textured PBR pass.
-- No approved production UV-density/overlap policy.
-- No LOD/HLOD chain or target-hardware performance PASS.
-- No final character/NPC/creature rig/animation.
-- No engine import/traversal PASS.
-- No direct human/pixel art PASS in this producer runtime.
+- no final image-textured/calibrated PBR pass;
+- no approved production texel density/overlap policy;
+- no final LOD/HLOD chain;
+- no target-hardware FPS/GPU pass;
+- no final NPC/creature/SOMA rig/animation;
+- no engine import/capsule/nav traversal pass;
 - file-size reduction is not runtime performance evidence.
 
-## Recovery entry points
+## 11. Recovery files
 
 - `WORLD_BIBLE.md`
 - `MASTER_ASSET_LIST.yaml`
 - `TASKS.yaml`
 - `STATUS.yaml`
-- `validation.json`
 - `UV_PBR_LOD_CONTRACT.md`
+- `validation.json`
 - `tools/build_master_scene.py`
 - `tools/build_puerto_microset.py`
 - `tools/refine_puerto_microset_v2.py`
 - `tools/build_jardines_microset.py`
 - `tools/refine_jardines_truth_v2.py`
 - `tools/build_soma_encounter_microset_v2.py`
-- `tools/optimize_repeated_mesh_instances_v1.py`
 - `tools/optimize_repeated_mesh_instances_v2.py`
-- `evidence/cold_rebuild_r3.json`
-- `evidence/puerto_microset_r5.json`
-- `evidence/jardines_microset_r7.json`
-- `evidence/soma_encounter_microset_r8.json`
-- `evidence/uv_pbr_lod_audit_r8.json`
+- `tools/build_stable_traversal_ribbon_v1.py`
 - `evidence/canonical_surface_repro_r9.json`
 - `evidence/instancing_optimization_r10_v2.json`
+- `evidence/lod_feasibility_r10.json`
+- `evidence/traversal_ribbon_r11.json`
 - `evidence/runtime_import_blocker_r5.json`
 
-## Next 3 executable actions
+## 12. Next executable actions
 
-1. Measure an engine-neutral LOD feasibility envelope on representative high-cost meshes using temporary non-destructive decimation plus geometric error metrics; do not commit final LODs or invent hardware thresholds.
-2. Integrator: reconcile LEVIATHAN ACK/asset IDs and root MANIFEST on the exact PR merge tree; producer remains inside owned paths.
-3. When exact provider GLB bytes and a qualified engine coexist, execute import → instantiate → scale/material/collision/traversal and bind evidence to the exact GLB hash; direct art review remains separate.
+1. Publish `LEV-ENV-001` r11 traversal delta to issue #7 and await integrator registry reconciliation; never self-promote.
+2. Advance `MAT/008` with an isolated, reversible **portable PBR calibration lab**, not blind texture propagation onto the master.
+3. Define/generate engine-neutral LOD candidates from the measured feasibility envelope in an isolated QA stage; keep thresholds proposal-only until screen-space/engine/hardware validation.
+4. When exact export bytes and qualified engine coexist, execute import → instantiate → scale/material/collision/capsule/nav traversal and bind evidence to that export.
+5. Direct visual review must remain a separate gate.
 
 CLAIM STATUS: **KEEP**. PR #10 remains draft. Do not merge as world-complete.
