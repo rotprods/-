@@ -7,7 +7,7 @@ north_star: >-
   identity legible, preserves stable gameplay collision beneath deforming visual tissue,
   and establishes the three canonical regions plus the 58 m SOMA encounter interface.
 status: IN_PROGRESS
-last_checkpoint: BLENDER_REVISION_11_STABLE_TRAVERSAL_RIBBON_REPLAYED
+last_checkpoint: PBR_CALIBRATION_LAB_R5_CANONICAL_COLD_REPLAYED
 
 first_10_tasks:
   - id: W10/WORLD/001
@@ -48,9 +48,10 @@ first_10_tasks:
       - human scale validated
       - canonical evaluated surface replay is recoverable
       - world route has continuous stable collision through the shared traversal spine
+      - material family calibration contract exists without forced propagation
       - direct art review required before DONE
-      - runtime traversal required before DONE
-    evidence: [art_source/worlds/leviathan/evidence/puerto_microset_r5.json, art_source/worlds/leviathan/evidence/canonical_surface_repro_r9.json, art_source/worlds/leviathan/evidence/traversal_ribbon_r11.json]
+      - runtime traversal/material validation required before DONE
+    evidence: [art_source/worlds/leviathan/evidence/puerto_microset_r5.json, art_source/worlds/leviathan/evidence/canonical_surface_repro_r9.json, art_source/worlds/leviathan/evidence/traversal_ribbon_r11.json, art_source/worlds/leviathan/evidence/pbr_calibration_lab_r5.json]
 
   - id: W10/REGION/005
     title: Jardines Inmunes representative foundation
@@ -63,8 +64,9 @@ first_10_tasks:
       - LEV-INF-005/LEV-ECO-004/LEV-ECO-001 represented
       - creature collision remains provisional
       - canonical evaluated surface replay matches independent cold build
-      - art/rig/runtime required before DONE
-    evidence: [art_source/worlds/leviathan/evidence/jardines_microset_r7.json, art_source/worlds/leviathan/evidence/canonical_surface_repro_r9.json, art_source/worlds/leviathan/evidence/instancing_optimization_r10_v2.json, art_source/worlds/leviathan/evidence/traversal_ribbon_r11.json]
+      - living-host PBR family calibration exists in isolated lab
+      - art/rig/runtime/material propagation required before DONE
+    evidence: [art_source/worlds/leviathan/evidence/jardines_microset_r7.json, art_source/worlds/leviathan/evidence/canonical_surface_repro_r9.json, art_source/worlds/leviathan/evidence/instancing_optimization_r10_v2.json, art_source/worlds/leviathan/evidence/traversal_ribbon_r11.json, art_source/worlds/leviathan/evidence/pbr_calibration_lab_r5.json]
 
   - id: W10/REGION/006
     title: Cámara de SOMA encounter foundation
@@ -103,28 +105,48 @@ first_10_tasks:
       minimum_visual_tube_side_margin_m: 1.0513
       max_segment_slope_percent: 7.6923
       runtime_capsule_nav_pass: false
-    evidence:
-      - art_source/worlds/leviathan/validation.json
-      - art_source/worlds/leviathan/evidence/puerto_microset_r5.json
-      - art_source/worlds/leviathan/evidence/jardines_microset_r7.json
-      - art_source/worlds/leviathan/evidence/soma_encounter_microset_r8.json
-      - art_source/worlds/leviathan/evidence/traversal_ribbon_r11.json
-      - art_source/worlds/leviathan/evidence/runtime_import_blocker_r5.json
+    evidence: [art_source/worlds/leviathan/validation.json, art_source/worlds/leviathan/evidence/traversal_ribbon_r11.json, art_source/worlds/leviathan/evidence/runtime_import_blocker_r5.json]
 
   - id: W10/MAT/008
-    title: Establish LEVIATHAN material-role library and production readiness contract
+    title: Establish LEVIATHAN material-role library and production-ready portable PBR calibration basis
     priority: P1
     status: REVIEW
-    output: [18 portable material roles, art_source/worlds/leviathan/UV_PBR_LOD_CONTRACT.md, art_source/worlds/leviathan/evidence/uv_pbr_lod_audit_r8.json, art_source/worlds/leviathan/evidence/lod_feasibility_r10.json]
+    output:
+      - 18 portable world-master material roles
+      - art_source/worlds/leviathan/UV_PBR_LOD_CONTRACT.md
+      - art_source/worlds/leviathan/materials/PBR_CALIBRATION_LAB.md
+      - art_source/worlds/leviathan/tools/build_pbr_calibration_lab_v5_canonical.py
+      - art_source/worlds/leviathan/evidence/uv_pbr_lod_audit_r8.json
+      - art_source/worlds/leviathan/evidence/pbr_calibration_lab_r5.json
+      - art_source/worlds/leviathan/evidence/lod_feasibility_r10.json
     dependency: [W10/WORLD/001, W10/BLEND/003]
     dod:
       - living host and human graft roles remain separable
       - amber/cyan/vermilion semantics preserved
       - structural UV audit has no accidental zero-area/out-of-range coordinates
+      - isolated canonical PBR lab exists for LEV-MAT-001/LEV-MAT-002
+      - calibration texture bytes survive editable-source checkpoint and cold replay exactly
+      - portable GLB embeds all calibration textures without external URI
+      - decoded metallic/roughness maps remain inside declared physical ranges after 8-bit quantization
+      - tangent normal vectors are sane
       - texel density normalized or intentionally exempted after target profile is known
-      - final calibrated image-textured PBR pass required before DONE
-    current_truth: {mesh_objects_with_uv: 260, image_textures: 0, production_uv_pass: false, final_pbr_pass: false, final_lod_pass: false}
-    evidence: [art_source/worlds/leviathan/evidence/uv_pbr_lod_audit_r8.json, art_source/worlds/leviathan/evidence/lod_feasibility_r10.json]
+      - direct art review passes before world-master propagation
+      - world-master propagation + engine material validation required before DONE
+    current_truth:
+      world_master_mesh_objects_with_uv: 260
+      world_master_image_textures: 0
+      world_master_final_pbr_pass: false
+      pbr_lab_technical_pass: true
+      pbr_lab_primary_revision: 5
+      pbr_lab_cold_revision: 1
+      pbr_lab_canonical_fingerprint: fb881b5d76c3c2fe8f35441b7f27cf4a0ad71db74f69a915eb1d48d966db9230
+      pbr_lab_calibration_materials: 6
+      pbr_lab_packed_pngs: 18
+      pbr_lab_external_glb_image_uris: 0
+      production_uv_density_pass: false
+      production_texture_budget_pass: false
+      final_lod_pass: false
+    evidence: [art_source/worlds/leviathan/evidence/uv_pbr_lod_audit_r8.json, art_source/worlds/leviathan/evidence/pbr_calibration_lab_r5.json, art_source/worlds/leviathan/evidence/lod_feasibility_r10.json]
 
   - id: W10/ECO/009
     title: Establish ecology and adversary interfaces
@@ -150,20 +172,23 @@ first_10_tasks:
       - art_source/worlds/leviathan/evidence/instancing_optimization_r10_v2.json
       - art_source/worlds/leviathan/evidence/lod_feasibility_r10.json
       - art_source/worlds/leviathan/evidence/traversal_ribbon_r11.json
+      - art_source/worlds/leviathan/evidence/pbr_calibration_lab_r5.json
     dependency: [W10/BLEND/003, W10/REGION/004, W10/REGION/005, W10/REGION/006]
     dod:
       - structural/scale/export checks pass
       - canonical order-invariant evaluated-surface replay matches independent cold build
       - structural optimizer converges primary/cold without changing visual surface
-      - new traversal delta replays exactly and passes geometric clearance/contact QA
+      - traversal delta replays exactly and passes geometric clearance/contact QA
+      - portable PBR calibration source survives primary/cold replay and GLB parse
       - direct visual review receives explicit PASS before DONE
       - engine import remains NOT_RUN until executed
       - performance remains unqualified until target hardware exists
     current_open_defects:
       - DIRECT_PIXEL_ART_REVIEW unavailable
       - ENGINE_IMPORT_AND_TRAVERSAL unavailable
+      - WORLD_MASTER_PBR_PROPAGATION not approved
       - PR10_ROOT_MANIFEST_AGGREGATION pending integrator merge-tree refresh
-    evidence: [art_source/worlds/leviathan/validation.json, art_source/worlds/leviathan/evidence/canonical_surface_repro_r9.json, art_source/worlds/leviathan/evidence/instancing_optimization_r10_v2.json, art_source/worlds/leviathan/evidence/lod_feasibility_r10.json, art_source/worlds/leviathan/evidence/traversal_ribbon_r11.json]
+    evidence: [art_source/worlds/leviathan/validation.json, art_source/worlds/leviathan/evidence/canonical_surface_repro_r9.json, art_source/worlds/leviathan/evidence/instancing_optimization_r10_v2.json, art_source/worlds/leviathan/evidence/lod_feasibility_r10.json, art_source/worlds/leviathan/evidence/traversal_ribbon_r11.json, art_source/worlds/leviathan/evidence/pbr_calibration_lab_r5.json]
 
 open_p0: [W10/TECH/007, W10/QA/010]
 open_p1: [W10/REGION/004, W10/REGION/005, W10/REGION/006, W10/MAT/008, W10/ECO/009]
