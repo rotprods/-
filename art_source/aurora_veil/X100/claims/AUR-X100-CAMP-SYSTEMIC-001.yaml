@@ -4,13 +4,17 @@ owner: AGENT-02-AURORA
 branch: art/world-aurora-veil-001
 world_id: aurora
 region_id: AUR_R01_CAMP_SECOND_DAY
-status: IN_PROGRESS
+status: REVIEW_TECHNICAL_SYSTEMIC
+claim_status: KEEP
 protocol: EXOVANT-X100-v1
 scope_key: aurora/camp/systemic-settlement-kit
 priority: P1_HIGH_MULTIPLIER
 created_at: 2026-09-13T20:04:00+02:00
+last_heartbeat: 2026-09-13T20:18:30+02:00
 remote_project_id: d6488148-8547-4ffe-b63d-e5fbec3a339c
 remote_base_revision: 20
+remote_review_revision: 23
+remote_status: X100_CAMP_SYSTEMIC_R23_FOUNDATION_LOD_QA
 
 north_star: >-
   Turn Campamento del Segundo Dia from a hero/blockout cluster into a reusable systemic settlement language that can generate 100+ physically plausible configurations while preserving Aurora's existing manufacturing, material, temporal and service-routing contracts.
@@ -21,8 +25,8 @@ includes:
   - small/medium/large footprint rules
   - pristine/used/damaged/abandoned authored state contracts
   - traversable/blocked/service/interactive gameplay variants
-  - LOD0/LOD1/LOD2 proxy families where meaningful
-  - simple separate collision proxies
+  - LOD0/LOD1/LOD2 source contracts where meaningful
+  - simple separate collision contracts
   - deterministic assembly rules and proof district
   - material-role reuse from AUR-MAT-v1-r15
   - manufacturing and wear-causality metadata
@@ -40,7 +44,7 @@ excludes:
 collision_audit:
   parent_fleet_claim_status: ACTIVE
   epoch: 1
-  observed_remote_status: WAVE3_AEON_HERO_FORMS_R20
+  observed_remote_status_at_claim: WAVE3_AEON_HERO_FORMS_R20
   aeon_concurrent_work: EXCLUDED
   result: NO_SEMANTIC_COLLISION_WITH_SELECTED_WORKUNIT
 
@@ -52,20 +56,65 @@ configuration_target:
   theoretical_combinations: 144
   proof_configurations_to_instantiate: 12
 
+review_receipts:
+  qa: art_source/aurora_veil/X100/QA/camp_systemic_r23.json
+  generator: art_source/aurora_veil/X100/blender/aurora_x100_camp_systemic_r23.py
+  blend_size_bytes: 10041222
+  blend_etag: d9685ee237c46a6e8f1492abeb750e96
+  glb_size_bytes: 5896420
+  glb_etag: 09cc79c5b477b46a398a27740e432964
+  workbench_artifact_id: 822d884dce546287d2a732c3c4f2aa57
+  eevee_artifact_id: ec17167ed8052b2b4dac6ca968451a5a
+
+technical_review:
+  source_modules: 24
+  proof_configurations: 12
+  proof_mesh_instances: 493
+  history_state_distribution: "3 pristine / 3 used / 3 damaged / 3 abandoned"
+  foundation_clearance_m: "0.350-0.636"
+  adjustable_pier_length_m: "0.270-0.556"
+  pier_ground_offset_m: 0.08
+  lod_contracts: 18
+  lod_envelope_preserved: true
+  collision_contracts: 24
+  loose_library_lod_collision_geometry_in_glb: false
+  giant_bridge_regression: fixed
+  shared_mesh_instancing: pass
+  photometric_technical_gate: pass
+  human_gate_art: pending
+
 family_dod:
-  - stable subasset IDs
-  - real metre dimensions
-  - clean transforms on source modules
-  - silhouette/function/manufacturing metadata
-  - shared mesh instancing in proof assemblies
-  - at least 4 causal history states for key envelope/utility modules
-  - LOD0/LOD1/LOD2 contract for selected repeated modules
-  - separate collision proxy family
-  - deterministic placement/assembly rules
-  - one proof district with human-scale clearances
-  - GLB export smoke pass
-  - photometric technical render receipt
-  - human GATE-ART remains separate
+  stable_subasset_ids: PASS
+  real_dimensions: PASS_BLOCKOUT
+  player_scale: PASS_TECHNICAL
+  silhouette: REVIEW_HUMAN
+  manufacturing_logic: PASS_BLOCKOUT_METADATA
+  UV0: OPEN
+  material_slots: PASS_ROLE_LEVEL
+  pivots_transforms: PASS_SOURCE_CONTRACT
+  collision: PASS_CONTRACT_ENGINE_BLOCKED
+  gameplay_clearance: PASS_AIRLOCK_CONTRACT
+  LOD_strategy: PASS_ENVELOPE_CONTRACT
+  variants: PASS_SYSTEMIC_PROOF
+  state_variants: PASS_SYSTEMIC_PROOF
+  optimization: PARTIAL_INSTANCING_PASS_ENGINE_PERF_BLOCKED
+  engine_import: BLOCKED_EXO_012
+  visual_QA: TECH_PASS_HUMAN_PENDING
+  technical_QA: PASS_R23
+  source_persisted: PASS
+  export_persisted_remote: PASS
+  handoff: OPEN_PARENT_UPDATE
+
+blocked_by:
+  - final UV/bake/authored PBR texture production
+  - EXO-012 production-engine import and LOD/collision implementation
+  - target-hardware performance qualification
+  - human GATE-ART
+
+next_internal_gaps:
+  - AUR-X100-PRAIRIE-ECO-001 / vegetation + deterministic scatter
+  - AUR-X100-CAMP-PROPS-CULTURE-001 / domestic-cultural prop breadth
+  - final production geometry/UV/PBR pass for Camp modules
 
 stop_condition: >-
-  Do not mark DONE until family graph, variants, states, LOD/collision, proof assembly, QA receipt, generator source and handoff are persisted. Engine import/performance remain explicit blockers rather than fabricated PASS claims.
+  Workunit remains KEEP / REVIEW_TECHNICAL_SYSTEMIC. Do not mark DONE while UV/PBR, engine import/performance and human art gates remain open. X100 autonomous production may proceed to the next non-overlapping high-value gap.
