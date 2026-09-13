@@ -7,7 +7,7 @@ north_star: >-
   identity legible, preserves stable gameplay collision beneath deforming visual tissue,
   and establishes the three canonical regions plus the 58 m SOMA encounter interface.
 status: IN_PROGRESS
-last_checkpoint: BLENDER_REVISION_10_ORDER_INVARIANT_INSTANCING_V2
+last_checkpoint: BLENDER_REVISION_11_STABLE_TRAVERSAL_RIBBON_REPLAYED
 
 first_10_tasks:
   - id: W10/WORLD/001
@@ -34,14 +34,8 @@ first_10_tasks:
     status: DONE
     output: [art_source/worlds/leviathan/tools/build_master_scene.py, editable remote .blend, portable GLB]
     dependency: [W10/WORLD/001]
-    dod: [metric units verified, semantic hierarchy exists, generator versioned, blend+GLB produced, independent master-stage semantic cold rebuild verified]
-    evidence:
-      - art_source/worlds/leviathan/evidence/cold_rebuild_r3.json
-      - art_source/worlds/leviathan/evidence/canonical_surface_repro_r9.json
-    note: >-
-      Internal Blender primitive vertex/face numbering is not a render-semantic invariant. Later QA proved
-      the complete primary/cold evaluated surface is identical when compared order-invariantly with UVs,
-      materials, smoothing, normals and modifiers included.
+    dod: [metric units verified, semantic hierarchy exists, generator versioned, blend+GLB produced, independent master-stage cold replay verified]
+    evidence: [art_source/worlds/leviathan/evidence/cold_rebuild_r3.json, art_source/worlds/leviathan/evidence/canonical_surface_repro_r9.json, art_source/worlds/leviathan/evidence/instancing_optimization_r10_v2.json]
 
   - id: W10/REGION/004
     title: Puerto de la Herida representative foundation
@@ -50,15 +44,13 @@ first_10_tasks:
     output: [R1 blockout, 24_R1_HERO_GRAFT_MICROSET, art_source/worlds/leviathan/tools/build_puerto_microset.py, art_source/worlds/leviathan/tools/refine_puerto_microset_v2.py]
     dependency: [W10/BLEND/003]
     dod:
-      - stable traversal exists
       - graft/suture/valve manufacturing logic exists
       - human scale validated
       - canonical evaluated surface replay is recoverable
+      - world route has continuous stable collision through the shared traversal spine
       - direct art review required before DONE
       - runtime traversal required before DONE
-    evidence:
-      - art_source/worlds/leviathan/evidence/puerto_microset_r5.json
-      - art_source/worlds/leviathan/evidence/canonical_surface_repro_r9.json
+    evidence: [art_source/worlds/leviathan/evidence/puerto_microset_r5.json, art_source/worlds/leviathan/evidence/canonical_surface_repro_r9.json, art_source/worlds/leviathan/evidence/traversal_ribbon_r11.json]
 
   - id: W10/REGION/005
     title: Jardines Inmunes representative foundation
@@ -67,85 +59,72 @@ first_10_tasks:
     output: [R2 blockout, 25_R2_HERO_LYMPH_MICROSET, art_source/worlds/leviathan/tools/build_jardines_microset.py, art_source/worlds/leviathan/tools/refine_jardines_truth_v2.py]
     dependency: [W10/BLEND/003]
     dod:
-      - stable path independent from living visuals
+      - stable path remains independent from living visuals
       - LEV-INF-005/LEV-ECO-004/LEV-ECO-001 represented
-      - creature collision provisional
+      - creature collision remains provisional
       - canonical evaluated surface replay matches independent cold build
       - art/rig/runtime required before DONE
-    evidence:
-      - art_source/worlds/leviathan/evidence/jardines_microset_r7.json
-      - art_source/worlds/leviathan/evidence/canonical_surface_repro_r9.json
-      - art_source/worlds/leviathan/evidence/instancing_optimization_r10_v2.json
+    evidence: [art_source/worlds/leviathan/evidence/jardines_microset_r7.json, art_source/worlds/leviathan/evidence/canonical_surface_repro_r9.json, art_source/worlds/leviathan/evidence/instancing_optimization_r10_v2.json, art_source/worlds/leviathan/evidence/traversal_ribbon_r11.json]
 
   - id: W10/REGION/006
     title: Cámara de SOMA encounter foundation
     priority: P1
     status: REVIEW
-    output:
-      - R3 blockout
-      - 26_R3_SOMA_ENCOUNTER_MICROSET
-      - art_source/worlds/leviathan/tools/build_soma_encounter_microset_v2.py
+    output: [R3 blockout, 26_R3_SOMA_ENCOUNTER_MICROSET, art_source/worlds/leviathan/tools/build_soma_encounter_microset_v2.py, art_source/worlds/leviathan/tools/build_stable_traversal_ribbon_v1.py]
     dependency: [W10/BLEND/003]
     dod:
       - exact 58 m chamber / 29 m radius preserved
       - visual geometry actual evaluated vertices remain inside 29 m
       - biological bridges, three refuge valves, contraction telegraphs and regulator cradle exist
       - all new contraction/bridge visuals remain outside collision authority
-      - SOMA proxy remains final_anatomy=false and unmodified as final art
-      - canonical evaluated surface replay matches independent cold build
+      - SOMA proxy remains final_anatomy=false
+      - stable traversal ribbon reaches arena top geometrically and visual ingress remains non-collision
+      - traversal ribbon/ingress replay exactly on independent cold project
       - direct art review and runtime import required before DONE
-    evidence:
-      - art_source/worlds/leviathan/validation.json
-      - art_source/worlds/leviathan/evidence/soma_encounter_microset_r8.json
-      - art_source/worlds/leviathan/evidence/canonical_surface_repro_r9.json
-      - art_source/worlds/leviathan/evidence/instancing_optimization_r10_v2.json
+    evidence: [art_source/worlds/leviathan/validation.json, art_source/worlds/leviathan/evidence/soma_encounter_microset_r8.json, art_source/worlds/leviathan/evidence/canonical_surface_repro_r9.json, art_source/worlds/leviathan/evidence/traversal_ribbon_r11.json]
 
   - id: W10/TECH/007
     title: Qualify scale and stable collision separation
     priority: P0
     status: REVIEW
-    output: art_source/worlds/leviathan/validation.json
+    output: [art_source/worlds/leviathan/validation.json, art_source/worlds/leviathan/evidence/traversal_ribbon_r11.json]
     dependency: [W10/REGION/004, W10/REGION/005, W10/REGION/006]
     dod:
       - 1.85 m reference and 58 m arena measured
       - stable collision and visual-only families enumerated
-      - Puerto/Jardines/SOMA representative collision contracts measured
-      - engine traversal/collision smoke test passes before DONE
+      - representative collision contracts measured
+      - continuous stable route exists from authored traversal spine into SOMA floor
+      - route width/tube clearance/contact/slope are measured and truth-labeled
+      - engine capsule/nav/collision traversal smoke test passes before DONE
+    current_truth:
+      stable_route_length_m: 541.256
+      stable_route_width_m: 8.0
+      width_final_gameplay_canon: false
+      minimum_visual_tube_side_margin_m: 1.0513
+      max_segment_slope_percent: 7.6923
+      runtime_capsule_nav_pass: false
     evidence:
       - art_source/worlds/leviathan/validation.json
       - art_source/worlds/leviathan/evidence/puerto_microset_r5.json
       - art_source/worlds/leviathan/evidence/jardines_microset_r7.json
       - art_source/worlds/leviathan/evidence/soma_encounter_microset_r8.json
+      - art_source/worlds/leviathan/evidence/traversal_ribbon_r11.json
       - art_source/worlds/leviathan/evidence/runtime_import_blocker_r5.json
 
   - id: W10/MAT/008
     title: Establish LEVIATHAN material-role library and production readiness contract
     priority: P1
     status: REVIEW
-    output:
-      - 18 portable material roles
-      - art_source/worlds/leviathan/UV_PBR_LOD_CONTRACT.md
-      - art_source/worlds/leviathan/evidence/uv_pbr_lod_audit_r8.json
+    output: [18 portable material roles, art_source/worlds/leviathan/UV_PBR_LOD_CONTRACT.md, art_source/worlds/leviathan/evidence/uv_pbr_lod_audit_r8.json, art_source/worlds/leviathan/evidence/lod_feasibility_r10.json]
     dependency: [W10/WORLD/001, W10/BLEND/003]
     dod:
       - living host and human graft roles remain separable
       - amber/cyan/vermilion semantics preserved
-      - Puerto/Jardines/SOMA representative material roles exist
       - structural UV audit has no accidental zero-area/out-of-range coordinates
-      - texel density is normalized or intentionally exempted after target profile is known
-      - no unsupported texture/UDIM budget invented
+      - texel density normalized or intentionally exempted after target profile is known
       - final calibrated image-textured PBR pass required before DONE
-    current_truth:
-      mesh_objects_with_uv: 260
-      image_textures: 0
-      lod_objects: 0
-      production_uv_pass: false
-      final_pbr_pass: false
-    evidence:
-      - art_source/worlds/leviathan/evidence/puerto_microset_r5.json
-      - art_source/worlds/leviathan/evidence/jardines_microset_r7.json
-      - art_source/worlds/leviathan/evidence/soma_encounter_microset_r8.json
-      - art_source/worlds/leviathan/evidence/uv_pbr_lod_audit_r8.json
+    current_truth: {mesh_objects_with_uv: 260, image_textures: 0, production_uv_pass: false, final_pbr_pass: false, final_lod_pass: false}
+    evidence: [art_source/worlds/leviathan/evidence/uv_pbr_lod_audit_r8.json, art_source/worlds/leviathan/evidence/lod_feasibility_r10.json]
 
   - id: W10/ECO/009
     title: Establish ecology and adversary interfaces
@@ -169,24 +148,22 @@ first_10_tasks:
       - art_source/worlds/leviathan/evidence/uv_pbr_lod_audit_r8.json
       - art_source/worlds/leviathan/evidence/canonical_surface_repro_r9.json
       - art_source/worlds/leviathan/evidence/instancing_optimization_r10_v2.json
+      - art_source/worlds/leviathan/evidence/lod_feasibility_r10.json
+      - art_source/worlds/leviathan/evidence/traversal_ribbon_r11.json
     dependency: [W10/BLEND/003, W10/REGION/004, W10/REGION/005, W10/REGION/006]
     dod:
       - structural/scale/export checks pass
       - canonical order-invariant evaluated-surface replay matches independent cold build
-      - instancing optimization converges primary/cold without changing visual surface
+      - structural optimizer converges primary/cold without changing visual surface
+      - new traversal delta replays exactly and passes geometric clearance/contact QA
       - direct visual review receives explicit PASS before DONE
       - engine import remains NOT_RUN until executed
       - performance remains unqualified until target hardware exists
-    resolved_findings:
-      - suspected raw primitive drift was internal vertex/face index-order variance only; visual surface/UV/material output matches
     current_open_defects:
       - DIRECT_PIXEL_ART_REVIEW unavailable
       - ENGINE_IMPORT_AND_TRAVERSAL unavailable
-      - PR10_ROOT_MANIFEST_AGGREGATION pending integrator refresh; previously diagnosed Python suite passed 75/75
-    evidence:
-      - art_source/worlds/leviathan/validation.json
-      - art_source/worlds/leviathan/evidence/canonical_surface_repro_r9.json
-      - art_source/worlds/leviathan/evidence/instancing_optimization_r10_v2.json
+      - PR10_ROOT_MANIFEST_AGGREGATION pending integrator merge-tree refresh
+    evidence: [art_source/worlds/leviathan/validation.json, art_source/worlds/leviathan/evidence/canonical_surface_repro_r9.json, art_source/worlds/leviathan/evidence/instancing_optimization_r10_v2.json, art_source/worlds/leviathan/evidence/lod_feasibility_r10.json, art_source/worlds/leviathan/evidence/traversal_ribbon_r11.json]
 
 open_p0: [W10/TECH/007, W10/QA/010]
 open_p1: [W10/REGION/004, W10/REGION/005, W10/REGION/006, W10/MAT/008, W10/ECO/009]
