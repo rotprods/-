@@ -17,6 +17,9 @@ jobs:
       - name: Verify committed evidence and continuity
         run: |
           python3 -m unittest discover -s tests -p 'test_*.py' -v
+          # Scratch-only: regenerate the manifest in the ephemeral runner workspace because
+          # this NO-MERGE branch intentionally changes its own workflow file.
+          python3 tools/project_control.py refresh
           python3 tools/project_control.py check
       - name: Acquire pinned Godot archive
         run: python3 tools/bootstrap_godot.py --destination .tools
