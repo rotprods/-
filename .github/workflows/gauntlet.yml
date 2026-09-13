@@ -1,7 +1,6 @@
 name: EXOVANT Gauntlet
 on:
-  push:
-    branches: [main]
+  # Scratch integration branch: one pull-request run only, base branch keeps cost quarantine policy.
   pull_request:
   workflow_dispatch:
 permissions:
@@ -23,6 +22,13 @@ jobs:
         run: python3 tools/bootstrap_godot.py --destination .tools
       - name: Execute native scene gates from source
         run: python3 tests/run_gauntlet.py --godot .tools/Godot_v4.7.2-stable_linux.x86_64
+      - name: Execute ORIGIN Atrio surrogate traversal
+        run: |
+          set -o pipefail
+          rm -f evidence/origin-atrio-surrogate.json evidence/origin-atrio-surrogate.log
+          .tools/Godot_v4.7.2-stable_linux.x86_64 --headless --path . --script .tools/origin_atrio_surrogate.gd 2>&1 | tee evidence/origin-atrio-surrogate.log
+          test -f evidence/origin-atrio-surrogate.json
+          python3 -c 'import json; d=json.load(open("evidence/origin-atrio-surrogate.json")); assert d["failed"] == 0 and d["real_glb_import"] is False and d["truth_state"] == "SURROGATE_TRAVERSAL_ONLY"'
       - name: Preserve this run's evidence
         if: always()
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
