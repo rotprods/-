@@ -19,21 +19,33 @@ Run scope reserved on 2026-09-12 from `main@4c2fa044080004609ea6df45f34b2a784536
 ## Concurrency contract
 Other world agents should select different world IDs and use `art_source/worlds/<world_id>/**`. Shared standards may be proposed in this branch but must remain world-local until reviewed, to avoid edit collisions across parallel agents.
 
-## Completed foundation claim
-- `PEL/CIV/PROP-X100-001` — Mercado civilization/prop systemic kit.
+## Completed X100 foundation claims
+### `PEL/CIV/PROP-X100-001`
+- Mercado civilization/prop systemic kit.
 - Scene checkpoint: rev. 32.
-- Result: 9 semantic families × 3 variants × 4 causal states; 108 direct configurations / ≥432 with cardinal yaw; STRUCTURAL_PASS; source + receipt persisted.
+- 9 semantic families × 3 variants × 4 causal states; 108 direct configurations / ≥432 with cardinal yaw.
+- STRUCTURAL_PASS; source + receipt persisted.
 - Remaining gates: semantic GATE-ART, engine import/runtime interaction/LOD thresholds/target-GPU qualification.
 
+### `PEL/MKT/ARCH-X100-002`
+- Mercado CommandShell service/listening/memory-custody interior systemic cell.
+- Final structurally verified scene checkpoint: rev. 34.
+- 280 valid wall layouts × 3 floor patterns × 2 ceiling patterns × 4 temporal states = up to 6,720 credible cell configurations.
+- Visible cell envelope ~7.95×5.82×3.37 m; inside CommandShell; bridge clearance >9.2 m beyond bridge bevel; actual east collision threshold gap 2.65 m; reserved 0.90 m central corridor blockers 0; three eras physical; UV/material/scale debt 0.
+- Workbench corridor intrusion found at rev. 33 and corrected 0.30 m west at rev. 34.
+- Hidden-technical-object QA rule learned: stale `matrix_world` can read origin while `hide_viewport=True`; compose `parent.matrix_world @ matrix_parent_inverse @ matrix_basis` or force depsgraph update before classifying transform drift.
+- Source + receipt persisted. Visual artifacts exist; semantic GATE-ART remains pending because signed artifact host could not be pixel-inspected in current execution environment.
+
 ## Active claim — `/EXOVANT-X100`
-- Claim ID: `PEL/MKT/ARCH-X100-002`
-- Scope: Mercado CommandShell interior/service-listening-custody cell; interior architecture only, with modular wall/floor/ceiling/service families, current-state assembly and causal three-era history.
-- Why now: X100 rerank at Blender rev. 32 found `interior_like_objects: 0` and settlement machinery at zero, making L3 interior the largest near-zero multiplicative dimension after prop expansion.
-- Placement: inside `PEL_MKT_CommandShell`; target bay centered near `(-504,-90)` m; floor tied to ring/platform top around z=14 m; connects westward to `PEL_MKT_V1_ServiceChannel_05` / utility system while reserving bridge centerline corridors.
-- Configuration grammar: four wall slots × five panel types with functional constraints = 280 valid wall layouts; × three floor patterns × two ceiling patterns × four temporal states = up to 6,720 credible cell configurations before broader district placement.
-- Canon constraints: repair-first marine construction, corrosion/drainage/buoyancy/maintainability logic, physical custody/listening functions, no invented faction iconography or unsupported social hierarchy.
-- DoD: stable IDs; player-scale clearances; 1.2 m minimum route/threshold clearance; modular snap contract; causal ERA_0/ERA_1/ERA_2 geometry; UV0/materials/clean transforms/pivots; collision/visibility-cell strategy; LOD/HLOD strategy; deterministic grammar; structural QA; visual evidence; receipt; reproducible generator.
-- Engine gate: runtime door/interaction/audio bindings, portal/room culling, HLOD thresholds and GPU qualification remain `BLOCKED/PENDING` until production-engine decision.
+- Claim ID: `PEL/MKT/MACH-X100-003`
+- Scope: settlement machinery / utility-spine systemic family for Mercado de Boyas. No vehicle internals and no boss apparatus.
+- Why now: X100 rerank at Blender rev. 34 found **settlement machinery objects = 0**, while L3 interior is no longer zero. This is the next multiplicative bottleneck.
+- Planned semantic families: drainage/bilge pump; service filtration skid; ballast/buoyancy transfer unit; mooring tension winch; overload/storm-release unit; pressure/equalization manifold; acoustic relay/conditioning cabinet; fluid heat-exchange skid; service hoist.
+- Epistemic rule: these are engineering proposals derived from canonical marine constraints (wet/dry cycling, drainage, buoyancy, mooring, acoustic systems, corrosion, maintainability), not irreversible lore. Exact energy source/control technology remains unspecified.
+- Variation grammar: 9 families × 3 capacity variants × 4 causal service states = 108 direct family configurations before orientation/placement grammar.
+- Placement target: utility gallery west of the new service/listening cell, inside/adjacent to existing CommandShell service network and near `ServiceChannel_05` / UtilityRiser, while preserving bridge corridors and player clearance.
+- DoD: stable IDs, meter-scale dimensions, service input/output sockets, maintenance access, causal wear/repair/decommission states, UV0/materials/clean transforms, collision/query policy, LOD/HLOD strategy, deterministic generator, >100 configuration grammar, structural QA, visual evidence, receipt.
+- Engine gate: runtime fluid simulation, interactive controls, power semantics, audio behavior, physics, HLOD thresholds and GPU qualification remain `BLOCKED/PENDING` until production-engine decision.
 
 ## Current status
-`X100_PRODUCTION_ACTIVE`: current wave is closing the zero-interior gap inside the Mercado rather than adding isolated exterior hero assets.
+`X100_PRODUCTION_ACTIVE`: current wave closes the settlement-machinery zero without inventing decorative sci-fi machinery.
