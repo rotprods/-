@@ -1,0 +1,125 @@
+schema_version: 1
+world_id: leviathan
+claim_id: CLM-W10-WORLD-LEVIATHAN-001
+status: PROPOSAL_FEASIBILITY_BOUND_NOT_PRODUCTION_APPROVED
+basis_receipt: art_source/worlds/leviathan/evidence/lod_feasibility_r10.json
+
+principles:
+  - no single global decimation ratio
+  - final LOD switching distances require production camera/FOV/resolution/engine/target hardware
+  - collision geometry is a separate stable authority and never inherits visual LOD policy blindly
+  - deforming/animated anatomy requires rig/deformation-aware LOD validation
+  - curves use resolution/bevel policies before destructive mesh decimation
+  - silhouette, shading, UV seams and material boundaries are acceptance criteria, not triangle count alone
+  - every ratio below is a candidate probe, never a shipping threshold
+
+measured_reference:
+  representative_ratio_75_max_error_pct_diag_range: [0.045903, 0.160323]
+  representative_ratio_50_max_error_pct_diag_range: [0.092899, 0.319139]
+  representative_ratio_25_max_error_pct_diag_range: [0.252861, 0.741186]
+  full_half_sweep_unique_visual_meshes: 52
+  full_half_sweep_draw_tris_before: 91132
+  full_half_sweep_draw_tris_after: 45566
+  full_half_sweep_max_error_pct_diag:
+    median: 0.319139
+    p90: 0.721524
+    max: 0.819912
+  conclusion: 50_percent_global_policy_rejected
+
+classes:
+  LOD_A_CRITICAL_SMALL_ROUNDED:
+    description: small rounded, status, contact, sensor, bulb and silhouette-critical detail where half-resolution probes produced high normalized error
+    candidate_probe_ratios: [0.90, 0.80]
+    measured_examples:
+      - R2_HPA_ROOT_COLLAR_4
+      - R1_HLV_STATUS_0
+      - R2_HGP_CONTACT_PAD_0
+      - R2_HPA_BULB_4
+      - R3_HRC_PRESSURE_BULB_0
+    measured_ratio_80_max_error_pct_diag_range: [0.150657, 0.269394]
+    lower_than_0_80: REQUIRES_NEW_EVIDENCE
+    screen_space_validation: REQUIRED
+    art_silhouette_validation: REQUIRED
+
+  LOD_B_HERO_STRUCTURAL:
+    description: gameplay-facing structural pieces, medium biological/mechanical forms and hero interfaces without the severe small-rounded outlier behavior
+    candidate_probe_ratios: [0.80, 0.75, 0.70]
+    geometric_acceptance_probe:
+      max_error_pct_diag: PROPOSAL_LE_0_25
+      rms_error_pct_diag: PROPOSAL_LE_0_10
+    final_threshold_status: UNAPPROVED
+    screen_space_validation: REQUIRED
+    normal_uv_material_validation: REQUIRED
+
+  LOD_C_LARGE_RING_SHELL_STATIC:
+    description: large static rings, ribs, scar boundaries, macro shells and similar forms whose 50-percent probes remained comparatively low-error in measured representatives
+    candidate_probe_ratios: [0.75, 0.50]
+    measured_examples:
+      L2_RIB_-260:
+        ratio_0_50_max_error_pct_diag: 0.094062
+      R1_SCAR_RING:
+        ratio_0_50_max_error_pct_diag: 0.092899
+      R1_HLV_OUTER_FRAME:
+        ratio_0_50_max_error_pct_diag: 0.100533
+      R3_HRC_REGULATOR_RING:
+        ratio_0_50_max_error_pct_diag: 0.136716
+    geometric_acceptance_probe:
+      max_error_pct_diag: PROPOSAL_LE_0_20
+      rms_error_pct_diag: PROPOSAL_LE_0_08
+    ratio_0_25: REQUIRES_ASSET_SPECIFIC_EVIDENCE
+    screen_space_validation: REQUIRED
+
+  LOD_D_PROXY_OR_VISTA:
+    description: distant non-interactive proxy/vista forms only after distance and streaming topology are qualified
+    candidate_probe_ratios: [0.50, 0.25]
+    status: BLOCKED_UNTIL_CAMERA_STREAMING_PLAN
+    note: do not apply to current representative gameplay microsets merely because they are visually large
+
+  LOD_CURVE_TUBE:
+    description: vascular, tendon, diagnostic, route and cilia curves
+    preferred_controls:
+      - resolution_u
+      - bevel_resolution
+      - bevel_depth_preservation
+      - optional evaluated mesh simplification only after curve-specific comparison
+    current_master_curve_resolution_u: 4
+    current_master_bevel_resolution: 3
+    candidate_profiles:
+      HERO_NEAR: {resolution_u: 4, bevel_resolution: 3}
+      STANDARD_MID_PROBE: {resolution_u: 3, bevel_resolution: 2}
+      DISTANT_PROBE: {resolution_u: 2, bevel_resolution: 1}
+    profiles_status: PROPOSAL_NOT_VALIDATED
+    preserve_radius_and_endpoints: REQUIRED
+
+  COLLISION_STABLE:
+    description: stable gameplay collision/navigation authority
+    visual_lod_policy_applies: false
+    optimization_method:
+      - dedicated simple collision primitives/ribbons
+      - topology changes only with runtime capsule/nav regression
+    current_runtime_pass: false
+
+animated_policy:
+  current_assets_with_final_rig: 0
+  final_soma: BLOCKED
+  gardener: PROVISIONAL_NO_FINAL_RIG
+  polinizador_future: PROVISIONAL_NO_FINAL_RIG
+  rule: no production animated LOD is approved until skinning/deformation/topology-transfer tests exist
+
+candidate_acceptance_receipt_required:
+  - original_and_candidate_triangle_count
+  - approximate_bidirectional_surface_error
+  - world_bbox_diagonal_normalization
+  - UV/material slot preservation
+  - normal/shading regression
+  - silhouette review from representative camera
+  - engine import
+  - runtime screen-space/FPS measurement on target profile
+
+non_claims:
+  final_lod_ratios: false
+  final_switch_distances: false
+  hlod_policy: false
+  impostor_policy: false
+  target_hardware_performance: false
+  engine_import_validation: false
