@@ -1,0 +1,162 @@
+{
+  "schema_version": 1,
+  "protocol": "EXOVANT-X100-v1",
+  "world_id": "aurora",
+  "region_id": "AUR_R01_CAMP_SECOND_DAY",
+  "parent_claim": "CLM-AURORA-WORLD-001",
+  "workunit_id": "AUR-X100-CAMP-PROPS-CULTURE-001",
+  "owner": "AGENT-02-AURORA",
+  "remote_project_id": "d6488148-8547-4ffe-b63d-e5fbec3a339c",
+  "remote_revision": 30,
+  "scene_status": "X100_CAMP_PROPS_CULTURE_R30_BALANCED_QA",
+  "quality_claim": "REVIEW_TECHNICAL_SYSTEMIC; PROPOSAL FUNCTIONAL PROPS; NOT CANON EXPANSION; NOT FINAL ART",
+  "epistemic_boundary": {
+    "canon_functions": [
+      "Campamento del Segundo Dia is an observatory and refuge",
+      "two observation stations carry divergent clocks",
+      "clock synchronization and repeated-event verification are required",
+      "temporal records can be preserved or restricted"
+    ],
+    "proposal": "The exact everyday prop catalog, dimensions, clusters and culture-DNA constraints are production proposals derived from those functions.",
+    "not_claimed": ["new factions","rituals","economy","social hierarchy","final iconography","named-character possessions"]
+  },
+  "family_coverage": {
+    "base_families": 24,
+    "unique_proof_asset_ids": 24,
+    "functional_domains": {
+      "calibration_timekeeping": 5,
+      "observation_service": 4,
+      "route_record_handling": 5,
+      "maintenance": 5,
+      "refuge_domestic": 5
+    },
+    "source_dimensions_pass": true,
+    "manufacturing_metadata_all": true,
+    "source_library_scene_meshes": 0,
+    "state_library_scene_meshes": 0,
+    "contract_scene_meshes": 0
+  },
+  "proof_clusters": {
+    "count": 15,
+    "distribution": {
+      "CALIBRATION": 3,
+      "OBSERVATION_SERVICE": 3,
+      "ROUTE_RECORD": 3,
+      "MAINTENANCE": 3,
+      "REFUGE_DOMESTIC": 3
+    },
+    "history_state_distribution": {
+      "PRISTINE": 4,
+      "USED": 4,
+      "DAMAGED": 4,
+      "ABANDONED": 3
+    },
+    "support_pass": true,
+    "support_failure_count": 0,
+    "containment_pass": true,
+    "containment_failure_count": 0,
+    "support_types": ["FLOOR","TABLE","TOOL_CHEST"],
+    "explicit_support_contract_revision": 30
+  },
+  "state_contract": {
+    "selected_repeated_families": 5,
+    "states_each": ["PRISTINE","USED","DAMAGED","ABANDONED"],
+    "metadata_contracts": 20,
+    "visible_history_rule": "Used/damaged/abandoned proof clusters receive localized physical displacement, repair-case/parts evidence or tipped/misplaced portable objects. Uniform grunge is not accepted as state variation."
+  },
+  "lod_contract": {
+    "selected_repeated_families": 9,
+    "contracts": 27,
+    "levels": ["LOD0","LOD1","LOD2"],
+    "dimension_envelope_pass": true,
+    "source_status": "blockout-low-poly; production detail reduction deferred",
+    "engine_switching": "BLOCKED_EXO_012"
+  },
+  "collision_interaction_contract": {
+    "contracts": 27,
+    "geometry_in_exchange_glb": false,
+    "cluster_footprint_contracts": 15,
+    "service_clearance_contracts": 12,
+    "engine_instantiation": "BLOCKED_EXO_012"
+  },
+  "failure_fix_history": [
+    {
+      "revision": 27,
+      "finding": "24 families and 15 clusters existed, but cable spool dimensions violated declared Z by 0.06m and support placement relied on name heuristics."
+    },
+    {
+      "revision": 28,
+      "fix": "Cable spool rebuilt to exact 0.46x0.46x0.40m; FLOOR/TABLE/TOOL_CHEST support contracts introduced; maintenance trays moved onto tool chests."
+    },
+    {
+      "revision": 29,
+      "fix": "Route field log slates explicitly reclassified and repositioned to TABLE support."
+    },
+    {
+      "revision": 30,
+      "fix": "Cable spools lowered 0.03m to exact floor contact and cluster mix rebalanced from 4/3/3/3/2 to 3/3/3/3/3 by converting cluster12 into REFUGE_DOMESTIC."
+    }
+  ],
+  "source_reproducibility": {
+    "generator_body": "art_source/aurora_veil/X100/blender/aurora_x100_camp_props_r30.py",
+    "validated_entrypoint": "art_source/aurora_veil/X100/blender/aurora_x100_camp_props_r30_entrypoint.py",
+    "known_base_file_issue": "generator body omitted `from mathutils import Vector` while using Vector in collision placement",
+    "resolution": "entrypoint injects Vector into execution globals before calling build(); debt is explicit, not hidden",
+    "standalone_base_script_claimed": false
+  },
+  "portable_artifacts_revision_30": {
+    "blend": {"size_bytes": 12362540, "etag": "25535c472f0248e457f0f2d47b0ce6d5"},
+    "glb": {"size_bytes": 6724580, "etag": "2f0cd89166cb050533840d6cb8b4c455"}
+  },
+  "visual_qa": {
+    "cutaway_host": "AUR_X100_CAMP_CONFIG_02",
+    "temporarily_hidden_for_query_only": "south facade + host roofs",
+    "proof_props_in_cutaway": 16,
+    "structural_workbench": {
+      "artifact": "aurora_x100_r30_props_cutaway_structural.png",
+      "artifact_id": "3b46875505a412773bfb3233d1a160cc",
+      "resolution": [640,360],
+      "mean": 0.3705,
+      "stddev": 0.08,
+      "p01": 0.1064,
+      "p50": 0.388,
+      "p99": 0.4975,
+      "gate": "PASS_STRUCTURAL"
+    },
+    "eevee": {
+      "artifact": "aurora_x100_r30_props_cutaway_eevee.png",
+      "artifact_id": "f046ec46f431250a8b24d70c1813e7f4",
+      "resolution": [640,360],
+      "mean": 0.116,
+      "stddev": 0.0946,
+      "p01": 0.0,
+      "p50": 0.1859,
+      "p99": 0.2713,
+      "black_clip": 0.06,
+      "white_clip": 0.0,
+      "gate": "PASS_TECHNICAL_PHOTOMETRIC"
+    },
+    "human_gate_art": "PENDING"
+  },
+  "gates": {
+    "CANON_BOUNDARY": "PASS_PROPOSAL_ONLY",
+    "SEMANTIC_PURPOSE": "PASS_24_FAMILIES",
+    "DIMENSIONS": "PASS_24_OF_24",
+    "MANUFACTURING_LOGIC": "PASS_BLOCKOUT_METADATA",
+    "PLAYER_SCALE_SUPPORT": "PASS",
+    "PHYSICAL_SUPPORT_CONTACT": "PASS",
+    "HOST_CONTAINMENT": "PASS_15_OF_15",
+    "FUNCTIONAL_CLUSTER_DIVERSITY": "PASS_3_EACH_OF_5_TYPES",
+    "HISTORY_STATES": "PASS_SYSTEMIC_PROOF",
+    "LOD": "PASS_SOURCE_CONTRACT",
+    "COLLISION_CLEARANCE": "PASS_CONTRACT_ENGINE_BLOCKED",
+    "GLB_EXPORT": "PASS_REV30",
+    "STRUCTURAL_RENDER": "PASS",
+    "PHOTOMETRIC_RENDER": "PASS_TECHNICAL",
+    "FINAL_UV_BAKES_TEXTURES": "OPEN",
+    "ENGINE_INTERACTION_IMPORT": "BLOCKED_EXO_012",
+    "TARGET_HARDWARE_PERFORMANCE": "BLOCKED_TARGET_HARDWARE",
+    "HUMAN_GATE_ART": "PENDING"
+  },
+  "conclusion": "Eligible for REVIEW_TECHNICAL_SYSTEMIC, not DONE/AAAA. Campamento now gains a functional everyday-object grammar tied to observation, clock calibration, route records, maintenance and refuge life without silently expanding canon."
+}
