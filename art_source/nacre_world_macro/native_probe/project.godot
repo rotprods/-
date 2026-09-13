@@ -1,0 +1,15 @@
+; EXOVANT 2950 — NACRE R5 isolated native import probe
+; Deliberately separate from the gameplay project. The wrapper copies the exact R5 GLB here.
+config_version=5
+
+[application]
+config/name="EXOVANT NACRE R5 Native Probe"
+run/main_scene=""
+
+[display]
+window/size/viewport_width=640
+window/size/viewport_height=360
+
+[rendering]
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
