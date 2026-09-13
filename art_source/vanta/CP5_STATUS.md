@@ -3,148 +3,153 @@
 **World:** VANTA  
 **Latest remote revision:** 11  
 **Texture payload qualification revision:** 10  
-**Truth level:** `GODOT_TEXTURE_PAYLOAD_AND_GROSS_ROLE_TRANSPORT_QUALIFIED / PHOTOMETRIC_EQUIVALENCE_BLOCKED_BY_LIGHT_TRANSPORT` — CP5 payload transport is qualified, camera/geometry alignment is qualified, but Blender↔Godot shaded equivalence is not.
+**Truth level:** `TEXTURE_PAYLOAD_AND_CAMERA_GEOMETRY_QUALIFIED / SIMPLE_LIGHT_CALIBRATION_INSUFFICIENT / PHOTOMETRIC_EQUIVALENCE_OPEN`.
 
-## Material foundation
+## Material foundation and preserved history
 
-Revision 7 established nine packed 512×512 maps for steel, ferric rust and union-yellow (`BC`, `ORM`, `N`). Revision 8 added packed `TRIM_A` (`BC/ORM/N`), packed `DECAL_A`, four representative decal cards and neutral/Vanta-light calibration boards.
+- **rev7:** first packed BC/ORM/N foundation for steel, ferric rust and union yellow.
+- **rev8:** first packed trim family, decal atlas, neutral/Vanta calibration boards; 147 representative CP4 meshes with 0 missing UVs.
+- **rev9:** AREA export blocker removed, but deeper pixel audit proved all **13/13 packed CP5 image payloads were black**. Godot was transporting the invalid source faithfully. This negative receipt remains preserved.
+- sampler audit proved there was one exported glTF sampler and no competing sampler policy; the black payload was not caused by the sampler warning.
+- **rev10:** all 13 images regenerated through `pixels.foreach_set → update → pack`, then round-tripped through embedded GLB PNGs and Godot texture readback.
 
-Revision-8 local QA remains valid:
-
-- 13/13 CP5 images packed;
-- BC/decal use sRGB; ORM/normal use Non-Color;
-- 147 representative CP4 meshes use the upgraded material roles;
-- 0 missing UVs;
-- CP4 transform and zero-gap assembly regressions: 0.
-
-## Revision 9 portability history
-
-The two CP4 test-yard AREA lights that Blender's glTF exporter reported as unsupported were converted to POINT lights. The exporter continued reporting that multiple image-texture nodes participate in some PBR/trim materials and that glTF sampler behavior may follow the first image node.
-
-A deeper audit proved two distinct facts that must not be conflated:
-
-1. all 13 rev9 CP5 image payloads were actually black — a real source defect;
-2. the sampler warning did **not** correspond to competing sampler policies: CP5 image nodes use the same sampler settings and the exported GLB contains one sampler.
-
-Godot rev9 was transporting the bad black payload correctly. This negative evidence is preserved rather than rewritten as an importer failure.
-
-## Revision 10 — texture payload repair and native role transport
-
-Operation `vanta-rev10-texture-payload-repair-001` regenerated all 13 CP5 512×512 images in place using the validated `pixels.foreach_set → update → pack` path. Before commit, every image was round-tripped through a temporary GLB, its embedded PNG was extracted/reloaded, and the payload was remeasured. External resources remained zero and the GLB still contained one sampler.
-
-Exact revision-10 checkpoint:
+Exact rev10 payload checkpoint:
 
 - `.blend`: 11,414,294 B · SHA256 `128979e51a507d97792ef3c15aaf9de20369e21589b60a9d13fe4d0d262d1466`;
 - GLB: 9,228,876 B · SHA256 `934450fab1d9eff9dff0dc62971682a692d5f04d4d72871b9f274e6240c7e171`;
-- 701 meshes / 832 nodes / 20 materials / 13 embedded images / 0 external resources;
-- 20 `_colonly` collision nodes retained.
+- 701 meshes / 832 nodes / 20 materials / 13 embedded images / 0 external resources.
 
-Pinned Godot 4.7.2 qualification (Actions run `34722670811`, job `103631274506`) read the imported textures back from `StandardMaterial3D` and confirmed the intended gross roles:
+Pinned Godot 4.7.2 runtime readback confirms:
 
-- steel albedo ≈ `[0.1719, 0.1831, 0.1961]`;
-- ferric rust ≈ `[0.4635, 0.1423, 0.0575]`;
-- union yellow ≈ `[0.8015, 0.4274, 0.0286]`;
-- trim ≈ `[0.4895, 0.3661, 0.2700]`;
-- steel/rust/yellow/trim retain normal maps plus roughness channel G (`1`) and metallic channel B (`2`);
-- required material IDs missing: 0;
-- CPU/Mesa neutral-board capture created successfully; near-black pixels ≈ 0.66%, with measurable steel/rust/yellow regions.
+- steel ≈ `[0.1719,0.1831,0.1961]`;
+- ferric rust ≈ `[0.4635,0.1423,0.0575]`;
+- union yellow ≈ `[0.8015,0.4274,0.0286]`;
+- trim ≈ `[0.4895,0.3661,0.2700]`;
+- roughness uses channel G (`1`), metallic B (`2`), normals survive;
+- required material IDs missing: 0.
 
-Godot generated 4,783,432 B of VANTA-specific import-cache files in that environment, including a 2,932,946 B imported scene. This is disk-cache evidence, **not VRAM or GPU-memory evidence**.
+**Payload truth:** `EMPIRICALLY_QUALIFIED_GODOT_TEXTURE_PAYLOAD_AND_GROSS_MATERIAL_ROLE_TRANSPORT`.
 
-**CP5 payload truth after rev10:** `EMPIRICALLY_QUALIFIED_GODOT_TEXTURE_PAYLOAD_AND_GROSS_MATERIAL_ROLE_TRANSPORT`.
+## Camera / geometry equivalence — PASS
 
-Evidence authority: `art_source/vanta/evidence/rev10_texture_engine_qualification.json`.
-
-## Controlled Blender↔Godot visual-portability diagnosis
-
-The next gate intentionally separated camera/geometry transport from shading/lighting.
-
-### Camera and geometry alignment — PASS
-
-The exact three neutral CP5 swatches (`VAN_CP5_NEUTRAL_STEEL`, `VAN_CP5_NEUTRAL_RUST`, `VAN_CP5_NEUTRAL_YELLOW`) were rendered in Blender and Godot as white unlit geometry over black using the same imported calibration camera.
-
-Measured mask agreement:
+Three exact CP5 neutral swatches were rendered as white unlit geometry over black in Blender and Godot with the same calibration camera.
 
 - silhouette IoU: **0.98481187435**;
-- exact mask pixel agreement: **0.9950347222**;
-- Blender bbox: `[34, 66, 605, 243]` px;
-- Godot bbox: `[35, 66, 604, 242]` px;
-- centroids practically coincide.
+- exact mask agreement: **0.9950347222**;
+- Blender bbox `[34,66,605,243]` px;
+- Godot bbox `[35,66,604,242]` px;
+- imported Godot camera preserves expected transform/FOV (`18.549795°`).
 
-The imported Godot camera also preserves the expected transform and FOV (`18.549795°`). Therefore the major shaded mismatch is **not** classified as a geometry, transform or camera-projection defect.
+The remaining shaded mismatch is therefore not classified as geometry, transform or projection failure.
 
-### Controlled shaded equivalence — FAIL
+## Controlled shaded equivalence — FAIL
 
-With the CP5 board shaded rather than unlit, the engines diverge materially:
+Baseline shaded board comparison:
 
-- luminance correlation: **0.66896**;
-- gradient correlation: **0.37206**;
-- top-15% edge IoU: **0.3644**;
-- global luminance SSIM-like score: **0.37419**;
-- raw RGB MAE: **0.25074**;
-- simple per-channel tone-matched MAE: **0.07029**.
+- luminance correlation **0.66896**;
+- gradient correlation **0.37206**;
+- top-15% edge IoU **0.3644**;
+- luma SSIM-like **0.37419**;
+- raw RGB MAE **0.25074**;
+- per-channel tone-matched RGB MAE **0.07029**.
 
-Gross steel/rust/yellow roles are present in both images, but this is not close enough to claim photometric Blender↔Godot equivalence.
+Gross material roles survive, but exact photometric equivalence does not.
 
-### Light-unit transport blocker
+## Light-unit diagnosis
 
-The isolated neutral-board experiment reduced the test to the two authored neutral point lights.
-
-Observed source/export/import values:
+Authored neutral point lights:
 
 | Light | Blender source power | glTF point intensity | Godot default imported energy |
 |---|---:|---:|---:|
 | `L_CP5_NEUTRAL_FILL` | 600 | ~47.74648 | ~47.74648 |
 | `L_CP5_NEUTRAL_KEY` | 1200 | ~95.49297 | ~95.49297 |
 
-The glTF point values are approximately `Blender power / (4π)`. Godot's default path exposes those values as `light_energy`, while the physical-intensity surface remains separate. Simply enabling Godot physical light units without an adapter made the board **more** overexposed, so the flag alone is not the repair.
+Observed point export is approximately `source power / (4π)`. Simply enabling Godot physical-light units without converting the imported values made the board more overexposed, so the project flag alone is not a repair.
 
-The controlled isolated means also diverged strongly:
+Reusable diagnostic contract: `art_source/vanta/pipeline/GODOT_LIGHT_TRANSPORT_CONTRACT.md`.
 
-- Blender normalized mean ≈ `[0.0887, 0.0460, 0.0284]`;
-- Godot legacy normalized mean ≈ `[0.2528, 0.2116, 0.1975]`;
-- Godot physical-units mode without conversion ≈ `[0.7594, 0.7510, 0.7222]`.
+## Standards-aware 4π adapter A/B — TESTED, NOT QUALIFIED
 
-This is consistent with an upstream glTF/Godot light-unit portability problem, not evidence that the repaired CP5 textures should be darkened or rebaked.
+The first physically coherent point-light hypothesis was executed against the isolated neutral board:
 
-A reusable diagnostic/adaptation contract is now versioned at:
+- set Godot physical-light units on;
+- `OmniLight3D.light_energy = 1`;
+- map imported glTF candela to lumens via `lumens = candela × 4π`;
+- preserve light transforms, color, range, materials and camera.
 
-`art_source/vanta/pipeline/GODOT_LIGHT_TRANSPORT_CONTRACT.md`
+Result:
 
-Its physically coherent first A/B proposal for isotropic point/Omni lights is **not yet qualified**: map imported candela to Godot lumens with `lumens = candela × 4π`, set `light_energy = 1`, preserve transforms/color/range, and rerun the neutral-board comparison. Directional and spot lights require their own contracts; the point-light mapping must not be generalized blindly.
+- fill: `47.74648 cd → 600 lm`;
+- key: `95.49297 cd → 1200 lm`;
+- Godot mean RGB becomes `[0.13666,0.10704,0.10319]` versus Blender `[0.08870,0.04603,0.02844]`;
+- luminance correlation **0.48725**;
+- gradient correlation **0.41223**;
+- edge IoU **0.35017**;
+- luma SSIM-like **0.39362**;
+- RGB MAE **0.08633**;
+- result: **FAIL**.
 
-### Revision 11 interaction with CP5
+Adding Godot `TONE_MAPPER_AGX` improves absolute brightness/error somewhat but not structural equivalence:
 
-Revision 11 changes source datablock sharing and adds a QA traversal spine; it does not intentionally modify the 13 CP5 payloads. The CP5 payload qualification therefore remains anchored to rev10 while the latest remote production source is rev11.
+- mean RGB `[0.11252,0.08290,0.07747]`;
+- luminance correlation **0.44629**;
+- gradient correlation **0.41709**;
+- edge IoU **0.35133**;
+- luma SSIM-like **0.41176**;
+- RGB MAE **0.07136**;
+- result: **FAIL**.
 
-Rev11 remote provider checkpoint:
+An earlier 2π trial was identified as a harness mistake before persistence and is explicitly discarded.
 
-- `.blend`: 10,162,134 B · etag `12c55a03e326a0a3e4df352875d065dc`;
-- GLB: 8,823,976 B · etag `86720d1b76c01894746cbded53510bc6`;
-- rev11 SHA256 recovery is still pending a permitted manual native canary; no hash is inferred from provider etags.
+## 49-combination physical key/fill sweep — NO SIMPLE SCALAR SOLUTION
+
+To test whether the remaining error could be closed by key/fill intensity alone, a 7×7 physical+AgX grid was rendered using scales `[0.25,0.4,0.63,1.0,1.6,2.5,4.0]` for each light, while keeping camera, textures, transforms and material topology fixed.
+
+Acceptance threshold was `luma_corr ≥ 0.75`, `gradient_corr ≥ 0.65`, `edge_iou ≥ 0.35`.
+
+- combinations tested: **49**;
+- combinations passing: **0**;
+- minimum RGB MAE: **0.0588791** at key `1.0×`, fill `0.25×`, but luma corr only **0.50078**, gradient corr **0.40109**, edge IoU **0.34536**;
+- maximum luma correlation: **0.56112** at key `4.0×`, fill `1.0×`, with gradient corr **0.36729**, edge IoU **0.32978**, RGB MAE **0.14399**.
+
+**Conclusion:** simple light-intensity calibration is insufficient. The remaining gap must be investigated in renderer-specific attenuation/radius/softness, BRDF/shadowing, Blender AgX look/color-management, and broader engine shading behavior. Do **not** compensate by mutating the repaired CP5 texture payload.
+
+## Revision 11 exact checkpoint
+
+Rev11 does not intentionally modify the 13 CP5 image payloads; payload qualification remains anchored to rev10.
+
+Exact rev11 recovered binaries:
+
+- `.blend`: **10,162,134 B** · SHA256 `3e60d536e7a38220935775fde9f2505f12adbf42451dcdbcaa87d9054645d899`;
+- GLB: **8,823,976 B** · SHA256 `a3ebb39f54d41e732c2ee343961cba43d85a2ced8a36c9d35306142443c36536`.
+
+Evidence authority: `art_source/vanta/evidence/rev11_native_runtime_qualification.json`.
 
 ## Current CP5 disposition
 
 **Qualified:**
 
-- repaired 13-image packed payload foundation;
-- source→embedded GLB PNG roundtrip;
-- Godot runtime texture readback and gross material roles;
+- repaired 13-image source payload and packed GLB roundtrip;
+- Godot texture readback and gross material roles;
 - BC / roughness-G / metallic-B / normal channel semantics;
-- calibration camera and three-swatch geometry alignment.
+- calibration camera + three-swatch geometry alignment.
 
-**Explicitly failed/open:**
+**Tested and rejected as sufficient:**
 
-- exact Blender↔Godot shaded/photometric equivalence;
-- runtime light-unit adapter calibration;
-- direct human visual/art-direction approval;
-- production texel-density normalization beyond the 512² proof system;
-- mip/compression quality under production target settings;
-- weld/frost/grease families beyond the proof atlas;
-- close/mid/far production-renderer review;
+- physical-unit flag alone;
+- standards-aware point-light 4π mapping alone;
+- 4π + Godot AgX alone;
+- 49-combination simple physical key/fill scalar search.
+
+**Still open:**
+
+- renderer-specific attenuation/radius/softness and shadow calibration;
+- exact Blender AgX look/color-management matching;
+- human visual/art-direction approval;
+- production texel-density/mip/compression policy;
+- weld/frost/grease production families;
+- close/mid/far material review;
 - target-hardware texture residency, draw, memory and GPU cost;
 - propagation to the wider 327-target registry.
 
-**Critical rule:** do not compensate for the light mismatch by mutating CP5 texture values. The current evidence isolates the blocker to renderer/import lighting behavior after camera/geometry and texture transport have passed their bounded tests.
-
-Evidence authority: `art_source/vanta/evidence/rev11_dedup_route_visual_portability.json` and `art_source/vanta/pipeline/GODOT_LIGHT_TRANSPORT_CONTRACT.md`.
+**Critical rule:** CP5 textures are no longer the variable to tune for this mismatch.
