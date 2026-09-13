@@ -1,0 +1,192 @@
+{
+  "schema_version": 1,
+  "protocol": "EXOVANT-X100-v1",
+  "world_id": "aurora",
+  "region_id": "AUR_R01_CAMP_SECOND_DAY",
+  "parent_claim": "CLM-AURORA-WORLD-001",
+  "workunit_id": "AUR-X100-CAMP-SYSTEMIC-001",
+  "owner": "AGENT-02-AURORA",
+  "remote_project_id": "d6488148-8547-4ffe-b63d-e5fbec3a339c",
+  "remote_revision": 23,
+  "scene_status": "X100_CAMP_SYSTEMIC_R23_FOUNDATION_LOD_QA",
+  "quality_claim": "REVIEW_TECHNICAL_SYSTEMIC; NOT_FINAL_ART",
+  "density_multiplier": {
+    "source_modules": 24,
+    "footprint_patterns": 3,
+    "facade_patterns": 4,
+    "roof_service_patterns": 3,
+    "history_states": 4,
+    "theoretical_controlled_configurations": 144,
+    "proof_configurations_instantiated": 12,
+    "proof_scene_objects": 505,
+    "proof_mesh_instances": 493,
+    "state_distribution": {
+      "PRISTINE": 3,
+      "USED": 3,
+      "DAMAGED": 3,
+      "ABANDONED": 3
+    },
+    "visible_causal_state_details": {
+      "USED": 3,
+      "DAMAGED": 9,
+      "ABANDONED": 9
+    }
+  },
+  "family_graph": {
+    "architecture": [
+      "solid wall 4m",
+      "window wall 4m",
+      "service wall 4m",
+      "airlock 4m",
+      "floor 4x4",
+      "floor 4x2",
+      "flat roof 4x4",
+      "service roof 4x4",
+      "corner post",
+      "stair 4m",
+      "ladder 3m",
+      "parapet 4m",
+      "bridge 8m source family",
+      "adjustable pier"
+    ],
+    "infrastructure": [
+      "straight service tray 4m",
+      "90 degree tray elbow",
+      "service junction cabinet",
+      "power cabinet",
+      "data cabinet",
+      "drain scupper"
+    ],
+    "props_cultural": [
+      "storage crate",
+      "field maintenance bench",
+      "clock kiosk",
+      "service trolley"
+    ]
+  },
+  "manufacturing_contract": "All modules carry explicit manufacturing metadata. Variation is caused by construction, usage, damage, repair or abandonment; no random greeble/grunge contract is accepted.",
+  "foundation_gauntlet": {
+    "passed": true,
+    "floor_clearance_m": {
+      "global_min": 0.35,
+      "global_max": 0.636
+    },
+    "pier_bottom_minus_terrain_m": 0.08,
+    "pier_top_minus_platform_m": 0.0,
+    "adjustable_pier_length_range_m": [0.27, 0.556],
+    "configs_checked": 12
+  },
+  "instancing": {
+    "passed": true,
+    "shared_mesh_examples": {
+      "AUR_X100_ARC_FLOOR_4X4_MESH": 76,
+      "AUR_X100_ARC_ADJUSTABLE_PIER_MESH": 48,
+      "LIB_AUR_ARC_003_FOUNDATION_PAD_MESH": 48,
+      "AUR_X100_ARC_CORNER_POST_MESH": 48,
+      "AUR_X100_ARC_ROOF_SERVICE_4X4_MESH": 46,
+      "AUR_X100_ARC_WALL_SOLID_4M_MESH": 40,
+      "AUR_X100_ARC_WALL_SERVICE_4M_MESH": 35,
+      "AUR_X100_ARC_WALL_WINDOW_4M_MESH": 33
+    }
+  },
+  "lod_contract": {
+    "status": "PASS_ENVELOPE_CONTRACT",
+    "families": 6,
+    "contracts": 18,
+    "levels": ["LOD0", "LOD1", "LOD2"],
+    "envelope_preserved": true,
+    "production_decimation": "DEFERRED: current source meshes are already blockout-low-poly; engine/production mesh-specific simplification remains future work",
+    "engine_switching": "BLOCKED_EXO_012"
+  },
+  "collision_contract": {
+    "status": "PASS_CONTRACT_ONLY",
+    "contracts": 24,
+    "geometry_in_exchange_glb": false,
+    "per_configuration": ["simple footprint proxy", "airlock clearance volume"],
+    "engine_instantiation": "BLOCKED_EXO_012"
+  },
+  "export_boundary": {
+    "source_library_scene_meshes": 0,
+    "state_library_scene_meshes": 0,
+    "lod_collision_scene_meshes": 0,
+    "source_mesh_datablocks_preserved_in_blend": true,
+    "source_fake_user_mesh_count_observed": 42,
+    "loose_source_lod_collision_geometry_in_glb": false
+  },
+  "failure_fix_history": [
+    {
+      "revision": 21,
+      "finding": "Source/LOD/collision geometry leaked into GLB; proof history states did not materially alter proof configurations."
+    },
+    {
+      "revision": 22,
+      "finding": "Export boundary and visible state geometry fixed, but Gauntlet found parent-transform foundation error, three 208m bridges and LOD envelope shrinkage."
+    },
+    {
+      "revision": 23,
+      "fix": "Proof district rebuilt on terrain-relative platforms with adjustable piers; megabridges removed; LOD envelopes restored exactly."
+    }
+  ],
+  "portable_artifacts": {
+    "blend": {
+      "size_bytes": 10041222,
+      "etag": "d9685ee237c46a6e8f1492abeb750e96"
+    },
+    "glb": {
+      "size_bytes": 5896420,
+      "etag": "09cc79c5b477b46a398a27740e432964"
+    }
+  },
+  "visual_qa": {
+    "initial_eevee_attempt": {
+      "artifact": "aurora_x100_r23_camp_district.png",
+      "artifact_id": "76542493bf0649a570d1be1648658469",
+      "result": "QA_FAIL_FRAMING_DIAGNOSTIC"
+    },
+    "structural_workbench": {
+      "artifact": "aurora_x100_r23_camp_structural.png",
+      "artifact_id": "822d884dce546287d2a732c3c4f2aa57",
+      "resolution": [480, 270],
+      "mean": 0.2739,
+      "stddev": 0.0906,
+      "p01": 0.1294,
+      "p50": 0.3291,
+      "p99": 0.349,
+      "gate": "PASS_STRUCTURAL_FRAMING"
+    },
+    "eevee_technical": {
+      "artifact": "aurora_x100_r23_camp_eevee.png",
+      "artifact_id": "ec17167ed8052b2b4dac6ca968451a5a",
+      "resolution": [480, 270],
+      "mean": 0.1512,
+      "stddev": 0.07,
+      "p01": 0.041,
+      "p50": 0.1909,
+      "p99": 0.2077,
+      "black_clip": 0.0003,
+      "white_clip": 0.0,
+      "gate": "PASS_TECHNICAL_PHOTOMETRIC"
+    },
+    "human_art_gate": "PENDING"
+  },
+  "gates": {
+    "OWNERSHIP": "PASS_PARENT_ACTIVE_EPOCH_1",
+    "SEMANTIC_DENSITY": "PASS_WORKUNIT_144_CONFIG_SPACE",
+    "MANUFACTURING_CAUSALITY": "PASS_BLOCKOUT_METADATA",
+    "FOUNDATION_CONTACT": "PASS",
+    "STATE_VARIATION": "PASS_PROOF",
+    "INSTANCING": "PASS",
+    "LOD_ENVELOPE": "PASS_CONTRACT",
+    "COLLISION": "PASS_CONTRACT_ENGINE_BLOCKED",
+    "GLB_EXPORT": "PASS_REV23",
+    "STRUCTURAL_RENDER": "PASS",
+    "PHOTOMETRIC_RENDER": "PASS_TECHNICAL",
+    "UV": "NOT_STARTED_FINAL_ASSETS",
+    "FINAL_PBR_TEXTURES": "NOT_STARTED",
+    "ENGINE_IMPORT": "BLOCKED_EXO_012",
+    "TARGET_HARDWARE_PERFORMANCE": "BLOCKED_TARGET_HARDWARE",
+    "HUMAN_GATE_ART": "PENDING"
+  },
+  "source": "art_source/aurora_veil/X100/blender/aurora_x100_camp_systemic_r23.py",
+  "conclusion": "Workunit is eligible for REVIEW_TECHNICAL_SYSTEMIC, not DONE/AAAA. It upgrades Campamento from a single proof kit toward a systemic district grammar while preserving explicit final-art/runtime blockers."
+}
