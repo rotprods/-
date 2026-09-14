@@ -1,0 +1,49 @@
+schema_version: 1
+claim_id: CLM-NACRE-LOOKDEV-HERO-001
+owner: AGENT-NACRE-LOOKDEV-01
+branch: art/nacre-lookdev-hero-001
+role: ATOMIC_SUBCLAIM
+world_id: nacre
+facet: art/lookdev-hero
+status: RESERVATION_PROPOSAL
+fleet_epoch_requested: 1
+base_main_sha: 8c01136aa14f89e177ff1216d1993d62ea963ad3
+x100_opportunity: NACRE-AAA-LOOKDEV-TO-MESH
+owned_paths:
+  - production/claims/CLM-NACRE-LOOKDEV-HERO-001.yaml
+  - art_source/nacre_lookdev_hero/
+asset_ids:
+  - NACRE-LOOK-ARCHIVE-CHAMBER-001
+  - NACRE-LOOK-SHELL-SURFACE-001
+  - NACRE-LOOK-BRIDGE-IDENTITY-001
+  - NACRE-LOOK-MATERIAL-DNA-001
+  - NACRE-LOOK-TARGET-PACK-001
+includes:
+  - Nacre visual look-lock and hero reference target pack
+  - archive-chamber identity family lookdev
+  - shell/mineral/nacre surface identity lookdev
+  - bridge/docking visual identity lookdev
+  - image-grounded reconstruction experiments as non-final base candidates
+  - cleanup/retopo/PBR/engine/visual-regression contracts for this hero cell
+excludes:
+  - CLM-NACRE-WORLD-MACRO-001 source and existing macro geometry
+  - planetary radius/diameter or global geography decisions
+  - final MNEMOS model/rig/animation
+  - final settlements/interiors outside the selected hero family
+  - characters/NPC/fauna/vehicles/equipment
+  - gameplay/runtime source
+  - global STATE/PLAN/MANIFEST/fleet registry ownership
+collision_notes:
+  - Existing Nacre macro claim owns art/macro-foundation only; this claim uses sibling facet art/lookdev-hero and disjoint paths/asset IDs.
+  - No existing Nacre lookdev/hero branch or open PR was observed immediately before reservation.
+ready_when:
+  - fleet reservation published and read back from current main
+  - canon references and negative art contract persisted
+  - visual target acceptance rubric persisted
+claim_done_when:
+  - approved look target pack exists with provenance
+  - selected image-to-3D bases are classified candidate only
+  - hero family geometry has cleanup/retopo/material/collision/LOD strategy
+  - target-engine import and visual-regression receipts exist
+  - human GATE-ART passes or explicit waiver blocks DONE
+created_at: 2026-09-14T11:38:00+02:00
