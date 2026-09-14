@@ -28,6 +28,34 @@ The local environment blocks Unix sockets and privileged package setup. Godot it
 
 The final native gate counts are recorded in JSON receipts, not inferred from this narrative. Each run deletes old receipts before execution, requires a fresh receipt, and fails on script errors, timeout, nonzero return or a failed assertion. `run_gauntlet.py` checks import, state/recovery, native integration and a runtime smoke test. No unexecuted test is a PASS.
 
+## Iteration 4 — AAA source-fidelity regression (2026-09-14)
+
+**P1 EXO-F004 — PROXY_POLISH_LOOP:** portfolio review of active world PRs showed a recurrent project-level risk: technically valid Blender scenes, deterministic geometry, collision/LOD receipts and material systems can consume multiple waves while hero-visible source meshes remain explicitly classified by their own owners as blockout, semantic proxy or non-final art. The failure is architectural, not a request for more noise/material layers.
+
+### Root cause
+The project had a strong `raw AI mesh != final asset` rule but no universal fail-closed promotion gate between `BLOCKOUT/PROXY` and expensive final lookdev. Consequently an agent could keep improving technical density and cosmetic response without first proving that the source carried enough silhouette/proportion/construction information for the intended close-up.
+
+### Correction
+Added `docs/AAA_ASSET_FIDELITY_GATE_V1.md`, X100 schema-v3 fidelity states, `tools/aaa_asset_gate.py`, render-economics estimator and unit tests. Global law:
+
+`BLOCKOUT != HERO_ASSET`
+
+`MORE_POLYGONS != MORE_REALISM`
+
+Hero promotion now requires evidence for silhouette, proportion, construction logic, semantic part separation, material-domain readiness, UV/bake readiness and close-up stress. A `BLOCKOUT/PROXY` promotion also requires explicit source rebuild/structural-upgrade evidence. Raw reconstruction cannot self-certify final art.
+
+### Salvage rule
+No world is reset. Verified layout, traversal, collision, streaming, procedural placement, runtime import and other technical work remain valid unless the new identity geometry invalidates them. At next owner resync assets are relabeled and `PROXY_POLISH_DEBT` is identified; only high-value identity gaps are rebuilt first.
+
+### Asset Factory
+Tier S/A assets may route through manual/procedural/CAD/photogrammetry/multiview/hybrid reconstruction. Tripo H3.1 multiview, Meshy multi-image and Hunyuan3D v3 were observed as live connected candidates on 2026-09-14, but provider/version/cost must be revalidated before spend. Provider output remains `BASE_CANDIDATE` until the same hero gate passes.
+
+### Render economics
+Resolution alone no longer authorizes render-time/cost claims. Benchmark `EASY/MEDIAN/WORST` frames on the actual engine/device/settings, estimate measured seconds/frame, then apply current rate. Provider price is live data, not a canonical constant.
+
+### Evidence status
+`tools/aaa_asset_gate.py` has explicit unit coverage for valid hero qualification, blocked proxy→hero jump, raw reconstruction rejection, polycount insufficiency, human gate requirement for AAA claims and runtime qualification receipts. The estimator has independent arithmetic/fail-closed tests. Project-wide native Gauntlet remains manual/cost-quarantined; this protocol change does not fabricate a Godot/GPU/art PASS.
+
 ## Promotion boundary and open risks
 
 Promotion applies only to this prototype's tested behavior. It does not imply that the full game, final art, platform packages, input accessibility or human usability are complete. No known unresolved P0/P1 in the covered regression cases; broader production acceptance remains open.
