@@ -1,0 +1,81 @@
+workunit_id: AUR-X100-OBSERVATORY-INTERIOR-001
+parent_claim: CLM-AURORA-WORLD-001
+owner: AGENT-02-AURORA
+branch: art/world-aurora-veil-001
+world_id: aurora
+region_id: AUR_R01_CAMP_SECOND_DAY
+status: IN_PROGRESS
+protocol: EXOVANT-X100-v1
+scope_key: aurora/camp/observatory-control-interior-system
+priority: P1_COVERAGE_ZERO_TO_SYSTEMIC
+created_at: 2026-09-14T12:09:00+02:00
+remote_project_id: d6488148-8547-4ffe-b63d-e5fbec3a339c
+remote_base_revision: 34
+
+north_star: >-
+  Add Aurora's first real L3 interior system: a low, maintainable Observatorio del Umbral control-room/annex that reuses the Camp 4m construction language and X100 cultural props, exposes calibration/service/archive functions physically, and can generate multiple believable interior layouts without inventing new civilization lore.
+
+canon_basis:
+  - Campamento del Segundo Dia is an observatory and refuge.
+  - Q_AURORA_M01 requires observatory calibration devices and route markers.
+  - Aurora human infrastructure must be measured, serviceable and timing-oriented.
+  - The future leaves physical receipts; no decorative clocks without function.
+
+includes:
+  - one 4m-grid control-room/annex shell proof adjacent to the observatory zone
+  - modular interior floor, wall/service rail, console, cabinet, archive, cable-floor and instrument-support families
+  - physically separated functional zones: calibration, route/archive, instrument service, observation/readout
+  - reuse of qualified Camp X100 prop mesh families where semantically appropriate
+  - central circulation and maintenance-clearance contracts
+  - removable access/service panels and visible cable/data routing
+  - used/repaired material-history metadata; no random grunge
+  - deterministic layout variants/configuration rules
+  - separate collision/clearance contracts, no loose collision render geometry
+  - source generator + QA receipt + handoff
+
+excludes:
+  - moving or remodelling the existing 48m observatory ring/mast
+  - AEON, antelope and Plain mission-site content
+  - new named NPC/story outcomes
+  - final gameplay/UI screens or readable text content
+  - production-engine-specific interaction code before EXO-012
+  - new civilization canon, rituals or social hierarchy
+
+production_proposals:
+  module_grid_m: 4.0
+  proof_footprint_target_m: [12.0, 12.0]
+  central_aisle_min_m: 1.4
+  maintenance_clearance_target_m: 0.8
+  proof_state: USED_OPERATIONAL
+  layout_variants_target: 12
+  note: dimensions are reversible production proposals until integrated gameplay profiling exists
+
+family_dod:
+  - >= 10 reusable interior-specific module families
+  - >= 4 functional zones physically readable without text
+  - >= 12 deterministic layout combinations from modules/props
+  - >= 1 integrated proof room at real metre scale
+  - central aisle and maintenance clearances measured
+  - service/data routing physically represented
+  - >= 8 existing qualified cultural prop families reused rather than duplicated
+  - source modules scale 1/1/1 with stable IDs
+  - collision/clearance contracts separated from render geometry
+  - GLB export smoke pass
+  - isolated Workbench structural render and Eevee technical render
+  - generator + QA persisted
+  - HUMAN GATE-ART remains separate
+
+blocked_by:
+  - final UV/bakes/authored textures
+  - UI/runtime interactions
+  - EXO-012 engine import
+  - target hardware performance
+  - human art-direction approval
+
+collision_audit:
+  x100_claims_directory_checked: true
+  existing_interior_x100_claim: false
+  concurrent_antelope_scope: EXCLUDED
+  plain_story_scope: REVIEW_TECHNICAL_SYSTEMIC_AND_EXCLUDED
+  aeon_scope: EXCLUDED
+  result: CLAIMED_ATOMIC_INTERIOR_SCOPE
