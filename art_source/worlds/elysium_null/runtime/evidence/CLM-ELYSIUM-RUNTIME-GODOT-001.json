@@ -1,0 +1,69 @@
+{
+  "claim_id": "CLM-ELYSIUM-RUNTIME-GODOT-001",
+  "date": "2026-09-14",
+  "world": "ELYSIUM NULL",
+  "owner": "ART-ELYSIUM-001",
+  "owner_branch": "art/world-elysium-null-001",
+  "owner_pr": 15,
+  "contribution_branch": "runtime/elysium-godot-adapter-001",
+  "owned_paths": [
+    "art_source/worlds/elysium_null/runtime/**"
+  ],
+  "exclusions": [
+    "scripts/world.gd",
+    "global STATE/PLAN/HANDOFF",
+    "shared combat/gameplay ownership",
+    "other worlds",
+    "Unreal production-engine decision",
+    "GATE-ART",
+    "production GPU claims"
+  ],
+  "source_world_master": {
+    "project_id": "00152eea-2da0-40ec-8666-78d6764c718f",
+    "runtime_export_revision": 47,
+    "glb_size": 22177240,
+    "glb_etag": "0f48e82c15d7ddb2bc364ee1f1ce1beb"
+  },
+  "target_runtime": {
+    "engine": "Godot 4.7.2",
+    "offline": true
+  },
+  "implemented": [
+    "checked-in engine-facing runtime manifest",
+    "manifest validation contract",
+    "world-state event and transition adapter",
+    "19 subsystem adapter-state emission interface",
+    "register-only deterministic streaming-cell interface",
+    "owned GLB import/instantiation gate",
+    "contract-only and native headless smoke entrypoint"
+  ],
+  "evidence_counts": {
+    "streaming_cells": 17,
+    "world_states": 3,
+    "world_transitions": 5,
+    "world_events": 11,
+    "world_adapters": 19,
+    "population_routes": 19,
+    "population_sockets": 118,
+    "eden_arena_diameter_m": 48.0,
+    "eden_max_damage_radius_m": 23.725,
+    "eden_max_population_socket_radius_m": 23.601,
+    "eden_relocation_warning_s": 1.5
+  },
+  "truth_state": "IMPLEMENTED_SOURCE_NOT_NATIVE_QUALIFIED",
+  "open_gates": [
+    "R47 GLB binary recovery into owned runtime asset path",
+    "Godot native GLB import and instantiation",
+    "player/camera/dodge traversal",
+    "navmesh update/rebuild measurement",
+    "native HLOD/occlusion/streaming profiling",
+    "origin rebasing and macro-to-local mapping decision",
+    "production GPU profile",
+    "human GATE-ART"
+  ],
+  "anti_false_pass": [
+    "contract-only PASS must never be reported as native import PASS",
+    "macro_location_m is metadata only until origin mapping is qualified",
+    "Godot executable prototype integration does not decide final production engine"
+  ]
+}

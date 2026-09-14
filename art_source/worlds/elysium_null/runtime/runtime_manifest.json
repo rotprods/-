@@ -1,0 +1,141 @@
+{
+  "schema": "EXOVANT.ELYSIUM.GODOT_RUNTIME_EXPORT.v1",
+  "claim_id": "CLM-ELYSIUM-RUNTIME-GODOT-001",
+  "source": {
+    "blender_project_id": "00152eea-2da0-40ec-8666-78d6764c718f",
+    "source_system_revision": 46,
+    "runtime_export_contract_revision": 47,
+    "engine": "Godot 4.7.2",
+    "coordinate_contract": "Blender Z-up -> glTF/Godot Y-up; metres",
+    "offline_runtime_required": true
+  },
+  "truth_state": "CONTRACT_READY_NOT_NATIVE_IMPORT_PROVEN",
+  "streaming": {
+    "cell_size_m": 256,
+    "coordinate_spaces": {
+      "macro": "MACRO_REFERENCE_SPACE",
+      "production": "LOCAL_PRODUCTION_SPACE"
+    },
+    "placement_policy": "REGISTER_ONLY_UNTIL_ORIGIN_REBASING_AND_MACRO_TO_LOCAL_MAPPING_QUALIFIED",
+    "cells": [
+      {"id":"ELYS-CELL-AVENIDA_00","macro_location_m":[-384,2200,0],"region":"AVENIDA","seed31":737363574,"seed_hex":"abf34676"},
+      {"id":"ELYS-CELL-AVENIDA_01","macro_location_m":[-128,2200,0],"region":"AVENIDA","seed31":1559525088,"seed_hex":"dcf476e0"},
+      {"id":"ELYS-CELL-AVENIDA_02","macro_location_m":[128,2200,0],"region":"AVENIDA","seed31":1174218586,"seed_hex":"45fd275a"},
+      {"id":"ELYS-CELL-AVENIDA_03","macro_location_m":[384,2200,0],"region":"AVENIDA","seed31":855250892,"seed_hex":"32fa17cc"},
+      {"id":"ELYS-CELL-CASAS_00","macro_location_m":[1244,1944,0],"region":"CASAS","seed31":1873270935,"seed_hex":"6fa7d897"},
+      {"id":"ELYS-CELL-CASAS_01","macro_location_m":[1244,2200,0],"region":"CASAS","seed31":413198337,"seed_hex":"18a0e801"},
+      {"id":"ELYS-CELL-CASAS_02","macro_location_m":[1244,2456,0],"region":"CASAS","seed31":27900347,"seed_hex":"81a9b9bb"},
+      {"id":"ELYS-CELL-CASAS_03","macro_location_m":[1500,1944,0],"region":"CASAS","seed31":1991149869,"seed_hex":"f6ae892d"},
+      {"id":"ELYS-CELL-CASAS_04","macro_location_m":[1500,2200,0],"region":"CASAS","seed31":1758076046,"seed_hex":"68ca1c8e"},
+      {"id":"ELYS-CELL-CASAS_05","macro_location_m":[1500,2456,0],"region":"CASAS","seed31":533539864,"seed_hex":"1fcd2c18"},
+      {"id":"ELYS-CELL-CASAS_06","macro_location_m":[1756,1944,0],"region":"CASAS","seed31":113540514,"seed_hex":"86c47da2"},
+      {"id":"ELYS-CELL-CASAS_07","macro_location_m":[1756,2200,0],"region":"CASAS","seed31":1908624692,"seed_hex":"f1c34d34"},
+      {"id":"ELYS-CELL-CASAS_08","macro_location_m":[1756,2456,0],"region":"CASAS","seed31":1635537061,"seed_hex":"617c50a5"},
+      {"id":"ELYS-CELL-EDEN_00","macro_location_m":[2772,2072,0],"region":"EDEN","seed31":2003066417,"seed_hex":"77645e31"},
+      {"id":"ELYS-CELL-EDEN_01","macro_location_m":[2772,2328,0],"region":"EDEN","seed31":6516391,"seed_hex":"00636ea7"},
+      {"id":"ELYS-CELL-EDEN_02","macro_location_m":[3028,2072,0],"region":"EDEN","seed31":426393373,"seed_hex":"996a3f1d"},
+      {"id":"ELYS-CELL-EDEN_03","macro_location_m":[3028,2328,0],"region":"EDEN","seed31":1852641163,"seed_hex":"ee6d0f8b"}
+    ]
+  },
+  "world_state": {
+    "initial_state": "CONTROLLED",
+    "states": {
+      "CONTROLLED": {"priority":100},
+      "ANOMALY": {"priority":200},
+      "EMERGENCY": {"priority":300}
+    },
+    "transitions": [
+      {"from":"CONTROLLED","to":"ANOMALY","mode":"ANY","priority":200,"min_dwell_s":1.5,"debounce_s":0.35,"cooldown_s":0.0,"events":["HUMAN_TRACE_EVENT","PREFERENCE_MISMATCH","REPAIRED_OBJECT_INTERACTION","IRREGULAR_HUMAN_SIGNAL","ROUTE_REPROGRAM_STARTED"]},
+      {"from":"ANOMALY","to":"EMERGENCY","mode":"ANY","priority":300,"min_dwell_s":0.75,"debounce_s":0.2,"cooldown_s":0.0,"events":["CORRECTION_ESCALATION","CRITICAL_SERVICE_FAILURE","SAFETY_ISOLATION_TRIGGER"]},
+      {"from":"CONTROLLED","to":"EMERGENCY","mode":"ANY","priority":300,"min_dwell_s":0.0,"debounce_s":0.15,"cooldown_s":0.0,"events":["CRITICAL_SERVICE_FAILURE","SAFETY_ISOLATION_TRIGGER"]},
+      {"from":"EMERGENCY","to":"ANOMALY","mode":"ALL","priority":200,"min_dwell_s":2.0,"debounce_s":0.5,"cooldown_s":5.0,"events":["SAFETY_STABLE","CRITICAL_FAILURE_CLEARED"]},
+      {"from":"ANOMALY","to":"CONTROLLED","mode":"ALL","priority":100,"min_dwell_s":3.0,"debounce_s":0.75,"cooldown_s":8.0,"events":["ANOMALY_SIGNAL_CLEARED","CRITICAL_FAILURE_CLEARED"]}
+    ],
+    "events": {
+      "ANOMALY_SIGNAL_CLEARED":"RECOVERY",
+      "CORRECTION_ESCALATION":"EMERGENCY",
+      "CRITICAL_FAILURE_CLEARED":"RECOVERY",
+      "CRITICAL_SERVICE_FAILURE":"EMERGENCY",
+      "HUMAN_TRACE_EVENT":"ANOMALY",
+      "IRREGULAR_HUMAN_SIGNAL":"ANOMALY",
+      "PREFERENCE_MISMATCH":"ANOMALY",
+      "REPAIRED_OBJECT_INTERACTION":"ANOMALY",
+      "ROUTE_REPROGRAM_STARTED":"ANOMALY",
+      "SAFETY_ISOLATION_TRIGGER":"EMERGENCY",
+      "SAFETY_STABLE":"RECOVERY"
+    },
+    "adapter_targets": {
+      "ADVERSARIES":"META_X100_ADVERSARIES_R24",
+      "AVENIDA":"META_X100_AVENIDA_NETWORK_R31",
+      "CASAS":"META_X100_CASAS_DISTRICT_R30",
+      "CULTURAL_STORY":"META_X100_CULTURAL_STORY_R22",
+      "DAMAGE_REPAIR":"META_X100_CAUSAL_DAMAGE_REPAIR_R39",
+      "DOMESTIC":"META_X100_DOMESTIC_KIT_R19",
+      "ECOLOGY":"META_X100_SYNTH_ECOLOGY_R23",
+      "EDEN":"META_X100_EDEN_PRODUCTION_R32",
+      "GAMEPLAY":"META_X100_GAMEPLAY_R34",
+      "HISTORY":"META_X100_HISTORY_R28",
+      "INFRASTRUCTURE":"META_X100_INFRASTRUCTURE_R29",
+      "LIGHTING":"META_X100_LIGHTING_R35",
+      "MACRO_WORLD":"META_X100_ALBA_NULA_MACRO_R21",
+      "MAINTENANCE_ROOT":"META_X100_MAINTENANCE_ROOT_R20",
+      "NPC_INTERFACE":"META_X100_NPC_R27",
+      "POPULATION":"META_X100_POPULATION_BEHAVIOR_R42",
+      "RUNTIME_STREAMING":"META_X100_RUNTIME_STREAMING_R38",
+      "SENSORY":"META_X100_SENSORY_LANGUAGE_R25",
+      "TRAM":"META_X100_TRAM_R26"
+    }
+  },
+  "population": {
+    "route_count": 19,
+    "socket_count": 118,
+    "routes": [
+      {"region":"AVENIDA","family":"CUSTODIAN_SERVICE_PATROL","state_mask":"CONTROLLED|ANOMALY|EMERGENCY","socket_count":8},
+      {"region":"AVENIDA","family":"PRUNER_COVER_INSPECTION","state_mask":"CONTROLLED|EMERGENCY","socket_count":6},
+      {"region":"AVENIDA","family":"ECOLOGY_MAINTENANCE_LOOP","state_mask":"CONTROLLED|ANOMALY","socket_count":5},
+      {"region":"AVENIDA","family":"NPC_SOCIAL_IDLE_CLUSTER","state_mask":"CONTROLLED|ANOMALY","socket_count":4},
+      {"region":"AVENIDA","family":"TRAM_ARRIVAL_EVENT","state_mask":"CONTROLLED|ANOMALY|EMERGENCY","socket_count":4},
+      {"region":"AVENIDA","family":"REPAIR_TECHNICIAN_ROUTE","state_mask":"ANOMALY|EMERGENCY","socket_count":6},
+      {"region":"AVENIDA","family":"HUMAN_ANOMALY_TRACE_ROUTE","state_mask":"ANOMALY","socket_count":5},
+      {"region":"CASAS","family":"CUSTODIAN_SERVICE_PATROL","state_mask":"CONTROLLED|ANOMALY|EMERGENCY","socket_count":8},
+      {"region":"CASAS","family":"PRUNER_COVER_INSPECTION","state_mask":"CONTROLLED|EMERGENCY","socket_count":6},
+      {"region":"CASAS","family":"DOMESTIC_DOUBLE_HOME_ROUTE","state_mask":"ANOMALY|EMERGENCY","socket_count":7},
+      {"region":"CASAS","family":"ECOLOGY_MAINTENANCE_LOOP","state_mask":"CONTROLLED|ANOMALY","socket_count":6},
+      {"region":"CASAS","family":"NPC_SOCIAL_IDLE_CLUSTER","state_mask":"CONTROLLED|ANOMALY","socket_count":5},
+      {"region":"CASAS","family":"REPAIR_TECHNICIAN_ROUTE","state_mask":"ANOMALY|EMERGENCY","socket_count":6},
+      {"region":"CASAS","family":"HUMAN_ANOMALY_TRACE_ROUTE","state_mask":"ANOMALY","socket_count":5},
+      {"region":"EDEN","family":"CUSTODIAN_SERVICE_PATROL","state_mask":"CONTROLLED|ANOMALY|EMERGENCY","socket_count":8},
+      {"region":"EDEN","family":"PRUNER_COVER_INSPECTION","state_mask":"CONTROLLED|EMERGENCY","socket_count":8},
+      {"region":"EDEN","family":"ECOLOGY_MAINTENANCE_LOOP","state_mask":"CONTROLLED|ANOMALY","socket_count":8},
+      {"region":"EDEN","family":"REPAIR_TECHNICIAN_ROUTE","state_mask":"ANOMALY|EMERGENCY","socket_count":6},
+      {"region":"EDEN","family":"HUMAN_ANOMALY_TRACE_ROUTE","state_mask":"ANOMALY","socket_count":7}
+    ]
+  },
+  "eden": {
+    "canonical_arena_diameter_m": 48.0,
+    "max_damage_radius_m": 23.725,
+    "max_population_socket_radius_m": 23.601,
+    "relocation_warning_s": 1.5
+  },
+  "godot": {
+    "scene_path": "res://art_source/worlds/elysium_null/runtime/elysium_runtime.tscn",
+    "asset_expected_path": "res://art_source/worlds/elysium_null/runtime/assets/elysium_world.glb",
+    "adapter_script": "res://art_source/worlds/elysium_null/runtime/elysium_runtime_adapter.gd",
+    "smoke_script": "res://art_source/worlds/elysium_null/runtime/elysium_runtime_smoke.gd",
+    "native_import_gate": "BLOCKED_UNTIL_LOCAL_GLB_PRESENT"
+  },
+  "quality": {
+    "classification": "DENSE_AAA_HEURISTIC_CANDIDATE",
+    "x100_geometric_mean_r45": 0.74,
+    "score_is_certification": false
+  },
+  "hard_blocks": [
+    "NATIVE_ENGINE_IMPORT_AND_ADAPTER_NOT_PROVEN",
+    "NATIVE_GAMEPLAY_NAVMESH_AI_STATE_MACHINE_NOT_IMPLEMENTED",
+    "FINAL_AUDIO_RUNTIME_NOT_IMPLEMENTED",
+    "FINAL_HUMAN_BASE_BLOCKED_CATALOG_503",
+    "ENGINE_ORIGIN_REBASING_DECISION_PENDING",
+    "GATE_ART_HUMAN_REVIEW_PENDING",
+    "FULL_VISUAL_ART_REVIEW_NOT_PROVEN_FROM_CURRENT_RUNTIME"
+  ]
+}
