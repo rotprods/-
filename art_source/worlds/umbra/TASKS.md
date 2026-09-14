@@ -2,54 +2,71 @@
 
 Claim: `CLM-W04-WORLD-UMBRA-001`  
 Owner: `AGENT-UMBRA-04`  
-Truth state: `WAVE2_ENVIRONMENT_PRODUCTION_FOUNDATION / REPRODUCIBLE / NOT FINAL AAAA`
+Truth state: `X100_PRODUCTION_WORLD_37.54_PERCENT / NOT FINAL AAAA`
 
 ## Definition of Done policy
 
-A task is `DONE` only when its intended artifact exists, its task-specific validation gate passes, evidence is persisted, and no blocked dependency is silently substituted with invention. `DONE_WAVE*_FOUNDATION` means production language/mechanism exists and is reproducible; it does **not** mean final UV/PBR/LOD/runtime/human-art acceptance.
+A task is `DONE` only when the intended artifact exists, task-specific validation passes, evidence/source are persisted, and no blocked dependency is substituted with invention. `DONE_*_FOUNDATION` means the systemic language exists and has technical evidence; it does **not** waive UV/PBR/collision/LOD/runtime/human-art gates.
 
 | ID | Status | Deliverable / DoD |
 |---|---|---|
 | W04/BOOT/001 | DONE | Repository/canon/protocol recovered; authority surfaces identified. |
-| W04/CLAIM/002 | DONE | Exclusive UMBRA claim established; fleet registry now reads `active`, owner `AGENT-UMBRA-04`, epoch 1. |
-| W04/CANON/003 | DONE | Canon separated from proposals; planet radius and NOCTIL unknowns remain explicit blockers. |
+| W04/CLAIM/002 | DONE | Exclusive UMBRA world-owner claim active; fleet ACK admitted. |
+| W04/CANON/003 | DONE | Canon/proposal split explicit; planet scale, ecology species and final NOCTIL remain blocked. |
 | W04/PIPE/004 | DONE | Blender 5.2 / metric / editable `.blend` + GLB route qualified. |
-| W04/BLK/005 | DONE | Wave-0 1200×700 m reversible L2 testbed and proxy families committed. |
-| W04/QA/006 | DONE | Structural QA contract established: scale, dimensions, triangles/materials, contact and framing gates. |
-| W04/ASSET/007 | DONE | UMBRA coverage/asset registry established. |
-| W04/GEN/008 | DONE | Wave-0 clean replay matches source semantically. |
-| W04/VIS/009 | REVIEW | QA renders exist; direct pixel/human art review is still not accepted. |
-| W04/CI/010 | DONE | Current Wave-1 repo head passed manifest continuity + full native Gauntlet; Wave-2 must re-pass after persistence. |
-| W04/TERRAIN/011 | DONE_WAVE2_FOUNDATION | Four authored quest-linked environment cells M01–M04 now exist inside the L2 testbed. This is not global planet geography. |
-| W04/INFRA/012 | DONE_WAVE1_FOUNDATION | Terrain-seated reflector kit includes foundation/anchors/guying/service/gimbal/backing/actuators/sensors; final UV/PBR/LOD/runtime pending. |
-| W04/CAR/013 | DONE_WAVE1_FOUNDATION | Terrain-seated caravan kit includes frame/bogies/suspension/service/cargo/thermal/canopy/beacon; final vehicle topology/UV/rig/LOD/runtime pending. |
-| W04/ARCH/014 | DONE_WAVE2_FOUNDATION | Refuge now includes portal ribs, rails, replaceable wind baffles, sealed airlock, external thermal plant, cargo interface and redundant refuge beacons; exact wind bearing remains a reversible proposal. |
-| W04/MAT/015 | TODO | Calibrated portable PBR, texture-set/texel-density policy and causal wear masks after runtime target validation. |
-| W04/NOCTIL/016 | BLOCKED_SPEC | Final boss morphology/rig/attacks require design contract. Environmental eclipse destination only. |
-| W04/QUEST/017 | DONE_WAVE2_FOUNDATION | M01 thermal/tracks, M02 reflector/exposure, M03 exclusion archive and M04 crown approach have authored environment interfaces; runtime quest logic is intentionally absent. |
-| W04/ACCESS/018 | TODO | Low-light/color-vision/combat-telegraph readability acceptance scene and direct image review. |
-| W04/LOD/019 | BLOCKED_TARGET | LOD/HLOD/collision budgets require qualified runtime and target hardware. |
-| W04/EXPORT/020 | BLOCKED_INTEGRATION | Bounded UMBRA GLB import/traversal/profile receipt requires integration-owner coordination. |
-| W04/OPT/021 | DONE_WAVE2_FOUNDATION | Exact duplicate mesh datablocks are shared only under topology/coords/material/UV/property equality; object count/transforms/evaluated tris preserved; clean replay uses same predicate. |
-| W04/VIS/022 | REVIEW | Post-Wave-2 objective contact/framing gates pass; direct pixel/human art PASS still not claimed. |
-| W04/GEN/023 | DONE | Wave-1 independent replay matched 407 objects / 395 meshes / 35,028 tris and contact/framing contract. |
-| W04/FLEET/024 | DONE | Owner ACK admitted; registry reads UMBRA `active`, owner `AGENT-UMBRA-04`, epoch 1. |
-| W04/GEN/025 | DONE | Wave-2 clean replay reproduces 552 objects / 536 mesh objects / 10 materials / 44,616 tris, contact/camera contract and exact-linking policy from Wave-1 input. |
-| W04/CUSTODY/026 | BLOCKED_TRANSPORT | MR-EXO-001: materialize `.blend` + GLB + dependencies outside provider with stable locator + exact bytes/SHA-256 + versioned receipt. Signed Higgsfield URLs are evidence, not custody. |
-| W04/CI/027 | IN_PROGRESS | After Wave-2 repo persistence, refresh exact root `MANIFEST.json` as final content change and require the full Gauntlet to pass before the checkpoint is merge-ready. |
+| W04/BLK/005 | DONE | Wave-0 reversible 1200×700 m L2 testbed. |
+| W04/QA/006 | DONE | Scale/dimension/contact/framing structural QA established. |
+| W04/ASSET/007 | DONE | Asset registry established. |
+| W04/GEN/008 | DONE | Wave-0 clean replay semantic PASS. |
+| W04/VIS/009 | REVIEW | Direct pixel/human art acceptance still open. |
+| W04/CI/010 | DONE_HISTORICAL | Pre-X100 head passed full continuity/native Gauntlet. |
+| W04/TERRAIN/011 | DONE_WAVE2_FOUNDATION | M01–M04 authored environment cells; no global geology fabrication. |
+| W04/INFRA/012 | DONE_WAVE1_FOUNDATION | Reflector production foundation. |
+| W04/CAR/013 | DONE_WAVE1_FOUNDATION | Caravan production foundation. |
+| W04/ARCH/014 | DONE_WAVE2_FOUNDATION | Refuge production foundation. |
+| W04/MAT/015 | BLOCKED_TARGET | Final calibrated UV0/PBR/texel-density/material budget awaits qualified runtime target. |
+| W04/NOCTIL/016 | BLOCKED_SPEC | Final NOCTIL morphology/rig/attacks absent from design contract. |
+| W04/QUEST/017 | DONE_WAVE2_FOUNDATION | M01–M04 environment interfaces authored; runtime logic external. |
+| W04/ACCESS/018 | TODO | Low-light/color-vision/combat-telegraph acceptance. |
+| W04/LOD/019 | BLOCKED_TARGET | LOD/HLOD/collision budgets await runtime/hardware contract. |
+| W04/EXPORT/020 | BLOCKED_INTEGRATION | UMBRA-specific runtime import/traversal/profile requires integration owner. |
+| W04/OPT/021 | DONE_WAVE2_FOUNDATION | Exact duplicate mesh-data sharing under conservative equality predicate. |
+| W04/VIS/022 | REVIEW | Objective geometry QA exists; direct rendered/human art PASS not claimed. |
+| W04/GEN/023 | DONE | Wave-1 independent replay semantic PASS. |
+| W04/FLEET/024 | DONE | Registry reads UMBRA active, owner AGENT-UMBRA-04, epoch 1. |
+| W04/GEN/025 | DONE | Wave-2 independent replay semantic PASS. |
+| W04/CUSTODY/026 | BLOCKED_TRANSPORT | MR-EXO-001 durable provider-independent `.blend`/GLB/dependency custody unresolved. |
+| W04/CI/027 | WAIT_MANUAL_GAUNTLET | Automatic Gauntlet triggers are cost-quarantined on main; refresh exact MANIFEST after batched X100 persistence, then run one bounded manual Gauntlet. |
+| W04/X100/028 | DONE_CONTROLPLANE | `WORLD_DENSITY_X100` graph, multiplicative score and priority queue persisted. |
+| W04/X100/029 | DONE_FOUNDATION | Service ecosystem: 10 semantic families × S/M/L × SERVICED/USED/FIELD_REPAIRED; 90 prefab roots. |
+| W04/X100/030 | DONE_FOUNDATION | Three functional service yards: caravan repair, reflector maintenance, refuge logistics. |
+| W04/X100/031 | DONE_FOUNDATION | 60 family-specific DAMAGED/ABANDONED roots; no random destruction/grunge. |
+| W04/X100/032 | DONE_FOUNDATION | 10 architectural interface families × 3 sizes × 3 fabrication variants; 0.2 m modular contract. |
+| W04/X100/033 | PARTIAL_PERSISTENCE | 10 L5 microdetail families exist in Blender with causal placement metadata, but exact generator/receipt is not yet versioned; do not call reproducible until closed. |
+| W04/X100/034 | DONE_FOUNDATION | Site-history integration: 31 linked prefabs across refuge, reflector 02/03, M03 archive and caravan repair; ERA_0/ERA_1/ERA_2 encoded; 31/31 roots at +0.04 m terrain datum. |
+| W04/X100/035 | IN_PROGRESS | Habitation/culture/interior systemic family wave: survival-domestic objects and interior sockets derived from Sin Sol constraints. |
+| W04/X100/036 | TODO | Post-macro-wave direct visual/readability Gauntlet; turn visible defects into bounded tasks. |
+| W04/X100/037 | TODO | Persist/reconstruct exact microdetail generator and receipt from authoritative scene/library metadata. |
+| W04/X100/038 | TODO | Expand site integration from 5 clusters to M01/M02/M04 and additional caravan/refuge interiors without blocking traversal. |
 
-## Current hard blockers
+## Current completeness
 
-- `BLOCK-W04-001` — physical planet radius/orbital representation absent from canon.
-- `BLOCK-W04-002` — production engine / target GPU / runtime art budgets not qualified for UMBRA.
+Multiplicative estimator: **37.54% — PRODUCTION WORLD**. This is not AAAA completion; ecology and L0 remain deliberately low because canon is missing rather than being filled with invention.
+
+## Hard blockers
+
+- `BLOCK-W04-001` — physical planet radius/orbital/global-geography contract absent.
+- `BLOCK-W04-002` — production runtime/target GPU art budgets not qualified for UMBRA.
 - `BLOCK-W04-003` — final NOCTIL morphology/function/rig/attack contract absent.
-- `BLOCK-W04-004` — direct pixel/human art review not yet accepted.
-- `BLOCK-W04-005` — MR-EXO-001 provider-independent binary custody lacks a valid transfer path.
+- `BLOCK-W04-004` — direct pixel/human art acceptance open.
+- `BLOCK-W04-005` — MR-EXO-001 durable binary custody lacks compatible transfer path.
+- `BLOCK-W04-006` — detailed native ecology/flora/fauna canon absent; no generic alien ecology allowed.
 
 ## Next execution order
 
-1. Close `W04/CI/027`: reconcile current main, exact MANIFEST, full CI readback.
-2. `W04/ACCESS/018` + `W04/VIS/022`: direct rendered-image/readability Gauntlet; convert visible defects into tasks.
-3. `W04/MAT/015`: material/UV/texel contract only after runtime target validation.
-4. Coordinate `W04/EXPORT/020`; only then close collision/LOD/profile budgets.
-5. Close `W04/CUSTODY/026` as soon as a valid durable binary transfer path exists.
+1. `W04/X100/035` habitation/culture/interior system.
+2. `W04/X100/037` exact microdetail persistence.
+3. `W04/X100/038` purposeful additional site integration.
+4. `W04/X100/036` + `W04/ACCESS/018` direct image/readability review.
+5. Refresh exact root `MANIFEST.json`, then one cost-bounded manual Gauntlet under quarantine.
+6. Coordinate runtime import/collision/profile before locking material/LOD budgets.
