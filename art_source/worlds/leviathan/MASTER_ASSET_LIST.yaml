@@ -12,6 +12,7 @@ notes:
   - Registry entries are production units/families, not claims that catalog target quantities have been produced.
   - Poly/texture hard budgets remain BLOCKED until target engine/hardware/camera/streaming are qualified.
   - `BLOCKOUT` in modeling_status means geometry exists as a reversible production proxy, not a final asset.
+  - `REPRESENTATIVE_*_NOT_FINAL` means deterministic functional/interface anatomy exists with QA evidence but still requires art, rig/animation/gameplay and engine gates as applicable.
 
 coverage:
   world_macro: IN_PROGRESS
@@ -73,7 +74,7 @@ assets:
     real_dimensions: 720m x 480m proposal
     modeling_status: BLOCKOUT
     material_status: BLOCKOUT
-    optimization_status: UNMEASURED
+    optimization_status: MEASURED_STRUCTURAL_ONLY
     integration_status: NOT_RUN
     qa_status: REVIEW
 
@@ -86,7 +87,7 @@ assets:
     quality_tier: A
     status: IN_PROGRESS
     owner: AGENT-LEVIATHAN-10
-    modeling_status: BLOCKOUT
+    modeling_status: REPRESENTATIVE_FOUNDATION_NOT_FINAL
     material_status: BLOCKOUT
     integration_status: NOT_RUN
     qa_status: REVIEW
@@ -100,7 +101,7 @@ assets:
     quality_tier: A
     status: IN_PROGRESS
     owner: AGENT-LEVIATHAN-10
-    modeling_status: BLOCKOUT
+    modeling_status: REPRESENTATIVE_FOUNDATION_NOT_FINAL
     material_status: BLOCKOUT
     integration_status: NOT_RUN
     qa_status: REVIEW
@@ -115,7 +116,7 @@ assets:
     status: IN_PROGRESS
     owner: AGENT-LEVIATHAN-10
     real_dimensions: 58m outer chamber envelope
-    modeling_status: BLOCKOUT
+    modeling_status: REPRESENTATIVE_FOUNDATION_NOT_FINAL
     material_status: BLOCKOUT
     integration_status: NOT_RUN
     qa_status: REVIEW
@@ -129,8 +130,9 @@ assets:
     status: IN_PROGRESS
     owner: AGENT-LEVIATHAN-10
     collision_policy: separate stable collision authority
-    modeling_status: BLOCKOUT
+    modeling_status: REPRESENTATIVE_CONTINUOUS_TRAVERSAL_NOT_RUNTIME_QUALIFIED
     qa_status: REVIEW
+    evidence: art_source/worlds/leviathan/evidence/traversal_ribbon_r11.json
 
   - asset_id: LEV-ENV-002
     category: terrain_anatomy
@@ -151,7 +153,7 @@ assets:
     quality_tier: B
     status: IN_PROGRESS
     owner: AGENT-LEVIATHAN-10
-    modeling_status: BLOCKOUT
+    modeling_status: REPRESENTATIVE_FOUNDATION_NOT_FINAL
     qa_status: REVIEW
 
   - asset_id: LEV-INF-001
@@ -175,8 +177,9 @@ assets:
     status: IN_PROGRESS
     owner: AGENT-LEVIATHAN-10
     usage_frequency: high
-    modeling_status: BLOCKOUT
+    modeling_status: REPRESENTATIVE_DETAIL_NOT_FINAL
     qa_status: REVIEW
+    evidence: art_source/worlds/leviathan/evidence/puerto_microset_r5.json
 
   - asset_id: LEV-ARCH-001
     region: Puerto de la Herida
@@ -188,8 +191,9 @@ assets:
     status: IN_PROGRESS
     owner: AGENT-LEVIATHAN-10
     usage_frequency: high
-    modeling_status: BLOCKOUT
+    modeling_status: REPRESENTATIVE_DETAIL_NOT_FINAL
     qa_status: REVIEW
+    evidence: art_source/worlds/leviathan/evidence/puerto_microset_r5.json
 
   - asset_id: LEV-INF-003
     category: infrastructure
@@ -200,7 +204,7 @@ assets:
     status: IN_PROGRESS
     owner: AGENT-LEVIATHAN-10
     usage_frequency: high
-    modeling_status: BLOCKOUT
+    modeling_status: REPRESENTATIVE_DETAIL_NOT_FINAL
     qa_status: REVIEW
 
   - asset_id: LEV-INF-004
@@ -222,8 +226,9 @@ assets:
     quality_tier: A
     status: IN_PROGRESS
     owner: AGENT-LEVIATHAN-10
-    modeling_status: BLOCKOUT
+    modeling_status: REPRESENTATIVE_DETAIL_NOT_FINAL
     qa_status: REVIEW
+    evidence: art_source/worlds/leviathan/evidence/jardines_microset_r7.json
 
   - asset_id: LEV-INF-006
     category: infrastructure
@@ -243,10 +248,13 @@ assets:
     quality_tier: A
     status: IN_PROGRESS
     owner: AGENT-LEVIATHAN-10
-    modeling_status: PROXY
+    modeling_status: REPRESENTATIVE_FUNCTIONAL_ANATOMY_NOT_FINAL
     rig: TODO
     animation_dependency: TODO
-    qa_status: NOT_READY
+    gameplay_binding: NOT_AUTHORED
+    collision_status: CORE_ONLY_STATIC_PROXY_NOT_RIGGED
+    qa_status: REVIEW
+    evidence: art_source/worlds/leviathan/evidence/jardines_microset_r7.json
 
   - asset_id: LEV-ECO-002
     region: Jardines Inmunes
@@ -256,20 +264,31 @@ assets:
     quality_tier: A
     status: IN_PROGRESS
     owner: AGENT-LEVIATHAN-10
-    modeling_status: SILHOUETTE_PROXY
+    modeling_status: REPRESENTATIVE_FUNCTIONAL_ANATOMY_NOT_FINAL
     rig: TODO
     animation_dependency: TODO
-    qa_status: NOT_READY
+    gameplay_binding: NOT_AUTHORED
+    collision_status: NONE_AUTHORED
+    qa_status: REVIEW
+    surface_sha256: 7b5a6eb9a295cb022c52939e1c711555b35f658e9e7c0898c485e16626301656
+    evidence: art_source/worlds/leviathan/evidence/lymph_whale_r17.json
 
   - asset_id: LEV-ECO-003
+    region: Jardines Inmunes
     category: ecology
     name: Polinizador de herida
     priority: P2
     quality_tier: B
-    status: TODO
+    status: IN_PROGRESS
     owner: AGENT-LEVIATHAN-10
-    modeling_status: TODO
-    qa_status: NOT_READY
+    modeling_status: REPRESENTATIVE_FUNCTIONAL_ANATOMY_NOT_FINAL
+    rig: TODO
+    animation_dependency: TODO
+    gameplay_binding: NOT_AUTHORED
+    collision_status: NONE_AUTHORED
+    qa_status: REVIEW
+    surface_sha256: e4e66ce01c258fb9c72c985fe0c065d1f0c879bc18434abc8142d573828a88f6
+    evidence: art_source/worlds/leviathan/evidence/wound_pollinator_r13.json
 
   - asset_id: LEV-ECO-004
     region: Jardines Inmunes
@@ -280,8 +299,9 @@ assets:
     status: IN_PROGRESS
     owner: AGENT-LEVIATHAN-10
     usage_frequency: high
-    modeling_status: PROXY
+    modeling_status: REPRESENTATIVE_FAMILY_NOT_FINAL
     qa_status: REVIEW
+    evidence: art_source/worlds/leviathan/evidence/jardines_microset_r7.json
 
   - asset_id: LEV-ENM-001
     category: adversary
@@ -290,9 +310,15 @@ assets:
     quality_tier: A
     status: IN_PROGRESS
     owner: AGENT-LEVIATHAN-10
-    modeling_status: SILHOUETTE_PROXY
+    modeling_status: REPRESENTATIVE_FUNCTIONAL_ANATOMY_NOT_FINAL
     rig: TODO
-    qa_status: NOT_READY
+    animation_dependency: TODO
+    gameplay_binding: NOT_AUTHORED
+    hit_hurt_volumes: NOT_AUTHORED
+    collision_status: NONE_AUTHORED
+    qa_status: REVIEW
+    surface_sha256: 5203d84cdf22f89685960e3cb1ffed10aaa7092a59123f8c171d61a3b1e2a8df
+    evidence: art_source/worlds/leviathan/evidence/fagocito_guardian_r14.json
 
   - asset_id: LEV-ENM-002
     category: adversary
@@ -301,9 +327,16 @@ assets:
     quality_tier: A
     status: IN_PROGRESS
     owner: AGENT-LEVIATHAN-10
-    modeling_status: SILHOUETTE_PROXY
+    modeling_status: REPRESENTATIVE_FUNCTIONAL_INTERFACE_NOT_FINAL
     rig: TODO
-    qa_status: NOT_READY
+    animation_dependency: TODO
+    gameplay_binding: NOT_AUTHORED
+    mobility: UNKNOWN_NOT_AUTHORED
+    hit_hurt_volumes: NOT_AUTHORED
+    collision_status: NONE_AUTHORED
+    qa_status: REVIEW
+    surface_sha256: 10772696d111219191ef56324724af184904c0b8a3094ccbd5768c9971eb0dc2
+    evidence: art_source/worlds/leviathan/evidence/pulse_extractor_r15.json
 
   - asset_id: LEV-ENM-003
     category: adversary
@@ -312,9 +345,16 @@ assets:
     quality_tier: A
     status: IN_PROGRESS
     owner: AGENT-LEVIATHAN-10
-    modeling_status: SILHOUETTE_PROXY
+    modeling_status: REPRESENTATIVE_MULTINODE_SYSTEM_NOT_FINAL
     rig: TODO
-    qa_status: NOT_READY
+    animation_dependency: TODO
+    gameplay_binding: NOT_AUTHORED
+    locomotion: NOT_AUTHORED
+    hit_hurt_volumes: NOT_AUTHORED
+    collision_status: NONE_AUTHORED
+    qa_status: REVIEW
+    surface_sha256: de8aa76989c533041d6e45cc15362cdb2bd1aaa09b7eb1024b0eea33e5298c75
+    evidence: art_source/worlds/leviathan/evidence/parasitic_colony_r16.json
 
   - asset_id: LEV-BOSS-001
     region: Cámara de SOMA
@@ -382,9 +422,10 @@ assets:
     quality_tier: A
     status: IN_PROGRESS
     owner: AGENT-LEVIATHAN-10
-    material_status: BLOCKOUT_PBR_ROLES
-    texture_set: TODO
+    material_status: PORTABLE_PBR_CALIBRATION_LAB_TECHNICAL_PASS_NOT_PROPAGATED
+    texture_set: ISOLATED_LAB_ONLY
     qa_status: REVIEW
+    evidence: art_source/worlds/leviathan/evidence/pbr_calibration_lab_r5.json
 
   - asset_id: LEV-MAT-002
     category: material_library
@@ -394,9 +435,10 @@ assets:
     quality_tier: A
     status: IN_PROGRESS
     owner: AGENT-LEVIATHAN-10
-    material_status: BLOCKOUT_PBR_ROLES
-    texture_set: TODO
+    material_status: PORTABLE_PBR_CALIBRATION_LAB_TECHNICAL_PASS_NOT_PROPAGATED
+    texture_set: ISOLATED_LAB_ONLY
     qa_status: REVIEW
+    evidence: art_source/worlds/leviathan/evidence/pbr_calibration_lab_r5.json
 
   - asset_id: LEV-SIG-001
     category: material_signal
@@ -416,7 +458,7 @@ assets:
     status: IN_PROGRESS
     owner: AGENT-LEVIATHAN-10
     blend_path: remote project 2577a7b6-ebd7-4d31-a645-620e4b73a95d
-    export_path: committed remote GLB revision 2
+    export_path: committed remote GLB revision 18
     qa_status: REVIEW
 
   - asset_id: LEV-TECH-002
@@ -436,5 +478,5 @@ backlog_families_not_yet_decomposed:
   - environmental storytelling states for graft/suppression/evacuation outcomes
   - damage/destruction/cicatrization variants
   - decals/markings that preserve world semantics
-  - LOD/HLOD/impostor strategy after target-runtime qualification
+  - final production LOD/HLOD/impostor strategy after target-runtime qualification
   - orbital/vista assets after planetary-scale decision
