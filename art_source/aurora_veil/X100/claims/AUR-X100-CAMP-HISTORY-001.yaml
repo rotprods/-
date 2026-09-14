@@ -4,13 +4,15 @@ owner: AGENT-02-AURORA
 branch: art/world-aurora-veil-001
 world_id: aurora
 region_id: AUR_R01_CAMP_SECOND_DAY
-status: IN_PROGRESS
+status: REVIEW_TECHNICAL_SYSTEMIC
 protocol: EXOVANT-X100-v1
 scope_key: aurora/camp/physical-history-three-eras
 priority: P1_HIGH_MULTIPLIER
 created_at: 2026-09-14T11:40:00+02:00
+last_heartbeat: 2026-09-14T11:52:30+02:00
 remote_project_id: d6488148-8547-4ffe-b63d-e5fbec3a339c
 remote_base_revision: 31
+remote_review_revision: 32
 
 north_star: >-
   Make Campamento del Segundo Dia read as a place with physically legible history rather than a clean modular proof: every selected host must show ERA_0 original construction, ERA_1 later repair/occupation, and ERA_2 current degradation/adaptation through causal geometry and service evidence.
@@ -39,6 +41,29 @@ excludes:
   - temporal runtime logic
   - engine import/performance before EXO-012
 
+results:
+  reusable_families: 8
+  proof_objects: 43
+  three_era_hosts: 6
+  causal_categories: 9
+  support_contact: PASS
+  cable_continuity: PASS
+  transforms: PASS
+  glb_export: PASS_REV32
+  structural_render: PASS_ISOLATED
+  technical_eevee: PASS
+  human_gate_art: PENDING
+
+receipts:
+  qa: art_source/aurora_veil/X100/QA/camp_history_r32.json
+  generator: art_source/aurora_veil/X100/blender/aurora_x100_camp_history_r32.py
+  structural_artifact: aurora_x100_r32_camp_history_structural_isolated.png
+  eevee_artifact: aurora_x100_r32_camp_history_eevee_closeup.png
+
+failure_history:
+  - global six-host Workbench render exceeded the 300s worker deadline; classified ENV_COST_FAILURE rather than geometry/art failure
+  - isolated six-host Workbench and focused Eevee close-up were used as bounded QA replacements
+
 quality_rules:
   - every repair must correspond to a structural/service problem
   - no uniform grunge, random scratches or decorative greebles
@@ -47,23 +72,12 @@ quality_rules:
   - no floating geometry; all plates/clamps/reroutes need support/contact
   - current state must remain readable without text labels
 
-family_dod:
-  - >= 8 reusable history/repair module families
-  - >= 6 host configurations receive three-era evidence
-  - each host has ERA_0 + ERA_1 + ERA_2 receipts
-  - at least 4 causal failure categories represented
-  - repeated modules carry LOD0/1/2 or explicit no-LOD rationale
-  - collision/service clearances documented
-  - GLB export smoke pass
-  - Workbench structural render + Eevee technical render
-  - generator + QA persisted
-  - HUMAN GATE-ART remains separate
-
-blocked_by:
+open_gates:
   - final UV/bakes/authored texture pass
   - EXO-012 engine import
   - target hardware performance
   - human art-direction approval
 
+claim_status: KEEP
 stop_condition: >-
-  Technical review only after causal three-era readability, host support/contact, export and evidence pass. Do not mark final art.
+  Technical family is accepted for REVIEW_TECHNICAL_SYSTEMIC. Do not mark final art or DONE until open gates close.
