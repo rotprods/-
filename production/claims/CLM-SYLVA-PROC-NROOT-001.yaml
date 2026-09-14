@@ -1,0 +1,94 @@
+claim_id: CLM-SYLVA-PROC-NROOT-001
+agent_id: AGENT-SYLVA-ROOT-01
+session_id: SES-20260912T2123+0200-SYLVA01
+scope_key: world-sylva/procedural-modeling/neural-root-structural-kit
+world_id: SYLVA-PRIME
+region_id: SHARED-WORLD-KIT
+category: procedural_modeling
+subdomain: neural_root_structural_kit
+status: BLOCKED
+claim_status: REVIEW
+priority: P1
+branch: agent/sylva-neural-root-001
+base_sha: 4c2fa044080004609ea6df45f34b2a784536507a
+created_at: 2026-09-12T21:23:00+02:00
+last_heartbeat: 2026-09-12T21:49:00+02:00
+source_authority:
+  - AGENTS.md
+  - _project_intelligence/STATE.json
+  - design/EXOVANT_BIBLIA.md
+  - design/EXOVANT_DATA.json
+includes_if_boundary_accepted:
+  - reusable meso-scale structural root segment generator
+  - reusable 8-14 m root junction and fork modules
+  - broad traversable callus/root walkway variants
+  - terrace and membrane-anchor module interfaces
+  - deterministic Blender bpy source generation
+  - neutral material IDs for later world lookdev
+  - per-module collision-proxy naming and export metadata
+  - asset manifest and non-runtime QA tooling for this kit
+excludes:
+  - km-scale regional root-network topology and placement
+  - Puerto/Bosque/VESPER regional anchor placement
+  - macro terrain generation or streaming envelopes
+  - VESPER boss model or rig
+  - fauna or creatures
+  - NPCs or humanoid characters
+  - vehicles
+  - full terrain or planetary geography
+  - settlements and complete architecture kits
+  - final world-wide material library
+  - Godot gameplay scripts and current Terra runtime
+  - engine migration or Unreal qualification
+collision_audit:
+  initial_observation:
+    result: NO_VISIBLE_SYLVA_BRANCH_IN_BRANCH_SCAN_AT_BUILD_START
+    note: "This observation was incomplete; later PR resync found an earlier persistent macro claim."
+  authoritative_resync:
+    prior_claim: CLM-SYLVA-MACRO-001
+    prior_claim_created_at: 2026-09-12T21:10:00+02:00
+    this_claim_created_at: 2026-09-12T21:23:00+02:00
+    prior_pr: 3
+    prior_branch: art/world-sylva-prime-macro-001
+    result: PRIOR_SEMANTIC_CLAIM_FOUND
+    overlap: "Prior macro claim includes macro terrain/root-network plus root/membrane/scaffold proxy families and a structural-root-network task."
+    disposition: "Younger claim is BLOCKED/REVIEW. No merge or further overlapping production until boundary is accepted or this claim is narrowed/reassigned."
+    proposed_boundary:
+      macro_owner: "km/regional terrain and root-network topology, region anchors, macro traversal corridors, placement/streaming envelopes, diagnostic macro proxies"
+      candidate_meso_owner: "reusable 8-14 m module geometry/generator, callus route surfaces, module naming/material interfaces and per-module collision proxies"
+    persistent_coordination:
+      macro_pr_comment_id: 5648260908
+      this_pr_comment_id: 5648261708
+    merge_policy: "Both PRs remain draft; PR 6 must not merge without explicit reconciliation with PR 3."
+dependencies:
+  - documented Sylva route-readability risk and neural-forest asset-kit definition
+  - CLM-SYLVA-MACRO-001 ownership decision for any reusable root/membrane module work
+blocked_by:
+  - prior overlapping claim CLM-SYLVA-MACRO-001 pending ownership reconciliation
+  - final planet radius and diameter are UNKNOWN and intentionally not required for this atomic kit
+  - target GPU budgets remain UNKNOWN pending production-hardware qualification
+checkpoint:
+  remote_project_id: 43cf2b06-c47f-4ccd-ac34-76e9a585225a
+  remote_revision: 4
+  technical_qa: PASS_BLOCKOUT_ONLY
+  qa_receipt: production/receipts/sylva/CLM-SYLVA-PROC-NROOT-001-QA.yaml
+  manifest: production/manifests/sylva/procedural/SYL_NEURAL_ROOT_KIT_001.yaml
+  generator: art_source/sylva_neural_root_kit/sylva_neural_root_kit.py
+  tasks: production/tasks/sylva/SYL_PROC_ROOT_FIRST_10.yaml
+  pull_request: 6
+progress:
+  recoverable_candidate_blockout: 100%
+  collision_proxy_presence: 100%
+  ownership_acceptance: 0%
+  final_materials: 0%
+  lod_optimization: 0%
+  engine_integration: 0%
+  human_art_review: PENDING
+next:
+  - resolve PR 3 vs PR 6 ownership before any further root/membrane build
+  - if boundary accepted, run isolated engine traversal/collision and refine generator
+  - if boundary rejected, release this claim and offer the validated generator/assets to the prior macro owner as implementation evidence rather than a competing source of truth
+release_condition:
+  - explicit macro/procedural ownership reconciliation recorded persistently
+  - if kept: engine traversal/collision checkpoint completed or explicit waiver recorded
+  - art review decides whether to release, continue or transfer the candidate kit

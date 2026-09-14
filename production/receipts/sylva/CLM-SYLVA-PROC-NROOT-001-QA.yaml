@@ -1,0 +1,110 @@
+schema_version: 1
+receipt_id: RCP-SYLVA-PROC-NROOT-001-QA
+claim_id: CLM-SYLVA-PROC-NROOT-001
+agent_id: AGENT-SYLVA-ROOT-01
+observed_at: 2026-09-12T21:41:29+02:00
+remote_project_id: 43cf2b06-c47f-4ccd-ac34-76e9a585225a
+remote_revision: 4
+blender_version: 5.2.0 LTS
+unit_system: METRIC
+unit_scale: 1.0
+
+execution_history:
+  - operation: sylva-root-kit-blockout-001
+    result: FAIL
+    error: "bpy.ops.mesh.primitive_capsule_add does not exist in Blender 5.2"
+    revision_after: null
+    containment: "No committed revision; scene remained revision 0."
+    correction: "Replaced capsule operator with a standard cylinder plus two UV spheres."
+  - operation: sylva-root-kit-blockout-002
+    result: PASS
+    revision_after: 1
+    facts:
+      objects: 50
+      mesh_objects: 36
+      root_object_count: 20
+      collision_object_count: 11
+      visible_approx_triangles: 15894
+  - operation: sylva-root-qa-geometry-001
+    result: FINDINGS
+    findings:
+      - "player guide outside delivery-camera center coverage"
+      - "C2 terrace and C3 anchor required explicit collision proxies"
+  - operation: sylva-root-kit-qa-fix-003
+    result: PASS
+    revision_after: 2
+    fixes:
+      - "added COL_SYL_ROOT_C2_TERRACE_CALLOUS"
+      - "added COL_SYL_ROOT_C3_MEMBRANE_ANCHOR"
+      - "widened delivery lens"
+  - operation: sylva-root-qa-final-004
+    result: FINDINGS
+    findings:
+      - "guide remained outside frame"
+      - "six callus surfaces lacked claim_id metadata"
+  - operation: sylva-root-kit-metadata-camera-fix-005
+    result: PASS
+    revision_after: 3
+    fixes:
+      - "tagged all 20 SYL_ROOT_* objects with claim/world metadata"
+      - "widened camera to 39 mm"
+  - operation: sylva-root-qa-final-006
+    result: FINDING
+    finding: "GUIDE_PlayerCapsule_Top projected to x=1.001; refused false PASS."
+  - operation: sylva-root-kit-camera-final-007
+    result: PASS
+    revision_after: 4
+    fix: "delivery camera lens 38.5 mm"
+  - operation: sylva-root-qa-release-008
+    result: PASS
+    revision: 4
+
+final_gate:
+  pass: true
+  object_count: 52
+  root_claim_tag_count: 20
+  collision_count: 13
+  visible_approx_triangles: 15894
+  required_modules_pass: true
+  collision_proxy_pass: true
+  camera_center_coverage_pass: true
+  zero_area_mesh_objects: []
+  mesh_without_material: []
+  non_unit_scale: []
+  claim_property_mismatch: []
+
+artifacts:
+  blend:
+    revision: 4
+    size_bytes: 1669982
+    etag: e0a4393afe08b78e508efe6908090176
+  glb:
+    revision: 4
+    size_bytes: 1906236
+    etag: d0b02f2cecc40fefd8b7ac5680fee455
+  render:
+    artifact_id: ed6411ee63c1c046201db18fdcb41c66
+    name: sylva-root-kit-blockout-v4-final.png
+    dimensions: 1100x760
+    size_bytes: 803186
+
+pass_scope:
+  - deterministic structural blockout exists
+  - required module families exist
+  - separated proxy naming exists
+  - metre scale and unit transforms pass the scripted inspection
+  - remote .blend and GLB were generated at revision 4
+  - export completed without Blender error
+
+not_proven:
+  - final visual AAAA quality
+  - final texture or UV quality
+  - LOD/HLOD quality
+  - in-engine collision behavior
+  - actual player traversal
+  - draw-call/shader/texture-memory budgets on target hardware
+  - GATE-ART human approval
+  - production-engine compatibility beyond GLB interchange
+  - final planet scale
+
+visual_verification_note: "A 1100x760 Eevee render was generated and published. In this tool session the artifact resolver exposed metadata/download but not pixels to the agent vision surface, so no fabricated visual PASS is recorded. Interactive scene preview is delivered for human inspection."
