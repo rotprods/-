@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "world_id": "sylva",
+  "authority_checkpoint": "MACRO_R18_REV22",
+  "claim": "CLM-SYLVA-MACRO-001",
+  "purpose": "Non-reserving readiness graph for downstream atomic 3D cells. Every agent must re-audit live fleet/branches/PRs before claiming a row.",
+  "macro_foundation": {
+    "status": "LOCALLY_VALIDATED_TECHNICAL_ART_CHECKPOINT",
+    "terrain": "PASS_R12",
+    "stream_membership": "PASS_R13_PLUS_R16_AMENDMENT",
+    "hierarchy": "PASS_R14",
+    "prefetch_contract": "PASS_R15_UNAPPROVED_RUNTIME_EXPERIMENT",
+    "primary_root_silhouette": "PASS_R18_SOURCE",
+    "navigation": "PASS_R10_SOURCE",
+    "vesper_macro_layout": "PASS_BLOCKOUT",
+    "human_art_review": "PENDING",
+    "native_runtime": "NOT_RUN_EXACT_R18"
+  },
+  "cells": [
+    {"scope":"WORLD/MATERIALS/SURFACE_LIBRARY","suggested_claim":"CLM-SYLVA-MAT-WORLD-001","priority":"P0","ready":"READY_FOR_CLAIM","depends_on":["ART_DIRECTION_BIBLE_R14","BIOLOGICAL_REALISM_REFERENCE_PACK_R14"],"must_not_touch":["R18 macro root geometry","terrain geometry"],"unlock":"final materials for all downstream world assets"},
+    {"scope":"PUERTO/PROPS/GRAFT_MAINTENANCE","suggested_claim":"CLM-SYLVA-PUERTO-PROPS-001","priority":"P1","ready":"READY_FOR_BLOCKOUT_CLAIM","depends_on":["Puerto R18 macro envelope"],"must_not_touch":["Puerto macro massing","PR6 modules"],"unlock":"storytelling/scale/manufacturing realism"},
+    {"scope":"FAUNA/ANATOMY_FOUNDATION","suggested_claim":"CLM-SYLVA-FAUNA-001","priority":"P1","ready":"READY_FOR_DESIGN_BLOCKOUT_CLAIM","depends_on":["canon species concepts"],"must_not_touch":["population scatter/runtime"],"unlock":"ecology silhouette and later animation"},
+    {"scope":"FLORA/SPECIES_FOUNDATION","suggested_claim":"CLM-SYLVA-FLORA-001","priority":"P1","ready":"READY_FOR_DESIGN_BLOCKOUT_CLAIM","depends_on":["canon Orquidea de pacto + world ecology"],"must_not_touch":["final scatter/runtime density"],"unlock":"biome identity and material interactions"},
+    {"scope":"CHARACTERS/EDDA","suggested_claim":"CLM-SYLVA-CHAR-EDDA-001","priority":"P1","ready":"READY_FOR_CHARACTER_DESIGN_CLAIM","depends_on":["canon motivation","human wardrobe interface"],"must_not_touch":["Puerto macro placement"],"unlock":"hero NPC staging"},
+    {"scope":"CHARACTERS/NICO","suggested_claim":"CLM-SYLVA-CHAR-NICO-001","priority":"P1","ready":"READY_FOR_CHARACTER_DESIGN_CLAIM","depends_on":["canon carpenter function"],"must_not_touch":["Puerto macro placement"],"unlock":"maintenance/carpentry storytelling"},
+    {"scope":"CHARACTERS/SIETE_EN_UNO","suggested_claim":"CLM-SYLVA-CHAR-SIETE-001","priority":"P1","ready":"READY_FOR_ANATOMY_CONCEPT_CLAIM","depends_on":["gesture grammar","biological realism bible"],"must_not_touch":["macro roots","PR6 root modules"],"unlock":"organic emissary/gesture system art"},
+    {"scope":"PUERTO/ARCHITECTURE/FINAL_KIT","suggested_claim":"CLM-SYLVA-PUERTO-ARCH-001","priority":"P1","ready":"PARTIAL_READY_CONCEPT_BLOCKOUT_ONLY","depends_on":["PR6 deterministic anchors","architecture modular grid decision"],"must_not_touch":["macro massing","provider modules"],"unlock":"final Puerto built environment"},
+    {"scope":"BOSQUE/SIGNAL_LANDMARKS","suggested_claim":"CLM-SYLVA-BOSQUE-SIGNAL-001","priority":"P1","ready":"PARTIAL_READY_VISUAL_BLOCKOUT","depends_on":["gesture-grammar gameplay signaling contract"],"must_not_touch":["R10 navigation centerlines"],"unlock":"Bosque route readability without color-only cues"},
+    {"scope":"VESPER/FOREST_CITY_LANDMARK","suggested_claim":"CLM-SYLVA-VESPER-CITY-001","priority":"P1","ready":"READY_FOR_CONCEPT_BLOCKOUT_CLAIM","depends_on":["R18 VESPER macro envelope","three-terrace invariant"],"must_not_touch":["final VESPER boss","terrace/connector layout"],"unlock":"hero skyline / vista composition"},
+    {"scope":"VESPER/BOSS_FINAL","suggested_claim":"CLM-SYLVA-VESPER-BOSS-001","priority":"P0","ready":"NOT_READY_FOR_FINAL_BUILD","depends_on":["boss anatomy/attack/rig contract","human macro arena review"],"must_not_touch":["R18 arena layout"],"unlock":"boss production"},
+    {"scope":"VEHICLE/VELA_DE_CENIZA","suggested_claim":"CLM-SYLVA-VEH-VELA-001","priority":"P1","ready":"PARTIAL_READY_MECHANICAL_DESIGN","depends_on":["canopy clearance qualification","runtime physics/speed envelope"],"must_not_touch":["macro routes"],"unlock":"macro mobility qualification"},
+    {"scope":"ROOTS/MESO_PROVIDER","claim":"CLM-SYLVA-PROC-NROOT-001","priority":"P0","ready":"BLOCKED_PROVIDER_CONTRACT","depends_on":["valid manifest","normalized pivots/anchors","render-collision anchor parity","pivot-policy version"],"must_not_touch":["macro R18 roots"],"unlock":"deterministic socket instancing / Puerto architecture interfaces"},
+    {"scope":"ROOTS/FINAL_SURFACE_ANATOMY","suggested_claim":"CLM-SYLVA-ROOT-SURFACE-001","priority":"P1","ready":"BLOCKED_HUMAN_R18_ART_REVIEW","depends_on":["R18 visual review","world material library"],"must_not_touch":["R18 centerline/source rollback data"],"unlock":"close-inspection root realism"},
+    {"scope":"HLOD/VISTA","suggested_claim":"CLM-SYLVA-HLOD-001","priority":"P1","ready":"BLOCKED_TARGET_BACKEND_HARDWARE","depends_on":["renderer","hardware","switching metrics","HLOD_FEATURE_RETENTION_R18"],"must_not_touch":["gameplay collision authority"],"unlock":"massive-world runtime scale"},
+    {"scope":"TECH_ART/FINAL_DELIVERY","suggested_claim":"CLM-SYLVA-TECH-FINAL-001","priority":"P0","ready":"BLOCKED_PRODUCTION_ASSETS_RUNTIME","depends_on":["final art families","artifact recovery","native engine","target hardware"],"must_not_touch":["other owners' source without handoff"],"unlock":"release-grade import/LOD/collision/performance QA"}
+  ],
+  "critical_path": [
+    "Human macro R18 art review",
+    "World material library",
+    "PR6 provider contract repair",
+    "Puerto/VESPER/Bosque final-content blockouts",
+    "Exact R18 native streaming/traversal qualification",
+    "Target backend/hardware selection for HLOD/performance",
+    "Final tech-art delivery"
+  ],
+  "parallel_now": [
+    "materials",
+    "Puerto props",
+    "fauna anatomy",
+    "flora species",
+    "Edda",
+    "Nico",
+    "Siete-en-Uno",
+    "VESPER forest-city concept"
+  ],
+  "truth": "This readiness graph does not reserve scopes or prove that a candidate remains unclaimed after publication. Live collision audit is mandatory immediately before each claim."
+}
