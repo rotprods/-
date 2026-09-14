@@ -1,0 +1,155 @@
+{
+  "schema_version": 2,
+  "protocol_id": "EXOVANT-X100-V2",
+  "world_id": "leviathan",
+  "claim_id": "CLM-W10-WORLD-LEVIATHAN-001",
+  "owner": "AGENT-LEVIATHAN-10",
+  "basis_main": "8c01136aa14f89e177ff1216d1993d62ea963ad3",
+  "audit_status": "MEASUREMENT_REQUIRED",
+  "measurement_policy": "Do not synthesize percentages from asset counts. Coverage remains null until an evidence-to-coverage rubric is applied consistently across worlds by X100/Director.",
+  "coverage": {
+    "macro_world": null,
+    "meso_architecture": null,
+    "micro_assets": null,
+    "ecology": null,
+    "civilization": null,
+    "gameplay": null,
+    "material_causality": null,
+    "variation": null,
+    "temporal_states": null,
+    "storytelling": null,
+    "audiovisual_language": null,
+    "optimization": null,
+    "reusability": null,
+    "qa": null
+  },
+  "scale_coverage": {
+    "L0": false,
+    "L1": false,
+    "L2": true,
+    "L3": true,
+    "L4": true,
+    "L5": false
+  },
+  "scale_evidence": {
+    "L0": "BLOCKED: physical planet radius/diameter absent from canon",
+    "L1": "BLOCKED: orbital/regional physical representation depends on L0",
+    "L2": "Representative 720x480m authored world cell exists; not planet size",
+    "L3": "Puerto graft architecture + regional infrastructure representative microsets exist",
+    "L4": "4/4 canonical ecology species and 3/3 adversary representative interfaces exist",
+    "L5": "Final physically caused microdetail/material-history pass is not approved"
+  },
+  "dimension_evidence": {
+    "macro_world": {
+      "status": "PARTIAL_BLOCKED",
+      "evidence": ["WORLD_BIBLE.md", "MASTER_ASSET_LIST.yaml", "validation.json"],
+      "gaps": ["physical planet scale", "orbital representation", "distant vista"]
+    },
+    "meso_architecture": {
+      "status": "PARTIAL",
+      "evidence": ["evidence/puerto_microset_r5.json", "evidence/jardines_microset_r7.json", "evidence/soma_encounter_microset_r8.json"],
+      "gaps": ["interiors", "regional modular kit breadth", "settlement variants"]
+    },
+    "micro_assets": {
+      "status": "PARTIAL_LOW_BREADTH",
+      "evidence": ["MASTER_ASSET_LIST.yaml"],
+      "gaps": ["everyday props", "medical tools", "maintenance kits", "decals", "set dressing"]
+    },
+    "ecology": {
+      "status": "REPRESENTATIVE_COVERAGE_4_OF_4_CANONICAL_SPECIES_NOT_FINAL",
+      "evidence": ["evidence/jardines_microset_r7.json", "evidence/wound_pollinator_r13.json", "evidence/lymph_whale_r17.json"],
+      "gaps": ["rig", "animation", "behavior", "resource/consumer/decomposer graph", "terrain/audio/gameplay ecological effects"]
+    },
+    "civilization": {
+      "status": "LOW_MEASUREMENT_REQUIRED",
+      "evidence": ["WORLD_BIBLE.md", "evidence/puerto_microset_r5.json"],
+      "gaps": ["Comuna del Pulso culture DNA", "NPCs", "wardrobe", "tools", "repair language", "interiors"]
+    },
+    "gameplay": {
+      "status": "PARTIAL_INTERFACE_ONLY",
+      "evidence": ["evidence/traversal_ribbon_r11.json", "evidence/soma_encounter_microset_r8.json"],
+      "gaps": ["runtime traversal", "enemy bindings", "hit/hurt volumes", "AI", "quest/system validation"]
+    },
+    "material_causality": {
+      "status": "TECHNICAL_CALIBRATION_PASS_WORLD_PROPAGATION_OPEN",
+      "evidence": ["evidence/pbr_calibration_lab_r5.json", "materials/PBR_CALIBRATION_LAB.md"],
+      "gaps": ["direct art approval", "world-master propagation", "material history", "runtime validation"]
+    },
+    "variation": {
+      "status": "LOW_MEASUREMENT_REQUIRED",
+      "evidence": ["MASTER_ASSET_LIST.yaml"],
+      "gaps": ["causal variants", "regional variants", "damage/repair states", "systemic placement"]
+    },
+    "temporal_states": {
+      "status": "LOW_MEASUREMENT_REQUIRED",
+      "evidence": ["WORLD_BIBLE.md"],
+      "gaps": ["ERA_0/1/2 geometry", "suppression/graft/evacuation states", "cicatrization states"]
+    },
+    "storytelling": {
+      "status": "LOW_MEASUREMENT_REQUIRED",
+      "evidence": ["WORLD_BIBLE.md"],
+      "gaps": ["environmental storytelling props", "route consequences", "community traces", "network-disconnection clues"]
+    },
+    "audiovisual_language": {
+      "status": "ART_SEED_ONLY",
+      "evidence": ["WORLD_BIBLE.md"],
+      "gaps": ["approved look target", "lighting language", "audio hooks", "visual regression"]
+    },
+    "optimization": {
+      "status": "STRUCTURAL_PASS_RUNTIME_PERFORMANCE_UNMEASURED",
+      "evidence": ["evidence/instancing_optimization_r10_v2.json", "evidence/post_creature_instancing_r18.json", "evidence/lod_feasibility_r10.json", "LOD_CANDIDATE_POLICY.md"],
+      "gaps": ["production LOD/HLOD", "engine instancing", "target hardware performance"]
+    },
+    "reusability": {
+      "status": "PARTIAL",
+      "evidence": ["MASTER_ASSET_LIST.yaml", "tools/"],
+      "gaps": ["variant/state combinatorial kits", "placement rules", "cross-region systemic generators"]
+    },
+    "qa": {
+      "status": "STRONG_REPRESENTATIVE_PIPELINE_FINAL_GATES_OPEN",
+      "evidence": ["validation.json", "evidence/post_creature_instancing_r18.json", "evidence/pbr_calibration_lab_r5.json"],
+      "gaps": ["direct art review", "engine import", "runtime traversal/material validation", "target performance", "manual Gauntlet after merge-tree manifest refresh"]
+    }
+  },
+  "density_passes": {
+    "MACRO": "PARTIAL",
+    "STRUCTURE": "PARTIAL_PASS",
+    "GAMEPLAY": "PARTIAL_INTERFACE_ONLY",
+    "SUPPORT_ASSETS": "PARTIAL_LOW_BREADTH",
+    "PROPS": "NOT_STARTED",
+    "ECOLOGY": "REPRESENTATIVE_PASS_FINAL_SYSTEMS_OPEN",
+    "MATERIAL_HISTORY": "NOT_STARTED",
+    "MICRODETAIL": "NOT_STARTED_FINAL_ART",
+    "STORYTELLING": "NOT_STARTED_GEOMETRY",
+    "LIGHTING": "FOUNDATION_ONLY",
+    "AUDIO_HOOKS": "CANON_SEED_ONLY",
+    "OPTIMIZATION": "STRUCTURAL_PASS_RUNTIME_OPEN",
+    "PLAYER_SCALE": "FOUNDATION_PASS",
+    "DISTANT_VISTA": "BLOCKED_L0_L1",
+    "FINAL_ART_REVIEW": "BLOCKED_DIRECT_VISUAL_REVIEW"
+  },
+  "x100_next_selection_constraints": [
+    "Do not select L0/L1 work until physical planet scale is decided",
+    "Do not select final SOMA anatomy until art/anatomy review is resolved",
+    "Do not select final runtime/LOD/performance work until engine/hardware is qualified",
+    "Do not invent NPC anatomy without character art definition",
+    "Prefer owned systemic/support gaps with high reuse and low collision risk"
+  ],
+  "likely_bottleneck_candidates_pending_global_ranking": [
+    "Comuna del Pulso culture/manufacturing DNA + modular support kit",
+    "Puerto/Jardines support props and medical-maintenance systemic kit",
+    "causal damage/repair/cicatrization state system",
+    "environmental storytelling state kit",
+    "ecology relationship/effects graph beyond species silhouettes",
+    "audio-hook and lighting-language specification"
+  ],
+  "evidence": [
+    "STATUS.yaml",
+    "TASKS.yaml",
+    "MASTER_ASSET_LIST.yaml",
+    "validation.json",
+    "evidence/post_creature_instancing_r18.json",
+    "evidence/pbr_calibration_lab_r5.json",
+    "evidence/traversal_ribbon_r11.json"
+  ]
+}
