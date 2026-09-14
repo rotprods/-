@@ -1,70 +1,116 @@
 # ART-UMBRA-001 · UMBRA world production ownership
 
-Date: 2026-09-12.
-Base at reservation: `4c2fa044080004609ea6df45f34b2a784536507a` (`main` observed before branch creation).
-Branch: `art/world-umbra-001`.
-Agent: `AGENT-UMBRA-04`.
-Session: `ART-UMBRA-001-20260912T2123+0200`.
-Claim: `CLM-W04-WORLD-UMBRA-001`.
-World: `umbra` / **UMBRA — NOCTIL, el eclipse viviente**.
+Date reserved: 2026-09-12.  
+Branch: `art/world-umbra-001`.  
+Agent: `AGENT-UMBRA-04`.  
+Session lineage: `ART-UMBRA-001-20260912T2123+0200`.  
+Claim: `CLM-W04-WORLD-UMBRA-001`.  
+World: `W04 UMBRA — NOCTIL, el eclipse viviente`.  
 Role: `WORLD_OWNER`.
 
-## Authority and observed canon
+## Current claim truth
 
-- Repository authority: `rotprods/-`.
-- Protocol authority: `AGENTS.md`, `_project_intelligence/STATE.json`, `HANDOFF.md`, `MEMORY.md`, `_project_intelligence/PLAN.json`, `GOALS.md`, `ROADMAP.md`.
-- Fleet coordination authority after its later promotion to `main`: `docs/FLEET_COORDINATION.md`, `ops/fleet/registry.json`, GitHub issue `#7`.
-- World/art authority: `design/EXOVANT_BIBLIA.md`, `design/EXOVANT_DATA.json`, `docs/ART_PRODUCTION.md`.
-- Engine currently executable: Godot `4.7.2.stable.official.ed1daf0bf`; Unreal remains the principal production candidate and is not qualified as integrated.
-- Qualified editable-art route: remote 3D Jutsu / Blender `bpy`, with source `.blend`, generator/source Python, portable GLB and evidence required by `LRN-EXO-20260912-BLENDER`.
-- UMBRA canon: Milky Way / Sere system / Flotilla de los Sin Sol; tidally locked world with settlements in the twilight band; small reflector-station swarm; mobile-twilight art kit of caravans, reflectors, dark ice and tensioned fabric; constant crosswind; darkness must never hide combat anticipation.
+`ACTIVE / ACK ADMITTED / X100 PRODUCTION CONTINUES / KEEP`
 
-## Owned paths
+Fleet registry readback has admitted the owner ACK for epoch 1 with evidence in issue #7 comment `5648349781`. This claim is neither released nor DONE. Open canon/runtime/art/custody gates do not transfer ownership automatically.
+
+## Owned semantic paths
 
 - `art_source/worlds/umbra/`
 - `art_source/coordination/ART-UMBRA-001-OWNERSHIP.md`
 
-These are exact fleet paths; no wildcard ownership is asserted by the current coordination harness.
+`MANIFEST.json` may change only as the exact generated continuity projection accepted by project-control/fleet guards; it is not semantically owned by this producer.
 
-## Included
+No wildcard ownership is asserted outside the exact paths above.
 
-- UMBRA planetary/world-production specification and scale layers.
-- Twilight-band macro layout and authored gameplay-region blockouts.
-- UMBRA environment, architecture, infrastructure, caravan, reflector, dark-ice, prop, material, vegetation/ecology proxy, NPC/enemy/creature/vehicle proxy families needed for coverage planning.
-- NOCTIL arena/environment proxy and silhouette interfaces only; final character/creature rigging may be split into later domain claims if parallelism requires it.
-- Deterministic Blender master-scene generator, editable scene hierarchy, materials, cameras/lights, validation scripts, portable export and visual evidence for this branch.
-- Per-asset manifests, task/coverage/status/handoff files under the owned UMBRA path.
+## Authority order
 
-## Excluded
+1. Current `main` repository protocol and fleet/X100 control surfaces.
+2. `ops/fleet/registry.json` + issue #7 for ownership.
+3. `docs/EXOVANT_X100_V2.md`, `docs/EXOVANT_X100_DIRECTOR.md` and `ops/x100/*` for global X100 work selection after their promotion to main.
+4. `design/EXOVANT_BIBLIA.md` + `design/EXOVANT_DATA.json` for world canon.
+5. `art_source/worlds/umbra/WORLD_BIBLE.md` for UMBRA observed canon/proposal split.
+6. UMBRA task/asset/validation/receipt files for producer-local execution truth.
 
-- Runtime Godot scenes/scripts and gameplay logic.
-- Terra, Ares IX, Pelagos, Khepri, Vanta or any other world-owned paths.
-- Shared `STATE/PLAN/HANDOFF/PROGRESS` mutation; integration authority reconciles shared state after review.
-- Shared libraries without a separate non-overlapping claim.
-- Unreal/DLSS/GPU performance claims without qualification.
-- Final NOCTIL anatomy/rig/attack implementation until the corresponding design contract exists.
-- Final production completion of the entire world until engine import, performance and human/art review gates pass.
+The UMBRA `WORLD_DENSITY_X100*` files are a **world-local shard**. They must not contradict or supersede the global X100 Director.
 
-## Collision audit at reservation time
+## Included scope
 
-Observed branches before claim: `art/ares-ix-world-001`, `art/ares-ix-world-agent-02`, `art/terra-reliquary-kit-001`, `art/world-khepri-001`, `art/world-pelagos-thalassa-001`, `art/world-vanta-001`, `main`. Open draft PRs visibly owned ARES IX and Terra. No UMBRA branch/PR was present when this claim was persisted.
+- UMBRA L0–L5 coverage planning, subject to explicit canon blocks.
+- Twilight-band authored region and regional/district/architectural/environment production.
+- Reflectors, caravans, refuge, service infrastructure and traversal/environment interfaces.
+- Systemic props, machines, domestic/cultural utility families and causal microdetail.
+- Damage/repair/abandonment and physical world-history states.
+- Deterministic Blender generators and systemic kit recombination.
+- NOCTIL arena/environment interfaces only until final entity contract exists.
+- Materials as portable production foundations while final UV/PBR/runtime budgets remain open.
+- Per-world QA, manifests, task coverage, receipts and handoff inside owned paths.
 
-## Fleet-harness reconciliation
+## Excluded scope
 
-The fleet ownership harness was promoted to `main` after this reservation and after the first UMBRA geometry checkpoint. Chronology is preserved rather than backdated.
+- Runtime Godot scenes/scripts or global gameplay logic without an integration claim.
+- Other worlds and other producers' paths.
+- Shared `STATE/PLAN/HANDOFF/PROGRESS` mutation.
+- Shared libraries without a separate coordinated claim.
+- Final planet radius/global physical representation without canon.
+- Detailed native ecology/flora/fauna without canon; do not fill with generic alien content.
+- Final NOCTIL anatomy/rig/attacks without design contract.
+- Final target-GPU/LOD/performance claims without qualified runtime/hardware evidence.
+- Claiming pixel/human art PASS without actual image review.
 
-Latest reconciliation evidence in this session:
-- `main@f78bfdc8bd7b2f6ab52b45d39babcc1589ab3918` was read after the harness promotion.
-- `ops/fleet/registry.json` imports `CLM-W04-WORLD-UMBRA-001` as `reserved`, owner `AGENT-UMBRA-04`, branch `art/world-umbra-001`, epoch `1`, with the exact owned paths above and primary project `7ab99682-8777-4143-8ae0-1fbb178ccafb`.
-- Owner acknowledgement was published to issue #7 as comment `5648349781`, including scopes, primary + clean-replay project IDs and current asset IDs. The producer does not mutate the `main` registry ACK on its own; the integrator must apply/read back that transition.
-- Linear projection `ROT-119` was created after the harness appeared. It explicitly records that Linear did not precede the original geometry and therefore is not used as retroactive proof.
-- Draft PR `#16` is the integration surface and remains draft until current-main reconciliation and open technical/art gates are handled.
+## Current production checkpoint
 
-Primary project: `7ab99682-8777-4143-8ae0-1fbb178ccafb` @ revision `1`.
-Auxiliary reproducibility project: `7f33ae14-540c-4af5-8131-1490465fe6cc` @ revision `1`; QA-only, not a competing world scene.
+Primary Blender: `7ab99682-8777-4143-8ae0-1fbb178ccafb` @ revision `15`.  
+Checkpoint: `X100_HABITATION_ANNEX_QA_FIXED_001`.
 
-## Current claim state
+Current objective structural receipt:
 
-`RESERVED / OWNER ACK PUBLISHED / WAVE 0 LOCALLY VALIDATED / KEEP`.
+- 4,871 objects;
+- 4,329 mesh objects;
+- 13 materials;
+- 0 residual non-unit scales;
+- 0 zero-dimension meshes;
+- X100 multiplicative completeness: 40.86% / `PRODUCTION_WORLD`.
 
-This is not `released` and not `done`. No stale heartbeat or blocked gate releases the scope automatically. Significant new production waves must repeat the live ownership preflight before remote mutation.
+Independent replay project `7f33ae14-540c-4af5-8131-1490465fe6cc` is verified through Wave 2. Full X100 independent replay remains pending.
+
+## X100 producer contract
+
+X100 means perceived/systemic depth, never random density.
+
+Every new family should prefer:
+
+- semantic purpose;
+- causal variants;
+- controlled state sets;
+- modular interfaces;
+- reusable mesh data;
+- placement rules;
+- gameplay/story tags;
+- explicit LOD/collision strategy;
+- physical maintenance/access logic;
+- evidence and receipt.
+
+Current systemic foundations include service ecosystem, three service yards, causal damage/abandonment states, architectural interface kit, L5 causal microdetail library, five site-history clusters, a 10-family habitation/culture library and a visible leeward habitation annex.
+
+## Current blockers that do NOT release ownership
+
+- physical planet/global scale canon;
+- detailed native ecology canon;
+- final NOCTIL contract;
+- final UV/PBR/texel-density and target-GPU budgets;
+- runtime import/collision/traversal/profile acceptance;
+- LOD/HLOD target contract;
+- direct pixel/human art review;
+- provider-independent `.blend`/GLB custody under MR-EXO-001;
+- full X100 independent replay and post-X100 manual Gauntlet.
+
+## Coordination / integration rule
+
+Before every major mutation:
+
+`RESYNC main → registry → PR → claim → Blender revision → global X100 Director`.
+
+If main advances, reconcile with a normal multi-parent merge and `force=false`. Preserve all global/shared paths from current main and overlay only UMBRA-owned paths. Refresh exact root `MANIFEST.json` as the final content change before continuity verification.
+
+Automatic Gauntlet triggers are currently cost-quarantined. Batch meaningful work, then run one bounded manual Gauntlet instead of spending CI on every producer commit.
