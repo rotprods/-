@@ -1,22 +1,25 @@
-name: ORIGIN Manifest Refresh
+name: ORIGIN Manifest Persist
 on:
   pull_request:
 permissions:
-  contents: read
+  contents: write
 jobs:
-  manifest-refresh-only:
+  manifest-persist-only:
     runs-on: ubuntu-24.04
     timeout-minutes: 3
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
-          fetch-depth: 2
-      - name: Reconstruct exact ORIGIN producer manifest
+          fetch-depth: 3
+      - name: Persist exact producer manifest on scratch branch
         run: |
+          git fetch origin integration/origin-x100-manifest-refresh-002
+          git switch -C integration/origin-x100-manifest-refresh-002 origin/integration/origin-x100-manifest-refresh-002
           git show "74956c344720439332c7c278aab5bddb3bcd4484:.github/workflows/gauntlet.yml" > .github/workflows/gauntlet.yml
           python3 tools/project_control.py refresh
           python3 tools/project_control.py check
-          echo '---BEGIN_ORIGIN_MANIFEST---'
-          cat MANIFEST.json
-          echo '---END_ORIGIN_MANIFEST---'
-          git diff --stat
+          git add MANIFEST.json
+          git config user.name "EXOVANT Manifest Bot"
+          git config user.email "261643698+rotprods@users.noreply.github.com"
+          git commit -m "test(origin): generated Wave 02 manifest [skip ci]"
+          git push origin HEAD:integration/origin-x100-manifest-refresh-002
