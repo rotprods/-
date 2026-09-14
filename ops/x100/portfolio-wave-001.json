@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "protocol": "EXOVANT-X100-V2",
+  "authority": "Derived lower-bound from open-PR evidence. Diagnostic only; Fleet remains ownership authority and world owners replace bootstrap evidence with versioned receipts.",
+  "world_count": 12,
+  "cell_contract": {"dimensions": 14, "cells_per_dimension": 6, "cells_per_world": 84},
+  "bootstrap_note": "Strict score is multiplicative and remains 0 until every dimension has non-zero evidence. known_evidence_geomean_pct and evidence_cell_coverage_pct are diagnostics, never completion.",
+  "summary": [
+    {"world_id":"ares","strict_score_pct":0.0,"known_evidence_geomean_pct":0.0,"evidence_cell_coverage_pct":0.0,"measured_cells":0,"unknown_cells":84,"receipt_count":0},
+    {"world_id":"origin","strict_score_pct":0.0,"known_evidence_geomean_pct":5.5974,"evidence_cell_coverage_pct":7.1429,"measured_cells":6,"unknown_cells":78,"receipt_count":1},
+    {"world_id":"umbra","strict_score_pct":0.0,"known_evidence_geomean_pct":6.3627,"evidence_cell_coverage_pct":7.1429,"measured_cells":6,"unknown_cells":78,"receipt_count":1},
+    {"world_id":"elysium","strict_score_pct":0.0,"known_evidence_geomean_pct":7.202,"evidence_cell_coverage_pct":8.3333,"measured_cells":7,"unknown_cells":77,"receipt_count":1},
+    {"world_id":"terra","strict_score_pct":0.0,"known_evidence_geomean_pct":8.3886,"evidence_cell_coverage_pct":8.3333,"measured_cells":7,"unknown_cells":77,"receipt_count":1},
+    {"world_id":"nacre","strict_score_pct":0.0,"known_evidence_geomean_pct":6.4869,"evidence_cell_coverage_pct":9.5238,"measured_cells":8,"unknown_cells":76,"receipt_count":1},
+    {"world_id":"aurora","strict_score_pct":0.0,"known_evidence_geomean_pct":7.2775,"evidence_cell_coverage_pct":10.7143,"measured_cells":9,"unknown_cells":75,"receipt_count":1},
+    {"world_id":"vanta","strict_score_pct":0.0,"known_evidence_geomean_pct":10.2453,"evidence_cell_coverage_pct":10.7143,"measured_cells":9,"unknown_cells":75,"receipt_count":1},
+    {"world_id":"leviathan","strict_score_pct":0.0,"known_evidence_geomean_pct":7.0776,"evidence_cell_coverage_pct":13.0952,"measured_cells":11,"unknown_cells":73,"receipt_count":1},
+    {"world_id":"sylva","strict_score_pct":0.0,"known_evidence_geomean_pct":7.7564,"evidence_cell_coverage_pct":13.0952,"measured_cells":11,"unknown_cells":73,"receipt_count":2},
+    {"world_id":"khepri","strict_score_pct":0.0,"known_evidence_geomean_pct":12.786,"evidence_cell_coverage_pct":14.2857,"measured_cells":12,"unknown_cells":72,"receipt_count":1},
+    {"world_id":"pelagos","strict_score_pct":0.0,"known_evidence_geomean_pct":8.4582,"evidence_cell_coverage_pct":15.4762,"measured_cells":13,"unknown_cells":71,"receipt_count":1}
+  ],
+  "portfolio_rank": [
+    {"rank":1,"id":"NACRE-AAA-LOOKDEV-TO-MESH","world_id":"nacre","dimension":"material_causality","portfolio_score":6.35950979,"gradient_pressure":0.082925,"summary":"Lock AAA Nacre visual targets, decompose hero families, use Higgsfield image-to-3D only as base candidate, then retopo/material/engine/visual-regression.","evidence_refs":["https://github.com/rotprods/-/pull/17"],"fleet_preflight_required":true},
+    {"rank":2,"id":"KHEPRI-MATERIALS-SURFACE-LIB","world_id":"khepri","dimension":"material_causality","portfolio_score":6.12630036,"gradient_pressure":0.130625,"summary":"Global Khepri surface/material library; owner PR already identifies it as highest-value next multiplier.","evidence_refs":["https://github.com/rotprods/-/pull/8"],"fleet_preflight_required":true},
+    {"rank":3,"id":"UMBRA-X100-SYSTEMIC-DENSITY","world_id":"umbra","dimension":"material_causality","portfolio_score":6.09680498,"gradient_pressure":0.111255,"summary":"Expand highest-value causal material/civilization family under active owner; avoid ecology until canon proves it.","evidence_refs":["https://github.com/rotprods/-/pull/16"],"fleet_preflight_required":true},
+    {"rank":4,"id":"LEVIATHAN-PBR-PROPAGATION","world_id":"leviathan","dimension":"material_causality","portfolio_score":6.05673428,"gradient_pressure":0.027848,"summary":"Propagate calibrated portable PBR families into world master and validate engine material transport.","evidence_refs":["https://github.com/rotprods/-/pull/10"],"fleet_preflight_required":true},
+    {"rank":5,"id":"AURORA-CAMPAMENTO-SYSTEMIC","world_id":"aurora","dimension":"meso_architecture","portfolio_score":5.7060338,"gradient_pressure":0.075038,"summary":"Campamento modular foundations + material roles + bounded temporal-state kit.","evidence_refs":["https://github.com/rotprods/-/pull/20"],"fleet_preflight_required":true},
+    {"rank":6,"id":"VANTA-LIGHT-TRANSPORT-ADAPTER","world_id":"vanta","dimension":"audiovisual_language","portfolio_score":5.43385727,"gradient_pressure":0.083857,"summary":"Controlled point-light unit adapter A/B before human art review and mass propagation.","evidence_refs":["https://github.com/rotprods/-/pull/4"],"fleet_preflight_required":true},
+    {"rank":7,"id":"SYLVA-ROOTKIT-PROVIDER-GATE","world_id":"sylva","dimension":"reusability","portfolio_score":4.91546644,"gradient_pressure":0.015466,"summary":"Close root-kit manifest/pivot/anchor parity so macro sockets can consume production modules without duplication.","evidence_refs":["https://github.com/rotprods/-/pull/3","https://github.com/rotprods/-/pull/6"],"fleet_preflight_required":true},
+    {"rank":8,"id":"TERRA-RELIQUARY-POLISH-INTEGRATION","world_id":"terra","dimension":"material_causality","portfolio_score":4.44841065,"gradient_pressure":0.023013,"summary":"UV2/final wear causality + LOD transitions + gameplay-camera integration for Reliquary candidate.","evidence_refs":["https://github.com/rotprods/-/pull/1"],"fleet_preflight_required":true},
+    {"rank":9,"id":"ORIGIN-ATRIO-RUNTIME","world_id":"origin","dimension":"gameplay","portfolio_score":3.40655648,"gradient_pressure":0.075632,"summary":"Engine import + CharacterBody traversal + local-gravity validation for Atrio structural kit.","evidence_refs":["https://github.com/rotprods/-/pull/18"],"fleet_preflight_required":true},
+    {"rank":10,"id":"ARES-RECOVER-MEASURE","world_id":"ares","dimension":"qa","portfolio_score":3.3224,"gradient_pressure":0.07,"summary":"Recover current owner evidence and emit first X100 receipt; no geometry until ownership/current checkpoint is proven.","evidence_refs":["art/ares-ix-world-agent-02"],"fleet_preflight_required":true},
+    {"rank":11,"id":"ELYSIUM-VERTICAL-SLICE-NATIVE","world_id":"elysium","dimension":"gameplay","portfolio_score":2.964292,"gradient_pressure":0.080365,"summary":"Runtime clearance, collision traversal and target-engine import for W1/EDEN vertical slice.","evidence_refs":["https://github.com/rotprods/-/pull/15"],"fleet_preflight_required":true},
+    {"rank":12,"id":"PELAGOS-ENGINE-GAMEPLAY","world_id":"pelagos","dimension":"gameplay","portfolio_score":2.02926084,"gradient_pressure":0.169261,"summary":"Import current Pelagos families/THALASSA/Nacar-2 into qualified engine and validate traversal/collision/water interfaces before more breadth.","evidence_refs":["https://github.com/rotprods/-/pull/5"],"fleet_preflight_required":true}
+  ]
+}
