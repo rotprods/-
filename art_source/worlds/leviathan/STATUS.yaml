@@ -1,4 +1,4 @@
-schema_version: 1
+schema_version: 2
 world_id: leviathan
 claim_id: CLM-W10-WORLD-LEVIATHAN-001
 agent_id: AGENT-LEVIATHAN-10
@@ -6,42 +6,84 @@ session_id: ART-LEVIATHAN-001-20260912T2123+0200
 branch: art/world-leviathan-001
 status: IN_PROGRESS
 claim_status: KEEP
-remote_blender_revision: 11
-remote_project_id: 2577a7b6-ebd7-4d31-a645-620e4b73a95d
-cold_rebuild_project_id: 37a931c7-f2e6-46bc-9be0-26077e5de1c1
-cold_rebuild_revision: 9
-material_lab_project_id: 6c67e70a-d29b-4a9d-8387-68ba071d8c3f
-material_lab_revision: 5
-material_lab_cold_project_id: 21dfcfc6-a181-4300-b6a9-0ee2e09695ee
-material_lab_cold_revision: 1
+last_checkpoint: BLENDER_R18_CREATURE_HOSTILE_WAVE_OPTIMIZED_AND_COLD_REPLAYED
+
+remote:
+  primary:
+    project_id: 2577a7b6-ebd7-4d31-a645-620e4b73a95d
+    revision: 18
+    mesh_objects: 395
+    settled_mesh_datablocks: 170
+    blend_bytes: 7118745
+    glb_bytes: 7587052
+  cold:
+    project_id: 37a931c7-f2e6-46bc-9be0-26077e5de1c1
+    revision: 16
+    mesh_objects: 395
+    settled_mesh_datablocks: 170
+    blend_bytes: 7118745
+    glb_bytes: 7593704
+  pbr_lab:
+    primary_project: 6c67e70a-d29b-4a9d-8387-68ba071d8c3f
+    primary_revision: 5
+    cold_project: 21dfcfc6-a181-4300-b6a9-0ee2e09695ee
+    cold_revision: 1
 
 fleet:
   latest_main_observed: 26ae20f5d1b47d1efa0d54b20124ed93cbc0b43e
   registry_generation_observed: 8
   registry_state: reserved
   epoch: 1
+  integrator_transition_to_active: pending
+  automatic_gauntlet_triggers: QUARANTINED_ON_MAIN_26ae20f5
   producer_ack_comment: https://github.com/rotprods/-/issues/7#issuecomment-5648464282
   producer_ack_delta_jardines: https://github.com/rotprods/-/issues/7#issuecomment-5648515712
   producer_ack_delta_soma: https://github.com/rotprods/-/issues/7#issuecomment-5648567162
-  ci_manifest_integrator_request: https://github.com/rotprods/-/issues/7#issuecomment-5648779529
+  producer_ack_delta_traversal: https://github.com/rotprods/-/issues/7#issuecomment-5652845017
   producer_ack_delta_pbr_lab: https://github.com/rotprods/-/issues/7#issuecomment-5652950795
-  integrator_transition_to_active: pending
-  automatic_gauntlet_triggers: QUARANTINED_ON_MAIN_26ae20f5
-  note: do not self-promote registry and do not spend CI reruns until merge-tree manifest is reconciled
+  ci_manifest_integrator_request: https://github.com/rotprods/-/issues/7#issuecomment-5648779529
+  note: >-
+    Do not self-promote registry. Do not spend a manual Gauntlet run until exact merge-tree
+    MANIFEST reconciliation is performed; automatic triggers are quarantined to control CI cost.
 
 metrics:
-  first_10_task_completion: {done: 3, total: 10, percent_done: 30, review: 7, methodology: "only DONE counts"}
-  asset_category_started_coverage: {started_or_in_progress: 9, total_world_categories: 20, percent: 45}
-  modeling:
-    wave1_region_blockouts_present: 3
-    wave1_region_blockouts_total: 3
-    representative_detail_microsets: 3
-    final_asset_completion_percent: 0
-    representative_asset_ids: [LEV-ARCH-001, LEV-INF-002, LEV-INF-003, LEV-INF-005, LEV-ECO-001, LEV-ECO-004, LEV-RGN-003, LEV-ENV-001, LEV-ENV-002, LEV-ENV-003]
+  first_10_task_completion:
+    done: 3
+    total: 10
+    percent_done: 30
+    review: 7
+    methodology: only DONE counts
+  region_foundation:
+    canonical_regions_present: 3
+    canonical_regions_total: 3
+    representative_detail_regions: 3
+    final_region_completion_percent: 0
+  ecology:
+    canonical_species_representative_coverage:
+      represented: 4
+      total: 4
+      percent: 100
+      assets: [LEV-ECO-001, LEV-ECO-002, LEV-ECO-003, LEV-ECO-004]
+    reproducible_functional_anatomy:
+      LEV-ECO-002: {name: Ballena de linfa, primary_revision: 17, cold_revision: 15, surface_sha256: 7b5a6eb9a295cb022c52939e1c711555b35f658e9e7c0898c485e16626301656, triangles: 13336}
+      LEV-ECO-003: {name: Polinizador de herida, primary_revision: 13, cold_revision: 11, surface_sha256: e4e66ce01c258fb9c72c985fe0c065d1f0c879bc18434abc8142d573828a88f6, triangles: 5640}
+    existing_representative:
+      LEV-ECO-001: Parásito jardinero
+      LEV-ECO-004: Alga de pulso family
+    final_rig_animation_gameplay_pass: false
+  adversaries:
+    canonical_representative_coverage:
+      represented: 3
+      total: 3
+      percent: 100
+    reproducible_interfaces:
+      LEV-ENM-001: {name: Fagocito guardián, primary_revision: 14, cold_revision: 12, surface_sha256: 5203d84cdf22f89685960e3cb1ffed10aaa7092a59123f8c171d61a3b1e2a8df, triangles: 10392}
+      LEV-ENM-002: {name: Extractor de pulso, primary_revision: 15, cold_revision: 13, surface_sha256: 10772696d111219191ef56324724af184904c0b8a3094ccbd5768c9971eb0dc2, triangles: 5424}
+      LEV-ENM-003: {name: Colonia parasitaria, primary_revision: 16, cold_revision: 14, surface_sha256: de8aa76989c533041d6e45cc15362cdb2bd1aaa09b7eb1024b0eea33e5298c75, triangles: 9784}
+    legacy_capsule_proxies_replaced: 3
+    final_rig_animation_ai_gameplay_pass: false
   traversal:
     stage: STABLE_TRAVERSAL_RIBBON_V1
-    primary_revision: 11
-    cold_revision: 9
     source: art_source/worlds/leviathan/tools/build_stable_traversal_ribbon_v1.py
     receipt: art_source/worlds/leviathan/evidence/traversal_ribbon_r11.json
     stable_ribbon_length_m: 541.256
@@ -51,31 +93,15 @@ metrics:
     minimum_visual_tube_side_margin_m: 1.0513
     ingress_contacts_soma_floor: true
     visual_objects_in_collision: 0
-    cold_delta_surface_match: true
     runtime_capsule_nav_pass: false
-  uv_pbr_lod:
-    world_master_mesh_objects_with_uv: 260
-    world_master_mesh_objects_without_uv: 0
-    world_master_zero_area_uv_triangles: 0
-    world_master_uv_loops_outside_0_1: 0
+  materials:
     world_master_image_textures_present: 0
     world_master_portable_material_roles_present: 18
-    world_master_final_calibrated_texture_completion_percent: 0
+    final_world_master_pbr_completion_percent: 0
     production_texel_density_policy_approved: false
     production_texture_resolution_policy_approved: false
-    named_lod_objects: 0
-    final_lod_chain_approved: false
-    contract: art_source/worlds/leviathan/UV_PBR_LOD_CONTRACT.md
-    audit_receipt: art_source/worlds/leviathan/evidence/uv_pbr_lod_audit_r8.json
-    lod_feasibility_receipt: art_source/worlds/leviathan/evidence/lod_feasibility_r10.json
     portable_pbr_calibration_lab:
       status: TECHNICAL_PASS_ISOLATED_NOT_FINAL_ART
-      primary_project: 6c67e70a-d29b-4a9d-8387-68ba071d8c3f
-      primary_revision: 5
-      cold_project: 21dfcfc6-a181-4300-b6a9-0ee2e09695ee
-      cold_revision: 1
-      canonical_builder: art_source/worlds/leviathan/tools/build_pbr_calibration_lab_v5_canonical.py
-      canonical_fingerprint_sha256: fb881b5d76c3c2fe8f35441b7f27cf4a0ad71db74f69a915eb1d48d966db9230
       calibration_materials: 6
       packed_png_images: 18
       unique_packed_png_sha256: 18
@@ -85,43 +111,33 @@ metrics:
       glb_samplers: 1
       calibration_resolution: [256, 256]
       calibration_resolution_status: QA_ONLY_NOT_SHIPPING_BUDGET
+      canonical_fingerprint_sha256: fb881b5d76c3c2fe8f35441b7f27cf4a0ad71db74f69a915eb1d48d966db9230
       world_master_propagation_approved: false
       direct_art_review_pass: false
       receipt: art_source/worlds/leviathan/evidence/pbr_calibration_lab_r5.json
+  lod:
+    feasibility_status: PASS_FINAL_THRESHOLDS_BLOCKED
+    candidate_policy: art_source/worlds/leviathan/LOD_CANDIDATE_POLICY.md
+    feasibility_receipt: art_source/worlds/leviathan/evidence/lod_feasibility_r10.json
+    production_lod_chain_approved: false
+    screen_space_validation_pass: false
+    target_hardware_pass: false
   optimization:
-    mesh_objects: 260
-    mesh_datablocks_r8: 260
-    mesh_datablocks_r10: 98
-    datablocks_removed_total: 162
-    datablock_reduction_percent: 62.3077
-    blend_bytes_r8: 7657188
-    blend_bytes_r10: 4842680
-    blend_reduction_percent: 36.7564
-    glb_bytes_r8: 8492516
-    glb_bytes_r10: 5617124
-    glb_reduction_percent: 33.858
-    primary_cold_same_datablock_count: true
+    base_r8_mesh_objects: 260
+    base_r8_mesh_datablocks: 260
+    base_r10_mesh_datablocks: 98
+    post_creature_r17_mesh_objects: 395
+    post_creature_r17_mesh_datablocks_before_optimizer: 237
+    r18_optimizer_reported_immediate_datablocks: 174
+    r18_settled_datablocks: 170
+    cold_r16_settled_datablocks: 170
+    post_creature_datablocks_relinked_by_optimizer: 63
+    post_creature_candidate_groups: 61
+    post_creature_changed_groups: 24
+    all_audited_asset_surfaces_unchanged: true
+    primary_cold_settled_structure_match: true
     runtime_performance_claimed: false
-    receipt: art_source/worlds/leviathan/evidence/instancing_optimization_r10_v2.json
-  reproducibility:
-    base_primary_r10_cold_r8_visual_surface_match: true
-    base_canonical_visual_surface_sha256: 1b9d885f7fd612a30c4fd289bbc79da6b06472b710867e8f63bafa9c87827a5d
-    traversal_delta_match: true
-    traversal_ribbon_sha256: 65326c41be09e967561907938cf994e389cd1c28ad33390815b5fdd85dde253a
-    traversal_ingress_sha256: 3f8b05130e849f7fec36b059d6f11c3fab16cd43b74c8a80dbec446d8fd0e432
-    pbr_lab_primary_cold_match: true
-    pbr_lab_canonical_sha256: fb881b5d76c3c2fe8f35441b7f27cf4a0ad71db74f69a915eb1d48d966db9230
-  integration:
-    structural_art_export_passes:
-      - editable Blender source exists
-      - portable GLB exists
-      - stable collision is decoupled from deforming visual tissue
-      - continuous stable traversal ribbon reaches SOMA floor geometrically
-      - isolated PBR lab proves durable packed image textures and embedded GLB transport contract
-    open:
-      - production-engine import/instantiate
-      - runtime capsule/nav/collision traversal smoke test
-      - world-master PBR propagation and engine material validation
+    receipt: art_source/worlds/leviathan/evidence/post_creature_instancing_r18.json
   qa:
     full_pass_gates: 4
     total_gates: 13
@@ -129,39 +145,36 @@ metrics:
     full_pass: [A_CANON foundation, D_GEOMETRY representative foundation, G_SCALE foundation, K_EXPORT representative foundation]
     additional_pipeline_passes:
       - canonical evaluated surface reproducibility primary/cold
-      - deterministic instancing convergence
+      - stable traversal continuous geometry QA and cold replay
       - SOMA actual radius gate 28.3m < 29m
       - UV structural audit
-      - engine-neutral LOD feasibility study
-      - stable traversal continuous geometry QA and cold replay
-      - portable PBR lab durable editable-source contract
-      - portable PBR lab primary/cold canonical replay
-      - parsed GLB 18/18 embedded PNG images with no external URI
-      - quantization-safe MR and tangent-normal sanity
+      - portable PBR lab durable editable-source and GLB-embedding contract
+      - engine-neutral LOD feasibility study and evidence-bound candidate policy
+      - Polinizador primary/cold exact surface replay
+      - Ballena de linfa primary/cold exact surface replay
+      - Fagocito guardián primary/cold exact surface replay
+      - Extractor de pulso primary/cold exact surface replay
+      - Colonia parasitaria primary/cold exact surface replay
+      - post-creature instancing optimization preserves all five audited surfaces
     partial_or_open: [B_ART, C_REALISM, E_UV production-density, F_MATERIALS world-propagation, H_PERFORMANCE, I_LOD production-chain, J_COLLISION runtime, L_ENGINE, M_VISUAL_REGRESSION]
 
 priority_state:
   P0_open: [W10/TECH/007, W10/QA/010]
   P1_open: [W10/REGION/004, W10/REGION/005, W10/REGION/006, W10/MAT/008, W10/ECO/009]
 
-completed:
-  - authority/fleet bootstrap and atomic claim
-  - deterministic master foundation
-  - Puerto representative microset + human-scale defect fix
-  - Jardines representative channel/algae/gardener microset + truth refinement
-  - SOMA encounter v2 with actual evaluated radius 28.3m inside canonical 29m
-  - exact 58m SOMA chamber and stable-vs-visual collision contract
-  - 18 portable world-master material roles and UV/PBR/LOD readiness contract
-  - canonical visual-surface replay primary/cold
-  - order-invariant instancing v2 reducing 260 mesh datablocks to 98
-  - engine-neutral LOD feasibility envelope measured without committing final LODs
-  - continuous 541.256m stable traversal ribbon + SOMA ingress, independently replayed
-  - traversal width/tube clearance/slope/contact measured and truth-labeled as proposals
-  - isolated canonical PBR lab for LEV-MAT-001/002 with 6 textured swatches
-  - PBR lab recovered two persistence failures and 8-bit roughness defect before acceptance
-  - PBR lab primary r5/cold r1 exact canonical fingerprint match
-  - PBR GLB audit proving 18 embedded PNGs / 18 textures / 1 sampler / 0 external URI
-  - producer ACK + regional/traversal/PBR deltas persisted in issue #7
+completed_or_advanced:
+  - deterministic world foundation and 3/3 region representative stages
+  - exact 58m SOMA environment interface with evaluated radius 28.3m < 29m
+  - Puerto graft/suture/valve representative microset
+  - Jardines channel/algae/gardener representative microset
+  - continuous stable traversal ribbon + SOMA ingress
+  - canonical visual-surface cold replay and structural instancing optimizer
+  - portable PBR calibration lab with deterministic packed textures and GLB embedding
+  - evidence-bound engine-neutral LOD candidate policy
+  - all four canonical ecology species now have representative coverage
+  - Ballena de linfa and Polinizador have independently replayed functional anatomy
+  - all three canonical adversaries now replace legacy capsule proxies with independently replayed functional interfaces
+  - post-creature optimizer reduces duplicated source meshes without changing audited surfaces
 
 blocked:
   - {id: LEV-BLK-001, decision: physical planet radius/diameter, impacts: [L0, L1, orbital representation]}
@@ -173,7 +186,6 @@ blocked:
     decision: runtime binary transport + engine availability for this producer session
     impacts: [engine import, native collision/traversal, world-material runtime validation]
     evidence: art_source/worlds/leviathan/evidence/runtime_import_blocker_r5.json
-    confirmation: "blocked by shell, secure-download path and independent browser attempt"
 
 resolved_blockers:
   - {id: LEV-BLK-006, former_problem: shard-safe global continuity architecture, resolution: fleet harness integrated on main}
@@ -181,21 +193,23 @@ resolved_blockers:
   - {id: LEV-BLK-009, former_problem: durable generated texture persistence in remote Blender, resolution: deterministic direct RGBA8 PNG encoder -> FILE image -> pack -> external path removal; cold replay fingerprint matched}
 
 risks:
-  - direct pixel-level art inspection remains unavailable in this producer runtime despite render artifacts
+  - direct pixel-level art approval is still unavailable; representative anatomy is not final art
+  - new ecology/adversary sockets are interfaces only; no armatures, animation, hit/hurt volumes, AI or gameplay bindings exist
+  - Fagocito representative envelope intentionally differs from the historical non-canon capsule and needs future art/gameplay review
   - final SOMA anatomy/rig remains blocked
-  - world master still intentionally has no image textures; PBR lab is isolated until review
-  - no production texel-density or shipping texture-resolution policy exists
-  - no production LOD chain or target-hardware performance budget exists
-  - 8m traversal width and 7.6923% max slope remain proposals pending runtime movement/nav validation
+  - world master intentionally has no image textures; PBR lab remains isolated
+  - no production texel-density, shipping texture-resolution, LOD/HLOD or hardware-performance approval
+  - 8m traversal width and measured slope remain proposals pending runtime movement/nav validation
   - physical planet scale unresolved
   - fleet registry generation 8 still shows LEVIATHAN reserved/ack:null
 
 next:
-  - define engine-neutral per-family LOD policy from measured feasibility envelope without committing final thresholds
-  - expand representative asset coverage only inside existing LEVIATHAN IDs after live preflight
-  - propagate no PBR textures into world master until direct art + engine validation surface exists
-  - execute runtime import/traversal/material smoke tests only when exact asset bytes and qualified engine coexist
-  - integrator to reconcile LEVIATHAN ACK/asset IDs/auxiliary project IDs and root MANIFEST on exact merge tree
-  - resolve/ADR L0 planet scale before orbital representation
+  - integrator to reconcile producer ACK plus new ecology/adversary IDs and auxiliary projects in fleet registry
+  - exact merge-tree MANIFEST refresh before any meaningful manual Gauntlet spend
+  - direct art review of representative ecology/adversary silhouettes and material lab
+  - define character/NPC production only when canon/art direction is sufficient; do not invent Oru Tess/Anja Piel/Faro-3 anatomy
+  - no world-master PBR propagation until direct art + engine validation exists
+  - runtime import/traversal/material smoke tests when exact export bytes and qualified engine coexist
+  - resolve/ADR L0 planetary scale before orbital representation
 
-last_heartbeat: 2026-09-13T13:22:00+02:00
+last_heartbeat: 2026-09-14T12:10:00+02:00
