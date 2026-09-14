@@ -81,19 +81,61 @@ The completed large X100 sequence added at least **564 direct systemic configura
 
 This excludes the prior architecture and first cultural-prop grammars.
 
+## Runtime authority resolved
+The runtime boundary was inspected against current `main` after rev44 rather than guessed.
+
+Facts:
+- current executable prototype engine: **Godot 4.7.2**;
+- `scenes/main.tscn` loads `scripts/world.gd`;
+- existing Blender→runtime exchange pattern is GLB (`assets/reliquary_gate.glb` is the current proven example);
+- `world.gd` recursively removes imported cameras/lights/presentation floors and currently owns Terra interaction dispatch;
+- `Progress` is persistent campaign authority;
+- `SaveStore` only accepts payloads that `Progress.validate()` accepts;
+- `Progress.VERSION == 1` has a closed Terra schema, so Pelagos persistent state requires an explicit versioned migration rather than silently appending fields;
+- Unreal 5.8 remains a production candidate pending EXO-012 benchmark, not the current runtime authority.
+
+## Runtime activation handoff — READY
+Art-side runtime handoff has been persisted without mutating runtime-owned files or global project state:
+
+- `runtime/pelagos_runtime_manifest.rev44.json`
+  - external normalized semantic authority;
+  - 30 cultural families;
+  - 9 machinery families + 9 separate socket groups;
+  - 9 sessile guild families;
+  - 8 reversible damage families;
+  - 56 semantic/stateful family groups excluding sockets.
+- `runtime/PELAGOS_GODOT_ACTIVATION_CONTRACT.md`
+  - import/node-resolution contract;
+  - state-swap semantics;
+  - collision/query mapping;
+  - interaction non-assumption rule;
+  - explicit Progress v1→v2 migration design;
+  - streaming/LOD boundary;
+  - runtime acceptance suite and DoD.
+- `runtime/validate_pelagos_runtime_manifest.py`
+  - stdlib-only cold-check validator for IDs/states/counts/socket integrity/schema.
+- `runtime/PELAGOS_RUNTIME_HANDOFF_REV44.md`
+  - cold-resume receipt and honest blockers.
+
+Critical integration rule: GLB is geometry transport; the external manifest is semantic authority. Do not depend on Blender custom properties surviving Godot import, do not infer semantic type from prefixes alone, and do not auto-create interaction/collision from descriptive purpose fields.
+
 ## Next frontier — activation / integration
 Highest-value work now crosses the Blender/runtime boundary:
-1. import/export manifest + stable-ID registry for Pelagos stateful families;
-2. engine binding for visible-state swaps and save-state persistence;
-3. query/collision/navigation semantics for props, machinery and damage overlays;
-4. interaction contract for daily-life props and machinery without inventing unsupported mechanics;
-5. streaming + LOD/HLOD thresholds and deterministic cell ownership;
-6. target-GPU performance qualification;
-7. semantic GATE-ART evidence against visual references and anti-AI-slop quality criteria.
+1. runtime-owned claim/branch resynced from current `main`;
+2. source-bound rev44 GLB admission into Godot;
+3. manifest validation + exact node resolution;
+4. generic world asset-state registry + Pelagos adapter rather than expanding `world.gd` monolithically;
+5. explicit `Progress` v2 migration preserving valid v1 saves;
+6. visible-state persistence across cold restart;
+7. query/collision/navigation semantics for props, machinery and damage overlays;
+8. gameplay-approved interaction subset only;
+9. streaming + LOD/HLOD thresholds and deterministic cell ownership;
+10. target-GPU qualification;
+11. semantic GATE-ART evidence against visual references and anti-AI-slop criteria.
 
 These are not claimed complete from Blender evidence alone.
 
 ## Current status
-`X100_BREADTH_FLOOR_CLOSED_REV44`.
+`X100_BREADTH_FLOOR_CLOSED_REV44__RUNTIME_HANDOFF_READY`.
 
-World Master structural authoring is substantially broader and stateful. The next production cell must identify the repository's actual runtime/engine authority and integrate these stable IDs there, or close semantic GATE-ART. Do not start another bulk modeling wave until one of those gates produces a concrete missing asset requirement.
+World Master structural authoring is substantially broader and stateful. The art owner has now delivered a source-bound runtime activation contract. Do not start another bulk modeling wave until runtime integration or semantic GATE-ART identifies a concrete missing asset requirement.
