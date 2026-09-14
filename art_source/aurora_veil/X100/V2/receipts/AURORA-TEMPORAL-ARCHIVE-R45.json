@@ -1,0 +1,38 @@
+{
+  "receipt_id": "AURORA-TEMPORAL-ARCHIVE-R45",
+  "world_id": "aurora",
+  "claim_id": "CLM-AURORA-WORLD-001",
+  "branch": "art/world-aurora-veil-001",
+  "workunit_id": "AUR-X100-TEMPORAL-ARCHIVE-001",
+  "remote_revision": 45,
+  "evidence": [
+    {
+      "dimension": "gameplay",
+      "cell": "interaction",
+      "maturity": "locally_validated",
+      "evidence_refs": [
+        "art_source/aurora_veil/X100/QA/temporal_archive_r45.json",
+        "art_source/aurora_veil/X100/blender/aurora_x100_temporal_archive_r45.py",
+        "Blender:AUR_TEMPORAL_ARCHIVE_CONTRACT_R43.json@r45"
+      ]
+    },
+    {
+      "dimension": "variation",
+      "cell": "gameplay",
+      "maturity": "locally_validated",
+      "evidence_refs": [
+        "art_source/aurora_veil/X100/QA/temporal_archive_r45.json#profiles",
+        "Blender:AUR_TEMPORAL_ARCHIVE_CONTRACT_R43.json@r45"
+      ]
+    },
+    {
+      "dimension": "audiovisual_language",
+      "cell": "local_fx",
+      "maturity": "planned",
+      "evidence_refs": [
+        "art_source/aurora_veil/X100/QA/temporal_archive_r45.json#hooks"
+      ]
+    }
+  ],
+  "truth_boundary": "The physical archive interaction/profile interfaces are locally validated in Blender. Audio/VFX hooks are metadata-only and therefore only planned. Canonical mission mapping, consequences, runtime/save integration and human art approval remain unresolved."
+}
