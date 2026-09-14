@@ -1,0 +1,33 @@
+claim_id: CLM-KHEPRI-MATERIALS-001
+owner: AGENT-KHEPRI-MATERIALS-001
+world_id: khepri
+protocol: EXOVANT-X100
+north_star: causal_material_depth_per_authored_source
+
+tasks:
+  - {id: KHP/MAT/001, priority: P0, status: DONE, objective: "Recover material canon and forbidden drift.", dod: CANON_BOUNDARY_PASS}
+  - {id: KHP/MAT/002, priority: P0, status: DONE, objective: "Compile family/state/finish/scale grammar and reject contradictory combinations.", dod: "139_VALID_COMBINATIONS"}
+  - {id: KHP/MAT/003, priority: P0, status: IN_PROGRESS, objective: "Build standalone deterministic 24-cell Blender Material Lab.", dod: "24 materials + deterministic packed calibration maps + test geometry + motivated lighting"}
+  - {id: KHP/MAT/004, priority: P0, status: TODO, objective: "Run texture/channel/UV/material-node technical QA.", dod: "0 missing maps, 0 external dependencies, stable metadata, channel ranges valid"}
+  - {id: KHP/MAT/005, priority: P1, status: TODO, objective: "Render and review material legibility under grazing/curved response.", dod: "family/state readability without random-grunge failure"}
+  - {id: KHP/MAT/006, priority: P0, status: TODO, objective: "Prove independent cold rebuild determinism.", dod: "canonical material/image/scene fingerprint master == cold"}
+  - {id: KHP/MAT/007, priority: P0, status: TODO, objective: "Export self-contained GLB and parse texture/material contracts.", dod: "embedded texture roles + no unresolved URIs"}
+  - {id: KHP/MAT/008, priority: P0, status: TODO, objective: "Import exact GLB in Godot and read back materials/textures/scalars.", dod: GODOT_NATIVE_READBACK_PASS}
+  - {id: KHP/MAT/009, priority: P0, status: TODO, objective: "Persist exact BLEND/GLB with SHA-bound delivery receipt.", dod: FLEET_DELIVERY_PASS}
+  - {id: KHP/MAT/010, priority: P1, status: TODO, objective: "Promote branch from provisional authoring to registry-reconciled producer claim.", dod: MAIN_REGISTRY_ACTIVE_ACK}
+  - {id: KHP/MAT/011, priority: P1, status: TODO, objective: "Apply accepted material families to downstream KHEPRI consumers only through explicit handoff.", dod: DOWNSTREAM_INTERFACE_READY}
+
+open_gates:
+  - MAIN_REGISTRY_ACTIVE_ACK
+  - MATERIAL_LAB_TECHNICAL_QA
+  - COLD_REBUILD
+  - GLTF_PORTABILITY
+  - GODOT_NATIVE_READBACK
+  - HUMAN_ART_GATE_BEFORE_FINAL
+
+stop_conditions:
+  - ownership_conflict
+  - canon_required_for_irreversible_material_physics
+  - significant_unauthorized_cost
+  - destructive_existing_work
+  - demonstrated_technical_block
