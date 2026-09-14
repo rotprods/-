@@ -11,133 +11,234 @@
 - PR: `#16` — DRAFT / KEEP
 - Linear: `ROT-119` — In Progress
 - Primary Blender: `7ab99682-8777-4143-8ae0-1fbb178ccafb`
-- Replay Blender: `7f33ae14-540c-4af5-8131-1490465fe6cc`
+- Independent replay Blender: `7f33ae14-540c-4af5-8131-1490465fe6cc`
 
 ## Resume truth
 
-Current state is **Wave 1 production foundation, reproducible, not final AAAA**.
+Current state is **X100 Production World foundation at 40.86% multiplicative completeness, not final AAAA**.
 
-Do not restart UMBRA from scratch. Do not take over other worlds. Do not edit shared `STATE/PLAN/HANDOFF/PROGRESS` from this producer branch. Do not invent planet radius or final NOCTIL anatomy.
+Do not restart UMBRA. Do not treat object count as completeness. Do not invent planet scale, detailed ecology species, religion/lore text or final NOCTIL morphology to inflate X100.
 
-## Canon that is safe to rely on
+Current primary scene is revision **15**, checkpoint `X100_HABITATION_ANNEX_QA_FIXED_001`:
 
-- World 04 UMBRA, Sere system, Flotilla de los Sin Sol, NOCTIL.
-- Sere: fictional M4 V red dwarf.
-- synchronous rotation / habitable twilight band;
-- reflector-station swarm;
-- reference gravity `0.81 g`;
-- reference-area temperature `−87 °C`;
-- light/shadow are navigation permission + thermal state;
-- reflector activation can reveal routes while exposing caravans;
-- art seed: mobile twilight, caravans, reflectors, dark ice, tensioned fabric, constant lateral wind;
-- combat anticipation must remain readable in darkness.
+- `4,871` objects;
+- `4,329` mesh objects;
+- `13` materials;
+- `0` residual non-unit scales;
+- `0` zero-dimension meshes;
+- editable `.blend` `15,793,297 B`;
+- GLB `4,566,312 B`.
 
-Unknown/blocked: physical radius/diameter, atmospheric contract, global hydrology/continents, final NOCTIL morphology/rig/attacks.
+Independent clean replay is verified through **Wave 2**, not through the full X100 batch. X100 replay is still pending and must not be claimed as PASS.
 
-## Coordination state
+## Current repository/fleet state
 
-Original reservation predates the fleet harness and that chronology is preserved.
+Latest resync incorporated `main@26ae20f5d1b47d1efa0d54b20124ed93cbc0b43e` through normal two-parent commit `8ee7d335754400f2b4847dfc966ced7dfdbf7815`; no force update was used.
 
-Owner ACK is already published at issue #7 comment `5648349781`. Current registry readback still has UMBRA as `reserved / ack=null`; that transition is integrator-owned. Do not rewrite `main:ops/fleet/registry.json` from this branch.
+That main commit placed the EXOVANT Gauntlet under **manual cost quarantine**: `.github/workflows/gauntlet.yml` now uses `workflow_dispatch` only. Therefore batch meaningful producer work, refresh exact `MANIFEST.json` last, then execute one bounded manual Gauntlet instead of spending Actions on every commit.
 
-The branch was first reconciled with `main@ca224a78c72512770cb599e82977623c4b8aa76d` through merge `58e54c25965a21e6a39b2bd3e309281be01b1166`, then with `main@758a9b6326a7d061f1e304abe9b1593b6b2d1a66` through merge `bfff105fb5e46d31e064a22f33053e43b132df19`. After the migration-readiness / asset-custody contract landed, UMBRA was reconciled again with `main@b74bd7072a7b2c68c4453402fbffe9d20bfb4de0` through two-parent merge `4678d0ddf6d74cce663ceb39ddbd205a30aa91da`. No force update was used. Global/runtime paths always come from current main and only UMBRA-owned semantic paths are overlaid.
+Fleet registry truth at last readback:
 
-The current fleet contract additionally requires durable provider-independent custody for final artistic delivery. Higgsfield project URLs and signed artifact links are production evidence, **not an independent backup**. UMBRA therefore cannot pass final 3D delivery until its `.blend`, GLB and dependencies are recovered into Git when transport permits or a persistent EXOVANT Drive bundle with stable ID, exact SHA256/bytes and a versioned receipt.
+- claim `CLM-W04-WORLD-UMBRA-001`;
+- owner `AGENT-UMBRA-04`;
+- epoch `1`;
+- status `active`;
+- ACK evidence issue #7 comment `5648349781`.
 
-## Wave 0 checkpoint
+Always re-read main/registry/PR before a new destructive mutation because the multi-agent fleet can advance independently.
 
-Primary revision 1:
+## Canon safe to rely on
 
-- 96 objects / 85 meshes / 9 materials;
-- 12,204 evaluated triangles;
-- 1200 × 700 m authored L2 testbed, explicitly PROPOSAL not planet size;
-- 4 reflector proxies / 5 caravan proxies / refuge / NOCTIL environmental destination / scale refs;
-- `.blend` 1,584,746 B;
-- GLB 819,168 B;
-- clean replay revision 1 matched semantic counts/dimensions and GLB size.
+- UMBRA / World 04 / Sere / Flotilla de los Sin Sol / NOCTIL.
+- Sere is a fictional M4 V red dwarf.
+- synchronous rotation; habitation concentrated in the twilight band.
+- small reflector-station swarm.
+- reference gravity `0.81 g`.
+- reference-area temperature `−87 °C`.
+- light/shadow are navigation permissions as well as thermal states.
+- reflector activation can reveal routes while exposing caravans.
+- visual seed: mobile twilight, caravans, reflectors, dark ice, tensioned fabric, constant lateral wind.
+- darkness must preserve combat anticipation.
 
-CI continuity P0 was closed on branch head `498f5de4ef991be7d768b613f2cd09a7df4be7c9`: Gauntlet `34720234976` passed `82/82` Python tests, `project_control.py check`, pinned Godot `4.7.2`, and native gates `import/state/world/input/smoke`. Evidence artifact `10306275373` exists.
+Quest chain:
 
-## Wave 0 defects discovered by objective Gauntlet
+- `Q_UMBRA_M01` — La frontera del día.
+- `Q_UMBRA_M02` — Sombras que respiran.
+- `Q_UMBRA_M03` — Geometría del eclipse.
+- `Q_UMBRA_M04` — El refugio de NOCTIL.
 
-Do not regress these:
+Still blocked by canon/spec:
 
-- ten caravan tracks floated about `2.43–5.80 m`;
-- several foundations were embedded/floating up to about `3.62 m`;
-- delivery framing excluded reflector 03, caravan 00 and NOCTIL ring.
+- physical planet radius/diameter/global geography/atmosphere contract;
+- detailed native ecology/flora/fauna;
+- final NOCTIL morphology/function/rig/attacks.
 
-These were fixed in Wave 1.
+The authored `1200 × 700 m` L2 region remains a reversible proposal, never planet size.
 
-## Wave 1 checkpoint
+## Verified historical foundations
 
-Primary project revision `2`, sceneSequence `0`.
+### Wave 1
 
-Scene receipt:
+- 407 objects / 395 meshes / 9 materials / 35,028 evaluated tris.
+- terrain-aware reflector/caravan/refuge contact corrections.
+- reflector mechanism and caravan production foundations.
+- independent Wave-1 replay PASS.
 
-- objects `407`;
-- meshes `395`;
-- materials `9`;
-- evaluated triangles `35,028`;
-- Wave-1 named objects `310`;
-- bad residual object scales `0`;
-- zero-dimension meshes `0`;
-- `.blend` `4,134,586 B`, etag `5581ef232d24e37ea589dffe4514eb78`;
-- GLB `2,474,196 B`, etag `0d351e8a81781acb64cf69db0134e39f`.
+### Wave 2
 
-Implemented:
+Checkpoint `WAVE2_REFUGE_QUESTCELLS_OPT_001`:
 
-- terrain-aware contact correction for reflectors, caravans and refuge;
-- reflector foundations, anchors, guying, thermal/power cabinet, cable trunk, service platform/rail, upper access ladder, gimbal/yoke, mirror backing ribs, twin actuators and sensor mast;
-- caravan torsion rails, bogies, suspension links, wind cowl, service bays, cargo pods, heat fins, canopy structure and protected beacon;
-- refuge six-foot support contact (full refuge kit remains open);
-- delivery camera reframed to contain all required macro anchors;
-- QA player-height camera added, explicitly non-runtime.
+- 552 objects / 536 mesh objects / 10 materials / 44,616 tris.
+- refuge production foundation.
+- authored M01–M04 environment cells.
+- exact mesh-data sharing optimization.
+- contact and camera/framing gates PASS.
+- independent Wave-2 replay PASS on structural/semantic contract.
 
-Contact gate: all checked gaps satisfy `|gap| <= 0.25 m`; reflector masts sit at `+0.060 m`, refuge `+0.080 m`, caravan tracks range `-0.045…+0.245 m`.
+Do not regress Wave-0 defects previously found: caravan tracks once floated ~2.43–5.80 m and several foundations had errors up to ~3.62 m.
 
-## Wave 1 reproducibility
+## X100 control plane
 
-Independent replay project revision `2` matches primary exactly on:
+`/EXOVANT-X100` is active permanently for UMBRA.
 
-- 407 objects;
-- 395 meshes;
-- 9 materials;
-- 35,028 evaluated tris;
-- 310 Wave-1 objects;
-- all 15 checked terrain-contact gaps;
-- delivery camera transform/lens;
-- GLB size `2,474,196 B`;
-- zero bad scales / zero degenerate meshes.
+Persisted control surfaces:
 
-Replay `.blend` also equals 4,134,586 B; etags differ and are not a semantic gate.
+- `WORLD_DENSITY_X100.md`
+- `WORLD_DENSITY_X100_PROGRESS.json`
+- `TASKS.md`
+- `ASSET_MANIFEST.json`
 
-Persisted upgrader: `art_source/worlds/umbra/upgrade_wave1.py`. Detailed receipt: `art_source/worlds/umbra/WAVE1_RECEIPT.md`.
+Current conservative multiplicative completeness: **40.86% — PRODUCTION WORLD**.
+
+The low ecology (`0.02`) and macro-world (`0.18`) factors are intentional blockers; they are not to be compensated by adding random props.
+
+## X100 production delivered
+
+### 1. Service / cultural utility ecosystem
+
+10 families:
+
+`CABLE_REEL`, `HEATEX`, `LAMP`, `POWERBOX`, `SERVICE_STAND`, `STORAGE`, `TEXTILE`, `TOOLCASE`, `WAYFIND`, `WINCH`.
+
+Each has S/M/L and causal service states. Total library roots: 90.
+
+Three systemic service yards exist:
+
+- caravan repair;
+- reflector maintenance;
+- refuge logistics.
+
+### 2. Damage / abandonment
+
+60 family-specific `DAMAGED` / `ABANDONED` roots exist. Damage is causal, not random destruction or blanket grunge.
+
+### 3. Architectural interface library
+
+10 families:
+
+`ACCESS_CANOPY`, `ACCESS_DOOR`, `BRIDGE_DECK`, `CABLE_GLAND`, `CONDUIT_JUNCTION`, `GANTRY_FRAME`, `HANDRAIL`, `LADDER`, `PLATFORM`, `SERVICE_HATCH`.
+
+Each has S/M/L and `STANDARD / WIND_SHIELDED / FIELD_MODIFIED` fabrication variants under a 0.2 m modular interface contract.
+
+### 4. L5 microdetail library
+
+10 causal families exist in Blender:
+
+`ABRASION_GUARD`, `CABLE_CLAMP`, `EXPANSION_JOINT`, `FASTENER_PLATE`, `GASKET_FLANGE`, `HINGE`, `ISOLATOR_FOOT`, `LATCH`, `REPAIR_PATCH`, `WELD_SEAM`.
+
+Placement mode is explicitly rule-driven, never random scatter.
+
+**Important:** exact generator/receipt persistence for this library remains open. Scene existence is authoritative evidence, but do not call it reproducible until `W04/X100/037` is closed.
+
+### 5. Site-history integration
+
+Checkpoint `X100_SITE_HISTORY_INTEGRATION_001` integrated 31 linked prefab roots into five real locations:
+
+- refuge service;
+- reflector 02;
+- reflector 03;
+- M03 archive;
+- caravan repair.
+
+Physical history is encoded as:
+
+`ERA_0 ORIGINAL → ERA_1 MODIFICATION → ERA_2 CURRENT DAMAGE/REPAIR`.
+
+All 31 roots are terrain-seated at `+0.04 m`.
+
+Persisted source/receipt:
+
+- `integrate_x100_site_history.py`
+- `X100_SITE_HISTORY_RECEIPT.md`
+
+### 6. Habitation / culture systemic library
+
+10 daily-survival families:
+
+`SLEEP_POD`, `RATION_LOCKER`, `MESS_TRAY`, `HEATED_BENCH`, `DRYING_RACK`, `PERSONAL_LOCKER`, `MED_CABINET`, `PRIVACY_SCREEN`, `CREW_ID_PLATE`, `THERMAL_VESSEL_RACK`.
+
+Each has:
+
+- S/M/L;
+- `SERVICED / LIVED_IN / FIELD_REPAIRED`;
+- stable ID;
+- semantic purpose;
+- placement rules;
+- provisional LOD/collision contract;
+- at least 108 credible configuration combinations.
+
+Total library roots: 90. All 90 pass terrain contact at `+0.03 m`.
+
+Cultural identity is deliberately utilitarian/survival-derived: low profile, glove ergonomics, strapped/sealed storage, replaceable repairs, functional heat transfer and non-text identity marks. No unlicensed/invented lore text or religion was introduced.
+
+### 7. Habitation QA correction
+
+The first habitation site composition exposed a real defect in the underlying refuge: `ARCH_REFUGE_HUB_BASE` is still a closed blockout solid (8 vertices / 6 faces / 44×30×12 m). Therefore placing furniture inside its bbox would hide it inside solid geometry.
+
+The invalid interpretation was rejected. At revision 15, the 12 domestic roots were moved to a **visible leeward habitation annex** outside the solid base, and 20 structural roots were reused from the X100 architectural kit:
+
+- 6 field-modified gantry frames;
+- 6 wind-shielded canopies;
+- 6 wind-shielded handrails;
+- 2 entry decks.
+
+All 32 integrated roots pass contact at `+0.03 m` and the annex reserves a central entry corridor.
+
+Persisted source/receipt:
+
+- `generate_x100_habitation_culture.py`
+- `fix_x100_habitation_annex.py`
+- `X100_HABITATION_RECEIPT.md`
 
 ## Visual epistemic state
 
-Wave-0 delivery/scale/aerial renders were successfully published, but this session's client download path did not expose image bytes to the agent for direct pixel inspection. Therefore **direct visual-art PASS is still REVIEW / not claimed**. Objective projection/contact checks are PASS; human/direct rendered-image review remains required before final art acceptance.
+A 960×540 Eevee review artifact exists for r15 (`21c57b605bb5715b889c8394f4214cc9`). The temporary review camera was too tight to contain both extreme canopy bays. That is a review-camera framing defect, not evidence of a geometry/contact failure.
 
-## Current blockers / open gates
+The current session cannot independently inspect the image pixels through the available binary transport, so:
 
-1. `BLOCK-W04-001`: planet physical radius/orbital representation.
-2. `BLOCK-W04-002`: production engine / target GPU and UMBRA runtime art budgets.
-3. `BLOCK-W04-003`: final NOCTIL design/rig/attack contract.
-4. `BLOCK-W04-004`: human/direct visual review.
-5. `BLOCK-W04-005`: durable provider-independent binary custody (`.blend` + GLB + dependencies + stable receipt) under MR-EXO-001.
-6. Final UVs/PBR/texel density/material budget.
-7. Refuge production modular kit.
-8. Quest-linked terrain/environment cells M01–M04.
-9. Low-light/color-vision/combat-readability acceptance.
-10. Shared-mesh/instancing optimization measurement.
-11. Collision, LOD/HLOD, UMBRA-specific runtime import/traversal/profile receipt.
-12. Integrator registry ACK readback.
+`DIRECT_PIXEL_ART_REVIEW = REVIEW_NOT_CLAIMED`
 
-## Next three actions
+Do not turn this into PASS without actual image/human inspection.
 
-1. Close the branch continuity loop against current main, then build `W04/ARCH/014` refuge modular production kit and `W04/TERRAIN/011` quest-linked terrain cell archetypes; keep physical planet-scale values abstract.
-2. Recover a durable binary checkpoint for Wave 1 under MR-EXO-001, then run `W04/OPT/021` and `W04/VIS/022`: measured instancing optimization plus post-Wave-1 image/readability defect loop.
-3. Coordinate `W04/EXPORT/020` with integration owner for bounded GLB import, collision and traversal/profile receipt before locking LOD/GPU budgets.
+## Current blockers / open acceptance gates
 
-## Critical operating rule on resume
+1. Physical planet/global representation contract.
+2. Native ecology/flora/fauna canon.
+3. Final NOCTIL entity contract.
+4. Final UV0/PBR/texel-density/material budgets.
+5. UMBRA-specific runtime import/collision/traversal/profile.
+6. LOD/HLOD + target GPU budget.
+7. Direct pixel/human art review and low-light accessibility acceptance.
+8. Exact X100 independent replay.
+9. Exact microdetail generator/receipt persistence.
+10. MR-EXO-001 provider-independent `.blend` + GLB + dependency custody.
+11. Post-X100 exact root `MANIFEST.json` and one manual cost-bounded Gauntlet.
 
-Always RESYNC issue #7, `ops/fleet/registry.json`, branches/PRs, current `main`, Linear `ROT-119`, current fleet custody contract and both Blender project revisions before any new mutation. If `main` advanced, reconcile normally; never force. After any repo-owned source/doc change, regenerate exact root `MANIFEST.json` as the final content change and let the Gauntlet prove continuity rather than rerunning blindly.
+## Next critical path
+
+1. `W04/X100/040`: build traversal/settlement systemic grammar linking hardpack routes, service yards, refuge annex and quest cells using bridges, sheltered checkpoints, loading interfaces and thermal refuge markers. Keep runtime behavior external.
+2. `W04/X100/037`: recover/persist exact microdetail generator/receipt from authoritative scene metadata.
+3. Batch those changes, RESYNC main, regenerate exact `MANIFEST.json` as final byte-level content change, then run one manual Gauntlet under CI cost quarantine.
+4. Coordinate runtime import/collision/profile; only after that lock LOD/material budgets.
+
+Claim status: **ACTIVE / KEEP**.
