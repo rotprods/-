@@ -26,55 +26,64 @@ Other world agents should select different world IDs and use `art_source/worlds/
 - Scene checkpoint: rev. 32.
 - 9 semantic families × 3 variants × 4 causal states; 108 direct configurations / ≥432 with cardinal yaw.
 - STRUCTURAL_PASS; source + receipt persisted.
-- Remaining gates: semantic GATE-ART, engine import/runtime interaction/LOD thresholds/target-GPU qualification.
 
 ### `PEL/MKT/ARCH-X100-002`
 - Mercado CommandShell service/listening/memory-custody interior systemic cell.
 - Final structurally verified scene checkpoint: rev. 34.
-- 280 valid wall layouts × 3 floor patterns × 2 ceiling patterns × 4 temporal states = up to 6,720 credible cell configurations.
-- Visible cell envelope ~7.95×5.82×3.37 m; inside CommandShell; bridge clearance >9.2 m beyond bridge bevel; east collision threshold gap 2.65 m; 0.90 m central corridor blockers 0; three eras physical; UV/material/scale debt 0.
-- Hidden-object QA rule learned: stale `matrix_world` can read origin while `hide_viewport=True`; compose parent/local transforms or force depsgraph evaluation before classifying transform drift.
-- Source + receipt persisted. Semantic GATE-ART remains pending.
+- Up to 6,720 credible layout/state configurations; geometry, corridor and technical-debt gates passed.
+- Semantic GATE-ART remains pending.
 
 ### `PEL/MKT/MACH-X100-003`
 - Mercado settlement machinery / utility-spine systemic foundation.
-- Build rev. 35; final structurally verified rev. **36**.
-- 9 functional families × 3 capacity variants × 4 causal service states = 108 direct / ≥432 cardinal-yaw configurations.
-- Physical roots 9; grounded 9; bay overflow 0; physical overlaps 0; UV/material/scale debt 0.
-- UtilityRiser clearance defect corrected by moving HOIST + MANIF systems 0.25 m west. Final minimum UtilityRiser clearance **1.316 m**; interior-cell minimum clearance **3.625 m**.
-- Source + receipt persisted.
+- Final structurally verified rev. **36**.
+- 9 functional families × 3 variants × 4 service states = 108 direct / ≥432 cardinal-yaw configurations.
+- Final minimum UtilityRiser clearance 1.316 m; physical overlap/UV/material/scale debt 0.
 
 ### `PEL/ECO/SESSILE-X100-004`
 - Coro functional producer/filter/decomposer sessile ecology foundation.
-- Final structurally verified scene checkpoint: **rev. 37**.
-- 9 reversible functional guild families × 3 morphology variants × 4 ecological states = 108 direct configurations before substrate/slope/current/light/disturbance grammar.
-- 36 physical state roots / 399 new objects; exact bathymetry BVH/raycast contact; local +Z aligned to measured substrate normal.
-- State counts exact: 9 colonizing / 9 mature / 9 disturbed-recovering / 9 senescent.
-- Minimum root separation 10.0 m; approximate minimum clearance to existing local coral/memory-node geometry 19.504 m; explicit traversal overlap 0; UV/material/scale debt 0; visible technical geometry 0.
-- These are FUNCTIONAL GUILD PROPOSALS only. Detailed trophic chain, reproduction and population density remain UNKNOWN.
-- Source + receipt persisted; Workbench QA artifacts generated; semantic/cinematic GATE-ART remains pending because pixels could not be inspected from the signed artifact host.
+- Final structurally verified rev. **37**.
+- 9 functional guild families × 3 variants × 4 ecological states = 108 direct configurations.
+- 36 physical state roots; exact bathymetry contact; local-normal alignment; 10 m minimum root separation; route/technical debt 0.
+- Functional-guild proposals only; detailed trophic canon remains UNKNOWN.
 
 ### `PEL/MKT/DAMAGE-X100-005`
 - Reversible Mercado architecture damage/recovery state-swap foundation.
-- Final structurally verified scene checkpoint: **rev. 38**.
-- 8 semantic damage families × 4 co-located states × 3 severity variants = 32 authored state roots / 96 direct variant-state combinations.
-- Exactly one current state visible per family; alternate states and 8 LOD1 proxies fully hidden.
-- Surface attachment and measured normals: PASS; UV/material/scale debt 0; visible technical geometry 0.
-- Bridge repair remains 2.728 m from route centerline against 1.5 m reserved half-width — PASS.
-- Base architecture is not destructively modified. Runtime fracture/navmesh/debris/persistence remain engine blockers.
-- Source + receipt persisted.
+- Final structurally verified rev. **38**.
+- 8 damage families × 4 co-located states × 3 severity variants = 96 direct combinations.
+- Exactly one state visible per family; base architecture not destructively edited; route/UV/material/scale/technical gates passed.
+
+### `PEL/CIV/PROP-X100-006`
+- Mercado cultural/everyday prop expansion II.
+- Final structurally verified scene checkpoint: **rev. 41**.
+- 12 systemic families × 3 variants × 4 causal states = **144 direct configurations**.
+- 48 authored state roots; exactly one visible/current state per family; 12 hidden LOD1 roots.
+- Families: wet work station, tethered tool caddy, dry lockbox, mess vessel set, medical wetkit, trade measure, refuge lamp, textile repair frame, waste sorter, storm stowage, portable acoustic navigation marker, modular goods bin.
+- Monolithic 12-family build timed out cleanly at rev38; bounded WEST/EAST mutations produced rev39/rev40, followed by transform-only grounding correction rev41. This staged replay is canonical.
+- Final QA: grounding violations 0; platform overflow 0; CommandShell hits 0; physical family overlaps 0; visible technical leakage 0; UV/material/scale debt 0. Minimum previously measured route clearance ~6.815 m.
+- Source contract: `scripts/build_market_culture_props_x100_v2.py`; receipt: `receipts/PEL_CIV_PROP_X100_006.md`.
+- Runtime pickup/use, inventory, physics, dynamic state swaps, audio, production HLOD and GPU qualification remain engine gates.
 
 ## Active claim — `/EXOVANT-X100`
-- Claim ID: `PEL/CIV/PROP-X100-006`
-- Scope: Mercado cultural/everyday prop expansion II, adding 12 systemic families beyond the first custody/listening/funeral/maintenance kit.
-- Why now: post-rev.38 planning-floor ranking puts props at **9 / 30 families = 0.30 floor ratio**, the lowest Blender-addressable multiplier gap. Machinery and sessile ecology are each 9/10; traversal is 5/5; damage is 8/5.
-- Target post-wave breadth: at least **21 prop families** total.
-- Planned families: wet work surface/seating; tethered hand tools; dry personal lockbox; food/water service vessels; wet first-aid/medical kit; trade measurement/exchange objects; portable refuge lighting; textile drying/repair; waste sorting/bio-safe disposal; weather-screen/storm-stowage module; portable navigation/acoustic marker; market display/modular goods bin.
-- Culture DNA constraints: repair-first marine construction; wet/gloved ergonomics; tether points; drainage; corrosion resistance; low heavy mass; detachable/serviceable modules; no invented faction iconography/social hierarchy.
-- State grammar target: 12 families × 4 causal states (`pristine`, `used`, `damaged_repaired`, `abandoned`) = 48 authored state roots; 3 semantic variants per family = 144 direct variant-state combinations before placement/orientation grammar.
-- Placement rule: integrate across measured Mercado platform/deck bays rather than a single random scatter field; exactly one current state visible per placed family while alternate roots remain authored and hidden.
-- DoD: stable IDs; metre/player-scale bounds; functional construction logic; four causal states; three variants; UV0/materials/clean transforms; no floating geometry; no route obstruction; LOD/query collision policy; deterministic generator; structural QA; receipt; post-wave rerank.
-- Engine gate: runtime pickup/use, inventory, animation, audio, dynamic state swaps, physics interaction, HLOD thresholds and target-GPU qualification remain `BLOCKED/PENDING` until gameplay/engine authority.
+- Claim ID: `PEL/CIV/PROP-X100-007`
+- Scope: Mercado cultural/everyday prop expansion III — final floor-closing wave.
+- Why now: PROP-X100-001 (9 families) + PROP-X100-006 (12 families) yields **21 normalized cultural prop families**. The X100 planning floor is 30, leaving exactly **9 families** to close this Blender-addressable breadth gap.
+- Target post-wave breadth: **30 normalized cultural prop families** total.
+- Planned families, deliberately lore-light and function-first:
+  1. rest sling / berth roll (`REST`)
+  2. rinse / wash basin (`RINSE`)
+  3. line-splicing jig (`SPLICE`)
+  4. sealant / repair-consumables caddy (`SEAL`)
+  5. salvage sorting tray (`SALVAGE`)
+  6. maintenance kneeler / low step (`KNEEL`)
+  7. fragile wet-goods transport cradle (`CRADLE`)
+  8. waterproof temporary work/route slate (`SLATE`)
+  9. personal tether/harness rack (`HARNESS`)
+- These are not faction ranks, currencies or irreversible lore. They represent generic daily-life, repair, safety and work functions compatible with existing Mercado culture DNA.
+- Culture DNA constraints remain: repair-first marine construction; wet/gloved ergonomics; tethering; drainage; corrosion resistance; low/heavy mass; replaceable parts; storm stowage; causal wear; no unsupported iconography/social hierarchy.
+- Grammar target: 9 families × 3 variants (`compact|standard|communal`) × 4 states (`pristine|used|damaged_repaired|abandoned`) = **108 direct configurations** before placement/orientation grammar.
+- Production rule: use a second staggered east/west side-belt row with measured route and existing-prop clearance; split mutation into bounded batches if needed to stay under the 300 s 3D-worker deadline.
+- DoD: stable IDs; one visible/current state per family; UV0/materials/clean transforms; deck grounding; no CommandShell/platform/route obstruction; hidden LOD1 roots; deterministic source + receipt; final normalized coverage proof ≥30 families.
+- Engine gate: runtime pickup/use, inventory, animation, audio, physics, state persistence, HLOD thresholds and target-GPU qualification remain `BLOCKED/PENDING`.
 
 ## Current status
-`X100_PRODUCTION_ACTIVE`: rev. 38 closes the first machinery, sessile-ecology and damage/recovery gaps. The active production cell is cultural/everyday props II, the current lowest planning-floor ratio.
+`X100_PRODUCTION_ACTIVE`: PROP-X100-006 is structurally closed at rev41. The active production cell is PROP-X100-007, designed to close the 30-family cultural planning floor exactly.
