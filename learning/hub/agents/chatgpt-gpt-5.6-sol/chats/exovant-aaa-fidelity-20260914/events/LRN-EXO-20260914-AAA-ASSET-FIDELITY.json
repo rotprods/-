@@ -1,4 +1,38 @@
 {
+  "timestamp": "2026-09-14T17:20:00+02:00",
+  "learning_id": "LRN-EXO-20260914-AAA-ASSET-FIDELITY",
+  "event_class": "correction",
+  "status": "candidate",
+  "scope": {
+    "level": "project",
+    "project": "EXOVANT 2950",
+    "repository": "rotprods/-",
+    "domains": ["3d", "worlds", "characters", "creatures", "vehicles", "architecture", "cinematics", "runtime assets", "render economics"]
+  },
+  "authority_before": "L1-retrieved",
+  "authority_after": "L2-persisted",
+  "evidence": [
+    {
+      "kind": "pull-request",
+      "ref": "https://github.com/rotprods/-/pull/33",
+      "claim": "Nacre identifies that technically strong macro/reproducibility evidence remains far from AAA identity/material fidelity and defines a multiview -> image-to-3D bakeoff -> structural review -> Blender cleanup path."
+    },
+    {
+      "kind": "pull-request",
+      "ref": "https://github.com/rotprods/-/pull/20",
+      "claim": "Aurora classifies its current result as semantic production blockout/checkpoint, with final UV/PBR/topology/rig/LOD still open."
+    },
+    {
+      "kind": "pull-request",
+      "ref": "https://github.com/rotprods/-/pull/15",
+      "claim": "Elysium reports low-information blockout source geometry and keeps direct human art, final UV/PBR and GATE-ASSET/GATE-ART open."
+    },
+    {
+      "kind": "source-file",
+      "ref": "docs/AAA_ASSET_FIDELITY_GATE_V1.md",
+      "claim": "The correction is converted into an explicit fail-closed source-fidelity gate, asset-state lattice, Asset Factory router and render-economics contract."
+    }
+  ],
   "analysis": {
     "confidence": 0.97,
     "family_or_pattern": "source-fidelity-before-lookdev",
@@ -11,66 +45,31 @@
     ],
     "symptom": "Agents spend repeated waves adding materials, noise, puddles, greeble, lighting or object count while hero-visible assets still read as blockout/proxy geometry."
   },
-  "authority_before": "L1-observed-correction",
-  "authority_after": "L2-persisted-after-merge",
-  "event_class": "correction",
-  "evidence": [
-    {
-      "kind": "project-pr",
-      "ref": "https://github.com/rotprods/-/pull/33",
-      "claim": "Nacre explicitly identifies that technically strong macro/reproducibility evidence remains far from AAA identity/material fidelity and defines a multiview -> image-to-3D bakeoff -> structural review -> Blender cleanup path."
-    },
-    {
-      "kind": "project-pr",
-      "ref": "https://github.com/rotprods/-/pull/20",
-      "claim": "Aurora explicitly classifies its current result as semantic production blockout/checkpoint, with final UV/PBR/topology/rig/LOD still open."
-    },
-    {
-      "kind": "project-pr",
-      "ref": "https://github.com/rotprods/-/pull/15",
-      "claim": "Elysium explicitly reports low-information blockout source geometry and keeps direct human art, final UV/PBR and GATE-ASSET/GATE-ART open."
-    },
-    {
-      "kind": "protocol",
-      "ref": "docs/AAA_ASSET_FIDELITY_GATE_V1.md",
-      "claim": "The correction is converted into an explicit fail-closed source-fidelity gate, asset-state lattice, Asset Factory router and render-economics contract."
-    }
-  ],
   "knowledge_relation": {
-    "relation": "EXTENDS_AND_CORRECTS",
-    "targets": [
-      "LRN-EXO-20260912-BLENDER",
-      "EXOVANT-X100-V2"
-    ]
+    "relation": "EXTENDS",
+    "targets": ["LRN-EXO-20260912-BLENDER"]
   },
-  "learning_id": "LRN-EXO-20260914-AAA-ASSET-FIDELITY",
   "promotion": {
     "reason": "Prevent repeated proxy-polish loops and route identity-critical assets through source creation/reconstruction before final lookdev.",
     "target_ref": "docs/AAA_ASSET_FIDELITY_GATE_V1.md",
-    "target_type": "enforced-project-protocol"
+    "target_type": "guardrail"
   },
+  "verification": {
+    "retrieval_test": {"status": "pending", "notes": "Run project LearningHub retrieval after generated projections are refreshed in the exact checkout."},
+    "runtime_test": {"status": "pass", "notes": "Targeted asset-gate/render-economics/governance tests executed in the exact branch checkout; 26 tests passed before the first project-check failure exposed this event schema defect."},
+    "adversarial_review": {"status": "pass", "notes": "Protocol preserves valid blockout/gameplay/collision work and does not require hero-density geometry for all runtime objects."},
+    "anti_recurrence_control": "docs/AAA_ASSET_FIDELITY_GATE_V1.md + tools/aaa_asset_gate.py + project_control receipt validation"
+  },
+  "unknowns": [
+    "Per-provider reconstruction quality varies by asset class and must be bakeoff-tested.",
+    "Final engine and target hardware remain project-level open decisions.",
+    "Current provider prices/capabilities are live data and must not be frozen as permanent constants."
+  ],
   "provenance": {
     "agent_id": "chatgpt-gpt-5.6-sol",
     "chat_id": "exovant-aaa-fidelity-20260914",
     "chat_id_source": "session-alias",
     "run_id": "EXO-AAA-FIDELITY-GAUNTLET-001"
   },
-  "revalidation_condition": "Revalidate provider-specific routes/costs when catalogs change; revalidate runtime derivative budgets when engine/target hardware changes. Core blockout-vs-hero distinction remains unless contradicted by direct production evidence.",
-  "scope": {
-    "level": "project",
-    "project": "EXOVANT 2950",
-    "repository": "rotprods/-",
-    "domains": ["3d", "worlds", "characters", "creatures", "vehicles", "architecture", "cinematics", "runtime assets", "render economics"]
-  },
-  "status": "persist_candidate_until_merge",
-  "unknowns": [
-    "Per-provider reconstruction quality varies by asset class and must be bakeoff-tested.",
-    "Final engine and target hardware remain project-level open decisions.",
-    "Current provider prices/capabilities are live data and must not be frozen as permanent constants."
-  ],
-  "verification": {
-    "anti_recurrence_control": "docs/AAA_ASSET_FIDELITY_GATE_V1.md + tools/aaa_asset_gate.py",
-    "adversarial_review": {"status": "performed", "notes": "Protocol preserves valid blockout/gameplay/collision work and does not require hero-density geometry for all runtime objects."},
-    "runtime_test": {"status": "pending-project-checkout", "notes": "Machine gate has dedicated unit tests in tests/test_aaa_asset_gate.py; project-wide Gauntlet remains manual-cost-quarantined."}
-  }
+  "revalidation_condition": "Revalidate provider-specific routes/costs when catalogs change; revalidate runtime derivative budgets when engine/target hardware changes. Core blockout-vs-hero distinction remains unless contradicted by direct production evidence."
 }
