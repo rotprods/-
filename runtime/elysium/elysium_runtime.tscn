@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://runtime/elysium/elysium_runtime_adapter.gd" id="1_runtime"]
+
+[node name="ElysiumRuntime" type="Node3D"]
+script = ExtResource("1_runtime")
+
+[node name="AssetRoot" type="Node3D" parent="."]
+
+[node name="RuntimeInterfaces" type="Node" parent="."]
+metadata/_note = "State/streaming integration boundary. Macro cell placement remains register-only until origin rebasing is qualified."
