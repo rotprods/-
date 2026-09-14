@@ -1,0 +1,114 @@
+{
+  "schema_version": 1,
+  "protocol": "EXOVANT-X100-v1",
+  "world_id": "aurora",
+  "region_id": "AUR_R01_CAMP_SECOND_DAY",
+  "workunit_id": "AUR-X100-CAMP-HISTORY-001",
+  "owner": "AGENT-02-AURORA",
+  "remote_project_id": "d6488148-8547-4ffe-b63d-e5fbec3a339c",
+  "remote_revision": 32,
+  "scene_status": "X100_CAMP_HISTORY_R32",
+  "quality_claim": "REVIEW_TECHNICAL_SYSTEMIC; PHYSICAL HISTORY PROOF; NOT FINAL ART",
+  "coverage": {
+    "source_families": 8,
+    "proof_objects": 43,
+    "three_era_hosts": 6,
+    "family_usage": {
+      "REPAIR_PLATE": 3,
+      "CLAMP": 4,
+      "REPLACEMENT_PANEL": 3,
+      "DRAIN_SCUPPER": 3,
+      "CABLE_SEGMENT": 22,
+      "GASKET_STRIP": 2,
+      "INDEX_TAB": 2,
+      "ROOT_GUARD": 4
+    },
+    "causal_categories": [
+      "deferred_maintenance",
+      "impact_or_local_panel_failure",
+      "joint_slip_or_frame_crack",
+      "moisture_accumulation",
+      "recalibration_or_component_swap",
+      "seal_failure",
+      "service_reroute",
+      "vegetation_encroachment",
+      "weather_or_impact_panel_replacement"
+    ]
+  },
+  "three_era_contract": {
+    "ERA_0": "existing X100 host geometry; original construction reference remains stable",
+    "ERA_1": "later repair/occupation additions with distinct manufacturing purpose",
+    "ERA_2": "current degradation/adaptation caused by moisture, vegetation, service reroute or deferred maintenance",
+    "hosts": [0,3,4,6,9,11],
+    "pass": true
+  },
+  "support_and_contact": {
+    "support_pass": true,
+    "root_guard_terrain_error_m": 0.0,
+    "active_scupper_floor_edge_error_m": 0.08,
+    "loose_scupper_terrain_error_m": 0.06,
+    "detached_index_terrain_error_m": 0.02,
+    "scale_1_1_1_pass": true,
+    "cable_chain_pass": true,
+    "cable_chain_max_nearest_neighbor_m": 1.25
+  },
+  "lod_collision": {
+    "policy": "Each blockout source is already a 12-triangle envelope. Additional geometric LOD is explicitly deferred until production-detail geometry exists; envelope must remain unchanged.",
+    "collision": "SIMPLE_BOX_OR_NONE_BY_GAMEPLAY; engine instantiation BLOCKED_EXO_012"
+  },
+  "portable_artifacts_revision_32": {
+    "blend_size_bytes": 13123079,
+    "blend_etag": "a96e10f4e24a0a9c584ee36d2d54dbba",
+    "glb_size_bytes": 7045960,
+    "glb_etag": "e7cece169cc7a51162cdb00878445667"
+  },
+  "visual_qa": {
+    "global_render_attempt": {
+      "operation": "aurora-camp-history-r32-workbench",
+      "status": "ENV_COST_FAILURE_TIMEOUT_300S",
+      "interpretation": "scene-size/render cost failure; no geometry/art PASS or FAIL inferred"
+    },
+    "isolated_structural": {
+      "artifact": "aurora_x100_r32_camp_history_structural_isolated.png",
+      "artifact_id": "f1b1d6cb22adfef2f1de2514d9ba0f8a",
+      "resolution": [320,180],
+      "mean": 0.3574,
+      "stddev": 0.1226,
+      "p01": 0.1294,
+      "p50": 0.4233,
+      "p99": 0.4350,
+      "gate": "PASS_STRUCTURAL"
+    },
+    "eevee_closeup": {
+      "artifact": "aurora_x100_r32_camp_history_eevee_closeup.png",
+      "artifact_id": "48a13fc8d8f6778723b5d7acb19f987b",
+      "resolution": [320,180],
+      "mean": 0.1763,
+      "stddev": 0.0554,
+      "p01": 0.0410,
+      "p50": 0.1988,
+      "p99": 0.2088,
+      "black_clip": 0.0,
+      "white_clip": 0.0,
+      "gate": "PASS_TECHNICAL"
+    },
+    "human_gate_art": "PENDING"
+  },
+  "gates": {
+    "CANON_BOUNDARY": "PASS_PROPOSAL_ONLY",
+    "THREE_ERA_READABILITY_CONTRACT": "PASS_6_OF_6_HOSTS",
+    "FAMILY_REUSE": "PASS_8_FAMILIES",
+    "CAUSALITY": "PASS_9_CAUSE_TYPES",
+    "SUPPORT_CONTACT": "PASS",
+    "TRANSFORMS": "PASS",
+    "CABLE_CONTINUITY": "PASS",
+    "GLB_EXPORT": "PASS_REV32",
+    "STRUCTURAL_RENDER": "PASS_ISOLATED",
+    "PHOTOMETRIC_RENDER": "PASS_TECHNICAL",
+    "FINAL_UV_BAKES_TEXTURES": "OPEN",
+    "ENGINE_IMPORT": "BLOCKED_EXO_012",
+    "TARGET_HARDWARE_PERFORMANCE": "BLOCKED_TARGET_HARDWARE",
+    "HUMAN_GATE_ART": "PENDING"
+  },
+  "conclusion": "Campamento now carries simultaneous original-construction, later-repair and current-adaptation geometry on six systemic hosts. Eligible for REVIEW_TECHNICAL_SYSTEMIC, not DONE/AAAA."
+}
