@@ -1,5 +1,5 @@
 {
-  "schema_version": 2,
+  "schema_version": 3,
   "protocol_id": "EXOVANT-X100-V2",
   "dimensions": {
     "macro_world": 0.08,
@@ -27,30 +27,12 @@
     "qa"
   ],
   "thresholds": {
-    "blockout": [
-      0,
-      15
-    ],
-    "playable_foundation": [
-      15,
-      35
-    ],
-    "production_world": [
-      35,
-      65
-    ],
-    "dense_aaa_world": [
-      65,
-      85
-    ],
-    "aaaa_candidate": [
-      85,
-      95
-    ],
-    "release_candidate": [
-      95,
-      100
-    ]
+    "blockout": [0, 15],
+    "playable_foundation": [15, 35],
+    "production_world": [35, 65],
+    "dense_aaa_world": [65, 85],
+    "aaaa_candidate": [85, 95],
+    "release_candidate": [95, 100]
   },
   "gradient": {
     "epsilon": 0.025,
@@ -73,14 +55,7 @@
     "slop_risk": 2.0,
     "technical_cost": 0.5
   },
-  "scale_levels": [
-    "L0",
-    "L1",
-    "L2",
-    "L3",
-    "L4",
-    "L5"
-  ],
+  "scale_levels": ["L0", "L1", "L2", "L3", "L4", "L5"],
   "hero_support_systemic_target": {
     "hero": 0.05,
     "support": 0.2,
@@ -93,31 +68,87 @@
     "production_grade_min": 100
   },
   "fidelity": {
-    "hero_tiers": [
-      "S",
-      "A"
+    "hero_tiers": ["S", "A"],
+    "fidelity_states": [
+      "BLOCKOUT",
+      "PROXY",
+      "SUPPORT_CANDIDATE",
+      "HERO_CANDIDATE",
+      "HERO_QUALIFIED",
+      "RUNTIME_QUALIFIED",
+      "CINEMATIC_QUALIFIED"
     ],
     "image_grounded_required_unless_waived": true,
     "pipeline": [
       "LOOK_LOCK",
       "REFERENCE_PACK",
       "IMAGE_TARGET_APPROVAL",
-      "IMAGE_TO_3D_BASE",
+      "SOURCE_ASSET_BAKEOFF",
+      "SOURCE_MASTER",
+      "HERO_FIDELITY_GATE",
       "GEOMETRY_CAUSALITY",
       "CLEANUP_RETOPO",
       "UV_MATERIAL",
+      "RUNTIME_DERIVATION",
       "LOD_COLLISION",
       "ENGINE_IMPORT",
       "VISUAL_REGRESSION",
+      "HUMAN_GATE_ART",
       "RECEIPT"
     ],
-    "image_to_3d_role": "base_candidate_only",
-    "preferred_reconstruction_surfaces": [
-      "Higgsfield 3D Jutsu",
-      "approved photogrammetry/reconstruction",
-      "manual/procedural reconstruction when better"
+    "source_routes": [
+      "MANUAL_MODEL",
+      "PROCEDURAL_MODEL",
+      "CAD_SOURCE",
+      "PHOTOGRAMMETRY_SCAN",
+      "GAUSSIAN_SPLAT_STATIC",
+      "MULTIVIEW_IMAGE_TO_3D",
+      "SINGLE_IMAGE_TO_3D",
+      "HYBRID_RECONSTRUCTION"
     ],
-    "forbidden_final_shortcut": "raw AI mesh != final asset"
+    "reconstruction_role": "base_candidate_only_until_hero_fidelity_gate",
+    "provider_policy": {
+      "revalidate_live_catalog_before_spend": true,
+      "observed_examples_2026_09_14": [
+        "Tripo H3.1 multiview",
+        "Meshy multi-image",
+        "Hunyuan3D v3"
+      ],
+      "examples_are_immutable_canon": false,
+      "tier_sa_bakeoff_min_candidates": 2
+    },
+    "hero_gate_required_checks": [
+      "silhouette",
+      "proportion",
+      "construction_logic",
+      "semantic_part_separation",
+      "material_domain_readiness",
+      "uv_bake_readiness",
+      "closeup_stress"
+    ],
+    "forbidden_final_shortcuts": [
+      "raw AI mesh == final asset",
+      "blockout/proxy + shaders == hero asset",
+      "more polygons == more realism",
+      "cinematic source master == shipping runtime asset"
+    ],
+    "retroactive_adoption": {
+      "label_existing_assets": true,
+      "preserve_layout_gameplay_collision_value": true,
+      "detect_proxy_polish_debt": true,
+      "rebuild_only_high_value_identity_gaps_first": true
+    }
+  },
+  "render_economics": {
+    "resolution_alone_can_estimate_render_time": false,
+    "required_frame_classes": ["EASY", "MEDIAN", "WORST"],
+    "expected_seconds_per_frame_weights": {
+      "easy": 0.2,
+      "median": 0.6,
+      "worst": 0.2
+    },
+    "provider_rates_are_live_data": true,
+    "persist_rate_snapshot": true
   },
   "anti_slop": [
     "random_grunge",
@@ -128,7 +159,8 @@
     "unmotivated_emissives",
     "floating_geometry",
     "unscaled_detail",
-    "decorative_complexity_without_function"
+    "decorative_complexity_without_function",
+    "proxy_polish_without_source_fidelity"
   ],
   "required_density_passes": [
     "MACRO",
