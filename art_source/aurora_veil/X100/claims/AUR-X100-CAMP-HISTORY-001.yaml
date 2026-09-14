@@ -1,0 +1,69 @@
+workunit_id: AUR-X100-CAMP-HISTORY-001
+parent_claim: CLM-AURORA-WORLD-001
+owner: AGENT-02-AURORA
+branch: art/world-aurora-veil-001
+world_id: aurora
+region_id: AUR_R01_CAMP_SECOND_DAY
+status: IN_PROGRESS
+protocol: EXOVANT-X100-v1
+scope_key: aurora/camp/physical-history-three-eras
+priority: P1_HIGH_MULTIPLIER
+created_at: 2026-09-14T11:40:00+02:00
+remote_project_id: d6488148-8547-4ffe-b63d-e5fbec3a339c
+remote_base_revision: 31
+
+north_star: >-
+  Make Campamento del Segundo Dia read as a place with physically legible history rather than a clean modular proof: every selected host must show ERA_0 original construction, ERA_1 later repair/occupation, and ERA_2 current degradation/adaptation through causal geometry and service evidence.
+
+canon_basis:
+  - Campamento del Segundo Dia is an observatory and refuge.
+  - Aurora infrastructure is measured, repairable and timing-oriented.
+  - The future leaves physical receipts; temporal evidence must remain bounded/readable.
+
+includes:
+  - three-era geometry overlays on selected X100 Camp hosts
+  - field repair plates, clamps, replaced panels, cable reroutes and drainage fixes
+  - localized current degradation caused by grass/wind/moisture/use
+  - maintenance index marks as physical plates/markers where justified
+  - authored damage/repair states derived from existing architecture and props
+  - support/contact/clearance metadata
+  - LOD/collision contracts for repeated repair modules
+  - deterministic placement on at least six existing Camp X100 configurations
+  - generator, QA receipt and handoff
+
+excludes:
+  - new civilization lore, rituals, economy or social hierarchy
+  - AEON collections/content
+  - antelope collections 38-41 and AUR-X100-ANTELOPE-FAMILY-001
+  - terrain topology
+  - temporal runtime logic
+  - engine import/performance before EXO-012
+
+quality_rules:
+  - every repair must correspond to a structural/service problem
+  - no uniform grunge, random scratches or decorative greebles
+  - ERA_1 additions must visibly differ in manufacturing age/process from ERA_0
+  - ERA_2 degradation must follow wind, moisture, use, vegetation contact or deferred maintenance
+  - no floating geometry; all plates/clamps/reroutes need support/contact
+  - current state must remain readable without text labels
+
+family_dod:
+  - >= 8 reusable history/repair module families
+  - >= 6 host configurations receive three-era evidence
+  - each host has ERA_0 + ERA_1 + ERA_2 receipts
+  - at least 4 causal failure categories represented
+  - repeated modules carry LOD0/1/2 or explicit no-LOD rationale
+  - collision/service clearances documented
+  - GLB export smoke pass
+  - Workbench structural render + Eevee technical render
+  - generator + QA persisted
+  - HUMAN GATE-ART remains separate
+
+blocked_by:
+  - final UV/bakes/authored texture pass
+  - EXO-012 engine import
+  - target hardware performance
+  - human art-direction approval
+
+stop_condition: >-
+  Technical review only after causal three-era readability, host support/contact, export and evidence pass. Do not mark final art.
