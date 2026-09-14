@@ -1,133 +1,135 @@
 # EXOVANT 2950 — ORIGIN world-owner handoff
 
 AGENT: `AGENT-ORIGIN-WORLD-01`  
-SESSION: `SES-20260912-ORIGIN-WORLD-001`  
+SESSION ROOT: `SES-20260912-ORIGIN-WORLD-001`  
 WORLD CLAIM: `CLM-ORIGIN-WORLD-001`  
-ACTIVE ATOMIC CLAIM: `CLM-ORIGIN-MEGA-ATRIO-001`  
 BRANCH: `art/world-origin-001`  
-BASE MAIN: `196ef814fdc845ec797979906d01dc25009217c7`  
 LINEAR: `ROT-115`  
 GITHUB COORDINATION: issue `#14`  
-REMOTE BLENDER PROJECT: `6e64cd59-f1f6-461f-850c-737d098f1723`  
-REMOTE REVISION: `2`
+PROTOCOL: `/EXOVANT-X100`
 
 ## NORTH STAR
 
-Own ORIGIN art/modeling at world level while keeping production sharded into recoverable atomic claims. Current cell delivers the Atrio de las Rutas structural grammar: canonical 70 m three-ring arena envelope, black-mineral load paths, living-bronze interfaces, radial bridges, route nodes, route aperture and explicit collision proxies.
+Own ORIGIN art/modeling at world level while keeping work recoverable through atomic claims, deterministic generators, stable asset IDs, receipts and hard QA. Prefer systemic reuse, native evidence and causal world depth over raw one-off prop count.
 
-## DONE
+## ACTIVE / KEEP CLAIMS
 
-- Re-read updated `AGENTS.md` ownership preflight on main commit `196ef814...`.
-- Read coordination registry issue #7; ORIGIN was explicitly `UNCLAIMED AT SNAPSHOT`.
-- Fetched all current branches and verified no Origin branch existed.
-- Reserved `art/world-origin-001` before geometry.
-- Created Linear `ROT-115` before geometry and linked branch/registry.
-- Re-fetched Origin branches immediately after reservation; only this branch was present.
-- Created world-owner coordination issue #14 and updated registry #7.
-- Persisted `CLM-ORIGIN-WORLD-001` and atomic `CLM-ORIGIN-MEGA-ATRIO-001` before Blender production.
-- Built a new isolated Blender 5.2 LTS project for the Atrio; no existing world project was modified.
-- Produced 3 ring families, 3 radial bridge families, support family, safe node, valve node and route aperture.
-- Added black-mineral load bands and living-bronze joints based on functional load/connection roles rather than decorative greeble.
-- Added bounded TERRA/NACRE/VANTA material-echo inserts without importing or taking ownership of prior-world geometry.
-- Added current prototype player reference 1.85 m / radius 0.38 m.
-- Produced explicit collision proxies and GLB export.
-- Ran technical QA and then spatial QA; corrected all found defects before final gate.
-- Persisted deterministic generator, manifest and QA receipt.
+- `CLM-ORIGIN-MEGA-ATRIO-001` — Atrio 70 m three-ring structural grammar.
+- `CLM-ORIGIN-INFRA-ATRIO-SERVICE-001` — 19 service-infrastructure assets.
+- `CLM-ORIGIN-CULT-ORGANISM-001` — 17 El Organismo cultural-memory assets.
+- `CLM-ORIGIN-ARCH-ARCHIVE-001` — 21 Archivo structural assets + 21 proxies.
+- `CLM-ORIGIN-TECH-LOD-WAVE01-001` — LOD0/1/2 for all 57 Wave-01 assets.
+- `CLM-ORIGIN-ARCH-ARCHIVE-GRAMMAR-001` — four deterministic Archive assemblies.
 
-## CURRENT CHECKPOINT
+Boss/Corazón remains explicitly excluded.
 
-Truth state: `LOCALLY_VALIDATED_BLOCKOUT` — not final art.
+## CURRENT REMOTE PROJECTS
 
-Remote revision 2 metrics:
+### Atrio
+Project: `6e64cd59-f1f6-461f-850c-737d098f1723`  
+Current qualified revision: `6`
 
-- objects: `132`
-- mesh objects: `126`
-- materials: `13`
-- explicit collision proxies: `19`
-- visible approximate triangles: `11,436`
-- Blender: `5.2.0 LTS`
-- units: metric, `1 BU = 1 m`
-- arena envelope: `70 m` canon
-- ring radii: `35 / 24 / 13 m` proposal inside canon envelope
-- ring width: `5.0 m` proposal
-- bridge clear width: `4.5 m` proposal
+Baseline structural checkpoint:
+- canonical arena envelope: 70 m, three connected rings.
+- original explicit collision proxies: 19.
+- surrogate CharacterBody traversal: PASS.
 
-Final scripted QA `origin-atrio-qa-release-005`: `PASS=true`.
+X100 Wave 01:
+- 36 stable asset parents / 13 families / 148 source meshes.
+- service radial clearance beyond A70 edge: +0.4312527094 m.
+- culture radial clearance beyond B52 edge: +0.5812839777 m.
+- parenting defect found at rev4 and corrected at rev5.
+
+X100 Wave 02 LOD:
+- 148 LOD1 + 148 LOD2 meshes.
+- LOD0 evaluated: 29,328 tris.
+- LOD1: 14,544 tris (49.59%).
+- LOD2: 7,966 tris (27.16%).
+- 36/36 asset coverage; UV/material/transform/bounds QA PASS.
+- LOD0 frozen.
+- rev6 GLB: 7,039,992 B / etag `3cd3d91fc0d667c3c93145ba3efadc51`.
+
+### Archivo de la Primera Herida
+Project: `9bff5b6c-35a5-4db9-92de-4008a0fc3f4e`  
+Current qualified revision: `6`
+
+X100 Wave 01:
+- 21 stable assets / 8 structural families / 94 source meshes / 21 proxies.
+- source geometry QA PASS.
+- nonportable AREA lights discovered at rev1; replaced with SPOT/POINT at rev2.
+
+X100 Wave 02 LOD:
+- 94 LOD1 + 94 LOD2 meshes.
+- LOD0 evaluated: 16,880 tris.
+- LOD1: 8,688 tris (51.47%).
+- LOD2: 4,610 tris (27.31%).
+- one 7.9 cm silhouette regression on `ORG_ARC_ARCHIVE_CORE_SHELL_A_CORE` rejected; only that LOD2 reverted to unbeveled base. Final >6 cm drift failures: 0.
+
+X100 Wave 02 assembly grammar:
+- `ORG_ARC_ASM_WITNESS_GALLERY_A`
+- `ORG_ARC_ASM_VAULT_JUNCTION_A`
+- `ORG_ARC_ASM_MEMORY_NAVE_A`
+- `ORG_ARC_ASM_SCAR_THRESHOLD_A`
+- 67 module instances / 367 linked mesh instances / 19 unique source assets consumed.
+- source mesh data duplicated: 0.
+- recipe and seed signatures valid: 4/4.
+- collision inheritance failures: 0.
+- player lateral clearance margins: 2.64–4.24 m beyond 0.76 m capsule diameter.
+- delivery camera refit at rev6: all assembly geometry in frame.
+- dimensions remain `PROPOSAL_UNTIL_GODOT`.
+- rev6 GLB: 5,171,380 B / etag `e25633728494203865bd76b858723960`.
 
 ## DEFECTS FOUND AND CORRECTED
 
-### ORG-QA-F001 — camera clipped production geometry
-Spatial query found outer-ring corners outside frame (`xmin=-0.187`, `ymin=-0.189`). Delivery camera was moved farther and set to 45 mm. Final production extents are `xmin=0.009`, `xmax=0.942`, `ymin=0.056`, `ymax=0.778`.
+1. Atrio rev2: camera clipping, floating supports and oversize node collision proxies.
+2. Atrio X100 rev4: 148-child double-parent transform defect; fixed at rev5.
+3. Archivo rev1: AREA lights nonportable in GLB; fixed with SPOT/POINT in rev2.
+4. Archivo LOD rev3: one LOD2 shell drifted 7.9 cm; rejected and selectively reverted in rev4.
+5. Archivo assembly rev5: delivery camera missed the largest nave; camera-only refit at rev6, geometry unchanged.
 
-### ORG-QA-F002 — structural supports floated over datum
-Primary and auxiliary support piers were 0.020–0.025 m above the preview datum. All 12 were lowered by 0.04 m. Final measured contact is a controlled overlap of 0.015–0.020 m.
+## EPISTEMIC TRUTH
 
-### ORG-QA-F003 — node collision exceeded visible geometry
-Safe/valve square proxy corners exceeded the 4 m visual disc by 1.233 m. Replaced with 12-sided cylindrical collision proxies of radius 3.72 m.
+Current overall truth state: `LOCALLY_VALIDATED_SYSTEM_CANDIDATE`.
 
-## FINAL QA RECEIPTS
+Proven:
+- 57 stable Wave-01 asset IDs exist remotely with deterministic generators.
+- 57/57 have actual LOD1 and LOD2 geometry, not metadata-only promises.
+- all LOD QA passes current UV/material/transform/silhouette contracts.
+- four stable Archive assemblies exist and reuse linked source mesh data.
+- GLB exports succeed at the stated revisions.
 
-PASS:
+Not proven:
+- real Godot import readback of Atrio rev6 / Archivo rev6.
+- imported GLB collision/traversal with real geometry.
+- engine LOD switching, runtime packing/HLOD or frame-time savings.
+- final causal texture sets.
+- target-hardware performance.
+- human `GATE-ART`.
 
-- required asset IDs
-- collision coverage
-- zero-area meshes = 0
-- meshes without materials = 0
-- non-unit scales = 0
-- claim metadata mismatch = 0
-- production corners inside delivery camera
-- support contact
-- node collision inside visible boundary
-- GLB export
+Do not claim final AAAA+, final game-ready performance or final Archive scale until those gates pass.
 
-Artifacts revision 2:
+## RECOVERABLE SOURCE / RECEIPTS
 
-- `.blend`: 2,369,786 bytes / etag `f17892c2acf59a2dc3fffda6379bf88a`
-- `.glb`: 2,760,416 bytes / etag `85905d94d8409d2cfcba2a6ab67bed9b`
-- PNG: `8c5f749466f2a4a23d0148758dd4dbf5` / 1200×800 / 782,102 bytes / etag `dc2823afe1bc61d5e778cf6d13009429`
-
-## NOT PROVEN / BLOCKED
-
-- Engine import and traversal with the real CharacterBody have not been run.
-- Local/variable-gravity gameplay and camera behavior are not proven by Blender geometry.
-- Final UVs, texture sets, causal micro-surface detail and PBR are not produced.
-- LOD/HLOD and target GPU budgets remain unresolved pending production-engine/hardware qualification.
-- Final EXOVANT boss/heart core is explicitly excluded from this claim.
-- `GATE-ART` human creative-director approval remains pending.
-- A preview PNG exists, but the current agent surface did not expose its pixels for direct agent visual inspection; no fabricated visual-art PASS is claimed.
-
-## FILES
-
-- `production/claims/CLM-ORIGIN-WORLD-001.yaml`
-- `production/claims/CLM-ORIGIN-MEGA-ATRIO-001.yaml`
-- `art_source/worlds/origin/atrio/PLAN.md`
+- `art_source/worlds/origin/X100_COVERAGE.md`
 - `art_source/worlds/origin/atrio/origin_atrio.py`
-- `production/manifests/origin/megastructures/ORG_ATRIO_STRUCTURAL_KIT_001.yaml`
-- `production/receipts/origin/CLM-ORIGIN-MEGA-ATRIO-001-QA.yaml`
-- `production/handoffs/AGENT-ORIGIN-WORLD-01.md`
+- `art_source/worlds/origin/atrio/origin_atrio_x100_wave1.py`
+- `art_source/worlds/origin/archive/origin_archive_x100_wave1.py`
+- `art_source/worlds/origin/tech/origin_lod_x100_wave2.py`
+- `art_source/worlds/origin/archive/origin_archive_grammar_x100_wave2.py`
+- `production/claims/CLM-ORIGIN-MEGA-ATRIO-001.yaml`
+- `production/claims/CLM-ORIGIN-INFRA-ATRIO-SERVICE-001.yaml`
+- `production/claims/CLM-ORIGIN-CULT-ORGANISM-001.yaml`
+- `production/claims/CLM-ORIGIN-ARCH-ARCHIVE-001.yaml`
+- `production/claims/CLM-ORIGIN-TECH-LOD-WAVE01-001.yaml`
+- `production/claims/CLM-ORIGIN-ARCH-ARCHIVE-GRAMMAR-001.yaml`
+- `production/receipts/origin/ORIGIN-X100-WAVE-01-QA.yaml`
+- `production/receipts/origin/ORIGIN-X100-WAVE-02-QA.yaml`
 
-## DEPENDENCIES / INTERFACES FOR OTHER AGENTS
+## NEXT ACTION — P0
 
-ORIGIN is world-owned by this branch, but other cells may claim explicit non-overlapping assets. Current locked IDs are:
+`REAL_GLB_IMPORT_GODOT_4_7_2`.
 
-- `ORG_ATR_RING_A70`
-- `ORG_ATR_RING_B52`
-- `ORG_ATR_RING_C34`
-- `ORG_ATR_BRIDGE_RADIAL_A/B/C`
-- `ORG_ATR_NODE_SAFE`
-- `ORG_ATR_NODE_VALVE`
-- `ORG_ATR_ROUTE_APERTURE`
-- `ORG_ATR_SUPPORT_PIER`
-
-Do not reuse these IDs in another branch.
-
-Unclaimed candidate domains inside ORIGIN include final Archive of the First Wound architecture, final Heart negotiation center, EXOVANT boss body/rig, fauna, NPCs, Arca-specific integration and material-detail specialization. Each requires a new atomic claim.
-
-## NEXT 3 ACTIONS
-
-1. Import revision-2 GLB into an isolated engine scene and run real CharacterBody traversal/collision over all three rings, radial bridges and route aperture; feed measured defects back into the generator.
-2. Create `CLM-ORIGIN-ARCH-ARCHIVE-001` or another explicitly non-overlapping atomic cell for the next ORIGIN production wave only after a fresh ownership resync.
-3. After traversal validates dimensions, perform causal material/UV/LOD pass and human GATE-ART review rather than adding indiscriminate microdetail now.
+Use the exact Atrio rev6 and Archivo rev6 GLBs, import them into an isolated Godot 4.7.2 validation project, verify PackedScene instantiation, stable naming/mesh/material/scale readback, then build real collision/traversal evidence from imported geometry. Only after that should Archive proposal dimensions be promoted/rejected and engine LOD switching be measured.
 
 WORLD CLAIM STATUS: **KEEP**  
-ATOMIC ATRIO CLAIM STATUS: **KEEP / IN_PROGRESS**
+ALL LISTED ATOMIC CLAIMS: **KEEP / IN_PROGRESS**

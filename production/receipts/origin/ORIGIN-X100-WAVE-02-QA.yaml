@@ -1,0 +1,96 @@
+wave_id: ORIGIN-X100-WAVE-02
+owner: AGENT-ORIGIN-WORLD-01
+branch: art/world-origin-001
+truth_state: locally_validated_system_candidate
+status: PASS_WITH_RUNTIME_GATES_PENDING
+
+claims:
+  - CLM-ORIGIN-TECH-LOD-WAVE01-001
+  - CLM-ORIGIN-ARCH-ARCHIVE-GRAMMAR-001
+
+atrio_lod:
+  project_id: 6e64cd59-f1f6-461f-850c-737d098f1723
+  revision: 6
+  source_assets: 36
+  source_meshes: 148
+  lod1_meshes: 148
+  lod2_meshes: 148
+  lod0_evaluated_tris: 29328
+  lod1_tris: 14544
+  lod2_tris: 7966
+  lod1_ratio: 0.4959083469721768
+  lod2_ratio: 0.2716175668303328
+  qa_operation: origin-x100-wave2-lod-qa-017
+  qa_pass: true
+  uv_missing: 0
+  matrix_drift: 0
+  material_mismatch: 0
+  bounds_drift_over_6cm: 0
+  lod0_frozen: true
+  blend_etag: b574e1a9de6b1f22b89bec85c9f2b372
+  glb_etag: 3cd3d91fc0d667c3c93145ba3efadc51
+  glb_size_bytes: 7039992
+
+archive_lod:
+  project_id: 9bff5b6c-35a5-4db9-92de-4008a0fc3f4e
+  revision_with_final_lod: 6
+  source_assets: 21
+  source_meshes: 94
+  lod1_meshes: 94
+  lod2_meshes: 94
+  lod0_evaluated_tris: 16880
+  lod1_tris: 8688
+  lod2_tris: 4610
+  lod1_ratio: 0.5146919431279621
+  lod2_ratio: 0.2731042654028436
+  qa_operation: origin-archive-wave2-lod-qa-final-012
+  qa_pass: true
+  corrected_defect:
+    object: ORG_ARC_ARCHIVE_CORE_SHELL_A_CORE
+    initial_lod2_bounds_drift_m: 0.0791769027709961
+    resolution: replace_only_this_lod2_with_unbeveled_base_mesh
+  uv_missing: 0
+  matrix_drift: 0
+  material_mismatch: 0
+  bounds_drift_over_6cm: 0
+  lod0_frozen: true
+
+archive_grammar:
+  project_id: 9bff5b6c-35a5-4db9-92de-4008a0fc3f4e
+  revision: 6
+  assemblies:
+    - ORG_ARC_ASM_WITNESS_GALLERY_A
+    - ORG_ARC_ASM_VAULT_JUNCTION_A
+    - ORG_ARC_ASM_MEMORY_NAVE_A
+    - ORG_ARC_ASM_SCAR_THRESHOLD_A
+  assembly_count: 4
+  module_instances: 67
+  linked_mesh_instances: 367
+  unique_source_assets_consumed: 19
+  invalid_source_count: 0
+  unlinked_mesh_data_count: 0
+  source_geometry_duplicated: false
+  recipe_signature_count: 4
+  deterministic_seed_count: 4
+  collision_inheritance_failures: 0
+  player_clearance_margins_m:
+    ORG_ARC_ASM_MEMORY_NAVE_A: 4.24
+    ORG_ARC_ASM_SCAR_THRESHOLD_A: 2.64
+    ORG_ARC_ASM_VAULT_JUNCTION_A: 3.44
+    ORG_ARC_ASM_WITNESS_GALLERY_A: 3.44
+  delivery_camera_outside_after_refit: 0
+  qa_operation: origin-archive-wave2-grammar-qa-014
+  qa_pass: true
+  blend_etag: 4958ef4f00c3dc87bdcb80119afedc66
+  glb_etag: e25633728494203865bd76b858723960
+  glb_size_bytes: 5171380
+
+epistemic_limits:
+  - LOD triangle reduction is proven in Blender geometry, not engine frame time.
+  - Source GLBs currently contain authored LOD geometry together; no file-size reduction is claimed.
+  - Engine-side LOD switching and runtime packing are not yet proven.
+  - Archive assembly dimensions remain PROPOSAL until native Godot import/traversal.
+  - Human GATE-ART remains pending.
+  - Target-hardware performance remains pending.
+
+next_high_value_gate: REAL_GLB_IMPORT_GODOT_4_7_2

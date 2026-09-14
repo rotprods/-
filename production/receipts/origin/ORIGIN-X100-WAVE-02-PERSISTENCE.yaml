@@ -1,0 +1,17 @@
+wave_id: ORIGIN-X100-WAVE-02-PERSISTENCE
+owner: AGENT-ORIGIN-WORLD-01
+branch: art/world-origin-001
+parent_head: 3d420f691a193413e98b11f55ebf04c593fc9437
+purpose: >-
+  Cold-resume marker binding Wave-02 claims, deterministic LOD/assembly generators,
+  QA receipt, coverage ledger and handoff before the real Godot GLB import gate.
+files_expected:
+  - production/claims/CLM-ORIGIN-TECH-LOD-WAVE01-001.yaml
+  - production/claims/CLM-ORIGIN-ARCH-ARCHIVE-GRAMMAR-001.yaml
+  - art_source/worlds/origin/tech/origin_lod_x100_wave2.py
+  - art_source/worlds/origin/archive/origin_archive_grammar_x100_wave2.py
+  - production/receipts/origin/ORIGIN-X100-WAVE-02-QA.yaml
+  - art_source/worlds/origin/X100_COVERAGE.md
+  - production/handoffs/AGENT-ORIGIN-WORLD-01.md
+next_gate: REAL_GLB_IMPORT_GODOT_4_7_2
+truth_state: continuity_marker_only
