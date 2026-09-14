@@ -28,19 +28,22 @@ Para cualquier nueva selección de trabajo de mundo/asset, `docs/EXOVANT_X100_V2
 
 Flujo canónico:
 
-`RESYNC → BOOTSTRAP → VECTORIZE → FLEET → MEASURE → GRADIENT → SELECT → CLAIM → FIDELITY_ROUTE → BUILD → EXPAND → ENGINE → GAUNTLET → RECEIPT → RE-MEASURE → NEXT`.
+`RESYNC → BOOTSTRAP → VECTORIZE → FLEET → INGEST_RECEIPTS → DIRECTOR_BASELINE → WORLD_GRADIENT → PORTFOLIO_SCORE → SELECT → CLAIM → FIDELITY_ROUTE → BUILD → EXPAND → ENGINE → GAUNTLET → RECEIPT → DIRECTOR_RECOMPUTE → NEXT`.
 
 ### Medición
 - La completitud del mundo es media geométrica ponderada, no suma de tareas.
 - Cobertura `null` = `MEASUREMENT_REQUIRED`; no inventar porcentajes para desbloquear el algoritmo.
 - Cualquier dimensión crítica en cero bloquea completion aunque otros dominios estén densos.
 - L0–L5 se auditan de forma independiente; no usar microdetalle para ocultar ausencia de escala regional/distrital.
+- `x100_director.py` divide cada mundo en **84 células evidence-backed** (14 dimensiones × 6 células). Una célula solo sube de madurez mediante un receipt con `evidence_refs`.
+- Separar siempre `strict_score_pct`, `known_evidence_geomean_pct` y `evidence_cell_coverage_pct`. Los dos últimos son diagnóstico, nunca un porcentaje de mundo terminado.
 
 ### Selección
 - Recalcular pesos efectivos tras cada wave usando el déficit de cobertura.
 - Enumerar gaps atómicos, filtrar por Definition of Ready y Fleet antes de score final.
 - `claimed_by_other`/conflicto Fleet convierte el candidato en ineligible; no existe score que autorice pisarlo.
-- El score favorece dependency unlock, player visibility, reuse, systemic yield, gameplay y evidencia; penaliza collision risk, dependencias abiertas, slop y coste.
+- El score favorece dependency unlock, player visibility, reuse, systemic yield, gameplay, image grounding y evidencia; penaliza collision risk, dependencias abiertas, slop y coste.
+- El Director genera una cola de oportunidad del portfolio de doce mundos; la cola **no reserva ni reclama** trabajo. Fleet sigue siendo el único admission gate.
 
 ### Fidelity route
 - Hero/Tier S-A: look target primero; image-to-3D es base candidate. Higgsfield/otros reconstruction tools aceleran formas, no reemplazan cleanup, retopo, material, collision, LOD, engine ni visual regression.
@@ -49,10 +52,10 @@ Flujo canónico:
 
 ### Iteración permanente
 Tras cada receipt válido:
-1. actualizar el audit X100 en una ruta owned;
-2. recalcular `WORLD_COMPLETENESS` y gradient pressure;
+1. actualizar el receipt X100 dentro de una ruta owned;
+2. recalcular el baseline 84-cell, `WORLD_COMPLETENESS` y gradient pressure;
 3. completar la family si sigue incompleta;
 4. densificar ecosistema/región si existe un gap de mayor valor dentro del claim;
-5. si el claim terminó, resync + Fleet + siguiente gap elegible.
+5. si el claim terminó, resync + Director + Fleet + siguiente gap elegible.
 
 Solo parar por ownership conflict, decisión irreversible, coste significativo no autorizado, riesgo destructivo, bloqueo técnico demostrado o umbral objetivo alcanzado.
