@@ -1,0 +1,99 @@
+{
+  "schema_version": 1,
+  "checkpoint": "PELAGOS-NACAR2-ENG-002",
+  "task_id": "PEL/VEH/010",
+  "world_id": "pelagos",
+  "claim_id": "CLM-PEL-WORLD-001",
+  "agent_id": "AGENT-PELAGOS-01",
+  "status": "IN_PROGRESS",
+  "claim": "engineering_blockout_structurally_validated_not_game_ready",
+  "remote_3d": {
+    "project_id": "39930c08-62bb-4034-b35d-70d0ce51c9d9",
+    "revision": 5,
+    "parenting_fix_operation": "pelagos.nacar2.parentfix.v1",
+    "verification_operation": "pelagos.nacar2.verify.r4",
+    "resync_operation": "pelagos.resync.rev5.inspect"
+  },
+  "canon": {
+    "vehicle": "Nácar-2",
+    "type": "sumergible biplaza",
+    "solo_operation": true
+  },
+  "measured_blockout": {
+    "dimensions_status": "PROPOSAL_MEASURED_BLOCKOUT",
+    "cruise_envelope_m": [15.65, 10.8, 7.35],
+    "rigid_docking_envelope_m": [15.65, 7.64, 6.41],
+    "pressure_hull_length_m": 9.4,
+    "pressure_hull_diameter_m": 4.7,
+    "object_count": 66,
+    "mesh_count": 57,
+    "curve_count": 2,
+    "moving_part_count": 30
+  },
+  "engineering_roles": [
+    "pressure_hull",
+    "pressure_canopy",
+    "pressure_frame",
+    "access_hatch",
+    "hatch_hinge",
+    "cockpit_seat",
+    "control_console",
+    "cargo_bay",
+    "service_bay",
+    "removable_service_panel",
+    "twin_thruster_ducts",
+    "thruster_hubs",
+    "thruster_blades",
+    "thruster_gimbal_pivots",
+    "lateral_control_surfaces",
+    "vertical_control_surface",
+    "control_surface_hinges",
+    "sonar_dome",
+    "hydrophone_array",
+    "navigation_lights",
+    "dock_hardpoints",
+    "equalization_ports",
+    "collision_proxy_main",
+    "collision_proxy_thruster"
+  ],
+  "proposals_not_canon": {
+    "propulsion": "twin ducted thrusters",
+    "steering": "differential thrust plus control surfaces",
+    "braking_hold": "reverse thrust plus external hold interface",
+    "energy_storage": "UNKNOWN_NOT_MODELED",
+    "pressure_rating": "UNKNOWN_NOT_QUALIFIED"
+  },
+  "qa": {
+    "missing_asset_ids": 0,
+    "nonunit_mesh_scales": 0,
+    "materialless_meshes": 0,
+    "parent_transform_issues": 0,
+    "legacy_world_foundation_proxies": "HIDDEN_SUPERSEDED_AT_REV5",
+    "collision": "SEPARATE_PROXY_EXISTS_BUT_ENGINE_NOT_TESTED",
+    "visual": "RENDER_PUBLISHED_PIXEL_REVIEW_UNAVAILABLE_IN_CURRENT_CLIENT",
+    "uv": "NOT_RUN",
+    "pbr": "BLOCKOUT_ONLY",
+    "lod": "NOT_AUTHORED",
+    "hydrodynamics": "NOT_SIMULATED",
+    "runtime_physics": "BLOCKED_RUNTIME_INTERFACE",
+    "engine_import": "NOT_RUN",
+    "performance": "NOT_RUN",
+    "human_art_review": "PENDING"
+  },
+  "artifacts": {
+    "revision4_blend_size_bytes": 7630005,
+    "revision4_glb_size_bytes": 6507276,
+    "render_revision4": {
+      "name": "pelagos_nacar2_engineering_v002_parentfix.png",
+      "artifact_id": "5b91d749ca65f2c36c0c78adaa83a74e",
+      "size_bytes": 893737,
+      "resolution": [1280, 720]
+    }
+  },
+  "invalidated_measurement": {
+    "value_m": [269.24, 371.1, 25.35],
+    "reason": "parent-transform contaminated measurement before world-space bbox correction",
+    "must_not_be_reused": true
+  },
+  "reason_not_done": "Final UV/PBR, LOD, pressure/hydrodynamic qualification, engine collision/import, runtime vehicle physics, performance and human art review remain open."
+}

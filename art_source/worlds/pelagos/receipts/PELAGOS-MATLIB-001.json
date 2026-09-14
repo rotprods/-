@@ -1,0 +1,84 @@
+{
+  "schema_version": 1,
+  "checkpoint": "PELAGOS-MATLIB-001",
+  "task_id": "PEL/MAT/011",
+  "world_id": "pelagos",
+  "claim_id": "CLM-PEL-WORLD-001",
+  "agent_id": "AGENT-PELAGOS-01",
+  "status": "IN_PROGRESS",
+  "claim": "portable_pbr_material_foundation_cold_reopen_validated_not_final_production_materials",
+  "remote_3d": {
+    "project_id": "39930c08-62bb-4034-b35d-70d0ce51c9d9",
+    "verified_revision": 13,
+    "initial_build_operation": "pelagos.material.library.v1",
+    "portable_light_fix_operation": "pelagos.material.portability-fix.v1",
+    "failed_persistence_attempts": [
+      "pelagos.material.persist-maps.v1",
+      "pelagos.material.persist-maps.v2"
+    ],
+    "root_cause_probe": "pelagos.image.persistence.probe.r11",
+    "corrected_rebuild_operation": "pelagos.material.rebuild-maps.v3",
+    "cold_reopen_verification": "pelagos.material.cold-verify.r13",
+    "visual_render_operation": "pelagos.material.visual.r13"
+  },
+  "materials": [
+    "PEL_MAT_IvoryCeramic_Marine",
+    "PEL_MAT_Bronze_Oxidized_Marine",
+    "PEL_MAT_DarkTechnicalComposite",
+    "PEL_MAT_BlackMineral_Wet",
+    "PEL_MAT_WaterproofTextile",
+    "PEL_MAT_LivingCoral_Tissue",
+    "PEL_MAT_MemoryCyan_Biolum"
+  ],
+  "maps": {
+    "material_count": 7,
+    "channels_per_material": ["BaseColor", "Roughness", "Normal"],
+    "foundation_resolution": [128, 128],
+    "roughness_normal_persistence_generation": "PERSIST_V2_NEW_FILE_PACKED_DATABLOCKS",
+    "cold_reopen_tested_maps": 14,
+    "cold_reopen_failures": 0,
+    "binding_failures": 0
+  },
+  "surface_causality": [
+    "salt deposition on marine ceramic",
+    "chloride patina on bronze",
+    "woven microstructure on sealed composite",
+    "wet vein response on black mineral",
+    "waterproof textile weave and salt line",
+    "biological growth striation on coral tissue",
+    "mnemonic emissive striation on memory tissue"
+  ],
+  "qa": {
+    "base_color_recovery": "PASS",
+    "roughness_normal_cold_reopen": "PASS_14_OF_14",
+    "material_node_binding": "PASS_7_OF_7",
+    "external_unpacked_dependencies": 0,
+    "portable_lookdev_lights": "SPOT_ONLY",
+    "glb_export_revision": 13,
+    "glb_size_bytes": 7368436,
+    "glb_export_texture_errors_observed": 0,
+    "visual_render_generated": true,
+    "visual_human_review": "PENDING",
+    "engine_shader_parity": "NOT_RUN",
+    "texel_density_policy": "NOT_CALIBRATED",
+    "production_resolution": "NOT_FINAL",
+    "texture_memory_profile": "NOT_RUN"
+  },
+  "incident": {
+    "symptom": "Roughness and Normal datablocks appeared present after reopen but recovered zero-valued pixels.",
+    "invalid_approach": "Reusing corrupted GENERATED image datablocks and/or clearing filepath after pack.",
+    "verified_control": "Create fresh image datablocks, write pixels, save as PNG so source becomes FILE, pack while retaining filepath provenance, rebind material nodes, then cold reopen and read pixels.",
+    "evidence": "pelagos.material.cold-verify.r13 returned failures=[] and binding_failures=[]"
+  },
+  "artifacts": {
+    "verified_blend_revision": 13,
+    "verified_glb_revision": 13,
+    "visual_render": {
+      "name": "pelagos_material_library_v003_verified_maps.png",
+      "artifact_id": "eecc7a415467dec1ab5baf390805b12e",
+      "resolution": [1280, 720],
+      "size_bytes": 854371
+    }
+  },
+  "reason_not_done": "Final production texture resolution/bakes, per-asset texel density, runtime shader parity, memory/performance profile and human art-direction review remain open."
+}

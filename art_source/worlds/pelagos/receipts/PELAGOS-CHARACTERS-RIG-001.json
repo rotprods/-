@@ -1,0 +1,94 @@
+{
+  "schema_version": 1,
+  "checkpoint": "PELAGOS-CHARACTERS-RIG-001",
+  "world_id": "pelagos",
+  "claim_id": "CLM-PEL-WORLD-001",
+  "agent_id": "AGENT-PELAGOS-01",
+  "remote_3d": {
+    "project_id": "39930c08-62bb-4034-b35d-70d0ce51c9d9",
+    "verified_revision": 20,
+    "structural_operation": "pelagos.charboss.structural.r20",
+    "visual_operation": "pelagos.visual.qa.rev20.characters-workbench"
+  },
+  "tasks": ["PEL/CHAR/012", "PEL/CHAR/013"],
+  "status": "IN_PROGRESS",
+  "claim": "Nara and Tea character rig foundations exist and pass structural Blender checks; final character production remains open.",
+  "assets": {
+    "PEL-NPC-NARA": {
+      "canon_identity": "Nara Océano / bióloga anfibia / quiere contacto sin extracción",
+      "quality_tier": "A",
+      "production_state": "CHARACTER_RIG_FOUNDATION_V1",
+      "object_count": 26,
+      "mesh_count": 22,
+      "curve_count": 1,
+      "armature_count": 1,
+      "armature": "PEL_NARA_RIG",
+      "bone_count": 20,
+      "visible_bbox_m": [0.662, 1.471, 1.737],
+      "body_height_m_proposal": 1.72,
+      "role_equipment": [
+        "amphibious field rebreather",
+        "field hydrophone sampler",
+        "non-extractive sample canisters",
+        "reef-grip boots",
+        "repaired ceramic chest plate"
+      ],
+      "epistemic_limits": [
+        "human/humanoid proxy only; no non-human physiology claimed",
+        "age, ethnicity, final face, hair and skin are undefined by canon",
+        "wardrobe details are Pelagos role proposals derived from canonical material language"
+      ]
+    },
+    "PEL-NPC-TEA": {
+      "canon_identity": "Téa del Coro / intérprete de arrecife / comparte memoria de forma parcial",
+      "quality_tier": "A",
+      "production_state": "CHARACTER_RIG_FOUNDATION_V1",
+      "object_count": 28,
+      "mesh_count": 22,
+      "curve_count": 3,
+      "armature_count": 1,
+      "armature": "PEL_TEA_RIG",
+      "bone_count": 20,
+      "visible_bbox_m": [0.605, 1.436, 1.697],
+      "body_height_m_proposal": 1.68,
+      "role_equipment": [
+        "bilateral hydrophone interpreter",
+        "memory resonance collar",
+        "wrist translation interface",
+        "waterproof interpreter mantle",
+        "reef-grip boots"
+      ],
+      "epistemic_limits": [
+        "human/humanoid proxy only; no non-human physiology claimed",
+        "age, ethnicity, final face, hair and skin are undefined by canon",
+        "no telepathic or magical interface is claimed"
+      ]
+    }
+  },
+  "qa": {
+    "missing_materials": 0,
+    "nonunit_mesh_scales": 0,
+    "armature_bone_count_each": 20,
+    "parenting_incident": "rev18 duplicated armature/bone transforms; corrected in rev19 and verified in rev20",
+    "curve_origin_incident": "absolute-coordinate Bezier origins normalized in rev20 while preserving evaluated geometry",
+    "workbench_silhouette_renders": [
+      {"asset_id": "PEL-NPC-NARA", "artifact_id": "6b13a99dd287e1ed34ba80da5a9a2f80", "name": "qa_nara_r20_wb.png", "resolution": [512, 512]},
+      {"asset_id": "PEL-NPC-TEA", "artifact_id": "c624705e48ff1e7788a281004877b57f", "name": "qa_tea_r20_wb.png", "resolution": [512, 512]}
+    ],
+    "visual_pixel_review": "PENDING_HUMAN_OR_CLIENT_IMAGE_INSPECTION",
+    "final_skin_deformation": "NOT_DONE",
+    "face_hair_skin": "NOT_DONE",
+    "uv_bake_final_pbr": "NOT_DONE",
+    "locomotion_animation": "NOT_DONE",
+    "engine_import": "NOT_RUN",
+    "collision_hitboxes": "NOT_RUN",
+    "lod_crowd_variants": "NOT_DONE",
+    "performance": "NOT_RUN"
+  },
+  "source_state": {
+    "editable_blend": "remote project revision 20",
+    "procedural_generator_script": "NOT_PERSISTED_FOR_THIS_CHARACTER_CHECKPOINT",
+    "continuity_note": "Editable .blend is retained, but a reproducible character build script or explicit manual-source workflow should be persisted before final delivery."
+  },
+  "reason_not_done": "Final character direction, sculpt/retopo, skin weights/deformation, UV/bakes/PBR, animation, engine integration, LOD/crowd variants, performance and human art-direction review remain open."
+}

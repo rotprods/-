@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "checkpoint": "PELAGOS-CORAL-002",
+  "task_id": "PEL/BIOME/007",
+  "world_id": "pelagos",
+  "claim_id": "CLM-PEL-WORLD-001",
+  "agent_id": "AGENT-PELAGOS-01",
+  "status": "IN_PROGRESS",
+  "claim": "deterministic_coral_growth_foundation_structurally_validated_not_game_ready",
+  "remote_3d": {
+    "project_id": "39930c08-62bb-4034-b35d-70d0ce51c9d9",
+    "build_revision": 6,
+    "current_revision": 7,
+    "build_operation": "pelagos.coral.foundation.v1",
+    "structural_verification_operation": "pelagos.coral.verify.r6",
+    "transform_fix_operation": "pelagos.coral.node-scale-fix.v1",
+    "final_verification_operation": "pelagos.coral.verify.r7"
+  },
+  "system": {
+    "collection": "21_CORAL_GROWTH_V1",
+    "seed": 29500307,
+    "states": ["young", "mature", "damaged", "recovering"],
+    "lods": [0, 1, 2],
+    "source_mesh_count": 12,
+    "memory_node_count": 36,
+    "linked_instance_count": 18,
+    "old_region_spire_proxies_hidden": 34,
+    "flow_vector": [0.78, 0.38, 0.0],
+    "flow_vector_status": "PROPOSAL_LOCAL_ART_DIRECTION_NOT_CANON",
+    "mechanism": "branch hierarchy encodes age/load taper, local-flow bias, causal damage and acoustic-history memory-node density",
+    "anti_cgi_control": "no random displacement or generic geometry noise; variation is deterministic topology"
+  },
+  "lod_complexity_tri_estimate": {
+    "young": [108, 28, 20],
+    "mature": [1116, 196, 60],
+    "damaged": [468, 84, 20],
+    "recovering": [1296, 224, 60]
+  },
+  "qa": {
+    "missing_asset_ids": 0,
+    "materialless_meshes": 0,
+    "nonunit_source_or_memory_scales": 0,
+    "lod_monotonic": true,
+    "instance_radius_m": [138.88, 230.42],
+    "scatter_within_authored_coro_260m": true,
+    "structural_gate": "PASS_FOR_PROCEDURAL_FOUNDATION",
+    "visual_gate": "PUBLISHED_RENDER_EXISTS_PIXEL_LEVEL_HUMAN_REVIEW_PENDING",
+    "uv_bake_gate": "NOT_RUN",
+    "pbr_gate": "FOUNDATION_MATERIALS_ONLY",
+    "engine_lod_switch_gate": "NOT_RUN",
+    "hero_interaction_collision": "TBD_BY_INTERACTIVE_ASSET",
+    "performance_gate": "NOT_RUN",
+    "human_art_review": "PENDING"
+  },
+  "artifacts": {
+    "render": {
+      "name": "pelagos_coral_growth_foundation_v001.png",
+      "artifact_id": "d41980893332af15f8f210b0600fa307",
+      "resolution": [1280, 720],
+      "size_bytes": 1024230
+    },
+    "revision_7_blend_size_bytes": 8087708,
+    "revision_7_glb_size_bytes": 6724576,
+    "generator": "art_source/worlds/pelagos/scripts/build_coral_growth_v1.py"
+  },
+  "reason_not_done": "Asset/world DoD still requires UV/bake validation, final PBR, engine LOD switching, relevant collision, representative performance profiling and human art-direction approval."
+}

@@ -1,0 +1,95 @@
+{
+  "schema_version": 1,
+  "checkpoint": "PELAGOS-MKT-KIT-001",
+  "task_id": "PEL/ARCH/006",
+  "world_id": "pelagos",
+  "claim_id": "CLM-PEL-WORLD-001",
+  "agent_id": "AGENT-PELAGOS-01",
+  "remote_3d": {
+    "project_id": "39930c08-62bb-4034-b35d-70d0ce51c9d9",
+    "revision": 2,
+    "mutation_operation": "pelagos.market.kit.v1",
+    "verification_operation": "pelagos.market.verify.r2"
+  },
+  "build": {
+    "claim": "implemented_remote_architecture_blockout",
+    "collection": "11_MERCADO_KIT_V1",
+    "geometry_objects_added": 130,
+    "mesh_count": 118,
+    "curve_count": 12,
+    "raw_mesh_triangle_estimate": 11376,
+    "module_grid_m": 2.0,
+    "snap_rotation_deg": 15,
+    "bridge_segments": 10,
+    "buoyancy_pods": 12,
+    "canopy_membranes": 4,
+    "bbox_m": {
+      "min": [-717.0, -152.65, -10.0],
+      "max": [-459.31, -23.23, 57.0],
+      "size": [257.69, 129.42, 67.0]
+    }
+  },
+  "functional_roles": {
+    "ring_beam": 1,
+    "radial_load_beam": 12,
+    "sealed_buoyancy_pod": 12,
+    "buoyancy_strut": 12,
+    "service_ballast_trunk": 1,
+    "service_hatch": 1,
+    "deck_service_channel": 6,
+    "utility_riser": 1,
+    "mooring_cleat": 8,
+    "canopy_compression_member": 8,
+    "canopy_membrane": 4,
+    "tension_cable": 8,
+    "bridge_deck_segment": 10,
+    "bridge_hinge": 9,
+    "rail_post": 12,
+    "handrail": 2,
+    "dock_deck": 1,
+    "impact_fender": 10,
+    "dock_handrail": 2,
+    "dock_bollard": 2
+  },
+  "qa": {
+    "missing_asset_ids": 0,
+    "nonunit_mesh_scales": 0,
+    "materialless_meshes": 0,
+    "missing_required_roles": 0,
+    "structural_semantic_gate": "PASS_FOR_KIT_BLOCKOUT",
+    "visual_gate": "PUBLISHED_RENDER_EXISTS_BUT_CLIENT_PIXEL_INSPECTION_UNAVAILABLE",
+    "uv_gate": "NOT_RUN",
+    "pbr_gate": "BLOCKOUT_MATERIALS_ONLY",
+    "physics_gate": "NOT_SIMULATED",
+    "collision_gate": "INTENT_ONLY_ENGINE_PENDING",
+    "engine_import_gate": "NOT_RUN",
+    "performance_gate": "NOT_RUN"
+  },
+  "artifacts": {
+    "blend": {
+      "size_bytes": 6171198,
+      "etag": "b438bfcc0b226b94e2cdd2b28fbf6408"
+    },
+    "glb": {
+      "size_bytes": 5019740,
+      "etag": "a09cc51887e74106a8d51fc90584e3e0"
+    },
+    "render": {
+      "name": "pelagos_mercado_kit_v001.png",
+      "artifact_id": "b88f6328090fd7c73d3d5bc59ea07d0e",
+      "size_bytes": 1104292,
+      "width": 1280,
+      "height": 720,
+      "etag": "a9067f9481025436e5c99ddfe0825c7b"
+    }
+  },
+  "warnings": [
+    "not final UV/PBR",
+    "bridge articulation is visually decomposed but physics is not simulated",
+    "buoyancy not simulated",
+    "engine collision/import pending",
+    "human art review pending"
+  ],
+  "task_status": "IN_PROGRESS",
+  "reason_not_done": "Asset-level DoD still requires final surfacing, UV, LOD, collision, engine import, performance and art review."
+}

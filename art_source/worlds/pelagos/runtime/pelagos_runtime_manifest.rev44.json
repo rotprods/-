@@ -1,0 +1,112 @@
+{
+  "schema_version": 1,
+  "world_id": "PELAGOS",
+  "source": {
+    "jutsu_project_id": "39930c08-62bb-4034-b35d-70d0ce51c9d9",
+    "world_master_revision": 44,
+    "branch": "art/world-pelagos-thalassa-001",
+    "status": "STRUCTURALLY_VALIDATED_NOT_ENGINE_QUALIFIED"
+  },
+  "runtime_target": {
+    "engine": "Godot",
+    "version": "4.7.2",
+    "exchange_format": "GLB",
+    "production_candidate_engine": "Unreal 5.8",
+    "production_candidate_status": "PENDING_EXO_012_BENCHMARK"
+  },
+  "authority": {
+    "semantic_authority": "this external manifest + claim receipts/source contracts",
+    "blender_custom_properties": "informational_only_do_not_require_import_preservation",
+    "node_names": "required import-time resolution keys",
+    "runtime_state_persistence": "NOT_IMPLEMENTED",
+    "runtime_collision_binding": "NOT_IMPLEMENTED",
+    "runtime_interaction_binding": "NOT_IMPLEMENTED",
+    "lod_hlod_thresholds": "NOT_QUALIFIED"
+  },
+  "state_contract": {
+    "rule": "exactly one active state node per stateful family; hidden alternatives must remain non-interactive and non-colliding",
+    "unknown_state_policy": "reject_and_keep_last_valid_state",
+    "missing_required_node_policy": "fail_family_closed_and_emit_diagnostic",
+    "duplicate_node_policy": "reject_import_contract"
+  },
+  "collision_policy_mapping": {
+    "query_only_until_gameplay_binding": "no StaticBody3D by default; optional Area3D/query volume only after gameplay approval",
+    "none_or_soft_query": "no blocking collision; optional non-blocking query volume",
+    "none_or_query_until_runtime_damage_binding": "damage overlay never owns blocking collision; host architecture remains collision authority",
+    "unbound": "no automatic collision generation from visible mesh"
+  },
+  "cultural_families": [
+    {"asset_id":"PEL-PROP-CONSENT-MARKER-001","claim":"PEL/CIV/PROP-X100-001","states":["pristine","used","damaged","abandoned"],"current_state":"abandoned","collision_policy":"unbound","state_nodes":{"pristine":"PEL_X100_CONSENT_V0_PRISTINE","used":"PEL_X100_CONSENT_V1_USED","damaged":"PEL_X100_CONSENT_V2_DAMAGED","abandoned":"PEL_X100_CONSENT_V0_ABANDONED"}},
+    {"asset_id":"PEL-PROP-FUNERAL-BUOY-001","claim":"PEL/CIV/PROP-X100-001","states":["pristine","used","damaged","abandoned"],"current_state":"abandoned","collision_policy":"unbound","state_nodes":{"pristine":"PEL_X100_FUNERAL_V0_PRISTINE","used":"PEL_X100_FUNERAL_V1_USED","damaged":"PEL_X100_FUNERAL_V2_DAMAGED","abandoned":"PEL_X100_FUNERAL_V0_ABANDONED"}},
+    {"asset_id":"PEL-PROP-HYDROPHONE-001","claim":"PEL/CIV/PROP-X100-001","states":["pristine","used","damaged","abandoned"],"current_state":"abandoned","collision_policy":"unbound","state_nodes":{"pristine":"PEL_X100_HYDRO_V0_PRISTINE","used":"PEL_X100_HYDRO_V1_USED","damaged":"PEL_X100_HYDRO_V2_DAMAGED","abandoned":"PEL_X100_HYDRO_V0_ABANDONED"}},
+    {"asset_id":"PEL-PROP-MAINT-CRATE-001","claim":"PEL/CIV/PROP-X100-001","states":["pristine","used","damaged","abandoned"],"current_state":"abandoned","collision_policy":"unbound","state_nodes":{"pristine":"PEL_X100_CRATE_V0_PRISTINE","used":"PEL_X100_CRATE_V1_USED","damaged":"PEL_X100_CRATE_V2_DAMAGED","abandoned":"PEL_X100_CRATE_V0_ABANDONED"}},
+    {"asset_id":"PEL-PROP-MEMCUST-001","claim":"PEL/CIV/PROP-X100-001","states":["pristine","used","damaged","abandoned"],"current_state":"abandoned","collision_policy":"unbound","state_nodes":{"pristine":"PEL_X100_MEMCUST_V0_PRISTINE","used":"PEL_X100_MEMCUST_V1_USED","damaged":"PEL_X100_MEMCUST_V2_DAMAGED","abandoned":"PEL_X100_MEMCUST_V0_ABANDONED"}},
+    {"asset_id":"PEL-PROP-REEF-CLAMP-001","claim":"PEL/CIV/PROP-X100-001","states":["pristine","used","damaged","abandoned"],"current_state":"abandoned","collision_policy":"unbound","state_nodes":{"pristine":"PEL_X100_CLAMP_V0_PRISTINE","used":"PEL_X100_CLAMP_V1_USED","damaged":"PEL_X100_CLAMP_V2_DAMAGED","abandoned":"PEL_X100_CLAMP_V0_ABANDONED"}},
+    {"asset_id":"PEL-PROP-SERVICE-REEL-001","claim":"PEL/CIV/PROP-X100-001","states":["pristine","used","damaged","abandoned"],"current_state":"abandoned","collision_policy":"unbound","state_nodes":{"pristine":"PEL_X100_REEL_V0_PRISTINE","used":"PEL_X100_REEL_V1_USED","damaged":"PEL_X100_REEL_V2_DAMAGED","abandoned":"PEL_X100_REEL_V0_ABANDONED"}},
+    {"asset_id":"PEL-PROP-TRADE-SIGNAL-001","claim":"PEL/CIV/PROP-X100-001","states":["pristine","used","damaged","abandoned"],"current_state":"abandoned","collision_policy":"unbound","state_nodes":{"pristine":"PEL_X100_TRADE_V0_PRISTINE","used":"PEL_X100_TRADE_V1_USED","damaged":"PEL_X100_TRADE_V2_DAMAGED","abandoned":"PEL_X100_TRADE_V0_ABANDONED"}},
+    {"asset_id":"PEL-PROP-WET-GEAR-RACK-001","claim":"PEL/CIV/PROP-X100-001","states":["pristine","used","damaged","abandoned"],"current_state":"abandoned","collision_policy":"unbound","state_nodes":{"pristine":"PEL_X100_RACK_V0_PRISTINE","used":"PEL_X100_RACK_V1_USED","damaged":"PEL_X100_RACK_V2_DAMAGED","abandoned":"PEL_X100_RACK_V0_ABANDONED"}},
+
+    {"asset_id":"PEL-PROP-WET-WORK-STATION-002","claim":"PEL/CIV/PROP-X100-006","family":"WORK","purpose":"wet_work_surface_and_seating","states":["pristine","used","damaged_repaired","abandoned"],"current_state":"used","variant":"standard","node_template":"PEL_CIV2_WORK_{STATE}","collision_policy":"query_only_until_gameplay_binding"},
+    {"asset_id":"PEL-PROP-TETHERED-TOOL-CADDY-002","claim":"PEL/CIV/PROP-X100-006","family":"TOOLS","purpose":"tethered_hand_tools","states":["pristine","used","damaged_repaired","abandoned"],"current_state":"used","variant":"compact","node_template":"PEL_CIV2_TOOLS_{STATE}","collision_policy":"query_only_until_gameplay_binding"},
+    {"asset_id":"PEL-PROP-DRY-LOCKBOX-002","claim":"PEL/CIV/PROP-X100-006","family":"DRYBOX","purpose":"dry_personal_lockbox","states":["pristine","used","damaged_repaired","abandoned"],"current_state":"pristine","variant":"compact","node_template":"PEL_CIV2_DRYBOX_{STATE}","collision_policy":"query_only_until_gameplay_binding"},
+    {"asset_id":"PEL-PROP-MESS-VESSEL-SET-002","claim":"PEL/CIV/PROP-X100-006","family":"MESS","purpose":"food_water_service_vessels","states":["pristine","used","damaged_repaired","abandoned"],"current_state":"used","variant":"standard","node_template":"PEL_CIV2_MESS_{STATE}","collision_policy":"query_only_until_gameplay_binding"},
+    {"asset_id":"PEL-PROP-MEDICAL-WETKIT-002","claim":"PEL/CIV/PROP-X100-006","family":"MED","purpose":"wet_first_aid_medical_kit","states":["pristine","used","damaged_repaired","abandoned"],"current_state":"damaged_repaired","variant":"compact","node_template":"PEL_CIV2_MED_{STATE}","collision_policy":"query_only_until_gameplay_binding"},
+    {"asset_id":"PEL-PROP-TRADE-MEASURE-002","claim":"PEL/CIV/PROP-X100-006","family":"TRADE2","purpose":"trade_measurement_exchange","states":["pristine","used","damaged_repaired","abandoned"],"current_state":"used","variant":"standard","node_template":"PEL_CIV2_TRADE2_{STATE}","collision_policy":"query_only_until_gameplay_binding"},
+    {"asset_id":"PEL-PROP-REFUGE-LAMP-002","claim":"PEL/CIV/PROP-X100-006","family":"LAMP","purpose":"portable_refuge_lighting","states":["pristine","used","damaged_repaired","abandoned"],"current_state":"pristine","variant":"compact","node_template":"PEL_CIV2_LAMP_{STATE}","collision_policy":"query_only_until_gameplay_binding"},
+    {"asset_id":"PEL-PROP-TEXTILE-REPAIR-FRAME-002","claim":"PEL/CIV/PROP-X100-006","family":"TEXTILE","purpose":"textile_drying_repair","states":["pristine","used","damaged_repaired","abandoned"],"current_state":"used","variant":"communal","node_template":"PEL_CIV2_TEXTILE_{STATE}","collision_policy":"query_only_until_gameplay_binding"},
+    {"asset_id":"PEL-PROP-WASTE-SORTER-002","claim":"PEL/CIV/PROP-X100-006","family":"WASTE","purpose":"waste_sorting_biosafe_disposal","states":["pristine","used","damaged_repaired","abandoned"],"current_state":"damaged_repaired","variant":"standard","node_template":"PEL_CIV2_WASTE_{STATE}","collision_policy":"query_only_until_gameplay_binding"},
+    {"asset_id":"PEL-PROP-STORM-STOWAGE-002","claim":"PEL/CIV/PROP-X100-006","family":"STORM","purpose":"weather_screen_storm_stowage","states":["pristine","used","damaged_repaired","abandoned"],"current_state":"damaged_repaired","variant":"communal","node_template":"PEL_CIV2_STORM_{STATE}","collision_policy":"query_only_until_gameplay_binding"},
+    {"asset_id":"PEL-PROP-NAV-ACOUSTIC-MARKER-002","claim":"PEL/CIV/PROP-X100-006","family":"NAV","purpose":"portable_navigation_acoustic_marker","states":["pristine","used","damaged_repaired","abandoned"],"current_state":"used","variant":"standard","node_template":"PEL_CIV2_NAV_{STATE}","collision_policy":"query_only_until_gameplay_binding"},
+    {"asset_id":"PEL-PROP-GOODS-BIN-002","claim":"PEL/CIV/PROP-X100-006","family":"GOODS","purpose":"market_display_modular_goods_bin","states":["pristine","used","damaged_repaired","abandoned"],"current_state":"used","variant":"communal","node_template":"PEL_CIV2_GOODS_{STATE}","collision_policy":"query_only_until_gameplay_binding"},
+
+    {"asset_id":"PEL-PROP-REST-SLING-003","claim":"PEL/CIV/PROP-X100-007","family":"REST","purpose":"rest_sling_berth_roll","states":["pristine","used","damaged_repaired","abandoned"],"current_state":"used","variant":"standard","node_template":"PEL_CIV3_REST_{STATE}","collision_policy":"query_only_until_gameplay_binding"},
+    {"asset_id":"PEL-PROP-RINSE-BASIN-003","claim":"PEL/CIV/PROP-X100-007","family":"RINSE","purpose":"rinse_wash_basin","states":["pristine","used","damaged_repaired","abandoned"],"current_state":"used","variant":"standard","node_template":"PEL_CIV3_RINSE_{STATE}","collision_policy":"query_only_until_gameplay_binding"},
+    {"asset_id":"PEL-PROP-LINE-SPLICE-JIG-003","claim":"PEL/CIV/PROP-X100-007","family":"SPLICE","purpose":"line_splicing_jig","states":["pristine","used","damaged_repaired","abandoned"],"current_state":"damaged_repaired","variant":"standard","node_template":"PEL_CIV3_SPLICE_{STATE}","collision_policy":"query_only_until_gameplay_binding"},
+    {"asset_id":"PEL-PROP-SEALANT-CADDY-003","claim":"PEL/CIV/PROP-X100-007","family":"SEAL","purpose":"sealant_repair_consumables","states":["pristine","used","damaged_repaired","abandoned"],"current_state":"used","variant":"compact","node_template":"PEL_CIV3_SEAL_{STATE}","collision_policy":"query_only_until_gameplay_binding"},
+    {"asset_id":"PEL-PROP-SALVAGE-SORT-003","claim":"PEL/CIV/PROP-X100-007","family":"SALVAGE","purpose":"salvage_sorting_tray","states":["pristine","used","damaged_repaired","abandoned"],"current_state":"used","variant":"communal","node_template":"PEL_CIV3_SALVAGE_{STATE}","collision_policy":"query_only_until_gameplay_binding"},
+    {"asset_id":"PEL-PROP-MAINT-KNEELER-003","claim":"PEL/CIV/PROP-X100-007","family":"KNEEL","purpose":"maintenance_kneeler_low_step","states":["pristine","used","damaged_repaired","abandoned"],"current_state":"used","variant":"compact","node_template":"PEL_CIV3_KNEEL_{STATE}","collision_policy":"query_only_until_gameplay_binding"},
+    {"asset_id":"PEL-PROP-FRAGILE-CRADLE-003","claim":"PEL/CIV/PROP-X100-007","family":"CRADLE","purpose":"fragile_wet_goods_transport_cradle","states":["pristine","used","damaged_repaired","abandoned"],"current_state":"used","variant":"communal","node_template":"PEL_CIV3_CRADLE_{STATE}","collision_policy":"query_only_until_gameplay_binding"},
+    {"asset_id":"PEL-PROP-WORK-SLATE-003","claim":"PEL/CIV/PROP-X100-007","family":"SLATE","purpose":"waterproof_temporary_work_route_slate","states":["pristine","used","damaged_repaired","abandoned"],"current_state":"damaged_repaired","variant":"compact","node_template":"PEL_CIV3_SLATE_{STATE}","collision_policy":"query_only_until_gameplay_binding"},
+    {"asset_id":"PEL-PROP-TETHER-HARNESS-003","claim":"PEL/CIV/PROP-X100-007","family":"HARNESS","purpose":"personal_tether_harness_rack","states":["pristine","used","damaged_repaired","abandoned"],"current_state":"used","variant":"communal","node_template":"PEL_CIV3_HARNESS_{STATE}","collision_policy":"query_only_until_gameplay_binding"}
+  ],
+  "machinery_families": [
+    {"asset_id":"PEL-MACH-DRAIN-PUMP-001","claim":"PEL/MKT/MACH-X100-003","node":"PEL_MACH_DRAIN","current_state":"used","variant":"standard","socket_nodes":["PEL_MACH_DRAIN_IN","PEL_MACH_DRAIN_OUT"],"socket_asset_id":"PEL-MACH-DRAIN-PUMP-001-SOCKET","collision_binding":"PENDING_RUNTIME_PROXY_MAPPING"},
+    {"asset_id":"PEL-MACH-FILTER-SKID-001","claim":"PEL/MKT/MACH-X100-003","node":"PEL_MACH_FILTER","current_state":"damaged_repaired","variant":"heavy","socket_nodes":["PEL_MACH_FILTER_IN","PEL_MACH_FILTER_OUT"],"socket_asset_id":"PEL-MACH-FILTER-SKID-001-SOCKET","collision_binding":"PENDING_RUNTIME_PROXY_MAPPING"},
+    {"asset_id":"PEL-MACH-BALLAST-TRANSFER-001","claim":"PEL/MKT/MACH-X100-003","node":"PEL_MACH_BALLAST","current_state":"used","variant":"standard","socket_nodes":["PEL_MACH_BALLAST_IN","PEL_MACH_BALLAST_OUT"],"socket_asset_id":"PEL-MACH-BALLAST-TRANSFER-001-SOCKET","collision_binding":"PENDING_RUNTIME_PROXY_MAPPING"},
+    {"asset_id":"PEL-MACH-MOORING-WINCH-001","claim":"PEL/MKT/MACH-X100-003","node":"PEL_MACH_WINCH","current_state":"damaged_repaired","variant":"heavy","socket_nodes":["PEL_MACH_WINCH_LINE","PEL_MACH_WINCH_SERVICE"],"socket_asset_id":"PEL-MACH-MOORING-WINCH-001-SOCKET","collision_binding":"PENDING_RUNTIME_PROXY_MAPPING"},
+    {"asset_id":"PEL-MACH-STORM-RELEASE-001","claim":"PEL/MKT/MACH-X100-003","node":"PEL_MACH_STORM","current_state":"pristine","variant":"standard","socket_nodes":["PEL_MACH_STORM_LOAD","PEL_MACH_STORM_RELEASE"],"socket_asset_id":"PEL-MACH-STORM-RELEASE-001-SOCKET","collision_binding":"PENDING_RUNTIME_PROXY_MAPPING"},
+    {"asset_id":"PEL-MACH-EQUALIZATION-MANIFOLD-001","claim":"PEL/MKT/MACH-X100-003","node":"PEL_MACH_MANIF","current_state":"used","variant":"standard","socket_nodes":["PEL_MACH_MANIF_PORT_0","PEL_MACH_MANIF_PORT_1","PEL_MACH_MANIF_PORT_2","PEL_MACH_MANIF_PORT_3"],"socket_asset_id":"PEL-MACH-EQUALIZATION-MANIFOLD-001-SOCKET","collision_binding":"PENDING_RUNTIME_PROXY_MAPPING"},
+    {"asset_id":"PEL-MACH-ACOUSTIC-RELAY-001","claim":"PEL/MKT/MACH-X100-003","node":"PEL_MACH_ACOUSTIC","current_state":"used","variant":"compact","socket_nodes":["PEL_MACH_ACOUSTIC_HYDRO_IN","PEL_MACH_ACOUSTIC_RELAY_OUT"],"socket_asset_id":"PEL-MACH-ACOUSTIC-RELAY-001-SOCKET","collision_binding":"PENDING_RUNTIME_PROXY_MAPPING"},
+    {"asset_id":"PEL-MACH-HEAT-EXCHANGER-001","claim":"PEL/MKT/MACH-X100-003","node":"PEL_MACH_HX","current_state":"abandoned","variant":"standard","socket_nodes":["PEL_MACH_HX_FLUID_-1","PEL_MACH_HX_FLUID_1"],"socket_asset_id":"PEL-MACH-HEAT-EXCHANGER-001-SOCKET","collision_binding":"PENDING_RUNTIME_PROXY_MAPPING"},
+    {"asset_id":"PEL-MACH-SERVICE-HOIST-001","claim":"PEL/MKT/MACH-X100-003","node":"PEL_MACH_HOIST","current_state":"used","variant":"standard","socket_nodes":["PEL_MACH_HOIST_LIFT"],"socket_asset_id":"PEL-MACH-SERVICE-HOIST-001-SOCKET","collision_binding":"PENDING_RUNTIME_PROXY_MAPPING"}
+  ],
+  "sessile_families": [
+    {"asset_id":"PEL-ECO-SESSILE-FILTER-FAN-001","claim":"PEL/ECO/SESSILE-X100-004","family":"FILTER_FAN","purpose":"current_facing_filter_fan","states":["colonizing","mature","disturbed_recovering","senescent"],"current_state":"senescent","node_template":"PEL_SESS_FILTER_FAN_{STATE}","collision_policy":"none_or_soft_query"},
+    {"asset_id":"PEL-ECO-SESSILE-PHOTIC-RIBBON-001","claim":"PEL/ECO/SESSILE-X100-004","family":"PHOTIC_RIBBON","purpose":"photic_primary_producer_ribbon","states":["colonizing","mature","disturbed_recovering","senescent"],"current_state":"senescent","node_template":"PEL_SESS_PHOTIC_RIBBON_{STATE}","collision_policy":"none_or_soft_query"},
+    {"asset_id":"PEL-ECO-SESSILE-DETRITUS-MAT-001","claim":"PEL/ECO/SESSILE-X100-004","family":"DETRITUS_MAT","purpose":"detritus_decomposer_mat","states":["colonizing","mature","disturbed_recovering","senescent"],"current_state":"senescent","node_template":"PEL_SESS_DETRITUS_MAT_{STATE}","collision_policy":"none_or_soft_query"},
+    {"asset_id":"PEL-ECO-SESSILE-MINERAL-TUBE-001","claim":"PEL/ECO/SESSILE-X100-004","family":"MINERAL_TUBE","purpose":"mineral_tube_chemo_decomposer","states":["colonizing","mature","disturbed_recovering","senescent"],"current_state":"senescent","node_template":"PEL_SESS_MINERAL_TUBE_{STATE}","collision_policy":"none_or_soft_query"},
+    {"asset_id":"PEL-ECO-SESSILE-NURSERY-CRUST-001","claim":"PEL/ECO/SESSILE-X100-004","family":"NURSERY_CRUST","purpose":"calcifying_juvenile_nursery_crust","states":["colonizing","mature","disturbed_recovering","senescent"],"current_state":"senescent","node_template":"PEL_SESS_NURSERY_CRUST_{STATE}","collision_policy":"none_or_soft_query"},
+    {"asset_id":"PEL-ECO-SESSILE-FOULING-FILTER-001","claim":"PEL/ECO/SESSILE-X100-004","family":"FOULING_FILTER","purpose":"infrastructure_fouling_filter_cluster","states":["colonizing","mature","disturbed_recovering","senescent"],"current_state":"senescent","node_template":"PEL_SESS_FOULING_FILTER_{STATE}","collision_policy":"none_or_soft_query"},
+    {"asset_id":"PEL-ECO-SESSILE-DECAY-BIOFILM-001","claim":"PEL/ECO/SESSILE-X100-004","family":"DECAY_BIOFILM","purpose":"organic_decay_decomposer_biofilm","states":["colonizing","mature","disturbed_recovering","senescent"],"current_state":"senescent","node_template":"PEL_SESS_DECAY_BIOFILM_{STATE}","collision_policy":"none_or_soft_query"},
+    {"asset_id":"PEL-ECO-SESSILE-CURRENT-BIOFILTER-001","claim":"PEL/ECO/SESSILE-X100-004","family":"CURRENT_BIOFILTER","purpose":"sponge_like_current_biofilter","states":["colonizing","mature","disturbed_recovering","senescent"],"current_state":"senescent","node_template":"PEL_SESS_CURRENT_BIOFILTER_{STATE}","collision_policy":"none_or_soft_query"},
+    {"asset_id":"PEL-ECO-SESSILE-LEE-DETRITUS-001","claim":"PEL/ECO/SESSILE-X100-004","family":"LEE_DETRITUS","purpose":"lee_zone_detritus_aggregation","states":["colonizing","mature","disturbed_recovering","senescent"],"current_state":"senescent","node_template":"PEL_SESS_LEE_DETRITUS_{STATE}","collision_policy":"none_or_soft_query"}
+  ],
+  "damage_families": [
+    {"asset_id":"PEL-DMG-DECK-IMPACT-001","claim":"PEL/MKT/DAMAGE-X100-005","family":"DECK","target":"PEL_MKT_Platform_00","states":["stressed","damaged","field_repaired","abandoned"],"current_state":"field_repaired","node_template":"PEL_DMG_DECK_{STATE}","collision_policy":"none_or_query_until_runtime_damage_binding","anchor":{"point":[-552,-90,13.5],"normal":[0,0,1]}},
+    {"asset_id":"PEL-DMG-CANOPY-TEAR-001","claim":"PEL/MKT/DAMAGE-X100-005","family":"CANOPY","target":"PEL_MKT_V1_CanopyMembrane_3","states":["stressed","damaged","field_repaired","abandoned"],"current_state":"damaged","node_template":"PEL_DMG_CANOPY_{STATE}","collision_policy":"none_or_query_until_runtime_damage_binding","anchor":{"point":[-510.56097,-89.43903,39.17073],"normal":[0.56604,-0.56604,0.59933]}},
+    {"asset_id":"PEL-DMG-BRIDGE-HINGE-001","claim":"PEL/MKT/DAMAGE-X100-005","family":"BRIDGE","target":"PEL_MKT_Bridge_0_3","states":["stressed","damaged","field_repaired","abandoned"],"current_state":"field_repaired","node_template":"PEL_DMG_BRIDGE_{STATE}","collision_policy":"none_or_query_until_runtime_damage_binding","anchor":{"point":[-517,10,16],"normal":[0.95106,0,-0.30901]}},
+    {"asset_id":"PEL-DMG-HATCH-SEAL-001","claim":"PEL/MKT/DAMAGE-X100-005","family":"HATCH","target":"PEL_MKT_V1_Hatch","states":["stressed","damaged","field_repaired","abandoned"],"current_state":"stressed","node_template":"PEL_DMG_HATCH_{STATE}","collision_policy":"none_or_query_until_runtime_damage_binding","anchor":{"point":[-520.00006,-80,14.425],"normal":[0,0,1]}},
+    {"asset_id":"PEL-DMG-BUOY-LEAK-001","claim":"PEL/MKT/DAMAGE-X100-005","family":"BUOY","target":"PEL_MKT_V1_BuoyPod_06","states":["stressed","damaged","field_repaired","abandoned"],"current_state":"field_repaired","node_template":"PEL_DMG_BUOY_{STATE}","collision_policy":"none_or_query_until_runtime_damage_binding","anchor":{"point":[-555.20001,-80,4.5],"normal":[-0.98769,-0.15645,0]}},
+    {"asset_id":"PEL-DMG-MOORING-OVERLOAD-001","claim":"PEL/MKT/DAMAGE-X100-005","family":"MOORING","target":"PEL_MKT_V1_MooringCleat_04","states":["stressed","damaged","field_repaired","abandoned"],"current_state":"damaged","node_template":"PEL_DMG_MOORING_{STATE}","collision_policy":"none_or_query_until_runtime_damage_binding","anchor":{"point":[-558,-80,14.675],"normal":[0,0,1]}},
+    {"asset_id":"PEL-DMG-UTILITY-INGRESS-001","claim":"PEL/MKT/DAMAGE-X100-005","family":"UTILITY","target":"PEL_MKT_V1_ServiceChannel_04","states":["stressed","damaged","field_repaired","abandoned"],"current_state":"field_repaired","node_template":"PEL_DMG_UTILITY_{STATE}","collision_policy":"none_or_query_until_runtime_damage_binding","anchor":{"point":[-531.1051,-99.78462,13.745],"normal":[0.80018,-0.46197,0.38248]}},
+    {"asset_id":"PEL-DMG-SHELL-STRESS-001","claim":"PEL/MKT/DAMAGE-X100-005","family":"SHELL","target":"PEL_MKT_CommandShell","states":["stressed","damaged","field_repaired","abandoned"],"current_state":"field_repaired","node_template":"PEL_DMG_SHELL_{STATE}","collision_policy":"none_or_query_until_runtime_damage_binding","anchor":{"point":[-507.2876,-92.90078,23],"normal":[0.47215,-0.84607,0.24746]}}
+  ],
+  "counts": {
+    "cultural_families": 30,
+    "machinery_families": 9,
+    "machinery_socket_groups": 9,
+    "sessile_families": 9,
+    "damage_families": 8,
+    "total_stateful_or_semantic_family_groups": 56
+  }
+}

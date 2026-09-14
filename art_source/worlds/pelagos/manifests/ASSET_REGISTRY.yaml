@@ -1,0 +1,1100 @@
+schema_version: 1
+registry_id: PELAGOS-ASSET-REGISTRY-001
+world_id: pelagos
+claim_id: CLM-PEL-WORLD-001
+owner: AGENT-PELAGOS-01
+catalog_level: production_asset_and_modular_family
+status: IN_PROGRESS
+note: >-
+  Rows are production assets or modular families, not scene instances. Quantities/variants expand under each row without changing ownership semantics. Budgets remain TBD until representative engine/hardware qualification; no universal triangle number is invented.
+
+defaults: &defaults
+  owner: AGENT-PELAGOS-01
+  status: TODO
+  blend_path: null
+  export_path: null
+  texture_set: TBD
+  poly_budget: TBD_AFTER_ENGINE_PROFILE
+  lod_policy: CLASS_SPECIFIC_TBD
+  collision_policy: NONE_UNLESS_GAMEPLAY_REQUIRES
+  rig: false
+  animation_dependency: null
+  physics: none
+  destructible: false
+  reference_set:
+    - design/EXOVANT_BIBLIA.md
+    - design/EXOVANT_DATA.json
+    - art_source/worlds/pelagos/WORLD_BIBLE.md
+  license: original_project_asset
+  qa_status: NOT_RUN
+
+assets:
+  - <<: *defaults
+    asset_id: PEL-PLANET-001
+    region: global
+    category: world_macro
+    subcategory: orbital_representation
+    name: Pelagos orbital body
+    description: Low/mid-frequency orbital representation separated from authored L3 geometry.
+    priority: P1
+    quality_tier: D
+    usage_frequency: global_vista
+    real_dimensions: radius_6000km_PROPOSAL
+    player_distance: orbital
+    dependencies: [ADR-PEL-001]
+    material_set: PEL_PLANET_OCEAN_ATMOSPHERE_TBD
+    collision_policy: none
+
+  - <<: *defaults
+    asset_id: PEL-ENV-001
+    region: master_cell
+    category: terrain
+    subcategory: bathymetry
+    name: 2.2 km master bathymetry
+    description: Macro shelf/reef/trench terrain supporting all three canonical regions.
+    priority: P0
+    quality_tier: A
+    usage_frequency: persistent
+    real_dimensions: 2200x2200m_current_master
+    player_distance: near_to_vista
+    dependencies: [ADR-PEL-001]
+    status: IN_PROGRESS
+    blend_path: hf://39930c08-62bb-4034-b35d-70d0ce51c9d9@1/PEL_ENV_Bathymetry_2200m
+    export_path: glb://39930c08-62bb-4034-b35d-70d0ce51c9d9@1
+    material_set: PEL_Seabed_BlackMineral_BLOCKOUT
+    lod_policy: tile_and_HLOD_required
+    collision_policy: gameplay_surface_custom_or_engine_terrain
+    qa_status: STRUCTURE_PASS_VISUAL_ENGINE_PENDING
+
+  - <<: *defaults
+    asset_id: PEL-ENV-002
+    region: master_cell
+    category: environment
+    subcategory: water_interface
+    name: Mean sea surface / water system interface
+    description: Current geometry is a proxy; final rendering/physics belongs to qualified runtime water solution.
+    priority: P0
+    quality_tier: A
+    usage_frequency: persistent
+    real_dimensions: master_cell_2200x2200m_proxy
+    player_distance: all
+    dependencies: [PEL-ENV-001]
+    status: IN_PROGRESS
+    blend_path: hf://39930c08-62bb-4034-b35d-70d0ce51c9d9@1/PEL_ENV_MeanSea_2200m
+    material_set: PEL_WaterProxy
+    collision_policy: runtime_water_volume_TBD
+    physics: buoyancy_swim_interface_TBD
+    qa_status: PROXY_ONLY
+
+  - <<: *defaults
+    asset_id: PEL-ENV-003
+    region: global
+    category: vista
+    subcategory: horizon_ocean
+    name: Pelagos horizon and atmospheric vista
+    description: Distant ocean/cloud/horizon representation decoupled from gameplay cells.
+    priority: P2
+    quality_tier: D
+    usage_frequency: persistent
+    real_dimensions: planetary
+    player_distance: vista
+    dependencies: [PEL-PLANET-001]
+    material_set: PEL_ATMOSPHERE_TBD
+
+  - <<: *defaults
+    asset_id: PEL-MKT-PLAT-A
+    region: mercado_boyas
+    category: architecture
+    subcategory: floating_platform_primary
+    name: Primary buoy platform kit
+    description: 60–90 m class floating occupancy platform with plausible buoyancy/ballast structure.
+    priority: P0
+    quality_tier: A
+    usage_frequency: high
+    real_dimensions: 60-90m_diameter_family_PROPOSAL
+    player_distance: near_to_far
+    dependencies: [PEL-ENV-002]
+    status: IN_PROGRESS
+    blend_path: hf://39930c08-62bb-4034-b35d-70d0ce51c9d9@1/PEL_MKT_Platform_*
+    material_set: PEL_Human_IvoryCeramic+PEL_MarineStructuralMetal
+    lod_policy: LOD0-3_plus_HLOD
+    collision_policy: compound_walkable
+    physics: buoyancy_interface_future
+    qa_status: BLOCKOUT_STRUCTURE_PASS
+
+  - <<: *defaults
+    asset_id: PEL-MKT-PLAT-B
+    region: mercado_boyas
+    category: architecture
+    subcategory: floating_platform_secondary
+    name: Secondary buoy platform kit
+    description: 30–60 m service/trade platforms sharing structural grammar with primary modules.
+    priority: P1
+    quality_tier: B
+    usage_frequency: high
+    real_dimensions: 30-60m_diameter_family_PROPOSAL
+    player_distance: near_to_far
+    dependencies: [PEL-MKT-PLAT-A]
+    status: IN_PROGRESS
+    material_set: PEL_Human_IvoryCeramic+PEL_MarineStructuralMetal
+    lod_policy: LOD0-3_plus_HLOD
+    collision_policy: compound_walkable
+
+  - <<: *defaults
+    asset_id: PEL-MKT-BRIDGE-001
+    region: mercado_boyas
+    category: infrastructure
+    subcategory: articulated_bridge
+    name: Articulated floating bridge kit
+    description: Straight/hinged bridge family with joints, service routing and storm articulation.
+    priority: P0
+    quality_tier: A
+    usage_frequency: high
+    real_dimensions: width_6m_blockout_PROPOSAL
+    player_distance: near_to_medium
+    dependencies: [PEL-MKT-PLAT-A]
+    status: IN_PROGRESS
+    blend_path: hf://39930c08-62bb-4034-b35d-70d0ce51c9d9@1/PEL_MKT_Bridge_*
+    material_set: PEL_AgedBronzeNetwork+PEL_MarineDeck
+    collision_policy: simple_walkable_plus_rail
+    physics: articulated_visual_state_future
+
+  - <<: *defaults
+    asset_id: PEL-MKT-MAST-001
+    region: mercado_boyas
+    category: architecture
+    subcategory: mast_canopy
+    name: Canopy mast and rib kit
+    description: Tension/compression shade/weather structure with replaceable membrane attachments.
+    priority: P1
+    quality_tier: B
+    usage_frequency: high
+    real_dimensions: 45m_mast_blockout_PROPOSAL
+    player_distance: near_to_far
+    dependencies: [PEL-MKT-PLAT-A]
+    status: IN_PROGRESS
+    blend_path: hf://39930c08-62bb-4034-b35d-70d0ce51c9d9@1/PEL_MKT_Mast_*+PEL_MKT_CanopyRib_*
+    material_set: PEL_AgedBronzeNetwork+PEL_TechnicalMembrane
+    collision_policy: mast_simple_canopy_none
+
+  - <<: *defaults
+    asset_id: PEL-MKT-KEEL-001
+    region: mercado_boyas
+    category: architecture
+    subcategory: buoyancy_keel
+    name: Ballast and buoyancy keel family
+    description: Visible mass below waterline making platform buoyancy physically credible.
+    priority: P1
+    quality_tier: B
+    usage_frequency: high
+    real_dimensions: 28m_diameter_x30m_depth_blockout_family
+    player_distance: medium_underwater
+    dependencies: [PEL-MKT-PLAT-A]
+    status: IN_PROGRESS
+    material_set: PEL_MarineStructuralMetal
+    collision_policy: simple_or_none_by_route
+
+  - <<: *defaults
+    asset_id: PEL-MKT-DOCK-001
+    region: mercado_boyas
+    category: infrastructure
+    subcategory: dock
+    name: Nácar docking finger and fender kit
+    description: Vehicle access, impact fenders, mooring and maintenance connections.
+    priority: P1
+    quality_tier: A
+    usage_frequency: medium
+    real_dimensions: TBD_FROM_NACAR2
+    player_distance: near
+    dependencies: [PEL-VEH-NACAR2, PEL-MKT-PLAT-A]
+    material_set: PEL_MarineStructuralMetal+PEL_RubberPolymer
+    collision_policy: compound_walkable
+
+  - <<: *defaults
+    asset_id: PEL-MKT-UTIL-001
+    region: mercado_boyas
+    category: infrastructure
+    subcategory: utilities
+    name: Utility riser and service spine kit
+    description: Power/water/data/acoustic routing with accessible shutoffs and maintenance clearances.
+    priority: P1
+    quality_tier: B
+    usage_frequency: high
+    real_dimensions: modular_TBD
+    player_distance: near
+    dependencies: [PEL-MKT-PLAT-A]
+    material_set: PEL_MarineStructuralMetal+PEL_TechnicalPolymer
+    collision_policy: simple
+
+  - <<: *defaults
+    asset_id: PEL-MKT-SIGNAL-001
+    region: mercado_boyas
+    category: props
+    subcategory: refuge_signal
+    name: Amber refuge / hydrophone mast
+    description: Redundant visual/acoustic refuge marker; amber is not the sole gameplay signal.
+    priority: P1
+    quality_tier: A
+    usage_frequency: medium
+    real_dimensions: 4-8m_family_TBD
+    player_distance: medium_to_far
+    dependencies: [PEL-MKT-UTIL-001]
+    status: IN_PROGRESS
+    material_set: PEL_MarineStructuralMetal+PEL_RefugeEmitter
+    collision_policy: simple
+
+  - <<: *defaults
+    asset_id: PEL-MKT-HERO-001
+    region: mercado_boyas
+    category: landmark
+    subcategory: command_market_shell
+    name: Mercado command shell
+    description: Hero civic/commercial volume anchoring Mercado silhouette and mission flow.
+    priority: P0
+    quality_tier: S
+    usage_frequency: hero
+    real_dimensions: 44x32x18m_blockout_PROPOSAL
+    player_distance: near_to_far
+    dependencies: [PEL-MKT-PLAT-A, PEL-MKT-UTIL-001]
+    status: IN_PROGRESS
+    blend_path: hf://39930c08-62bb-4034-b35d-70d0ce51c9d9@1/PEL_MKT_CommandShell
+    material_set: PEL_Human_IvoryCeramic+PEL_PressureGlass
+    lod_policy: authored_LOD0-3_plus_HLOD
+    collision_policy: custom_walkable_shell
+    qa_status: BLOCKOUT_ONLY
+
+  - <<: *defaults
+    asset_id: PEL-MKT-STALL-001
+    region: mercado_boyas
+    category: props
+    subcategory: market_stall
+    name: Modular wet-market/trade stall kit
+    description: Commercial set dressing exposing routes, maintenance and ethical memory trade.
+    priority: P2
+    quality_tier: B
+    usage_frequency: high
+    real_dimensions: human_scale_modular_TBD
+    player_distance: near
+    dependencies: [PEL-MKT-HERO-001]
+    material_set: PEL_TechnicalMembrane+PEL_Human_IvoryCeramic
+    collision_policy: simple
+
+  - <<: *defaults
+    asset_id: PEL-MKT-INT-001
+    region: mercado_boyas
+    category: interiors
+    subcategory: pressure_vestibule
+    name: Market pressure/service vestibule kit
+    description: Mission-relevant interior transition with drainage, seals and maintenance access.
+    priority: P2
+    quality_tier: A
+    usage_frequency: medium
+    real_dimensions: human_scale_TBD
+    player_distance: close
+    dependencies: [PEL-MKT-HERO-001]
+    material_set: PEL_Human_IvoryCeramic+PEL_MarineStructuralMetal
+    collision_policy: custom_walkable
+
+  - <<: *defaults
+    asset_id: PEL-REEF-SPIRE-001
+    region: coro_arrecife
+    category: vegetation_ecology
+    subcategory: living_coral_spire
+    name: Living coral spire family
+    description: Deterministic growth assets encoding load/flow/acoustic history rather than random tentacle noise.
+    priority: P0
+    quality_tier: A
+    usage_frequency: very_high
+    real_dimensions: 18-75m_blockout_family
+    player_distance: near_to_vista
+    dependencies: [PEL-ENV-001]
+    status: IN_PROGRESS
+    blend_path: hf://39930c08-62bb-4034-b35d-70d0ce51c9d9@1/PEL_REEF_Spire_*
+    material_set: PEL_LivingCoralTissueMineral
+    lod_policy: procedural_bake_LOD0-3_HLOD
+    collision_policy: route_specific_simple_or_custom
+    qa_status: BLOCKOUT_STRUCTURE_PASS
+
+  - <<: *defaults
+    asset_id: PEL-REEF-NODE-001
+    region: coro_arrecife
+    category: ecology
+    subcategory: memory_node
+    name: Reef memory node family
+    description: Tangible living/optical nodes communicating memory state through form plus cyan signal.
+    priority: P0
+    quality_tier: A
+    usage_frequency: high
+    real_dimensions: 2-6m_family_PROPOSAL
+    player_distance: close_to_medium
+    dependencies: [PEL-REEF-SPIRE-001]
+    status: IN_PROGRESS
+    material_set: PEL_OpticalMemoryTissue
+    collision_policy: simple_or_none
+
+  - <<: *defaults
+    asset_id: PEL-REEF-ARCH-001
+    region: coro_arrecife
+    category: landmark
+    subcategory: acoustic_arch
+    name: Acoustic arch family
+    description: Reef/precursor interface shaping sound routes and visual navigation.
+    priority: P0
+    quality_tier: A
+    usage_frequency: medium
+    real_dimensions: 80-215m_radius_blockout_family
+    player_distance: near_to_vista
+    dependencies: [PEL-REEF-SPIRE-001]
+    status: IN_PROGRESS
+    material_set: PEL_AgedBronzeNetwork+PEL_LivingCoralTissueMineral
+    collision_policy: route_specific
+
+  - <<: *defaults
+    asset_id: PEL-REEF-RING-001
+    region: coro_arrecife
+    category: infrastructure
+    subcategory: resonance_ring
+    name: Resonance ring kit
+    description: Acoustic/memory interface ring; function must remain legible without emissive color.
+    priority: P1
+    quality_tier: A
+    usage_frequency: medium
+    real_dimensions: 18-32m_radius_blockout
+    player_distance: near_to_far
+    dependencies: [PEL-REEF-HERO-001]
+    status: IN_PROGRESS
+    material_set: PEL_AgedBronzeNetwork+PEL_OpticalMemoryTissue
+    collision_policy: none_or_simple
+
+  - <<: *defaults
+    asset_id: PEL-REEF-HERO-001
+    region: coro_arrecife
+    category: landmark
+    subcategory: chorus_mast
+    name: Coro central chorus mast
+    description: 100 m class orientation landmark and acoustic interface for central region.
+    priority: P0
+    quality_tier: S
+    usage_frequency: hero
+    real_dimensions: 100m_height_blockout_PROPOSAL
+    player_distance: near_to_vista
+    dependencies: [PEL-REEF-ARCH-001]
+    status: IN_PROGRESS
+    material_set: PEL_AgedBronzeNetwork+PEL_OpticalMemoryTissue
+    lod_policy: authored_LOD0-3_plus_HLOD
+    collision_policy: custom_if_climbable
+
+  - <<: *defaults
+    asset_id: PEL-REEF-CLAMP-001
+    region: coro_arrecife
+    category: infrastructure
+    subcategory: reef_safe_interface
+    name: Non-destructive human-to-reef clamp kit
+    description: Human mounting system whose geometry communicates consent/minimal tissue damage.
+    priority: P1
+    quality_tier: A
+    usage_frequency: high
+    real_dimensions: modular_TBD
+    player_distance: close
+    dependencies: [PEL-REEF-SPIRE-001]
+    material_set: PEL_MarineStructuralMetal+PEL_BiocompatiblePad
+    collision_policy: simple
+
+  - <<: *defaults
+    asset_id: PEL-REEF-WALK-001
+    region: coro_arrecife
+    category: infrastructure
+    subcategory: non_destructive_walkway
+    name: Reef-safe walkway kit
+    description: Walkway attached through designed interfaces rather than cutting arbitrary coral paths.
+    priority: P0
+    quality_tier: A
+    usage_frequency: high
+    real_dimensions: width_TBD_by_gameplay
+    player_distance: near
+    dependencies: [PEL-REEF-CLAMP-001]
+    material_set: PEL_MarineStructuralMetal+PEL_TechnicalDeck
+    collision_policy: simple_walkable
+
+  - <<: *defaults
+    asset_id: PEL-REEF-HYDRO-001
+    region: coro_arrecife
+    category: interactive_equipment
+    subcategory: hydrophone_station
+    name: Hydrophone / acoustic translation station
+    description: Physical interface for recording and interpreting reef calls.
+    priority: P0
+    quality_tier: A
+    usage_frequency: mission_critical
+    real_dimensions: human_console_TBD
+    player_distance: close
+    dependencies: [PEL-REEF-CLAMP-001]
+    material_set: PEL_Human_IvoryCeramic+PEL_PressureGlass+PEL_AcousticSensor
+    collision_policy: simple
+
+  - <<: *defaults
+    asset_id: PEL-REEF-GATE-001
+    region: coro_arrecife
+    category: architecture
+    subcategory: acoustic_membrane_gate
+    name: Sound-reactive membrane gateway
+    description: Living threshold opening from acoustic sequence; must read physically open/closed.
+    priority: P1
+    quality_tier: A
+    usage_frequency: mission_route
+    real_dimensions: traversal_clearance_TBD
+    player_distance: close_to_medium
+    dependencies: [PEL-REEF-NODE-001]
+    material_set: PEL_LivingCoralTissueMineral+PEL_OpticalMemoryTissue
+    collision_policy: animated_custom
+    rig: true
+    animation_dependency: gate_open_close_resonance
+
+  - <<: *defaults
+    asset_id: PEL-TRN-RIM-001
+    region: fosa_mil_miradas
+    category: landmark
+    subcategory: trench_rim
+    name: Fosa descent rim
+    description: 224 m class blockout rim establishing scale and descent entry.
+    priority: P0
+    quality_tier: S
+    usage_frequency: hero
+    real_dimensions: 224m_diameter_blockout_PROPOSAL
+    player_distance: medium_to_vista
+    dependencies: [PEL-ENV-001]
+    status: IN_PROGRESS
+    material_set: PEL_AgedBronzeNetwork+PEL_BlackMineralSubstrate
+    lod_policy: LOD0-3_plus_HLOD
+    collision_policy: custom_route_edges
+
+  - <<: *defaults
+    asset_id: PEL-TRN-ANCHOR-001
+    region: fosa_mil_miradas
+    category: infrastructure
+    subcategory: descent_anchor
+    name: Descent anchor tower kit
+    description: Repeated anchor/socket family making vertical route and sentinel paths legible.
+    priority: P0
+    quality_tier: A
+    usage_frequency: high
+    real_dimensions: 90m_depth_blockout_family
+    player_distance: near_to_far
+    dependencies: [PEL-TRN-RIM-001]
+    status: IN_PROGRESS
+    material_set: PEL_AgedBronzeNetwork
+    collision_policy: simple_or_custom_by_route
+
+  - <<: *defaults
+    asset_id: PEL-TRN-CABLE-001
+    region: fosa_mil_miradas
+    category: infrastructure
+    subcategory: descent_cable
+    name: Pressure-rated descent cable / tether family
+    description: Functional traversal and machinery cable with scale, sag and attachment logic.
+    priority: P1
+    quality_tier: B
+    usage_frequency: high
+    real_dimensions: length_variable
+    player_distance: near_to_medium
+    dependencies: [PEL-TRN-ANCHOR-001]
+    material_set: PEL_RopeCablePolymer
+    collision_policy: none_unless_gameplay
+    physics: spline_or_baked_state_TBD
+
+  - <<: *defaults
+    asset_id: PEL-TRN-PRESSURE-001
+    region: fosa_mil_miradas
+    category: interiors
+    subcategory: pressure_transition
+    name: Pressure transition chamber
+    description: Mission-relevant dry/wet transition with seals, drainage and emergency bypass.
+    priority: P1
+    quality_tier: A
+    usage_frequency: mission_route
+    real_dimensions: human_scale_TBD
+    player_distance: close
+    dependencies: [PEL-TRN-ANCHOR-001]
+    material_set: PEL_Human_IvoryCeramic+PEL_MarineStructuralMetal
+    collision_policy: custom_walkable
+
+  - <<: *defaults
+    asset_id: PEL-BOSS-ARENA-001
+    region: thalassa_arena
+    category: architecture
+    subcategory: boss_arena
+    name: THALASSA floodable arena
+    description: Canon 52 m chamber with stable ground, LOS columns, dry platforms and flood interfaces.
+    priority: P0
+    quality_tier: S
+    usage_frequency: hero_encounter
+    real_dimensions: 52m_diameter_CANON
+    player_distance: near_to_far
+    dependencies: [PEL-TRN-PRESSURE-001]
+    status: IN_PROGRESS
+    blend_path: hf://39930c08-62bb-4034-b35d-70d0ce51c9d9@1/PEL_BOSS_ArenaFloor
+    material_set: PEL_BlackMineralSubstrate+PEL_Human_IvoryCeramic+PEL_AgedBronzeNetwork
+    lod_policy: hero_arena_no_aggressive_LOD_in_combat
+    collision_policy: authored_walkable_and_cover
+    qa_status: DIMENSION_STRUCTURE_PASS_ENGINE_PENDING
+
+  - <<: *defaults
+    asset_id: PEL-BOSS-COLUMN-001
+    region: thalassa_arena
+    category: architecture
+    subcategory: line_of_sight_column
+    name: LOS maintenance column kit
+    description: Physical cover supporting Mirada convergente response.
+    priority: P0
+    quality_tier: A
+    usage_frequency: encounter_core
+    real_dimensions: 4.4m_diameter_x22m_blockout
+    player_distance: near
+    dependencies: [PEL-BOSS-ARENA-001]
+    status: IN_PROGRESS
+    material_set: PEL_Human_IvoryCeramic+PEL_MarineStructuralMetal
+    collision_policy: simple_or_convex_cover
+
+  - <<: *defaults
+    asset_id: PEL-BOSS-DRY-001
+    region: thalassa_arena
+    category: architecture
+    subcategory: dry_platform
+    name: Ventilated dry platform kit
+    description: Safe/reposition platforms supporting pressure-song response and flood state changes.
+    priority: P0
+    quality_tier: A
+    usage_frequency: encounter_core
+    real_dimensions: 9x7m_blockout
+    player_distance: near
+    dependencies: [PEL-BOSS-ARENA-001]
+    status: IN_PROGRESS
+    material_set: PEL_Human_IvoryCeramic+PEL_VentilationHardware
+    collision_policy: simple_walkable
+
+  - <<: *defaults
+    asset_id: PEL-BOSS-THALASSA-001
+    region: thalassa_arena
+    category: hero_creature
+    subcategory: boss
+    name: THALASSA — coral de los mil ojos
+    description: Hero organism/interface boss; current geometry is silhouette proxy only.
+    priority: P0
+    quality_tier: S
+    usage_frequency: hero_encounter
+    real_dimensions: current_core_18x18x30m_PROPOSAL
+    player_distance: close_to_far
+    dependencies: [PEL-BOSS-ARENA-001, PEL-REEF-SPIRE-001]
+    status: IN_PROGRESS
+    blend_path: hf://39930c08-62bb-4034-b35d-70d0ce51c9d9@1/PEL_BOSS_Thalassa_Core
+    material_set: PEL_LivingCoralTissueMineral+PEL_OpticalMemoryTissue
+    lod_policy: authored_LOD0-2_boss_specific
+    collision_policy: separated_hurtboxes_and_body_collision_future
+    rig: true
+    animation_dependency: thalassa_full_encounter_set
+    physics: tentacle_secondary_motion_controlled
+    qa_status: SILHOUETTE_PROXY_ONLY
+
+  - <<: *defaults
+    asset_id: PEL-BOSS-EYES-001
+    region: thalassa_arena
+    category: hero_creature
+    subcategory: eye_module
+    name: THALASSA eye family
+    description: Scanning/aiming/damaged eye modules; signal state must remain readable without cyan alone.
+    priority: P0
+    quality_tier: S
+    usage_frequency: encounter_core
+    real_dimensions: 2-4m_family_PROPOSAL
+    player_distance: close_to_far
+    dependencies: [PEL-BOSS-THALASSA-001]
+    status: IN_PROGRESS
+    material_set: PEL_OpticalMemoryTissue
+    rig: true
+    animation_dependency: scan_lock_damage_states
+
+  - <<: *defaults
+    asset_id: PEL-BOSS-TENT-001
+    region: thalassa_arena
+    category: hero_creature
+    subcategory: tentacle_family
+    name: THALASSA tentacle family
+    description: Large deforming appendages supporting telegraphed sweep/current attacks.
+    priority: P0
+    quality_tier: S
+    usage_frequency: encounter_core
+    real_dimensions: 30m_reach_blockout_family
+    player_distance: close_to_far
+    dependencies: [PEL-BOSS-THALASSA-001]
+    status: IN_PROGRESS
+    material_set: PEL_LivingCoralTissueMineral
+    rig: true
+    animation_dependency: tentacle_sweep_close_recovery
+    collision_policy: animated_hitbox_separate_from_render
+
+  - <<: *defaults
+    asset_id: PEL-BOSS-EXTRACT-001
+    region: thalassa_arena
+    category: interactive_equipment
+    subcategory: extraction_link
+    name: Extraction-link hardware
+    description: Human/industrial apparatus physically linking extraction to THALASSA; severable in final phase.
+    priority: P0
+    quality_tier: A
+    usage_frequency: encounter_core
+    real_dimensions: TBD_from_arena
+    player_distance: close
+    dependencies: [PEL-BOSS-THALASSA-001]
+    material_set: PEL_MarineStructuralMetal+PEL_TechnicalCable
+    destructible: true
+    collision_policy: custom_interactive
+
+  - <<: *defaults
+    asset_id: PEL-ECO-JELLY-001
+    region: coro_arrecife
+    category: fauna
+    subcategory: mnemonic_jellyfish
+    name: Medusa mnémica
+    description: Memory-carrying fauna with agency; not a generic resource pickup.
+    priority: P1
+    quality_tier: A
+    usage_frequency: medium
+    real_dimensions: 10-18m_family_PROPOSAL
+    player_distance: near_to_medium
+    dependencies: [PEL-REEF-NODE-001]
+    status: IN_PROGRESS
+    material_set: PEL_OpticalMemoryTissue+PEL_TranslucentOrganic
+    rig: true
+    animation_dependency: swim_idle_avoidance_memory_display
+    collision_policy: simple_body_plus_trigger
+    qa_status: SILHOUETTE_PROXY_ONLY
+
+  - <<: *defaults
+    asset_id: PEL-ECO-EEL-001
+    region: coro_arrecife
+    category: fauna
+    subcategory: glass_eel
+    name: Anguila de vidrio
+    description: Predator hunting repeated sound; anatomy must support acoustic sensing and readable charge preparation.
+    priority: P1
+    quality_tier: A
+    usage_frequency: medium
+    real_dimensions: 25-45m_family_PROPOSAL
+    player_distance: near_to_far
+    dependencies: [PEL-REEF-ARCH-001]
+    status: IN_PROGRESS
+    material_set: PEL_TransparentMineralOrganic
+    rig: true
+    animation_dependency: swim_stalk_charge_recover
+    qa_status: SILHOUETTE_PROXY_ONLY
+
+  - <<: *defaults
+    asset_id: PEL-ECO-BOV-001
+    region: coro_arrecife
+    category: fauna
+    subcategory: reef_bovine
+    name: Bóvido de arrecife
+    description: Channel-maintaining grazer with low centre of mass and scraping feeding mechanism.
+    priority: P2
+    quality_tier: A
+    usage_frequency: medium
+    real_dimensions: 18m_body_blockout_PROPOSAL
+    player_distance: near_to_medium
+    dependencies: [PEL-REEF-SPIRE-001]
+    status: IN_PROGRESS
+    material_set: PEL_LivingCoralTissueMineral+PEL_OrganicHide_TBD
+    rig: true
+    animation_dependency: graze_walk_turn_startle
+    qa_status: SILHOUETTE_PROXY_ONLY
+
+  - <<: *defaults
+    asset_id: PEL-ECO-SCRIBE-001
+    region: coro_arrecife
+    category: vegetation_ecology
+    subcategory: scribe_coral
+    name: Coral escriba
+    description: Growth-form recorder of vibration history; prime Geometry Nodes candidate.
+    priority: P1
+    quality_tier: A
+    usage_frequency: high
+    real_dimensions: 15-40m_family_PROPOSAL
+    player_distance: near_to_far
+    dependencies: [PEL-REEF-SPIRE-001]
+    status: IN_PROGRESS
+    material_set: PEL_LivingCoralTissueMineral+PEL_OpticalMemoryTissue
+    lod_policy: deterministic_procedural_bake_LOD0-3
+    collision_policy: route_specific
+
+  - <<: *defaults
+    asset_id: PEL-NPC-NARA
+    region: mercado_boyas
+    category: character
+    subcategory: principal_npc
+    name: Nara Océano
+    description: Amphibious biologist seeking contact without extraction.
+    priority: P0
+    quality_tier: S
+    usage_frequency: hero_npc
+    real_dimensions: anatomy_TBD
+    player_distance: cinematic_close
+    dependencies: [PEL-MKT-HERO-001]
+    status: IN_PROGRESS
+    material_set: PEL_CHARACTER_NARA_TBD
+    rig: true
+    animation_dependency: locomotion_dialogue_interaction_wet_dry
+    collision_policy: character_capsule_plus_hitboxes
+    qa_status: SCALE_PROXY_ONLY
+
+  - <<: *defaults
+    asset_id: PEL-NPC-DAMIAN
+    region: mercado_boyas
+    category: character
+    subcategory: principal_npc
+    name: Damián Vo
+    description: Buoy captain requiring a trade channel; equipment must show maritime operations role.
+    priority: P1
+    quality_tier: A
+    usage_frequency: principal_npc
+    real_dimensions: anatomy_TBD
+    player_distance: cinematic_close
+    dependencies: [PEL-MKT-DOCK-001]
+    status: IN_PROGRESS
+    material_set: PEL_CHARACTER_DAMIAN_TBD
+    rig: true
+    animation_dependency: locomotion_dialogue_dock_work
+    qa_status: SCALE_PROXY_ONLY
+
+  - <<: *defaults
+    asset_id: PEL-NPC-TEA
+    region: coro_arrecife
+    category: character
+    subcategory: principal_npc
+    name: Téa del Coro
+    description: Reef interpreter who shares memory partially; silhouette must bridge human and acoustic-work context without generic mystic tropes.
+    priority: P0
+    quality_tier: S
+    usage_frequency: hero_npc
+    real_dimensions: anatomy_TBD
+    player_distance: cinematic_close
+    dependencies: [PEL-REEF-HYDRO-001]
+    status: IN_PROGRESS
+    material_set: PEL_CHARACTER_TEA_TBD
+    rig: true
+    animation_dependency: locomotion_dialogue_translation_interaction
+    qa_status: SCALE_PROXY_ONLY
+
+  - <<: *defaults
+    asset_id: PEL-EN-DIVER
+    region: fosa_mil_miradas
+    category: enemy
+    subcategory: extraction_diver
+    name: Buzo de extracción
+    description: Pressure/corrosion engineered humanoid with mechanically credible cuttable harpoon cable system.
+    priority: P0
+    quality_tier: A
+    usage_frequency: combat_standard
+    real_dimensions: human_suit_scale_TBD
+    player_distance: close_to_medium
+    dependencies: [PEL-TRN-PRESSURE-001]
+    status: IN_PROGRESS
+    material_set: PEL_CHARACTER_DIVER_TBD
+    rig: true
+    animation_dependency: locomotion_harpoon_reel_melee_recovery
+    collision_policy: character_capsule_plus_hitboxes
+    qa_status: SCALE_PROXY_ONLY
+
+  - <<: *defaults
+    asset_id: PEL-EN-POLYP
+    region: coro_arrecife
+    category: enemy
+    subcategory: polyp_guard
+    name: Guardia de pólipos
+    description: Acoustic-zone defender whose anatomy includes readable dissonance response.
+    priority: P1
+    quality_tier: A
+    usage_frequency: combat_standard
+    real_dimensions: 7x7x13m_blockout_PROPOSAL
+    player_distance: close_to_medium
+    dependencies: [PEL-REEF-NODE-001]
+    status: IN_PROGRESS
+    material_set: PEL_LivingCoralTissueMineral
+    rig: true
+    animation_dependency: guard_attack_dissonance_retreat
+    qa_status: SILHOUETTE_PROXY_ONLY
+
+  - <<: *defaults
+    asset_id: PEL-EN-EEL
+    region: fosa_mil_miradas
+    category: enemy
+    subcategory: sentinel_eel
+    name: Anguila centinela
+    description: Anchor-to-anchor charger with path and pre-charge state readable in silhouette.
+    priority: P1
+    quality_tier: A
+    usage_frequency: combat_standard
+    real_dimensions: 30-50m_family_PROPOSAL
+    player_distance: medium_to_far
+    dependencies: [PEL-TRN-ANCHOR-001]
+    status: IN_PROGRESS
+    material_set: PEL_OrganicMineralHostile_TBD
+    rig: true
+    animation_dependency: perch_align_charge_recover
+    qa_status: SILHOUETTE_PROXY_ONLY
+
+  - <<: *defaults
+    asset_id: PEL-VEH-NACAR2
+    region: multi
+    category: vehicle
+    subcategory: submersible
+    name: Nácar-2
+    description: Canon two-seat submersible operable without mandatory companion; final machine design must expose propulsion, access, service and damage zones.
+    priority: P0
+    quality_tier: S
+    usage_frequency: traversal_hero
+    real_dimensions: 15x6.4x5.4m_current_blockout_PROPOSAL
+    player_distance: cinematic_close_to_far
+    dependencies: [PEL-MKT-DOCK-001, PEL-ENV-002]
+    status: IN_PROGRESS
+    blend_path: hf://39930c08-62bb-4034-b35d-70d0ce51c9d9@1/PEL_VEH_Nacar2_*
+    material_set: PEL_Human_IvoryCeramic+PEL_PressureGlass+PEL_MarineStructuralMetal
+    lod_policy: authored_LOD0-3
+    collision_policy: compound_vehicle_hull
+    rig: true
+    animation_dependency: hatch_thrusters_control_surfaces_damage
+    physics: runtime_vehicle_buoyancy_propulsion_TBD
+    qa_status: FUNCTIONAL_BLOCKOUT_REQUIRED_CURRENT_IS_SILHOUETTE
+
+  - <<: *defaults
+    asset_id: PEL-PROP-HYDRO-001
+    region: multi
+    category: props
+    subcategory: hydrophone
+    name: Portable hydrophone family
+    description: Mission and environmental acoustic sensing tool.
+    priority: P1
+    quality_tier: A
+    usage_frequency: medium
+    real_dimensions: handheld_to_mounted_family_TBD
+    player_distance: close
+    dependencies: [PEL-REEF-HYDRO-001]
+    material_set: PEL_Human_IvoryCeramic+PEL_AcousticSensor
+
+  - <<: *defaults
+    asset_id: PEL-PROP-MEM-001
+    region: multi
+    category: props
+    subcategory: memory_container
+    name: Memory custody / containment vessel family
+    description: Physicalizes legal/ethical custody of living-subject memories.
+    priority: P0
+    quality_tier: A
+    usage_frequency: mission_critical
+    real_dimensions: portable_and_rack_family_TBD
+    player_distance: close
+    dependencies: [PEL-REEF-NODE-001]
+    material_set: PEL_Human_IvoryCeramic+PEL_OpticalMemoryTissue
+
+  - <<: *defaults
+    asset_id: PEL-PROP-FUNERAL-001
+    region: mercado_boyas
+    category: storytelling
+    subcategory: funeral_buoy
+    name: Funeral buoy
+    description: Signal audible to humans and reef; sidequest hero prop.
+    priority: P1
+    quality_tier: A
+    usage_frequency: unique
+    real_dimensions: 3-6m_PROPOSAL
+    player_distance: close_to_far
+    dependencies: [PEL-MKT-SIGNAL-001, PEL-REEF-HYDRO-001]
+    material_set: PEL_MarineStructuralMetal+PEL_AcousticEmitter
+
+  - <<: *defaults
+    asset_id: PEL-PROP-NAV-001
+    region: multi
+    category: infrastructure
+    subcategory: navigation_signal
+    name: Channel navigation beacon family
+    description: Route markers with commercial/treaty/reserve state variants.
+    priority: P1
+    quality_tier: B
+    usage_frequency: high
+    real_dimensions: 2-10m_family_TBD
+    player_distance: medium_to_far
+    dependencies: [PEL-MKT-SIGNAL-001]
+    material_set: PEL_MarineStructuralMetal+PEL_SignalOptics
+
+  - <<: *defaults
+    asset_id: PEL-PROP-CONSENT-001
+    region: multi
+    category: storytelling
+    subcategory: consent_marker
+    name: Consent / scheduled transit marker system
+    description: Physical signage/interface supporting treaty outcome without relying on UI text alone.
+    priority: P1
+    quality_tier: B
+    usage_frequency: outcome_state
+    real_dimensions: modular_TBD
+    player_distance: close_to_medium
+    dependencies: [PEL-PROP-NAV-001]
+    material_set: PEL_Human_IvoryCeramic+PEL_AcousticEmitter
+
+  - <<: *defaults
+    asset_id: PEL-PROP-TRADE-001
+    region: mercado_boyas
+    category: props
+    subcategory: trade_cargo
+    name: Marine trade cargo family
+    description: Cargo and handling assets showing Pelagos economy, sealing and corrosion protection.
+    priority: P2
+    quality_tier: B
+    usage_frequency: high
+    real_dimensions: human_to_pallet_scale_TBD
+    player_distance: near
+    dependencies: [PEL-MKT-STALL-001]
+    material_set: PEL_TechnicalPolymer+PEL_MarineStructuralMetal
+
+  - <<: *defaults
+    asset_id: PEL-MAT-IVORY-001
+    region: global
+    category: material
+    subcategory: human_ceramic_composite
+    name: Repaired ivory marine ceramic/composite
+    description: Human shell material with causal repairs, salt exposure and handling wear.
+    priority: P0
+    quality_tier: A
+    usage_frequency: very_high
+    real_dimensions: material
+    player_distance: cinematic_close
+    dependencies: []
+    status: IN_PROGRESS
+    material_set: self
+    collision_policy: none
+    qa_status: BLOCKOUT_VALUES_ONLY
+
+  - <<: *defaults
+    asset_id: PEL-MAT-BRONZE-001
+    region: global
+    category: material
+    subcategory: precursor_bronze
+    name: Aged bronze network material
+    description: Oxidized network material; wear follows flow/contact and marine chemistry.
+    priority: P0
+    quality_tier: A
+    usage_frequency: very_high
+    real_dimensions: material
+    player_distance: cinematic_close
+    dependencies: []
+    status: IN_PROGRESS
+    material_set: self
+    collision_policy: none
+    qa_status: BLOCKOUT_VALUES_ONLY
+
+  - <<: *defaults
+    asset_id: PEL-MAT-CORAL-001
+    region: global
+    category: material
+    subcategory: living_coral
+    name: Living coral tissue/mineral material system
+    description: Multi-scale organic/mineral response with growth/deposition logic, not generic wet plastic.
+    priority: P0
+    quality_tier: S
+    usage_frequency: very_high
+    real_dimensions: material
+    player_distance: cinematic_close
+    dependencies: [PEL-REEF-SPIRE-001]
+    status: IN_PROGRESS
+    material_set: self
+    collision_policy: none
+    qa_status: BLOCKOUT_VALUES_ONLY
+
+  - <<: *defaults
+    asset_id: PEL-MAT-MEMORY-001
+    region: global
+    category: material
+    subcategory: optical_memory_tissue
+    name: Optical memory tissue
+    description: Physical memory carrier with restrained pale-cyan emission and non-emissive form cues.
+    priority: P0
+    quality_tier: S
+    usage_frequency: high
+    real_dimensions: material
+    player_distance: cinematic_close
+    dependencies: [PEL-REEF-NODE-001]
+    status: IN_PROGRESS
+    material_set: self
+    collision_policy: none
+    qa_status: BLOCKOUT_VALUES_ONLY
+
+  - <<: *defaults
+    asset_id: PEL-STATE-COMMERCIAL-001
+    region: multi
+    category: world_state
+    subcategory: commercial_channel
+    name: Commercial-channel outcome dressing set
+    description: Prosperity plus privacy-loss visual state across Mercado/Coro/navigation assets.
+    priority: P1
+    quality_tier: B
+    usage_frequency: campaign_return
+    real_dimensions: multi_asset_variant_set
+    player_distance: all
+    dependencies: [PEL-PROP-NAV-001, PEL-MKT-STALL-001, PEL-REEF-NODE-001]
+    material_set: inherits_parent_assets
+
+  - <<: *defaults
+    asset_id: PEL-STATE-TREATY-001
+    region: multi
+    category: world_state
+    subcategory: consent_treaty
+    name: Consent-treaty outcome dressing set
+    description: Scheduled transit and data-restoration state using physical route markers and preserved memory interfaces.
+    priority: P1
+    quality_tier: B
+    usage_frequency: campaign_return
+    real_dimensions: multi_asset_variant_set
+    player_distance: all
+    dependencies: [PEL-PROP-CONSENT-001, PEL-PROP-MEM-001]
+    material_set: inherits_parent_assets
+
+  - <<: *defaults
+    asset_id: PEL-STATE-RESERVE-001
+    region: multi
+    category: world_state
+    subcategory: marine_reserve
+    name: Marine-reserve outcome dressing set
+    description: Rerouted trade, reduced extraction hardware and visible ecological recovery.
+    priority: P1
+    quality_tier: B
+    usage_frequency: campaign_return
+    real_dimensions: multi_asset_variant_set
+    player_distance: all
+    dependencies: [PEL-PROP-NAV-001, PEL-REEF-SPIRE-001, PEL-ECO-JELLY-001]
+    material_set: inherits_parent_assets
+
+coverage_contract:
+  required_world_categories:
+    planetary_metadata: MAPPED
+    macro_geography: MAPPED
+    playable_regions: MAPPED
+    terrain: MAPPED
+    biomes: MAPPED
+    materials: MAPPED
+    vegetation_ecology: MAPPED
+    architecture: MAPPED
+    interiors: MAPPED
+    infrastructure: MAPPED
+    landmarks: MAPPED
+    props: MAPPED
+    population: MAPPED
+    creatures: MAPPED
+    vehicles: MAPPED
+    storytelling_assets: MAPPED
+    state_variants: MAPPED
+    background_vista: MAPPED
+    lod_strategy: MAPPED_INTERFACE_NOT_QUALIFIED
+    collision: MAPPED_INTERFACE_NOT_QUALIFIED
+    streaming: MAPPED_INTERFACE_NOT_QUALIFIED
+    performance: BLOCKED_TARGET_HARDWARE_ENGINE
+    integration: BLOCKED_ENGINE_IMPORT
+    art_coherence: IN_PROGRESS
+    qa: IN_PROGRESS

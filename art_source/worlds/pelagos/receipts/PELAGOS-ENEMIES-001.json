@@ -1,0 +1,106 @@
+{
+  "schema_version": 1,
+  "checkpoint": "PELAGOS-ENEMIES-001",
+  "world_id": "pelagos",
+  "claim_id": "CLM-PEL-WORLD-001",
+  "agent_id": "AGENT-PELAGOS-01",
+  "tasks": ["PEL/ENEMY/015", "PEL/ENEMY/016", "PEL/ENEMY/017"],
+  "status": "IN_PROGRESS",
+  "claim": "The three canonical Pelagos enemy families now have functional production foundations with explicit rig/collision/gameplay interfaces; they are not final game-ready enemies.",
+  "remote_3d": {
+    "project_id": "39930c08-62bb-4034-b35d-70d0ce51c9d9",
+    "build_revision": 21,
+    "build_operation": "pelagos.enemies.production.v1",
+    "structural_verification": "pelagos.enemies.verify.r21",
+    "visual_silhouette_verification": "pelagos.enemies.visual-wb.r21"
+  },
+  "build": {
+    "collection": "71_ENEMIES_PRODUCTION_V1",
+    "object_count": 89,
+    "mesh_count": 75,
+    "armature_count": 3,
+    "legacy_proxy_objects_superseded": 11,
+    "blend_size_bytes": 16998991,
+    "glb_size_bytes": 13764428
+  },
+  "assets": {
+    "PEL-EN-DIVER-PROD-001": {
+      "canon": "Buzo de extracción: arpón con cable que se puede cortar",
+      "quality_tier": "A",
+      "production_state": "ENEMY_PRODUCTION_FOUNDATION_V1",
+      "visible_bbox_m": [1.09, 4.095, 2.09],
+      "height_m_proposal": 1.9,
+      "object_count": 27,
+      "armature": {"name": "PEL_DIV_RIG", "bone_count": 12},
+      "collision": "one hidden primitive body proxy",
+      "functional_interfaces": [
+        "pressure suit + helmet + life-support/ballast pack",
+        "harpoon launcher/barrel/spool",
+        "two separate tether segments",
+        "explicit cuttable breakaway coupler",
+        "separate harpoon head"
+      ],
+      "cuttable_interface_gate": "PASS_GEOMETRY_EXISTS"
+    },
+    "PEL-EN-POLYP-PROD-001": {
+      "canon": "Guardia de pólipos: protege zonas acústicas, retrocede ante disonancia aprendida",
+      "quality_tier": "A",
+      "production_state": "ENEMY_PRODUCTION_FOUNDATION_V1",
+      "visible_bbox_m": [5.48, 4.837, 3.1],
+      "object_count": 31,
+      "armature": {"name": "PEL_POL_RIG", "bone_count": 8},
+      "collision": "one hidden core primitive proxy",
+      "functional_interfaces": [
+        "six contractile radial arms",
+        "six reef contact pads",
+        "six outward dissonance receptor plates",
+        "eight acoustic sensory buds"
+      ],
+      "movement_model": "SEMI_SESSILE_SIX_CONTACT_CONTRACTILE_PROPOSAL"
+    },
+    "PEL-EN-EEL-PROD-001": {
+      "canon": "Anguila centinela: carga entre anclajes, con recorrido visible",
+      "quality_tier": "A",
+      "production_state": "ENEMY_PRODUCTION_FOUNDATION_V1",
+      "visible_bbox_m": [9.15, 1.19, 1.335],
+      "nominal_length_m_proposal": 8.2,
+      "object_count": 31,
+      "armature": {"name": "PEL_SENT_RIG", "bone_count": 12},
+      "collision": "four hidden compound segment proxies",
+      "functional_interfaces": [
+        "twelve-segment anguilliform body",
+        "twelve-bone spine chain",
+        "five lateral mnemonic/charge nodes",
+        "three acoustic stabilizer fins",
+        "jaw plates",
+        "anchor-field sensor",
+        "visible charge telegraph ring"
+      ],
+      "movement_model": "ANGUILLIFORM_SPINE_CHAIN_PROPOSAL"
+    }
+  },
+  "qa": {
+    "missing_materials": 0,
+    "nonunit_mesh_scales": 0,
+    "legacy_proxy_visibility_violations": 0,
+    "collision_proxies_separate_and_hidden": true,
+    "cuttable_diver_coupler_exists": true,
+    "structural_gate": "PASS_FOR_PRODUCTION_FOUNDATION",
+    "workbench_silhouette_artifacts": [
+      {"asset_id": "PEL-EN-DIVER-PROD-001", "artifact_id": "eadb2758031011b0e1d4d5cde86ee546", "name": "qa_enemy_diver_r21_wb.png", "resolution": [512,512]},
+      {"asset_id": "PEL-EN-POLYP-PROD-001", "artifact_id": "188ffdd4ccc20c875acbdf41bcff998a", "name": "qa_enemy_polyp_r21_wb.png", "resolution": [512,512]},
+      {"asset_id": "PEL-EN-EEL-PROD-001", "artifact_id": "1f64f1b569383129a8f0806097d65659", "name": "qa_enemy_eel_r21_wb.png", "resolution": [512,512]}
+    ],
+    "semantic_pixel_review": "PENDING_HUMAN_OR_CLIENT_IMAGE_INSPECTION",
+    "skin_weights_and_deformation": "NOT_DONE",
+    "final_sculpt_retopology": "NOT_DONE",
+    "uv_bake_final_pbr": "NOT_DONE",
+    "authored_attack_animation": "NOT_DONE",
+    "engine_behavior_pathing": "NOT_RUN",
+    "engine_hitboxes_collision": "NOT_RUN",
+    "lod": "NOT_DONE",
+    "performance": "NOT_RUN",
+    "human_art_review": "PENDING"
+  },
+  "reason_not_done": "Final hard-surface/organic production, deformation, UV/PBR, authored combat animation/behavior, engine hitboxes/collision/pathing, LOD, performance and human art-direction approval remain open."
+}

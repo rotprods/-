@@ -1,0 +1,77 @@
+schema_version: 1
+asset_id: PEL-VEH-NACAR2
+world_id: pelagos
+claim_id: CLM-PEL-WORLD-001
+owner: AGENT-PELAGOS-01
+name: Nácar-2
+category: vehicle
+subcategory: submersible
+priority: P0
+quality_tier: S
+status: IN_PROGRESS
+canon:
+  name: Nacar-2
+  capacity: 2
+  solo_operation: true
+proposals:
+  propulsion: twin ducted thrusters with limited gimbal
+  steering: differential thrust plus foldable control surfaces
+  braking_hold: reverse thrust plus external berth/hold interface
+  dimensions_status: PROPOSAL_MEASURED_BLOCKOUT
+measured_blockout:
+  cruise_envelope_m: [15.65, 10.8, 7.35]
+  rigid_docking_envelope_m: [15.65, 7.64, 6.41]
+  pressure_hull_length_m: 9.4
+  pressure_hull_diameter_m: 4.7
+  hatch_clear_diameter_m: 1.25
+  control_surface_state: fold_or_neutralize_for_berth
+unknowns:
+  - energy storage technology
+  - certified pressure/depth rating
+  - final hydrodynamic coefficients
+  - runtime buoyancy/vehicle interface
+functional_systems:
+  pressure_hull: IMPLEMENTED_BLOCKOUT
+  pressure_frames: IMPLEMENTED_BLOCKOUT
+  two_seat_cockpit: IMPLEMENTED_BLOCKOUT
+  access_hatch: IMPLEMENTED_BLOCKOUT_WITH_PIVOT
+  service_bay: IMPLEMENTED_BLOCKOUT
+  cargo_bay: IMPLEMENTED_BLOCKOUT
+  twin_thrusters: IMPLEMENTED_BLOCKOUT_WITH_GIMBAL_PIVOTS
+  lateral_control_surfaces: IMPLEMENTED_BLOCKOUT_WITH_HINGE_PIVOTS
+  vertical_control_surface: IMPLEMENTED_BLOCKOUT_WITH_HINGE_PIVOT
+  hydrophone_array: IMPLEMENTED_BLOCKOUT
+  sonar_dome: IMPLEMENTED_BLOCKOUT
+  docking_hardpoints: IMPLEMENTED_BLOCKOUT
+  equalization_ports: IMPLEMENTED_BLOCKOUT
+  collision_proxies: IMPLEMENTED_BLOCKOUT_SEPARATE
+blender:
+  project_id: 39930c08-62bb-4034-b35d-70d0ce51c9d9
+  revision: 5
+  collection: 81_NACAR2_ENGINEERING_V1
+  geometry_objects: 53
+  raw_mesh_triangle_estimate_rev3: 19640
+  source_script: art_source/worlds/pelagos/scripts/build_nacar2_engineering_v1.py
+qa:
+  asset_ids: PASS
+  unit_scales: PASS
+  materials_present: PASS_BLOCKOUT
+  required_functional_roles: PASS
+  moving_pivots: PASS_STRUCTURE
+  collision_separation: PASS_STRUCTURE
+  transform_parenting: PASS_AFTER_FIX
+  visual_art_review: PENDING
+  uv: NOT_RUN
+  pbr: BLOCKOUT_ONLY
+  lod: NOT_RUN
+  hydrodynamics: NOT_RUN
+  engine_import: NOT_RUN
+  runtime_physics: NOT_RUN
+  performance: NOT_RUN
+history:
+  - revision: 3
+    event: engineering blockout created
+  - revision: 4
+    event: parent-space defect corrected; first same-operation bbox receipt stale before depsgraph settle
+  - revision: 5
+    event: settled geometry remeasured and cruise/docking envelopes reconciled

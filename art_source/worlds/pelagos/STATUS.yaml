@@ -1,0 +1,101 @@
+schema_version: 1
+world_id: pelagos
+claim_id: CLM-PEL-WORLD-001
+agent_id: AGENT-PELAGOS-01
+session_id: PELAGOS-ART-20260912-A
+branch: art/world-pelagos-thalassa-001
+branch_head: 452de395548fe3aee63ac6bae2da6657b1525712
+remote_3d_project: 39930c08-62bb-4034-b35d-70d0ce51c9d9
+remote_3d_revision: 15
+last_heartbeat_utc: 2026-09-12T20:30:40Z
+claim_status: KEEP
+
+north_star: >-
+  Deliver Pelagos as a complete production world with physically causal ocean engineering,
+  distinct mnemonic ecology and game-readable hero content, while every asset retains source,
+  stable identity, measurable scale, exportability, QA evidence and explicit engine-integration state.
+
+completed_or_checkpointed:
+  repo_bootstrap:
+    task: PEL/WORLD/001
+    status: DONE
+  ownership_claim:
+    task: PEL/WORLD/002
+    status: DONE
+  world_bible_planet_contract:
+    task: PEL/WORLD/003
+    status: DONE
+  world_foundation:
+    task: PEL/WORLD/004
+    status: REVIEW
+    blender_revision: 1
+    receipt: art_source/worlds/pelagos/receipts/PELAGOS-WF-001.json
+  asset_registry:
+    task: PEL/WORLD/005
+    status: DONE
+  mercado_modular_kit:
+    task: PEL/ARCH/006
+    status: IN_PROGRESS
+    receipt: art_source/worlds/pelagos/receipts/PELAGOS-MKT-KIT-001.json
+  coral_growth_system:
+    task: PEL/BIOME/007
+    status: IN_PROGRESS
+    blender_revision: 8
+    structural_gate: PASS
+    receipt: art_source/worlds/pelagos/receipts/PELAGOS-CORAL-002.json
+  thalassa:
+    task: PEL/BOSS/008
+    status: IN_PROGRESS
+    blender_revision: 15
+    structural_gate: PASS_FOR_HERO_BLOCKOUT
+    receipt: art_source/worlds/pelagos/receipts/PELAGOS-THALASSA-HERO-002.json
+  nacar2:
+    task: PEL/VEH/010
+    status: IN_PROGRESS
+    blender_revision: 5
+    structural_gate: PASS_FOR_ENGINEERING_BLOCKOUT
+    receipts:
+      - art_source/worlds/pelagos/receipts/PELAGOS-NACAR2-ENG-002.json
+      - art_source/worlds/pelagos/receipts/PELAGOS-NACAR2-ENG-003.json
+  marine_material_library:
+    task: PEL/MAT/011
+    status: IN_PROGRESS
+    blender_revision: 13
+    cold_reopen_map_gate: PASS_14_OF_14
+    material_binding_gate: PASS_7_OF_7
+    receipt: art_source/worlds/pelagos/receipts/PELAGOS-MATLIB-001.json
+
+active_task:
+  id: PEL/ECO/009
+  priority: P1
+  objective: Replace ecology silhouette proxies with functional anatomy and rig-ready foundations for canonical Pelagos organisms.
+
+next_critical_work:
+  - PEL/ECO/009
+  - PEL/CHAR/012
+  - PEL/CHAR/013
+  - PEL/ENEMY/015
+  - PEL/ENEMY/016
+  - PEL/ENEMY/017
+  - PEL/TECH/021
+  - PEL/INTEGRATE/024
+
+blocked:
+  - id: PEL/BLOCK/ENGINE-001
+    affects: [PEL/WORLD/004, PEL/ARCH/006, PEL/BIOME/007, PEL/BOSS/008, PEL/VEH/010, PEL/MAT/011]
+    reason: Godot/production-engine import, runtime collision, shader parity and representative GPU performance have not been qualified for these new Pelagos assets.
+    work_that_can_continue: [modeling, material authoring, rig planning, sharded manifests, Blender QA, GLB export]
+  - id: PEL/BLOCK/HUMAN-ART-001
+    affects: [PEL/WORLD/004, PEL/ARCH/006, PEL/BIOME/007, PEL/BOSS/008, PEL/VEH/010, PEL/MAT/011]
+    reason: Human creative-director visual approval is still pending; generated renders do not self-certify art quality.
+    work_that_can_continue: [technical QA, causal-detail passes, coverage expansion]
+
+risks:
+  - whole-world GLB export runs after every Blender mutation; isolate asset-level export validation later to reduce iteration cost
+  - water/vertical gameplay remains an engine-side risk, not solved by Blender geometry
+  - planet radius remains a reversible proposal and must not be treated as canon
+
+next_3_actions:
+  - author canonical fauna anatomy/rig foundations under PEL/ECO/009
+  - produce ecology structural QA and receipt, then start Nara/Téa character silhouettes
+  - resync GitHub/3D project before each mutation and preserve world-local ownership only
