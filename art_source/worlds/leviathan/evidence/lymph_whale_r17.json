@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "project": "EXOVANT 2950",
+  "world_id": "leviathan",
+  "claim_id": "CLM-W10-WORLD-LEVIATHAN-001",
+  "asset_id": "LEV-ECO-002",
+  "asset_name": "Ballena de linfa",
+  "status": "REPRESENTATIVE_FUNCTIONAL_ANATOMY_REPRODUCIBLE_NOT_FINAL",
+  "source": {
+    "generator": "art_source/worlds/leviathan/tools/build_lymph_whale_v1.py",
+    "generator_commit": "4eb4861b4cee2e8a33d576f232e7380af7d7e2c1"
+  },
+  "primary": {
+    "project_id": "2577a7b6-ebd7-4d31-a645-620e4b73a95d",
+    "revision": 17,
+    "surface_sha256": "7b5a6eb9a295cb022c52939e1c711555b35f658e9e7c0898c485e16626301656"
+  },
+  "cold": {
+    "project_id": "37a931c7-f2e6-46bc-9be0-26077e5de1c1",
+    "revision": 15,
+    "surface_sha256": "7b5a6eb9a295cb022c52939e1c711555b35f658e9e7c0898c485e16626301656"
+  },
+  "qa": {
+    "surface_match": true,
+    "collection_objects": 45,
+    "mesh_objects": 26,
+    "curve_objects": 3,
+    "interface_sockets": 14,
+    "evaluated_triangles": 13336,
+    "degenerate_polygons": 0,
+    "collision_leaks": 0,
+    "old_proxy_removed": true,
+    "reference_proxy_dims_m": [36.0, 11.0, 13.0],
+    "measured_representative_envelope_m": [34.1, 10.4, 9.46],
+    "envelope_ratio_vs_proxy": [0.947, 0.945, 0.728]
+  },
+  "functional_interfaces": [
+    "fusiform lymph-flow body",
+    "anterior filter mouth",
+    "eight filter lamellae",
+    "paired dorsal pressure sacs and vascular line",
+    "paired lateral control fins",
+    "bifurcated tail control lobes",
+    "filtered-flow outlet",
+    "six lateral pressure sensor nodes"
+  ],
+  "truth_guards": {
+    "dimensions": "MEASURED_PROPOSAL_NOT_CANON",
+    "locomotion": "NOT_AUTHORED",
+    "feeding_gameplay": "NOT_AUTHORED"
+  },
+  "non_claims": {
+    "final_anatomy": false,
+    "canon_dimensions": false,
+    "rig": false,
+    "animation": false,
+    "AI": false,
+    "locomotion": false,
+    "feeding_gameplay": false,
+    "gameplay_collision": false,
+    "direct_art_approval": false,
+    "engine_import": false
+  }
+}
