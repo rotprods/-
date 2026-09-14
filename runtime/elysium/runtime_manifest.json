@@ -118,10 +118,10 @@
     "relocation_warning_s": 1.5
   },
   "godot": {
-    "scene_path": "res://art_source/worlds/elysium_null/runtime/elysium_runtime.tscn",
-    "asset_expected_path": "res://art_source/worlds/elysium_null/runtime/assets/elysium_world.glb",
-    "adapter_script": "res://art_source/worlds/elysium_null/runtime/elysium_runtime_adapter.gd",
-    "smoke_script": "res://art_source/worlds/elysium_null/runtime/elysium_runtime_smoke.gd",
+    "scene_path": "res://runtime/elysium/elysium_runtime.tscn",
+    "asset_expected_path": "res://runtime/elysium/assets/elysium_world.glb",
+    "adapter_script": "res://runtime/elysium/elysium_runtime_adapter.gd",
+    "smoke_script": "res://runtime/elysium/elysium_runtime_smoke.gd",
     "native_import_gate": "BLOCKED_UNTIL_LOCAL_GLB_PRESENT"
   },
   "quality": {

@@ -9,9 +9,10 @@ signal adapter_state_requested(adapter_id: String, target_meta: String, state: S
 signal cell_activation_requested(cell_id: String, region: String, seed31: int)
 signal cell_deactivation_requested(cell_id: String, region: String)
 
-const MANIFEST_PATH := "res://art_source/worlds/elysium_null/runtime/runtime_manifest.json"
-const WORLD_ASSET_PATH := "res://art_source/worlds/elysium_null/runtime/assets/elysium_world.glb"
+const MANIFEST_PATH := "res://runtime/elysium/runtime_manifest.json"
+const WORLD_ASSET_PATH := "res://runtime/elysium/assets/elysium_world.glb"
 const EXPECTED_SCHEMA := "EXOVANT.ELYSIUM.GODOT_RUNTIME_EXPORT.v1"
+const EXPECTED_ENGINE := "Godot 4.7.2"
 const VALID_STATES := ["CONTROLLED", "ANOMALY", "EMERGENCY"]
 
 @export var auto_import_world_asset := true
@@ -22,6 +23,7 @@ var current_state := "CONTROLLED"
 var state_entered_s := 0.0
 var last_transition_s := -INF
 var event_times: Dictionary = {}
+var event_sequence: Array[String] = []
 var active_cells: Dictionary = {}
 var imported_world: Node = null
 var contract_valid := false
@@ -32,10 +34,15 @@ func _ready() -> void:
 	state_entered_s = _now_s()
 	contract_valid = load_contract()
 	if not contract_valid:
+		set_process(false)
 		return
 	contract_ready.emit(contract)
 	if auto_import_world_asset:
 		try_import_world_asset()
+
+func _process(_delta: float) -> void:
+	if contract_valid and not event_times.is_empty():
+		_evaluate_transitions(_now_s())
 
 func load_contract() -> bool:
 	if not FileAccess.file_exists(MANIFEST_PATH):
@@ -57,14 +64,22 @@ func load_contract() -> bool:
 func validate_contract(data: Dictionary) -> String:
 	if str(data.get("schema", "")) != EXPECTED_SCHEMA:
 		return "schema mismatch"
+	if str(data.get("claim_id", "")) != "CLM-ELYSIUM-RUNTIME-GODOT-001":
+		return "claim id mismatch"
 	if str(data.get("truth_state", "")) == "":
 		return "truth_state missing"
 	var source: Dictionary = data.get("source", {})
-	if str(source.get("engine", "")) != "Godot 4.7.2":
+	if str(source.get("engine", "")) != EXPECTED_ENGINE:
 		return "engine contract mismatch"
+	if int(source.get("runtime_export_contract_revision", -1)) != 47:
+		return "runtime export revision mismatch"
 	if not bool(source.get("offline_runtime_required", false)):
 		return "offline runtime contract missing"
 	var streaming: Dictionary = data.get("streaming", {})
+	if int(streaming.get("cell_size_m", 0)) != 256:
+		return "streaming cell-size drift"
+	if str(streaming.get("placement_policy", "")) != "REGISTER_ONLY_UNTIL_ORIGIN_REBASING_AND_MACRO_TO_LOCAL_MAPPING_QUALIFIED":
+		return "unsafe macro placement policy"
 	var cells: Array = streaming.get("cells", [])
 	if cells.size() != 17:
 		return "expected 17 streaming cells, got %d" % cells.size()
@@ -80,6 +95,9 @@ func validate_contract(data: Dictionary) -> String:
 			return "missing/duplicate streaming cell id: %s" % cell_id
 		if seed < 0 or seeds.has(seed):
 			return "missing/duplicate streaming seed for %s" % cell_id
+		var macro_location: Variant = cell.get("macro_location_m", null)
+		if typeof(macro_location) != TYPE_ARRAY or (macro_location as Array).size() != 3:
+			return "invalid macro location for %s" % cell_id
 		cell_ids[cell_id] = true
 		seeds[seed] = true
 	var world_state: Dictionary = data.get("world_state", {})
@@ -87,8 +105,27 @@ func validate_contract(data: Dictionary) -> String:
 	for state in VALID_STATES:
 		if not states.has(state):
 			return "world state missing: %s" % state
-	if (world_state.get("transitions", []) as Array).size() != 5:
+	var priorities := {}
+	for state_variant in states.keys():
+		var priority := int((states[state_variant] as Dictionary).get("priority", -1))
+		if priority < 0 or priorities.has(priority):
+			return "missing/duplicate state priority"
+		priorities[priority] = true
+	var transitions: Array = world_state.get("transitions", [])
+	if transitions.size() != 5:
 		return "expected 5 world-state transitions"
+	for transition_variant in transitions:
+		if typeof(transition_variant) != TYPE_DICTIONARY:
+			return "invalid transition"
+		var transition: Dictionary = transition_variant
+		if not VALID_STATES.has(str(transition.get("from", ""))) or not VALID_STATES.has(str(transition.get("to", ""))):
+			return "transition references invalid state"
+		if not ["ANY", "ALL"].has(str(transition.get("mode", ""))):
+			return "transition mode invalid"
+		if float(transition.get("debounce_s", -1.0)) < 0.0 or float(transition.get("min_dwell_s", -1.0)) < 0.0 or float(transition.get("cooldown_s", -1.0)) < 0.0:
+			return "transition timing invalid"
+	if (world_state.get("events", {}) as Dictionary).size() != 11:
+		return "expected 11 world-state events"
 	if (world_state.get("adapter_targets", {}) as Dictionary).size() != 19:
 		return "expected 19 state adapters"
 	var population: Dictionary = data.get("population", {})
@@ -96,6 +133,13 @@ func validate_contract(data: Dictionary) -> String:
 		return "population route count mismatch"
 	if int(population.get("socket_count", -1)) != 118:
 		return "population socket count mismatch"
+	var socket_sum := 0
+	for route_variant in population.get("routes", []):
+		if typeof(route_variant) != TYPE_DICTIONARY:
+			return "invalid population route"
+		socket_sum += int((route_variant as Dictionary).get("socket_count", 0))
+	if socket_sum != 118:
+		return "population route socket sum mismatch"
 	var eden: Dictionary = data.get("eden", {})
 	if not is_equal_approx(float(eden.get("canonical_arena_diameter_m", 0.0)), 48.0):
 		return "EDEN canonical arena diameter drift"
@@ -141,21 +185,23 @@ func push_event(event_id: String) -> bool:
 		return false
 	var now := _now_s()
 	event_times[event_id] = now
-	var candidates: Array = []
+	event_sequence.append(event_id)
+	_evaluate_transitions(now)
+	return true
+
+func _evaluate_transitions(now: float) -> bool:
+	var candidates: Array[Dictionary] = []
 	for transition_variant in contract.get("world_state", {}).get("transitions", []):
 		var transition: Dictionary = transition_variant
 		if str(transition.get("from", "")) != current_state:
 			continue
-		var required_events: Array = transition.get("events", [])
-		if not required_events.has(event_id):
-			continue
-		if not _transition_ready(transition, now):
-			continue
-		candidates.append(transition)
+		if _transition_ready(transition, now):
+			candidates.append(transition)
 	if candidates.is_empty():
 		return false
 	candidates.sort_custom(func(a: Dictionary, b: Dictionary) -> bool: return int(a.get("priority", 0)) > int(b.get("priority", 0)))
-	return _apply_transition(candidates[0] as Dictionary, event_id, now)
+	var cause_event := event_sequence[-1] if not event_sequence.is_empty() else "TIMER_EVALUATION"
+	return _apply_transition(candidates[0], cause_event, now)
 
 func _transition_ready(transition: Dictionary, now: float) -> bool:
 	var min_dwell := float(transition.get("min_dwell_s", 0.0))
@@ -164,14 +210,24 @@ func _transition_ready(transition: Dictionary, now: float) -> bool:
 	var cooldown := float(transition.get("cooldown_s", 0.0))
 	if now - last_transition_s < cooldown:
 		return false
+	var required_events: Array = transition.get("events", [])
+	var debounce := float(transition.get("debounce_s", 0.0))
 	var mode := str(transition.get("mode", "ANY"))
-	if mode == "ALL":
-		for required_variant in transition.get("events", []):
+	if mode == "ANY":
+		for required_variant in required_events:
 			var required := str(required_variant)
-			if not event_times.has(required):
-				return false
-			if float(event_times[required]) < state_entered_s:
-				return false
+			if event_times.has(required):
+				var occurred := float(event_times[required])
+				if occurred >= state_entered_s and now - occurred >= debounce:
+					return true
+		return false
+	for required_variant in required_events:
+		var required := str(required_variant)
+		if not event_times.has(required):
+			return false
+		var occurred := float(event_times[required])
+		if occurred < state_entered_s or now - occurred < debounce:
+			return false
 	return true
 
 func _apply_transition(transition: Dictionary, cause_event: String, now: float) -> bool:
@@ -182,6 +238,8 @@ func _apply_transition(transition: Dictionary, cause_event: String, now: float) 
 	current_state = next_state
 	state_entered_s = now
 	last_transition_s = now
+	event_times.clear()
+	event_sequence.clear()
 	world_state_changed.emit(previous, current_state, cause_event)
 	var adapters: Dictionary = contract.get("world_state", {}).get("adapter_targets", {})
 	for adapter_id_variant in adapters.keys():
@@ -225,8 +283,8 @@ func _find_cell(cell_id: String) -> Dictionary:
 	return {}
 
 func get_macro_location_metadata(cell_id: String) -> Array:
-	# Deliberately returns source metadata rather than a Vector3. The macro->local
-	# transform/origin-rebasing decision is unresolved and must not be guessed here.
+	# Deliberately metadata only. The macro->local transform/origin-rebasing
+	# decision remains an explicit gate and must never be guessed here.
 	return _find_cell(cell_id).get("macro_location_m", []) as Array
 
 func _contract_fail(message: String) -> bool:

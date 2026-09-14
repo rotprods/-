@@ -1,9 +1,9 @@
 extends SceneTree
 
-const MANIFEST_PATH := "res://art_source/worlds/elysium_null/runtime/runtime_manifest.json"
-const ADAPTER_PATH := "res://art_source/worlds/elysium_null/runtime/elysium_runtime_adapter.gd"
-const SCENE_PATH := "res://art_source/worlds/elysium_null/runtime/elysium_runtime.tscn"
-const ASSET_PATH := "res://art_source/worlds/elysium_null/runtime/assets/elysium_world.glb"
+const MANIFEST_PATH := "res://runtime/elysium/runtime_manifest.json"
+const ADAPTER_PATH := "res://runtime/elysium/elysium_runtime_adapter.gd"
+const SCENE_PATH := "res://runtime/elysium/elysium_runtime.tscn"
+const ASSET_PATH := "res://runtime/elysium/assets/elysium_world.glb"
 const EXPECTED_SCHEMA := "EXOVANT.ELYSIUM.GODOT_RUNTIME_EXPORT.v1"
 
 var failures: Array[String] = []
@@ -24,7 +24,10 @@ func _run() -> void:
 	_expect(str(source.get("engine", "")) == "Godot 4.7.2", "engine contract")
 	_expect(bool(source.get("offline_runtime_required", false)), "offline runtime")
 	_expect(int(source.get("runtime_export_contract_revision", -1)) == 47, "R47 export contract")
-	var cells: Array = data.get("streaming", {}).get("cells", [])
+	var streaming: Dictionary = data.get("streaming", {})
+	_expect(int(streaming.get("cell_size_m", 0)) == 256, "256m cell size")
+	_expect(str(streaming.get("placement_policy", "")) == "REGISTER_ONLY_UNTIL_ORIGIN_REBASING_AND_MACRO_TO_LOCAL_MAPPING_QUALIFIED", "safe placement policy")
+	var cells: Array = streaming.get("cells", [])
 	_expect(cells.size() == 17, "17 streaming cells")
 	var ids := {}
 	var seeds := {}
@@ -59,16 +62,30 @@ func _run() -> void:
 	_expect(float(eden.get("max_damage_radius_m", 999.0)) <= 24.0, "EDEN damage radius")
 	_expect(float(eden.get("max_population_socket_radius_m", 999.0)) <= 24.0, "EDEN population radius")
 	_expect(is_equal_approx(float(eden.get("relocation_warning_s", 0.0)), 1.5), "EDEN 1.5s warning")
-	# Loading these resources forces Godot to parse the adapter/scene even in contract-only mode.
+
+	# Resource load forces Godot to parse the executable integration boundary.
 	var adapter_resource: Resource = load(ADAPTER_PATH)
 	_expect(adapter_resource != null, "adapter parses")
 	var runtime_scene: Resource = load(SCENE_PATH)
 	_expect(runtime_scene is PackedScene, "runtime scene parses")
+	var instance: Node = null
 	if runtime_scene is PackedScene:
-		var instance := (runtime_scene as PackedScene).instantiate()
+		instance = (runtime_scene as PackedScene).instantiate()
 		_expect(instance != null, "runtime scene instantiates")
-		if instance != null:
-			instance.free()
+	if instance != null:
+		root.add_child(instance)
+		await process_frame
+		_expect(bool(instance.get("contract_valid")), "adapter validates R47 contract")
+		_expect(str(instance.get("current_state")) == "CONTROLLED", "initial CONTROLLED state")
+		# Prove debounce + minimum dwell are active, not documentary fields.
+		_expect(bool(instance.call("push_event", "HUMAN_TRACE_EVENT")), "accept anomaly event")
+		await create_timer(1.6).timeout
+		_expect(str(instance.get("current_state")) == "ANOMALY", "CONTROLLED->ANOMALY after dwell/debounce")
+		_expect(bool(instance.call("push_event", "CRITICAL_SERVICE_FAILURE")), "accept emergency event")
+		await create_timer(0.8).timeout
+		_expect(str(instance.get("current_state")) == "EMERGENCY", "ANOMALY->EMERGENCY after dwell/debounce")
+		_expect((instance.call("get_macro_location_metadata", "ELYS-CELL-EDEN_00") as Array).size() == 3, "macro cell metadata exposed without transform guess")
+
 	if contract_only:
 		if not ResourceLoader.exists(ASSET_PATH):
 			print("ELYSIUM_RUNTIME_SMOKE: native asset intentionally unresolved in contract-only mode")
@@ -82,6 +99,8 @@ func _run() -> void:
 				_expect(world_instance != null, "native GLB instantiates")
 				if world_instance != null:
 					world_instance.free()
+	if instance != null:
+		instance.queue_free()
 	_finish(contract_only)
 
 func _read_manifest() -> Dictionary:
