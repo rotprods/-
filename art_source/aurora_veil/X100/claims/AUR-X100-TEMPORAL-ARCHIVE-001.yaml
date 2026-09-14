@@ -4,13 +4,14 @@ owner: AGENT-02-AURORA
 branch: art/world-aurora-veil-001
 world_id: aurora
 region_id: AUR_R01_CAMP_SECOND_DAY
-status: IN_PROGRESS
+status: REVIEW_TECHNICAL_SYSTEMIC
 protocol: EXOVANT-X100-V2
 scope_key: aurora/gameplay/temporal-archive-decision-interface
 canon_task: Q_AURORA_M05
 priority: P0_V2_GAMEPLAY_MULTIDIMENSION
 remote_project_id: d6488148-8547-4ffe-b63d-e5fbec3a339c
 remote_base_revision: 42
+remote_review_revision: 45
 north_star: >-
   Turn Q_AURORA_M05 into a physically inspectable archive-decision environment inside the validated Observatorio annex, preserving stable record identities across alternative retention/access profiles without choosing the canonical player outcome or writing runtime/save logic.
 canon_basis:
@@ -22,16 +23,30 @@ proposal_boundary:
   - exact number/content/categories of archive records are production proposals
   - state profile names are implementation-neutral adapters, not narrative canon
   - no faction, named owner, moral outcome, reward, punishment or final mission consequence is invented
+receipts:
+  qa: art_source/aurora_veil/X100/QA/temporal_archive_r45.json
+  generator: art_source/aurora_veil/X100/blender/aurora_x100_temporal_archive_r45.py
+  blender_contract: AUR_TEMPORAL_ARCHIVE_CONTRACT_R43.json
+  blender_contract_version: AUR-ARCHIVE-v3-r45
+  stable_records: 8
+  profiles: 4
+  profile_scene_users: 0
+  interaction_contract_scene_users: 0
+  neutral_support: PASS_8_OF_8
+  rack_maintenance_regression: PASS
+  central_circulation_regression: PASS
+  selector_support: AUR_INT_WALL_E_2
+  selector_detents_supported: 4
+  canon_outcome_selected: false
+  global_rewind: FORBIDDEN
+  save_mutation: FORBIDDEN
 includes:
-  - stable record IDs reused across all physical state profiles
-  - multiple reversible retention/access profiles expressed through shutters, custody locks, sealed cassettes and withdrawn-slot evidence
-  - reuse of existing record canister / route cartridge / archive tray families
-  - physical reader/dock and custody hardware only where needed to make access legible without UI text
-  - local temporal-residue/VFX hook metadata and spatial-audio hook metadata, no generated audio
-  - interaction/access/collision contracts separated from render geometry
-  - maintenance-clearance regression against r37 interior
-  - deterministic state visibility/default neutral staging
-  - generator + QA + V2 receipt
+  - eight stable temporal-record IDs reusing qualified r37 archive carriers
+  - four mechanically distinct retention/access profile source meshes
+  - neutral undecided staging with shelf-mounted retention stops
+  - wall-mounted mechanical selector with four supported detents
+  - local unauthored spatial-audio/VFX hook interfaces
+  - zero-user interaction/collision source contracts
 excludes:
   - selecting the player decision
   - global rewind or save mutation
@@ -40,25 +55,30 @@ excludes:
   - NPC modeling
   - AEON/Antelope/route geometry changes
   - engine interaction code before EXO-012
-quality_rules:
-  - every state must preserve stable record IDs or explicit withdrawn receipt
-  - access differences must be geometric/mechanical, not color-only
-  - withdrawn records leave provenance evidence; no magic disappearance
-  - state variants cannot block validated interior central circulation/maintenance clearances
-  - local temporal hooks cannot imply world-scale time reversal
-  - qualified existing prop families are reused before new duplicates
+failure_history:
+  - r43 base collars rejected for shelf overlap and rack-maintenance intrusion
+  - first r44 correction attempt failed transactionally after referencing deleted StructRNA; no revision committed
+  - r44 replaced collars with shelf-mounted rear stops at 0m support error
+  - r44 selector audit targeted wrong wall segment E_1; no geometry moved
+  - r45 persisted correct support authority on WALL_E_2 with 0.135m overlap and four supported detents
 family_dod:
-  - >= 8 stable record identities
-  - >= 4 physically distinct decision profiles spanning retention/access axes
-  - state continuity audit across all profiles
-  - default neutral state selected only for technical staging, not canon outcome
-  - archive maintenance/circulation regression PASS
-  - collision/interaction contracts zero scene users
-  - GLB export smoke PASS for default staging
-  - structural + Eevee technical evidence
-  - generator + QA + V2 receipt persisted
+  - "[x] >=8 stable record identities"
+  - "[x] >=4 mechanically distinct decision profiles"
+  - "[x] stable-ID continuity contract"
+  - "[x] neutral technical staging selects no canon outcome"
+  - "[x] archive maintenance/circulation regression PASS"
+  - "[x] interaction contracts zero scene users"
+  - "[x] GLB export smoke PASS default staging"
+  - "[x] Workbench structural profile comparison"
+  - "[x] Eevee technical neutral-state evidence"
+  - "[x] generator + QA persisted"
+  - "[ ] actual mission choice mapping/consequences: BLOCKED_MISSION_DESIGN_APPROVAL"
+  - "[ ] engine/save integration: BLOCKED_EXO_012"
+  - "[ ] readable UI/localization"
+  - "[ ] human GATE-ART/exposure"
 blocked_by:
   - EXO-012 for gameplay/save integration
   - mission-design approval of actual choice mapping/consequences
   - readable UI/localization
   - human GATE-ART
+claim_status: KEEP_REVIEW
