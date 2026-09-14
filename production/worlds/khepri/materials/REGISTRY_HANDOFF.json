@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "claim_id": "CLM-KHEPRI-MATERIALS-001",
+  "owner": "AGENT-KHEPRI-MATERIALS-001",
+  "branch": "art/khepri-materials-001",
+  "epoch": 1,
+  "desired_registry_status_after_ack": "active",
+  "role": "world",
+  "scope": {"world": "khepri", "facet": "art/materials-surface-library"},
+  "paths": [
+    "production/claims/CLM-KHEPRI-MATERIALS-001.yaml",
+    "production/worlds/khepri/materials/",
+    "art_source/khepri/materials/"
+  ],
+  "project_ids": [
+    "d2bdc087-55ff-481e-93c5-e66bdfd57d8d",
+    "67d5c61f-29f2-426b-b6ba-77549f15b452"
+  ],
+  "asset_ids": [
+    "KHP_MAT_GLASS_SOLAR_001",
+    "KHP_MAT_MIRROR_OPTICAL_001",
+    "KHP_MAT_BRONZE_SYNOD_001",
+    "KHP_MAT_CERAMIC_SCORCHED_001",
+    "KHP_MAT_FABRIC_SHADE_001",
+    "KHP_MAT_MINERAL_DESERT_001"
+  ],
+  "includes": [
+    "KHEPRI-specific causal material library",
+    "BaseColor/metallic-roughness/Normal/source StateMask contracts",
+    "deterministic calibration source",
+    "139-row material application matrix",
+    "GLB/Godot material portability QA",
+    "material receipts and handoff"
+  ],
+  "excludes": [
+    "final Glass Sea architecture",
+    "terrain/geology ownership",
+    "NPC/fauna/vehicles",
+    "gameplay/collision",
+    "global/shared material libraries",
+    "canon/story mutation",
+    "human final-art approval",
+    "other worlds"
+  ],
+  "technical_receipt": "production/worlds/khepri/materials/receipts/R4_SYSTEMIC_MATERIAL_FOUNDATION.json",
+  "application_receipt": "production/worlds/khepri/materials/receipts/APPLICATION_MATRIX_V1.json",
+  "branch_preflight_receipt": "production/worlds/khepri/materials/receipts/PREFLIGHT_BRANCH_R4.json",
+  "promotion_note": "Foundation is technically qualified but main registry serialization must be performed by the integrator together with graph/MANIFEST regeneration. Owner ACK must occur only after published reserved readback.",
+  "ready_for_integrator": true
+}
