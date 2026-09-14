@@ -1,0 +1,47 @@
+block_id: BLOCK-KHP-MAT-001
+decision_needed: target_hardware_texture_budget_and_resolution_tiers
+affected_scope: CLM-KHEPRI-MATERIALS-001
+status: BLOCKED_EXTERNAL_QUALIFICATION
+priority: P1
+why_blocking: >-
+  Final material source resolution, mip/import policy and runtime memory budget cannot be approved from the current
+  llvmpipe CPU-rendered VM. Repository hardware authority requires representative measurement on a real GPU/target host.
+observed_authority:
+  engine_reference: Godot 4.7.2
+  current_host: "~8 CPU / 20 GiB RAM / Mesa llvmpipe / no exposed GPU"
+  production_engine_finality: NOT_FULLY_QUALIFIED
+options:
+  - id: A
+    label: qualify_available_Mac_GPU_host
+    reversibility: HIGH
+    effect: measure Metal/unified-memory route on already-available hardware if accessible
+  - id: B
+    label: qualify_discrete_desktop_GPU_host
+    reversibility: HIGH
+    effect: measure desktop VRAM-compressed route on representative discrete GPU
+  - id: C
+    label: delay_final_resolution_and_continue_engine_neutral_material_logic
+    reversibility: HIGH
+    effect: continue causal/material application work without inventing runtime texture tiers
+recommended_option: >-
+  Execute A or B on whichever real target-class host is already available first; retain C for all work that does not require
+  final texture resolution. Do not buy hardware solely to close this blocker before measuring existing hosts.
+work_that_can_continue:
+  - causal material grammar
+  - application matrix
+  - consumer interface specifications
+  - calibration source generation
+  - engine-neutral state masks
+  - downstream planning without geometry mutation
+blocked_work:
+  - final resolution source textures
+  - final runtime compression selection
+  - final texture memory budget
+  - target performance claims
+inputs_required:
+  - target host probe
+  - renderer/platform
+  - target output resolution
+  - representative KHEPRI scene
+  - measured memory/load/stutter/visual matrix
+qualification_protocol: production/worlds/khepri/materials/TEXTURE_TIER_QUALIFICATION.md
