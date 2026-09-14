@@ -4,13 +4,15 @@ owner: AGENT-02-AURORA
 branch: art/world-aurora-veil-001
 world_id: aurora
 region_id: AUR_R01_CAMP_SECOND_DAY
-status: IN_PROGRESS
+status: REVIEW_TECHNICAL_SYSTEMIC
 protocol: EXOVANT-X100-v1
 scope_key: aurora/camp/observatory-control-interior-system
 priority: P1_COVERAGE_ZERO_TO_SYSTEMIC
 created_at: 2026-09-14T12:09:00+02:00
+last_heartbeat: 2026-09-14T12:24:30+02:00
 remote_project_id: d6488148-8547-4ffe-b63d-e5fbec3a339c
 remote_base_revision: 34
+remote_review_revision: 37
 
 north_star: >-
   Add Aurora's first real L3 interior system: a low, maintainable Observatorio del Umbral control-room/annex that reuses the Camp 4m construction language and X100 cultural props, exposes calibration/service/archive functions physically, and can generate multiple believable interior layouts without inventing new civilization lore.
@@ -22,16 +24,16 @@ canon_basis:
   - The future leaves physical receipts; no decorative clocks without function.
 
 includes:
-  - one 4m-grid control-room/annex shell proof adjacent to the observatory zone
-  - modular interior floor, wall/service rail, console, cabinet, archive, cable-floor and instrument-support families
-  - physically separated functional zones: calibration, route/archive, instrument service, observation/readout
-  - reuse of qualified Camp X100 prop mesh families where semantically appropriate
-  - central circulation and maintenance-clearance contracts
-  - removable access/service panels and visible cable/data routing
-  - used/repaired material-history metadata; no random grunge
-  - deterministic layout variants/configuration rules
-  - separate collision/clearance contracts, no loose collision render geometry
-  - source generator + QA receipt + handoff
+  - 12x12m 4m-grid control-annex proof adjacent to the observatory zone
+  - 13 interior source families including terrain-adjusted foundation support
+  - four functional zones: calibration, route archive, instrument service, observation/readout
+  - 16 existing qualified Camp cultural prop families reused
+  - central cross circulation and 7 explicit maintenance-clearance contracts
+  - removable access/service panels and visible power/data routes
+  - two reused physical-history repair receipts from Camp r32
+  - 12 deterministic layout variants
+  - six collision/clearance contracts stored outside render geometry
+  - generator, QA receipt and cold-resume evidence
 
 excludes:
   - moving or remodelling the existing 48m observatory ring/mast
@@ -43,39 +45,51 @@ excludes:
 
 production_proposals:
   module_grid_m: 4.0
-  proof_footprint_target_m: [12.0, 12.0]
-  central_aisle_min_m: 1.4
-  maintenance_clearance_target_m: 0.8
+  proof_footprint_m: [12.0, 12.0]
   proof_state: USED_OPERATIONAL
-  layout_variants_target: 12
-  note: dimensions are reversible production proposals until integrated gameplay profiling exists
+  layout_variants: 12
+  note: dimensions remain reversible production decisions pending integrated gameplay profiling
 
-family_dod:
-  - >= 10 reusable interior-specific module families
-  - >= 4 functional zones physically readable without text
-  - >= 12 deterministic layout combinations from modules/props
-  - >= 1 integrated proof room at real metre scale
-  - central aisle and maintenance clearances measured
-  - service/data routing physically represented
-  - >= 8 existing qualified cultural prop families reused rather than duplicated
-  - source modules scale 1/1/1 with stable IDs
-  - collision/clearance contracts separated from render geometry
-  - GLB export smoke pass
-  - isolated Workbench structural render and Eevee technical render
-  - generator + QA persisted
-  - HUMAN GATE-ART remains separate
+results:
+  interior_source_families: 13
+  proof_objects: 107
+  foundation_piers: 16
+  layout_variants: 12
+  reused_qualified_prop_families: 16
+  reused_prop_objects_supported: 21_of_21
+  functional_zones: 4_of_4
+  maintenance_clearance_contracts: 7_of_7_PASS
+  central_cross_intrusions: 0
+  unused_source_families: 0
+  collision_contract_scene_users: 0
+  object_scale_1_1_1: PASS
+  area_light_dependency: NONE
+  glb_export: PASS_REV37
+  structural_render: PASS
+  eevee_technical: PASS_LOWKEY_ART_REVIEW_OPEN
+  human_gate_art: PENDING
 
-blocked_by:
-  - final UV/bakes/authored textures
-  - UI/runtime interactions
+failure_history:
+  - r35 QA found 12 unsupported props and unused shelf family AUR-INT-011; r36 added real supports/shelves and relocated all unsupported objects.
+  - r36 maintenance audit found three blocked service fronts; r37 rearranged five pieces and achieved 7/7 maintenance-clearance PASS without changing footprint or functional zones.
+  - first r37 Workbench query failed before rendering because the auditor misused bpy collection membership; the scene was not mutated and corrected query passed.
+
+receipts:
+  qa: art_source/aurora_veil/X100/QA/observatory_interior_r37.json
+  generator: art_source/aurora_veil/X100/blender/aurora_x100_observatory_interior_r37.py
+  structural_artifact: aurora_x100_r37_observatory_interior_structural.png
+  structural_artifact_id: 526a853a24b316ac378d022f3f7fb823
+  eevee_artifact: aurora_x100_r37_observatory_interior_eevee.png
+  eevee_artifact_id: 6464f90a3bf8785a2a62e9c52088dcca
+
+open_gates:
+  - final UV/bakes/authored texture and microdetail pass
+  - final interior lighting/exposure art review; technical pass remains deliberately low-key
+  - runtime interaction/UI and gameplay scripting
   - EXO-012 engine import
   - target hardware performance
   - human art-direction approval
 
-collision_audit:
-  x100_claims_directory_checked: true
-  existing_interior_x100_claim: false
-  concurrent_antelope_scope: EXCLUDED
-  plain_story_scope: REVIEW_TECHNICAL_SYSTEMIC_AND_EXCLUDED
-  aeon_scope: EXCLUDED
-  result: CLAIMED_ATOMIC_INTERIOR_SCOPE
+claim_status: KEEP
+stop_condition: >-
+  Interior system is accepted for REVIEW_TECHNICAL_SYSTEMIC. Do not mark DONE/final art until open gates close.
