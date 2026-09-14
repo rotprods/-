@@ -1,183 +1,290 @@
 {
-  "schema_version": 1,
+  "schema_version": 3,
   "project": "EXOVANT 2950",
   "world_id": "leviathan",
   "claim_id": "CLM-W10-WORLD-LEVIATHAN-001",
   "agent_id": "AGENT-LEVIATHAN-10",
-  "remote_project": {
-    "provider": "Higgsfield 3D Jutsu",
-    "project_id": "2577a7b6-ebd7-4d31-a645-620e4b73a95d",
-    "blender_version_observed": "5.2.0 LTS",
-    "unit_system_observed": "METRIC",
-    "scale_length_observed": 1.0,
-    "render_engine_observed": "BLENDER_EEVEE",
-    "fps_observed": 24,
-    "final_revision": 2,
-    "scene_sequence": 0
-  },
-  "revision_2_artifacts": {
-    "blend": {
-      "size_bytes": 4034313,
-      "etag": "a2156686fbcad1ff1a36c0b5c7ea7831",
-      "status": "AVAILABLE_REMOTE"
+  "remote_projects": {
+    "world_primary": {
+      "project_id": "2577a7b6-ebd7-4d31-a645-620e4b73a95d",
+      "revision": 18,
+      "blender_version": "5.2.0 LTS",
+      "unit_system": "METRIC",
+      "scale_length": 1.0,
+      "mesh_objects": 395,
+      "settled_mesh_datablocks": 170,
+      "blend_bytes": 7118745,
+      "glb_bytes": 7587052
     },
-    "glb": {
-      "size_bytes": 4397196,
-      "etag": "17a660fe9198015d9e2a01514efdbb10",
-      "status": "AVAILABLE_REMOTE"
+    "world_cold": {
+      "project_id": "37a931c7-f2e6-46bc-9be0-26077e5de1c1",
+      "revision": 16,
+      "mesh_objects": 395,
+      "settled_mesh_datablocks": 170,
+      "blend_bytes": 7118745,
+      "glb_bytes": 7593704
     },
-    "overview_render": {
-      "artifact_id": "f467205d40557710bcd580d10393a1ec",
-      "name": "leviathan_overview_r2.png",
-      "width": 640,
-      "height": 360,
-      "size_bytes": 266922,
-      "etag": "670e209238ca3f45cc99d389f63d7a56",
-      "status": "RENDERED",
-      "agent_pixel_review": "NOT_RUN_CLIENT_LIMITATION"
+    "pbr_primary": {
+      "project_id": "6c67e70a-d29b-4a9d-8387-68ba071d8c3f",
+      "revision": 5
     },
-    "soma_gameplay_render": {
-      "artifact_id": "5a66cdc6560bdf42b7a62531d45513a1",
-      "name": "leviathan_soma_gameplay_r2.png",
-      "width": 640,
-      "height": 360,
-      "size_bytes": 192594,
-      "etag": "5d5326836a07bc16fb487a22d64c4291",
-      "status": "RENDERED",
-      "agent_pixel_review": "NOT_RUN_CLIENT_LIMITATION"
-    },
-    "interactive_preview": {
-      "revision": 2,
-      "status": "SHOWN_TO_USER"
+    "pbr_cold": {
+      "project_id": "21dfcfc6-a181-4300-b6a9-0ee2e09695ee",
+      "revision": 1
     }
   },
-  "structural_metrics": {
-    "object_count": 125,
-    "mesh_count": 90,
-    "curve_font_count": 25,
-    "material_count": 11,
-    "camera_count": 4,
-    "light_count": 4,
-    "required_objects_missing": [],
-    "bad_object_scales": [],
-    "zero_polygon_meshes": [],
-    "degenerate_meshes": [],
-    "collision_object_count": 12,
-    "visual_contraction_membrane_count": 3,
-    "visual_contractions_present_in_collision_collection": [],
-    "portable_light_types": ["POINT", "SUN"]
-  },
-  "scale_receipts": {
-    "human_reference_dimensions_m": [0.55, 0.4, 1.85],
-    "soma_arena_ring_dimensions_m": [58.0, 58.0, 6.4],
-    "soma_arena_floor_dimensions_m": [58.0, 58.0, 6.0],
-    "stable_substrate_dimensions_m": [720.0, 480.0, 12.0],
-    "stable_substrate_semantics": "REPRESENTATIVE_AUTHORED_CELL_PROPOSAL_NOT_PLANET_SIZE",
+  "canon_scale_receipts": {
+    "human_reference_height_m": 1.85,
+    "soma_chamber_outer_diameter_m": 58.0,
+    "soma_chamber_radius_m": 29.0,
+    "soma_representative_environment_max_actual_radius_m": 28.3,
+    "soma_radial_margin_m": 0.7,
+    "authored_cell_m": [720.0, 480.0],
+    "authored_cell_semantics": "REPRESENTATIVE_PROPOSAL_NOT_PLANET_SIZE",
     "planet_radius_m": "UNKNOWN_BLOCKED_CANON"
   },
-  "camera_receipts": {
-    "overview_region_centers_in_frame": true,
-    "overview_region_center_ndc": {
-      "R1_PUERTO": [0.171, 0.5842, 816.683],
-      "R2_JARDINES": [0.6598, 0.5665, 796.4401],
-      "R3_SOMA": [0.7661, 0.1135, 531.5576]
+  "stable_traversal": {
+    "status": "STRUCTURAL_PASS_RUNTIME_NOT_RUN",
+    "length_m": 541.256,
+    "width_m": 8.0,
+    "width_status": "PROPOSAL_NOT_FINAL_GAMEPLAY_CANON",
+    "thickness_m": 0.5,
+    "max_segment_slope_percent": 7.6923,
+    "minimum_visual_tube_side_margin_m": 1.0513,
+    "soma_floor_contact": true,
+    "visual_collision_leaks": 0,
+    "primary_cold_surface_match": true,
+    "receipt": "art_source/worlds/leviathan/evidence/traversal_ribbon_r11.json"
+  },
+  "representative_regions": {
+    "Puerto de la Herida": {
+      "status": "REVIEW",
+      "receipt": "art_source/worlds/leviathan/evidence/puerto_microset_r5.json"
     },
-    "soma_center_in_gameplay_camera": true,
-    "soma_center_ndc": [0.5, 0.5, 55.9017]
+    "Jardines Inmunes": {
+      "status": "REVIEW",
+      "receipt": "art_source/worlds/leviathan/evidence/jardines_microset_r7.json"
+    },
+    "Camara de SOMA": {
+      "status": "REVIEW",
+      "receipt": "art_source/worlds/leviathan/evidence/soma_encounter_microset_r8.json"
+    }
+  },
+  "ecology_and_adversary_receipts": {
+    "coverage": {
+      "canonical_ecology_species": "4/4 representative",
+      "canonical_adversaries": "3/3 representative"
+    },
+    "LEV-ECO-002": {
+      "surface_sha256": "7b5a6eb9a295cb022c52939e1c711555b35f658e9e7c0898c485e16626301656",
+      "evaluated_triangles": 13336,
+      "primary_revision": 17,
+      "cold_revision": 15,
+      "surface_match": true,
+      "degenerate_polygons": 0,
+      "collision_leaks": 0,
+      "receipt": "art_source/worlds/leviathan/evidence/lymph_whale_r17.json"
+    },
+    "LEV-ECO-003": {
+      "surface_sha256": "e4e66ce01c258fb9c72c985fe0c065d1f0c879bc18434abc8142d573828a88f6",
+      "evaluated_triangles": 5640,
+      "primary_revision": 13,
+      "cold_revision": 11,
+      "surface_match": true,
+      "degenerate_polygons": 0,
+      "collision_leaks": 0,
+      "receipt": "art_source/worlds/leviathan/evidence/wound_pollinator_r13.json"
+    },
+    "LEV-ENM-001": {
+      "surface_sha256": "5203d84cdf22f89685960e3cb1ffed10aaa7092a59123f8c171d61a3b1e2a8df",
+      "evaluated_triangles": 10392,
+      "primary_revision": 14,
+      "cold_revision": 12,
+      "surface_match": true,
+      "degenerate_polygons": 0,
+      "collision_leaks": 0,
+      "receipt": "art_source/worlds/leviathan/evidence/fagocito_guardian_r14.json"
+    },
+    "LEV-ENM-002": {
+      "surface_sha256": "10772696d111219191ef56324724af184904c0b8a3094ccbd5768c9971eb0dc2",
+      "evaluated_triangles": 5424,
+      "primary_revision": 15,
+      "cold_revision": 13,
+      "surface_match": true,
+      "degenerate_polygons": 0,
+      "collision_leaks": 0,
+      "receipt": "art_source/worlds/leviathan/evidence/pulse_extractor_r15.json"
+    },
+    "LEV-ENM-003": {
+      "surface_sha256": "de8aa76989c533041d6e45cc15362cdb2bd1aaa09b7eb1024b0eea33e5298c75",
+      "evaluated_triangles": 9784,
+      "primary_revision": 16,
+      "cold_revision": 14,
+      "surface_match": true,
+      "degenerate_polygons": 0,
+      "collision_leaks": 0,
+      "receipt": "art_source/worlds/leviathan/evidence/parasitic_colony_r16.json"
+    },
+    "new_asset_gameplay_collision_authority": "NONE"
+  },
+  "structural_optimization": {
+    "base_optimizer_receipt": "art_source/worlds/leviathan/evidence/instancing_optimization_r10_v2.json",
+    "post_creature_receipt": "art_source/worlds/leviathan/evidence/post_creature_instancing_r18.json",
+    "post_creature_mesh_objects_preserved": 395,
+    "post_creature_mesh_datablocks_before": 237,
+    "optimizer_explicit_relinks": 63,
+    "optimizer_immediate_datablocks_after": 174,
+    "settled_datablocks_after_checkpoint_primary": 170,
+    "settled_datablocks_after_checkpoint_cold": 170,
+    "audited_asset_surface_regressions": 0,
+    "runtime_performance_claimed": false
+  },
+  "uv_material_lod": {
+    "world_master_image_textures": 0,
+    "world_master_portable_material_roles": 18,
+    "existing_uv_structural_audit": "PASS_READINESS_NOT_PRODUCTION_DENSITY",
+    "pbr_calibration": {
+      "status": "TECHNICAL_PASS_ISOLATED_NOT_FINAL_ART",
+      "materials": 6,
+      "packed_pngs": 18,
+      "unique_packed_sha256": 18,
+      "glb_embedded_images": 18,
+      "glb_external_image_uris": 0,
+      "canonical_primary_cold_fingerprint": "fb881b5d76c3c2fe8f35441b7f27cf4a0ad71db74f69a915eb1d48d966db9230",
+      "world_master_propagated": false,
+      "receipt": "art_source/worlds/leviathan/evidence/pbr_calibration_lab_r5.json"
+    },
+    "lod": {
+      "feasibility": "PASS_FINAL_THRESHOLDS_BLOCKED",
+      "policy": "art_source/worlds/leviathan/LOD_CANDIDATE_POLICY.md",
+      "receipt": "art_source/worlds/leviathan/evidence/lod_feasibility_r10.json",
+      "production_chain_approved": false
+    }
+  },
+  "visual_review": {
+    "status": "REVIEW_REQUIRED_TRANSPORT_BLOCKED",
+    "latest_canary": {
+      "asset": "LEV-ECO-003",
+      "camera": "CAM_R2_POLLINATOR_CLOSE",
+      "operation": "leviathan-r18-pollinator-render-canary-v2",
+      "artifact_id": "00827b86eb7ac9b85c3762fe73547491",
+      "width": 384,
+      "height": 216,
+      "size_bytes": 101931,
+      "render_status": "SUCCESS",
+      "pixel_review_status": "BLOCKED_SIGNED_R2_ARTIFACT_NOT_MATERIALIZABLE_IN_VISUAL_RUNTIME"
+    },
+    "note": "Render existence is not art approval. Do not mark B_ART or M_VISUAL_REGRESSION PASS until pixel/human review is actually executed."
   },
   "qa_gauntlet": {
     "A_CANON": {
       "status": "PASS_FOUNDATION",
-      "note": "Three canonical regions, gravity, temperature, art seed, ecology/adversary names and 58 m SOMA chamber are derived from current design authority. Physical planet radius remains UNKNOWN."
+      "note": "Canon names, regions, gravity/temperature and SOMA 58m chamber are evidence-bound. Planet radius remains unknown."
     },
     "B_ART": {
       "status": "REVIEW_REQUIRED",
-      "note": "Material/shape grammar is implemented as a blockout proposal; final art-director visual review is not replaced by this receipt."
+      "note": "Representative art exists but direct pixel/human art approval is not available."
     },
     "C_REALISM": {
-      "status": "PARTIAL_BLOCKOUT",
-      "note": "Graft/suture/valve/circulation causal roles exist; manufacturing, microstructure, final tissue response and final SOMA anatomy remain incomplete."
+      "status": "PARTIAL_REPRESENTATIVE",
+      "note": "Causal anatomy/construction logic is materially improved; final microstructure/material/art direction and final SOMA anatomy remain open."
     },
     "D_GEOMETRY": {
-      "status": "PASS_BLOCKOUT",
-      "note": "Required objects present; no accidental scale, zero-poly meshes or degenerate polygon areas detected in revision 2."
+      "status": "PASS_REPRESENTATIVE_FOUNDATION",
+      "note": "Core region and audited ecology/adversary representative geometry passes structural QA and cold replay."
     },
     "E_UV": {
-      "status": "NOT_READY",
-      "note": "No final texture/UV pipeline claim at WAVE-1 blockout."
+      "status": "PARTIAL_READINESS",
+      "note": "World meshes have structurally valid UV layers but production texel density/overlap policy is not approved."
     },
     "F_MATERIALS": {
-      "status": "PARTIAL_BLOCKOUT",
-      "note": "11 portable material roles exist; final calibrated textures/channel validation is not complete."
+      "status": "PARTIAL_TECHNICAL_PASS",
+      "note": "Portable PBR calibration lab is reproducible and GLB-embedded; world-master propagation/final art/runtime validation remain open."
     },
     "G_SCALE": {
-      "status": "PASS_BLOCKOUT",
-      "note": "1.85 m human reference and exact 58 m SOMA outer chamber envelope measured."
+      "status": "PASS_FOUNDATION",
+      "note": "1.85m human, 58m SOMA and representative asset envelopes are measured; proposal dimensions are truth-labeled."
     },
     "H_PERFORMANCE": {
-      "status": "BLOCKED_UNMEASURED",
-      "note": "Target production engine/hardware budgets are not yet qualified."
+      "status": "BLOCKED_TARGET_UNKNOWN",
+      "note": "No target hardware/runtime benchmark. Structural file/datablock savings are not FPS claims."
     },
     "I_LOD": {
-      "status": "NOT_READY"
+      "status": "PARTIAL_FEASIBILITY",
+      "note": "LOD feasibility and family/error policy exist; no production chain or screen-space/hardware thresholds approved."
     },
     "J_COLLISION": {
-      "status": "PASS_STRUCTURE_ONLY",
-      "note": "Stable collision collection is separate from visual contraction membranes. Runtime character traversal/collision remains NOT_RUN."
+      "status": "PASS_STRUCTURE_ONLY_RUNTIME_OPEN",
+      "note": "Stable traversal authority is separated from visuals; audited new creatures/adversaries leak zero objects into collision. Runtime capsule/nav remains NOT_RUN."
     },
     "K_EXPORT": {
-      "status": "PASS_BLOCKOUT",
-      "note": "Editable .blend and GLB produced at revision 2. Revision-1 unsupported AREA-light warning was fixed by replacing it with POINT; revision-2 export log no longer reports that warning."
+      "status": "PASS_REPRESENTATIVE_FOUNDATION",
+      "note": "Editable .blend and portable GLB continue to export through r18; cold replay exports exist."
     },
     "L_ENGINE": {
-      "status": "NOT_RUN",
-      "note": "No Godot or Unreal import receipt for LEVIATHAN yet."
+      "status": "NOT_RUN_ENV_BLOCKED",
+      "note": "Exact provider binary and qualified production-engine runtime still cannot coexist in this producer surface."
     },
     "M_VISUAL_REGRESSION": {
       "status": "REVIEW_REQUIRED",
-      "note": "Revision-2 overview and SOMA renders exist, but this client could not directly perform pixel-level visual inspection. Interactive revision-2 preview was surfaced to the user."
+      "note": "Renders exist, including fresh r18 close-up artifact, but signed artifact transport prevents direct visual inspection in this runtime."
     }
   },
   "failures_recovered": [
     {
-      "operation": "leviathan-master-blockout-v1",
       "classification": "TOOLING_BOOTSTRAP_FAILURE",
-      "cause": "scene.world was None in the pristine Blender scene",
-      "asset_revision_changed": false,
-      "fix": "Explicitly create a Blender World datablock before assigning world color."
+      "cause": "pristine Blender scene had no World datablock",
+      "fix": "create World explicitly"
     },
     {
-      "operation": "leviathan-verify-render-v1",
-      "classification": "VALIDATOR_FAILURE",
-      "cause": "Pixel-statistics script assumed a populated Render Result buffer and raised IndexError.",
-      "asset_revision_changed": false,
-      "fix": "Separate structural/camera validation from render artifact generation."
-    },
-    {
-      "operation": "revision-1 export audit",
-      "classification": "EXPORT_WARNING",
-      "cause": "AREA light unsupported by glTF export path",
-      "asset_revision_changed": true,
-      "fix": "Converted tissue bounce source to portable POINT light in revision 2."
-    },
-    {
-      "operation": "revision-1 scale audit",
       "classification": "CANON_SCALE_MISMATCH",
-      "cause": "Arena torus external envelope measured 64.4 m while canonical chamber is 58 m.",
-      "asset_revision_changed": true,
-      "fix": "Rebuilt arena ring to exact 58 m external diameter and floor to 58 x 58 m in revision 2."
+      "cause": "initial SOMA torus external envelope was 64.4m",
+      "fix": "rebuild to exact 58m external chamber diameter"
+    },
+    {
+      "classification": "EXPORT_PORTABILITY_WARNING",
+      "cause": "AREA light unsupported by glTF path",
+      "fix": "replace with portable POINT source"
+    },
+    {
+      "classification": "FALSE_REPRODUCIBILITY_ALARM",
+      "cause": "raw primitive vertex/face index order differed across Blender rebuilds",
+      "fix": "use order-invariant evaluated-surface contract"
+    },
+    {
+      "classification": "PBR_PERSISTENCE_FAILURE",
+      "cause": "GENERATED images and Blender Image.save path did not preserve intended pixels in remote checkpoint",
+      "fix": "deterministic byte-level RGBA8 PNG encoding -> FILE image -> pack -> external path removal"
+    },
+    {
+      "classification": "PBR_QUANTIZATION_RANGE_OVERFLOW",
+      "cause": "8-bit roughness quantization slightly exceeded declared ceramic max",
+      "fix": "quantization-safe ceil/floor MR bounds"
+    },
+    {
+      "classification": "VISUAL_QA_TRANSPORT_BLOCKER",
+      "cause": "fresh signed R2 image artifact cannot be materialized into this runtime's visual file surface",
+      "asset_revision_changed": false,
+      "fix": "none available in producer surface; keep art gate open"
     }
   ],
   "overall": {
-    "status": "WAVE1_BLOCKOUT_CHECKPOINT_PASS_WITH_OPEN_GATES",
+    "status": "R18_REPRESENTATIVE_PRODUCTION_CHECKPOINT_PASS_WITH_OPEN_ART_RUNTIME_FINALIZATION_GATES",
     "world_done": false,
     "claim_should_release": false,
+    "first_10_done": 3,
+    "first_10_total": 10,
     "next_blocking_gates": [
-      "agent/human visual review of revision-2 renders/interactive preview",
-      "runtime import and traversal/collision smoke test",
-      "production-engine and target-hardware qualification for budgets",
+      "direct pixel/human art review",
+      "production-engine import/instantiate",
+      "runtime capsule/nav/collision traversal",
+      "final ecology/adversary rig-animation-AI-gameplay integration",
+      "world-master PBR propagation and runtime material validation",
+      "production texel-density/shipping texture policy",
+      "production LOD/HLOD and target-hardware performance",
       "final SOMA art/anatomy decision",
-      "physical planet scale decision for L0/L1"
+      "physical planet scale decision",
+      "exact merge-tree MANIFEST reconciliation before meaningful manual Gauntlet run"
     ]
   }
 }
