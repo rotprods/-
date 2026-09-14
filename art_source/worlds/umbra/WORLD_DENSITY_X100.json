@@ -1,0 +1,82 @@
+{
+  "schema": "exovant.world-density-x100.v1",
+  "world": "UMBRA",
+  "world_id": "W04",
+  "claim": "CLM-W04-WORLD-UMBRA-001",
+  "owner": "AGENT-UMBRA-04",
+  "active": true,
+  "north_star": "Maximize credible systemic world depth per production hour without sacrificing quality, coherence, performance or originality.",
+  "scoring": {
+    "factor_scale": "0..1",
+    "world_completeness": "100 * geometric_mean(factors) = 100 * (product(factors))^(1/N)",
+    "reason": "Preserves the user's multiplicative requirement while keeping the result interpretable as a percentage; near-zero factors remain dominant bottlenecks.",
+    "baseline_factors": {
+      "MACRO_WORLD": 0.18,
+      "MESO_ARCHITECTURE": 0.35,
+      "MICRO_ASSETS": 0.08,
+      "ECOLOGY": 0.02,
+      "CIVILIZATION": 0.12,
+      "GAMEPLAY": 0.45,
+      "MATERIAL_CAUSALITY": 0.28,
+      "VARIATION": 0.10,
+      "TEMPORAL_STATES": 0.05,
+      "STORYTELLING": 0.30,
+      "AUDIO_VISUAL_LANGUAGE": 0.22,
+      "OPTIMIZATION": 0.55,
+      "REUSABILITY": 0.35,
+      "QA": 0.55
+    },
+    "baseline_raw_product": 5.325000912e-11,
+    "baseline_geometric_mean": 0.1845719463,
+    "baseline_percent": 18.46,
+    "classification": "PLAYABLE_FOUNDATION",
+    "blocked_factor_policy": "Blocked dimensions stay low and cap world-completeness; they are never compensated by fabricating canon."
+  },
+  "scale_coverage": {
+    "L0_PLANETARY": {"score": 0.08, "status": "BLOCKED_CANON_PHYSICAL_SCALE", "existing": ["twilight-band concept", "synchronous-rotation canon", "reflector-swarm canon"], "missing": ["physical radius", "global landform contract", "atmosphere/hydrology contract", "distant planetary megastructure layout"]},
+    "L1_REGIONAL": {"score": 0.18, "status": "EARLY", "existing": ["authored L2 testbed", "route language", "reflector skyline"], "missing": ["regional route hierarchy", "settlement network", "resource/maintenance nodes", "vista grammar"]},
+    "L2_DISTRICT": {"score": 0.50, "status": "PLAYABLE_FOUNDATION", "existing": ["1200x700 m authored testbed", "M01-M04 environment cells", "refuge", "reflectors", "caravan field"], "missing": ["district subzones", "service yards", "storage fields", "repair berms", "thermal shelters", "secondary routes"]},
+    "L3_ARCHITECTURAL": {"score": 0.34, "status": "EARLY_PRODUCTION", "existing": ["refuge foundation", "reflector service structures", "caravan architecture"], "missing": ["doors/hatches", "maintenance bays", "interiors", "bridges/passages", "service gantries", "integrated furnishings"]},
+    "L4_PROP_ECOLOGY": {"score": 0.07, "status": "CRITICAL_GAP", "existing": ["M03 evidence slabs/caches", "control plinth proxies"], "missing": ["tools", "storage", "cable/power props", "lighting", "thermal machinery", "containers", "signage", "textiles", "domestic objects", "ritual/cultural objects"], "ecology": "BLOCKED_CANON"},
+    "L5_MICRODETAIL": {"score": 0.03, "status": "CRITICAL_GAP", "existing": ["causal macro wear rules in bible"], "missing": ["fasteners", "joints", "welds", "gaskets", "abrasion masks", "packed-ice contact traces", "repair seams", "service residue", "manufacturing variation"]}
+  },
+  "coverage_matrix": {
+    "Architecture": {"families": 1, "planning_target": 24, "base_assets": 1, "variants": 1, "states": 1, "lods": 0, "gameplay": "PARTIAL", "qa": "FOUNDATION"},
+    "Infrastructure": {"families": 3, "planning_target": 16, "base_assets": 3, "variants": 4, "states": 1, "lods": 0, "gameplay": "PARTIAL", "qa": "FOUNDATION"},
+    "Props": {"families": 1, "planning_target": 48, "base_assets": 2, "variants": 6, "states": 1, "lods": 0, "gameplay": "LOW", "qa": "EARLY"},
+    "Vehicles": {"families": 1, "planning_target": 12, "base_assets": 1, "variants": 5, "states": 1, "lods": 0, "gameplay": "PARTIAL", "qa": "FOUNDATION"},
+    "Machines": {"families": 2, "planning_target": 20, "base_assets": 2, "variants": 4, "states": 1, "lods": 0, "gameplay": "PARTIAL", "qa": "FOUNDATION"},
+    "Cultural": {"families": 0, "planning_target": 14, "base_assets": 0, "variants": 0, "states": 0, "lods": 0, "gameplay": "NONE", "qa": "NONE"},
+    "Traversal": {"families": 3, "planning_target": 10, "base_assets": 4, "variants": 6, "states": 1, "lods": 0, "gameplay": "FOUNDATION", "qa": "FOUNDATION"},
+    "DamageRepair": {"families": 0, "planning_target": 10, "base_assets": 0, "variants": 0, "states": 0, "lods": 0, "gameplay": "NONE", "qa": "NONE"},
+    "HeroLandmarks": {"families": 1, "planning_target": 8, "base_assets": 1, "variants": 1, "states": 1, "lods": 0, "gameplay": "DESTINATION_ONLY", "qa": "PROXY"},
+    "Flora": {"families": 0, "planning_target": 0, "status": "BLOCKED_CANON_DO_NOT_INVENT"},
+    "Fauna": {"families": 0, "planning_target": 0, "status": "BLOCKED_CANON_DO_NOT_INVENT"}
+  },
+  "culture_dna_proposal": {
+    "epistemic": "RECOMMENDED_PRODUCTION_PROPOSAL_DERIVED_FROM_CANONICAL_ENVIRONMENT_AND_EXISTING_ART_LANGUAGE",
+    "manufacturing_language": "rugged modular electromechanical assemblies; bolted/welded dark-metal skeletons; replaceable panels; externally serviceable components",
+    "construction_logic": "low wind-shedding bodies, tension members, exposed service access only where protected, redundant anchoring",
+    "ergonomics": "glove-friendly oversized latches/handles, sheltered interaction faces, low-maintenance access heights",
+    "ornamentation": "sparse; geometry-coded identity, eclipse/horizon/reflector motifs only where functional or wayfinding-relevant",
+    "repair_language": "ivory replacement plates, external clamps, mismatched service modules, visible seam/gasket renewal",
+    "resource_constraints": "reuse, salvage, modular replacement, thermal protection, minimal exposed mass",
+    "color_logic": "dark structural mass; ivory repair/service; amber refuge/safe; vermilion hazard/hostile; pale cyan archival memory",
+    "iconography": "horizon bars, partial eclipse arcs, reflector-ray wedges; no decorative neon language",
+    "social_hierarchy": "NOT_CANONIZED; do not encode caste/rank without design authority",
+    "technology_level": "rugged optical/thermal/electromechanical field technology inferred from reflector and caravan systems"
+  },
+  "priority_queue": [
+    {"rank": 1, "id": "W04-X100-SERVICE-ECOSYSTEM", "scope": "Sin Sol maintenance/service props + machines + cultural utility language", "why": "fills L4/L5, civilization, micro-assets, material history, variation and reusability simultaneously", "authority": "SAFE_WITHIN_WORLD_OWNER_AS_PROPOSAL", "systemic_multiplier": "VERY_HIGH"},
+    {"rank": 2, "id": "W04-X100-DAMAGE-REPAIR-STATES", "scope": "causal pristine/used/damaged/field-repaired/abandoned state system across approved families", "authority": "SAFE_IF_GEOMETRY/MATERIAL_CAUSALITY_ONLY", "systemic_multiplier": "VERY_HIGH"},
+    {"rank": 3, "id": "W04-X100-DISTRICT-SERVICE-YARDS", "scope": "service yards, storage berms, thermal shelters and repair corridors composed from systemic kits", "authority": "SAFE_WITHIN_L2_TESTBED", "systemic_multiplier": "HIGH"},
+    {"rank": 4, "id": "W04-X100-ARCH-INTERFACE-KIT", "scope": "doors, hatches, ladders, platforms, handrails, service gantries, cable penetrations", "authority": "SAFE", "systemic_multiplier": "HIGH"},
+    {"rank": 5, "id": "W04-X100-MICRODETAIL-SYSTEM", "scope": "fastener/joint/gasket/weld/abrasion/repair-seam libraries and placement rules", "authority": "SAFE_AFTER_PARENT_FAMILIES", "systemic_multiplier": "HIGH"},
+    {"rank": 90, "id": "W04-X100-ECOLOGY", "scope": "native flora/fauna food web", "authority": "BLOCKED_CANON", "systemic_multiplier": "ZERO_UNTIL_CANON"},
+    {"rank": 91, "id": "W04-X100-PLANETARY", "scope": "physical planet/global terrain", "authority": "BLOCKED_CANON_PHYSICAL_SCALE", "systemic_multiplier": "ZERO_UNTIL_CANON"},
+    {"rank": 92, "id": "W04-X100-NOCTIL", "scope": "final boss entity", "authority": "BLOCKED_SPEC", "systemic_multiplier": "ZERO_UNTIL_DESIGN_CONTRACT"}
+  ],
+  "distribution": {"hero_percent": 5, "support_percent": 20, "systemic_percent": 75},
+  "family_dod": ["semantic purpose", "stable ID", "dimensions/player scale", "silhouette", "manufacturing logic", "UV0 or explicit pending gate", "material roles", "pivot/transforms", "collision or explicit integration blocker", "gameplay clearance", "LOD strategy", "variants", "state variants", "optimization", "engine import or explicit integration blocker", "visual QA", "technical QA", "receipt", "source persisted", "export persisted or custody blocker", "claim/handoff updated"],
+  "next_atomic_scope": "W04-X100-SERVICE-ECOSYSTEM"
+}

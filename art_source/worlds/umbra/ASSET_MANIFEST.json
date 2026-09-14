@@ -1,0 +1,79 @@
+{
+  "schema": "exovant.umbra.asset-manifest.v5",
+  "world": "UMBRA",
+  "world_id": "W04",
+  "claim": "CLM-W04-WORLD-UMBRA-001",
+  "owner": "AGENT-UMBRA-04",
+  "truth_state": "X100_PRODUCTION_WORLD_42_41_PERCENT_LOCAL_DIAGNOSTIC_NOT_FINAL_AAAA",
+  "global_x100": {
+    "main": "8c01136aa14f89e177ff1216d1993d62ea963ad3",
+    "opportunity": "UMBRA-X100-SYSTEMIC-DENSITY",
+    "portfolio_rank": 3,
+    "dominant_dimension": "material_causality"
+  },
+  "primary_project": {
+    "id": "7ab99682-8777-4143-8ae0-1fbb178ccafb",
+    "revision": 16,
+    "checkpoint": "X100_MATERIAL_CAUSALITY_FOUNDATION_001",
+    "objects": 4871,
+    "mesh_objects": 4329,
+    "mesh_datablocks": 788,
+    "materials": 37,
+    "blend_bytes": 16468932,
+    "glb_bytes": 4649568
+  },
+  "replay_project": {
+    "id": "7f33ae14-540c-4af5-8131-1490465fe6cc",
+    "verified_through": "WAVE2_REFUGE_QUESTCELLS_OPT_001",
+    "x100_replay_status": "PENDING_BATCH_REPLAY"
+  },
+  "assets": [
+    {"id":"W04-TERR-001","name":"Twilight-band authored terrain testbed","class":"environment/terrain","status":"DONE_BLOCKOUT","target":"A","current":"C","notes":"1200x700 m L2 proposal only; never planet size"},
+    {"id":"W04-TERR-M01","name":"M01 thermal-track environment cell","class":"environment/quest-cell","status":"DONE_WAVE2_FOUNDATION","target":"A","current":"B"},
+    {"id":"W04-TERR-M02","name":"M02 reflector-exposure environment cell","class":"environment/quest-cell","status":"DONE_WAVE2_FOUNDATION","target":"A","current":"B"},
+    {"id":"W04-TERR-M03","name":"M03 exclusion archive environment cell","class":"environment/quest-cell","status":"DONE_WAVE2_FOUNDATION","target":"A","current":"B"},
+    {"id":"W04-TERR-M04","name":"M04 crown-ascent environment cell","class":"environment/quest-cell","status":"DONE_WAVE2_FOUNDATION","target":"A","current":"B"},
+    {"id":"W04-INF-001","name":"Reflector tower modular kit","class":"infrastructure/reflector","status":"DONE_WAVE1_FOUNDATION","target":"A","current":"B"},
+    {"id":"W04-INF-002","name":"Windbreak pylons","class":"infrastructure/wind","status":"DONE_BLOCKOUT","target":"B","current":"C"},
+    {"id":"W04-INF-003","name":"Hardpack traversal route","class":"environment/traversal","status":"DONE_BLOCKOUT","target":"B","current":"C","notes":"X100 traversal grammar queued after evidence closure"},
+    {"id":"W04-CAR-001","name":"Flotilla caravan modular vehicle","class":"vehicle/mobile-architecture","status":"DONE_WAVE1_FOUNDATION","target":"A","current":"B"},
+    {"id":"W04-ARCH-001","name":"Refuge hub modular production foundation","class":"architecture/refuge","status":"DONE_WAVE2_FOUNDATION","target":"A","current":"B","notes":"base remains closed blockout solid; visible habitation exists in external leeward annex"},
+    {"id":"W04-BOSSENV-001","name":"NOCTIL eclipse destination ring","class":"boss-environment/interface","status":"DONE_PROXY","target":"S","current":"D","notes":"environmental destination only"},
+    {"id":"W04-BOSS-001","name":"NOCTIL final entity","class":"boss/character","status":"BLOCKED_SPEC","target":"S","current":"UNDEFINED"},
+    {"id":"W04-NPC-001","name":"Flotilla population family","class":"npc","status":"TODO","target":"A","current":"UNBUILT"},
+    {"id":"W04-CRE-001","name":"Native ecology family","class":"creature/ecology","status":"BLOCKED_CANON","target":"A","current":"UNDEFINED","notes":"do not populate generic alien flora/fauna"},
+    {"id":"W04-STORY-001","name":"Exclusion records environmental evidence","class":"story/prop-family","status":"DONE_WAVE2_FOUNDATION","target":"A","current":"B","notes":"narrative content external"},
+    {"id":"W04-X100-SVC","name":"Sin Sol service ecosystem","class":"systemic/service-cultural-utility","status":"DONE_FOUNDATION","target":"A","current":"B","families":10,"authored_roots":90},
+    {"id":"W04-X100-YARD","name":"Systemic service yards","class":"district/service-yard","status":"DONE_FOUNDATION","target":"A","current":"B","families":3},
+    {"id":"W04-X100-DMG","name":"Causal damage/abandonment states","class":"story/damage-state","status":"DONE_FOUNDATION","target":"A","current":"B","authored_roots":60},
+    {"id":"W04-X100-ARCH","name":"Sin Sol architectural interface library","class":"architecture/systemic-kit","status":"DONE_FOUNDATION","target":"A","current":"B","families":10,"notes":"S/M/L × STANDARD/WIND_SHIELDED/FIELD_MODIFIED"},
+    {"id":"W04-X100-MICRO","name":"Causal L5 microdetail library","class":"microdetail/systemic-kit","status":"PARTIAL_PERSISTENCE","target":"A","current":"B","families":10,"notes":"scene library exists; exact generator/receipt pending"},
+    {"id":"W04-X100-HISTORY","name":"Site history integration","class":"story/site-integration","status":"DONE_FOUNDATION","target":"A","current":"B","integrated_roots":31,"notes":"5 sites; ERA0/1/2; contact +0.04m"},
+    {"id":"W04-X100-HAB","name":"Sin Sol habitation/culture library","class":"civilization/domestic-cultural","status":"DONE_FOUNDATION","target":"A","current":"B","families":10,"authored_roots":90},
+    {"id":"W04-X100-HAB-ANNEX","name":"Visible leeward refuge habitation annex","class":"architecture/habitation-site","status":"DONE_FOUNDATION","target":"A","current":"B","domestic_roots":12,"architecture_roots":20,"notes":"32/32 contact +0.03m"},
+    {"id":"W04-X100-MAT-HISTORY","name":"Causal material-history system","class":"material/systemic-state","status":"DONE_FOUNDATION_NOT_FINAL_PBR","target":"A","current":"B","base_roles":6,"state_variants":24,"site_assignments":485,"notes":"COLD_ABRADED/THERMAL_CYCLED/SERVICE_RENEWED/FIELD_REPAIRED; semantic object-slot overrides preserve shared meshes; final UV/masks/PBR/runtime calibration open"}
+  ],
+  "material_roles": [
+    {"base":"MAT_SINSOL_DARK_METAL","role":"METAL","x100_states":4},
+    {"base":"MAT_SINSOL_TENSION_FABRIC","role":"FABRIC","x100_states":4},
+    {"base":"MAT_COLONIAL_IVORY_REPAIR","role":"IVORY_REPAIR","x100_states":4},
+    {"base":"MAT_SINSOL_THERMAL_COPPER","role":"THERMAL_COPPER","x100_states":4},
+    {"base":"MAT_SINSOL_GASKET","role":"GASKET","x100_states":4},
+    {"base":"MAT_SINSOL_THERMAL_CERAMIC","role":"THERMAL_CERAMIC","x100_states":4}
+  ],
+  "quality_receipts": {
+    "wave2_clean_replay": "PASS_SEMANTIC_CONTRACT",
+    "x100_local_completeness_percent": 42.41,
+    "x100_local_classification": "PRODUCTION_WORLD",
+    "x100_scene_revision": 16,
+    "x100_bad_object_scales": 0,
+    "x100_zero_dimension_meshes": 0,
+    "x100_shared_mesh_datablocks": 608,
+    "x100_material_history_variants": 24,
+    "x100_material_history_assignments": 485,
+    "x100_clean_replay": "PENDING_BATCH_REPLAY",
+    "direct_visual_art": "REVIEW_NOT_CLAIMED",
+    "provider_independent_binary_custody": "BLOCKED_MR_EXO_001",
+    "post_x100_repo_ci": "PENDING_EXACT_MANIFEST_AND_MANUAL_GAUNTLET"
+  }
+}

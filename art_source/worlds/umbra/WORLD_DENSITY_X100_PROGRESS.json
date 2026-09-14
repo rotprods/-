@@ -1,0 +1,105 @@
+{
+  "schema": "exovant.world-density-x100.progress.v4",
+  "world": "UMBRA",
+  "authority_note": "World-local producer diagnostic only. Global EXOVANT X100 V2 Director on main is authoritative for portfolio selection and strict evidence-cell accounting.",
+  "baseline_percent": 18.46,
+  "previous_percent": 40.86,
+  "current_percent": 42.41,
+  "classification": "PRODUCTION_WORLD",
+  "scoring_method": "geometric mean over 14 mandatory world-local dimensions; blocked dimensions remain low and cannot be compensated additively",
+  "global_director_alignment": {
+    "main": "8c01136aa14f89e177ff1216d1993d62ea963ad3",
+    "opportunity_id": "UMBRA-X100-SYSTEMIC-DENSITY",
+    "portfolio_rank": 3,
+    "dominant_dimension": "material_causality",
+    "instruction": "expand highest-value causal material/civilization family under active owner; avoid ecology until canon proves it"
+  },
+  "current_factors": {
+    "MACRO_WORLD": 0.18,
+    "MESO_ARCHITECTURE": 0.62,
+    "MICRO_ASSETS": 0.55,
+    "ECOLOGY": 0.02,
+    "CIVILIZATION": 0.64,
+    "GAMEPLAY": 0.48,
+    "MATERIAL_CAUSALITY": 0.68,
+    "VARIATION": 0.56,
+    "TEMPORAL_STATES": 0.56,
+    "STORYTELLING": 0.62,
+    "AUDIO_VISUAL_LANGUAGE": 0.32,
+    "OPTIMIZATION": 0.68,
+    "REUSABILITY": 0.77,
+    "QA": 0.73
+  },
+  "raw_product": 0.000006098558914846746,
+  "geometric_mean": 0.42414683464201053,
+  "completed_x100_foundations": [
+    "10 service/cultural-utility families with 90 authored size/state roots",
+    "3 authored systemic service yards",
+    "60 family-specific DAMAGED/ABANDONED roots",
+    "10 modular architectural interface families",
+    "10 causal L5 microdetail families in authoritative Blender scene",
+    "31 linked site-history prefabs across 5 real sites with ERA_0/ERA_1/ERA_2",
+    "10 habitation/culture families with 90 authored size/state roots",
+    "visible leeward refuge habitation annex: 12 domestic + 20 reused architectural roots",
+    "24 causal material-history variants across 6 functional material roles",
+    "485 site-integrated material-slot assignments derived from semantic state/era metadata",
+    "real-ground-interface audit: 45 checked / 0 failures beyond ±0.35 m",
+    "site-history contact gate: 31/31 roots at +0.04 m",
+    "habitation library contact gate: 90/90 roots at +0.03 m",
+    "habitation annex contact gate: 32/32 integrated roots at +0.03 m",
+    "shared mesh-data reuse preserved; material history uses object-slot overrides rather than duplicating geometry"
+  ],
+  "scene_checkpoint": "X100_MATERIAL_CAUSALITY_FOUNDATION_001",
+  "scene_revision": 16,
+  "scene_metrics": {
+    "objects": 4871,
+    "mesh_objects": 4329,
+    "mesh_datablocks": 788,
+    "materials": 37,
+    "shared_mesh_datablocks": 608,
+    "bad_residual_scales": 0,
+    "zero_dimension_meshes": 0,
+    "material_history_variants": 24,
+    "material_history_assignments": 485,
+    "blend_bytes": 16468932,
+    "glb_bytes": 4649568
+  },
+  "material_history": {
+    "states": ["COLD_ABRADED", "THERMAL_CYCLED", "SERVICE_RENEWED", "FIELD_REPAIRED"],
+    "assignments_by_state": {
+      "COLD_ABRADED": 61,
+      "THERMAL_CYCLED": 84,
+      "SERVICE_RENEWED": 58,
+      "FIELD_REPAIRED": 282
+    },
+    "assignments_by_role": {
+      "METAL": 219,
+      "FABRIC": 38,
+      "IVORY_REPAIR": 191,
+      "THERMAL_COPPER": 11,
+      "GASKET": 18,
+      "THERMAL_CERAMIC": 8
+    },
+    "epistemic": "PORTABLE_WHOLE_OBJECT_CAUSALITY_FOUNDATION_NOT_FINAL_PBR"
+  },
+  "qa_findings": [
+    "Initial habitation composition was invalid because ARCH_REFUGE_HUB_BASE remains a closed 8-vertex/6-face blockout solid; composition moved to visible leeward annex.",
+    "Temporary Eevee review camera was too tight to contain both extreme annex canopy bays; direct pixel/human art PASS remains unclaimed.",
+    "Causal material states are assigned from existing state/era metadata; catalogs remain neutral and mesh data remains shared."
+  ],
+  "remaining_dominant_bottlenecks": [
+    "Global X100 strict evidence-cell score remains zero until all required evidence cells are populated; local 42.41% is not a substitute for global strict score.",
+    "ECOLOGY remains near zero because detailed species canon is absent.",
+    "L0 physical planet/global geography remains blocked by missing physical-scale canon.",
+    "Final directional material wear requires UV0/masks/texture calibration after runtime target qualification.",
+    "Runtime import/collision/LOD/HLOD/profile pending integration-owner acceptance.",
+    "Direct pixel/human art review and low-light accessibility review pending.",
+    "Exact microdetail generator/receipt persistence remains open despite authoritative scene library.",
+    "Full X100 independent replay remains pending.",
+    "MR-EXO-001 durable provider-independent binary custody pending.",
+    "Exact post-batch root MANIFEST and one bounded manual Gauntlet pending.",
+    "Final NOCTIL design contract blocked."
+  ],
+  "next_highest_value_gap": "Close X100 evidence/reproducibility debt and then build traversal/settlement grammar; do not escalate final material masks before runtime target qualification.",
+  "stop_condition": "NONE"
+}
