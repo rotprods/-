@@ -7,217 +7,264 @@ BRANCH: `art/world-leviathan-001`
 MAIN LAST OBSERVED: `26ae20f5d1b47d1efa0d54b20124ed93cbc0b43e`  
 CLAIM STATUS: **KEEP / IN_PROGRESS**
 
-NORTH STAR: reproducible LEVIATHAN foundation with causal living-world art, stable gameplay collision beneath visual tissue, durable portable material evidence, and no invented planet/engine budgets.
+NORTH STAR: a reproducible LEVIATHAN production foundation with causal living-world art, stable gameplay collision beneath deforming visual tissue, portable material evidence, and no invented planet/engine/hardware claims.
 
 ## 0. Resume protocol
 
 1. Read `AGENTS.md`, `docs/FLEET_COORDINATION.md`, `ops/fleet/registry.json`, issue #7 and this file.
-2. Fetch live `main`, this branch and PR #10 before any mutation.
-3. World master: `2577a7b6-ebd7-4d31-a645-620e4b73a95d` @ r11.
-4. World cold replay: `37a931c7-f2e6-46bc-9be0-26077e5de1c1` @ r9.
-5. PBR primary lab: `6c67e70a-d29b-4a9d-8387-68ba071d8c3f` @ r5.
-6. PBR cold lab: `21dfcfc6-a181-4300-b6a9-0ee2e09695ee` @ r1.
-7. Do not self-promote fleet registry or touch shared runtime/global state from this claim.
+2. Re-fetch live `main`, `art/world-leviathan-001`, PR #10 and issue #7 before any mutation.
+3. Do not self-promote fleet registry; producer remains inside owned paths.
+4. Do not spend Gauntlet minutes until exact merge-tree `MANIFEST.json` is reconciled; automatic triggers are quarantined on current `main`.
+5. World primary: `2577a7b6-ebd7-4d31-a645-620e4b73a95d` @ **r18**.
+6. World cold replay: `37a931c7-f2e6-46bc-9be0-26077e5de1c1` @ **r16**.
+7. PBR lab primary: `6c67e70a-d29b-4a9d-8387-68ba071d8c3f` @ r5; cold: `21dfcfc6-a181-4300-b6a9-0ee2e09695ee` @ r1.
 
 ## 1. Fleet / CI truth
 
-- Latest main: `26ae20f5...`.
-- Fleet registry generation: `8`.
-- LEVIATHAN remains `reserved`, `ack:null`; integrator owns transition to `active`.
-- Producer ACK: issue #7 comment `5648464282`.
-- Jardines delta: `5648515712`; SOMA delta: `5648567162`.
-- Manifest/integration request: `5648779529`.
-- PBR auxiliary-project/material delta: `5652950795`.
-- Main quarantines automatic Gauntlet triggers to reduce CI spend. Do not spend a rerun until exact merge-tree MANIFEST reconciliation.
-- Last deeply diagnosed PR #10 run `34718006302`: 75/75 Python tests PASS; only root `MANIFEST.json` drift failed continuity before Godot stage.
+- Latest main observed: `26ae20f5...`.
+- Fleet registry generation observed: 8.
+- LEVIATHAN remains `reserved`, `ack:null`; integrator owns `reserved -> active`.
+- Existing issue #7 evidence:
+  - base producer ACK `5648464282`;
+  - Jardines delta `5648515712`;
+  - SOMA delta `5648567162`;
+  - traversal delta `5652845017`;
+  - PBR lab delta `5652950795`;
+  - merge-tree manifest request `5648779529`.
+- Last deeply diagnosed PR #10 run `34718006302`: 75/75 Python tests passed; root `MANIFEST.json` drift was the only continuity failure before native Godot stage.
+- Automatic Gauntlet triggers are now quarantined to control CI cost.
 
 ## 2. Canon boundaries
 
 CANON: LEVIATHAN / Soma / EL UMBRAL / Comuna del Pulso / 1.15 g / 38 °C / Puerto de la Herida / Jardines Inmunes / Cámara de SOMA / exact 58 m SOMA chamber.
 
-UNKNOWN/BLOCKED: physical planet radius/diameter, final production engine, target hardware/preset, final playable-region dimensions, final SOMA anatomy.
+BLOCKED/UNKNOWN: physical planet radius/diameter, final production engine, target hardware/preset, final playable-region dimensions, final SOMA anatomy.
 
-PROPOSAL only: 720×480 m authored cell, representative creature dimensions, 8 m traversal width, current authored density and any LOD ratios until separately validated.
+PROPOSAL only: 720×480 m authored cell, current creature dimensions, 8 m stable-route width, current authored density and any LOD ratios until separately validated.
 
-## 3. World remote truth
+## 3. Current world projects
 
-Primary working master: r11.
-- blend 4,869,637 B / etag `7ccfdd11e07d845b3e962a802bdefa32`
-- GLB 5,639,948 B / etag `3ab7e46dc7e2102ca709600b83269ecb`
+### Primary r18
+- project: `2577a7b6-ebd7-4d31-a645-620e4b73a95d`
+- mesh objects: **395**
+- settled mesh datablocks: **170**
+- `.blend`: **7,118,745 B**
+- GLB: **7,587,052 B**
 
-Cold world: r9.
-- blend 4,869,637 B / etag `1df2bc94b4ef09c3bb0c21f0f81c0c3e`
-- GLB 5,643,252 B / etag `1a8147165c232f098e5e01ede32d3cf0`
+### Cold r16
+- project: `37a931c7-f2e6-46bc-9be0-26077e5de1c1`
+- mesh objects: **395**
+- settled mesh datablocks: **170**
+- `.blend`: **7,118,745 B**
+- GLB: **7,593,704 B**
 
-Binary equality is not the art reproducibility criterion; evaluated visual-surface/delta equivalence is.
+GLB byte equality is not required; evaluated-surface equality and deterministic logical state are the art reproducibility contract.
 
-## 4. Representative region checkpoints
+## 4. Region / traversal foundation
 
 ### Puerto
-IDs `LEV-ARCH-001`, `LEV-INF-002`, `LEV-INF-003`.
-- representative graft module, suture clamp, living valve;
-- service-door defect corrected from 4.35 m to `0.28×1.60×2.60 m`;
-- 13,380 native mesh tris;
-- receipt `evidence/puerto_microset_r5.json`.
+`LEV-ARCH-001`, `LEV-INF-002`, `LEV-INF-003`.
+Representative graft module, suture clamp and living valve. Service door corrected from 4.35 m to `0.28×1.60×2.60 m`. Receipt: `evidence/puerto_microset_r5.json`.
 
 ### Jardines
-IDs `LEV-INF-005`, `LEV-ECO-001`, `LEV-ECO-004`.
-- pressure conduit + independent stable service walk;
-- pulse-algae pressure states;
-- functional gardener proposal;
-- 2.6 m = core body; articulated envelope `5.35×5.50×3.37 m`;
-- collision core-only provisional; 21,644 evaluated tris;
-- receipt `evidence/jardines_microset_r7.json`.
+`LEV-INF-005`, `LEV-ECO-001`, `LEV-ECO-004` foundation. Pressure conduit + stable service walk + pulse-algae states + function-driven gardener. Gardener 2.6 m core-body proposal; articulated envelope `5.35×5.50×3.37 m`; collision core-only provisional. Receipt: `evidence/jardines_microset_r7.json`.
 
 ### SOMA
-IDs/interfaces `LEV-RGN-003`, `LEV-ENV-002`, `LEV-ENV-003`, local `LEV-INF-003` variants.
-- bridges, three refuge valves, contraction telegraphs, regulator cradle;
-- v1 rejected before execution for possible chamber-radius violation;
-- v2 evaluated max radius `28.3 m`, 0.7 m inside canonical 29 m;
-- `SOMA_PROXY_NOT_FINAL`: combat-scale/silhouette only, `final_anatomy=false`;
-- 34,308 evaluated tris;
-- receipt `evidence/soma_encounter_microset_r8.json`.
+`LEV-RGN-003`, `LEV-ENV-002`, `LEV-ENV-003`, local `LEV-INF-003` variants. Representative bridges/refuge valves/contraction telegraphs/regulator cradle. Actual evaluated max radius `28.3 m`, leaving `0.7 m` inside canonical 29 m. Final SOMA anatomy remains blocked. Receipt: `evidence/soma_encounter_microset_r8.json`.
 
-## 5. Structural optimization / reproducibility
-
-`optimize_repeated_mesh_instances_v2.py` uses order-invariant editable-surface signatures.
-
-r8 → r10:
-- 260 mesh objects remain;
-- mesh datablocks `260 -> 98`;
-- 162 duplicates removed = 62.3077%;
-- blend reduction ~36.7564%; GLB reduction ~33.858%.
-
-Primary/cold converge to 98 datablocks and the same canonical evaluated visual surface:
-`1b9d885f7fd612a30c4fd289bbc79da6b06472b710867e8f63bafa9c87827a5d`.
-
-Receipts: `evidence/canonical_surface_repro_r9.json`, `evidence/instancing_optimization_r10_v2.json`.
-
-## 6. Stable traversal continuity — r11/r9
-
-Source: `tools/build_stable_traversal_ribbon_v1.py`.
-
-Measured:
-- centerline 541.256 m;
-- width 8.0 m **proposal**;
-- thickness 0.5 m;
-- 212 verts / 420 tris / zero degenerates;
-- top z 5→7 m;
-- max segment slope 7.6923% **not runtime-approved**;
-- min real side clearance inside 6 m visual tube 1.0513 m;
-- SOMA ingress side margin 1.1962–1.2161 m;
-- final point `[205,-47,7]`, inside SOMA footprint and exactly on arena top;
-- visual ingress remains outside collision.
-
-Cold replay new-surface SHAs match primary:
-- ribbon `65326c41be09e967561907938cf994e389cd1c28ad33390815b5fdd85dde253a`;
-- ingress `3f8b05130e849f7fec36b059d6f11c3fab16cd43b74c8a80dbec446d8fd0e432`.
-
+### Stable traversal
+Continuous stable route under the organic visual tube reaches SOMA floor:
+- 541.256 m centerline;
+- 8.0 m proposal width;
+- 0.5 m thickness;
+- max geometric segment slope 7.6923% proposal;
+- min real tube side clearance 1.0513 m;
+- visual ingress remains non-collision;
+- exact primary/cold delta replay.
 Receipt: `evidence/traversal_ribbon_r11.json`.
 
-## 7. UV / PBR / LOD truth
+## 5. Ecology coverage — now 4/4 canonical species represented
 
-World master:
-- 260/260 mesh objects have UV layers;
-- zero zero-area UV triangles / zero UV loops outside 0–1;
-- texel density not normalized;
-- image textures intentionally remain **0**;
-- 18 portable constant material roles;
-- no approved production LOD chain.
+### LEV-ECO-001 · Parásito jardinero
+Representative functional anatomy from Jardines microset. Six wet-grip limbs, cleaning arms/rasps, digestive sac, sensory cilia. Rig/animation/gameplay remain open.
 
-Contract: `UV_PBR_LOD_CONTRACT.md`; audits: `evidence/uv_pbr_lod_audit_r8.json`, `evidence/lod_feasibility_r10.json`.
+### LEV-ECO-002 · Ballena de linfa
+Primary r17 / cold r15 exact SHA:
+`7b5a6eb9a295cb022c52939e1c711555b35f658e9e7c0898c485e16626301656`
 
-LOD feasibility says: reject one global ratio; macro/rings tolerate greater simplification than small rounded hero/status/ecology parts. Final screen-space thresholds require engine/camera/hardware qualification.
+- 45 objects / 26 meshes / 3 curves / 14 sockets;
+- 13,336 evaluated tris;
+- zero degenerates / zero collision leaks;
+- old silhouette proxy removed;
+- historical proxy 36×11×13 m; representative envelope 34.1×10.4×9.46 m;
+- filter mouth, eight lamellae, dorsal pressure sacs, lateral control fins, bifurcated tail, filtered-flow outlet and pressure sensors;
+- locomotion/feeding gameplay not authored.
+Receipt: `evidence/lymph_whale_r17.json`.
 
-## 8. Portable PBR calibration lab — canonical r5
+### LEV-ECO-003 · Polinizador de herida
+Primary r13 / cold r11 exact SHA:
+`e4e66ce01c258fb9c72c985fe0c065d1f0c879bc18434abc8142d573828a88f6`
 
-Purpose: prove deterministic durable image-textured PBR transport **without contaminating the world master**.
+- 55 objects / 36 meshes / 3 curves / 14 sockets;
+- 5,640 evaluated tris;
+- zero degenerates / collision leaks;
+- measured body 2.67 m; 4.8 m wingspan proposal;
+- 4 hover membranes, 6 wet-tissue legs/pads, proboscis, transfer baskets, pressure/chemical sensors;
+- no armature/animation/AI/collision authority.
+Receipt: `evidence/wound_pollinator_r13.json`.
 
-Existing IDs only:
-- `LEV-MAT-001`: Tissue Warm / Mucosa Wet / Cartilage.
-- `LEV-MAT-002`: Ivory Ceramic / Brushed Metal / Seal Rubber.
+### LEV-ECO-004 · Alga de pulso
+Representative pressure-state family in Jardines. Not final PBR/animation/gameplay.
 
-Primary lab: `6c67e70a-d29b-4a9d-8387-68ba071d8c3f` r5.  
-Cold lab: `21dfcfc6-a181-4300-b6a9-0ee2e09695ee` r1.  
-Canonical builder: `tools/build_pbr_calibration_lab_v5_canonical.py`.  
+Ecology task remains **REVIEW**, not DONE.
+
+## 6. Canonical adversary coverage — now 3/3 representative and reproducible
+
+### LEV-ENM-001 · Fagocito guardián
+Primary r14 / cold r12 exact SHA:
+`5203d84cdf22f89685960e3cb1ffed10aaa7092a59123f8c171d61a3b1e2a8df`
+
+- 50 objects / 30 meshes / 4 curves / 14 sockets;
+- 10,392 evaluated tris;
+- zero degenerates / collision leaks;
+- old capsule proxy removed;
+- representative envelope 4.987×4.51×4.865 m vs historical non-canon 4.2×4.2×7.6 m capsule;
+- pressure/nuclear body, six pseudopods, phagocytosis cup, armor nodules, receptor cilia, pulse telegraph;
+- telegraph timing/damage/gameplay not bound.
+Receipt: `evidence/fagocito_guardian_r14.json`.
+
+### LEV-ENM-002 · Extractor de pulso
+Primary r15 / cold r13 exact SHA:
+`10772696d111219191ef56324724af184904c0b8a3094ccbd5768c9971eb0dc2`
+
+- 40 objects / 20 meshes / 6 curves / 12 sockets;
+- 5,424 evaluated tris;
+- zero degenerates / collision leaks;
+- old proxy removed;
+- envelope 2.593×2.555×5.975 m inside historical 2.8×2.8×6 m blockout;
+- wet-tissue anchors, pressure reservoir, intake needle/feed, regulator rings, radial siphons, extraction telegraph, diagnostic interface;
+- origin/faction unspecified, mobility unknown, timing/damage/gameplay not authored.
+Receipt: `evidence/pulse_extractor_r15.json`.
+
+### LEV-ENM-003 · Colonia parasitaria
+Primary r16 / cold r14 exact SHA:
+`de8aa76989c533041d6e45cc15362cdb2bd1aaa09b7eb1024b0eea33e5298c75`
+
+- 54 objects / 26 meshes / 11 curves / 15 sockets;
+- 9,784 evaluated tris;
+- zero degenerates / collision leaks;
+- old proxy removed;
+- envelope 7.55×7.55×4.063 m inside historical 8.4×8.4×5 m blockout;
+- mother node, six buds, feed vessels, dispersal interfaces, adhesion roots, necrotic mantle, threat lesions, diagnostic interface;
+- species/origin/cognition unspecified; locomotion/spawn/gameplay not authored.
+Receipt: `evidence/parasitic_colony_r16.json`.
+
+Adversary coverage is representative, not final. No final rigs, animation, AI, hit/hurt volumes or gameplay collision exist.
+
+## 7. Post-creature structural optimizer — r18/r16
+
+Order-invariant optimizer v2 was re-run after the ecology/adversary wave.
+
+Immediate report on both primary and cold:
+- 395 mesh objects preserved;
+- 237 mesh datablocks before;
+- 174 immediately after optimizer;
+- 63 relinks / 63 duplicate datablocks explicitly removed;
+- 61 candidate groups, 24 changed groups, 0 blocked.
+
+After checkpoint/reopen both projects settled at **170 mesh datablocks**. The extra four removals are consistent with orphaned datablocks from replaced legacy proxies being purged at checkpoint; no audited mesh object or surface disappeared.
+
+All five new audited assets retain their pre-optimizer SHA exactly on primary and cold. Receipt: `evidence/post_creature_instancing_r18.json`.
+
+## 8. Portable PBR / LOD truth
+
+World master intentionally still uses 18 constant portable material roles and has **0 image textures**. Do not propagate calibration textures without art + engine approval.
+
+PBR lab:
+- primary `6c67e70a-d29b-4a9d-8387-68ba071d8c3f` r5;
+- cold `21dfcfc6-a181-4300-b6a9-0ee2e09695ee` r1;
+- canonical fingerprint `fb881b5d76c3c2fe8f35441b7f27cf4a0ad71db74f69a915eb1d48d966db9230`;
+- 6 materials × BaseColor/MR/Normal = 18 durable packed PNGs;
+- parsed GLB: 18 embedded images / 18 textures / 1 sampler / zero external URI;
+- 256² is calibration-only, not shipping budget.
 Receipt: `evidence/pbr_calibration_lab_r5.json`.
 
-### Failures recovered, not hidden
-- r1 rejected: GENERATED images did not survive checkpoint with durable pixels.
-- r2 rejected: Blender `Image.save()` produced identical black PNG buffers in this worker.
-- custom byte-level PNG encoder canary passed.
-- r3: durable packed PNGs established; found 8-bit roughness overflow on ceramic.
-- r4: quantization-safe MR bounds fixed.
-- r5: all accepted lessons consolidated into one empty-scene canonical builder.
+LOD:
+- feasibility receipt: `evidence/lod_feasibility_r10.json`;
+- policy: `LOD_CANDIDATE_POLICY.md`;
+- reject one global decimate ratio; use family/shape/error envelopes;
+- no final screen-space distances or target-hardware thresholds.
 
-### Technical PASS
-- 27 objects / 15 meshes / 6 font curves / 2 cameras / 3 portable lights / 8 materials / 18 calibration images / 5 collections;
-- zero orphan datablocks;
-- 6 calibration materials × BaseColor/MR/Normal = 18 packed PNGs;
-- 18 unique actual packed SHA256 values;
-- 0 external file paths after packing;
-- one UVMap per calibration material feeding all three texture nodes;
-- decoded MR ranges remain within physical contracts after 8-bit quantization;
-- sampled normal-vector lengths ≈1;
-- parsed GLB: 18 images, 18 textures, 1 sampler, 8 materials, 18/18 images embedded, zero external image URI;
-- all six calibration materials expose BaseColor + MetallicRoughness + Normal texture roles.
+## 9. Task truth
 
-Primary r5 == cold r1 canonical fingerprint:
-`fb881b5d76c3c2fe8f35441b7f27cf4a0ad71db74f69a915eb1d48d966db9230`.
+DONE only:
+- `W10/WORLD/001`
+- `W10/WORLD/002`
+- `W10/BLEND/003`
 
-Blender glTF sampler warning is classified EXPECTED_NON_BLOCKING: Metallic and Roughness sockets share the same MR Image Texture; exporter source warns on multiple shader sockets but uses the first sampler. Scene uses identical Linear/REPEAT sampling and parsed GLB contains exactly one sampler.
+REVIEW:
+- `W10/REGION/004`
+- `W10/REGION/005`
+- `W10/REGION/006`
+- `W10/TECH/007`
+- `W10/MAT/008`
+- `W10/ECO/009`
+- `W10/QA/010`
 
-Render receipts exist:
-- overview artifact `d87fa26f81070380bfd98f4b75f48c38` (640×360, 276,379 B);
-- grazing artifact `bdf5a487186de4f4e62bd5483b4a8906` (640×360, 238,821 B).
+`ECO/009` now has 4/4 ecology + 3/3 adversary representative coverage but remains REVIEW pending final art/rig/animation/AI/gameplay/engine gates.
 
-Direct pixel/human art review is still unavailable and **not PASS**. Calibration resolution 256² is QA-only, not shipping budget. World-master propagation is not approved.
+## 10. Open blockers / non-claims
 
-## 9. Current task truth
+Open:
+- physical planet radius/diameter;
+- production engine;
+- target hardware/preset;
+- final playable-region dimensions;
+- final SOMA anatomy/art/rig;
+- exact provider binary + qualified runtime colocation;
+- direct pixel/human art approval;
+- world-master PBR propagation/runtime material validation;
+- production texel-density/shipping texture-resolution policy;
+- production LOD/HLOD + target-hardware performance;
+- creature/adversary final rig/animation/AI/gameplay/hit-hurt/collision.
 
-DONE: `W10/WORLD/001`, `W10/WORLD/002`, `W10/BLEND/003`.
+Do not claim LEVIATHAN DONE/AAAA-complete.
 
-REVIEW: `W10/REGION/004`, `005`, `006`, `W10/TECH/007`, `W10/MAT/008`, `W10/ECO/009`, `W10/QA/010`.
+## 11. Recovery paths
 
-No region or MAT task is DONE because direct art review, runtime integration and world-master propagation remain open.
+Core:
+- `WORLD_BIBLE.md`
+- `MASTER_ASSET_LIST.yaml`
+- `TASKS.yaml`
+- `STATUS.yaml`
+- `HANDOFF.md`
+- `UV_PBR_LOD_CONTRACT.md`
+- `LOD_CANDIDATE_POLICY.md`
+- `validation.json`
 
-## 10. Open blockers
+New generators:
+- `tools/build_wound_pollinator_v1.py`
+- `tools/refine_wound_pollinator_truth_v2.py`
+- `tools/build_fagocito_guardian_v1.py`
+- `tools/build_pulse_extractor_v1.py`
+- `tools/build_parasitic_colony_v1.py`
+- `tools/build_lymph_whale_v1.py`
 
-- `LEV-BLK-001`: physical planet radius/diameter absent.
-- `LEV-BLK-002`: production engine not qualified.
-- `LEV-BLK-003`: target hardware/preset not qualified.
-- `LEV-BLK-004`: final SOMA anatomy/art/rig decision.
-- `LEV-BLK-005`: final playable-region dimensions.
-- `LEV-BLK-007`: exact provider binary + qualified runtime cannot yet coexist in this producer surface; confirmed via shell, secure-download path and independent browser.
+New receipts:
+- `evidence/wound_pollinator_r13.json`
+- `evidence/fagocito_guardian_r14.json`
+- `evidence/pulse_extractor_r15.json`
+- `evidence/parasitic_colony_r16.json`
+- `evidence/lymph_whale_r17.json`
+- `evidence/post_creature_instancing_r18.json`
 
-Direct pixel-level art review remains unavailable; do not claim `B_ART`/visual-regression PASS.
+## 12. Next executable actions
 
-## 11. Explicit non-claims
-
-- LEVIATHAN is not DONE/AAAA-complete.
-- calibration lab is not final world material art;
-- no approved shipping texture resolution/UDIM/VT policy;
-- no final texel density;
-- no world-master PBR propagation;
-- no final LOD/HLOD chain;
-- no target-hardware FPS/GPU pass;
-- no final NPC/creature/SOMA rig/animation;
-- no engine import/capsule/nav/material runtime PASS.
-
-## 12. Recovery files
-
-Core: `WORLD_BIBLE.md`, `MASTER_ASSET_LIST.yaml`, `TASKS.yaml`, `STATUS.yaml`, `UV_PBR_LOD_CONTRACT.md`, `validation.json`.
-
-Key generators: `build_master_scene.py`, `build_puerto_microset.py`, `refine_puerto_microset_v2.py`, `build_jardines_microset.py`, `refine_jardines_truth_v2.py`, `build_soma_encounter_microset_v2.py`, `optimize_repeated_mesh_instances_v2.py`, `build_stable_traversal_ribbon_v1.py`, `build_pbr_calibration_lab_v5_canonical.py`.
-
-Key receipts: `canonical_surface_repro_r9.json`, `instancing_optimization_r10_v2.json`, `lod_feasibility_r10.json`, `traversal_ribbon_r11.json`, `pbr_calibration_lab_r5.json`, `runtime_import_blocker_r5.json`.
-
-## 13. Next executable actions
-
-1. Convert measured LOD feasibility into a versioned per-family, engine-neutral LOD policy and candidate-generation contract; do not approve final thresholds.
-2. Expand representative asset coverage only inside existing LEVIATHAN IDs after live preflight.
-3. Keep PBR textures isolated until direct art + engine validation become available.
-4. When exact export bytes and qualified engine coexist, execute import → instantiate → scale/material/collision/capsule/nav traversal and bind evidence to export.
-5. Integrator must reconcile registry ACK/asset/project IDs and root MANIFEST on exact merge tree before manual Gauntlet spend.
+1. Re-run live fleet preflight; ingest integrator activation if published.
+2. Direct art review of ecology/adversary silhouettes and PBR calibration before finalization.
+3. Do **not** invent Oru Tess, Anja Piel or Faro-3 anatomy without sufficient canon/art direction; character production needs a dedicated art-definition wave.
+4. Keep world-master textures isolated until art + engine material validation exists.
+5. When exact export bytes and a qualified engine coexist, execute import → instantiate → scale/material/collision/capsule/nav traversal.
+6. Integrator: reconcile new asset IDs/project receipts and root MANIFEST on exact PR merge tree before manual Gauntlet spend.
 
 CLAIM STATUS: **KEEP**. PR #10 remains draft. Do not merge as world-complete.
