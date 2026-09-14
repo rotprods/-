@@ -1,19 +1,15 @@
 world: PELAGOS
 protocol: EXOVANT_X100_WORLD_DENSITY_v1
-checkpoint: PELAGOS-X100-COVERAGE-AUDIT-R30
-blender_revision: 30
-status_label: PLAYABLE_FOUNDATION
-estimated_completeness_range: "25-35%"
-qualification: "Production estimate, not engine-qualified"
+checkpoint: PELAGOS-X100-COVERAGE-RERANK-R38
+blender_revision: 38
+status_label: PLAYABLE_FOUNDATION__DENSITY_EXPANSION_ACTIVE
+qualification: "Blender-side production evidence only; not engine/runtime/GPU qualified"
 
 scene_evidence:
-  objects: 1382
-  meshes: 1048
-  curves: 208
-  armatures: 9
-  materials: 28
-  images: 21
-  collections: 44
+  objects: 2638
+  renderable_objects: 1684
+  collections: 53
+  materials: 45
 
 scale_layers:
   L0_planetary:
@@ -23,108 +19,192 @@ scale_layers:
   L1_regional:
     state: PLAYABLE_FOUNDATION
     evidence: "Mercado, Coro, Fosa triangle; region beacons/routes; bathymetric differentiation"
-    gap: "regional transition families, transport/current corridors, vista composition, stateful routing"
+    gap: "regional transition families, current/transport corridors, vista composition, stateful routing"
   L2_district:
-    state: FOUNDATION
-    evidence: "Mercado, Coro, Fosa/THALASSA area are identifiable"
-    gap: "district subzones, service areas, occupation logic, lived-in support systems"
+    state: EXPANDING_SYSTEMIC_FOUNDATION
+    evidence: "Mercado now contains structural, interior, machinery, prop and damage systems; Coro has canonical + sessile ecology foundations; Fosa/THALASSA remains identifiable"
+    gap: "district subzones, broader occupation logic, more repeated-but-nonidentical service/life clusters"
   L3_architectural:
-    state: UNEVEN_FOUNDATION
-    evidence: "Mercado structural kit + Fosa arena + reef interface proxies"
-    gap: "interiors, pressure transitions, listening/translation spaces, market stalls/shell variants, state variants"
+    state: SYSTEMIC_FOUNDATION
+    evidence: "63 architecture-family IDs; Mercado structural kit + first 6,720-config interior grammar + reversible damage overlays"
+    gap: "additional interior archetypes, pressure transitions, translation spaces, broader market shell/stall variants"
   L4_prop_ecology:
-    state: ECOLOGY_STRONG_PROPS_WEAK
-    evidence: "hero fauna/coral systems exist; heuristic prop inventory only ~9 meaningful families / ~34 objects"
-    gap: "daily-life, maintenance, storage, custody, navigation/consent, funeral/trade props"
+    state: MIXED__ECOLOGY_AND_SYSTEMS_EXPANDED__CULTURE_STILL_LOW
+    evidence: "9 X100 prop families + 9 settlement machinery families + 9 functional sessile ecology guilds; canonical fauna/coral foundations remain"
+    gap: "everyday cultural/domestic/trade/medical/service objects still materially below planning floor"
   L5_microdetail:
-    state: HERO_LOCAL_ONLY
-    evidence: "hero assets contain mechanical/sensory microdetail; material library exists"
-    gap: "world-distributed causal wear, repair history, deposits, contact wear, manufacturing variation"
+    state: CAUSAL_FOUNDATION_EXPANDING
+    evidence: "repair-first prop states, machinery service states, ecological life-cycle geometry and 8 architecture damage/recovery families"
+    gap: "broader manufacturing variation, world-distributed deposits/contact wear, material-history propagation to more families"
 
 domain_matrix:
   architecture:
-    state: FOUNDATION
-    true_family_note: "keyword count inflates family count because individual proxies/IDs are not independent production families"
-    priority: P1
+    state: STRONG_FOUNDATION
+    observed_family_count: 63
+    planning_floor: 20
+    priority: P2
   infrastructure:
-    state: FOUNDATION
+    state: SYSTEMIC_FOUNDATION
+    evidence: "service channels, utility riser, machinery gallery, bridge/dock systems"
     priority: P1
-  flora:
-    state: NEAR_ZERO
+  sessile_ecology:
+    state: SYSTEMIC_FOUNDATION
+    observed_family_count: 9
+    planning_floor: 10
+    floor_ratio: 0.9
     priority: P1
-    note: "Pelagos is reef/ocean; 'flora' may resolve as sessile ecology/algae/mats rather than terrestrial plants"
+    note: "guilds are reversible functional proposals; complete trophic canon remains UNKNOWN"
   fauna:
     state: STRONG_FOUNDATION
     canonical_families: 4
     priority: P2
   props:
-    state: CRITICAL_GAP
-    observed_family_count_heuristic: 9
-    observed_object_count_heuristic: 34
+    state: HIGHEST_VALUE_GAP
+    observed_family_count: 9
+    planning_floor: 30
+    floor_ratio: 0.3
     priority: P0
+  machinery:
+    state: SYSTEMIC_FOUNDATION
+    observed_family_count: 9
+    planning_floor: 10
+    floor_ratio: 0.9
+    priority: P1
   vehicles:
     state: STRONG_FOUNDATION
     canonical_families: 1
     priority: P2
-  machines:
-    state: WEAK
-    observed_family_count_heuristic: 11
-    note: "mostly Nacar-2 subsystems / THALASSA interfaces, not a broad settlement machinery language"
+  damage_recovery:
+    state: SYSTEMIC_FOUNDATION
+    observed_family_count: 8
+    planning_floor: 5
+    floor_ratio: 1.6
+    state_roots: 32
+    current_visible_roots: 8
+    priority: P2
+  traversal:
+    state: PLANNING_FLOOR_REACHED
+    observed_family_count: 5
+    planning_floor: 5
+    floor_ratio: 1.0
     priority: P1
   cultural:
-    state: CRITICAL_GAP
-    note: "keyword count is inflated by NPCs and Mercado structure; culture material objects remain sparse"
+    state: HIGH_GAP
+    evidence: "first nine props establish custody, listening, funeral, trade/consent, maintenance and wet-gear language, but daily-life object breadth remains sparse"
     priority: P0
   temporal_states:
-    state: CRITICAL_GAP
-    note: "state coverage concentrated in coral; settlement/prop architecture lacks 3-era representation"
-    priority: P0
-  gameplay_affordances:
-    state: FOUNDATION
+    state: SYSTEMIC_FOUNDATION
+    multistate_family_count: 27
+    evidence: "props + sessile ecology + coral + architecture damage now carry explicit state grammars"
     priority: P1
+  gameplay_affordances:
+    state: SEMANTIC_FOUNDATION_ONLY
+    evidence: "245 Blender gameplay-tagged objects after damage wave; true explicit runtime-interactive objects remain 0"
+    priority: P1
+    warning: "semantic tags are not engine bindings"
   material_causality:
-    state: FOUNDATION_LOCAL
+    state: STRONG_LOCAL_FOUNDATION
+    evidence: "salt/flex/load/impact/service/wet-zone causality represented across props, machinery, ecology and damage overlays"
     priority: P1
   optimization:
     state: BLENDER_FOUNDATION
-    evidence: "UV debt closed across active families; LOD/collision foundations exist for major hero/ecology/vehicle assets"
+    evidence: "active X100 families have UV/material/transform QA plus LOD/collision/query foundations where appropriate"
     priority: P1
   engine_qualification:
     state: BLOCKED
-    blocker: "EXO-012 production engine decision + target GPU qualification"
+    blocker: "production engine/runtime authority + target GPU qualification"
+
+completed_x100_claims:
+  PEL_CIV_PROP_X100_001:
+    final_revision: 32
+    families: 9
+    direct_configurations: 108
+    status: STRUCTURAL_PASS
+  PEL_MKT_ARCH_X100_002:
+    final_revision: 34
+    valid_wall_layouts: 280
+    credible_configurations: 6720
+    status: STRUCTURAL_PASS
+  PEL_MKT_MACH_X100_003:
+    final_revision: 36
+    families: 9
+    direct_configurations: 108
+    min_utility_riser_clearance_m: 1.316
+    status: STRUCTURAL_PASS
+  PEL_ECO_SESSILE_X100_004:
+    final_revision: 37
+    families: 9
+    physical_state_roots: 36
+    direct_configurations: 108
+    min_root_separation_m: 10.0
+    approx_min_existing_coral_clearance_m: 19.504
+    status: STRUCTURAL_PASS
+  PEL_MKT_DAMAGE_X100_005:
+    final_revision: 38
+    families: 8
+    state_roots: 32
+    direct_variant_state_combinations: 96
+    bridge_centerline_clearance_m: 2.728
+    status: STRUCTURAL_PASS
+
+planning_floor_rank_rev38:
+  - domain: props
+    count: 9
+    floor: 30
+    floor_ratio: 0.3
+  - domain: machinery
+    count: 9
+    floor: 10
+    floor_ratio: 0.9
+  - domain: sessile_ecology
+    count: 9
+    floor: 10
+    floor_ratio: 0.9
+  - domain: traversal
+    count: 5
+    floor: 5
+    floor_ratio: 1.0
+  - domain: damage_recovery
+    count: 8
+    floor: 5
+    floor_ratio: 1.6
+  - domain: architecture
+    count: 63
+    floor: 20
+    floor_ratio: 3.15
 
 highest_value_gap:
-  claim_id: PEL/CIV/PROP-X100-001
+  claim_id: PEL/CIV/PROP-X100-006
   area: Mercado_de_Boyas
-  objective: "Build a systemic civilization/prop layer that multiplies culture, story-state, gameplay readability and lived-in density simultaneously."
-  required_world_bible_props:
-    - hydrophone/listening hardware
-    - memory recording/containment hardware
-    - archive/memory custody containers
-    - funeral buoy
-    - trading-channel navigation signals
-    - consent/timetable markers
-    - reef-safe clamps
-    - maintenance/service props
-  culture_dna:
-    manufacturing_language: "repair-first; visible replacement panels; ivory technical ceramic/composite over corrosion-resistant frames"
-    construction_logic: "buoyancy, drainage, corrosion resistance, detachable/towable modules, visible service access"
-    ergonomics: "wet/gloved operation; tetherable handles; low center of mass for heavy systems"
-    ornamentation: "minimal/function-led; faction iconography remains UNKNOWN and must not be invented"
-    repair_language: "misfit replacement panels, standardized fasteners, clamps/adapters, field-repair scars"
-    resource_constraints: "salt aerosol, wet/dry cycling, galvanic corrosion, buoyancy mass, maintainability"
-    color_logic: "ivory/dark technical textile/oxidized bronze/amber refuge; living-memory cyan remains biologically motivated"
-    iconography: UNKNOWN
-    social_hierarchy: UNKNOWN
-    technology_level: "advanced aquatic/field-maintainable; exact canon unresolved"
+  objective: "Expand culture material / everyday life breadth from 9 toward the 30-family planning floor without random clutter."
+  target_wave_family_count: 12
+  desired_post_wave_prop_families: 21
+  proposed_domains:
+    - wet_work_surface_and_seating
+    - tethered_hand_tools
+    - dry_storage_and_personal_lockbox
+    - food_water_service_vessels
+    - first_aid_and_wet_medical_kit
+    - trade_measurement_and_custody_exchange
+    - portable_refuge_lighting
+    - textile_drying_and_repair
+    - waste_sorting_and_bio-safe_disposal
+    - weather_screen_and_storm_stowage
+    - portable_navigation_or_acoustic_marker
+    - market_display_and_modular_goods_bin
+  canon_constraints:
+    - "repair-first marine construction"
+    - "wet/gloved ergonomics and tether points"
+    - "low heavy mass / light upper components"
+    - "salt, drainage, corrosion and service access causality"
+    - "no invented faction iconography or unsupported social hierarchy"
 
 x100_next_wave:
-  - "author base systemic prop kit"
-  - "derive meaningful scale/usage/state variants"
-  - "define placement sockets and deterministic configuration grammar"
-  - "validate 100+ credible configurations"
-  - "build LOD/collision/query policy"
-  - "add causal material-history metadata"
-  - "Workbench silhouette/player-scale QA"
-  - "persist generator + receipt"
-  - "recompute coverage and immediately claim next bottleneck"
+  - "claim PEL/CIV/PROP-X100-006"
+  - "measure real Mercado placement bays"
+  - "author 12 semantic everyday/cultural families"
+  - "author four causal states per family using hidden state-swap roots where density would otherwise duplicate current-world objects"
+  - "encode 3 meaningful variants per family"
+  - "validate contact, route clearance, UV/material/transform integrity and state visibility"
+  - "persist deterministic generator + receipt"
+  - "rerank again"
