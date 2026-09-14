@@ -2,7 +2,7 @@
 import copy, json, pathlib, sys, tempfile, unittest
 ROOT=pathlib.Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT/'tools'))
 from aprende_runtime import LearningHub, AprendeError, validate_event
-from project_control import validate_graph, source_digest
+from project_control import validate_graph, source_digest, validate_asset_fidelity_receipts
 from tool_ledger import record, summarize
 from aprende_lifecycle import SessionLifecycle
 
@@ -66,5 +66,30 @@ class Continuity(unittest.TestCase):
     def test_all_twelve_learnings_recoverable(self):
         hub=LearningHub(ROOT/'learning/hub');events=list(hub.iter_events());self.assertGreaterEqual(len(events),12)
         for _,e in events:self.assertTrue(any(hit['learning_id']==e['learning_id'] for hit in hub.retrieve(e['learning_id'])))
+    def test_valid_asset_fidelity_receipt_is_admitted(self):
+        p=self.root/'production/receipts/test';p.mkdir(parents=True)
+        receipt={
+          'asset_id':'TEST-HERO-001','fidelity_before':'HERO_CANDIDATE','fidelity_after':'HERO_QUALIFIED',
+          'intended_exposure':{'role':'hero_closeup','min_camera_distance_m':0.4},
+          'source_route':'MULTIVIEW_IMAGE_TO_3D','provider_model_version':'test/model@1','source_master_ref':'source.blend',
+          'provenance':{'input':'test'},'look_target_refs':['a','b','c'],
+          'hero_gate':{k:'PASS' for k in ['silhouette','proportion','construction_logic','semantic_part_separation','material_domain_readiness','uv_bake_readiness','closeup_stress']},
+          'raw_reconstruction_final':False,'claims_aaa':False
+        }
+        (p/'asset-fidelity-test.json').write_text(json.dumps(receipt))
+        self.assertEqual(validate_asset_fidelity_receipts(self.root),[])
+    def test_proxy_polish_receipt_fails_project_control_gate(self):
+        p=self.root/'production/receipts/test';p.mkdir(parents=True)
+        receipt={
+          'asset_id':'BAD-PROXY-001','fidelity_before':'PROXY','fidelity_after':'HERO_QUALIFIED',
+          'intended_exposure':{'role':'hero_closeup','min_camera_distance_m':0.4},
+          'source_route':'MANUAL_MODEL','source_master_ref':'proxy.blend','provenance':{'input':'blockout'},
+          'look_target_refs':['target'],
+          'hero_gate':{k:'PASS' for k in ['silhouette','proportion','construction_logic','semantic_part_separation','material_domain_readiness','uv_bake_readiness','closeup_stress']},
+          'claims_aaa':False
+        }
+        (p/'asset-fidelity-bad.json').write_text(json.dumps(receipt))
+        errors=validate_asset_fidelity_receipts(self.root)
+        self.assertTrue(any('source_rebuild_or_structural_upgrade' in x for x in errors),errors)
 
 if __name__=='__main__':unittest.main()
