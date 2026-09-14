@@ -1,0 +1,126 @@
+schema_version: 1
+world_id: khepri
+claim_id: CLM-KHEPRI-MATERIALS-001
+owner: AGENT-KHEPRI-MATERIALS-001
+status: SYSTEMIC_MATERIAL_FOUNDATION_COMPLETE
+contract: KHP_MATERIAL_PRODUCTION_X100_V1
+application_contract: KHP_MATERIAL_APPLICATION_MATRIX_X100_V1
+
+source_authority:
+  identity: art_source/khepri/materials/compile_material_library.py
+  presentation: art_source/khepri/materials/present_material_lab.py
+  orchestrator: art_source/khepri/materials/build_material_lab.py
+  application_matrix: art_source/khepri/materials/compile_application_matrix.py
+
+families:
+  - asset_id: KHP_MAT_GLASS_SOLAR_001
+    family: solar_glass
+    states: [calibrated, service_worn, thermal_cycled, repair_laminated]
+    finishes: [cast_vitrified, precision_polished]
+  - asset_id: KHP_MAT_MIRROR_OPTICAL_001
+    family: mirror_optical
+    states: [calibrated, maintenance_cleaning, service_microabrasion, repair_recoated]
+    finishes: [broad_reflector, precision_optic]
+  - asset_id: KHP_MAT_BRONZE_SYNOD_001
+    family: bronze_synod
+    states: [service_clean, contact_polished, heat_affected_local, field_repaired]
+    finishes: [cast_structural, machined_service]
+  - asset_id: KHP_MAT_CERAMIC_SCORCHED_001
+    family: ceramic_scorched
+    states: [intact, heat_cycled, stress_chipped, patch_replaced]
+    finishes: [pressed_tile, cast_shell]
+  - asset_id: KHP_MAT_FABRIC_SHADE_001
+    family: fabric_shade
+    states: [taut_service, handled_worn, solar_aged, stitched_repair]
+    finishes: [woven_dense, laminated_cloth]
+  - asset_id: KHP_MAT_MINERAL_DESERT_001
+    family: mineral_dark
+    states: [cut_clean, foot_traffic_worn, thermal_fissure_proxy, mechanical_patch]
+    finishes: [rough_mass, cut_plate]
+
+causes: [base, contact_use, maintenance, thermal, repair, mechanical_stress]
+
+maps:
+  calibration_resolution_px: [128, 128]
+  calibration_resolution_status: EVIDENCE_ONLY_NOT_FINAL_RUNTIME_BUDGET
+  packed_source_total: 96
+  base_color:
+    count: 24
+    color_space: sRGB
+    runtime_export: glTF_baseColorTexture
+  metallic_roughness:
+    count: 24
+    color_space: Non-Color
+    packing: "R=AO-placeholder-255, G=roughness, B=metallic"
+    runtime_export: glTF_metallicRoughnessTexture
+  normal:
+    count: 24
+    color_space: Non-Color
+    convention: OpenGL_positive_Y
+    runtime_export: glTF_normalTexture
+  state_mask:
+    count: 24
+    color_space: Non-Color
+    packing: "R=use_or_maintenance, G=thermal, B=repair, A=mechanical_stress"
+    runtime_export: SOURCE_ONLY_NOT_STANDARD_GLTF_ROLE
+
+application_matrix:
+  valid_rows: 139
+  invalid_filtered: 5
+  scales:
+    hero_insert: {authoring_px_per_m: 1024, status: PROVISIONAL_AUTHORING_TARGET}
+    prop_machine: {authoring_px_per_m: 512, status: PROVISIONAL_AUTHORING_TARGET}
+    architectural: {authoring_px_per_m: 256, status: PROVISIONAL_AUTHORING_TARGET}
+  per_family:
+    solar_glass: 23
+    mirror_optical: 23
+    bronze_synod: 23
+    ceramic_scorched: 24
+    fabric_shade: 23
+    mineral_dark: 23
+  sha256: 18ce236b8983a08d5128364382a13d320caa2ac477307f612e8c1f4f5dd740fa
+
+reproducibility:
+  image_manifest_sha256: e7aa1d9652a163819077920ed4fb1cf03d234b586333340c26c369e437d00a93
+  material_graph_sha256: 77c3fa2bbf1afb678784690123ec5545b2ab14de0788153b1910b159258c814e
+  sample_semantic_sha256: 34f1e9a37c079c5db0104ae0ec226d76d2c6741be6f4b030a9f3304e819bbb29
+
+artifacts:
+  master_project_id: d2bdc087-55ff-481e-93c5-e66bdfd57d8d
+  master_revision: 4
+  cold_project_id: 67d5c61f-29f2-426b-b6ba-77549f15b452
+  cold_revision: 2
+  glb:
+    bytes: 5286408
+    sha256: c855b873c3ef7627b48d60cf0db365b9fd192f4c6f6a59b6b79860dca993ab08
+    persistent_media_id: 973ce04a-2268-41e0-bedc-34ee3c5e8aac
+  blend:
+    bytes: 3304936
+    sha256: e9d5f1fef3d8a9f4ef5f0c35e9605e81b3a0bec865379818d086defb7c8d797a
+    persistent_media_id: 7a3c278a-0721-4293-b83b-07c720d64cae
+  visual_artifact_id: 5cbcb5204163c441748eb43d70f8affc
+
+runtime:
+  gltf_parse: PASS
+  embedded_connected_images: 72
+  external_uris: 0
+  samplers: 1
+  godot_engine: 4.7.2.stable.official.ed1daf0bf
+  godot_readback: PASS
+  contract_materials: 24
+  bad_materials: 0
+
+visual_qa:
+  ai_gate: PASS_SUPPLEMENTAL
+  human_final_art_gate: PENDING
+
+nonclaims:
+  - final_resolution_texture_art
+  - final_runtime_memory_budget
+  - target_hardware_performance
+  - final_glass_sea_medium
+  - atmosphere_dependent_oxidation_chemistry
+  - architecture_or_geology_ownership
+  - human_final_art_approval
+  - complete_khepri_world
+  - AAAA_material_completion
