@@ -12,22 +12,21 @@ priority: P0
 branch: art/world-sylva-prime-macro-001
 base_branch: main
 main_reconciled_sha: 26ae20f5d1b47d1efa0d54b20124ed93cbc0b43e
-main_sync_pr: 26
 fleet_epoch: 1
 fleet_state_observed: ACTIVE_ACK_PUBLISHED
 fleet_ack_comment: 5648367024
-fleet_registry_generation_observed: 8
 coordination_issue: 7
 linear_issue: ROT-117
 draft_pr: 3
 ready_queue_issue: 27
-last_checkpoint_revision: 17
+last_checkpoint_revision: 22
+accepted_art_wave: R18
 
 north_star: >-
   Deliver a metre-scale, reproducible SYLVA PRIME macro/regional foundation with causal terrain,
-  physically motivated macro-root silhouette, readable terrain-aware navigation, canonical region/VESPER
-  composition, scalable spatial partitioning and evidence-bound interfaces, while preserving provider
-  ownership and unresolved planetary/runtime boundaries.
+  physically motivated kilometre-root silhouettes, readable terrain-aware navigation, canonical
+  region/VESPER composition and scalable spatial partitioning, while preserving provider ownership
+  and keeping unresolved runtime/planetary decisions explicit.
 
 owns:
   - km/regional terrain and causal macro topography
@@ -37,14 +36,14 @@ owns:
   - L3 terrain partition and cross-cell membership metadata
   - L2/L3 hierarchy and backend-neutral residency interfaces
   - macro collision and streaming interfaces
-  - diagnostic kilometre-scale root topology and R16 load-correlated taper silhouette
+  - kilometre-scale primary-root topology, R16 load taper and R18 structural mesh silhouette
   - typed consumer sockets/support map for provider neural-root kit
-  - deterministic Blender generators and QA/import contracts
+  - deterministic Blender generators, rollback metadata, QA/import contracts
   - reversible L0/L1 planet-scale decision artifacts without canon promotion
 
 excludes:
   - reusable meso neural-root modules/generator/per-module collision owned by CLM-SYLVA-PROC-NROOT-001 / PR 6
-  - final non-circular/buttressed root sectional anatomy without visual review/controlled experiment
+  - final bark/fiber/reaction-tissue/callus root surface anatomy and root-specific gameplay collision
   - final VESPER model/rig/animation/attacks
   - final NPC/fauna/vegetation/architecture/interior/vehicle assets
   - final material/microterrain/foliage polish
@@ -68,21 +67,20 @@ unknowns:
   - atmosphere/axial parameters
   - final engine streaming backend
   - target GPU/performance budgets
-  - final runtime movement envelope
   - native artifact load/residency latency
-  - final primary-root cross-section anatomy/material stack
+  - final primary-root surface anatomy/material stack and dedicated collision policy
 
 primary_remote:
   project_id: 05dce898-753d-4ff6-a4b0-31757dc868d8
-  revision: 17
+  revision: 22
   scene_sequence: 0
-  build_status: WAVE1N_R16_ROOT_TAPER_MEMBERSHIP_RECONCILED
-  state: SETTLED_VERIFIED_R16_CHECKPOINT
-  blend_size_bytes: 2856650
-  blend_etag: 5fb0cc50f5e21cb8cc0effd556e35c83
-  glb_size_bytes: 1220616
-  glb_etag: c7d3b8775c0519470d3ccc34bb392f3e
-  geometry_fingerprint_sha256: 747a5b10c7344d5e4b0623354927e98faab8df6f44fced81c5f042350f079a89
+  build_status: WAVE1P_R18_ALL_PRIMARY_ROOT_XSEC_MESH
+  state: SETTLED_VERIFIED_R18_CHECKPOINT
+  blend_size_bytes: 3312722
+  blend_etag: a1459ad6a5d5ae98f63b50e2613cf3b1
+  glb_size_bytes: 1378988
+  glb_etag: 62d30277f973bbd87bb8c2aa16152c58
+  geometry_fingerprint_sha256: 7b1a4c5c1f16c6b3c1319f3da26315c8d359ce97717272c91aa5910effe00939
 
 orbital_scale_candidate:
   project_id: c796230b-0463-4e17-9446-2e746c5c4933
@@ -90,7 +88,7 @@ orbital_scale_candidate:
   status: EMPTY_PENDING_FLEET_REGISTRY
   mutation_allowed: false
 
-scene_contract_r16:
+scene_contract_r18:
   terrain_model: R6_BIOGEO_CAUSAL_MACRO_V1
   terrain_stream_contract: SYLVA_TERRAIN_STREAM_R12
   stream_membership_base_contract: SYLVA_STREAM_MEMBERSHIP_R13
@@ -101,8 +99,16 @@ scene_contract_r16:
   prefetch_policy_approved: false
   navigation_contract: SYLVA_NAV_R10
   route_collision_contract: MANIFOLD_RIBBON_R10
-  macro_root_biomech_contract: SYLVA_MACRO_ROOT_TAPER_R16
-  macro_root_cross_section_status: CIRCULAR_PROXY_FINAL_SECTION_PENDING
+  macro_root_taper_contract: SYLVA_MACRO_ROOT_TAPER_R16
+  macro_root_xsec_contract: SYLVA_MACRO_ROOT_XSEC_R18_ALL
+  macro_root_representation: SELF_CONTAINED_MESH
+  macro_root_count: 6
+  macro_root_verts_each: 1040
+  macro_root_faces_each: 1026
+  macro_root_nonmanifold_edges: 0
+  macro_root_degenerate_faces: 0
+  macro_root_source_curve_backup: SERIALIZED_JSON_PER_ASSET
+  macro_root_missing_stream_memberships: 0
   socket_consumer_contract: SYLVA_SOCKET_CONSUMER_V1
   socket_support_map: SYLVA_SOCKET_SUPPORT_MAP_V1
   terrain_render_tiles: 16
@@ -115,31 +121,31 @@ scene_contract_r16:
   vesper_connectors: 2
   provider_meshes_copied: 0
 
+macro_roots_r18:
+  profile_family: BILATERAL_FLATTENED_LOAD_SECTION_V1
+  source_taper_preserved: true
+  profiles:
+    R01: {width_factor: 1.10, height_factor: 0.70, region: PUERTO, source_wave: R17_AB_VALIDATED}
+    R02: {width_factor: 1.12, height_factor: 0.70, region: BOSQUE, source_wave: R18_PROMOTION}
+    R03: {width_factor: 1.18, height_factor: 0.66, region: VESPER, source_wave: R17_AB_VALIDATED}
+    R04: {width_factor: 1.08, height_factor: 0.72, region: NETWORK_CROSS, source_wave: R18_PROMOTION}
+    R05: {width_factor: 1.06, height_factor: 0.74, region: NETWORK_CROSS, source_wave: R18_PROMOTION}
+    R06: {width_factor: 1.12, height_factor: 0.68, region: VESPER_APPROACH, source_wave: R18_PROMOTION}
+  r01_membership_conservative_extras: [X0Y2, X1Y2]
+  missing_memberships: 0
+  final_surface_anatomy_claimed: false
+
 terrain_streaming_r12:
   tile_size_m: 3000
-  render_grid_per_tile: 13x13
+  render_tiles: 16
   render_faces_total: 2304
   render_shared_seam_points: 285
   render_max_seam_delta_m: 0
-  collision_grid_per_tile: 9x9
+  collision_tiles: 16
   collision_faces_total: 1024
   collision_shared_seam_points: 189
   collision_max_seam_delta_m: 0
   monolithic_terrain_retired: true
-
-stream_membership:
-  base_contract: SYLVA_STREAM_MEMBERSHIP_R13
-  assigned_spatial_objects_at_r13: 147
-  outside_local_patch: 0
-  original_cross_cell_objects: 34
-  max_cells_per_object: 6
-  assignment_method: WORLD_BOUNDS_TO_3KM_L3_CELLS
-  r16_amendment:
-    object: SYLVA_ROOT_PRIMARY_R01
-    reason: R16_TAPER_EVALUATED_BOUNDS_CROSS_Y0_BY_51M
-    previous_cells: [X0Y0, X0Y1, X1Y0, X1Y1]
-    current_cells: [X0Y0, X0Y1, X0Y2, X1Y0, X1Y1, X1Y2]
-    stale_primary_root_memberships_after_fix: 0
 
 stream_hierarchy_r14:
   l2_supercells: 4
@@ -148,46 +154,23 @@ stream_hierarchy_r14:
   l3_size_m: 3000
   hero_residency_granularity: L3_ONLY
   l2_hero_semantics: COVERAGE_METADATA_ONLY_NOT_FULL_RESIDENCY
-  bosque_resident_l3_cells: [X1Y1, X1Y2, X2Y1, X2Y2]
   hlod_status: CONTRACT_ONLY_TARGET_BACKEND_PENDING
 
-prefetch_policy_r15_r16_recalc:
+prefetch_policy_r15:
   status: RUNTIME_EXPERIMENT_REQUIRED
   approved: false
   primary_runtime_candidate: P3_DIRECTIONAL_ROUTE_WINDOW
-  current_only_upper_bound_fraction: 0.3197278911564626
-  current_plus4_upper_bound_fraction: 0.6258503401360545
-  current_plus8_upper_bound_fraction: 0.7278911564625851
-  directional_route_window_upper_bound_fraction: 0.5918367346938775
   selection_rule: PROMOTE_LEAST_RESIDENT_POLICY_THAT_PASSES_RUNTIME_VISUAL_COLLISION_TRAVERSAL_GATES
-
-macro_roots_r16:
-  contract: SYLVA_MACRO_ROOT_TAPER_R16
-  control_point_coordinates_locked: true
-  profiles:
-    R01: {multipliers: [0.75, 0.95, 1.32, 1.05, 0.82], effective_radius_m: [36.0, 63.36], anchor: PUERTO_P2}
-    R02: {multipliers: [0.72, 0.92, 1.30, 1.02, 0.78], effective_radius_m: [44.64, 80.60], anchor: BOSQUE_P2}
-    R03: {multipliers: [0.70, 0.90, 1.34, 1.04, 0.80], effective_radius_m: [50.40, 96.48], anchor: VESPER_P2}
-    R04: {multipliers: [0.78, 0.92, 1.18, 1.08, 0.82], effective_radius_m: [28.08, 42.48], anchor: NETWORK_MIDSPAN}
-    R05: {multipliers: [0.75, 0.92, 1.20, 1.10, 0.82], effective_radius_m: [22.50, 36.00], anchor: NETWORK_MIDSPAN}
-    R06: {multipliers: [0.70, 0.82, 0.94, 1.08, 1.28], effective_radius_m: [28.00, 51.20], anchor: VESPER_APPROACH_P4}
-  final_section_anatomy_claimed: false
 
 navigation_r10:
   total_length_m: 8898.294
-  routes:
-    - {id: SYLVA_TRAV_PathGuide_00, length_m: 1963.093, max_grade_deg: 18.490, collision: SYLVA_COL_ROUTE_00}
-    - {id: SYLVA_TRAV_PathGuide_01, length_m: 2382.483, max_grade_deg: 15.131, collision: SYLVA_COL_ROUTE_01}
-    - {id: SYLVA_TRAV_PathGuide_02, length_m: 2188.103, max_grade_deg: 7.285, collision: SYLVA_COL_ROUTE_02}
-    - {id: SYLVA_TRAV_PathGuide_03, length_m: 2364.615, max_grade_deg: 20.530, collision: SYLVA_COL_ROUTE_03}
-  collision_nonmanifold_edges: 0
-  collision_degenerate_faces: 0
+  route_collision_nonmanifold_edges: 0
+  route_collision_degenerate_faces: 0
 
 rootkit_dependency:
   provider_claim: CLM-SYLVA-PROC-NROOT-001
   provider_pr: 6
-  provider_head_reaudited: 5ba1ea6758e4c08ed82d95deb96f1bbcae1581f5
-  provider_project: 43cf2b06-c47f-4ccd-ac34-76e9a585225a
+  provider_head_last_audited: 5ba1ea6758e4c08ed82d95deb96f1bbcae1581f5
   provider_ci_gauntlet: PASS_BUT_NOT_INTEGRATION_READY
   provider_pivot_status: BLOCKED_PROVIDER_NORMALIZATION_REQUIRED
   provider_manifest_status: BLOCKED_YAML_VALIDATION_REQUIRED
@@ -198,34 +181,28 @@ rootkit_dependency:
   provider_instances_created: 0
   provider_geometry_copied: 0
 
-visual_signal_r16:
-  cameras: [SYLVA_CAM_Puerto, SYLVA_CAM_Bosque, SYLVA_CAM_Vesper]
+visual_signal_r18:
   all_file_backed_nonblank: true
-  human_visual_inspection: BLOCKED_BY_CURRENT_SIGNED_ARTIFACT_SECURITY_BOUNDARY
+  puerto_bytes: 49058
+  bosque_bytes: 48652
+  vesper_bytes: 47283
   gate_art: PENDING
 
-planetary_scale_decision:
-  status: PROPOSAL_PENDING_CREATIVE_DIRECTOR
-  recommended_option: SYL_SCALE_C_BROAD_BIOGENIC
-  recommended_radius_km: 7645.21008
-  canonicalized: false
-
-learning_adoption:
-  learning_id: LRN-EXO-20260912-OWNER-ADMISSION
-  applies_to_this_owner: true
-  universal_adoption_claimed: false
+hlod_vista:
+  feature_retention_contract: art_source/worlds/sylva_prime/macro/HLOD_FEATURE_RETENTION_R18.json
+  generation_allowed_now: false
 
 writer_continuity:
-  last_writer_fence_id: SYLVA-MACRO-WRITER-EPOCH-4-R16-20260913
-  last_writer_fence_status: CLOSED_ACCEPTED_R16
-  receipt: art_source/worlds/sylva_prime/macro/qa/R16_MACRO_ROOT_BIOMECH_ACCEPTANCE.json
+  last_writer_fence_id: SYLVA-MACRO-WRITER-EPOCH-5-R17-XSEC-20260914
+  last_writer_fence_status: CLOSED_ACCEPTED_R18
+  receipt: art_source/worlds/sylva_prime/macro/qa/R18_ALL_PRIMARY_ROOT_XSEC_ACCEPTANCE.json
 
 blocked_by:
-  - BLOCK-SYLVA-001 planet-scale promotion requires explicit decision + orbital registration
-  - BLOCK-SYLVA-002 target renderer/hardware blocks final HLOD/LOD/performance budgets
-  - BLOCK-SYLVA-003 exact binary recovery/SHA/native import not yet qualified here
-  - BLOCK-SYLVA-004 PR6 manifest + deterministic pivot/anchor + collision parity required before provider instancing
-  - BLOCK-SYLVA-005 human R16 macro art-direction review pending before blind root-section refinement
+  - exact revision22 binary recovery/SHA/native import not yet qualified in this environment
+  - PR6 manifest + deterministic pivot/anchor + collision parity required before provider instancing
+  - human R18 macro art-direction review pending before final surface-anatomy pass
+  - target renderer/hardware blocks final HLOD/LOD/performance budgets
+  - planet-scale promotion requires explicit decision + orbital registration
 
 dependencies:
   - CLM-SYLVA-PROC-NROOT-001 provider readiness
@@ -233,14 +210,11 @@ dependencies:
   - human art-direction review
 
 receipts:
-  r5_vesper: art_source/worlds/sylva_prime/macro/qa/R5_VESPER_CANON_LAYOUT.json
-  r6_terrain: art_source/worlds/sylva_prime/macro/qa/R6_TERRAIN_CAUSALITY.json
   r13_streaming: art_source/worlds/sylva_prime/macro/qa/R13_STREAMING_WORLD_PARTITION.json
   r15_policy: art_source/worlds/sylva_prime/macro/qa/R15_PREFETCH_POLICY_NORMALIZATION.json
-  r16_root_audit: art_source/worlds/sylva_prime/macro/qa/R16_MACRO_ROOT_BIOMECH_AUDIT.json
   r16_acceptance: art_source/worlds/sylva_prime/macro/qa/R16_MACRO_ROOT_BIOMECH_ACCEPTANCE.json
-  r16_pressure: art_source/worlds/sylva_prime/macro/qa/R16_PREFETCH_PRESSURE_RECALC.json
-  r16_visual_signal: art_source/worlds/sylva_prime/macro/qa/R16_REGIONAL_VISUAL_SIGNAL_SMOKE.json
+  r17_ab: art_source/worlds/sylva_prime/macro/qa/R17_ROOT_XSEC_AB_ACCEPTANCE.json
+  r18_acceptance: art_source/worlds/sylva_prime/macro/qa/R18_ALL_PRIMARY_ROOT_XSEC_ACCEPTANCE.json
   import_contract: art_source/worlds/sylva_prime/macro/IMPORT_CONTRACT.md
   status: art_source/worlds/sylva_prime/macro/STATUS.md
   handoff: art_source/worlds/sylva_prime/macro/HANDOFF.md
