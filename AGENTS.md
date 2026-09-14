@@ -61,7 +61,23 @@ Reglas de adopción:
 - Nunca inventar coordenadas: `spatial_known=0` no significa origen. Inferencias desde nombres de rama se etiquetan y no crean ownership.
 - Usar `python3 ops/x100/x100_control.py audit ...` para medir el mundo y `rank ...` para ordenar gaps. Un gap reclamado por otro owner es ineligible aunque tenga mayor score.
 - Después de cada wave con evidencia, actualizar el audit X100 dentro de una ruta owned y recalcular el gradiente. No declarar WORLD_COMPLETE por cerrar un asset local.
-- Tier S/A o assets de identidad fuerte siguen por defecto `LOOK_LOCK → IMAGE_TARGET → IMAGE_TO_3D_BASE → CLEANUP/RETOPO → MATERIAL → LOD/COLLISION → ENGINE → VISUAL_REGRESSION`. Higgsfield 3D Jutsu es una superficie preferente cuando aporta reconstrucción útil; **raw AI/reconstruction mesh nunca es final**.
+- Tier S/A o assets de identidad fuerte siguen por defecto `LOOK_LOCK → IMAGE_TARGET → SOURCE_ASSET_BAKEOFF → SOURCE_MASTER → HERO_FIDELITY_GATE → MATERIAL → RUNTIME_DERIVATION → ENGINE → VISUAL_REGRESSION`. La reconstrucción multiview (Tripo/Meshy/Hunyuan3D u otros candidatos vivos) es una ruta posible, no una garantía; revalidar catálogo/coste antes de usar. **Raw AI/reconstruction mesh nunca es final**.
 - Kits sistémicos pueden usar modelado procedural/manual en lugar de image-to-3D cuando produzca geometría más limpia/reutilizable; registrar waiver.
 - El objetivo 5/20/75 HERO/SUPPORT/SYSTEMIC y 100+ configuraciones es una guía de planificación, no permiso para ruido. Variación siempre causal.
 - X100 no muta el Fleet registry, no libera claims y no sustituye STATE/PLAN/MANIFEST. Integra selección de trabajo; Fleet controla colisiones; Graphify/COS conserva relaciones; Gauntlet valida evidencia.
+
+## AAA Source Fidelity Gate — obligatorio para todo trabajo 3D
+
+Leer `docs/AAA_ASSET_FIDELITY_GATE_V1.md` antes de una wave de arte 3D o lookdev final.
+
+Invariantes:
+- `BLOCKOUT != HERO_ASSET` y `MORE_POLYGONS != MORE_REALISM`.
+- Un bloque/proxy puede ser correcto para layout, colisión, gameplay, cámara o streaming y seguir siendo inelegible para acabado hero.
+- Prohibido gastar final-lookdev significativo sobre una fuente `BLOCKOUT/PROXY` que no haya pasado `HERO_FIDELITY_GATE` para la exposición prevista.
+- Antes de pulir, clasificar el asset/familia: `BLOCKOUT | PROXY | SUPPORT_CANDIDATE | HERO_CANDIDATE | HERO_QUALIFIED | RUNTIME_QUALIFIED | CINEMATIC_QUALIFIED`.
+- Si falla silueta, proporción, construcción, separación semántica, close-up o material-domain readiness, volver a Asset Factory en vez de maquillar el proxy.
+- Para Tier S/A/hero usar `MANUAL | PROCEDURAL | CAD | PHOTOGRAMMETRY | MULTIVIEW_IMAGE_TO_3D | HYBRID_RECONSTRUCTION` según evidencia. Tripo/Meshy/Hunyuan3D son ejemplos de candidatos vivos observados, no proveedores eternamente fijados.
+- Separar `SOURCE_MASTER → CINEMATIC_MASTER + RUNTIME_MASTER`; nunca confundir un source high-poly con un asset shipping.
+- Runtime exige derivación/profiling: LOD/HLOD/collision/bakes/streaming/shader/material/VRAM/frame-time según aplique.
+- Coste/tiempo de render sólo puede estimarse tras benchmark real `EASY/MEDIAN/WORST`; resolución por sí sola no autoriza una cifra.
+- Al siguiente resync, cada owner existente realiza auditoría retroactiva y etiqueta `PROXY_POLISH_DEBT` sin borrar trabajo útil de layout/gameplay/colisión.
