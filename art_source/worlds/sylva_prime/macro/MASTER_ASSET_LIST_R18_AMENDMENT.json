@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "world_id": "sylva",
+  "claim": "CLM-SYLVA-MACRO-001",
+  "source_scene_revision": 22,
+  "supersedes_for_primary_roots": "MASTER_ASSET_LIST_R16_AMENDMENT.json",
+  "contract": "SYLVA_MACRO_ROOT_XSEC_R18_ALL",
+  "status": "LOCALLY_VALIDATED_SOURCE_CHECKPOINT",
+  "quality_truth": "Macro structural representation only; human art approval, final materials/microanatomy, dedicated root collision and native performance remain open.",
+  "common": {
+    "category": "environment",
+    "subcategory": "primary_structural_root",
+    "quality_tier": "B_STANDARD_GAMEPLAY_TO_C_VISTA_MACRO",
+    "usage_frequency": "WORLD_STRUCTURAL",
+    "player_distance": "MID_TO_EXTREME; close inspection currently not final",
+    "material_set": ["SYLVA_DIAG_RootFiber"],
+    "texture_set": "FINAL_NOT_IMPLEMENTED",
+    "poly_budget": "UNQUALIFIED_TARGET_HARDWARE_PENDING",
+    "lod_policy": "FEATURE_AWARE_HLOD_PENDING; see HLOD_FEATURE_RETENTION_R18.json",
+    "collision_policy": "NO_DEDICATED_ROOT_GAMEPLAY_COLLISION_IN_R18",
+    "rig": null,
+    "animation_dependency": "NONE_CURRENT",
+    "physics": "STATIC_MACRO_ENVIRONMENT_CURRENT",
+    "destructible": false,
+    "reference_set": ["ART_DIRECTION_BIBLE_R14.md","BIOLOGICAL_REALISM_REFERENCE_PACK_R14.md","qa/R18_ALL_PRIMARY_ROOT_XSEC_ACCEPTANCE.json"],
+    "license": "PROJECT_ORIGINAL",
+    "qa_status": "PASS_SOURCE_R18 / HUMAN_ART_PENDING / NATIVE_RUNTIME_PENDING"
+  },
+  "assets": [
+    {"asset_id":"SYLVA_ROOT_PRIMARY_R01","region":"Puerto approach","name":"Primary structural root R01","real_dimensions":"world bounds approx 3952 x 3265 x 384 m","owner":"CLM-SYLVA-MACRO-001","status":"LOCALLY_VALIDATED_R18","blend_path":"primary project revision22 object SYLVA_ROOT_PRIMARY_R01","export_path":"revision22 GLB same stable node ID","stream_cells":["X0Y0","X0Y1","X0Y2","X1Y0","X1Y1","X1Y2"],"profile":{"width":1.10,"height":0.70},"source_wave":"R17_AB_VALIDATED"},
+    {"asset_id":"SYLVA_ROOT_PRIMARY_R02","region":"Bosque","name":"Primary structural root R02","real_dimensions":"world bounds approx 3073 x 1922 x 282 m","owner":"CLM-SYLVA-MACRO-001","status":"LOCALLY_VALIDATED_R18","blend_path":"primary project revision22 object SYLVA_ROOT_PRIMARY_R02","export_path":"revision22 GLB same stable node ID","stream_cells":["X1Y1","X1Y2","X2Y1","X2Y2"],"profile":{"width":1.12,"height":0.70},"source_wave":"R18_PROMOTION"},
+    {"asset_id":"SYLVA_ROOT_PRIMARY_R03","region":"VESPER","name":"Primary structural root R03","real_dimensions":"world bounds approx 3169 x 2207 x 681 m","owner":"CLM-SYLVA-MACRO-001","status":"LOCALLY_VALIDATED_R18","blend_path":"primary project revision22 object SYLVA_ROOT_PRIMARY_R03","export_path":"revision22 GLB same stable node ID","stream_cells":["X2Y2","X2Y3","X3Y2","X3Y3"],"profile":{"width":1.18,"height":0.66},"source_wave":"R17_AB_VALIDATED"},
+    {"asset_id":"SYLVA_ROOT_PRIMARY_R04","region":"Cross-world network","name":"Primary structural root R04","real_dimensions":"world bounds approx 6225 x 2357 x 339 m","owner":"CLM-SYLVA-MACRO-001","status":"LOCALLY_VALIDATED_R18","blend_path":"primary project revision22 object SYLVA_ROOT_PRIMARY_R04","export_path":"revision22 GLB same stable node ID","stream_cells":["X0Y1","X0Y2","X1Y1","X1Y2","X2Y1","X2Y2"],"profile":{"width":1.08,"height":0.72},"source_wave":"R18_PROMOTION"},
+    {"asset_id":"SYLVA_ROOT_PRIMARY_R05","region":"Cross-world network","name":"Primary structural root R05","real_dimensions":"world bounds approx 3193 x 4924 x 310 m","owner":"CLM-SYLVA-MACRO-001","status":"LOCALLY_VALIDATED_R18","blend_path":"primary project revision22 object SYLVA_ROOT_PRIMARY_R05","export_path":"revision22 GLB same stable node ID","stream_cells":["X1Y0","X1Y1","X1Y2","X2Y0","X2Y1","X2Y2"],"profile":{"width":1.06,"height":0.74},"source_wave":"R18_PROMOTION"},
+    {"asset_id":"SYLVA_ROOT_PRIMARY_R06","region":"VESPER approach","name":"Primary structural root R06","real_dimensions":"world bounds approx 1883 x 3058 x 439 m","owner":"CLM-SYLVA-MACRO-001","status":"LOCALLY_VALIDATED_R18","blend_path":"primary project revision22 object SYLVA_ROOT_PRIMARY_R06","export_path":"revision22 GLB same stable node ID","stream_cells":["X2Y1","X2Y2","X3Y1","X3Y2"],"profile":{"width":1.12,"height":0.68},"source_wave":"R18_PROMOTION"}
+  ],
+  "implementation": {
+    "representation": "self-contained closed polygon mesh",
+    "verts_per_asset": 1040,
+    "faces_per_asset": 1026,
+    "source_reconstruction": "serialized R16 Bezier controls/handles/radii stored in r17_source_curve_json",
+    "helpers_exported": 0,
+    "nonmanifold_edges": 0,
+    "degenerate_faces": 0
+  },
+  "next_dod": [
+    "human silhouette/intersection review",
+    "final biological fiber/bark/callus/reaction-tissue art contract",
+    "UV/material strategy after inspection tier decision",
+    "dedicated collision policy if gameplay contacts roots",
+    "feature-aware LOD/HLOD after renderer/hardware qualification",
+    "exact SHA-bound delivery/native import/performance receipts"
+  ]
+}
