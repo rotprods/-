@@ -1,0 +1,58 @@
+workunit_id: AUR-X100-INTERREGION-TRANSPORT-001
+parent_claim: CLM-AURORA-WORLD-001
+owner: AGENT-02-AURORA
+branch: art/world-aurora-veil-001
+world_id: aurora
+status: IN_PROGRESS
+protocol: EXOVANT-X100-V2
+scope_key: aurora/macro/interregion-transport-network
+priority: P0_V2_MACRO_BOTTLENECK
+remote_project_id: d6488148-8547-4ffe-b63d-e5fbec3a339c
+remote_base_revision: 41
+north_star: >-
+  Connect Campamento del Segundo Dia, Llanura de las Repeticiones and Huerto de AEON with a physically legible, terrain-conforming inter-region route system that supports Peregrino-scale traversal, route recording, emergency wayfinding and distant reading without inventing a new transport technology.
+canon_basis:
+  - Aurora contains the three named playable regions.
+  - Peregrino route recorder exists as the world vehicle foundation.
+  - route-recorder beacons / clock synchronization are established Aurora infrastructure.
+  - temporal effects stay local; transport must not imply global time manipulation.
+includes:
+  - primary Camp-to-Plain route
+  - primary Plain-to-Orchard route
+  - secondary Camp-to-Orchard service bypass only where terrain supports it
+  - terrain-conforming centerline contracts and route widths at metre scale
+  - reusable route-marker / edge-stake / emergency pull-off / service-node families derived from existing Aurora manufacturing language
+  - authored switchbacks where grade requires them
+  - route-record beacons at deterministic intervals, reusing existing beacon family where possible
+  - traversal clearance and slope/grade QA
+  - HLOD/vista proxy contract for route readability at distance
+  - generator + receipt
+excludes:
+  - new vehicle class
+  - Peregrino remodeling
+  - global travel framework
+  - other worlds
+  - AEON hero model changes
+  - antelope content
+  - engine spline/runtime code before EXO-012
+quality_rules:
+  - route follows terrain; no floating road ribbon
+  - grade and width are measured, not guessed visually
+  - no random roadside clutter
+  - markers serve navigation/service/emergency function
+  - avoid straight-line shortcuts through temporal field cores or hero arenas
+  - default GLB receives only visible route infrastructure; collision/clearance contracts remain separate
+family_dod:
+  - >= 2 primary inter-region corridors
+  - >= 1 secondary bypass if terrain audit permits
+  - slope/grade report for every route segment
+  - Peregrino-scale width/turning proposal documented
+  - deterministic marker/beacon placement
+  - route-field/arena exclusion pass
+  - reusable route kit + vista/HLOD contract
+  - technical Workbench/Eevee evidence
+  - generator + QA receipt persisted
+blocked_by:
+  - EXO-012 for runtime traversal/streaming integration
+  - final Peregrino handling profile for authoritative turning radius
+  - target hardware for streaming performance
