@@ -8,18 +8,19 @@ jobs:
     runs-on: ubuntu-24.04
     timeout-minutes: 12
     env:
-      ATRIO_URL: 'https://695d5a9fc666e505559765690b5db7dd.r2.cloudflarestorage.com/3d-scene-builder/projects/6e64cd59-f1f6-461f-850c-737d098f1723/revisions/00000006-origin-x100-wave2-lod-build-016/preview.glb?X-Amz-Expires=900&X-Amz-Date=20260914T095402Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=f4fb15da414147020cebc9c7007b912d%2F20260914%2Fauto%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=be076e96f72c3b108b93ab9b20a75ba2963b789493ef9685c0db4e88fcbee6e8'
+      ATRIO_URL: 'https://695d5a9fc666e505559765690b5db7dd.r2.cloudflarestorage.com/3d-scene-builder/projects/6e64cd59-f1f6-461f-850c-737d098f1723/revisions/00000008-origin-x100-ring-collision-winding-fix-022/preview.glb?X-Amz-Expires=900&X-Amz-Date=20260914T100036Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=f4fb15da414147020cebc9c7007b912d%2F20260914%2Fauto%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=ab7182f3fa4080414908942b629474c70be73f85f0ff588f4977c496e6096191'
       ARCHIVE_URL: 'https://695d5a9fc666e505559765690b5db7dd.r2.cloudflarestorage.com/3d-scene-builder/projects/9bff5b6c-35a5-4db9-92de-4008a0fc3f4e/revisions/00000006-origin-archive-wave2-camera-fit-015/preview.glb?X-Amz-Expires=900&X-Amz-Date=20260914T095415Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=f4fb15da414147020cebc9c7007b912d%2F20260914%2Fauto%2Fs3%2Faws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=29a0560a5b53158a8655a7304c4b1c1a87aee3beaa90d5278daf99dd0ba661cd'
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
-      - name: Fetch exact rev6 GLBs
+      - name: Fetch exact GLBs
         run: |
           mkdir -p /tmp/origin_import
-          curl --fail --location --silent --show-error "$ATRIO_URL" -o /tmp/origin_import/origin_atrio_rev6.glb
+          curl --fail --location --silent --show-error "$ATRIO_URL" -o /tmp/origin_import/origin_atrio_rev8.glb
           curl --fail --location --silent --show-error "$ARCHIVE_URL" -o /tmp/origin_import/origin_archive_rev6.glb
-          test "$(stat -c%s /tmp/origin_import/origin_atrio_rev6.glb)" -eq 7039992
+          test "$(stat -c%s /tmp/origin_import/origin_atrio_rev8.glb)" -eq 6866000
           test "$(stat -c%s /tmp/origin_import/origin_archive_rev6.glb)" -eq 5171380
-          sha256sum /tmp/origin_import/*.glb
+          cp /tmp/origin_import/origin_atrio_rev8.glb /tmp/origin_import/origin_atrio_rev6.glb
+          sha256sum /tmp/origin_import/origin_atrio_rev8.glb /tmp/origin_import/origin_archive_rev6.glb
       - name: Acquire pinned Godot 4.7.2
         run: python3 tools/bootstrap_godot.py --destination .tools
       - name: Build isolated import harness
