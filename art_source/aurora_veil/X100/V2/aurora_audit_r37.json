@@ -1,0 +1,60 @@
+{
+  "schema_version": 2,
+  "protocol": "EXOVANT-X100-V2",
+  "world_id": "aurora",
+  "claim_id": "CLM-AURORA-WORLD-001",
+  "branch": "art/world-aurora-veil-001",
+  "remote_project_id": "d6488148-8547-4ffe-b63d-e5fbec3a339c",
+  "remote_revision": 37,
+  "status": "EVIDENCE_BACKED_LOWER_BOUND_NOT_CERTIFICATION",
+  "method": "Director-compatible maturity lower bound derived only from persisted Aurora QA receipts through r37. Human-art, engine-runtime and target-hardware cells remain unqualified.",
+  "strict_score_pct_lower_bound": 30.6913,
+  "coverage": {
+    "macro_world": 0.2750,
+    "meso_architecture": 0.3000,
+    "micro_assets": 0.3000,
+    "ecology": 0.3250,
+    "civilization": 0.3500,
+    "gameplay": 0.3000,
+    "material_causality": 0.3250,
+    "variation": 0.3583,
+    "temporal_states": 0.4000,
+    "storytelling": 0.4250,
+    "audiovisual_language": 0.1667,
+    "optimization": 0.2333,
+    "reusability": 0.4417,
+    "qa": 0.2000
+  },
+  "top_gradient_pressure": [
+    {"dimension":"qa","pressure":0.116433},
+    {"dimension":"audiovisual_language","pressure":0.103958},
+    {"dimension":"optimization","pressure":0.095811},
+    {"dimension":"macro_world","pressure":0.088305},
+    {"dimension":"meso_architecture","pressure":0.078527},
+    {"dimension":"gameplay","pressure":0.078527}
+  ],
+  "actionable_fences": {
+    "qa": "engine_runtime and human visual regression remain blocked; technical QA can still advance",
+    "audiovisual_language": "soundscape content is not a 3D-owner deliverable, but spatial audio/VFX hooks may be authored",
+    "optimization": "HLOD/proxy hierarchy and Blender-side complexity profiling are actionable before EXO-012",
+    "gameplay": "Q_AURORA_M05 environment/state interface is actionable without deciding canon outcome"
+  },
+  "evidence_refs": [
+    "art_source/aurora_veil/QA/orbital_r7.json",
+    "art_source/aurora_veil/X100/QA/camp_systemic_r23.json",
+    "art_source/aurora_veil/X100/QA/prairie_r26.json",
+    "art_source/aurora_veil/X100/QA/camp_props_r30.json",
+    "art_source/aurora_veil/X100/QA/camp_history_r32.json",
+    "art_source/aurora_veil/X100/QA/plain_story_sites_r34.json",
+    "art_source/aurora_veil/X100/QA/observatory_interior_r37.json",
+    "art_source/aurora_veil/QA/terrain_r14.json",
+    "art_source/aurora_veil/QA/temporal_r12.json",
+    "art_source/aurora_veil/QA/material_r15.json"
+  ],
+  "selected_next_gap": {
+    "id": "AUR-X100-HLOD-HIERARCHY-001",
+    "dimension": "optimization",
+    "reason": "highest-pressure fully actionable 3D gap after blocked QA/human/engine cells; large systemic reuse and downstream streaming value"
+  },
+  "queued_after_recompute": "Q_AURORA_M05 temporal archive consequence environment, subject to post-HLOD gradient recompute"
+}
