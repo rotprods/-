@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "claim": "CLM-SYLVA-MACRO-001",
+  "scene_revision": 22,
+  "status": "ENV_BLOCKED_BINARY_RECOVERY",
+  "provider_resolution": {
+    "glb_available": true,
+    "size_bytes": 1378988,
+    "etag": "62d30277f973bbd87bb8c2aa16152c58",
+    "signed_download_resolved": true
+  },
+  "local_recovery": {
+    "success": false,
+    "reason": "Current runtime security boundary rejects direct use/opening of the short-lived signed R2 artifact URL; container download therefore cannot obtain the exact bytes.",
+    "blind_retry_performed": false
+  },
+  "classification": "ENV_BLOCKED_NOT_ASSET_FAIL",
+  "not_proven": [
+    "local SHA-256 of exact revision22 GLB",
+    "validate_glb_contract_r18.py PASS on exact artifact",
+    "shared fleet_control delivery PASS",
+    "native engine import/traversal/performance"
+  ],
+  "ready_validator": "art_source/worlds/sylva_prime/macro/validate_glb_contract_r18.py",
+  "next_valid_action": "On an artifact-enabled authorized checkout, recover exact revision22 GLB, compute SHA-256, run shared delivery and validate_glb_contract_r18.py against the same SHA, then native import.",
+  "truth": "Remote source/export availability is proven; exact local byte recovery is not."
+}
