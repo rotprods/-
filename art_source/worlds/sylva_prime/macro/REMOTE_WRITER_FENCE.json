@@ -4,54 +4,49 @@
   "primary_project_id": "05dce898-753d-4ff6-a4b0-31757dc868d8",
   "accepted_revision": 17,
   "accepted_scene_sequence": 0,
-  "writer_fence_epoch": 4,
-  "writer_fence_id": "SYLVA-MACRO-WRITER-EPOCH-4-R16-20260913",
+  "writer_fence_epoch": 5,
+  "writer_fence_id": "SYLVA-MACRO-WRITER-EPOCH-5-R17-XSEC-20260914",
   "owner": "AGENT-SYLVA-MACRO-01",
-  "writer_session": "20260913-SYLVA-R16-WRITER-001",
+  "writer_session": "20260914-SYLVA-R17-XSEC-001",
   "branch": "art/world-sylva-prime-macro-001",
-  "status": "CLOSED_ACCEPTED_R16",
+  "status": "OPEN_SINGLE_WRITER_R17_CONTROLLED_EXPERIMENT",
   "fleet_activation": {
-    "registry_generation": 8,
     "claim_status": "active",
     "ack_owner": "AGENT-SYLVA-MACRO-01",
     "ack_epoch": 1,
-    "ack_evidence_ref": "https://github.com/rotprods/-/issues/7#issuecomment-5648367024",
     "registered_project_ids": ["05dce898-753d-4ff6-a4b0-31757dc868d8"],
     "main_synced_sha": "26ae20f5d1b47d1efa0d54b20124ed93cbc0b43e",
-    "branch_behind_after_wave": 0
+    "branch_behind_before_wave": 0
   },
-  "accepted_wave": {
-    "art_contract": "SYLVA_MACRO_ROOT_TAPER_R16",
-    "membership_amendment_contract": "SYLVA_STREAM_MEMBERSHIP_R16_AMENDMENT",
-    "taper_revision": 16,
-    "accepted_revision_after_membership_reconciliation": 17,
-    "geometry_fingerprint_before_r16": "003760384ade90b7b0b792de6850a2eae90322d22f2ca246f8211395cb3e6224",
-    "geometry_fingerprint_after_r16": "747a5b10c7344d5e4b0623354927e98faab8df6f44fced81c5f042350f079a89",
-    "geometry_fingerprint_after_revision17_metadata": "747a5b10c7344d5e4b0623354927e98faab8df6f44fced81c5f042350f079a89",
-    "control_point_coordinates_unchanged": true,
-    "stale_membership_after_reconciliation": 0,
-    "qa_receipt": "art_source/worlds/sylva_prime/macro/qa/R16_MACRO_ROOT_BIOMECH_ACCEPTANCE.json",
-    "visual_signal_receipt": "art_source/worlds/sylva_prime/macro/qa/R16_REGIONAL_VISUAL_SIGNAL_SMOKE.json"
+  "input_checkpoint": {
+    "art_wave": "R16",
+    "scene_revision": 17,
+    "geometry_fingerprint": "747a5b10c7344d5e4b0623354927e98faab8df6f44fced81c5f042350f079a89",
+    "root_taper_contract": "SYLVA_MACRO_ROOT_TAPER_R16",
+    "membership_amendment_contract": "SYLVA_STREAM_MEMBERSHIP_R16_AMENDMENT"
   },
-  "accepted_artifacts": {
-    "blend_size_bytes": 2856650,
-    "blend_etag": "5fb0cc50f5e21cb8cc0effd556e35c83",
-    "glb_size_bytes": 1220616,
-    "glb_etag": "c7d3b8775c0519470d3ccc34bb392f3e"
+  "r17_scope": {
+    "type": "CONTROLLED_A_B_EXPERIMENT",
+    "targets": ["SYLVA_ROOT_PRIMARY_R01", "SYLVA_ROOT_PRIMARY_R03"],
+    "purpose": "Replace circular proxy section on two representative macro roots with a reversible non-circular structural profile while preserving centerlines and R16 taper.",
+    "must_not_change": [
+      "root control-point coordinates",
+      "terrain",
+      "routes",
+      "route collision",
+      "VESPER terraces/connectors",
+      "L2/L3 hierarchy",
+      "prefetch policy semantics",
+      "PR6 provider geometry",
+      "orbital project"
+    ],
+    "promotion_rule": "Do not apply to R02/R04/R05/R06 unless evaluated mesh QA, bounds-to-membership reconciliation and regional render signal all pass."
   },
-  "remaining_proxy_limits": [
-    "primary-root cross sections remain circular curve bevels",
-    "no bark/fiber/reaction-tissue/callus microstructure",
-    "no dedicated root gameplay collision",
-    "human GATE-ART pending"
-  ],
-  "next_writer_rules": [
-    "No new mutation is authorized by this closed epoch.",
-    "Before a new wave reread main, fleet registry, claim, this fence and provider project state.",
-    "Open a monotonically increasing writer_fence_epoch and nominate exactly one writer session.",
-    "Require current revision 17, sceneSequence 0 and no active operation unless superseded by a later accepted checkpoint.",
-    "Any unexpected remote revision advance freezes mutation until reconciled.",
-    "A second agent remains read-only or uses a separate registered remote project plus atomic subclaim."
+  "mutation_rules": [
+    "Exactly one writer may mutate the primary project during this epoch.",
+    "Require revision 17, sceneSequence 0 and no active operation immediately before mutation.",
+    "Unexpected revision advancement freezes mutation until reconciled.",
+    "Persist generator, QA receipt, rollback contract and handoff before closing the epoch."
   ],
   "orbital_project": {
     "project_id": "c796230b-0463-4e17-9446-2e746c5c4933",
@@ -59,5 +54,5 @@
     "status": "EMPTY_PENDING_FLEET_REGISTRY",
     "mutation_allowed": false
   },
-  "truth": "Writer epoch 4 is closed after accepted R16 at scene revision 17. Cooperative fence only; not provider ACL."
+  "truth": "Epoch 5 authorizes only the R17 two-root cross-section experiment described above."
 }
