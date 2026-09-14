@@ -1,0 +1,122 @@
+receipt_id: ORIGIN-X100-WAVE-01-QA
+world_id: origin
+owner: AGENT-ORIGIN-WORLD-01
+branch: art/world-origin-001
+protocol: EXOVANT-X100
+truth_state: candidate_production_wave
+status: PASS_WITH_PENDING_GATES
+executed_at: 2026-09-13T20:18:00+02:00
+
+claims:
+  - CLM-ORIGIN-INFRA-ATRIO-SERVICE-001
+  - CLM-ORIGIN-CULT-ORGANISM-001
+  - CLM-ORIGIN-ARCH-ARCHIVE-001
+
+wave_totals:
+  new_stable_assets: 57
+  semantic_families: 21
+  atrio_new_objects: 184
+  atrio_new_approx_triangles: 14544
+  archive_production_approx_triangles: 8688
+  archive_collision_proxies: 21
+
+atrio:
+  project_id: 6e64cd59-f1f6-461f-850c-737d098f1723
+  revision: 5
+  build_operation: origin-x100-atrio-infra-culture-011
+  defect_operation: origin-x100-atrio-infra-culture-qa-012
+  fix_operation: origin-x100-parenting-fix-013
+  final_qa_operation: origin-x100-atrio-infra-culture-qa-014
+  final_qa: PASS
+  stable_assets: 36
+  mesh_children: 148
+  family_count: 13
+  uv_missing: 0
+  zero_area_uv_objects: 0
+  non_unit_transforms: 0
+  missing_semantic_tags: 0
+  camera_outside_objects: 0
+  traversal_claim_mismatches: 0
+  service_min_clearance_beyond_A70_m: 0.4312527094
+  culture_min_clearance_beyond_B52_m: 0.5812839777
+  navigation_geometry_modified: false
+  collision_proxy_count_after_wave: 19
+  blend:
+    size_bytes: 4858381
+    etag: 003cdf96a3fdb2bec13d717e22426dee
+  glb:
+    size_bytes: 5161868
+    etag: 0a6d5e4567673e0ab222d058349c08ad
+  preview:
+    artifact_id: d5887207aa92fdf867ad3895c09591b0
+    width: 1200
+    height: 800
+  retained_failure:
+    cause: direct parenting applied the asset parent transform twice to 148 child meshes
+    effect: first QA measured invalid radial placement and 43 objects outside frame
+    resolution: recover intended child world matrix, re-parent with matrix_parent_inverse, then re-QA
+
+archive:
+  project_id: 9bff5b6c-35a5-4db9-92de-4008a0fc3f4e
+  revision: 2
+  successful_build_operation: origin-archive-x100-kit-build-004
+  first_qa_operation: origin-archive-x100-qa-005
+  portable_light_fix_operation: origin-archive-x100-portable-light-fix-006
+  final_qa_operation: origin-archive-x100-qa-final-007
+  final_qa: PASS
+  stable_assets: 21
+  family_count: 8
+  production_meshes: 94
+  collision_proxies: 21
+  collision_coverage: complete
+  uv_missing: 0
+  zero_area_uv_objects: 0
+  non_unit_transforms: 0
+  missing_semantic_tags: 0
+  missing_materials: 0
+  camera_outside_objects: 0
+  nonportable_lights: 0
+  final_world_placement: false
+  boss_or_heart_included: false
+  dimension_status: PROPOSAL
+  blend:
+    size_bytes: 2499151
+    etag: a48cad97a636328a547e93b5c31c8547
+  glb:
+    size_bytes: 1564652
+    etag: c05c953804c04f187a10025d4dfe4a1f
+  preview:
+    artifact_id: 6d03c6ef040725a5d1f430dbaec891a5
+    width: 1200
+    height: 800
+  retained_failures:
+    - cause: empty 3D project had no World datablock
+      operation: origin-archive-x100-kit-build-002
+      result: transaction failed before commit; project remained revision 0
+    - cause: manual save attempted against empty bpy.data.filepath and resolved to unwritable root
+      operation: origin-archive-x100-kit-build-003
+      result: transaction failed before commit; project remained revision 0
+    - cause: AREA preview lights are not portable in glTF export
+      operation: origin-archive-x100-qa-005
+      result: revision 2 replaced both with SPOT; final portable-light QA PASS
+
+preexisting_runtime_gate:
+  surrogate_characterbody_traversal: PASS
+  engine: Godot 4.7.2 stable official
+  real_glb_import: PENDING_ENV_BLOCKED
+  successful_actions_run_id: 34753608286
+
+pending_gates:
+  - actual GLB transport and native Godot import
+  - Archive native assembly and traversal
+  - real LOD1 / LOD2 geometry and HLOD proof
+  - final causal texture maps
+  - target-hardware performance
+  - human GATE-ART
+  - final Corazon / boss scope remains intentionally unclaimed in this wave
+
+promotion_forbidden:
+  - final AAAA world claim
+  - final engine integration claim
+  - final art approval
+  - target hardware approval

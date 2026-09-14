@@ -1,0 +1,172 @@
+receipt_id: ORIGIN-REAL-GLB-GODOT-001
+world_id: origin
+owner: AGENT-ORIGIN-WORLD-01
+branch: art/world-origin-001
+world_claim: CLM-ORIGIN-WORLD-001
+atomic_claim: CLM-ORIGIN-MEGA-ATRIO-001
+status: PASS
+truth_state: empirically_qualified_native_import_and_atrio_traversal
+qualified_at: 2026-09-14T12:03:00+02:00
+
+engine:
+  name: Godot
+  version: 4.7.2-stable
+  channel: official
+  hash: ed1daf0bf001b61586d9930840f2f1394092c079
+
+inputs:
+  atrio:
+    project_id: 6e64cd59-f1f6-461f-850c-737d098f1723
+    revision: 8
+    glb_size_bytes: 6866000
+    glb_etag: de3984397e1c5c4b768aa62deb95f648
+    glb_sha256: 13ce97f29928befa6efdd70a3f428ffd053883ca3eb9159c2d9366bd74966f8d
+    collision_semantics: walkable_top_surface_only_upward_v3
+  archive:
+    project_id: 9bff5b6c-35a5-4db9-92de-4008a0fc3f4e
+    revision: 6
+    glb_size_bytes: 5171380
+    glb_etag: e25633728494203865bd76b858723960
+    glb_sha256: 7d1ca1c5b04207f490a0ccfdae3fccec32c3b0d06d880d8ad364096cdeb57493
+
+github_evidence:
+  scratch_branch: integration/origin-real-glb-godot-001
+  scratch_pr: 32
+  scratch_commit: 194ee4fe3c04318bf2fab4eb62de72b97eb1b322
+  workflow_run_id: 34831105389
+  workflow_run_number: 377
+  job_id: 103934408512
+  workflow_conclusion: success
+  merge_policy: NO_MERGE_EVIDENCE_ONLY
+
+native_import_readback:
+  atrio:
+    loaded_as_packed_scene: true
+    node_count: 613
+    mesh_count: 570
+    material_slots: 570
+    collision_mesh_count: 19
+    lod1_nodes: 148
+    lod2_nodes: 148
+    service_named_nodes: 107
+    culture_named_nodes: 77
+  archive:
+    loaded_as_packed_scene: true
+    node_count: 804
+    mesh_count: 703
+    material_slots: 703
+    collision_mesh_count: 88
+    lod1_nodes: 94
+    lod2_nodes: 94
+    archive_named_nodes: 553
+    assembly_ids_found: 4
+  import_structure_pass_before_physics: true
+
+real_atrio_physics:
+  static_collision_meshes_built_from_imported_COL_nodes: 19
+  best_radial_angle_degrees: 0.0
+  supported_radii_m:
+    - 11.0
+    - 12.0
+    - 13.0
+    - 14.0
+    - 15.0
+    - 16.0
+    - 17.0
+    - 18.0
+    - 19.0
+    - 20.0
+    - 21.0
+    - 22.0
+    - 23.0
+    - 24.0
+    - 25.0
+    - 26.0
+    - 27.0
+    - 28.0
+    - 29.0
+    - 30.0
+    - 31.0
+    - 32.0
+    - 33.0
+    - 34.0
+    - 35.0
+    - 36.0
+    - 37.0
+  inner_character_landing:
+    radius_m: 11.0
+    on_floor: true
+    floor_frames: 136
+    position: [11.0, 5.24980211257935, 0.0]
+  outer_character_landing:
+    radius_m: 37.0
+    on_floor: true
+    floor_frames: 136
+    position: [37.0, 5.24980211257935, 0.0]
+  radial_character_traversal:
+    start_radius_m: 11.0
+    target_radius_m: 37.0
+    final_radius_m: 38.0284271240234
+    max_radius_m: 38.0284271240234
+    final_y_m: 5.03429460525513
+    min_y_m: 5.03429460525513
+    floor_frames: 400
+  physics_pass: true
+  failures: []
+
+causal_defect_chain:
+  rev6_native_canary:
+    run_id: 34830474717
+    job_id: 103932376097
+    import_structure_pass: true
+    physics_pass: false
+    character_stopped_radius_m: 19.064697265625
+  blender_diagnosis:
+    operation: origin-x100-collision-horizontal-ray-audit-019
+    blocker_object: COL_ORG_ATR_RING_A70_SEG_00
+    blocker_x_m: 19.220577239990234
+    blocker_normal: [1.0, 0.0, 0.0]
+    finding: closed annular collision proxies exposed internal vertical walls across bridge interfaces
+  rev7_fix:
+    operation: origin-x100-ring-collision-topology-fix-020
+    result: removed ring side/bottom walls and preserved only top collision surfaces
+    qa_issue_found: top surfaces had downward winding
+  rev8_fix:
+    operation: origin-x100-ring-collision-winding-fix-022
+    result: nine ring collision surfaces flipped upward
+    final_blender_qa_operation: origin-x100-ring-collision-final-qa-023
+    final_blender_qa: PASS
+    ring_proxy_count: 9
+    ring_proxy_polys_each: 18
+    horizontal_hits_at_capsule_foot_height: 0
+    normals_upward: true
+  same_native_canary_after_fix:
+    run_id: 34831105389
+    conclusion: success
+    physics_pass: true
+
+proven:
+  - exact Atrio rev8 GLB imports in Godot 4.7.2 as PackedScene
+  - exact Archive rev6 GLB imports in Godot 4.7.2 as PackedScene
+  - expected LOD nodes, material slots and Archive assembly IDs survive native import
+  - nineteen Atrio COL meshes can be converted from imported meshes into real StaticBody3D trimesh collision
+  - real CharacterBody3D capsule lands at inner and outer supported radii
+  - real CharacterBody3D traverses the imported radial route through the corrected ring interfaces
+
+not_proven:
+  - merged production gameplay scene integration
+  - Archive assembly CharacterBody traversal
+  - engine runtime LOD switching or HLOD packing
+  - local/variable gravity gameplay
+  - target-hardware frame-time performance
+  - final causal texture sets
+  - human GATE-ART
+
+next_p0:
+  - native Archive assembly traversal using imported rev6 geometry
+  - engine LOD switching and runtime packing proof
+
+verdict: >-
+  REAL_GLB_IMPORT = PASS and REAL_IMPORTED_ATRIO_CHARACTERBODY_TRAVERSAL = PASS for
+  Atrio rev8 + Archive rev6 under Godot 4.7.2 official. Keep the production PR draft because
+  runtime LOD/HLOD, Archive traversal, final materials, hardware performance and human art review remain open.

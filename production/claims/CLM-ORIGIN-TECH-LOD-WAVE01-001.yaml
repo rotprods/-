@@ -1,0 +1,84 @@
+claim_id: CLM-ORIGIN-TECH-LOD-WAVE01-001
+parent_claim: CLM-ORIGIN-WORLD-001
+agent_id: AGENT-ORIGIN-WORLD-01
+claim_type: ATOMIC_SUBCLAIM
+scope_key: world-origin/tech/lod-wave01
+world_id: origin
+category: technical_art
+subdomain: lod_generation
+status: IN_PROGRESS
+truth_state: locally_validated_lod_candidate
+priority: P0
+branch: art/world-origin-001
+created_at: 2026-09-13T20:29:00+02:00
+
+north_star: >-
+  Convert the 57 stable ORIGIN Wave-01 assets into reproducible LOD0/LOD1/LOD2 families
+  while freezing authored LOD0 geometry, preserving asset/material/UV/transform identity and
+  refusing simplifications that exceed the measured silhouette tolerance.
+
+coverage:
+  atrio_assets: 36
+  archive_assets: 21
+  total_assets: 57
+  atrio_source_meshes: 148
+  archive_source_meshes: 94
+
+remote_blender:
+  atrio:
+    project_id: 6e64cd59-f1f6-461f-850c-737d098f1723
+    revision: 6
+    lod0_evaluated_tris: 29328
+    lod1_tris: 14544
+    lod2_tris: 7966
+    lod1_ratio: 0.4959083469721768
+    lod2_ratio: 0.2716175668303328
+    qa_operation: origin-x100-wave2-lod-qa-017
+    qa_result: PASS
+  archive:
+    project_id: 9bff5b6c-35a5-4db9-92de-4008a0fc3f4e
+    revision: 6
+    lod0_evaluated_tris: 16880
+    lod1_tris: 8688
+    lod2_tris: 4610
+    lod1_ratio: 0.5146919431279621
+    lod2_ratio: 0.2731042654028436
+    qa_operation: origin-archive-wave2-lod-qa-final-012
+    qa_result: PASS
+
+qa_contract:
+  asset_coverage: PASS
+  mesh_coverage: PASS
+  uv_preservation: PASS
+  material_identity: PASS
+  transform_identity: PASS
+  max_allowed_bounds_drift_m: 0.06
+  bounds_drift_failures: 0
+  lod0_frozen: true
+  defect_corrected: >-
+    ORG_ARC_ARCHIVE_CORE_SHELL_A_CORE LOD2 initially shrank 0.0791769 m; its LOD2 was
+    replaced by the unbeveled base mesh. Final QA passed with zero >6 cm drift.
+
+includes:
+  - deterministic LOD generator
+  - LOD1 unbeveled source-mesh tier
+  - LOD2 selective decimation tier
+  - explicit high-silhouette exception handling
+  - QA receipt bound to remote revisions
+
+excludes:
+  - engine-side LOD switching
+  - runtime packing / HLOD
+  - GLB file-size reduction claims
+  - target-hardware performance claims
+  - texture-bake optimization
+  - human GATE-ART
+
+pending_gates:
+  - real Godot GLB import
+  - engine LOD selection policy
+  - runtime packaging / HLOD
+  - target-hardware qualification
+  - human GATE-ART
+
+claim_status: KEEP / IN_PROGRESS

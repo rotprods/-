@@ -1,0 +1,138 @@
+claim_id: CLM-ORIGIN-MEGA-ATRIO-001
+parent_claim: CLM-ORIGIN-WORLD-001
+agent_id: AGENT-ORIGIN-WORLD-01
+session_id: SES-20260912-ORIGIN-WORLD-001
+claim_type: ATOMIC_SUBCLAIM
+scope_key: world-origin/megastructures/atrio-route-ring-kit
+world_id: origin
+region_id: ATRIO-DE-LAS-RUTAS
+category: megastructures
+subdomain: route_ring_structural_kit
+status: IN_PROGRESS
+truth_state: empirically_qualified_native_import_and_atrio_traversal_candidate
+priority: P0
+branch: art/world-origin-001
+base_sha: 196ef814fdc845ec797979906d01dc25009217c7
+created_at: 2026-09-12T21:54:00+02:00
+last_qualified_at: 2026-09-14T12:03:00+02:00
+
+north_star: >-
+  Deliver a physically legible, modular, deterministic structural kit for the canonical 70 m
+  three-ring Atrio de las Rutas: black-mineral load paths, living-bronze joints, route apertures,
+  bridge interfaces and collision-ready proxies that read at gameplay distance and can be reused
+  by the ORIGIN world owner without consuming boss, NPC, vehicle or global-runtime ownership.
+
+stable_asset_ids:
+  - ORG_ATR_RING_A70
+  - ORG_ATR_RING_B52
+  - ORG_ATR_RING_C34
+  - ORG_ATR_BRIDGE_RADIAL_A
+  - ORG_ATR_BRIDGE_RADIAL_B
+  - ORG_ATR_BRIDGE_RADIAL_C
+  - ORG_ATR_NODE_SAFE
+  - ORG_ATR_NODE_VALVE
+  - ORG_ATR_ROUTE_APERTURE
+  - ORG_ATR_SUPPORT_PIER
+
+includes:
+  - three connected structural rings fitting the canonical 70 m arena envelope
+  - radial bridge family and junctions
+  - readable safe-node / valve-node physical interfaces
+  - black-mineral structural material role
+  - living-bronze joint/material role
+  - explicit collision proxies
+  - player scale reference from current prototype
+  - deterministic bpy base generator
+  - deterministic rev8 ring-collision corrective generator
+  - X100 infrastructure/culture families and LOD tiers owned by separate atomic claims
+  - native Godot 4.7.2 import and real CharacterBody traversal receipt
+
+excludes:
+  - final EXOVANT boss mesh, rig, attacks or effects
+  - Archive final placement / route topology
+  - Heart of EXOVANT final negotiation center
+  - NPCs
+  - fauna
+  - Arca del Retorno
+  - world terrain outside Atrio envelope
+  - final route-state gameplay logic
+  - final texture library or copied materials from prior worlds
+  - engine migration
+  - target-GPU performance claims
+
+canon_constraints:
+  arena_diameter_m: 70
+  ring_count: 3
+  gravity_behavior: visual/local changes only until gameplay qualification
+  combat_horizon: must remain legible
+  material_language:
+    - black mineral
+    - living bronze
+    - bounded echoes of prior-world materials
+
+proposal_constraints:
+  route_clear_width_m: 4.0
+  bridge_clear_width_m: 4.5
+  ring_deck_width_m: 5.0
+  note: dimensions above remain proposals except the canonical 70 m arena envelope and three-ring topology.
+
+remote_blender:
+  project_id: 6e64cd59-f1f6-461f-850c-737d098f1723
+  revision: 8
+  blender_version: 5.2.0 LTS
+  final_collision_qa_operation: origin-x100-ring-collision-final-qa-023
+  final_collision_qa_result: PASS
+  collision_proxy_count: 19
+  ring_collision_proxy_count: 9
+  ring_collision_semantics: walkable_top_surface_only_upward_v3
+  service_asset_parents: 19
+  culture_asset_parents: 17
+  lod1_meshes: 148
+  lod2_meshes: 148
+  glb_size_bytes: 6866000
+  glb_etag: de3984397e1c5c4b768aa62deb95f648
+  glb_sha256: 13ce97f29928befa6efdd70a3f428ffd053883ca3eb9159c2d9366bd74966f8d
+
+native_godot_qualification:
+  receipt: production/receipts/origin/ORIGIN-REAL-GLB-GODOT-001.yaml
+  engine: Godot 4.7.2-stable official
+  engine_hash: ed1daf0bf001b61586d9930840f2f1394092c079
+  validation_run_id: 34831105389
+  validation_job_id: 103934408512
+  import_structure_pass: true
+  atrio_mesh_count: 570
+  atrio_material_slots: 570
+  imported_collision_meshes: 19
+  static_collision_meshes_built: 19
+  inner_character_landing_on_floor: true
+  outer_character_landing_on_floor: true
+  radial_character_start_radius_m: 11.0
+  radial_character_target_radius_m: 37.0
+  radial_character_final_radius_m: 38.0284271240234
+  radial_character_floor_frames: 400
+  physics_pass: true
+  failures: []
+
+checkpoint_completed:
+  - deterministic base source generator committed
+  - deterministic rev8 collision corrective generator committed
+  - baseline structural QA PASS
+  - X100 infrastructure/culture family QA PASS
+  - LOD1/LOD2 authored geometry QA PASS under CLM-ORIGIN-TECH-LOD-WAVE01-001
+  - GLB export PASS
+  - exact Atrio rev8 GLB imported in Godot 4.7.2 as PackedScene
+  - expected stable naming, materials and LOD nodes survived import
+  - nineteen imported COL meshes converted into real StaticBody3D collision
+  - real CharacterBody3D inner/outer landing PASS
+  - real CharacterBody3D radial traversal PASS across corrected ring/bridge interfaces
+  - causal rev6 traversal blocker diagnosed and corrected without modifying visual or LOD geometry
+
+pending_gates:
+  - native CharacterBody traversal of Archive assembly proposals
+  - engine runtime LOD switching / HLOD packing
+  - local/variable-gravity gameplay validation
+  - final causal texture maps / PBR finishing
+  - target-hardware performance
+  - human GATE-ART review
+
+claim_status: KEEP / IN_PROGRESS
