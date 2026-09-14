@@ -1,0 +1,139 @@
+{
+  "schema_version": 1,
+  "protocol": "EXOVANT-X100-v1",
+  "world_id": "aurora",
+  "region_id": "AUR_R02_REPETITION_PLAIN",
+  "parent_claim": "CLM-AURORA-WORLD-001",
+  "workunit_id": "AUR-X100-PRAIRIE-ECO-001",
+  "owner": "AGENT-02-AURORA",
+  "remote_project_id": "d6488148-8547-4ffe-b63d-e5fbec3a339c",
+  "remote_revision": 26,
+  "scene_status": "X100_PRAIRIE_SYSTEM_R26_LOD_QA",
+  "quality_claim": "REVIEW_TECHNICAL_SYSTEMIC; NOT_FINAL_ART",
+  "canon_contract": {
+    "canonical_species": "Hierba de dos sombras",
+    "new_species_invented": false,
+    "ecological_role": "indicates local temporal offset",
+    "global_rewind": "FORBIDDEN",
+    "morphotypes_are": "PROPOSAL intra-species production states, not new species"
+  },
+  "systemic_density": {
+    "patches": 6,
+    "total_tufts": 897,
+    "lod0_triangles": 8442,
+    "lod1_triangles": 2868,
+    "lod2_triangles": 1128,
+    "temporal_shadow_triangles": 532,
+    "temporal_shadow_tufts": 266,
+    "scene_patch_objects": 6,
+    "temporal_shadow_objects": 3,
+    "legacy_proxy_grass_visible": 0,
+    "morphotype_counts": {
+      "MATURE_TALL": 238,
+      "JUVENILE": 86,
+      "MATURE_SHORT": 195,
+      "SENESCENT": 69,
+      "TEMPORAL_EDGE": 266,
+      "TRAMPLED_PATH": 43
+    }
+  },
+  "patch_distribution": [
+    {"patch":0,"center":[-520,-140],"tufts":160,"temporal_shadow_tufts":69,"triangles":1532,"role":"Field A temporal annulus"},
+    {"patch":1,"center":[50,155],"tufts":153,"temporal_shadow_tufts":100,"triangles":1510,"role":"Field B temporal annulus"},
+    {"patch":2,"center":[550,-170],"tufts":153,"temporal_shadow_tufts":97,"triangles":1496,"role":"Field C temporal annulus"},
+    {"patch":3,"center":[-300,25],"tufts":131,"temporal_shadow_tufts":0,"triangles":1150,"role":"traversal-context patch"},
+    {"patch":4,"center":[300,5],"tufts":138,"temporal_shadow_tufts":0,"triangles":1250,"role":"traversal-context patch"},
+    {"patch":5,"center":[0,420],"tufts":162,"temporal_shadow_tufts":0,"triangles":1504,"role":"background/control patch"}
+  ],
+  "placement_gauntlet": {
+    "terrain_contact_sample_max_abs_error_m": 0.006897,
+    "field_core_min_distance_m": {"A":48.556,"B":47.737,"C":46.192},
+    "field_core_exclusion_pass": true,
+    "route_min_distance_m": 7.02,
+    "route_clear_strip_pass": true,
+    "per_blade_collision": false,
+    "collision_policy": "NONE_PER_BLADE"
+  },
+  "morphotype_contract": [
+    {"id":"JUVENILE","cause":"growth stage","height_m":[0.20,0.34]},
+    {"id":"MATURE_SHORT","cause":"growth/competition state","height_m":[0.42,0.60]},
+    {"id":"MATURE_TALL","cause":"mature low-disturbance growth","height_m":[0.68,0.96]},
+    {"id":"TRAMPLED_PATH","cause":"repeated traversal contact","height_m":[0.15,0.28]},
+    {"id":"SENESCENT","cause":"age/senescence","height_m":[0.40,0.72]},
+    {"id":"TEMPORAL_EDGE","cause":"bounded local temporal-offset habitat cue","height_m":[0.50,0.82]}
+  ],
+  "temporal_second_shadow": {
+    "objects": 3,
+    "fields_covered": ["A","B","C"],
+    "rule": "extra offset ground-shadow evidence only inside bounded temporal annulus; primary shadow remains physical scene lighting",
+    "offset_causality": "offset magnitude derived from the local field delay metadata and oriented by the existing stellar SUN direction"
+  },
+  "lod_contract": {
+    "status": "PASS_ENVELOPE_EXACT",
+    "levels": ["LOD0","LOD1","LOD2"],
+    "lod1_triangle_reduction": 0.6603,
+    "lod2_triangle_reduction": 0.8664,
+    "method": "blade-group reduction plus mandatory retention of groups containing X/Y/Z extrema",
+    "all_patch_bboxes_equal_to_lod0": true,
+    "lod_meshes_present_as_scene_objects": false,
+    "engine_switching": "BLOCKED_EXO_012",
+    "stale_mesh_bug_fixed_at_revision": 26
+  },
+  "failure_fix_history": [
+    {"attempt":"r24 initial","result":"NO_COMMIT","finding":"Python result literal used false instead of False; revision remained 23"},
+    {"revision":24,"result":"REJECTED_SEMANTICALLY","finding":"TRAMPLED_PATH had zero instances and temporal edge coverage omitted field B"},
+    {"revision":25,"result":"PASS_PLACEMENT_WITH_LOD_FINDING","finding":"all six morphotypes and A/B/C coverage achieved; stale fake-user LOD datablocks caused invalid bbox audit"},
+    {"revision":26,"result":"PASS_TECHNICAL","fix":"stale LODs removed and canonical LOD1/2 rebuilt from LOD0 with exact envelope preservation"}
+  ],
+  "portable_artifacts_revision_26": {
+    "blend": {"size_bytes":11285541,"etag":"d26b1f28f7777d446ba534aa51399ca4"},
+    "glb": {"size_bytes":6589192,"etag":"5ce9a5b1c6feb425424311b606ab7892"}
+  },
+  "visual_qa": {
+    "workbench": {
+      "artifact":"aurora_x100_r26_prairie_structural.png",
+      "artifact_id":"26ba41e5abe118153fbf092d5f5cb6e9",
+      "resolution":[480,270],
+      "mean":0.2785,
+      "stddev":0.0853,
+      "p01":0.1294,
+      "p50":0.3095,
+      "p99":0.3787,
+      "gate":"PASS_STRUCTURAL"
+    },
+    "eevee": {
+      "artifact":"aurora_x100_r26_prairie_eevee.png",
+      "artifact_id":"6b8c8b9319321cb3c96f9648abbd377b",
+      "resolution":[480,270],
+      "mean":0.1676,
+      "stddev":0.0989,
+      "p01":0.041,
+      "p50":0.1948,
+      "p99":0.7168,
+      "black_clip":0.0,
+      "white_clip":0.0,
+      "gate":"PASS_TECHNICAL_PHOTOMETRIC"
+    },
+    "human_gate_art":"PENDING"
+  },
+  "gates": {
+    "CANON_SPECIES":"PASS",
+    "NO_NEW_SPECIES":"PASS",
+    "CAUSAL_VARIATION":"PASS_SYSTEMIC_PROOF",
+    "TERRAIN_CONTACT":"PASS",
+    "TEMPORAL_CORE_EXCLUSION":"PASS",
+    "TRAVERSAL_STRIP":"PASS",
+    "TEMPORAL_EDGE_COVERAGE":"PASS_A_B_C",
+    "LOD":"PASS_ENVELOPE_EXACT",
+    "COLLISION":"PASS_NONE_PER_BLADE",
+    "GLB_EXPORT":"PASS_REV26",
+    "STRUCTURAL_RENDER":"PASS",
+    "PHOTOMETRIC_RENDER":"PASS_TECHNICAL",
+    "FINAL_TEXTURE_ALPHA_CARD_STRATEGY":"OPEN",
+    "ENGINE_VEGETATION_RUNTIME":"BLOCKED_EXO_012",
+    "TARGET_HARDWARE_PERFORMANCE":"BLOCKED_TARGET_HARDWARE",
+    "HUMAN_GATE_ART":"PENDING"
+  },
+  "source":"art_source/aurora_veil/X100/blender/aurora_x100_prairie_r26.py",
+  "conclusion":"Eligible for REVIEW_TECHNICAL_SYSTEMIC, not DONE/AAAA. The canonical single species now provides systemic prairie density, local temporal readability and causal traversal wear without adding invented biology or thousands of Blender objects."
+}

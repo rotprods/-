@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "world_id": "aurora",
+  "claim_id": "CLM-AURORA-WORLD-001",
+  "task_id": "AUR/MAT/020",
+  "remote_project_id": "d6488148-8547-4ffe-b63d-e5fbec3a339c",
+  "remote_revision": 15,
+  "contract": "AUR-MAT-v1-r15",
+  "scope": "MANUFACTURED_CAMP_MATERIALS_ONLY",
+  "terrain_lithology_status": "PENDING_LITHOLOGY_DO_NOT_CANONIZE_MINERAL_FOUNDATION_AS_TERRAIN",
+  "final_pbr_claimed": false,
+  "materials": {
+    "AUR_MAT_STRUCTURAL_GALV_STEEL": {"srgb8":[118,128,132],"metallic":1.0,"roughness":0.34,"roughness_range":[0.28,0.60],"ior":1.5},
+    "AUR_MAT_CERAMIC_COMPOSITE_PANEL": {"srgb8":[150,154,152],"metallic":0.02,"roughness":0.56,"roughness_range":[0.48,0.74],"ior":1.5,"coat":0.08,"coat_roughness":0.32},
+    "AUR_MAT_EPDM_GASKET": {"srgb8":[20,23,25],"metallic":0.0,"roughness":0.90,"roughness_range":[0.82,0.96],"ior":1.52},
+    "AUR_MAT_DARK_TEMPERED_GLASS": {"srgb8":[24,42,48],"metallic":0.0,"roughness":0.12,"roughness_range":[0.05,0.28],"ior":1.52,"transmission":0.62,"coat":0.03},
+    "AUR_MAT_CLOCK_BRONZE_CAL": {"srgb8":[112,64,24],"metallic":1.0,"roughness":0.40,"roughness_range":[0.28,0.68]},
+    "AUR_MAT_MINERAL_FOUNDATION": {"srgb8":[92,88,82],"metallic":0.0,"roughness":0.84,"roughness_range":[0.72,0.95],"ior":1.5,"role_boundary":"manufactured foundation only; not planetary lithology"},
+    "AUR_MAT_SERVICE_TRAY": {"srgb8":[96,101,104],"metallic":0.90,"roughness":0.47,"roughness_range":[0.38,0.66]}
+  },
+  "lookdev": {
+    "artifact":"aurora_r15_material_lookdev.png",
+    "artifact_id":"042b49d7e35dbf07d46c2da32ee779d6",
+    "resolution":[480,270],
+    "mean":0.2503,"p01":0.0,"p50":0.3023,"p99":0.3524,"black_clip":0.0253,"white_clip":0.0
+  },
+  "camp_context": {
+    "artifact":"aurora_r15_camp_material_context.png",
+    "artifact_id":"679c139409f72031592e96d90431add0",
+    "resolution":[480,270],
+    "mean":0.1741,"p01":0.0410,"p50":0.1912,"p99":0.5003,"black_clip":0.0004,"white_clip":0.0,
+    "r8_mean":0.1714,"mean_delta":0.0027
+  },
+  "portable_artifacts_revision_15": {
+    "blend":{"size_bytes":7623679,"etag":"e72ec3836cc4f7096e7b45cf7495c892"},
+    "glb":{"size_bytes":5123536,"etag":"a3db0c8eacc3a9a07c7f36db1e15e876"}
+  },
+  "gates": {
+    "PARAMETER_PERSISTENCE":"PASS",
+    "LINEAR_COLOR_CONVERSION":"PASS",
+    "MATERIAL_ROLE_SEPARATION":"PASS",
+    "WEAR_CAUSALITY_METADATA":"PASS_CONTRACT",
+    "TERRAIN_LITHOLOGY_BOUNDARY":"PASS",
+    "CAMP_PHOTOMETRIC_REGRESSION":"PASS",
+    "TEXTURE_PBR":"NOT_STARTED",
+    "UV_TEXEL_DENSITY":"NOT_STARTED_FINAL_ASSETS",
+    "ART":"PENDING_HUMAN_VISUAL_REVIEW",
+    "RUNTIME_SHADER_COST":"BLOCKED_ENGINE_TARGET"
+  }
+}

@@ -1,0 +1,121 @@
+{
+  "schema_version": 1,
+  "world_id": "aurora",
+  "claim_id": "CLM-AURORA-WORLD-001",
+  "agent_id": "AGENT-02-AURORA",
+  "session_id": "AURORA-20260912T192957Z-001",
+  "remote_project_id": "d6488148-8547-4ffe-b63d-e5fbec3a339c",
+  "remote_revision": 7,
+  "blender_worker": "5.2",
+  "task_id": "AUR/WORLD/003",
+  "task": "L1 orbital representation blockout",
+  "quality_claim": "TECHNICALLY_VERIFIED_DISPLAY_PROXY; HUMAN_ART_REVIEW_PENDING",
+  "epistemic_contract": {
+    "physical_radius_m": 5900000,
+    "radius_status": "PROPOSAL",
+    "display_scale": 0.0001,
+    "display_radius_m": 590,
+    "global_geography": "UNKNOWN_NOT_AUTHORED",
+    "canon_preserved": [
+      "Aurora Veil world identity",
+      "two observation stations with divergent clocks",
+      "auroral temporal visual language",
+      "bounded temporal rule remains local; no global rewind"
+    ]
+  },
+  "scene_facts": {
+    "orbital_collection": "14_ORBITAL_PROXY",
+    "orbital_objects": 11,
+    "planet_asset_id": "AUR-PLN-001",
+    "atmosphere_asset_id": "AUR-ATM-001",
+    "planet_shell_dimensions_m_display": [1180,1180,1180],
+    "planet_shell_vertices": 2562,
+    "planet_shell_polygons": 5120,
+    "atmosphere_dimensions_m_display": [1205.961,1205.962,1205.960],
+    "atmosphere_vertices": 4514,
+    "atmosphere_polygons": 4608,
+    "aurora_ribbons": 4,
+    "observation_station_proxies": 2,
+    "sun_lights": ["SUN_VELAR_LOW"],
+    "area_lights": [],
+    "orbital_camera": "CAM_AURORA_ORBITAL_L1"
+  },
+  "portable_artifacts_revision_7": {
+    "blend": {"size_bytes": 5859342, "etag": "7418b326a1a0745688903f0b3fc42b3e"},
+    "glb": {"size_bytes": 4503316, "etag": "210ef84a071fb40a3b62c81d73b7b656"}
+  },
+  "operations": [
+    {
+      "id": "aurora-wave1-orbital-l1-r6",
+      "result": "PASS_WITH_DESIGN_REGRESSION_FOUND",
+      "revision_after": 6,
+      "finding": "A second orbital SUN would have affected all surface regions because directional lighting is scene-global."
+    },
+    {
+      "id": "aurora-orbital-r7-single-star-fix",
+      "result": "PASS",
+      "revision_after": 7,
+      "detail": "Removed SUN_VELAR_ORBITAL; L1 proxy now reuses the single SUN_VELAR_LOW."
+    },
+    {
+      "id": "aurora-orbital-r7-technical-audit",
+      "result": "PASS",
+      "checks": {
+        "planet_and_atmosphere_separate": true,
+        "global_geography_not_invented": true,
+        "two_station_proxies": true,
+        "four_aurora_ribbons": true,
+        "single_sun": true,
+        "area_lights_zero": true,
+        "display_scale_explicit": true,
+        "proposal_status_explicit": true
+      }
+    },
+    {
+      "id": "aurora-orbital-r7-render-qa",
+      "result": "PASS_PHOTOMETRIC_BLOCKOUT",
+      "render": {
+        "name": "aurora_r7_orbital_l1.png",
+        "artifact_id": "46c6e0a6451b54fcef6cd1b5c3d2346e",
+        "size_bytes": 183548,
+        "resolution": [480,270],
+        "mean": 0.1114,
+        "p01": 0.041,
+        "p50": 0.1056,
+        "p99": 0.2457,
+        "black_clip": 0,
+        "white_clip": 0
+      },
+      "boundary": "Photometric validation does not equal human art-direction approval."
+    },
+    {
+      "id": "aurora-r7-surface-regression",
+      "result": "PASS",
+      "camera": "CAM_AURORA_WORLD_OVERVIEW",
+      "baseline_revision": 5,
+      "baseline_mean": 0.1793,
+      "revision_7_mean": 0.1793,
+      "mean_delta": 0.0,
+      "tolerance": 0.01,
+      "black_clip": 0,
+      "white_clip": 0,
+      "conclusion": "L1 orbital package did not perturb the validated surface overview exposure."
+    }
+  ],
+  "surface_render_baseline_revision_5": [
+    {"name":"aurora_r5_overview.png","artifact_id":"f84c1785da5a26f4948cfe6b98da76e5","resolution":[640,360]},
+    {"name":"aurora_r5_camp.png","artifact_id":"25ceae28f42f7b80791faae4f003543e","resolution":[640,360]},
+    {"name":"aurora_r5_aeon.png","artifact_id":"22027b240626f24169a90e85619f9e7b","resolution":[640,360]}
+  ],
+  "gates": {
+    "CANON": "PASS_FOR_L1_BLOCKOUT",
+    "SCALE_CONTRACT": "PASS_PROPOSAL_DISPLAY_PROXY",
+    "LAYER_SEPARATION": "PASS",
+    "EXPORT": "PASS_REMOTE_GLB_REV7",
+    "SURFACE_REGRESSION": "PASS",
+    "PHOTOMETRIC": "PASS_BLOCKOUT",
+    "ART": "PENDING_HUMAN_VISUAL_REVIEW",
+    "ENGINE": "BLOCKED_EXO_012",
+    "PERFORMANCE": "BLOCKED_TARGET_HARDWARE"
+  }
+}

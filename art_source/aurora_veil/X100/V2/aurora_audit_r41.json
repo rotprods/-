@@ -1,0 +1,40 @@
+{
+  "schema_version": 2,
+  "protocol": "EXOVANT-X100-V2",
+  "world_id": "aurora",
+  "remote_revision": 41,
+  "status": "EVIDENCE_BACKED_LOWER_BOUND_NOT_CERTIFICATION",
+  "strict_score_pct_lower_bound": 31.2363,
+  "coverage": {
+    "macro_world": 0.2750,
+    "meso_architecture": 0.3000,
+    "micro_assets": 0.3000,
+    "ecology": 0.3250,
+    "civilization": 0.3500,
+    "gameplay": 0.3000,
+    "material_causality": 0.3250,
+    "variation": 0.3583,
+    "temporal_states": 0.4000,
+    "storytelling": 0.4250,
+    "audiovisual_language": 0.1667,
+    "optimization": 0.3000,
+    "reusability": 0.4417,
+    "qa": 0.2000
+  },
+  "top_pressure": [
+    {"dimension":"qa","pressure":0.119679,"actionability":"PARTIALLY_BLOCKED_HUMAN_ENGINE"},
+    {"dimension":"audiovisual_language","pressure":0.106830,"actionability":"PARTLY_NON_3D_OWNER"},
+    {"dimension":"macro_world","pressure":0.090766,"actionability":"ACTIONABLE_3D"},
+    {"dimension":"meso_architecture","pressure":0.080716,"actionability":"ACTIONABLE_3D"},
+    {"dimension":"gameplay","pressure":0.080716,"actionability":"ACTIONABLE_3D"},
+    {"dimension":"material_causality","pressure":0.072293,"actionability":"ACTIONABLE_3D"},
+    {"dimension":"optimization","pressure":0.070627,"actionability":"ACTIONABLE_BUT_RUNTIME_BLOCKED"}
+  ],
+  "selected_next_gap": {
+    "id":"AUR-X100-INTERREGION-TRANSPORT-001",
+    "dimension":"macro_world",
+    "cell":"transport_network",
+    "reason":"highest-pressure fully actionable 3D gap after HLOD; connects all three authored regions and unlocks traversal, route storytelling, vehicle use and vistas"
+  },
+  "queued_after_recompute": "AUR-X100-TEMPORAL-ARCHIVE-001 / Q_AURORA_M05"
+}

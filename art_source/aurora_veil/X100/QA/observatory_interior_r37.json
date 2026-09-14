@@ -1,0 +1,152 @@
+{
+  "schema_version": 1,
+  "protocol": "EXOVANT-X100-v1",
+  "world_id": "aurora",
+  "region_id": "AUR_R01_CAMP_SECOND_DAY",
+  "workunit_id": "AUR-X100-OBSERVATORY-INTERIOR-001",
+  "owner": "AGENT-02-AURORA",
+  "remote_project_id": "d6488148-8547-4ffe-b63d-e5fbec3a339c",
+  "accepted_revision": 37,
+  "scene_status": "X100_OBSERVATORY_INTERIOR_R37_CLEARANCE_QA",
+  "quality_claim": "REVIEW_TECHNICAL_SYSTEMIC; FIRST L3 AURORA INTERIOR SYSTEM; NOT FINAL ART",
+  "scope": {
+    "proof_center_xy_m": [-1520.0, 550.0],
+    "grid_m": 4.0,
+    "proof_footprint_m": [12.0, 12.0],
+    "proof_state": "USED_OPERATIONAL",
+    "layout_variants": 12,
+    "proof_objects": 107,
+    "interior_source_families": 13,
+    "reused_qualified_prop_families": 16,
+    "collision_clearance_contracts": 6,
+    "functional_zones": {
+      "CALIBRATION": 6,
+      "ROUTE_ARCHIVE": 18,
+      "INSTRUMENT_SERVICE": 10,
+      "OBSERVATION_READOUT": 6
+    }
+  },
+  "construction_and_support": {
+    "foundation_piers": 16,
+    "pier_bottom_terrain_offset_m": 0.08,
+    "pier_top_platform_error_m": 0.0,
+    "foundation_gate": "PASS",
+    "reused_prop_objects": 21,
+    "unsupported_prop_objects": 0,
+    "prop_support_gate": "PASS",
+    "source_families_unused": 0,
+    "scale_1_1_1_gate": "PASS",
+    "central_cross_intrusions": 0,
+    "central_cross_gate": "PASS"
+  },
+  "maintenance_clearance": {
+    "gate": "PASS_7_OF_7",
+    "contracts": [
+      {"object": "AUR_INT_CAL_CONSOLE", "front": "NORTH", "clearance_m": 0.8},
+      {"object": "AUR_INT_OBS_CONSOLE", "front": "SOUTH", "clearance_m": 0.8},
+      {"object": "AUR_INT_SERVICE_CONSOLE_R36", "front": "NORTH", "clearance_m": 0.8},
+      {"object": "AUR_INT_SERVICE_CAB", "front": "EAST", "clearance_m": 0.9},
+      {"object": "AUR_INT_ARCHIVE_RACK_0", "front": "WEST", "clearance_m": 0.8},
+      {"object": "AUR_INT_ARCHIVE_RACK_1", "front": "WEST", "clearance_m": 0.8},
+      {"object": "AUR_INT_PATCH_PANEL", "front": "WEST", "clearance_m": 0.7}
+    ],
+    "blockers": []
+  },
+  "systemic_family_usage": {
+    "AUR-INT-001": 3,
+    "AUR-INT-002": 2,
+    "AUR-INT-003": 1,
+    "AUR-INT-004": 2,
+    "AUR-INT-005": 4,
+    "AUR-INT-006": 4,
+    "AUR-INT-007": 4,
+    "AUR-INT-008": 2,
+    "AUR-INT-009": 4,
+    "AUR-INT-010": 4,
+    "AUR-INT-011": 6,
+    "AUR-INT-012": 1,
+    "AUR-INT-013": 16
+  },
+  "reused_qualified_prop_families": [
+    "AUR_X100_PRP_ARCHIVE_TRAY_MESH",
+    "AUR_X100_PRP_CABLE_SPOOL_MESH",
+    "AUR_X100_PRP_CALIBRATION_TABLE_MESH",
+    "AUR_X100_PRP_CLOCK_CASE_MESH",
+    "AUR_X100_PRP_FIELD_LOG_SLATE_MESH",
+    "AUR_X100_PRP_LENS_CASE_MESH",
+    "AUR_X100_PRP_OPTICAL_CRADLE_MESH",
+    "AUR_X100_PRP_PARTS_TRAY_MESH",
+    "AUR_X100_PRP_PATCH_CASE_MESH",
+    "AUR_X100_PRP_PENDULUM_FRAME_MESH",
+    "AUR_X100_PRP_PHASE_WHEEL_MESH",
+    "AUR_X100_PRP_PORTABLE_LAMP_MESH",
+    "AUR_X100_PRP_RECORD_CANISTER_MESH",
+    "AUR_X100_PRP_ROUTE_CARTRIDGE_MESH",
+    "AUR_X100_PRP_SERVICE_TROLLEY_MESH",
+    "AUR_X100_PRP_TOOL_CHEST_MESH"
+  ],
+  "portable_artifacts_revision_37": {
+    "blend_size_bytes": 14066536,
+    "blend_etag": "3eba825c2b5c6f05653805e5f4947d49",
+    "glb_size_bytes": 7183880,
+    "glb_etag": "004cdee6df526e3b2686158a8df948fc",
+    "export_smoke": "PASS"
+  },
+  "visual_qa": {
+    "workbench": {
+      "artifact": "aurora_x100_r37_observatory_interior_structural.png",
+      "artifact_id": "526a853a24b316ac378d022f3f7fb823",
+      "resolution": [480, 270],
+      "mean": 0.4208,
+      "stddev": 0.1654,
+      "p01": 0.1165,
+      "p50": 0.4375,
+      "p99": 0.6104,
+      "gate": "PASS_STRUCTURAL"
+    },
+    "eevee": {
+      "artifact": "aurora_x100_r37_observatory_interior_eevee.png",
+      "artifact_id": "6464f90a3bf8785a2a62e9c52088dcca",
+      "resolution": [320, 180],
+      "mean": 0.0669,
+      "stddev": 0.1125,
+      "p01": 0.0039,
+      "p50": 0.0236,
+      "p99": 0.5421,
+      "black_clip": 0.0851,
+      "white_clip": 0.0,
+      "lights": ["AUR_INT_TASK_LIGHT_0", "AUR_INT_TASK_LIGHT_1", "AUR_INT_TASK_LIGHT_2", "AUR_INT_TASK_LIGHT_3", "SUN_VELAR_LOW"],
+      "gate": "PASS_TECHNICAL_LOWKEY",
+      "art_note": "Interior is intentionally low-key in this technical pass; 8.51% near-black remains an art/exposure review item rather than a technical failure."
+    },
+    "human_gate_art": "PENDING"
+  },
+  "gates": {
+    "CANON_BOUNDARY": "PASS_PROPOSAL_ONLY",
+    "REAL_SCALE": "PASS",
+    "FOUNDATION_CONTACT": "PASS",
+    "CENTRAL_CIRCULATION": "PASS",
+    "MAINTENANCE_CLEARANCE": "PASS_7_OF_7",
+    "PROP_SUPPORT": "PASS_21_OF_21",
+    "FUNCTIONAL_ZONE_COVERAGE": "PASS_4_OF_4",
+    "SOURCE_FAMILY_USE": "PASS_NO_UNUSED",
+    "CULTURAL_PROP_REUSE": "PASS_16_FAMILIES",
+    "LAYOUT_COMBINATORICS": "PASS_12_VARIANTS",
+    "COLLISION_SEPARATION": "PASS_ZERO_SCENE_USERS",
+    "AREA_LIGHT_PORTABILITY_DEPENDENCY": "NONE",
+    "GLB_EXPORT": "PASS_REV37",
+    "STRUCTURAL_RENDER": "PASS",
+    "EEVEE_TECHNICAL": "PASS_LOWKEY_ART_REVIEW_OPEN",
+    "FINAL_UV_BAKES_TEXTURES": "OPEN",
+    "RUNTIME_INTERACTION_UI": "OPEN",
+    "ENGINE_IMPORT": "BLOCKED_EXO_012",
+    "TARGET_HARDWARE_PERFORMANCE": "BLOCKED_TARGET_HARDWARE",
+    "HUMAN_GATE_ART": "PENDING"
+  },
+  "failure_history": [
+    "r35 Gauntlet found 12 unsupported props and unused AUR-INT-011 shelf family; r36 added physical shelf/support surfaces and relocated all unsupported objects.",
+    "r36 maintenance audit found three blocked service fronts; r37 rearranged five objects without changing the 12x12m footprint or four functional zones.",
+    "First r37 Workbench query failed before render due bpy collection membership API misuse; scene was not mutated and corrected query passed."
+  ],
+  "conclusion": "Aurora now has a real L3 systemic interior proof with measured circulation, service access, physical supports, reused cultural props and deterministic layout variants. Eligible for REVIEW_TECHNICAL_SYSTEMIC, not DONE/AAAA."
+}

@@ -1,0 +1,81 @@
+workunit_id: AUR-X100-ANTELOPE-FAMILY-001
+parent_claim: CLM-AURORA-WORLD-001
+owner: AGENT-02-AURORA
+branch: art/world-aurora-veil-001
+world_id: aurora
+region_id: AUR_R02_REPETITION_PLAIN
+status: IN_PROGRESS
+protocol: EXOVANT-X100-v1
+scope_key: aurora/fauna/aurora-antelope-family
+priority: P1_HIGH_VISIBILITY_ECOLOGY
+created_at: 2026-09-13T20:50:00+02:00
+remote_project_id: d6488148-8547-4ffe-b63d-e5fbec3a339c
+remote_base_revision: 30
+
+north_star: >-
+  Replace semantic antelope/enemy proxies with one coherent canonical-species family foundation that supports healthy wildlife, age/body variation, delayed-footprint environmental storytelling and the canon Antilope quebrado hostile variation while preserving explicit anatomy/runtime blockers.
+
+canon_basis:
+  - Antilope de aurora: footprints appear with delay
+  - Antilope quebrado: altered fauna that retains a charge route
+  - Aurora temporal effects are bounded/local; no whole-world rewind
+  - region reference gravity is 0.94 g and temperature is 11 C
+
+proposal_boundary:
+  - exact anatomy, body proportions, appendages, surface pattern, locomotor mechanics, feeding ecology and sexual dimorphism are production proposals until promoted by an approved creature bible
+  - broken-state injuries are authored as reversible visual proposals; no gore or hidden gameplay ability is invented
+
+includes:
+  - adult healthy structural anatomy blockout
+  - juvenile/body-scale variant
+  - mature/heavier body variant if anatomy remains coherent
+  - canon broken hostile visual state derived from the same species
+  - neutral, locomotion-readiness and charge-readiness proof poses
+  - delayed footprint trail geometry and delay metadata
+  - skeleton/rig-interface proposal where technically safe
+  - LOD0/LOD1/LOD2 silhouette-preserving contracts
+  - simple body/hoof collision contracts
+  - deterministic dimensions, terrain contact and player-scale QA
+  - generator, receipts and handoff
+
+excludes:
+  - final sculpt/retopology/skin/fur production
+  - final animation set
+  - combat AI, damage values or charge behavior code
+  - new fauna species
+  - named individual antelopes
+  - global temporal runtime mutation
+  - AEON content
+  - engine-specific import/performance before EXO-012
+
+quality_rules:
+  - quadruped mass/load path must be plausible before surface detail
+  - feet must contact terrain in every proof pose
+  - broken variation must preserve species silhouette and charge readability rather than becoming random corruption
+  - delayed footprints are local environmental state evidence, not duplicated whole-world time travel
+  - no random emissives, greebles or decorative horns without functional/anatomical rationale
+  - proposal morphology must be clearly tagged as proposal
+  - HUMAN GATE-ART and creature-anatomy approval remain separate
+
+family_dod:
+  - stable AUR-FAU-002 healthy-family ID and AUR-ENM-003 broken-state interface
+  - adult dimensions and player-scale comparison
+  - juvenile/adult/mature variants share anatomical grammar
+  - broken hostile variant remains recognizably same species
+  - proof terrain contacts pass
+  - delayed footprint trail uses explicit seconds/state metadata
+  - LOD envelope/silhouette contract exists
+  - collision/rig interface documented
+  - GLB exchange smoke pass
+  - technical render receipts
+  - source generator persisted
+
+blocked_by:
+  - creature lead anatomy/art approval
+  - final sculpt/retopology/UV/skin surface production
+  - production animation/gameplay integration
+  - EXO-012 engine import
+  - target-hardware performance
+
+stop_condition: >-
+  Do not mark DONE from blockout. Technical family may enter REVIEW only after anatomy proportions, terrain contact, species-state continuity, footprint-delay contract, LOD/collision and evidence pass. Final creature art remains open until sculpt/retopo/surface/rig/animation/human review are qualified.

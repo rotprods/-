@@ -1,0 +1,163 @@
+{
+  "schema_version": 1,
+  "protocol": "EXOVANT-X100-v1",
+  "world_id": "aurora",
+  "region_id": "AUR_R02_REPETITION_PLAIN",
+  "workunit_id": "AUR-X100-PLAIN-STORY-SITES-001",
+  "owner": "AGENT-02-AURORA",
+  "remote_project_id": "d6488148-8547-4ffe-b63d-e5fbec3a339c",
+  "accepted_revision": 34,
+  "scene_status": "X100_PLAIN_STORY_SITES_R34_WINDOW_B_QA",
+  "quality_claim": "REVIEW_TECHNICAL_SYSTEMIC; MISSION-ENVIRONMENT STATE PROOF; NOT FINAL ART",
+  "coverage": {
+    "source_families": 13,
+    "collision_clearance_contracts": 5,
+    "accident_objects": 20,
+    "rescue_objects": 39,
+    "accident_states": ["PRE_EVENT", "ECHO_ACTIVE", "AFTERMATH"],
+    "rescue_states": ["CLOSED", "OPEN_WINDOW", "MISSED_COLLAPSED"],
+    "stable_component_ids": 25,
+    "accident_default": "AFTERMATH",
+    "rescue_default": "CLOSED"
+  },
+  "sites": {
+    "ACCIDENT": {
+      "center_xy_m": [-850, 520],
+      "terrain_z_m": 16.389,
+      "mission_implication": "Q_AURORA_M02 / accident echo set",
+      "field_distance_m": {"A": 859.6, "B": 1010.7, "C": 1480.6},
+      "antelope_min_distance_m": 996.4,
+      "state_contract": "PRE_EVENT -> ECHO_ACTIVE -> AFTERMATH",
+      "core_stable_ids_in_all_three_states": ["ACC_BASE_001", "ACC_CRADLE_001", "ACC_MAST_001", "ACC_PANEL_001"],
+      "debris_rule": "debris exists only in AFTERMATH and each piece maps to failed recorder/service assembly",
+      "global_rewind": "FORBIDDEN",
+      "save_mutation": "FORBIDDEN"
+    },
+    "RESCUE": {
+      "center_xy_m": [720, 520],
+      "terrain_z_m": 25.212,
+      "mission_implication": "Q_AURORA_M03 / two access-window structures + rescue states",
+      "field_distance_m": {"A": 1373.0, "B": 812.7, "C": 737.4},
+      "antelope_min_distance_m": 850.9,
+      "state_contract": "CLOSED -> OPEN_WINDOW -> MISSED_COLLAPSED",
+      "window_A": {
+        "mechanism": "vertical raise",
+        "inside_gate_gap_m": 3.06,
+        "closed_residual_total_m": 0.26,
+        "open_overhead_clearance_m": 2.375,
+        "closed_geometry_gate": "PASS",
+        "open_geometry_gate": "PASS"
+      },
+      "window_B": {
+        "mechanism": "lateral slide",
+        "inside_gate_gap_m": 3.86,
+        "closed_panel_world_width_m": 3.72,
+        "closed_residual_total_m": 0.14,
+        "open_panel_nearest_edge_from_aperture_center_m": 2.34,
+        "closed_geometry_gate": "PASS",
+        "open_geometry_gate": "PASS",
+        "audit_note": "non-default hidden objects required explicit location+rotation transform because evaluated matrix_world was stale while hide_viewport=true"
+      },
+      "open_bridge": {
+        "segments": 3,
+        "center_gap_residual_m": [0.063, 0.063],
+        "continuity": "PASS",
+        "scale_1_1_1": "PASS"
+      },
+      "global_rewind": "FORBIDDEN",
+      "save_mutation": "FORBIDDEN"
+    }
+  },
+  "support_and_collision": {
+    "terrain_contact": "PASS",
+    "debris_bottom_minus_terrain_m": 0.02,
+    "index_bottom_minus_terrain_m": 0.07,
+    "mast_base_and_beacons_bottom_minus_terrain_m": 0.0,
+    "gate_uprights_bottom_minus_terrain_m": 0.0,
+    "collision_contract_scene_users": 0,
+    "render_collision_separation": "PASS",
+    "object_scale_1_1_1": "PASS",
+    "area_light_dependency": "NONE"
+  },
+  "portable_artifacts_revision_34": {
+    "blend_size_bytes": 13491474,
+    "blend_etag": "dfd6ad935c483e51ebe9b26f0d06333b",
+    "glb_size_bytes": 7095348,
+    "glb_etag": "b2432930a97e90170f4c8490b60415a2",
+    "export_smoke": "PASS"
+  },
+  "visual_qa": {
+    "accident_structural": {
+      "artifact": "aurora_x100_r34_accident_aftermath_structural.png",
+      "artifact_id": "6d692cc2d78cef0137f94450fdad7440",
+      "resolution": [320, 180],
+      "mean": 0.4377,
+      "stddev": 0.0473,
+      "gate": "PASS_STRUCTURAL"
+    },
+    "rescue_open_structural_initial": {
+      "artifact": "aurora_x100_r34_rescue_open_structural.png",
+      "artifact_id": "f2deee31094bdbd7e0b72e3c767e291e",
+      "stddev": 0.0287,
+      "gate": "FAIL_FRAMING_LOW_VARIANCE"
+    },
+    "rescue_open_structural_close": {
+      "artifact": "aurora_x100_r34_rescue_open_structural_close.png",
+      "artifact_id": "9005820cb6422b7ccd94079e6f9366d4",
+      "resolution": [320, 180],
+      "mean": 0.4252,
+      "stddev": 0.0440,
+      "gate": "PASS_STRUCTURAL"
+    },
+    "rescue_open_eevee": {
+      "artifact": "aurora_x100_r34_rescue_open_eevee_close.png",
+      "artifact_id": "3d04d411ed147ba9fe9cf6f4bca71505",
+      "resolution": [256, 144],
+      "mean": 0.1889,
+      "stddev": 0.0717,
+      "black_clip": 0.0366,
+      "white_clip": 0.0,
+      "gate": "PASS_TECHNICAL"
+    },
+    "accident_eevee_scene_light": {
+      "artifact": "aurora_x100_r34_accident_aftermath_eevee_close.png",
+      "artifact_id": "205f229e67e80e57f138461169073089",
+      "stddev": 0.0043,
+      "white_clip": 0.0,
+      "gate": "REVIEW_MATERIAL_CONTRAST"
+    },
+    "accident_neutral_lookdev": {
+      "artifact": "aurora_x100_r34_accident_neutral_lookdev.png",
+      "artifact_id": "2b093149e20ea45bfbcdea05d55408ec",
+      "stddev": 0.0034,
+      "white_clip": 0.0,
+      "gate": "REVIEW_MATERIAL_CONTRAST",
+      "note": "temporary query-only QA spot did not establish sufficient material/luminance separation; production lighting was not mutated"
+    },
+    "human_gate_art": "PENDING"
+  },
+  "gates": {
+    "CANON_BOUNDARY": "PASS",
+    "LOCAL_TEMPORAL_AUTHORITY": "PASS",
+    "CORE_STABLE_IDS": "PASS",
+    "DEFAULT_VISIBILITY": "PASS",
+    "ACCIDENT_THREE_STATES": "PASS",
+    "RESCUE_THREE_STATES": "PASS",
+    "TWO_ACCESS_WINDOW_MECHANISMS": "PASS",
+    "ACCESS_GEOMETRY": "PASS",
+    "BRIDGE_CONTINUITY": "PASS",
+    "CONTACT": "PASS",
+    "COLLISION_SEPARATION": "PASS",
+    "SPATIAL_NON_COLLISION_WITH_ANTELOPE_AND_FIELDS": "PASS",
+    "GLB_EXPORT": "PASS_REV34",
+    "STRUCTURAL_RENDER": "PASS_BOTH_SITES",
+    "RESCUE_EEVEE_TECHNICAL": "PASS",
+    "ACCIDENT_EEVEE_MATERIAL_CONTRAST": "OPEN",
+    "RUNTIME_STATE_SWITCHING": "BLOCKED_ENGINE_INTERFACE",
+    "AUDIO_COMPREHENSION": "OPEN",
+    "ENGINE_IMPORT": "BLOCKED_EXO_012",
+    "TARGET_HARDWARE_PERFORMANCE": "BLOCKED_TARGET_HARDWARE",
+    "HUMAN_GATE_ART": "PENDING"
+  },
+  "conclusion": "Both mission sites are structurally and temporally qualified for REVIEW_TECHNICAL_SYSTEMIC. Accident material/lighting contrast remains an explicit art/lookdev task and prevents final-art promotion."
+}

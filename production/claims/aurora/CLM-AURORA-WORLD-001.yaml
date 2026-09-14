@@ -1,0 +1,123 @@
+claim_id: CLM-AURORA-WORLD-001
+agent_id: AGENT-02-AURORA
+session_id: AURORA-20260912T192957Z-001
+scope_key: aurora/world-production
+world_id: aurora
+world_name: AURORA VEIL
+category: world_production
+subdomain: full_world_3d
+status: IN_PROGRESS
+priority: P1
+base_sha: 4c2fa044080004609ea6df45f34b2a784536507a
+branch: art/world-aurora-veil-001
+created_at: 2026-09-12T19:29:57Z
+last_heartbeat: 2026-09-14T12:27:00+02:00
+includes:
+  - planetary canon proposals where canon is currently silent, isolated behind ADRs
+  - orbital representation
+  - macro world and regional terrain
+  - Campamento del Segundo Día
+  - Llanura de las Repeticiones
+  - Huerto de AEON
+  - world-specific architecture and interiors
+  - infrastructure and utilities
+  - landmarks and vista assets
+  - world-specific material library
+  - vegetation and ecology
+  - fauna and hero creatures
+  - Aurora NPC and humanoid visual production
+  - world-specific wardrobe and equipment
+  - world-specific ground/air machinery and vehicles
+  - props and environmental storytelling
+  - decals, authored destruction states and debris
+  - Aurora LOD/HLOD/collision/streaming/export QA
+excludes:
+  - Terra and Terra Reliquary assets
+  - Ares IX and MOL-9 assets
+  - Pelagos, Umbra, Sylva Prime, Khepri, Nacre, Vanta, Leviathan, Elysium Null and Origin
+  - global player gameplay code
+  - global planetary travel framework
+  - production-engine selection
+  - shared libraries owned by another claim unless consumed read-only
+pipeline:
+  exact_repo_method_found: null
+  method_status: PIPELINE_METHOD_NOT_FOUND
+  verified_fallback: Higgsfield 3D Jutsu bpy + editable .blend + GLB exchange + evidence
+  blender_worker_version: "5.2"
+remote_scene:
+  project_id: d6488148-8547-4ffe-b63d-e5fbec3a339c
+  revision: 37
+  status: X100_OBSERVATORY_INTERIOR_R37_CLEARANCE_QA
+  blend_size_bytes: 14066536
+  blend_etag: 3eba825c2b5c6f05653805e5f4947d49
+  glb_size_bytes: 7183880
+  glb_etag: 004cdee6df526e3b2686158a8df948fc
+  orbital_l1_present: true
+  terrain_contract_version: AUR-TERRAIN-RELIEF-v2-r14
+  temporal_contract_version: AUR-TEMPORAL-v1-r12
+  material_contract_version: AUR-MAT-v1-r15
+  service_routing_contract_version: AUR-PROC-ROUTING-v1-r19
+  camp_x100_systemic_revision: 23
+  prairie_x100_systemic_revision: 26
+  camp_props_x100_revision: 30
+  antelope_x100_concurrent_revision: 31
+  camp_history_x100_revision: 32
+  plain_story_sites_x100_revision: 34
+  observatory_interior_x100_revision: 37
+  camp_history_three_era_hosts: 6
+  plain_mission_story_sites: 2
+  observatory_interior_layout_variants: 12
+  observatory_interior_functional_zones: 4
+  final_art_claimed: false
+fleet_registry:
+  authority: main:ops/fleet/registry.json
+  observed_main: 26ae20f5d1b47d1efa0d54b20124ed93cbc0b43e
+  claim_epoch: 1
+  observed_status: active
+  owner_identity_confirmed: true
+  ack_comment: https://github.com/rotprods/-/issues/7#issuecomment-5648367254
+  producer_edits_shared_registry: false
+  note: integrator owns shared registry mutation; producer branch only updates this owned claim shard
+active_or_recent_x100_workunits:
+  - id: AUR-X100-CAMP-SYSTEMIC-001
+    status: REVIEW_TECHNICAL_SYSTEMIC
+    revision: 23
+  - id: AUR-X100-PRAIRIE-SYSTEMIC-001
+    status: REVIEW_TECHNICAL_SYSTEMIC
+    revision: 26
+  - id: AUR-X100-CAMP-PROPS-001
+    status: REVIEW_TECHNICAL_SYSTEMIC
+    revision: 30
+  - id: AUR-X100-ANTELOPE-FAMILY-001
+    status: CONCURRENT_SCOPE_DO_NOT_OVERWRITE
+    revision: 31
+  - id: AUR-X100-CAMP-HISTORY-001
+    status: REVIEW_TECHNICAL_SYSTEMIC
+    revision: 32
+  - id: AUR-X100-PLAIN-STORY-SITES-001
+    status: REVIEW_TECHNICAL_SYSTEMIC
+    revision: 34
+  - id: AUR-X100-OBSERVATORY-INTERIOR-001
+    status: REVIEW_TECHNICAL_SYSTEMIC
+    revision: 37
+dependencies:
+  - design/EXOVANT_BIBLIA.md
+  - design/EXOVANT_DATA.json
+  - docs/ART_PRODUCTION.md
+  - docs/FLEET_COORDINATION.md
+  - AGENTS.md
+  - _project_intelligence/STATE.json
+  - EXO-012 for final production-engine integration
+blocked_by:
+  - production-engine-specific integration and HLOD implementation
+  - target-hardware performance qualification
+  - final authored UV/bake/texture passes on X100 blockout/systemic families
+  - human GATE-ART approval
+claim_notes:
+  - Physical planetary parameters absent from canon remain PROPOSAL until an ADR is accepted.
+  - X100 work increases semantic/systemic depth but does not promote technical blockouts to final AAA/AAAA art automatically.
+  - Camp history r32 adds three simultaneous physical eras to six hosts using eight repair/history families and nine causal degradation categories.
+  - Plain story sites r34 materialize Q_AURORA_M02/Q_AURORA_M03 with local stable-ID state systems; global rewind/save mutation remain forbidden.
+  - Interior r37 is Aurora's first systemic L3 proof: 13 interior families, 12 deterministic layouts, 16 reused cultural prop families, 7/7 maintenance clearance PASS, four readable functional zones.
+  - Accident-site material contrast and interior low-key exposure remain art/lookdev review items, not hidden PASS claims.
+  - HUMAN GATE-ART remains pending; current world is not finished AAA/AAAA art.

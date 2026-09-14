@@ -1,0 +1,102 @@
+workunit_id: AUR-X100-PLAIN-STORY-SITES-001
+parent_claim: CLM-AURORA-WORLD-001
+owner: AGENT-02-AURORA
+branch: art/world-aurora-veil-001
+world_id: aurora
+region_id: AUR_R02_REPETITION_PLAIN
+status: REVIEW_TECHNICAL_SYSTEMIC
+protocol: EXOVANT-X100-v1
+scope_key: aurora/plain/accident-rescue-story-sites
+priority: P1_MISSION_ENVIRONMENT
+created_at: 2026-09-14T11:40:30+02:00
+last_heartbeat: 2026-09-14T12:08:00+02:00
+remote_project_id: d6488148-8547-4ffe-b63d-e5fbec3a339c
+remote_base_revision: 31
+remote_review_revision: 34
+
+north_star: >-
+  Turn Q_AURORA_M02 and Q_AURORA_M03 into physically readable environmental sites: one accident echo set and one rescue-window site, each with stable geometry, local temporal state variants and before/during/after consequences that teach the player the world's bounded time rules without text.
+
+canon_basis:
+  - Llanura de las Repeticiones contains overlapping local events.
+  - Q_AURORA_M02 requires delayed footprints, an accident echo set and readable repetition field.
+  - Q_AURORA_M03 requires two access-window structures and rescue-site states.
+  - Aurora temporal effects are local/bounded; global rewind is forbidden.
+
+includes:
+  - accident PRE_EVENT / ECHO_ACTIVE / AFTERMATH states
+  - rescue CLOSED / OPEN_WINDOW / MISSED_COLLAPSED states
+  - two physically distinct access-window structures
+  - causal recorder/service debris and emergency equipment
+  - five local collision/clearance contracts stored outside scene geometry
+  - stable component IDs across state swaps
+  - deterministic placement away from antelope proof and field cores
+  - generator, QA receipt and cold-resume evidence
+
+excludes:
+  - antelope family and footprint implementation
+  - global temporal runtime/save mutation
+  - new missions or story outcomes
+  - NPC hero modeling
+  - AEON content
+  - terrain topology changes
+  - engine-specific runtime before EXO-012
+
+results:
+  source_families: 13
+  collision_clearance_contracts: 5
+  accident_states: 3
+  rescue_states: 3
+  stable_component_ids: 25
+  contact: PASS
+  state_identity: PASS
+  default_visibility: PASS
+  access_geometry: PASS
+  bridge_continuity: PASS
+  spatial_non_collision: PASS
+  glb_export: PASS_REV34
+  structural_render_accident: PASS
+  structural_render_rescue: PASS_AFTER_REFRAME
+  rescue_eevee: PASS_TECHNICAL
+  accident_eevee_material_contrast: OPEN
+  human_gate_art: PENDING
+
+access_receipts:
+  window_A:
+    mechanism: VERTICAL_RAISE
+    closed_residual_total_m: 0.26
+    open_overhead_clearance_m: 2.375
+  window_B:
+    mechanism: LATERAL_SLIDE
+    closed_residual_total_m: 0.14
+    open_panel_nearest_edge_from_aperture_center_m: 2.34
+  bridge:
+    segment_count: 3
+    inter_segment_center_gap_residual_m: [0.063, 0.063]
+
+spatial_receipts:
+  accident_field_distances_m: {A: 859.6, B: 1010.7, C: 1480.6}
+  accident_antelope_min_distance_m: 996.4
+  rescue_field_distances_m: {A: 1373.0, B: 812.7, C: 737.4}
+  rescue_antelope_min_distance_m: 850.9
+
+receipts:
+  qa: art_source/aurora_veil/X100/QA/plain_story_sites_r34.json
+  generator: art_source/aurora_veil/X100/blender/aurora_x100_plain_story_sites_r34.py
+  accident_structural: aurora_x100_r34_accident_aftermath_structural.png
+  rescue_structural: aurora_x100_r34_rescue_open_structural_close.png
+  rescue_eevee: aurora_x100_r34_rescue_open_eevee_close.png
+  accident_eevee_review: aurora_x100_r34_accident_aftermath_eevee_close.png
+
+open_gates:
+  - accident material/lighting contrast under final lookdev
+  - runtime state switching and collision activation
+  - audio/comprehension testing
+  - final UV/bakes/authored textures
+  - EXO-012 engine import
+  - target hardware performance
+  - human art-direction approval
+
+claim_status: KEEP
+stop_condition: >-
+  Mission sites are accepted for REVIEW_TECHNICAL_SYSTEMIC. Do not mark DONE/final art until open runtime/lookdev/art gates close.

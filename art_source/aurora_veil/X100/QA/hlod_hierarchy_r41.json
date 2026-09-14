@@ -1,0 +1,46 @@
+{
+  "schema_version": 2,
+  "protocol": "EXOVANT-X100-V2",
+  "world_id": "aurora",
+  "workunit_id": "AUR-X100-HLOD-HIERARCHY-001",
+  "remote_project_id": "d6488148-8547-4ffe-b63d-e5fbec3a339c",
+  "remote_revision": 41,
+  "scene_status": "X100_HLOD_HIERARCHY_R41_FINAL_ENVELOPE",
+  "quality_claim": "REVIEW_TECHNICAL_SYSTEMIC; Blender-side HLOD source contract only; engine switching and target-hardware performance NOT claimed",
+  "groups": [
+    {"group_id":"AUR-HLOD-CAMP-001","source_objects":536,"source_triangles":7008,"hlod1_triangles":72,"hlod2_triangles":36,"hlod1_triangle_reduction":0.9897,"hlod2_triangle_reduction":0.9949,"envelope_hlod1":true,"envelope_hlod2":true},
+    {"group_id":"AUR-HLOD-OBS-001","source_objects":114,"source_triangles":3512,"hlod1_triangles":264,"hlod2_triangles":168,"hlod1_triangle_reduction":0.9248,"hlod2_triangle_reduction":0.9522,"envelope_hlod1":true,"envelope_hlod2":true},
+    {"group_id":"AUR-HLOD-ACC-001","source_objects":11,"source_triangles":132,"hlod1_triangles":132,"hlod2_triangles":12,"hlod1_triangle_reduction":0.0,"hlod2_triangle_reduction":0.9091,"envelope_hlod1":true,"envelope_hlod2":true,"note":"HLOD1 is an object-batching contract, not a triangle-reduction claim."},
+    {"group_id":"AUR-HLOD-RES-001","source_objects":11,"source_triangles":132,"hlod1_triangles":132,"hlod2_triangles":12,"hlod1_triangle_reduction":0.0,"hlod2_triangle_reduction":0.9091,"envelope_hlod1":true,"envelope_hlod2":true,"note":"HLOD1 is an object-batching contract, not a triangle-reduction claim."}
+  ],
+  "contract": {
+    "blender_text": "AUR_HLOD_CONTRACT_R38.json",
+    "scene_property": "AUR-HLOD-v4-r41",
+    "proxy_mesh_datablocks": 8,
+    "proxy_scene_users": 0,
+    "default_exchange_glb_contains_proxy_objects": false,
+    "runtime_switching": "BLOCKED_EXO_012",
+    "performance_profile": "BLENDER_COMPLEXITY_PROFILE_ONLY_NOT_TARGET_HARDWARE"
+  },
+  "failure_fix_history": [
+    {"revision":38,"finding":"Observatory source bbox was polluted by stale matrix_world on the tilted primary ring; r38 not promoted."},
+    {"revision":39,"fix":"Rebuilt Observatory source/proxy transforms from explicit location/rotation/scale; source bbox returned to Aurora coordinates."},
+    {"revision":40,"finding":"Strict 0.15m envelope gate still found Camp history extents and Observatory ring-section/support extents outside proxies."},
+    {"revision":40,"fix":"Camp regrouped from all source objects into exact cluster/row envelopes; Observatory proxy follows ring orientation and includes support envelopes."},
+    {"revision":41,"fix":"Primary-ring conservative radial envelope expanded only enough to contain the real tilted torus section while preserving ring-shaped proxy."}
+  ],
+  "gates": {
+    "GROUP_COUNT_4": "PASS",
+    "HLOD1_HLOD2_EACH": "PASS",
+    "SOURCE_GEOMETRY_UNTOUCHED": "PASS",
+    "EXPLICIT_TRANSFORM_RULE": "PASS",
+    "SOURCE_ENVELOPE_CONTAINMENT": "PASS_4_OF_4",
+    "ZERO_SCENE_USERS": "PASS_8_OF_8",
+    "GLB_POLLUTION": "PASS_NONE",
+    "MEASURED_COMPLEXITY_REDUCTION": "PASS",
+    "ENGINE_HLOD_SWITCHING": "BLOCKED_EXO_012",
+    "TARGET_HARDWARE_PERFORMANCE": "BLOCKED_TARGET_HARDWARE",
+    "HUMAN_VISUAL_TRANSITION_REVIEW": "PENDING"
+  },
+  "conclusion": "Aurora now has a deterministic, reversible HLOD source hierarchy for the largest Camp/Observatory surfaces and both Plain mission sites. It is eligible for REVIEW_TECHNICAL_SYSTEMIC, not runtime/production qualification."
+}

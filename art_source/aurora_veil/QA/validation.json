@@ -1,0 +1,155 @@
+{
+  "schema_version": 1,
+  "world_id": "aurora",
+  "claim_id": "CLM-AURORA-WORLD-001",
+  "agent_id": "AGENT-02-AURORA",
+  "session_id": "AURORA-20260912T192957Z-001",
+  "remote_project_id": "d6488148-8547-4ffe-b63d-e5fbec3a339c",
+  "remote_revision": 5,
+  "blender_worker": "5.2",
+  "claim_status": "IN_PROGRESS",
+  "quality_claim": "SEMANTIC_MACRO_BLOCKOUT_ONLY",
+  "facts": {
+    "objects": 329,
+    "materials": 11,
+    "terrain_dimensions_m": [5200.0, 3000.0, 14.036],
+    "observatory_ring_dimensions_m": [48.0, 48.0, 2.466],
+    "observatory_mast_dimensions_m": [5.6, 5.6, 72.0],
+    "aeon_arena_dimensions_m": [50.0, 50.0, 1.0],
+    "peregrino_dimensions_m": [5.8, 2.7, 2.4],
+    "echo_anchors": 12,
+    "aeon_sector_pylons": 3,
+    "orchard_machine_trees": 10,
+    "stream_planning_cells": 27,
+    "collision_proxies": 4,
+    "gravity_g_canon": 0.94,
+    "temperature_c_canon": 11.0,
+    "planet_radius_m_proposal": 5900000.0
+  },
+  "portable_artifacts": {
+    "blend": {
+      "size_bytes": 4779773,
+      "etag": "828f4cbd201f87fcb232cfed66471131"
+    },
+    "glb": {
+      "size_bytes": 3086552,
+      "etag": "d9f25ec99d93aa9b693f933eeafe9119"
+    }
+  },
+  "operations": [
+    {
+      "id": "aurora-world-master-r1",
+      "kind": "mutation",
+      "result": "FAIL",
+      "mechanism": "EXECUTION_TIMEOUT",
+      "detail": "Monolithic build plus renders exceeded 300000 ms; revision remained 0."
+    },
+    {
+      "id": "aurora-wave1-foundation-r1",
+      "kind": "mutation",
+      "result": "PASS",
+      "revision_after": 1,
+      "detail": "90 objects; 10 materials; 3969 terrain vertices; 3840 terrain faces; three canonical region anchors."
+    },
+    {
+      "id": "aurora-wave1-orchard-proxies-r2",
+      "kind": "mutation",
+      "result": "PASS",
+      "revision_after": 2,
+      "detail": "329 objects; canonical 50 m arena; orchard, ecology, NPC/enemy/vehicle proxies, collision and streaming planning cells."
+    },
+    {
+      "id": "aurora-r2-technical-audit",
+      "kind": "query",
+      "result": "PASS_WITH_FINDINGS",
+      "findings": [
+        "Observatory ring measured 50.6 m although proposal was 48 m.",
+        "Peregrino measured 6.0 x 2.9 x 2.5 m although manifest proposal was 5.8 x 2.7 x 2.4 m."
+      ]
+    },
+    {
+      "id": "aurora-r3-scale-corrections",
+      "kind": "mutation",
+      "result": "PASS",
+      "revision_after": 3,
+      "detail": "Ring corrected to 48.0 m; Peregrino corrected to 5.8 x 2.7 x 2.4 m."
+    },
+    {
+      "id": "aurora-r3-exposure-framing-audit",
+      "kind": "query",
+      "result": "FAIL",
+      "mechanism": "VALIDATOR_BUG",
+      "detail": "Empty Render Result pixel buffer caused division by zero."
+    },
+    {
+      "id": "aurora-r3-exposure-audit-v2",
+      "kind": "query",
+      "result": "PASS_WITH_FINDING",
+      "finding": "World overview nearly empty/dark because camera far clip was shorter than camera-to-world distance."
+    },
+    {
+      "id": "aurora-r4-camera-clip-fix",
+      "kind": "mutation",
+      "result": "PASS",
+      "revision_after": 4,
+      "detail": "Overview clip_end 12000 m; camp 5000 m; AEON 2500 m."
+    },
+    {
+      "id": "aurora-r4-final-qa",
+      "kind": "query",
+      "result": "PASS",
+      "gates": {
+        "scale_exact": true,
+        "portable_light_types": true,
+        "collision_hidden": true,
+        "stream_hidden": true,
+        "three_aeon_sectors": true
+      }
+    },
+    {
+      "id": "aurora-r5-exposure-audit",
+      "kind": "query",
+      "result": "PASS",
+      "revision_checked": 5,
+      "exposure": {
+        "overview": {"mean": 0.1793, "p01": 0.0410, "p50": 0.1822, "p99": 0.8541, "black_clip": 0.0, "white_clip": 0.0},
+        "camp": {"mean": 0.1724, "p01": 0.0410, "p50": 0.1909, "p99": 0.4925, "black_clip": 0.0, "white_clip": 0.0},
+        "aeon": {"mean": 0.1988, "p01": 0.0185, "p50": 0.1912, "p99": 0.8583, "black_clip": 0.0047, "white_clip": 0.0}
+      },
+      "boundary": "Exposure statistics do not equal visual/art-direction approval."
+    },
+    {
+      "id": "aurora-r5-final-state-audit",
+      "kind": "query",
+      "result": "PASS",
+      "gates": {
+        "claim_match": true,
+        "scale_match": true,
+        "three_sectors": true,
+        "collision_hidden": true,
+        "stream_hidden": true,
+        "portable_lights": true
+      }
+    }
+  ],
+  "render_evidence": [
+    {"name": "aurora_r4_overview.png", "artifact_id": "aab200eb7f217f218838fe39e05397be", "size_bytes": 226608, "resolution": [640, 360]},
+    {"name": "aurora_r4_camp.png", "artifact_id": "32ccaeb22a99ae13f548d78c99cc54a0", "size_bytes": 230644, "resolution": [640, 360]},
+    {"name": "aurora_r4_aeon.png", "artifact_id": "b2f96497e475c07ed70547e702a2896d", "size_bytes": 270547, "resolution": [640, 360]}
+  ],
+  "gates": {
+    "CANON": "PASS_FOR_BLOCKOUT",
+    "ART": "PENDING_HUMAN_VISUAL_REVIEW",
+    "REALISM": "PARTIAL_BLOCKOUT_ONLY",
+    "GEOMETRY": "PASS_FOR_BLOCKOUT_DIMENSIONS; manifold/degenerate production mesh gate not yet applicable to final assets",
+    "UV": "NOT_STARTED_FINAL_ASSETS",
+    "MATERIALS": "SEMANTIC_BLOCKOUT_ONLY",
+    "SCALE": "PASS",
+    "PERFORMANCE": "BLOCKED_TARGET_HARDWARE",
+    "LOD": "PLANNED_NOT_QUALIFIED",
+    "COLLISION": "PASS_AS_SEPARATE_BLOCKOUT_PROXIES",
+    "EXPORT": "PASS_GLB_REMOTE",
+    "ENGINE": "BLOCKED_EXO_012",
+    "VISUAL_REGRESSION": "BASELINE_CREATED; HUMAN_APPROVAL_PENDING"
+  }
+}

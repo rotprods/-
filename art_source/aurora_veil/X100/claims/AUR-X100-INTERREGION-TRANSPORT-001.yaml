@@ -1,0 +1,79 @@
+workunit_id: AUR-X100-INTERREGION-TRANSPORT-001
+parent_claim: CLM-AURORA-WORLD-001
+owner: AGENT-02-AURORA
+branch: art/world-aurora-veil-001
+world_id: aurora
+status: REVIEW_TECHNICAL_SYSTEMIC
+protocol: EXOVANT-X100-V2
+scope_key: aurora/macro/interregion-transport-network
+priority: P0_V2_MACRO_BOTTLENECK
+remote_project_id: d6488148-8547-4ffe-b63d-e5fbec3a339c
+remote_base_revision: 41
+remote_review_revision: 42
+north_star: >-
+  Connect Campamento del Segundo Dia, Llanura de las Repeticiones and Huerto de AEON with a physically legible, terrain-supported inter-region route system that supports Peregrino-scale traversal, route recording, emergency wayfinding and distant reading without inventing a new transport technology.
+canon_basis:
+  - Aurora contains the three named playable regions.
+  - Peregrino route recorder exists as the world vehicle foundation.
+  - route-recorder beacons / clock synchronization are established Aurora infrastructure.
+  - temporal effects stay local; transport does not imply global time manipulation.
+receipts:
+  qa: art_source/aurora_veil/X100/QA/interregion_transport_r42.json
+  generator: art_source/aurora_veil/X100/blender/aurora_x100_interregion_transport_r42.py
+  blender_contract: AUR_INTERREGION_ROUTE_CONTRACT_R42.json
+  contract_version: AUR-ROUTE-v1-r42
+  route_length_m_total: 6381.1
+  visible_route_meshes: 3
+  marker_objects: 192
+  primary_corridors: 2
+  secondary_bypass: 1
+  route_width_m: 6.5
+  Peregrino_reference_m: [5.8,2.7,2.4]
+  grade_max_pct: 6.76
+  engineered_crossfall_max_pct: 3.0
+  fill_height_max_m: 0.648
+  exclusion_min_margin_beyond_buffers_m: 68.1
+  marker_support: PASS_192_OF_192
+  collision_scene_users: 0
+  route_hlod_scene_users: 0
+includes:
+  - Camp-to-Plain primary route
+  - Plain-to-Orchard primary route
+  - Camp-to-Orchard secondary service bypass
+  - terrain-supported fill/skirt construction
+  - deterministic edge stakes, reused route beacons, pull-offs and service nodes
+  - route collision contracts and route-vista HLOD contract
+excludes:
+  - new vehicle class
+  - Peregrino remodeling
+  - global travel framework
+  - other worlds
+  - AEON hero model changes
+  - antelope content
+  - engine spline/runtime code before EXO-012
+quality_rules:
+  - source terrain remains untouched
+  - road high edge bears on terrain; low edge uses fill berm with <=3% crossfall
+  - all three routes avoid temporal-field and AEON-arena conservative exclusion zones
+  - markers are functional, deterministic and physically supported
+  - low-contrast technical renders remain REVIEW and are not called art passes
+family_dod:
+  - "[x] >=2 primary inter-region corridors"
+  - "[x] secondary bypass after terrain audit"
+  - "[x] slope/grade report for every route"
+  - "[x] Peregrino-scale width proposal documented"
+  - "[x] deterministic markers/beacons"
+  - "[x] route-field/arena exclusion pass"
+  - "[x] route kit + vista/HLOD contract"
+  - "[x] Workbench/Eevee evidence produced; art contrast remains REVIEW"
+  - "[x] generator + QA receipt persisted"
+  - "[ ] authoritative turning-radius handling profile"
+  - "[ ] engine traversal/streaming: BLOCKED_EXO_012"
+  - "[ ] target-hardware streaming/performance"
+  - "[ ] human GATE-ART"
+blocked_by:
+  - EXO-012 for runtime traversal/streaming integration
+  - final Peregrino handling profile for authoritative turning radius
+  - target hardware for streaming performance
+  - human art/material review
+claim_status: KEEP_REVIEW

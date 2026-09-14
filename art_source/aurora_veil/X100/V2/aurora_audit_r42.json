@@ -1,0 +1,41 @@
+{
+  "schema_version": 2,
+  "protocol": "EXOVANT-X100-V2",
+  "world_id": "aurora",
+  "remote_revision": 42,
+  "status": "EVIDENCE_BACKED_LOWER_BOUND_NOT_CERTIFICATION",
+  "strict_score_pct_lower_bound": 31.7835,
+  "coverage": {
+    "macro_world": 0.3417,
+    "meso_architecture": 0.3000,
+    "micro_assets": 0.3000,
+    "ecology": 0.3250,
+    "civilization": 0.3500,
+    "gameplay": 0.3000,
+    "material_causality": 0.3250,
+    "variation": 0.3583,
+    "temporal_states": 0.4000,
+    "storytelling": 0.4250,
+    "audiovisual_language": 0.1667,
+    "optimization": 0.3000,
+    "reusability": 0.4417,
+    "qa": 0.2000
+  },
+  "top_pressure": [
+    {"dimension":"qa","pressure":0.122542,"actionability":"PARTIALLY_BLOCKED_HUMAN_ENGINE"},
+    {"dimension":"audiovisual_language","pressure":0.109386,"actionability":"PARTLY_NON_3D_OWNER"},
+    {"dimension":"meso_architecture","pressure":0.082647,"actionability":"ACTIONABLE_3D"},
+    {"dimension":"gameplay","pressure":0.082647,"actionability":"ACTIONABLE_3D"},
+    {"dimension":"material_causality","pressure":0.074022,"actionability":"ACTIONABLE_3D"},
+    {"dimension":"micro_assets","pressure":0.072316,"actionability":"ACTIONABLE_3D"},
+    {"dimension":"optimization","pressure":0.072316,"actionability":"PARTIALLY_RUNTIME_BLOCKED"},
+    {"dimension":"macro_world","pressure":0.069017,"actionability":"ACTIONABLE_3D"}
+  ],
+  "selected_next_gap": {
+    "id":"AUR-X100-TEMPORAL-ARCHIVE-001",
+    "canon_task":"Q_AURORA_M05",
+    "dimensions":["gameplay","temporal_states","storytelling","civilization"],
+    "primary_dimension":"gameplay",
+    "reason":"gameplay ties meso as highest fully-actionable 3D pressure, but Q_AURORA_M05 additionally upgrades temporal/story/civilization cells while reusing the validated r37 interior instead of opening isolated architecture"
+  }
+}

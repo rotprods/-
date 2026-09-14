@@ -1,0 +1,21 @@
+{
+  "receipt_id": "AURORA-TRANSPORT-R42",
+  "world_id": "aurora",
+  "claim_id": "CLM-AURORA-WORLD-001",
+  "branch": "art/world-aurora-veil-001",
+  "workunit_id": "AUR-X100-INTERREGION-TRANSPORT-001",
+  "remote_revision": 42,
+  "evidence": [
+    {
+      "dimension": "macro_world",
+      "cell": "transport_network",
+      "maturity": "locally_validated",
+      "evidence_refs": [
+        "art_source/aurora_veil/X100/QA/interregion_transport_r42.json",
+        "art_source/aurora_veil/X100/blender/aurora_x100_interregion_transport_r42.py",
+        "Blender:AUR_INTERREGION_ROUTE_CONTRACT_R42.json@r42"
+      ]
+    }
+  ],
+  "truth_boundary": "Three terrain-supported inter-region route corridors are locally validated in Blender. Final Peregrino handling, engine traversal/streaming and target-hardware performance remain unresolved."
+}

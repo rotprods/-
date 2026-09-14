@@ -1,0 +1,97 @@
+{
+  "schema_version": 1,
+  "world_id": "aurora",
+  "claim_id": "CLM-AURORA-WORLD-001",
+  "agent_id": "AGENT-02-AURORA",
+  "remote_project_id": "d6488148-8547-4ffe-b63d-e5fbec3a339c",
+  "remote_revision": 8,
+  "task_id": "AUR/ARCH/006",
+  "quality_claim": "TECHNICALLY_VERIFIED_MODULAR_BLOCKOUT; HUMAN_ART_REVIEW_PENDING",
+  "scene_status": "WAVE2_CAMP_MODULAR_R8",
+  "kit_contract": {
+    "grid_m": 4,
+    "refuge_bays": [4, 3],
+    "habitable_footprint_m": [16, 12],
+    "assembled_child_bounds_m": [16.9, 14.6, 4.03],
+    "observatory_ring_outer_diameter_m": 48,
+    "observatory_ring_segments": 24,
+    "observatory_ring_flanges": 24,
+    "source_modules": 12,
+    "source_library_hidden_from_render": true,
+    "qa_helpers_hidden_from_render": true
+  },
+  "instancing": {
+    "floor_instances": 12,
+    "floor_unique_meshes": ["LIB_AUR_ARC_001_FLOOR_CASSETTE_4X4_MESH"],
+    "roof_instances": 12,
+    "roof_unique_meshes": ["LIB_AUR_ARC_002_ROOF_CASSETTE_4X4_MESH"],
+    "foundation_pad_instances": 20,
+    "foundation_pad_unique_meshes": ["LIB_AUR_ARC_001_FOUNDATION_PAD_MESH"],
+    "frame_instances": 14,
+    "frame_unique_meshes": ["LIB_AUR_ARC_001_FRAME_WALL_4M_MESH"],
+    "ring_segment_unique_meshes": ["LIB_AUR_ARC_003_RING_SEG_15D_MESH"]
+  },
+  "module_dimensions_m": {
+    "LIB_AUR_ARC_001_FRAME_WALL_4M": [4.0, 0.22, 3.2],
+    "LIB_AUR_ARC_002_CERAMIC_PANEL_4M": [3.52, 0.14, 2.7],
+    "LIB_AUR_ARC_002_DOOR_PANEL_4M": [3.72, 0.14, 2.85],
+    "LIB_AUR_ARC_001_FLOOR_CASSETTE_4X4": [4.0, 4.0, 0.46],
+    "LIB_AUR_ARC_002_ROOF_CASSETTE_4X4": [4.0, 4.0, 0.28],
+    "LIB_AUR_ARC_001_FOUNDATION_PAD": [0.9, 0.9, 0.55],
+    "LIB_AUR_INF_002_SERVICE_TRAY_4M": [4.0, 0.5, 0.47],
+    "LIB_AUR_INF_003_ROUTE_BEACON": [1.4, 0.45, 2.51],
+    "LIB_AUR_INF_001_CLOCK_SYNC_BASE": [2.2, 2.2, 2.4],
+    "LIB_AUR_ARC_003_RING_SEG_15D": [3.136, 6.2117, 2.2],
+    "LIB_AUR_ARC_003_RING_FLANGE": [2.4, 0.16, 2.2],
+    "LIB_AUR_ARC_004_SERVICE_GANTRY_4M": [4.0, 1.1, 1.5]
+  },
+  "manufacturing_contract": {
+    "structure": "galvanized welded SHS/rolled sections with field-bolted splice plates",
+    "envelope": "ceramic-faced composite cassettes on secondary rails with EPDM perimeter gaskets",
+    "floor": "bolted steel floor cassette with replaceable deck and perimeter beams",
+    "roof": "insulated ceramic composite cassette with field-shim drainage plane",
+    "foundation": "precast/mineral grout pad with steel base plate",
+    "services": "perforated folded-metal utility tray with removable cover",
+    "ring": "rolled/formed ring box segments with bolted end flanges and replaceable covers"
+  },
+  "material_roles": {
+    "AUR_MAT_STRUCTURAL_GALV_STEEL": {"metallic": 0.92, "roughness": 0.32},
+    "AUR_MAT_CERAMIC_COMPOSITE_PANEL": {"metallic": 0.03, "roughness": 0.62},
+    "AUR_MAT_EPDM_GASKET": {"metallic": 0.0, "roughness": 0.86},
+    "AUR_MAT_DARK_TEMPERED_GLASS": {"metallic": 0.0, "roughness": 0.10},
+    "AUR_MAT_CLOCK_BRONZE_CAL": {"metallic": 0.95, "roughness": 0.38},
+    "AUR_MAT_MINERAL_FOUNDATION": {"metallic": 0.0, "roughness": 0.84},
+    "AUR_MAT_SERVICE_TRAY": {"metallic": 0.72, "roughness": 0.47}
+  },
+  "render_qa": {
+    "artifact": "aurora_r8_camp_modular.png",
+    "artifact_id": "499ece4233ccfca6d51eee3fcbab6a88",
+    "resolution": [640, 360],
+    "mean": 0.1714,
+    "p01": 0.041,
+    "p50": 0.1912,
+    "p99": 0.5031,
+    "black_clip": 0.0006,
+    "white_clip": 0.0,
+    "luminance_gt_0_075_ratio": 0.8065,
+    "r5_baseline_mean": 0.1724,
+    "mean_delta_vs_r5": -0.001
+  },
+  "portable_artifacts_revision_8": {
+    "blend": {"size_bytes": 6581463, "etag": "eea9deb1db85ab6e71c42cd234371093"},
+    "glb": {"size_bytes": 4684768, "etag": "d7b72b60d8a6a7dee7e72737f1643201"}
+  },
+  "gates": {
+    "GRID_AND_SCALE": "PASS_BLOCKOUT",
+    "INSTANCING": "PASS",
+    "MANUFACTURING_LOGIC": "PASS_BLOCKOUT_CONTRACT",
+    "OBSERVATORY_DIAMETER": "PASS_48M",
+    "PROOF_ASSEMBLY": "PASS",
+    "EXPORT": "PASS_REMOTE_GLB_REV8",
+    "PHOTOMETRIC_REGRESSION": "PASS",
+    "ART": "PENDING_HUMAN_VISUAL_REVIEW",
+    "UV_BAKES_PBR": "NOT_STARTED_FINAL_ASSETS",
+    "ENGINE": "BLOCKED_EXO_012",
+    "PERFORMANCE": "BLOCKED_TARGET_HARDWARE"
+  }
+}
