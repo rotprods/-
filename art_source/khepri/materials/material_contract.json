@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "contract_id": "KHP_MATERIAL_PRODUCTION_X100_V1",
+  "claim_id": "CLM-KHEPRI-MATERIALS-001",
+  "candidate_source_sha256": "c69772e4d4da3ed19d5ddd2b95059bb285a516323167f1f47a8d31a1da163434",
+  "valid_combinations": 139,
+  "application_scales": {
+    "hero_insert_px_per_m": 1024,
+    "prop_machine_px_per_m": 512,
+    "architectural_px_per_m": 256,
+    "status": "PROVISIONAL_AUTHORING_TARGET_NOT_RUNTIME_BUDGET"
+  },
+  "families": {
+    "solar_glass": {
+      "asset_id": "KHP_MAT_GLASS_SOLAR_001",
+      "finishes": ["cast_vitrified", "precision_polished"],
+      "states": ["calibrated", "service_worn", "thermal_cycled", "repair_laminated"]
+    },
+    "mirror_optical": {
+      "asset_id": "KHP_MAT_MIRROR_OPTICAL_001",
+      "finishes": ["broad_reflector", "precision_optic"],
+      "states": ["calibrated", "maintenance_cleaning", "service_microabrasion", "repair_recoated"]
+    },
+    "bronze_synod": {
+      "asset_id": "KHP_MAT_BRONZE_SYNOD_001",
+      "finishes": ["cast_structural", "machined_service"],
+      "states": ["service_clean", "contact_polished", "heat_affected_local", "field_repaired"]
+    },
+    "ceramic_scorched": {
+      "asset_id": "KHP_MAT_CERAMIC_SCORCHED_001",
+      "finishes": ["pressed_tile", "cast_shell"],
+      "states": ["intact", "heat_cycled", "stress_chipped", "patch_replaced"]
+    },
+    "fabric_shade": {
+      "asset_id": "KHP_MAT_FABRIC_SHADE_001",
+      "finishes": ["woven_dense", "laminated_cloth"],
+      "states": ["taut_service", "handled_worn", "solar_aged", "stitched_repair"]
+    },
+    "mineral_dark": {
+      "asset_id": "KHP_MAT_MINERAL_DESERT_001",
+      "finishes": ["rough_mass", "cut_plate"],
+      "states": ["cut_clean", "foot_traffic_worn", "thermal_fissure_proxy", "mechanical_patch"]
+    }
+  },
+  "base_states": ["calibrated", "intact", "taut_service", "cut_clean"],
+  "causal_classes": {
+    "contact_use": ["service_worn", "service_microabrasion", "contact_polished", "handled_worn", "foot_traffic_worn"],
+    "maintenance": ["maintenance_cleaning", "service_clean"],
+    "thermal": ["thermal_cycled", "heat_affected_local", "heat_cycled", "solar_aged", "thermal_fissure_proxy"],
+    "repair": ["repair_laminated", "repair_recoated", "field_repaired", "patch_replaced", "stitched_repair", "mechanical_patch"],
+    "mechanical_stress": ["stress_chipped"]
+  },
+  "channels": {
+    "basecolor": "sRGB substrate/pigment only; no baked lighting or AO",
+    "normal": "Non-Color; OpenGL +Y",
+    "mr": "Non-Color; G=roughness, B=metallic, R reserved for AO source when verified",
+    "state_mask": "Non-Color; calibration encodes spatial cause; metadata is semantic authority",
+    "height": "optional source-only; no glTF runtime claim",
+    "emission": "forbidden in six base families"
+  },
+  "calibration_texture_resolution": 128,
+  "calibration_cells": 24,
+  "forbidden": [
+    "random_grunge",
+    "uniform_scratches",
+    "global_edge_wear",
+    "unmotivated_emission",
+    "generic_cyberpunk_neon",
+    "egyptian_iconography_shortcut",
+    "atmosphere_chemistry_without_canon",
+    "decorative_mirror_without_optical_role",
+    "baked_lighting_in_basecolor"
+  ]
+}
