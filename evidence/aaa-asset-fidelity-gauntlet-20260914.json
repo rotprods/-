@@ -1,0 +1,40 @@
+{
+  "date": "2026-09-14",
+  "run_id": "EXO-AAA-FIDELITY-GAUNTLET-001",
+  "scope": "protocol/tooling regression only",
+  "base_main": "58c6da46938a05fe44b0419da64da016058fa699",
+  "status": "ISOLATED_LOGIC_PASS_PROJECT_WIDE_CHECK_PENDING",
+  "aaa_asset_gate": {
+    "tests_exercised": 6,
+    "passed": 6,
+    "cases": [
+      "hero candidate qualifies with complete evidence",
+      "proxy cannot jump to hero without structural rebuild evidence",
+      "raw reconstruction cannot self-certify final",
+      "high triangle count is neither required nor sufficient",
+      "AAA claim requires human gate plus final qualification",
+      "runtime qualification requires runtime receipts"
+    ]
+  },
+  "render_budget_estimator": {
+    "logic": "measured EASY/MEDIAN/WORST weighted 0.2/0.6/0.2",
+    "validated_properties": [
+      "frame arithmetic",
+      "weighted seconds/frame arithmetic",
+      "workers reduce wall-time rather than ideal compute-hours",
+      "invalid inputs fail closed"
+    ],
+    "provider_price_claim": "NONE — rates are intentionally live inputs"
+  },
+  "project_wide_gates_not_claimed": [
+    "tools/project_control.py check",
+    "native Godot gauntlet",
+    "learning hub full audit",
+    "graph projection refresh",
+    "MANIFEST refresh",
+    "human GATE_ART",
+    "target-GPU profiling"
+  ],
+  "reason_project_wide_pending": "This connector session cannot materialize an exact complete checkout for the repository-native generated projections; automatic Actions are cost-quarantined. Do not fabricate a PASS.",
+  "next_gate": "Integrator or qualified checkout refreshes MANIFEST/graph as required, runs unit tests + project_control check, then merges the protocol PR."
+}
