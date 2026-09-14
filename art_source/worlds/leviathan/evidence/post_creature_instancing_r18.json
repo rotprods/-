@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "project": "EXOVANT 2950",
+  "world_id": "leviathan",
+  "claim_id": "CLM-W10-WORLD-LEVIATHAN-001",
+  "status": "STRUCTURAL_OPTIMIZATION_REPRODUCIBLE_NOT_RUNTIME_QUALIFIED",
+  "source": {
+    "optimizer": "art_source/worlds/leviathan/tools/optimize_repeated_mesh_instances_v2.py",
+    "optimizer_blob_sha": "e3567fd2a689046c385548843249655b542c50f8"
+  },
+  "primary": {
+    "project_id": "2577a7b6-ebd7-4d31-a645-620e4b73a95d",
+    "before_revision": 17,
+    "after_revision": 18,
+    "mesh_objects_before": 395,
+    "mesh_objects_after": 395,
+    "optimizer_reported_mesh_datablocks_before": 237,
+    "optimizer_reported_mesh_datablocks_after_immediate": 174,
+    "settled_mesh_datablocks_after_checkpoint": 170,
+    "optimizer_reported_datablocks_removed": 63,
+    "objects_relinked": 63,
+    "candidate_groups": 61,
+    "changed_groups": 24,
+    "blocked_groups": 0,
+    "blend_bytes_after": 7118745,
+    "glb_bytes_after": 7587052
+  },
+  "cold": {
+    "project_id": "37a931c7-f2e6-46bc-9be0-26077e5de1c1",
+    "before_revision": 15,
+    "after_revision": 16,
+    "mesh_objects_before": 395,
+    "mesh_objects_after": 395,
+    "optimizer_reported_mesh_datablocks_before": 237,
+    "optimizer_reported_mesh_datablocks_after_immediate": 174,
+    "settled_mesh_datablocks_after_checkpoint": 170,
+    "optimizer_reported_datablocks_removed": 63,
+    "objects_relinked": 63,
+    "candidate_groups": 61,
+    "changed_groups": 24,
+    "blocked_groups": 0,
+    "blend_bytes_after": 7118745,
+    "glb_bytes_after": 7593704
+  },
+  "settled_structure_match": true,
+  "surface_regression": {
+    "LEV-ECO-003": "e4e66ce01c258fb9c72c985fe0c065d1f0c879bc18434abc8142d573828a88f6",
+    "LEV-ENM-001": "5203d84cdf22f89685960e3cb1ffed10aaa7092a59123f8c171d61a3b1e2a8df",
+    "LEV-ENM-002": "10772696d111219191ef56324724af184904c0b8a3094ccbd5768c9971eb0dc2",
+    "LEV-ENM-003": "de8aa76989c533041d6e45cc15362cdb2bd1aaa09b7eb1024b0eea33e5298c75",
+    "LEV-ECO-002": "7b5a6eb9a295cb022c52939e1c711555b35f658e9e7c0898c485e16626301656"
+  },
+  "all_five_asset_surfaces_unchanged_primary": true,
+  "all_five_asset_surfaces_match_cold": true,
+  "note": "The optimizer returned 174 datablocks immediately; after checkpoint/reopen both primary and cold settled at 170. The extra four removals are consistent with orphaned mesh datablocks from replaced legacy proxies being purged by the checkpoint. No mesh object or audited surface was removed or altered.",
+  "non_claims": {
+    "runtime_fps_improvement": false,
+    "gpu_memory_measurement": false,
+    "engine_instancing_behavior": false,
+    "lod_completion": false,
+    "target_hardware_pass": false,
+    "art_approval": false
+  }
+}
