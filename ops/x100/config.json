@@ -1,0 +1,150 @@
+{
+  "schema_version": 2,
+  "protocol_id": "EXOVANT-X100-V2",
+  "dimensions": {
+    "macro_world": 0.08,
+    "meso_architecture": 0.08,
+    "micro_assets": 0.07,
+    "ecology": 0.07,
+    "civilization": 0.08,
+    "gameplay": 0.08,
+    "material_causality": 0.08,
+    "variation": 0.07,
+    "temporal_states": 0.06,
+    "storytelling": 0.08,
+    "audiovisual_language": 0.05,
+    "optimization": 0.07,
+    "reusability": 0.06,
+    "qa": 0.07
+  },
+  "critical_dimensions": [
+    "macro_world",
+    "meso_architecture",
+    "micro_assets",
+    "gameplay",
+    "material_causality",
+    "optimization",
+    "qa"
+  ],
+  "thresholds": {
+    "blockout": [
+      0,
+      15
+    ],
+    "playable_foundation": [
+      15,
+      35
+    ],
+    "production_world": [
+      35,
+      65
+    ],
+    "dense_aaa_world": [
+      65,
+      85
+    ],
+    "aaaa_candidate": [
+      85,
+      95
+    ],
+    "release_candidate": [
+      95,
+      100
+    ]
+  },
+  "gradient": {
+    "epsilon": 0.025,
+    "bottleneck_lambda": 1.5,
+    "bottleneck_power": 2.0
+  },
+  "candidate_weights": {
+    "marginal_gain": 4.0,
+    "critical_path": 1.2,
+    "dependency_unlock": 1.1,
+    "player_visibility": 0.9,
+    "reuse_value": 1.0,
+    "art_importance": 1.0,
+    "systemic_yield": 1.2,
+    "gameplay_value": 1.0,
+    "evidence_confidence": 0.6,
+    "image_grounding_bonus": 0.5,
+    "collision_risk": 2.5,
+    "unresolved_dependency": 3.0,
+    "slop_risk": 2.0,
+    "technical_cost": 0.5
+  },
+  "scale_levels": [
+    "L0",
+    "L1",
+    "L2",
+    "L3",
+    "L4",
+    "L5"
+  ],
+  "hero_support_systemic_target": {
+    "hero": 0.05,
+    "support": 0.2,
+    "systemic": 0.75
+  },
+  "kit_thresholds": {
+    "poor_max": 9,
+    "acceptable_max": 29,
+    "strong_max": 99,
+    "production_grade_min": 100
+  },
+  "fidelity": {
+    "hero_tiers": [
+      "S",
+      "A"
+    ],
+    "image_grounded_required_unless_waived": true,
+    "pipeline": [
+      "LOOK_LOCK",
+      "REFERENCE_PACK",
+      "IMAGE_TARGET_APPROVAL",
+      "IMAGE_TO_3D_BASE",
+      "GEOMETRY_CAUSALITY",
+      "CLEANUP_RETOPO",
+      "UV_MATERIAL",
+      "LOD_COLLISION",
+      "ENGINE_IMPORT",
+      "VISUAL_REGRESSION",
+      "RECEIPT"
+    ],
+    "image_to_3d_role": "base_candidate_only",
+    "preferred_reconstruction_surfaces": [
+      "Higgsfield 3D Jutsu",
+      "approved photogrammetry/reconstruction",
+      "manual/procedural reconstruction when better"
+    ],
+    "forbidden_final_shortcut": "raw AI mesh != final asset"
+  },
+  "anti_slop": [
+    "random_grunge",
+    "uniform_scratches",
+    "meaningless_greeble",
+    "plastic_cgi",
+    "perfect_symmetry_without_cause",
+    "unmotivated_emissives",
+    "floating_geometry",
+    "unscaled_detail",
+    "decorative_complexity_without_function"
+  ],
+  "required_density_passes": [
+    "MACRO",
+    "STRUCTURE",
+    "GAMEPLAY",
+    "SUPPORT_ASSETS",
+    "PROPS",
+    "ECOLOGY",
+    "MATERIAL_HISTORY",
+    "MICRODETAIL",
+    "STORYTELLING",
+    "LIGHTING",
+    "AUDIO_HOOKS",
+    "OPTIMIZATION",
+    "PLAYER_SCALE",
+    "DISTANT_VISTA",
+    "FINAL_ART_REVIEW"
+  ]
+}
