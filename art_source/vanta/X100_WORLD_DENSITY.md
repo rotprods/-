@@ -4,9 +4,10 @@
 **World:** VANTA / FERRUM  
 **Producer:** `AGENT-VANTA-WORLD-01`  
 **Branch:** `art/world-vanta-001`  
-**Atomic claim:** `CLM-VANTA-X100-CULTURE-001`
+**Atomic claim:** `CLM-VANTA-X100-CULTURE-001`  
+**Latest remote source:** Blender rev18
 
-X100 is a production algorithm, not a quality label. VANTA remains `BLOCKOUT` under the multiplicative completeness model.
+X100 is a production algorithm, not a quality label. After the rev14–18 production wave, the evidence-linked multiplicative planning heuristic is **22.49% → PLAYABLE FOUNDATION**. This is not an AAA/AAAA claim.
 
 ## North Star
 
@@ -14,99 +15,174 @@ VANTA must read as a high-gravity worker shipyard whose labor culture, repair ec
 
 ## Multiplicative completeness
 
-Fourteen normalized production dimensions are combined by geometric mean. Scores are evidence-linked planning heuristics, not canon or marketing claims. Current rev13 heuristic: **13.63% → BLOCKOUT**.
+Fourteen normalized production dimensions are combined by geometric mean. Scores are planning heuristics tied to receipts, not canon or marketing claims. Ecology remains the lowest dimension and therefore prevents a false high-completeness label.
 
-| Dimension | Score | Current evidence / blocker |
+| Dimension | Score | Rev18 evidence / blocker |
 |---|---:|---|
-| Macro world | 0.28 | 24×24 km district proxy, three regions; final topology open |
-| Meso architecture | 0.18 | Puerto/Lluvia/Anillo blockout + CP4 kit; final interiors sparse |
-| Micro assets | 0.08 | first X100 culture family; broad prop coverage sparse |
-| Ecology | 0.03 | canonical species mostly targets/proxies; causal ecosystem absent |
-| Civilization | 0.12 | Worker Life/Maintenance family begins closing this layer |
-| Gameplay | 0.10 | CP4 traversal + diagnostic 10.2 km spine; final route/interactions open |
-| Material causality | 0.18 | CP5 payload + causal state deltas; photometric portability open |
-| Variation | 0.16 | 36 culture variants + CP4 modularity; many categories flat |
-| Temporal states | 0.18 | five-state source system for 36 variants; not world-wide |
-| Storytelling | 0.12 | ownership/repair/strike + three-era contract; tableaux sparse |
-| Audio/visual language | 0.12 | strong canon/art language; runtime audio hooks sparse |
-| Optimization | 0.16 | guarded dedup + clean selected delivery; HLOD/GPU open |
-| Reusability | 0.22 | CP4 snap kit + X100 state contract; placement grammar open |
-| QA | 0.20 | native Godot import/collision/UV/route evidence; human art/GPU open |
+| Macro world | 0.28 | 24×24 km district proxy and three regions; final topology open |
+| Meso architecture | 0.20 | Puerto/Lluvia/Anillo blockout + CP4 kit + culture tableaux; final interiors sparse |
+| Micro assets | 0.22 | 36 culture variants + 333 functional hardness details; world-wide prop breadth still incomplete |
+| Ecology | 0.03 | canonical species remain targets/proxies; causal ecosystem absent |
+| Civilization | 0.32 | five Worker Life microenvironments now encode labor, repair, medicine, storage, strike and charging culture |
+| Gameplay | 0.16 | 1.8 m service corridors + native tableau collision; final authored interactions open |
+| Material causality | 0.20 | causal source states survive; photometric portability remains open |
+| Variation | 0.30 | S/M/L × five states × placement recombination; many non-culture categories remain flat |
+| Temporal states | 0.34 | five state layers plus simultaneous three-era tableau geometry |
+| Storytelling | 0.30 | 25 causal history pieces across five tableaux; broader region storytelling open |
+| Audio/visual language | 0.16 | causal audio hooks specified; runtime implementation sparse |
+| Optimization | 0.30 | real LOD1, 36 real LOD2, five HLOD source meshes; target GPU and material bake open |
+| Reusability | 0.40 | 675 linked placement parts share existing mesh datablocks; 810k conservative configs/tableau |
+| QA | 0.38 | AABB clearance, UV/silhouette, clean delivery and native Godot physics receipts pass; human art/GPU open |
 
-The lowest multiplicative dimension is currently **ECOLOGY**, but the active Worker Life family still has higher-priority quality gates and therefore remains the current claim.
+## Worker Life / Maintenance Culture — rev18 state
 
-## Worker Life / Maintenance Culture family
+The claim still reserves twelve causal families under `VAN_X100_CULT_*`: LOCKER, BENCH, TOOLBOARD, PARTSBIN, MEDKIT, WELDCART, BATTERY, RATION, STRIKE, LIGHT, SERVICE and TEXTILE.
 
-`CLM-VANTA-X100-CULTURE-001` reserves prefix `VAN_X100_CULT_*` and twelve causal families:
+Each family retains `S/M/L` variants and the five causal states `pristine / used / damaged / repaired / abandoned`, giving **36 source variants × 5 states = 180 state configurations** before placement context. The four non-pristine states are real source delta geometry, not metadata-only labels.
 
-- LOCKER — worker ownership and personal storage;
-- BENCH — low-COM work/rest surfaces for 1.86g;
-- TOOLBOARD — maintenance access and missing-tool history;
-- PARTSBIN — salvage sorting / fastener economy;
-- MEDKIT — industrial trauma / thermal first aid;
-- WELDCART — repair trolley / cable / gas service;
-- BATTERY — magnetic-tool batteries and charging;
-- RATION — worker food/water logistics;
-- STRIKE — barricade / placard / ownership language;
-- LIGHT — task/emergency lighting;
-- SERVICE — patch boxes / conduit endpoints;
-- TEXTILE — cold-weather worker softgoods.
+### Manufacturing hardness — PASS 1
 
-Every family has `S/M/L` source variants and five causal states: `pristine / used / damaged / repaired / abandoned`. Rev13 therefore contains **36 source variants × 5 states = 180 source configurations** before placement context. The four non-pristine states are real source delta geometry, not metadata-only claims.
+Rev14 upgraded the family from clean blockout to functional manufacturing language:
 
-### Culture DNA
+- 165 structural parts receive controlled edge treatment;
+- 333 functional detail objects add hinges, bolts, latches, gussets, collars, service guards, cable hardware and other justified assembly detail;
+- 36 maintenance/access clearance volumes are tied to a 1.78 m player reference;
+- no random decorative greeble contract was introduced;
+- UV and below-deck regression checks pass.
 
-- thick welded/bolted fabrication with low center of mass;
-- repairable modules and exposed service access;
-- low handles, braced storage and maintenance clearance;
-- mismatched salvage patches and visible fasteners;
-- reuse-first resource logic and sorted salvage;
-- black/steel/rust mass, yellow ownership/safety, cyan only for active magnetic/energy function;
-- collective workshop logic, personal ownership marks and strike history;
-- rugged magnetic shipyard technology, not decorative futurism.
+This is `HARDNESS_PASS_1`, not final hero-detail approval.
+
+## Real LOD hierarchy
+
+Rev15 replaced 36 envelope placeholders with family-aware LOD1 silhouettes. At that checkpoint LOD1 measured 1,068 triangles against 26,400 selected LOD0 visual triangles, ratio **4.05%**, with silhouette and UV gates passing.
+
+Rev18 adds a second real reduction layer:
+
+- 36 LOD2 convex-hull silhouettes;
+- active rev18 LOD0: **16,332 tris**;
+- LOD2 total: **840 tris**;
+- ratio: **5.14%**, below the 10% source target;
+- silhouette failures: 0;
+- UV failures: 0;
+- five tableau-level HLOD source meshes, 904 triangles total.
+
+**Truth boundary:** HLOD material bake/atlas and runtime LOD switching distances are still open. A source HLOD is not a qualified shipping HLOD by itself.
+
+## Systemic placement multiplier
+
+Rev16 proves that the family can produce places rather than a catalog. Five QA microenvironments were assembled:
+
+1. Maintenance Bay;
+2. Locker / Rest Alcove;
+3. Medic Corner;
+4. Strike Checkpoint;
+5. Charging Station.
+
+Measured source result:
+
+- 40 asset placements;
+- 675 linked instance parts;
+- every placement part shares the existing source mesh datablock;
+- all 12 families are represented;
+- no mass duplication of bespoke placement meshes.
+
+A conservative combinatorial floor per tableau is **810,000 credible configurations**, calculated only from four optional support slots × three size choices × five causal states. It intentionally excludes rotations and cross-tableau recombination.
+
+## Player scale and clearance
+
+The first world-space AABB review found **9 real blockers** inside the 1.8 m primary service corridor. They were not ignored. Rev17 re-laid all nine placements and repeated the gate:
+
+- corridor width: 1.8 m;
+- initial blockers: 9;
+- repaired: 9;
+- remaining blockers: 0.
+
+The clearance receipt is a source-space gameplay-readability gate, not a complete movement/combat playtest.
+
+## World history as geometry
+
+Every tableau now carries three times simultaneously:
+
+- `ERA0`: original standardized shipyard mounting rails;
+- `ERA1`: reclaimed worker field-repair plates;
+- `ERA2`: current worker-controlled safe-zone / strike routing markers.
+
+Across the five tableaux this adds 25 causal story objects. Their role is to expose construction, repair and political use, not decorative noise. Each tableau also stores placement rules and audio hooks such as tool impacts, transformer hum, chain rattle and PA/work signals.
 
 ## Source vs runtime contract
 
-The rev13 `.blend` deliberately contains every state and LOD source. In the observed Blender 5.2 glTF path, `hide_render`, `hide_viewport`, `hide_set`, collection hiding and layer exclusion did **not** reliably filter delivery. Provider `preview.glb` is therefore source/preview evidence, not the X100 runtime authority.
+The rich `.blend` deliberately contains state, LOD and HLOD source. Provider `preview.glb` is therefore **not** runtime authority.
 
-Qualified runtime export uses `bpy.ops.export_scene.gltf(..., use_selection=True)` and explicitly selects:
+Runtime delivery uses selected export and must prove that only intended content ships. The rev18 Maintenance Bay selected delivery passes:
 
-1. family root;
-2. base render children;
-3. exactly the active state delta (none for pristine);
-4. matching `_colonly` collider;
-5. no `LOD1_*` source;
-6. no inactive state layers;
-7. no QA cameras/lights/decks.
+- 165 selected objects / nodes;
+- 95 meshes;
+- 8 materials;
+- 9 images;
+- exactly 9 `_colonly` nodes;
+- 5 story nodes;
+- deck + aisle present;
+- **0 LOD source nodes**;
+- **0 editor clearance nodes**;
+- GLB: 2,727,596 B;
+- SHA256 `38ee9e2ded3bd46122c155375912cb77caf12f7cf013f3bb1fa27e09b97291a2`.
 
-Reusable implementation: `pipeline/export_x100_delivery.py`.
+Exact rev18 source `.blend` SHA256: `26e4e6238fd6136cb3830b0a568ce132a194e1bb16b361d6362a2b1fdc7f6a86`.
 
-## Current family gates
+## Native engine qualification
 
-### Technically qualified
+The Maintenance Bay GLB was exported with exact official Blender 5.2.0 LTS and imported into official Godot 4.7.2 stable (`ed1daf0bf`) without GitHub Actions.
 
-- 36 roots / 12 families / S-M-L coverage;
-- 144 non-pristine state delta sources + pristine base state;
-- UV0 on every material-bearing delivery primitive;
-- 36 collision proxies and 36 LOD1 source proxies;
-- selected runtime GLB: 36 roots, 36 colliders, 28 active-state nodes, **0 inactive states, 0 LOD source**;
-- Godot 4.7.2: 36 `StaticBody3D`, 36 non-null `CollisionShape3D`, 256 mesh instances/material surfaces, UV failures 0, locker collision ray PASS;
-- selected QA-route GLB: 205/205 physical ray samples across the 10.2 km diagnostic spine;
-- rev11 continuous CharacterBody kilometre canary remains the stronger route-traversal receipt.
+Native physics result:
 
-### Open — `FAMILY_COMPLETE = false`
+- `StaticBody3D`: **9**;
+- non-null `CollisionShape3D`: **9**;
+- `MeshInstance3D`: **148**;
+- physical raycasts: **9/9 hit**;
+- hits cover the eight placed assets plus the tableau deck exactly.
 
-- manufacturing hardness: bevels, thickness, fasteners, welds and access clearances by family;
-- true reduced LOD geometry rather than envelope proxies;
-- richer causal material-state differentiation;
-- 3–5 procedural Puerto tableaux proving placement grammar and story readability;
-- player reach/access/clearance review per family;
-- human visual/art-direction approval;
-- target-GPU frame-time/draw/VRAM/residency;
-- final Puerto placement instead of QA staging.
+This empirically qualifies the selected delivery's collision import and bounded physical reachability. It does **not** select Godot as final engine or qualify target-GPU performance.
 
-## Permanent loop
+Runtime image capture on the headless CPU path exceeded the render time limit. That negative evidence is preserved and **no runtime visual PASS is claimed**.
 
-`technical delivery → manufacturing hardness → causal states/materials → placement grammar → engine QA → visual QA → coverage update → next lowest multiplicative dimension`.
+## Evidence bundle
 
-Do not mass-propagate the legacy 327 planning targets merely because the first X100 family has a valid runtime bundle.
+`EXOVANT_VANTA_X100_REV18_MAINTENANCE_RUNTIME.zip`
+
+- bundle SHA256 `9c6ff8c92d34b750b66a5c15b06664fe1fb25af014ea3607cdd4800974118fef`;
+- qualification receipt SHA256 `39dbd2c1c5822ffab0993017a773c946af2d574a1403bab39b868c3dc08d8254`;
+- persistent media ID `d1b87a41-5955-487b-9edb-d4cf9a3d0130`.
+
+Canonical machine-readable receipt: `evidence/x100_worker_life_rev18_qualification.json`.
+
+## Current truth boundary — `FAMILY_COMPLETE = false`
+
+Qualified in this wave:
+
+- manufacturing hardness pass 1;
+- real LOD1 source;
+- five systemic placement tableaux;
+- 1.8 m player-clearance source gate;
+- simultaneous three-era physical storytelling;
+- real LOD2 source;
+- HLOD source geometry;
+- clean selected Maintenance Bay delivery;
+- native Godot collision import and 9/9 ray coverage.
+
+Still open:
+
+- human visual/art-direction approval at close/mid/far views;
+- richer material-state differentiation and photometric portability;
+- runtime LOD switching distances / pop assessment;
+- HLOD material bake/atlas and engine transport;
+- target-GPU frame time, draw calls, VRAM and residency;
+- final authored Puerto placement beyond QA staging;
+- world-wide propagation to architecture, machinery, ecology and remaining categories.
+
+## Next multiplicative move
+
+Do **not** respond to this advance by adding random culture props. Close the remaining family gates above; then the lowest multiplicative dimension is **ECOLOGY (0.03)**, so the next atomic X100 claim should build a causal VANTA ecology slice (`resource → consumer → predator/scavenger → decomposer`) tied physically into terrain, scrap, architecture, sound and gameplay.
+
+Permanent loop:
+
+`coverage gap → atomic claim → family → hardness → states → systemic assemblies → player clearance → history geometry → LOD/HLOD → selected delivery → engine QA → visual/hardware QA → coverage update → next gap`.

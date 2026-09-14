@@ -1,0 +1,163 @@
+{
+  "schema": "exovant.vanta.x100-worker-life-rev18-qualification.v1",
+  "world": "VANTA",
+  "claim": "CLM-VANTA-X100-CULTURE-001",
+  "remote_project_id": "c82188b1-afdc-43f2-828a-5f0e98291f83",
+  "source_revision": 18,
+  "source": {
+    "blender": "5.2.0 LTS",
+    "blend_bytes": 18399742,
+    "blend_etag": "cc1a007c2cb4f904f3e9c0944daa31ba",
+    "blend_sha256": "26e4e6238fd6136cb3830b0a568ce132a194e1bb16b361d6362a2b1fdc7f6a86",
+    "provider_preview_glb_bytes": 13525244,
+    "provider_preview_glb_etag": "06239aa9c1d8c3b42fc582f0b859f20b",
+    "provider_preview_is_runtime_authority": false
+  },
+  "rev14_hardness": {
+    "roots": 36,
+    "beveled_base_parts": 165,
+    "functional_hardness_detail_objects": 333,
+    "maintenance_clearance_volumes": 36,
+    "player_reference_height_m": 1.78,
+    "uv_failures": 0,
+    "parts_below_deck": 0,
+    "truth": "HARDNESS_PASS_1_SOURCE_QA_PASS_VISUAL_ENGINE_GPU_OPEN"
+  },
+  "rev15_lod1": {
+    "assets": 36,
+    "old_envelope_proxies_removed": 36,
+    "lod0_selected_visual_triangles_at_rev15": 26400,
+    "lod1_selected_visual_triangles": 1068,
+    "triangle_ratio": 0.04045454545454545,
+    "silhouette_guard_failures": 0,
+    "uv_failures": 0,
+    "truth": "REAL_LOD1_SOURCE_AND_REDUCTION_RATIO_QUALIFIED_ENGINE_VISUAL_GPU_OPEN"
+  },
+  "rev16_systemic_tableaux": {
+    "tableaux": 5,
+    "tableau_ids": [
+      "MAINTENANCE_BAY",
+      "LOCKER_REST_ALCOVE",
+      "MEDIC_CORNER",
+      "STRIKE_CHECKPOINT",
+      "CHARGING_STATION"
+    ],
+    "placements": 40,
+    "linked_instance_parts": 675,
+    "all_instance_parts_share_mesh_data": true,
+    "families_represented": 12,
+    "credible_configuration_floor_per_tableau": 810000,
+    "configuration_floor_basis": "16 optional support patterns * 3^4 size choices * 5^4 causal states; rotations and cross-tableau recombination excluded",
+    "truth": "SYSTEMIC_ASSEMBLIES_SOURCE_QA_PASS_ENGINE_GAMEPLAY_VISUAL_OPEN"
+  },
+  "rev17_clearance_and_history": {
+    "primary_service_corridor_width_m": 1.8,
+    "initial_corridor_blockers": 9,
+    "repaired_corridor_blockers": 9,
+    "remaining_corridor_blockers": 0,
+    "story_geometry_objects": 25,
+    "simultaneous_eras": 3,
+    "era_0": "original standardized shipyard mounting rails",
+    "era_1": "worker field repair using reclaimed plate",
+    "era_2": "current worker-controlled safe-zone / strike routing",
+    "audio_hooks": [
+      "tool impacts",
+      "transformer hum",
+      "chain rattle",
+      "PA/work signals"
+    ],
+    "truth": "PLAYER_CLEARANCE_AND_3ERA_WORLD_HISTORY_GEOMETRY_SOURCE_QA_PASS_ENGINE_VISUAL_OPEN"
+  },
+  "rev18_lod2_hlod_collision": {
+    "lod2_assets": 36,
+    "lod0_active_triangles": 16332,
+    "lod2_triangles": 840,
+    "lod2_ratio": 0.05143277002204261,
+    "lod2_target_max_ratio": 0.10,
+    "lod2_silhouette_failures": 0,
+    "lod2_uv_failures": 0,
+    "hlod_tableaux": 5,
+    "hlod_triangles_total": 904,
+    "hlod_material_bake": "PENDING",
+    "tableau_collision_proxies": 45,
+    "truth": "LOD2_GEOMETRY_AND_HLOD_SOURCE_AND_COLLISION_STRUCTURAL_QA_PASS_ENGINE_VISUAL_GPU_OPEN"
+  },
+  "maintenance_bay_selected_delivery": {
+    "exact_blender_binary": "5.2.0 LTS official",
+    "selected_objects": 165,
+    "glb_bytes": 2727596,
+    "glb_sha256": "38ee9e2ded3bd46122c155375912cb77caf12f7cf013f3bb1fa27e09b97291a2",
+    "nodes": 165,
+    "meshes": 95,
+    "materials": 8,
+    "images": 9,
+    "colonly_nodes": 9,
+    "story_nodes": 5,
+    "lod_source_nodes": 0,
+    "editor_clearance_nodes": 0,
+    "deck_present": true,
+    "aisle_present": true,
+    "clean_runtime_delivery": true
+  },
+  "godot_native_canary": {
+    "engine": "4.7.2-stable official ed1daf0bf",
+    "static_bodies": 9,
+    "collision_shapes": 9,
+    "mesh_instances": 148,
+    "raycasts": 9,
+    "ray_hits": 9,
+    "hit_bodies": [
+      "COL_TBL_MAINTENANCE_BAY__00_WELDCART_M",
+      "COL_TBL_MAINTENANCE_BAY__01_TOOLBOARD_M",
+      "COL_TBL_MAINTENANCE_BAY__02_PARTSBIN_M",
+      "COL_TBL_MAINTENANCE_BAY__03_SERVICE_M",
+      "COL_TBL_MAINTENANCE_BAY__04_LIGHT_M",
+      "COL_TBL_MAINTENANCE_BAY__05_BATTERY_M",
+      "COL_TBL_MAINTENANCE_BAY__06_BENCH_S",
+      "COL_TBL_MAINTENANCE_BAY__07_STRIKE_S",
+      "COL_TBL_MAINTENANCE_BAY_DECK"
+    ],
+    "passed": true,
+    "runtime_render_capture": "TIMEOUT_ON_CPU_HEADLESS_PATH_NOT_USED_AS_PHYSICS_GATE"
+  },
+  "bundle": {
+    "filename": "EXOVANT_VANTA_X100_REV18_MAINTENANCE_RUNTIME.zip",
+    "sha256": "9c6ff8c92d34b750b66a5c15b06664fe1fb25af014ea3607cdd4800974118fef",
+    "qualification_receipt_sha256": "39dbd2c1c5822ffab0993017a773c946af2d574a1403bab39b868c3dc08d8254",
+    "media_id": "d1b87a41-5955-487b-9edb-d4cf9a3d0130",
+    "url": "https://d2ol7oe51mr4n9.cloudfront.net/user_2zv0ZwTLslDi8yQhQ13R8PX7SVU/d1b87a41-5955-487b-9edb-d4cf9a3d0130.zip"
+  },
+  "negative_evidence": [
+    "The first rev16 operation was discarded after a worker coordinator restart; revision 15 remained authoritative and the operation was safely reissued under a new ID.",
+    "The rev16 AABB clearance audit found nine real corridor blockers; rev17 repaired all nine before further propagation.",
+    "The first native canary harness lost the Godot executable after changing directories (exit 127); this was a harness-path failure, not an asset failure.",
+    "Headless runtime image capture exceeded the CPU time limit; physics/import qualification was isolated and passed independently. No visual runtime PASS is claimed."
+  ],
+  "truth": {
+    "manufacturing_hardness_pass_1": true,
+    "lod1_real_reduction_pass": true,
+    "systemic_tableau_source_pass": true,
+    "player_clearance_source_pass": true,
+    "three_era_history_geometry_source_pass": true,
+    "lod2_real_reduction_pass": true,
+    "hlod_source_exists": true,
+    "selected_runtime_delivery_clean": true,
+    "native_collision_import_pass": true,
+    "native_raycast_coverage_pass": true,
+    "human_visual_approval": false,
+    "runtime_lod_switching_qualified": false,
+    "hlod_material_bake_qualified": false,
+    "target_gpu_performance_qualified": false,
+    "final_puerto_placement": false,
+    "family_complete": false,
+    "aaa_aaaa_complete": false
+  },
+  "next": [
+    "qualify runtime LOD switching distances and pop on the five tableaux",
+    "bake/atlas HLOD material representation and verify source-to-engine role transport",
+    "perform human art-direction review on close/mid/far views",
+    "measure frame time, draw calls, texture residency and VRAM on declared target GPU hardware",
+    "replace QA tableaux with authored Puerto placements while preserving the placement/clearance/history grammar",
+    "then claim the lowest multiplicative gap: causal ecology"
+  ]
+}
