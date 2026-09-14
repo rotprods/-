@@ -1,0 +1,120 @@
+{
+  "schema_version": 1,
+  "receipt_id": "X100-SYLVA-MACRO-R18",
+  "world_id": "sylva",
+  "claim_id": "CLM-SYLVA-MACRO-001",
+  "branch": "art/world-sylva-prime-macro-001",
+  "source_kind": "OWNER_CHECKPOINT_EVIDENCE",
+  "source_scene_revision": 22,
+  "source_geometry_fingerprint": "7b1a4c5c1f16c6b3c1319f3da26315c8d359ce97717272c91aa5910effe00939",
+  "protocol": "EXOVANT-X100-V2",
+  "protocol_source_sha": "42d0dba1731e65b8e67f9e6b67f283aa9b2e7ab5",
+  "config_source_sha": "bcba04486c14793f55ca8a59ea26f4fd4b5b68be",
+  "evidence": [
+    {
+      "dimension": "macro_world",
+      "cell": "regional_layout",
+      "maturity": "systemic_complete",
+      "evidence_refs": [
+        "art_source/worlds/sylva_prime/macro/qa/R18_ALL_PRIMARY_ROOT_XSEC_ACCEPTANCE.json",
+        "art_source/worlds/sylva_prime/macro/STATUS.md",
+        "https://github.com/rotprods/-/pull/3"
+      ]
+    },
+    {
+      "dimension": "macro_world",
+      "cell": "transport_network",
+      "maturity": "locally_validated",
+      "evidence_refs": [
+        "art_source/worlds/sylva_prime/macro/qa/R11_NAVIGATION_AND_ROOTKIT_INTEGRATION.json",
+        "art_source/worlds/sylva_prime/macro/qa/R18_ALL_PRIMARY_ROOT_XSEC_ACCEPTANCE.json"
+      ]
+    },
+    {
+      "dimension": "macro_world",
+      "cell": "landmarks_vistas",
+      "maturity": "locally_validated",
+      "evidence_refs": [
+        "art_source/worlds/sylva_prime/macro/HLOD_FEATURE_RETENTION_R18.json",
+        "art_source/worlds/sylva_prime/macro/qa/R18_ALL_PRIMARY_ROOT_XSEC_ACCEPTANCE.json"
+      ]
+    },
+    {
+      "dimension": "gameplay",
+      "cell": "traversal",
+      "maturity": "locally_validated",
+      "evidence_refs": [
+        "art_source/worlds/sylva_prime/macro/qa/R11_NAVIGATION_AND_ROOTKIT_INTEGRATION.json",
+        "art_source/worlds/sylva_prime/macro/NATIVE_STREAM_RESIDENCY_TEST_PLAN.md"
+      ]
+    },
+    {
+      "dimension": "optimization",
+      "cell": "collision",
+      "maturity": "locally_validated",
+      "evidence_refs": [
+        "art_source/worlds/sylva_prime/macro/qa/R18_ALL_PRIMARY_ROOT_XSEC_ACCEPTANCE.json"
+      ]
+    },
+    {
+      "dimension": "optimization",
+      "cell": "streaming",
+      "maturity": "locally_validated",
+      "evidence_refs": [
+        "art_source/worlds/sylva_prime/macro/qa/R13_STREAMING_WORLD_PARTITION.json",
+        "art_source/worlds/sylva_prime/macro/qa/R15_PREFETCH_POLICY_NORMALIZATION.json",
+        "art_source/worlds/sylva_prime/macro/STATUS.md"
+      ]
+    },
+    {
+      "dimension": "optimization",
+      "cell": "lod",
+      "maturity": "planned",
+      "evidence_refs": [
+        "art_source/worlds/sylva_prime/macro/HLOD_STRATEGY_R14_PROPOSAL.md",
+        "art_source/worlds/sylva_prime/macro/HLOD_FEATURE_RETENTION_R18.json"
+      ]
+    },
+    {
+      "dimension": "reusability",
+      "cell": "placement_rules",
+      "maturity": "locally_validated",
+      "evidence_refs": [
+        "art_source/worlds/sylva_prime/macro/STREAM_HIERARCHY_R14_PROPOSAL.json",
+        "art_source/worlds/sylva_prime/macro/WORLD_PRODUCTION_READINESS_R18.json"
+      ]
+    },
+    {
+      "dimension": "qa",
+      "cell": "geometry_uv_material",
+      "maturity": "locally_validated",
+      "evidence_refs": [
+        "art_source/worlds/sylva_prime/macro/qa/R18_ALL_PRIMARY_ROOT_XSEC_ACCEPTANCE.json"
+      ]
+    },
+    {
+      "dimension": "qa",
+      "cell": "canon",
+      "maturity": "locally_validated",
+      "evidence_refs": [
+        "art_source/worlds/sylva_prime/macro/WORLD_BIBLE_MACRO.md",
+        "art_source/worlds/sylva_prime/macro/qa/R5_VESPER_CANON_LAYOUT.json"
+      ]
+    },
+    {
+      "dimension": "storytelling",
+      "cell": "current_state",
+      "maturity": "implemented",
+      "evidence_refs": [
+        "art_source/worlds/sylva_prime/macro/ART_DIRECTION_BIBLE_R14.md",
+        "art_source/worlds/sylva_prime/macro/WORLD_ASSET_COVERAGE_R14.json"
+      ]
+    }
+  ],
+  "explicit_non_claims": [
+    "This receipt does not compute or assert WORLD_COMPLETENESS.",
+    "It does not upgrade human GATE-ART, engine_runtime QA, material_causality, ecology, civilization, micro_assets or final HLOD without their own receipts.",
+    "It does not change Fleet ownership or reserve any downstream shard."
+  ],
+  "next_aggregation": "Run ops/x100/x100_spatial.py build and x100_director.py from a current checkout with this owner receipt included, after Fleet preflight."
+}
