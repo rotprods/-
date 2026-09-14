@@ -1,0 +1,240 @@
+schema_version: 2
+world_id: leviathan
+claim_id: CLM-W10-WORLD-LEVIATHAN-001
+agent_id: AGENT-LEVIATHAN-10
+north_star: >-
+  Deliver a recoverable LEVIATHAN world-production foundation that makes the living-planet
+  identity legible, preserves stable gameplay collision beneath deforming visual tissue,
+  and establishes the three canonical regions plus the 58 m SOMA encounter interface.
+status: IN_PROGRESS
+last_checkpoint: BLENDER_R18_ECOLOGY_HOSTILE_WAVE_OPTIMIZED_COLD_REPLAYED
+
+first_10_tasks:
+  - id: W10/WORLD/001
+    title: Lock evidence-bound LEVIATHAN World Bible
+    priority: P0
+    status: DONE
+    output: art_source/worlds/leviathan/WORLD_BIBLE.md
+    dependency: []
+    dod: [three canonical regions recorded, gravity/temperature traced, planet radius remains UNKNOWN, engine/hardware uncertainty recorded]
+    evidence: [art_source/worlds/leviathan/WORLD_BIBLE.md]
+
+  - id: W10/WORLD/002
+    title: Build master asset registry and coverage matrix
+    priority: P0
+    status: DONE
+    output: art_source/worlds/leviathan/MASTER_ASSET_LIST.yaml
+    dependency: [W10/WORLD/001]
+    dod: [all three regions represented, major asset families represented, proxy versus final state explicit, proposal rows not represented as final]
+    evidence: [art_source/worlds/leviathan/MASTER_ASSET_LIST.yaml]
+
+  - id: W10/BLEND/003
+    title: Create deterministic LEVIATHAN master Blender scene
+    priority: P0
+    status: DONE
+    output: [art_source/worlds/leviathan/tools/build_master_scene.py, editable remote .blend, portable GLB]
+    dependency: [W10/WORLD/001]
+    dod: [metric units verified, semantic hierarchy exists, generators versioned, blend+GLB produced, independent cold replay verified]
+    evidence: [art_source/worlds/leviathan/evidence/cold_rebuild_r3.json, art_source/worlds/leviathan/evidence/canonical_surface_repro_r9.json, art_source/worlds/leviathan/evidence/instancing_optimization_r10_v2.json]
+
+  - id: W10/REGION/004
+    title: Puerto de la Herida representative foundation
+    priority: P1
+    status: REVIEW
+    output: [R1 blockout, 24_R1_HERO_GRAFT_MICROSET, art_source/worlds/leviathan/tools/build_puerto_microset.py, art_source/worlds/leviathan/tools/refine_puerto_microset_v2.py]
+    dependency: [W10/BLEND/003]
+    dod:
+      - graft/suture/valve manufacturing logic exists
+      - human scale validated
+      - canonical evaluated surface replay is recoverable
+      - world route has continuous stable collision through shared traversal spine
+      - material family calibration exists without forced propagation
+      - direct art review required before DONE
+      - runtime traversal/material validation required before DONE
+    evidence: [art_source/worlds/leviathan/evidence/puerto_microset_r5.json, art_source/worlds/leviathan/evidence/traversal_ribbon_r11.json, art_source/worlds/leviathan/evidence/pbr_calibration_lab_r5.json]
+
+  - id: W10/REGION/005
+    title: Jardines Inmunes representative foundation
+    priority: P1
+    status: REVIEW
+    output: [R2 blockout, 25_R2_HERO_LYMPH_MICROSET, ecology representative assets, art_source/worlds/leviathan/tools/build_jardines_microset.py]
+    dependency: [W10/BLEND/003]
+    dod:
+      - stable path remains independent from living visuals
+      - LEV-INF-005/LEV-ECO-001/002/003/004 have representative coverage
+      - gardener collision remains provisional and other ecology assets own no gameplay collision
+      - ecology additions replay exactly in independent cold build
+      - living-host PBR family calibration exists in isolated lab
+      - art/rig/animation/runtime/material propagation required before DONE
+    current_truth:
+      canonical_ecology_species_represented: 4
+      canonical_ecology_species_total: 4
+      reproducible_new_assets: [LEV-ECO-002, LEV-ECO-003]
+    evidence:
+      - art_source/worlds/leviathan/evidence/jardines_microset_r7.json
+      - art_source/worlds/leviathan/evidence/wound_pollinator_r13.json
+      - art_source/worlds/leviathan/evidence/lymph_whale_r17.json
+      - art_source/worlds/leviathan/evidence/post_creature_instancing_r18.json
+      - art_source/worlds/leviathan/evidence/pbr_calibration_lab_r5.json
+
+  - id: W10/REGION/006
+    title: Cámara de SOMA encounter foundation
+    priority: P1
+    status: REVIEW
+    output: [R3 blockout, 26_R3_SOMA_ENCOUNTER_MICROSET, art_source/worlds/leviathan/tools/build_soma_encounter_microset_v2.py, art_source/worlds/leviathan/tools/build_stable_traversal_ribbon_v1.py]
+    dependency: [W10/BLEND/003]
+    dod:
+      - exact 58 m chamber / 29 m radius preserved
+      - visual geometry actual evaluated vertices remain inside 29 m
+      - biological bridges, three refuge valves, contraction telegraphs and regulator cradle exist
+      - all new contraction/bridge visuals remain outside collision authority
+      - SOMA proxy remains final_anatomy=false
+      - stable traversal ribbon reaches arena top and visual ingress remains non-collision
+      - direct art review and runtime import required before DONE
+    evidence: [art_source/worlds/leviathan/validation.json, art_source/worlds/leviathan/evidence/soma_encounter_microset_r8.json, art_source/worlds/leviathan/evidence/traversal_ribbon_r11.json]
+
+  - id: W10/TECH/007
+    title: Qualify scale and stable collision separation
+    priority: P0
+    status: REVIEW
+    output: [art_source/worlds/leviathan/validation.json, art_source/worlds/leviathan/evidence/traversal_ribbon_r11.json]
+    dependency: [W10/REGION/004, W10/REGION/005, W10/REGION/006]
+    dod:
+      - 1.85 m reference and 58 m arena measured
+      - stable collision and visual-only families enumerated
+      - continuous stable route exists from authored traversal spine into SOMA floor
+      - route width/tube clearance/contact/slope are measured and truth-labeled
+      - creature/adversary representative art does not leak into collision authority
+      - engine capsule/nav/collision traversal smoke test passes before DONE
+    current_truth:
+      stable_route_length_m: 541.256
+      stable_route_width_m: 8.0
+      width_final_gameplay_canon: false
+      minimum_visual_tube_side_margin_m: 1.0513
+      max_segment_slope_percent: 7.6923
+      new_creature_adversary_collision_leaks: 0
+      runtime_capsule_nav_pass: false
+    evidence: [art_source/worlds/leviathan/validation.json, art_source/worlds/leviathan/evidence/traversal_ribbon_r11.json, art_source/worlds/leviathan/evidence/post_creature_instancing_r18.json, art_source/worlds/leviathan/evidence/runtime_import_blocker_r5.json]
+
+  - id: W10/MAT/008
+    title: Establish material-role library, portable PBR calibration basis and evidence-bound LOD policy
+    priority: P1
+    status: REVIEW
+    output:
+      - 18 portable world-master material roles
+      - art_source/worlds/leviathan/UV_PBR_LOD_CONTRACT.md
+      - art_source/worlds/leviathan/materials/PBR_CALIBRATION_LAB.md
+      - art_source/worlds/leviathan/tools/build_pbr_calibration_lab_v5_canonical.py
+      - art_source/worlds/leviathan/LOD_CANDIDATE_POLICY.md
+      - art_source/worlds/leviathan/evidence/pbr_calibration_lab_r5.json
+      - art_source/worlds/leviathan/evidence/lod_feasibility_r10.json
+    dependency: [W10/WORLD/001, W10/BLEND/003]
+    dod:
+      - living host and human graft roles remain separable
+      - amber/cyan/vermilion semantics preserved
+      - isolated canonical PBR lab exists for LEV-MAT-001/002
+      - calibration texture bytes survive editable-source checkpoint and cold replay exactly
+      - portable GLB embeds all calibration textures without external URI
+      - decoded metallic/roughness maps remain inside declared physical ranges after 8-bit quantization
+      - tangent normal vectors are sane
+      - LOD policy is family/error based rather than one global decimate ratio
+      - texel density and shipping texture resolution require target profile before approval
+      - direct art review passes before world-master PBR propagation
+      - world-master propagation + engine material validation required before DONE
+      - production LOD/HLOD + screen-space/hardware validation required before DONE
+    current_truth:
+      world_master_image_textures: 0
+      world_master_final_pbr_pass: false
+      pbr_lab_technical_pass: true
+      pbr_lab_canonical_fingerprint: fb881b5d76c3c2fe8f35441b7f27cf4a0ad71db74f69a915eb1d48d966db9230
+      pbr_lab_packed_pngs: 18
+      production_uv_density_pass: false
+      production_texture_budget_pass: false
+      final_lod_pass: false
+    evidence: [art_source/worlds/leviathan/evidence/uv_pbr_lod_audit_r8.json, art_source/worlds/leviathan/evidence/pbr_calibration_lab_r5.json, art_source/worlds/leviathan/evidence/lod_feasibility_r10.json]
+
+  - id: W10/ECO/009
+    title: Establish ecology and adversary interfaces
+    priority: P1
+    status: REVIEW
+    output:
+      - LEV-ECO-001 Parásito jardinero representative functional anatomy
+      - LEV-ECO-002 Ballena de linfa representative functional anatomy
+      - LEV-ECO-003 Polinizador de herida representative functional anatomy
+      - LEV-ECO-004 Alga de pulso representative family
+      - LEV-ENM-001 Fagocito guardián representative functional anatomy
+      - LEV-ENM-002 Extractor de pulso representative functional interface
+      - LEV-ENM-003 Colonia parasitaria representative multinode system
+    dependency: [W10/REGION/005]
+    dod:
+      - all four canonical ecology species have representative coverage
+      - all three canonical adversaries have representative coverage
+      - new functional assets replace/advance coarse silhouette proxies without inventing final canon
+      - exact surface replay passes on independent cold project for LEV-ECO-002/003 and LEV-ENM-001/002/003
+      - representative ecology/adversary art owns no unintended gameplay collision
+      - sockets/interfaces exist for future rig/gameplay integration
+      - final art/anatomy review required before DONE
+      - final rig/animation/AI/gameplay/hit-hurt/collision/engine reviews required before DONE
+    current_truth:
+      canonical_ecology_coverage: 4/4
+      canonical_adversary_coverage: 3/3
+      exact_cold_replay_assets: 5
+      audited_collision_leaks: 0
+      final_rig_animation_gameplay_pass: false
+    evidence:
+      - art_source/worlds/leviathan/MASTER_ASSET_LIST.yaml
+      - art_source/worlds/leviathan/evidence/jardines_microset_r7.json
+      - art_source/worlds/leviathan/evidence/wound_pollinator_r13.json
+      - art_source/worlds/leviathan/evidence/lymph_whale_r17.json
+      - art_source/worlds/leviathan/evidence/fagocito_guardian_r14.json
+      - art_source/worlds/leviathan/evidence/pulse_extractor_r15.json
+      - art_source/worlds/leviathan/evidence/parasitic_colony_r16.json
+      - art_source/worlds/leviathan/evidence/post_creature_instancing_r18.json
+
+  - id: W10/QA/010
+    title: Run representative-foundation QA/export/reproducibility receipts
+    priority: P0
+    status: REVIEW
+    output:
+      - art_source/worlds/leviathan/validation.json
+      - art_source/worlds/leviathan/evidence/cold_rebuild_r3.json
+      - art_source/worlds/leviathan/evidence/canonical_surface_repro_r9.json
+      - art_source/worlds/leviathan/evidence/instancing_optimization_r10_v2.json
+      - art_source/worlds/leviathan/evidence/lod_feasibility_r10.json
+      - art_source/worlds/leviathan/evidence/traversal_ribbon_r11.json
+      - art_source/worlds/leviathan/evidence/pbr_calibration_lab_r5.json
+      - art_source/worlds/leviathan/evidence/wound_pollinator_r13.json
+      - art_source/worlds/leviathan/evidence/fagocito_guardian_r14.json
+      - art_source/worlds/leviathan/evidence/pulse_extractor_r15.json
+      - art_source/worlds/leviathan/evidence/parasitic_colony_r16.json
+      - art_source/worlds/leviathan/evidence/lymph_whale_r17.json
+      - art_source/worlds/leviathan/evidence/post_creature_instancing_r18.json
+    dependency: [W10/BLEND/003, W10/REGION/004, W10/REGION/005, W10/REGION/006]
+    dod:
+      - structural/scale/export checks pass
+      - canonical evaluated-surface replay matches independent cold build
+      - structural optimizer converges primary/cold without changing audited surfaces
+      - traversal delta replays exactly and passes geometric clearance/contact QA
+      - portable PBR calibration survives primary/cold replay and GLB parse
+      - ecology/adversary representative surface replays pass
+      - direct visual review receives explicit PASS before DONE
+      - engine import remains NOT_RUN until executed
+      - performance remains unqualified until target hardware exists
+    current_open_defects:
+      - DIRECT_PIXEL_ART_REVIEW unavailable
+      - ENGINE_IMPORT_AND_TRAVERSAL unavailable
+      - WORLD_MASTER_PBR_PROPAGATION not approved
+      - FINAL_RIG_ANIMATION_AI_GAMEPLAY not authored for ecology/adversaries
+      - PR10_ROOT_MANIFEST_AGGREGATION pending integrator merge-tree refresh
+
+open_p0: [W10/TECH/007, W10/QA/010]
+open_p1: [W10/REGION/004, W10/REGION/005, W10/REGION/006, W10/MAT/008, W10/ECO/009]
+stop_conditions:
+  do_not_mark_world_done_if:
+    - any P0/P1 remains open
+    - engine import has not been checked for final assets
+    - target performance remains unqualified
+    - direct art review is pending
+    - final ecology/adversary rig-animation-gameplay gates are pending
+    - planet-scale blockers are unresolved for L0/L1
+    - final assets lack manifests or editable source

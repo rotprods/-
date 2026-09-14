@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "protocol_id": "EXOVANT-X100-V2",
+  "world_id": "leviathan",
+  "claim_id": "CLM-W10-WORLD-LEVIATHAN-001",
+  "status": "ACTIVE_REPRESENTATIVE_STAGE_WAIVERS",
+  "rule": "These waivers authorize procedural/manual-first representative interfaces only. They do not waive LOOK_LOCK / IMAGE_TARGET_APPROVAL / visual regression for final Tier A/S art.",
+  "waivers": [
+    {
+      "asset_id": "LEV-ECO-002",
+      "name": "Ballena de linfa",
+      "quality_tier": "A",
+      "current_stage": "REPRESENTATIVE_FUNCTIONAL_ANATOMY_NOT_FINAL",
+      "waived_steps_for_current_stage": ["LOOK_LOCK", "IMAGE_TARGET_APPROVAL", "IMAGE_TO_3D_BASE"],
+      "route": "PROCEDURAL_MANUAL_FUNCTION_FIRST",
+      "reason": "Canon defines ecological role/name but not final anatomy or dimensions. The immediate production goal was deterministic filtration/flow interfaces, sockets, scale envelope and cold replay. Image-to-3D before art lock would convert an unapproved silhouette into accidental authority and add cleanup debt.",
+      "must_return_before_final_art": ["LOOK_LOCK", "REFERENCE_PACK", "IMAGE_TARGET_APPROVAL", "GEOMETRY_CAUSALITY_REVIEW", "CLEANUP_RETOPO", "UV_MATERIAL", "LOD_COLLISION", "ENGINE_IMPORT", "VISUAL_REGRESSION"],
+      "raw_ai_mesh_final": false
+    },
+    {
+      "asset_id": "LEV-ENM-001",
+      "name": "Fagocito guardián",
+      "quality_tier": "A",
+      "current_stage": "REPRESENTATIVE_FUNCTIONAL_ANATOMY_NOT_FINAL",
+      "waived_steps_for_current_stage": ["LOOK_LOCK", "IMAGE_TARGET_APPROVAL", "IMAGE_TO_3D_BASE"],
+      "route": "PROCEDURAL_MANUAL_FUNCTION_FIRST",
+      "reason": "Historical capsule proxy is explicitly non-canon and final immune-cell silhouette is unapproved. Function-first construction establishes phagocytosis/pseudopod/telegraph interfaces without pretending the representative form is the final enemy design.",
+      "must_return_before_final_art": ["LOOK_LOCK", "REFERENCE_PACK", "IMAGE_TARGET_APPROVAL", "GEOMETRY_CAUSALITY_REVIEW", "CLEANUP_RETOPO", "UV_MATERIAL", "LOD_COLLISION", "ENGINE_IMPORT", "VISUAL_REGRESSION"],
+      "raw_ai_mesh_final": false
+    },
+    {
+      "asset_id": "LEV-ENM-002",
+      "name": "Extractor de pulso",
+      "quality_tier": "A",
+      "current_stage": "REPRESENTATIVE_FUNCTIONAL_INTERFACE_NOT_FINAL",
+      "waived_steps_for_current_stage": ["LOOK_LOCK", "IMAGE_TARGET_APPROVAL", "IMAGE_TO_3D_BASE"],
+      "route": "PROCEDURAL_MANUAL_FUNCTION_FIRST",
+      "reason": "Canon does not define origin/faction/mobility/final design. A deterministic anchored siphon/pressure interface inside the existing envelope provides integration sockets without inventing visual canon. Final art must be look-locked separately.",
+      "must_return_before_final_art": ["LOOK_LOCK", "REFERENCE_PACK", "IMAGE_TARGET_APPROVAL", "GEOMETRY_CAUSALITY_REVIEW", "CLEANUP_RETOPO", "UV_MATERIAL", "LOD_COLLISION", "ENGINE_IMPORT", "VISUAL_REGRESSION"],
+      "raw_ai_mesh_final": false
+    },
+    {
+      "asset_id": "LEV-ENM-003",
+      "name": "Colonia parasitaria",
+      "quality_tier": "A",
+      "current_stage": "REPRESENTATIVE_MULTINODE_SYSTEM_NOT_FINAL",
+      "waived_steps_for_current_stage": ["LOOK_LOCK", "IMAGE_TARGET_APPROVAL", "IMAGE_TO_3D_BASE"],
+      "route": "SYSTEMIC_MULTINODE_PROCEDURAL_FIRST",
+      "reason": "The production problem is systemic colony topology (mother/buds/feed/adhesion/dispersal interfaces), not a single hero mesh. Procedural/manual topology is cleaner and more reusable at this stage; final appearance/species identity still requires look lock.",
+      "must_return_before_final_art": ["LOOK_LOCK", "REFERENCE_PACK", "IMAGE_TARGET_APPROVAL", "GEOMETRY_CAUSALITY_REVIEW", "CLEANUP_RETOPO", "UV_MATERIAL", "LOD_COLLISION", "ENGINE_IMPORT", "VISUAL_REGRESSION"],
+      "raw_ai_mesh_final": false
+    }
+  ],
+  "not_waived": [
+    "scale validation",
+    "functional causality",
+    "editable source",
+    "cold replay",
+    "technical QA",
+    "optimization evidence",
+    "final direct art approval",
+    "engine import",
+    "visual regression"
+  ],
+  "evidence": [
+    "evidence/lymph_whale_r17.json",
+    "evidence/fagocito_guardian_r14.json",
+    "evidence/pulse_extractor_r15.json",
+    "evidence/parasitic_colony_r16.json"
+  ]
+}

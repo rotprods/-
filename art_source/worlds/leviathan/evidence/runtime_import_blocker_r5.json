@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "world_id": "leviathan",
+  "claim_id": "CLM-W10-WORLD-LEVIATHAN-001",
+  "checkpoint": "RUNTIME_IMPORT_ATTEMPT_R5",
+  "artifact": {
+    "provider": "Higgsfield 3D Jutsu",
+    "project_id": "2577a7b6-ebd7-4d31-a645-620e4b73a95d",
+    "revision": 5,
+    "glb_size_bytes": 5757024,
+    "glb_etag": "94d1d370240c649fcac80e108a118677"
+  },
+  "attempts": [
+    {
+      "route": "safe container download from signed provider URL",
+      "result": "BLOCKED",
+      "reason": "signed R2 URL cannot be admitted as a safe browsed URL by the download bridge"
+    },
+    {
+      "route": "direct Python urllib from execution shell",
+      "result": "BLOCKED",
+      "reason": "DNS resolution unavailable for provider R2 host in this runtime"
+    },
+    {
+      "route": "local runtime executables",
+      "result": "BLOCKED",
+      "observed": {
+        "blender_in_path": false,
+        "godot_in_path": false,
+        "python": "3.13.5",
+        "platform": "Linux x86_64"
+      }
+    }
+  ],
+  "classification": "ENV_BLOCKED_BINARY_TRANSPORT_AND_RUNTIME",
+  "asset_failure_claimed": false,
+  "engine_import_pass_claimed": false,
+  "runtime_collision_pass_claimed": false,
+  "work_that_can_continue": [
+    "Blender/source QA",
+    "deterministic generator validation",
+    "UV/PBR/LOD preparation",
+    "provider-side export receipts",
+    "fleet coordination"
+  ],
+  "unblock_condition": "A runtime with both access to the exact revision-5 GLB bytes and a qualified Godot/production-engine binary must execute import, instantiate, scale/material/collision traversal and bind receipts to the GLB hash."
+}

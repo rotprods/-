@@ -1,0 +1,482 @@
+schema_version: 1
+world_id: leviathan
+claim_id: CLM-W10-WORLD-LEVIATHAN-001
+status_vocabulary: [TODO, CLAIMED, IN_PROGRESS, BLOCKED, REVIEW, DONE, DEFERRED]
+quality_tiers:
+  S: HERO_CINEMATIC
+  A: HERO_GAMEPLAY
+  B: STANDARD_GAMEPLAY
+  C: BACKGROUND
+  D: VISTA_PROXY
+notes:
+  - Registry entries are production units/families, not claims that catalog target quantities have been produced.
+  - Poly/texture hard budgets remain BLOCKED until target engine/hardware/camera/streaming are qualified.
+  - `BLOCKOUT` in modeling_status means geometry exists as a reversible production proxy, not a final asset.
+  - `REPRESENTATIVE_*_NOT_FINAL` means deterministic functional/interface anatomy exists with QA evidence but still requires art, rig/animation/gameplay and engine gates as applicable.
+
+coverage:
+  world_macro: IN_PROGRESS
+  terrain_anatomy: IN_PROGRESS
+  biomes: TODO
+  settlements_architecture: IN_PROGRESS
+  interiors: TODO
+  infrastructure: IN_PROGRESS
+  landmarks: IN_PROGRESS
+  materials: IN_PROGRESS
+  vegetation_biota: IN_PROGRESS
+  fauna: IN_PROGRESS
+  characters_npcs: TODO
+  wardrobe_equipment: TODO
+  vehicles: TODO
+  machinery: TODO
+  props_set_dressing: TODO
+  storytelling: TODO
+  decals: TODO
+  destruction: TODO
+  vista_assets: TODO
+  technical_integration: IN_PROGRESS
+
+assets:
+  - asset_id: LEV-WORLD-L0-001
+    category: world_macro
+    name: Physical planetary canon
+    description: Radius, diameter, axial/orbital physical parameters and global topography authority.
+    priority: P0
+    quality_tier: D
+    status: BLOCKED
+    owner: AGENT-LEVIATHAN-10
+    dependency: canon decision
+    art_status: NOT_READY
+    modeling_status: NOT_READY
+    integration_status: NOT_READY
+    qa_status: BLOCKED
+    blocker: physical radius/diameter absent from current canon
+
+  - asset_id: LEV-WORLD-L1-001
+    category: orbital_representation
+    name: Living-body orbital representation
+    description: Low/medium-frequency planetary form plus organ-like orbital bodies.
+    priority: P1
+    quality_tier: D
+    status: BLOCKED
+    owner: AGENT-LEVIATHAN-10
+    dependency: LEV-WORLD-L0-001
+    qa_status: BLOCKED
+
+  - asset_id: LEV-WORLD-L2-001
+    category: world_macro
+    name: Representative authored world cell
+    description: 720 x 480 m reversible blockout used to qualify region relationships, scale and production language; not planet size.
+    priority: P0
+    quality_tier: D
+    status: IN_PROGRESS
+    owner: AGENT-LEVIATHAN-10
+    real_dimensions: 720m x 480m proposal
+    modeling_status: BLOCKOUT
+    material_status: BLOCKOUT
+    optimization_status: MEASURED_STRUCTURAL_ONLY
+    integration_status: NOT_RUN
+    qa_status: REVIEW
+
+  - asset_id: LEV-RGN-001
+    region: Puerto de la Herida
+    category: gameplay_region
+    name: Puerto de la Herida blockout
+    description: Colony graft zone on healed/scarred tissue.
+    priority: P1
+    quality_tier: A
+    status: IN_PROGRESS
+    owner: AGENT-LEVIATHAN-10
+    modeling_status: REPRESENTATIVE_FOUNDATION_NOT_FINAL
+    material_status: BLOCKOUT
+    integration_status: NOT_RUN
+    qa_status: REVIEW
+
+  - asset_id: LEV-RGN-002
+    region: Jardines Inmunes
+    category: gameplay_region
+    name: Jardines Inmunes blockout
+    description: Lymph-channel ecology/traversal zone.
+    priority: P1
+    quality_tier: A
+    status: IN_PROGRESS
+    owner: AGENT-LEVIATHAN-10
+    modeling_status: REPRESENTATIVE_FOUNDATION_NOT_FINAL
+    material_status: BLOCKOUT
+    integration_status: NOT_RUN
+    qa_status: REVIEW
+
+  - asset_id: LEV-RGN-003
+    region: Cámara de SOMA
+    category: gameplay_region
+    name: Cámara de SOMA encounter shell
+    description: Canonical regulatory organ encounter chamber.
+    priority: P1
+    quality_tier: S
+    status: IN_PROGRESS
+    owner: AGENT-LEVIATHAN-10
+    real_dimensions: 58m outer chamber envelope
+    modeling_status: REPRESENTATIVE_FOUNDATION_NOT_FINAL
+    material_status: BLOCKOUT
+    integration_status: NOT_RUN
+    qa_status: REVIEW
+
+  - asset_id: LEV-ENV-001
+    category: terrain_anatomy
+    name: Stable gameplay substrate
+    description: Non-deforming first-version collision/traversal substrate below visual tissue.
+    priority: P0
+    quality_tier: B
+    status: IN_PROGRESS
+    owner: AGENT-LEVIATHAN-10
+    collision_policy: separate stable collision authority
+    modeling_status: REPRESENTATIVE_CONTINUOUS_TRAVERSAL_NOT_RUNTIME_QUALIFIED
+    qa_status: REVIEW
+    evidence: art_source/worlds/leviathan/evidence/traversal_ribbon_r11.json
+
+  - asset_id: LEV-ENV-002
+    category: terrain_anatomy
+    name: Living tissue visual shell family
+    description: Large visual-only tissue masses that may later support controlled deformation.
+    priority: P1
+    quality_tier: B
+    status: IN_PROGRESS
+    owner: AGENT-LEVIATHAN-10
+    collision_policy: no collision authority at current blockout
+    modeling_status: BLOCKOUT
+    qa_status: REVIEW
+
+  - asset_id: LEV-ENV-003
+    category: terrain_anatomy
+    name: Cartilage/rib macrostructure family
+    priority: P1
+    quality_tier: B
+    status: IN_PROGRESS
+    owner: AGENT-LEVIATHAN-10
+    modeling_status: REPRESENTATIVE_FOUNDATION_NOT_FINAL
+    qa_status: REVIEW
+
+  - asset_id: LEV-INF-001
+    region: Puerto de la Herida
+    category: infrastructure
+    name: Scar boundary / wound rim
+    priority: P1
+    quality_tier: A
+    status: IN_PROGRESS
+    owner: AGENT-LEVIATHAN-10
+    modeling_status: BLOCKOUT
+    qa_status: REVIEW
+
+  - asset_id: LEV-INF-002
+    region: Puerto de la Herida
+    category: infrastructure
+    name: Suture clamp modular family
+    description: Human maintenance clamps reading as deliberate graft construction.
+    priority: P1
+    quality_tier: A
+    status: IN_PROGRESS
+    owner: AGENT-LEVIATHAN-10
+    usage_frequency: high
+    modeling_status: REPRESENTATIVE_DETAIL_NOT_FINAL
+    qa_status: REVIEW
+    evidence: art_source/worlds/leviathan/evidence/puerto_microset_r5.json
+
+  - asset_id: LEV-ARCH-001
+    region: Puerto de la Herida
+    category: architecture
+    name: Soft colony module family
+    description: Ivory repaired pressure shell plus dark technical underbelly.
+    priority: P1
+    quality_tier: A
+    status: IN_PROGRESS
+    owner: AGENT-LEVIATHAN-10
+    usage_frequency: high
+    modeling_status: REPRESENTATIVE_DETAIL_NOT_FINAL
+    qa_status: REVIEW
+    evidence: art_source/worlds/leviathan/evidence/puerto_microset_r5.json
+
+  - asset_id: LEV-INF-003
+    category: infrastructure
+    name: Living valve family
+    description: Pressure/shelter/traversal interface; includes SOMA safe-valve variants.
+    priority: P1
+    quality_tier: A
+    status: IN_PROGRESS
+    owner: AGENT-LEVIATHAN-10
+    usage_frequency: high
+    modeling_status: REPRESENTATIVE_DETAIL_NOT_FINAL
+    qa_status: REVIEW
+
+  - asset_id: LEV-INF-004
+    category: infrastructure
+    name: Vascular trunk family
+    description: Major flow/pressure channels connecting regional anatomy.
+    priority: P1
+    quality_tier: B
+    status: IN_PROGRESS
+    owner: AGENT-LEVIATHAN-10
+    modeling_status: BLOCKOUT
+    qa_status: REVIEW
+
+  - asset_id: LEV-INF-005
+    region: Jardines Inmunes
+    category: infrastructure
+    name: Lymph channel family
+    priority: P1
+    quality_tier: A
+    status: IN_PROGRESS
+    owner: AGENT-LEVIATHAN-10
+    modeling_status: REPRESENTATIVE_DETAIL_NOT_FINAL
+    qa_status: REVIEW
+    evidence: art_source/worlds/leviathan/evidence/jardines_microset_r7.json
+
+  - asset_id: LEV-INF-006
+    category: infrastructure
+    name: Cyan diagnostic/memory conduit family
+    priority: P2
+    quality_tier: B
+    status: IN_PROGRESS
+    owner: AGENT-LEVIATHAN-10
+    modeling_status: BLOCKOUT
+    qa_status: REVIEW
+
+  - asset_id: LEV-ECO-001
+    region: Jardines Inmunes
+    category: ecology
+    name: Parásito jardinero
+    priority: P1
+    quality_tier: A
+    status: IN_PROGRESS
+    owner: AGENT-LEVIATHAN-10
+    modeling_status: REPRESENTATIVE_FUNCTIONAL_ANATOMY_NOT_FINAL
+    rig: TODO
+    animation_dependency: TODO
+    gameplay_binding: NOT_AUTHORED
+    collision_status: CORE_ONLY_STATIC_PROXY_NOT_RIGGED
+    qa_status: REVIEW
+    evidence: art_source/worlds/leviathan/evidence/jardines_microset_r7.json
+
+  - asset_id: LEV-ECO-002
+    region: Jardines Inmunes
+    category: ecology
+    name: Ballena de linfa
+    priority: P1
+    quality_tier: A
+    status: IN_PROGRESS
+    owner: AGENT-LEVIATHAN-10
+    modeling_status: REPRESENTATIVE_FUNCTIONAL_ANATOMY_NOT_FINAL
+    rig: TODO
+    animation_dependency: TODO
+    gameplay_binding: NOT_AUTHORED
+    collision_status: NONE_AUTHORED
+    qa_status: REVIEW
+    surface_sha256: 7b5a6eb9a295cb022c52939e1c711555b35f658e9e7c0898c485e16626301656
+    evidence: art_source/worlds/leviathan/evidence/lymph_whale_r17.json
+
+  - asset_id: LEV-ECO-003
+    region: Jardines Inmunes
+    category: ecology
+    name: Polinizador de herida
+    priority: P2
+    quality_tier: B
+    status: IN_PROGRESS
+    owner: AGENT-LEVIATHAN-10
+    modeling_status: REPRESENTATIVE_FUNCTIONAL_ANATOMY_NOT_FINAL
+    rig: TODO
+    animation_dependency: TODO
+    gameplay_binding: NOT_AUTHORED
+    collision_status: NONE_AUTHORED
+    qa_status: REVIEW
+    surface_sha256: e4e66ce01c258fb9c72c985fe0c065d1f0c879bc18434abc8142d573828a88f6
+    evidence: art_source/worlds/leviathan/evidence/wound_pollinator_r13.json
+
+  - asset_id: LEV-ECO-004
+    region: Jardines Inmunes
+    category: ecology
+    name: Alga de pulso family
+    priority: P1
+    quality_tier: B
+    status: IN_PROGRESS
+    owner: AGENT-LEVIATHAN-10
+    usage_frequency: high
+    modeling_status: REPRESENTATIVE_FAMILY_NOT_FINAL
+    qa_status: REVIEW
+    evidence: art_source/worlds/leviathan/evidence/jardines_microset_r7.json
+
+  - asset_id: LEV-ENM-001
+    category: adversary
+    name: Fagocito guardián
+    priority: P1
+    quality_tier: A
+    status: IN_PROGRESS
+    owner: AGENT-LEVIATHAN-10
+    modeling_status: REPRESENTATIVE_FUNCTIONAL_ANATOMY_NOT_FINAL
+    rig: TODO
+    animation_dependency: TODO
+    gameplay_binding: NOT_AUTHORED
+    hit_hurt_volumes: NOT_AUTHORED
+    collision_status: NONE_AUTHORED
+    qa_status: REVIEW
+    surface_sha256: 5203d84cdf22f89685960e3cb1ffed10aaa7092a59123f8c171d61a3b1e2a8df
+    evidence: art_source/worlds/leviathan/evidence/fagocito_guardian_r14.json
+
+  - asset_id: LEV-ENM-002
+    category: adversary
+    name: Extractor de pulso
+    priority: P1
+    quality_tier: A
+    status: IN_PROGRESS
+    owner: AGENT-LEVIATHAN-10
+    modeling_status: REPRESENTATIVE_FUNCTIONAL_INTERFACE_NOT_FINAL
+    rig: TODO
+    animation_dependency: TODO
+    gameplay_binding: NOT_AUTHORED
+    mobility: UNKNOWN_NOT_AUTHORED
+    hit_hurt_volumes: NOT_AUTHORED
+    collision_status: NONE_AUTHORED
+    qa_status: REVIEW
+    surface_sha256: 10772696d111219191ef56324724af184904c0b8a3094ccbd5768c9971eb0dc2
+    evidence: art_source/worlds/leviathan/evidence/pulse_extractor_r15.json
+
+  - asset_id: LEV-ENM-003
+    category: adversary
+    name: Colonia parasitaria
+    priority: P1
+    quality_tier: A
+    status: IN_PROGRESS
+    owner: AGENT-LEVIATHAN-10
+    modeling_status: REPRESENTATIVE_MULTINODE_SYSTEM_NOT_FINAL
+    rig: TODO
+    animation_dependency: TODO
+    gameplay_binding: NOT_AUTHORED
+    locomotion: NOT_AUTHORED
+    hit_hurt_volumes: NOT_AUTHORED
+    collision_status: NONE_AUTHORED
+    qa_status: REVIEW
+    surface_sha256: de8aa76989c533041d6e45cc15362cdb2bd1aaa09b7eb1024b0eea33e5298c75
+    evidence: art_source/worlds/leviathan/evidence/parasitic_colony_r16.json
+
+  - asset_id: LEV-BOSS-001
+    region: Cámara de SOMA
+    category: boss
+    name: SOMA
+    description: Current object is combat-scale/silhouette interface only; final anatomy is unapproved.
+    priority: P1
+    quality_tier: S
+    status: BLOCKED
+    owner: AGENT-LEVIATHAN-10
+    modeling_status: PROXY_EXISTS_FINAL_BLOCKED
+    material_status: BLOCKOUT
+    rig: TODO
+    animation_dependency: TODO
+    qa_status: BLOCKED
+    blocker: final SOMA anatomical/art-direction review
+
+  - asset_id: LEV-NPC-001
+    category: character
+    name: Oru Tess
+    priority: P2
+    quality_tier: A
+    status: TODO
+    owner: AGENT-LEVIATHAN-10
+    rig: TODO
+    qa_status: NOT_READY
+
+  - asset_id: LEV-NPC-002
+    category: character
+    name: Anja Piel
+    priority: P2
+    quality_tier: A
+    status: TODO
+    owner: AGENT-LEVIATHAN-10
+    rig: TODO
+    qa_status: NOT_READY
+
+  - asset_id: LEV-NPC-003
+    category: character
+    name: Faro-3
+    priority: P2
+    quality_tier: A
+    status: TODO
+    owner: AGENT-LEVIATHAN-10
+    rig: TODO
+    qa_status: NOT_READY
+
+  - asset_id: LEV-VEH-001
+    category: vehicle
+    name: Nácar-2 lymph-channel adaptation
+    priority: P2
+    quality_tier: A
+    status: TODO
+    owner: AGENT-LEVIATHAN-10
+    dependency: base vehicle interface decision / cross-world reuse review
+    modeling_status: TODO
+    physics: TODO
+    qa_status: NOT_READY
+
+  - asset_id: LEV-MAT-001
+    category: material_library
+    name: Living host PBR family
+    description: Tissue warm/dark, vascular, membrane, cartilage.
+    priority: P1
+    quality_tier: A
+    status: IN_PROGRESS
+    owner: AGENT-LEVIATHAN-10
+    material_status: PORTABLE_PBR_CALIBRATION_LAB_TECHNICAL_PASS_NOT_PROPAGATED
+    texture_set: ISOLATED_LAB_ONLY
+    qa_status: REVIEW
+    evidence: art_source/worlds/leviathan/evidence/pbr_calibration_lab_r5.json
+
+  - asset_id: LEV-MAT-002
+    category: material_library
+    name: Human graft PBR family
+    description: Repaired ivory ceramic and dark technical structure.
+    priority: P1
+    quality_tier: A
+    status: IN_PROGRESS
+    owner: AGENT-LEVIATHAN-10
+    material_status: PORTABLE_PBR_CALIBRATION_LAB_TECHNICAL_PASS_NOT_PROPAGATED
+    texture_set: ISOLATED_LAB_ONLY
+    qa_status: REVIEW
+    evidence: art_source/worlds/leviathan/evidence/pbr_calibration_lab_r5.json
+
+  - asset_id: LEV-SIG-001
+    category: material_signal
+    name: Refuge / memory / hostility signal family
+    priority: P1
+    quality_tier: B
+    status: IN_PROGRESS
+    owner: AGENT-LEVIATHAN-10
+    material_status: BLOCKOUT_PBR_ROLES
+    qa_status: REVIEW
+
+  - asset_id: LEV-TECH-001
+    category: technical_integration
+    name: Master scene generator
+    priority: P0
+    quality_tier: B
+    status: IN_PROGRESS
+    owner: AGENT-LEVIATHAN-10
+    blend_path: remote project 2577a7b6-ebd7-4d31-a645-620e4b73a95d
+    export_path: committed remote GLB revision 18
+    qa_status: REVIEW
+
+  - asset_id: LEV-TECH-002
+    category: technical_integration
+    name: Collision/export/scale validation
+    priority: P0
+    quality_tier: B
+    status: IN_PROGRESS
+    owner: AGENT-LEVIATHAN-10
+    dependency: LEV-TECH-001
+    qa_status: REVIEW
+
+backlog_families_not_yet_decomposed:
+  - interiors for colony modules and medical spaces
+  - wardrobe/equipment for Comuna del Pulso
+  - everyday props and medical/maintenance tools
+  - environmental storytelling states for graft/suppression/evacuation outcomes
+  - damage/destruction/cicatrization variants
+  - decals/markings that preserve world semantics
+  - final production LOD/HLOD/impostor strategy after target-runtime qualification
+  - orbital/vista assets after planetary-scale decision

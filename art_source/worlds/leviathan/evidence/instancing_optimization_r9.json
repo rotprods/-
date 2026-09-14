@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "project": "EXOVANT 2950",
+  "world_id": "leviathan",
+  "claim_id": "CLM-W10-WORLD-LEVIATHAN-001",
+  "agent_id": "AGENT-LEVIATHAN-10",
+  "optimizer_source": {
+    "path": "art_source/worlds/leviathan/tools/optimize_repeated_mesh_instances_v1.py",
+    "source_commit": "9030209c9297de0cc5233644524ed383b7f75454"
+  },
+  "primary": {
+    "project_id": "2577a7b6-ebd7-4d31-a645-620e4b73a95d",
+    "revision_before": 8,
+    "revision_after": 9,
+    "operation": "leviathan-r9-safe-instancing-v1",
+    "mesh_objects_before": 260,
+    "mesh_objects_after": 260,
+    "mesh_datablocks_before": 260,
+    "mesh_datablocks_after": 122,
+    "mesh_datablocks_removed": 138,
+    "objects_relinked": 138,
+    "groups_applied": 36,
+    "blend_bytes_before": 7657188,
+    "blend_bytes_after": 5597471,
+    "blend_size_reduction_percent": 26.9,
+    "glb_bytes_before": 8492516,
+    "glb_bytes_after": 6603972,
+    "glb_size_reduction_percent": 22.2,
+    "order_sensitive_object_fingerprint_before": "d8b3912446104a1892fc6c759c490f9a77633e2c7d0612d817714baf8af6c19d",
+    "order_sensitive_object_fingerprint_after": "d8b3912446104a1892fc6c759c490f9a77633e2c7d0612d817714baf8af6c19d",
+    "primary_r8_to_r9_match": true,
+    "objects": 381,
+    "curves": 92
+  },
+  "cold_rebuild": {
+    "project_id": "37a931c7-f2e6-46bc-9be0-26077e5de1c1",
+    "revision_before": 6,
+    "revision_after": 7,
+    "operation": "leviathan-cold-r7-safe-instancing-v1",
+    "mesh_datablocks_before": 260,
+    "mesh_datablocks_after": 127,
+    "mesh_datablocks_removed": 133,
+    "objects_relinked": 133,
+    "groups_applied": 32,
+    "order_sensitive_object_fingerprint_after": "9ab4a14e144a790c7732d944b625168f05bce958de05d613ee4d1cb642c78547"
+  },
+  "canonical_surface_replay": {
+    "receipt": "art_source/worlds/leviathan/evidence/canonical_surface_repro_r9.json",
+    "criterion": "order-invariant evaluated world-space triangles + UV per corner + face material + smoothing + evaluated normal; modifiers included; cameras/lights/material nodes included",
+    "primary_sha256": "6c06329ff60fe34383394bece0c80f66bb9e4486793712854e462c3af8eea26a",
+    "cold_sha256": "6c06329ff60fe34383394bece0c80f66bb9e4486793712854e462c3af8eea26a",
+    "match": true
+  },
+  "variance_reclassification": {
+    "preliminary_label": "OPEN_RAW_PRIMITIVE_REALIZATION_DRIFT",
+    "final_label": "RESOLVED_INTERNAL_INDEX_ORDER_VARIANCE",
+    "explanation": "The earlier strict hash included primitive vertex/face indexing order. Suspect objects and the complete evaluated scene have identical order-invariant surface geometry, UV mapping, materials and modifier output. The difference is internal mesh indexing/datablock realization, not visual geometry.",
+    "requires_art_shape_rebuild": false,
+    "requires_generator_rewrite_for_visual_reproducibility": false,
+    "optimizer_v2_opportunity": "Use order-invariant local surface signatures so cold replay can share equivalent datablocks despite different primitive index order."
+  },
+  "gate_truth": {
+    "primary_structural_optimization_pass": true,
+    "primary_r8_to_r9_visual_surface_equivalence": true,
+    "canonical_evaluated_surface_reproducibility_primary_vs_cold": true,
+    "bit_exact_blender_mesh_index_serialization": false,
+    "bit_exact_blender_mesh_index_serialization_required": false,
+    "runtime_performance_pass": false,
+    "engine_import_pass": false,
+    "art_review_pass": false
+  },
+  "status": "PRIMARY_OPTIMIZATION_ACCEPTED_CANONICAL_SURFACE_REPLAY_PASS"
+}

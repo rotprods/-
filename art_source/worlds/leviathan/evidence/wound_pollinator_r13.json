@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "project": "EXOVANT 2950",
+  "world_id": "leviathan",
+  "claim_id": "CLM-W10-WORLD-LEVIATHAN-001",
+  "asset_id": "LEV-ECO-003",
+  "asset_name": "Polinizador de herida",
+  "status": "REPRESENTATIVE_FUNCTIONAL_ANATOMY_REPRODUCIBLE_NOT_FINAL",
+  "source": {
+    "generator": "art_source/worlds/leviathan/tools/build_wound_pollinator_v1.py",
+    "generator_commit": "c2a73a699faaaa75d26eeb7a6a707a74ef1f3c54",
+    "refinement": "art_source/worlds/leviathan/tools/refine_wound_pollinator_truth_v2.py",
+    "refinement_commit": "dd8e32b20272a61ffc3c61516f7ea32bbadc6b6d"
+  },
+  "primary": {
+    "project_id": "2577a7b6-ebd7-4d31-a645-620e4b73a95d",
+    "revision": 13,
+    "surface_sha256": "e4e66ce01c258fb9c72c985fe0c065d1f0c879bc18434abc8142d573828a88f6"
+  },
+  "cold": {
+    "project_id": "37a931c7-f2e6-46bc-9be0-26077e5de1c1",
+    "revision": 11,
+    "surface_sha256": "e4e66ce01c258fb9c72c985fe0c065d1f0c879bc18434abc8142d573828a88f6"
+  },
+  "qa": {
+    "surface_match": true,
+    "collection_objects": 55,
+    "mesh_objects": 36,
+    "curve_objects": 3,
+    "rig_interface_sockets": 14,
+    "evaluated_triangles": 5640,
+    "degenerate_polygons": 0,
+    "collision_leaks": 0,
+    "body_length_y_m": 2.67,
+    "wingspan_m": 4.8,
+    "full_envelope_dims_m": [4.837, 3.232, 1.482],
+    "placement": "inside existing Jardines representative Y envelope after v2 refinement"
+  },
+  "functional_interfaces": [
+    "four controlled-hover membrane wings",
+    "six wet-tissue landing legs and pads",
+    "wound-film transfer proboscis",
+    "paired cicatrization-transfer baskets",
+    "pressure/chemical antennae and sensors",
+    "rig sockets only; no armature"
+  ],
+  "non_claims": {
+    "final_anatomy": false,
+    "canon_dimensions": false,
+    "rig": false,
+    "animation": false,
+    "AI": false,
+    "gameplay_collision": false,
+    "hit_hurt_volumes": false,
+    "direct_art_approval": false,
+    "engine_import": false
+  }
+}

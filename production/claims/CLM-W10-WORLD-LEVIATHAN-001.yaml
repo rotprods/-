@@ -1,0 +1,168 @@
+claim_id: CLM-W10-WORLD-LEVIATHAN-001
+agent_id: AGENT-LEVIATHAN-10
+session_id: ART-LEVIATHAN-001-20260912T2123+0200
+scope_key: world-10/leviathan/world-production/master-foundation
+world_id: leviathan
+category: world_production
+subdomain: master_foundation
+status: CLAIMED
+fleet_epoch: 1
+fleet_registry_state_observed: reserved
+fleet_ack_pending_integrator_transition: true
+base_branch: main
+base_sha_at_claim: 4c2fa044080004609ea6df45f34b2a784536507a
+latest_main_observed: 26ae20f5d1b47d1efa0d54b20124ed93cbc0b43e
+branch: art/world-leviathan-001
+created_at: 2026-09-12T21:23:00+02:00
+last_heartbeat: 2026-09-14T12:12:00+02:00
+
+remote_project:
+  project_id: 2577a7b6-ebd7-4d31-a645-620e4b73a95d
+  role: WORLD_MASTER
+  observed_revision: 18
+  observed_scene_sequence: 0
+  mesh_objects: 395
+  settled_mesh_datablocks: 170
+  note: >-
+    Revision 18 contains the optimized representative world foundation, stable traversal,
+    four-species ecology coverage and all three canonical adversary representative interfaces.
+    All new audited surfaces have independent cold-replay SHA equality. No final art/runtime claim.
+
+cold_rebuild_project:
+  project_id: 37a931c7-f2e6-46bc-9be0-26077e5de1c1
+  role: WORLD_COLD_REPLAY
+  observed_revision: 16
+  mesh_objects: 395
+  settled_mesh_datablocks: 170
+  note: >-
+    Independent replay through the same staged generators and optimizer. Settled structure matches
+    primary and the five new ecology/adversary surface SHAs match exactly.
+
+auxiliary_projects:
+  - project_id: 6c67e70a-d29b-4a9d-8387-68ba071d8c3f
+    role: MATERIAL_PBR_CALIBRATION_PRIMARY
+    observed_revision: 5
+    asset_ids: [LEV-MAT-001, LEV-MAT-002]
+    canonical_builder: art_source/worlds/leviathan/tools/build_pbr_calibration_lab_v5_canonical.py
+    truth: PORTABLE_PBR_CALIBRATION_TECHNICAL_PASS_NOT_FINAL_ART
+  - project_id: 21dfcfc6-a181-4300-b6a9-0ee2e09695ee
+    role: MATERIAL_PBR_CALIBRATION_COLD_REPLAY
+    observed_revision: 1
+    asset_ids: [LEV-MAT-001, LEV-MAT-002]
+    canonical_fingerprint: fb881b5d76c3c2fe8f35441b7f27cf4a0ad71db74f69a915eb1d48d966db9230
+    truth: INDEPENDENT_EMPTY_SCENE_REPLAY_MATCH
+
+includes:
+  - art_source/worlds/leviathan/**
+  - leviathan L0-L5 specification and representative world-cell foundation
+  - canonical region blockouts and coverage manifests
+  - local environment/architecture/material/prop/ecology/adversary/NPC/vehicle interfaces within LEVIATHAN ownership
+  - SOMA arena/environment proxy interfaces but not final SOMA anatomy
+  - deterministic Blender generators, editable .blend, portable GLB, QA/evidence receipts
+  - representative Puerto graft/suture/valve family
+  - representative Jardines channel/algae/gardener family
+  - representative Ballena de linfa and Polinizador de herida functional anatomy
+  - representative Fagocito guardián, Extractor de pulso and Colonia parasitaria interfaces
+  - continuous stable traversal under LEV-ENV-001 plus visual-only SOMA ingress
+  - engine-neutral UV/PBR/LOD readiness and candidate policy
+  - isolated deterministic PBR calibration laboratory for existing LEV-MAT-001/002
+  - safe repeated-mesh instancing optimization and reproducibility receipts
+
+excludes:
+  - runtime Godot scenes/scripts and gameplay logic
+  - shared STATE/PLAN/HANDOFF/PROGRESS mutation
+  - other world-owned paths
+  - shared libraries without explicit coordination
+  - final SOMA anatomy, rig or animation
+  - final ecology/adversary rigs, animation, AI, hit/hurt volumes, gameplay collision or damage behavior
+  - invented species origin/cognition/faction/mobility not supported by canon
+  - character/NPC anatomy for Oru Tess, Anja Piel or Faro-3 without dedicated canon/art definition
+  - direct propagation of calibration textures into world master before art+engine approval
+  - shipping texture-resolution/UDIM/virtual-texturing policy before target qualification
+  - Unreal/DLSS/GPU performance claims without qualification
+  - production-complete or AAAA-complete claims before all applicable gates
+
+owned_paths:
+  - art_source/worlds/leviathan/
+  - art_source/coordination/ART-LEVIATHAN-001-OWNERSHIP.md
+  - production/claims/CLM-W10-WORLD-LEVIATHAN-001.yaml
+
+published_asset_ids:
+  - LEV-RGN-003
+  - LEV-ENV-001
+  - LEV-ENV-002
+  - LEV-ENV-003
+  - LEV-ARCH-001
+  - LEV-INF-002
+  - LEV-INF-003
+  - LEV-INF-005
+  - LEV-ECO-001
+  - LEV-ECO-002
+  - LEV-ECO-003
+  - LEV-ECO-004
+  - LEV-ENM-001
+  - LEV-ENM-002
+  - LEV-ENM-003
+  - LEV-MAT-001
+  - LEV-MAT-002
+  - LEV-TECH-001
+
+published_receipts:
+  traversal: art_source/worlds/leviathan/evidence/traversal_ribbon_r11.json
+  canonical_surface: art_source/worlds/leviathan/evidence/canonical_surface_repro_r9.json
+  base_instancing: art_source/worlds/leviathan/evidence/instancing_optimization_r10_v2.json
+  lod_feasibility: art_source/worlds/leviathan/evidence/lod_feasibility_r10.json
+  pbr_lab: art_source/worlds/leviathan/evidence/pbr_calibration_lab_r5.json
+  wound_pollinator: art_source/worlds/leviathan/evidence/wound_pollinator_r13.json
+  lymph_whale: art_source/worlds/leviathan/evidence/lymph_whale_r17.json
+  fagocito_guardian: art_source/worlds/leviathan/evidence/fagocito_guardian_r14.json
+  pulse_extractor: art_source/worlds/leviathan/evidence/pulse_extractor_r15.json
+  parasitic_colony: art_source/worlds/leviathan/evidence/parasitic_colony_r16.json
+  post_creature_instancing: art_source/worlds/leviathan/evidence/post_creature_instancing_r18.json
+
+surface_receipts:
+  LEV-ECO-002: 7b5a6eb9a295cb022c52939e1c711555b35f658e9e7c0898c485e16626301656
+  LEV-ECO-003: e4e66ce01c258fb9c72c985fe0c065d1f0c879bc18434abc8142d573828a88f6
+  LEV-ENM-001: 5203d84cdf22f89685960e3cb1ffed10aaa7092a59123f8c171d61a3b1e2a8df
+  LEV-ENM-002: 10772696d111219191ef56324724af184904c0b8a3094ccbd5768c9971eb0dc2
+  LEV-ENM-003: de8aa76989c533041d6e45cc15362cdb2bd1aaa09b7eb1024b0eea33e5298c75
+
+coverage_truth:
+  canonical_ecology_species_represented: 4/4
+  canonical_adversaries_represented: 3/3
+  final_ecology_rig_animation_gameplay_pass: false
+  final_adversary_rig_animation_ai_gameplay_pass: false
+
+collision_audit:
+  leviathan_world_collision_found: false
+  fleet_registry_generation_observed: 8
+  fleet_registry_status_for_this_claim: reserved
+  fleet_registry_ack_for_this_claim: null
+  pbr_auxiliary_ack_comment: https://github.com/rotprods/-/issues/7#issuecomment-5652950795
+  new_ecology_adversary_collision_leaks: 0
+  note: >-
+    Registry generation 8 protects LEVIATHAN as reserved/ack:null. Producer ACK/deltas are evidence
+    for the integrator; producer must not edit main registry. New ecology/adversary representative
+    art intentionally owns no gameplay collision authority.
+
+dependencies:
+  - design/EXOVANT_BIBLIA.md
+  - design/EXOVANT_DATA.json
+  - docs/ART_PRODUCTION.md
+  - docs/FLEET_COORDINATION.md
+  - ops/fleet/registry.json
+  - learning/hub/agents/codex-root/chats/exovant-persistence-20260912/events/LRN-EXO-20260912-BLENDER.json
+
+blocked_by:
+  - ENV_BLOCKED_BINARY_TRANSPORT_AND_RUNTIME
+
+claim_state_note: >-
+  Physical planet radius, final production engine, target hardware budgets, final playable-area
+  dimensions and final SOMA anatomy remain unresolved. The representative world foundation now
+  includes all four canonical ecology species and all three canonical adversaries at non-final
+  functional/interface level. Ballena, Polinizador and all three adversaries have exact primary/cold
+  evaluated-surface replay evidence; post-creature optimizer convergence preserves those surfaces
+  and settles both world projects at 395 mesh objects / 170 mesh datablocks. Material calibration
+  remains isolated and final art/runtime approval remains open. Automatic Gauntlet triggers are
+  quarantined on main@26ae20f5; exact merge-tree MANIFEST reconciliation is required before a
+  meaningful manual CI run. Integrator owns registry activation.

@@ -1,0 +1,205 @@
+{
+  "schema_version": 1,
+  "project": "EXOVANT 2950",
+  "world_id": "leviathan",
+  "claim_id": "CLM-W10-WORLD-LEVIATHAN-001",
+  "task_id": "W10/MAT/008",
+  "status": "PORTABLE_PBR_CALIBRATION_LAB_PASS_NOT_FINAL_ART",
+  "source": {
+    "contract": "art_source/worlds/leviathan/materials/PBR_CALIBRATION_LAB.md",
+    "canonical_builder": "art_source/worlds/leviathan/tools/build_pbr_calibration_lab_v5_canonical.py",
+    "canonical_builder_commit": "a08948aa74fc2cede8b363a2bf43eca6f36c9715",
+    "texture_resolution": [256, 256],
+    "texture_resolution_status": "CALIBRATION_QA_ONLY_NOT_SHIPPING_BUDGET"
+  },
+  "development_failures_recovered": [
+    {
+      "revision": 1,
+      "classification": "REJECTED_PERSISTENCE_CONTRACT",
+      "finding": "Blender GENERATED calibration images re-opened with has_data=false and packed_file=false; generated pixel buffers were not a durable editable-source contract."
+    },
+    {
+      "revision": 2,
+      "classification": "REJECTED_BLENDER_IMAGE_SAVE_BLANK_PNG",
+      "finding": "FILE+pack container persistence worked but Blender Image.save() encoded the generated buffers as identical black PNGs; 0/18 reopened pixel digests matched source and all actual image digests were identical."
+    },
+    {
+      "revision": 3,
+      "classification": "DURABLE_PNG_ENCODING_PASS_WITH_ONE_RANGE_DEFECT",
+      "finding": "Direct RGBA8 PNG encoding produced 18 unique durable packed images; Ivory Ceramic decoded roughness max 87/255=0.341176, slightly exceeding declared 0.34 due 8-bit rounding."
+    },
+    {
+      "revision": 4,
+      "classification": "QUANTIZATION_SAFE_MR_PASS",
+      "finding": "Roughness maps were clamped to ceil(min*255)/255 and floor(max*255)/255; all decoded roughness/metallic ranges passed declared bounds."
+    },
+    {
+      "revision": 5,
+      "classification": "CANONICAL_CLEAN_REBUILD",
+      "finding": "All accepted learnings consolidated into one empty-scene canonical builder; no dependency on rejected historical revision chain."
+    }
+  ],
+  "primary": {
+    "project_id": "6c67e70a-d29b-4a9d-8387-68ba071d8c3f",
+    "revision": 5,
+    "blend_bytes": 2863782,
+    "blend_etag": "cf14e1207f723c7684dd1e8856fdeae1",
+    "glb_bytes": 3072116,
+    "glb_etag": "f6c6d3a1289b14f2f17c436e28d02070"
+  },
+  "cold_replay": {
+    "project_id": "21dfcfc6-a181-4300-b6a9-0ee2e09695ee",
+    "revision": 1,
+    "blend_bytes": 2863282,
+    "blend_etag": "e40dbfcbd4d7a7453a19b53b5861ea1d",
+    "glb_bytes": 3071940,
+    "glb_etag": "42410f60893b99352ff458b34439b32a",
+    "binary_identity_required": false
+  },
+  "canonical_reproducibility": {
+    "fingerprint_primary": "fb881b5d76c3c2fe8f35441b7f27cf4a0ad71db74f69a915eb1d48d966db9230",
+    "fingerprint_cold": "fb881b5d76c3c2fe8f35441b7f27cf4a0ad71db74f69a915eb1d48d966db9230",
+    "payload_bytes": 23172,
+    "match": true,
+    "fingerprint_includes": [
+      "order-invariant world-space mesh surface + UV",
+      "object transforms and dimensions",
+      "font labels",
+      "camera and portable-light parameters",
+      "material node graphs and links",
+      "calibration contract metadata",
+      "actual packed PNG SHA256 values",
+      "colorspaces",
+      "collection membership",
+      "scene/world settings"
+    ],
+    "fingerprint_excludes": [
+      "provider-specific IDs",
+      "internal Blender datablock names",
+      "binary serialization metadata"
+    ]
+  },
+  "scene_inventory": {
+    "objects": 27,
+    "mesh_datablocks": 15,
+    "curve_font_datablocks": 6,
+    "cameras": 2,
+    "lights": 3,
+    "materials": 8,
+    "calibration_materials": 6,
+    "calibration_images": 18,
+    "collections": 5,
+    "zero_user_datablocks": 0,
+    "portable_light_types": ["SUN", "POINT", "SPOT"]
+  },
+  "material_families": {
+    "LEV-MAT-001": [
+      "LEV_CAL_TISSUE_WARM",
+      "LEV_CAL_MUCOSA_WET",
+      "LEV_CAL_CARTILAGE"
+    ],
+    "LEV-MAT-002": [
+      "HUM_CAL_IVORY_CERAMIC",
+      "HUM_CAL_BRUSHED_METAL",
+      "HUM_CAL_SEAL_RUBBER"
+    ]
+  },
+  "texture_contract": {
+    "maps_per_material": ["BaseColor", "MetallicRoughness", "Normal"],
+    "packed_images": 18,
+    "unique_packed_png_sha256": 18,
+    "file_source_images": 18,
+    "external_filepath_images": 0,
+    "basecolor_colorspace": "sRGB",
+    "mr_colorspace": "Non-Color",
+    "normal_colorspace": "Non-Color",
+    "one_uvmap_node_per_calibration_material": true,
+    "all_three_image_nodes_share_uvmap": true,
+    "all_image_samplers": ["Linear", "REPEAT"],
+    "all_mesh_users_have_uv": true
+  },
+  "decoded_mr_ranges": {
+    "LEV_CAL_TISSUE_WARM": {"declared": [0.36, 0.58], "observed": [0.439216, 0.568627], "metallic": [0, 0]},
+    "LEV_CAL_MUCOSA_WET": {"declared": [0.10, 0.28], "observed": [0.145098, 0.278431], "metallic": [0, 0]},
+    "LEV_CAL_CARTILAGE": {"declared": [0.38, 0.62], "observed": [0.439216, 0.619608], "metallic": [0, 0]},
+    "HUM_CAL_IVORY_CERAMIC": {"declared": [0.20, 0.34], "observed": [0.235294, 0.337255], "metallic": [0, 0]},
+    "HUM_CAL_BRUSHED_METAL": {"declared": [0.24, 0.42], "observed": [0.286275, 0.415686], "metallic": [1, 1]},
+    "HUM_CAL_SEAL_RUBBER": {"declared": [0.56, 0.78], "observed": [0.615686, 0.776471], "metallic": [0, 0]}
+  },
+  "normal_map_qa": {
+    "sample_vector_length_means": {
+      "LEV_CAL_TISSUE_WARM": 0.999920,
+      "LEV_CAL_MUCOSA_WET": 1.000703,
+      "LEV_CAL_CARTILAGE": 0.999952,
+      "HUM_CAL_IVORY_CERAMIC": 1.001210,
+      "HUM_CAL_BRUSHED_METAL": 1.000298,
+      "HUM_CAL_SEAL_RUBBER": 0.999985
+    },
+    "status": "PASS_QUANTIZED_TANGENT_NORMAL_UNIT_LENGTH"
+  },
+  "glb_audit": {
+    "magic": "glTF",
+    "version": 2,
+    "temporary_audit_glb_bytes": 3065100,
+    "json_chunk_bytes": 23284,
+    "binary_chunk_bytes": 3041788,
+    "images": 18,
+    "textures": 18,
+    "samplers": 1,
+    "materials": 8,
+    "embedded_images": 18,
+    "external_image_uris": [],
+    "image_mime_types": ["image/png"],
+    "six_calibration_materials_have_basecolor_mr_normal": true,
+    "sampler_warning_classification": {
+      "status": "EXPECTED_NON_BLOCKING",
+      "warning": "More than one shader node tex image used for a texture. The resulting glTF sampler will behave like the first shader node tex image.",
+      "exporter_source": "/opt/blender/5.2/scripts/addons_core/io_scene_gltf2/blender/exp/material/texture.py::__gather_sampler",
+      "cause": "The glTF exporter gathers both Metallic and Roughness sockets for the shared packed MR texture. Both resolve to the same MR Image Texture node; the scene also proves all image texture samplers are identical Linear/REPEAT and the resulting GLB contains one sampler.",
+      "evidence": "GLB parse shows 18 embedded images, 18 textures, exactly 1 sampler, and each calibration material has all three expected texture roles."
+    }
+  },
+  "render_receipts": {
+    "overview": {
+      "operation_id": "leviathan-pbr-r5-render-receipts",
+      "artifact_id": "d87fa26f81070380bfd98f4b75f48c38",
+      "name": "leviathan_pbr_lab_r5_overview.png",
+      "resolution": [640, 360],
+      "bytes": 276379,
+      "etag": "32ed2c79195bb95938526e22117ed9f1"
+    },
+    "grazing": {
+      "operation_id": "leviathan-pbr-r5-render-receipts",
+      "artifact_id": "bdf5a487186de4f4e62bd5483b4a8906",
+      "name": "leviathan_pbr_lab_r5_graze.png",
+      "resolution": [640, 360],
+      "bytes": 238821,
+      "etag": "125e0211638c9f7d8b3648188b41fdbb"
+    },
+    "pixel_buffer_stats": "UNAVAILABLE_AFTER_WRITE_STILL_RENDER_RESULT_BUFFER_EMPTY",
+    "direct_visual_review": false
+  },
+  "gates": {
+    "durable_editable_texture_source": "PASS",
+    "deterministic_texture_bytes": "PASS",
+    "material_graph": "PASS",
+    "uv_binding": "PASS",
+    "quantized_mr_ranges": "PASS",
+    "normal_vector_sanity": "PASS",
+    "portable_glb_embedded_images": "PASS",
+    "cold_replay": "PASS",
+    "render_receipts": "PASS_RECEIPT_ONLY",
+    "human_art_review": "REVIEW_REQUIRED",
+    "world_master_propagation": "NOT_APPROVED",
+    "engine_runtime_import": "NOT_RUN",
+    "target_hardware_performance": "UNQUALIFIED"
+  },
+  "non_claims": [
+    "Calibration 256x256 is not a shipping texture budget.",
+    "No final texel-density policy is approved.",
+    "No SSS/transmission or engine-specific shader model is approved.",
+    "No calibration material has been propagated to the LEVIATHAN world master.",
+    "No human/direct art PASS is claimed.",
+    "No engine import/performance PASS is claimed."
+  ]
+}

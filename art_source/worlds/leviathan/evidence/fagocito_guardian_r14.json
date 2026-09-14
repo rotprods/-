@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "project": "EXOVANT 2950",
+  "world_id": "leviathan",
+  "claim_id": "CLM-W10-WORLD-LEVIATHAN-001",
+  "asset_id": "LEV-ENM-001",
+  "asset_name": "Fagocito guardián",
+  "status": "REPRESENTATIVE_FUNCTIONAL_ANATOMY_REPRODUCIBLE_NOT_FINAL",
+  "source": {
+    "generator": "art_source/worlds/leviathan/tools/build_fagocito_guardian_v1.py",
+    "generator_commit": "8593afbe49b58b107698ed335c1d19c6a144f2e7"
+  },
+  "primary": {
+    "project_id": "2577a7b6-ebd7-4d31-a645-620e4b73a95d",
+    "revision": 14,
+    "surface_sha256": "5203d84cdf22f89685960e3cb1ffed10aaa7092a59123f8c171d61a3b1e2a8df"
+  },
+  "cold": {
+    "project_id": "37a931c7-f2e6-46bc-9be0-26077e5de1c1",
+    "revision": 12,
+    "surface_sha256": "5203d84cdf22f89685960e3cb1ffed10aaa7092a59123f8c171d61a3b1e2a8df"
+  },
+  "qa": {
+    "surface_match": true,
+    "collection_objects": 50,
+    "mesh_objects": 30,
+    "curve_objects": 4,
+    "interface_sockets": 14,
+    "evaluated_triangles": 10392,
+    "degenerate_polygons": 0,
+    "collision_leaks": 0,
+    "old_proxy_removed": true,
+    "reference_proxy_dims_m": [4.2, 4.2, 7.6],
+    "measured_representative_envelope_m": [4.987, 4.51, 4.865],
+    "envelope_truth": "historical capsule was BLOCKOUT_ENVELOPE_NOT_CANON; representative anatomy is wider/lower and requires future art/gameplay review"
+  },
+  "functional_interfaces": [
+    "central pressure/nuclear body",
+    "six locomotion/engulfment pseudopods",
+    "phagocytosis cup",
+    "dorsal cartilage armor",
+    "chemo-pressure receptor cilia",
+    "pulse-expulsor telegraph interface"
+  ],
+  "non_claims": {
+    "final_anatomy": false,
+    "canon_silhouette": false,
+    "rig": false,
+    "animation": false,
+    "AI": false,
+    "attack_timing_binding": false,
+    "damage_binding": false,
+    "hit_hurt_volumes": false,
+    "gameplay_collision": false,
+    "direct_art_approval": false,
+    "engine_import": false
+  }
+}
