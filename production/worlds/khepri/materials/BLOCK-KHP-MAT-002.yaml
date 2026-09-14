@@ -1,0 +1,45 @@
+block_id: BLOCK-KHP-MAT-002
+decision_needed: heliostat_uv0_geometry_owner_handoff
+affected_scope: KHP/MAT/014
+status: BLOCKED_CROSS_SCOPE_DEPENDENCY
+priority: P1
+consumer_asset: KHP_WM_HELIOSTAT_FOOTPRINTS
+geometry_owner_claim: CLM-KHEPRI-WMACRO-001
+material_owner_claim: CLM-KHEPRI-MATERIALS-001
+observed_project: 040f0c45-83a7-483c-9ee7-1e31c640a587
+observed_revision: 8
+observed_lod0_meshes:
+  - KHP_WM_X100_MAST_COMPACT
+  - KHP_WM_X100_MAST_STANDARD
+  - KHP_WM_X100_MAST_WIDE
+  - KHP_WM_X100_PANEL_COMPACT
+  - KHP_WM_X100_PANEL_STANDARD
+  - KHP_WM_X100_PANEL_WIDE
+observed_uv_state:
+  active_uv: null
+  uv_layers_per_mesh: 0
+  uv_loop_count_per_mesh: 0
+  mesh_loop_count_per_mesh: 72
+why_blocking: >-
+  KHEPRI material identity is standard portable texture-based PBR and requires deterministic UV0 for the first real consumer pilot.
+  Creating or altering UVs is geometry ownership. The material agent must not auto-unwrap macro meshes without explicit handoff.
+required_handoff:
+  - deterministic UV0 on six LOD0 family meshes
+  - canonical UV layer name
+  - tiling/texel-scale policy across compact/standard/wide
+  - seam/overlap policy
+  - LOD1/LOD2 UV strategy or explicit waiver
+  - no silhouette/material-slot regression
+material_binding_after_unblock:
+  bronze: KHP_MAT_BRONZE_SYNOD_001::service_clean::cast_structural::architectural
+  mirror: KHP_MAT_MIRROR_OPTICAL_001::calibrated::broad_reflector::architectural
+work_that_can_continue:
+  - material foundation and application matrix
+  - target-hardware qualification protocol
+  - consumer binding specification
+  - registry reconciliation
+forbidden_work_without_handoff:
+  - authoring UVs on CLM-KHEPRI-WMACRO-001 meshes
+  - modifying heliostat geometry
+  - changing macro material slots on owner branch
+interface_doc: production/worlds/khepri/materials/CONSUMER_INTERFACE_HELIOSTAT.md
