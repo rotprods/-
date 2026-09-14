@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "project": "EXOVANT 2950",
+  "world_id": "leviathan",
+  "claim_id": "CLM-W10-WORLD-LEVIATHAN-001",
+  "asset_id": "LEV-ENM-003",
+  "asset_name": "Colonia parasitaria",
+  "status": "REPRESENTATIVE_MULTINODE_SYSTEM_REPRODUCIBLE_NOT_FINAL",
+  "source": {
+    "generator": "art_source/worlds/leviathan/tools/build_parasitic_colony_v1.py",
+    "generator_commit": "0a207810165a26ecd6bc8cb62513d4eb154e207f"
+  },
+  "primary": {
+    "project_id": "2577a7b6-ebd7-4d31-a645-620e4b73a95d",
+    "revision": 16,
+    "surface_sha256": "de8aa76989c533041d6e45cc15362cdb2bd1aaa09b7eb1024b0eea33e5298c75"
+  },
+  "cold": {
+    "project_id": "37a931c7-f2e6-46bc-9be0-26077e5de1c1",
+    "revision": 14,
+    "surface_sha256": "de8aa76989c533041d6e45cc15362cdb2bd1aaa09b7eb1024b0eea33e5298c75"
+  },
+  "qa": {
+    "surface_match": true,
+    "collection_objects": 54,
+    "mesh_objects": 26,
+    "curve_objects": 11,
+    "interface_sockets": 15,
+    "evaluated_triangles": 9784,
+    "degenerate_polygons": 0,
+    "collision_leaks": 0,
+    "old_proxy_removed": true,
+    "reference_proxy_dims_m": [8.4, 8.4, 5.0],
+    "measured_representative_envelope_m": [7.55, 7.55, 4.063],
+    "envelope_ratio_vs_proxy": [0.899, 0.899, 0.813]
+  },
+  "functional_interfaces": [
+    "maternal nutrient node",
+    "six satellite buds",
+    "mother-to-bud vascular feed network",
+    "three dispersal-capsule interfaces",
+    "four tissue-adhesion roots and contact pads",
+    "necrotic digestion mantle",
+    "vermilion threat lesions and footprint signal",
+    "cyan diagnostic/memory intrusion interface"
+  ],
+  "truth_guards": {
+    "species_or_origin": "UNSPECIFIED_BY_CURRENT_CANON",
+    "cognition": "UNSPECIFIED_BY_CURRENT_CANON",
+    "locomotion": "NOT_AUTHORED",
+    "dispersal_spawn_gameplay": "NOT_AUTHORED",
+    "warning_rim_attack_radius_claimed": false,
+    "diagnostic_origin_implication": "NONE"
+  },
+  "non_claims": {
+    "final_species_design": false,
+    "cognition": false,
+    "locomotion": false,
+    "AI": false,
+    "spawn_behavior": false,
+    "attack_radius": false,
+    "damage": false,
+    "hit_hurt_volumes": false,
+    "gameplay_collision": false,
+    "direct_art_approval": false,
+    "engine_import": false
+  }
+}
