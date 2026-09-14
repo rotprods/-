@@ -10,7 +10,13 @@ PROTOCOL: `/EXOVANT-X100`
 
 ## NORTH STAR
 
-Own ORIGIN art/modeling at world level while keeping work recoverable through atomic claims, deterministic generators, stable asset IDs, receipts and hard QA. Prefer systemic reuse, native evidence and causal world depth over raw one-off prop count.
+Own ORIGIN art/modeling at world level while keeping every advancement recoverable through atomic claims, deterministic generators, stable asset IDs, receipts and adversarial QA. Prefer systemic reuse, native evidence, physically correct collision and causal world depth over raw prop count.
+
+## CURRENT TRUTH STATE
+
+`EMPIRICALLY_QUALIFIED_NATIVE_IMPORT_AND_ATRIO_TRAVERSAL / SYSTEM_CANDIDATE`
+
+This is stronger than the prior surrogate state. Do not regress to surrogate-only validation unless a future revision invalidates the real native receipt.
 
 ## ACTIVE / KEEP CLAIMS
 
@@ -27,109 +33,121 @@ Boss/Corazón remains explicitly excluded.
 
 ### Atrio
 Project: `6e64cd59-f1f6-461f-850c-737d098f1723`  
-Current qualified revision: `6`
+Current qualified revision: **8**
 
-Baseline structural checkpoint:
-- canonical arena envelope: 70 m, three connected rings.
-- original explicit collision proxies: 19.
-- surrogate CharacterBody traversal: PASS.
+Wave inventory:
+- canonical 70 m / three-ring Atrio structural grammar.
+- 19 service + 17 cultural-memory X100 assets.
+- 148 source meshes plus 148 LOD1 + 148 LOD2 meshes.
+- 19 total collision proxies.
 
-X100 Wave 01:
-- 36 stable asset parents / 13 families / 148 source meshes.
-- service radial clearance beyond A70 edge: +0.4312527094 m.
-- culture radial clearance beyond B52 edge: +0.5812839777 m.
-- parenting defect found at rev4 and corrected at rev5.
-
-X100 Wave 02 LOD:
-- 148 LOD1 + 148 LOD2 meshes.
+LOD evidence:
 - LOD0 evaluated: 29,328 tris.
-- LOD1: 14,544 tris (49.59%).
-- LOD2: 7,966 tris (27.16%).
-- 36/36 asset coverage; UV/material/transform/bounds QA PASS.
-- LOD0 frozen.
-- rev6 GLB: 7,039,992 B / etag `3cd3d91fc0d667c3c93145ba3efadc51`.
+- LOD1: 14,544 = 49.59%.
+- LOD2: 7,966 = 27.16%.
+- UV/material/transform/silhouette QA PASS.
+
+Rev8 collision correction:
+- 9/9 ring proxies are now top-only walkable surfaces.
+- 18 polygons / 38 verts per ring proxy.
+- upward normals (`min normal_z >= 0.99999994`).
+- zero horizontal ring hits at capsule-foot z=4.32 m.
+- visual geometry, bridges, nodes and LOD geometry were not modified.
+- collision semantics: `walkable_top_surface_only_upward_v3`.
+
+Rev8 artifact:
+- GLB 6,866,000 B
+- etag `de3984397e1c5c4b768aa62deb95f648`
+- SHA256 `13ce97f29928befa6efdd70a3f428ffd053883ca3eb9159c2d9366bd74966f8d`
+- Blend 8,463,819 B / etag `9bb9acfeac51397a3d54c64b81f0c074`
+
+Deterministic rebuild:
+1. `art_source/worlds/origin/atrio/origin_atrio.py`
+2. `art_source/worlds/origin/atrio/origin_atrio_collision_rev8.py`
+3. `art_source/worlds/origin/atrio/origin_atrio_x100_wave1.py`
+4. `art_source/worlds/origin/tech/origin_lod_x100_wave2.py`
 
 ### Archivo de la Primera Herida
 Project: `9bff5b6c-35a5-4db9-92de-4008a0fc3f4e`  
 Current qualified revision: `6`
 
-X100 Wave 01:
-- 21 stable assets / 8 structural families / 94 source meshes / 21 proxies.
-- source geometry QA PASS.
-- nonportable AREA lights discovered at rev1; replaced with SPOT/POINT at rev2.
+- 21 stable structural assets / 8 families / 21 proxies.
+- 94 source meshes + 94 LOD1 + 94 LOD2.
+- LOD0 16,880 / LOD1 8,688 / LOD2 4,610 tris.
+- one LOD2 7.9 cm silhouette regression was rejected and selectively reverted.
+- four stable assemblies, 67 module instances, 367 linked mesh instances.
+- source mesh-data duplication 0.
+- player lateral clearance proposal margins 2.64–4.24 m.
+- GLB 5,171,380 B / etag `e25633728494203865bd76b858723960`.
+- SHA256 `7d1ca1c5b04207f490a0ccfdae3fccec32c3b0d06d880d8ad364096cdeb57493`.
 
-X100 Wave 02 LOD:
-- 94 LOD1 + 94 LOD2 meshes.
-- LOD0 evaluated: 16,880 tris.
-- LOD1: 8,688 tris (51.47%).
-- LOD2: 4,610 tris (27.31%).
-- one 7.9 cm silhouette regression on `ORG_ARC_ARCHIVE_CORE_SHELL_A_CORE` rejected; only that LOD2 reverted to unbeveled base. Final >6 cm drift failures: 0.
+## REAL GODOT QUALIFICATION — PASS
 
-X100 Wave 02 assembly grammar:
-- `ORG_ARC_ASM_WITNESS_GALLERY_A`
-- `ORG_ARC_ASM_VAULT_JUNCTION_A`
-- `ORG_ARC_ASM_MEMORY_NAVE_A`
-- `ORG_ARC_ASM_SCAR_THRESHOLD_A`
-- 67 module instances / 367 linked mesh instances / 19 unique source assets consumed.
-- source mesh data duplicated: 0.
-- recipe and seed signatures valid: 4/4.
-- collision inheritance failures: 0.
-- player lateral clearance margins: 2.64–4.24 m beyond 0.76 m capsule diameter.
-- delivery camera refit at rev6: all assembly geometry in frame.
-- dimensions remain `PROPOSAL_UNTIL_GODOT`.
-- rev6 GLB: 5,171,380 B / etag `e25633728494203865bd76b858723960`.
+Canonical receipt:
+`production/receipts/origin/ORIGIN-REAL-GLB-GODOT-001.yaml`
 
-## DEFECTS FOUND AND CORRECTED
+Evidence:
+- scratch evidence PR #32, intentionally NO-MERGE.
+- final canary commit `194ee4fe3c04318bf2fab4eb62de72b97eb1b322`.
+- GitHub Actions run `34831105389` / run #377.
+- job `103934408512`.
+- Godot `4.7.2-stable (official)` / hash `ed1daf0bf001b61586d9930840f2f1394092c079`.
+- conclusion: **SUCCESS**.
 
-1. Atrio rev2: camera clipping, floating supports and oversize node collision proxies.
-2. Atrio X100 rev4: 148-child double-parent transform defect; fixed at rev5.
-3. Archivo rev1: AREA lights nonportable in GLB; fixed with SPOT/POINT in rev2.
-4. Archivo LOD rev3: one LOD2 shell drifted 7.9 cm; rejected and selectively reverted in rev4.
-5. Archivo assembly rev5: delivery camera missed the largest nave; camera-only refit at rev6, geometry unchanged.
+Native import readback:
+- Atrio: 613 nodes / 570 meshes / 570 material slots / 19 collision meshes / 148 LOD1 / 148 LOD2.
+- Archivo: 804 nodes / 703 meshes / 703 material slots / 94 LOD1 / 94 LOD2 / 4 assembly IDs.
+- both GLBs load as PackedScene.
 
-## EPISTEMIC TRUTH
+Real Atrio physics:
+- 19 imported `COL_*` meshes converted into real `StaticBody3D` trimesh collision.
+- CharacterBody capsule radius 0.38 m / height 1.85 m.
+- inner landing r=11 m: PASS, 136 floor frames.
+- outer landing r=37 m: PASS, 136 floor frames.
+- radial traversal r=11 → r=37: PASS; final/max radius `38.028427 m`.
+- traversal floor frames 400; minimum Y `5.0342946 m`.
+- `physics_pass=true`; failures `[]`.
 
-Current overall truth state: `LOCALLY_VALIDATED_SYSTEM_CANDIDATE`.
+## CAUSAL DEFECT CHAIN — DO NOT LOSE THIS LEARNING
 
-Proven:
-- 57 stable Wave-01 asset IDs exist remotely with deterministic generators.
-- 57/57 have actual LOD1 and LOD2 geometry, not metadata-only promises.
-- all LOD QA passes current UV/material/transform/silhouette contracts.
-- four stable Archive assemblies exist and reuse linked source mesh data.
-- GLB exports succeed at the stated revisions.
+Rev6 already imported correctly, but real CharacterBody traversal failed at `r≈19.0647 m`.
 
-Not proven:
-- real Godot import readback of Atrio rev6 / Archivo rev6.
-- imported GLB collision/traversal with real geometry.
-- engine LOD switching, runtime packing/HLOD or frame-time savings.
+Blender horizontal ray audit identified `COL_ORG_ATR_RING_A70_SEG_00` exposing an internal vertical wall at `x=19.220577 m` with horizontal normal. The ring proxies were closed solids, so visually open bridge/ring interfaces contained invisible collision walls.
+
+- rev7 removed side/bottom walls → top-only ring collision.
+- adversarial QA rejected rev7 because winding was downward.
+- rev8 reversed winding upward and passed Blender QA.
+- the **same native canary** then passed without weakening the physics acceptance criteria.
+
+This establishes a strong defect→fix→native-readback chain.
+
+## PROVEN NOW
+
+- exact Atrio rev8 GLB imports natively in Godot 4.7.2.
+- exact Archivo rev6 GLB imports natively in Godot 4.7.2.
+- stable ORIGIN naming/material/LOD/assembly structure survives import.
+- real imported Atrio collision can be converted to physics bodies.
+- real CharacterBody Atrio traversal passes across ring/bridge interfaces.
+- 57 stable Wave-01 assets have actual LOD1/LOD2 geometry.
+- four Archivo assemblies reuse linked source mesh data.
+
+## STILL NOT PROVEN
+
+- merged gameplay/runtime integration of these GLBs.
+- CharacterBody traversal through Archive assemblies.
+- engine runtime LOD switching, HLOD or packed file-size/frame-time savings.
+- local/variable-gravity gameplay on imported Atrio.
 - final causal texture sets.
 - target-hardware performance.
 - human `GATE-ART`.
 
-Do not claim final AAAA+, final game-ready performance or final Archive scale until those gates pass.
+Do not claim final AAAA+, final game-ready performance or final Archive dimensions before those gates pass.
 
-## RECOVERABLE SOURCE / RECEIPTS
+## NEXT P0
 
-- `art_source/worlds/origin/X100_COVERAGE.md`
-- `art_source/worlds/origin/atrio/origin_atrio.py`
-- `art_source/worlds/origin/atrio/origin_atrio_x100_wave1.py`
-- `art_source/worlds/origin/archive/origin_archive_x100_wave1.py`
-- `art_source/worlds/origin/tech/origin_lod_x100_wave2.py`
-- `art_source/worlds/origin/archive/origin_archive_grammar_x100_wave2.py`
-- `production/claims/CLM-ORIGIN-MEGA-ATRIO-001.yaml`
-- `production/claims/CLM-ORIGIN-INFRA-ATRIO-SERVICE-001.yaml`
-- `production/claims/CLM-ORIGIN-CULT-ORGANISM-001.yaml`
-- `production/claims/CLM-ORIGIN-ARCH-ARCHIVE-001.yaml`
-- `production/claims/CLM-ORIGIN-TECH-LOD-WAVE01-001.yaml`
-- `production/claims/CLM-ORIGIN-ARCH-ARCHIVE-GRAMMAR-001.yaml`
-- `production/receipts/origin/ORIGIN-X100-WAVE-01-QA.yaml`
-- `production/receipts/origin/ORIGIN-X100-WAVE-02-QA.yaml`
-
-## NEXT ACTION — P0
-
-`REAL_GLB_IMPORT_GODOT_4_7_2`.
-
-Use the exact Atrio rev6 and Archivo rev6 GLBs, import them into an isolated Godot 4.7.2 validation project, verify PackedScene instantiation, stable naming/mesh/material/scale readback, then build real collision/traversal evidence from imported geometry. Only after that should Archive proposal dimensions be promoted/rejected and engine LOD switching be measured.
+1. Native Archive assembly CharacterBody traversal using exact imported rev6 geometry; use measurements to promote/reject proposal dimensions.
+2. Engine runtime LOD switching + packing/HLOD proof on real imports.
+3. Then local-gravity gameplay qualification and causal-texture finishing.
 
 WORLD CLAIM STATUS: **KEEP**  
 ALL LISTED ATOMIC CLAIMS: **KEEP / IN_PROGRESS**
