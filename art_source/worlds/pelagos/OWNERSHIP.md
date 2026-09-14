@@ -54,16 +54,27 @@ Other world agents should select different world IDs and use `art_source/worlds/
 - These are FUNCTIONAL GUILD PROPOSALS only. Detailed trophic chain, reproduction and population density remain UNKNOWN.
 - Source + receipt persisted; Workbench QA artifacts generated; semantic/cinematic GATE-ART remains pending because pixels could not be inspected from the signed artifact host.
 
+### `PEL/MKT/DAMAGE-X100-005`
+- Reversible Mercado architecture damage/recovery state-swap foundation.
+- Final structurally verified scene checkpoint: **rev. 38**.
+- 8 semantic damage families × 4 co-located states × 3 severity variants = 32 authored state roots / 96 direct variant-state combinations.
+- Exactly one current state visible per family; alternate states and 8 LOD1 proxies fully hidden.
+- Surface attachment and measured normals: PASS; UV/material/scale debt 0; visible technical geometry 0.
+- Bridge repair remains 2.728 m from route centerline against 1.5 m reserved half-width — PASS.
+- Base architecture is not destructively modified. Runtime fracture/navmesh/debris/persistence remain engine blockers.
+- Source + receipt persisted.
+
 ## Active claim — `/EXOVANT-X100`
-- Claim ID: `PEL/MKT/DAMAGE-X100-005`
-- Scope: reversible architecture-damage / recovery kit for Mercado de Boyas structures. Overlay/replacement modules only; base architecture is not destructively edited.
-- Why now: coverage rerank at rev. 37 measured **2 explicit damage/recovery asset families**, below the X100 5–15 planning range and far below the 63-family architecture layer. Damage therefore remains a multiplicative temporal/story/gameplay gap.
-- Planned semantic families: deck impact/spall patch; canopy membrane tear/field patch; articulated-bridge hinge deformation/jam; service-hatch corrosion/seal breach; buoyancy-pod impact/leak clamp; mooring-cleat overload/tear-out plate; utility-channel flood/exposed-service repair; CommandShell stress-crack/emergency brace.
-- Causal drivers: storm loading, docking impact, salt/wet-dry corrosion, repeated flex cycles, overload at mooring/load paths, service access, fluid ingress and field repair. No random crack decals, uniform edge wear or decorative destruction.
-- State grammar target: 8 damage families × 4 causal states (`stressed`, `damaged`, `field_repaired`, `abandoned`) = 32 physical state exemplars / 96+ authored variant combinations before placement/orientation grammar.
-- Placement rule: attach to real Mercado structural targets or an existing test/specimen surface while preserving traversal clearances and keeping the damage system reversible and independently removable.
-- DoD: stable IDs; causal damage mechanism; state variants; structural attachment logic; no floating geometry; player/traversal clearance; UV0/materials/clean transforms; soft/query collision unless a state explicitly blocks route; LOD/HLOD policy; deterministic generator; structural QA; receipt.
-- Engine gate: runtime fracture, destructibility, navmesh updates, physics debris, persistence/save-state, network replication, production HLOD thresholds and GPU qualification remain `BLOCKED/PENDING` until engine/gameplay authority.
+- Claim ID: `PEL/CIV/PROP-X100-006`
+- Scope: Mercado cultural/everyday prop expansion II, adding 12 systemic families beyond the first custody/listening/funeral/maintenance kit.
+- Why now: post-rev.38 planning-floor ranking puts props at **9 / 30 families = 0.30 floor ratio**, the lowest Blender-addressable multiplier gap. Machinery and sessile ecology are each 9/10; traversal is 5/5; damage is 8/5.
+- Target post-wave breadth: at least **21 prop families** total.
+- Planned families: wet work surface/seating; tethered hand tools; dry personal lockbox; food/water service vessels; wet first-aid/medical kit; trade measurement/exchange objects; portable refuge lighting; textile drying/repair; waste sorting/bio-safe disposal; weather-screen/storm-stowage module; portable navigation/acoustic marker; market display/modular goods bin.
+- Culture DNA constraints: repair-first marine construction; wet/gloved ergonomics; tether points; drainage; corrosion resistance; low heavy mass; detachable/serviceable modules; no invented faction iconography/social hierarchy.
+- State grammar target: 12 families × 4 causal states (`pristine`, `used`, `damaged_repaired`, `abandoned`) = 48 authored state roots; 3 semantic variants per family = 144 direct variant-state combinations before placement/orientation grammar.
+- Placement rule: integrate across measured Mercado platform/deck bays rather than a single random scatter field; exactly one current state visible per placed family while alternate roots remain authored and hidden.
+- DoD: stable IDs; metre/player-scale bounds; functional construction logic; four causal states; three variants; UV0/materials/clean transforms; no floating geometry; no route obstruction; LOD/query collision policy; deterministic generator; structural QA; receipt; post-wave rerank.
+- Engine gate: runtime pickup/use, inventory, animation, audio, dynamic state swaps, physics interaction, HLOD thresholds and target-GPU qualification remain `BLOCKED/PENDING` until gameplay/engine authority.
 
 ## Current status
-`X100_PRODUCTION_ACTIVE`: props, first L3 interior, machinery and sessile ecology are structurally closed. Current wave targets architecture damage/recovery, the next measured multiplicative gap.
+`X100_PRODUCTION_ACTIVE`: rev. 38 closes the first machinery, sessile-ecology and damage/recovery gaps. The active production cell is cultural/everyday props II, the current lowest planning-floor ratio.
