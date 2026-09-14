@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "project": "EXOVANT 2950",
+  "world_id": "leviathan",
+  "claim_id": "CLM-W10-WORLD-LEVIATHAN-001",
+  "asset_id": "LEV-ENM-002",
+  "asset_name": "Extractor de pulso",
+  "status": "REPRESENTATIVE_FUNCTIONAL_INTERFACE_REPRODUCIBLE_NOT_FINAL",
+  "source": {
+    "generator": "art_source/worlds/leviathan/tools/build_pulse_extractor_v1.py",
+    "generator_commit": "63602a6bb80a50679545c79ce08bf272c9585363"
+  },
+  "primary": {
+    "project_id": "2577a7b6-ebd7-4d31-a645-620e4b73a95d",
+    "revision": 15,
+    "surface_sha256": "10772696d111219191ef56324724af184904c0b8a3094ccbd5768c9971eb0dc2"
+  },
+  "cold": {
+    "project_id": "37a931c7-f2e6-46bc-9be0-26077e5de1c1",
+    "revision": 13,
+    "surface_sha256": "10772696d111219191ef56324724af184904c0b8a3094ccbd5768c9971eb0dc2"
+  },
+  "qa": {
+    "surface_match": true,
+    "collection_objects": 40,
+    "mesh_objects": 20,
+    "curve_objects": 6,
+    "interface_sockets": 12,
+    "evaluated_triangles": 5424,
+    "degenerate_polygons": 0,
+    "collision_leaks": 0,
+    "old_proxy_removed": true,
+    "reference_proxy_dims_m": [2.8, 2.8, 6.0],
+    "measured_representative_envelope_m": [2.593, 2.555, 5.975],
+    "envelope_ratio_vs_proxy": [0.926, 0.913, 0.996]
+  },
+  "functional_interfaces": [
+    "three-point wet-tissue anchor",
+    "central pressure reservoir",
+    "vascular intake needle and feed",
+    "pressure regulator rings",
+    "radial siphon conduits",
+    "hostile extraction telegraph",
+    "cyan diagnostic-hijack interface"
+  ],
+  "truth_guards": {
+    "origin_or_faction": "UNSPECIFIED_BY_CURRENT_CANON",
+    "mobility": "UNKNOWN_NOT_AUTHORED",
+    "intake_penetration_gameplay": "NOT_AUTHORED",
+    "telegraph_timing": "NOT_AUTHORED",
+    "diagnostic_narrative_origin": "UNSPECIFIED"
+  },
+  "non_claims": {
+    "final_design": false,
+    "faction_origin": false,
+    "mobility": false,
+    "AI": false,
+    "attack_timing": false,
+    "damage": false,
+    "hit_hurt_volumes": false,
+    "gameplay_collision": false,
+    "direct_art_approval": false,
+    "engine_import": false
+  }
+}
