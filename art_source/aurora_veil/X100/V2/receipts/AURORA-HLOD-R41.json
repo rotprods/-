@@ -1,0 +1,21 @@
+{
+  "receipt_id": "AURORA-HLOD-R41",
+  "world_id": "aurora",
+  "claim_id": "CLM-AURORA-WORLD-001",
+  "branch": "art/world-aurora-veil-001",
+  "workunit_id": "AUR-X100-HLOD-HIERARCHY-001",
+  "remote_revision": 41,
+  "evidence": [
+    {
+      "dimension": "optimization",
+      "cell": "hlod_impostor",
+      "maturity": "locally_validated",
+      "evidence_refs": [
+        "art_source/aurora_veil/X100/QA/hlod_hierarchy_r41.json",
+        "art_source/aurora_veil/X100/blender/aurora_x100_hlod_hierarchy_r41.py",
+        "Blender:AUR_HLOD_CONTRACT_R38.json@r41"
+      ]
+    }
+  ],
+  "truth_boundary": "Locally validated Blender-side HLOD source contract. Runtime switching remains BLOCKED_EXO_012; target-hardware performance is not claimed."
+}
