@@ -1,0 +1,102 @@
+schema_version: 1
+receipt_id: NACRE-MACRO-QA-R4
+claim_id: CLM-NACRE-WORLD-MACRO-001
+agent_id: AGENT-3D-NACRE-01
+world_id: nacre
+status: PASS_WITH_OPEN_HUMAN_AND_RUNTIME_GATES
+
+primary_scene:
+  project_id: a49fc6f3-fedb-40a5-913f-10a08debb0e1
+  revision: 4
+  canonicalization_operation: nacre-r4-generator-canonicalization
+  qa_operation: nacre-r4-canonical-qa
+  blend:
+    bytes: 3500059
+    etag: a365ae84492f4142d949c1033636b092
+  glb:
+    bytes: 3828832
+    etag: 0b6dee01664cb91aae1a4b332e8ae163
+  preview:
+    artifact_id: 24642ce8001df31f7c50875e79c07c9d
+    name: nacre_r4_canonical_hero.png
+    dimensions_px: [640, 360]
+
+cold_replay:
+  project_id: 4750e054-b063-4ab8-afc9-214462f36128
+  initial_revision: 0
+  replay_revision: 1
+  preflight_operation: nacre-r3-clean-preflight
+  api_probe_operation: nacre-r3-generator-api-probe
+  replay_operation: nacre-r3-clean-replay-fixed-generator
+  semantic_digest_operation: nacre-r3-semantic-digest-replay
+  result:
+    mesh_objects: 97
+    curve_objects: 30
+    lights: [SUN_MNEME_A, SUN_MNEME_B]
+  provider_artifacts:
+    blend_bytes: 3497824
+    blend_etag: 7f6a1db325b7cee3692051b289590791
+    glb_bytes: 3828216
+    glb_etag: 9eb39213129f2e5b8bf150765df4c693
+
+reproducibility:
+  generator: art_source/nacre_world_macro/build_macro.py
+  generator_bug_found:
+    mechanism: Blender 5.2 bpy_prop_collection.__contains__ requires string/tuple, not Collection object
+    failing_expression: collection_object in scene.collection.children
+    probe_result: TypeError
+    fix: compare collection names before link
+    fixed_commit: 6be51b785b53c38e071461212254a81e601c8518
+  historical_r3_digest: 035a48e5fbd8f79872fd012b4cbf56bbdd156c5c77f18fa52ba02fdb4b6c429f
+  cold_replay_digest: 48742ba2dc253a626fb807799a55e2c83f2e87f437cf761b66522bac7ba88787
+  r3_drift_interpretation: R3 primary inherited older shell resolutions/ribs/belts/plate naming not encoded by first generator draft.
+  resolution: generator becomes explicit macro-geometry authority for reversible proposal blockout; primary scene rebuilt as revision 4 from corrected generator.
+  primary_r4_digest: 48742ba2dc253a626fb807799a55e2c83f2e87f437cf761b66522bac7ba88787
+  semantic_match_primary_r4_vs_clean_replay: true
+  binary_byte_identity_required: false
+  note: Blend/GLB byte sizes differ across clean serializations; semantic object/material/geometry digest is the reproducibility criterion for this blockout.
+
+geometry_revision_4:
+  object_total: 130
+  mesh_objects: 97
+  curve_objects: 30
+  bridge_links_checked: 10
+  bridge_penetrations: 0
+  bridge_surface_clearance_m:
+    nominal_each_endpoint: 3.0
+    tolerance_observed_m: [2.9999, 3.0]
+  non_unit_scale_objects: 0
+  zero_dimension_mesh_or_curve_objects: 0
+  portable_lights: [SUN_MNEME_A, SUN_MNEME_B]
+
+native_delivery_attempt:
+  status: ENV_BLOCKED
+  not_asset_failure: true
+  observations:
+    - isolated container could not resolve github.com while attempting a clean clone
+    - signed provider binary could not be transferred into that container through the available safe-download boundary
+  godot_import_executed: false
+  fleet_delivery_executed: false
+  rule: do not convert this environment blocker into a Godot PASS or asset FAIL
+
+qa_gates:
+  canonical_scope: PASS
+  bridge_attachment_geometry: PASS
+  transform_sanity: PASS
+  degenerate_dimension_check: PASS
+  glb_export: PASS
+  portable_light_contract: PASS
+  cold_replay_generator: PASS
+  semantic_reproducibility: PASS
+  macro_manufacturing_causality: PASS_CANDIDATE
+  human_gate_art: OPEN
+  godot_import: ENV_BLOCKED
+  collision: OPEN
+  lod_hlod_streaming: OPEN
+  performance_target_hardware: OPEN
+  fleet_native_delivery: ENV_BLOCKED
+
+notes:
+  - Exact shell/archive dimensions remain reversible blockout proposals, never planetary canon.
+  - Render existence and semantic replay do not constitute human creative-director approval.
+  - Native delivery must be retried on a checkout that can recover both repository state and the exact revision-4 binaries.

@@ -1,0 +1,92 @@
+schema_version: 1
+claim_id: CLM-NACRE-WORLD-MACRO-001
+agent_id: AGENT-3D-NACRE-01
+checkpoint: NACRE-R5-COLLISION-CONTRACT
+status: PASS_CANDIDATE_NATIVE_IMPORT_OPEN
+observed_at: 2026-09-13T10:55:00Z
+
+fleet:
+  epoch: 1
+  status_observed: active
+  registry_generation_observed: 8
+  ack: https://github.com/rotprods/-/issues/7#issuecomment-5648339684
+
+primary:
+  project_id: a49fc6f3-fedb-40a5-913f-10a08debb0e1
+  revision: 5
+  blend: {bytes: 3587945, etag: c338414fba3fa23d2d229264068bfad5}
+  glb: {bytes: 3850332, etag: bbc4e71f186a1ae408e293393a434da8}
+  collision_operation: nacre-r5-collision-proxies
+
+clean_replay:
+  project_id: 4750e054-b063-4ab8-afc9-214462f36128
+  revision: 2
+  collision_operation: nacre-r5-collision-proxies-replay
+  collision_proxy_count: 12
+  violations: 0
+
+collision_contract:
+  import_hint: -colonly
+  godot_semantics: collision-only mesh converted to StaticBody3D collision during editor scene import
+  proxy_count: 12
+  included:
+    - 10 archive bridge deck traversal proxies
+    - entry bridge traversal proxy
+    - entry service platform traversal proxy
+  proxy_names:
+    - NACRE_COLL_BRIDGE_00-colonly
+    - NACRE_COLL_BRIDGE_01-colonly
+    - NACRE_COLL_BRIDGE_02-colonly
+    - NACRE_COLL_BRIDGE_03-colonly
+    - NACRE_COLL_BRIDGE_04-colonly
+    - NACRE_COLL_BRIDGE_05-colonly
+    - NACRE_COLL_BRIDGE_06-colonly
+    - NACRE_COLL_BRIDGE_07-colonly
+    - NACRE_COLL_BRIDGE_08-colonly
+    - NACRE_COLL_BRIDGE_09-colonly
+    - NACRE_COLL_ENTRY_BRIDGE-colonly
+    - NACRE_COLL_ENTRY_PLATFORM-colonly
+  containment_check: PASS
+  export_presence: PASS
+  primary_collision_digest_sha256: af7b2d53c2700fb841205b776906150b3429a809107902d56799e6b92309adf1
+  replay_collision_digest_sha256: af7b2d53c2700fb841205b776906150b3429a809107902d56799e6b92309adf1
+  reproducible: true
+  waivers:
+    archive_chamber_hulls: Interior-aware shell collision required; solid convex chamber collision would block future interiors.
+    global_shell_surface: Must be regional/tiled according to authored gameplay cells; no monolithic collision shell.
+    service_rings: Not yet declared player-traversable.
+
+lod_contract:
+  mesh_lod: DEFER_TO_GODOT_EDITOR_IMPORT_DEFAULT
+  rationale: Godot scene importer generates mesh LOD automatically for imported glTF scenes by default; do not duplicate artist LODs without profiling evidence.
+  hlod_streaming: OPEN
+  manual_hlod_trigger: only after camera-distance/world-streaming profiling demonstrates need
+
+native_import:
+  godot_target: 4.7.2
+  executed: false
+  status: ENV_BLOCKED_ARTIFACT_TRANSPORT
+  transport_observations:
+    - newly issued provider-signed R4 GLB URL returned storage InvalidArgument through live browser: credential signed date field was parsed inconsistently against X-Amz-Date
+    - independent direct fetch surface reported target_unreachable for a fresh signed URL
+    - isolated local execution container has no general DNS egress; exact provider GLB could not be co-located with Godot runtime
+  interpretation: This is not an asset import FAIL and not a Godot PASS.
+  required_next_evidence:
+    - exact R5 GLB bytes co-located with qualified Godot 4.7.2
+    - editor import with node suffixes enabled
+    - imported scene inspection proving 12 collision-only meshes became StaticBody3D/CollisionShape3D equivalents and are absent as rendered proxy meshes
+    - scale/material/load smoke test
+
+sources:
+  godot_collision_suffix_docs: https://docs.godotengine.org/en/latest/tutorials/assets_pipeline/importing_3d_scenes/node_type_customization.html
+  godot_lod_docs: https://docs.godotengine.org/en/latest/tutorials/3d/mesh_lod.html
+
+open_gates:
+  - HUMAN_GATE_ART
+  - NATIVE_GODOT_IMPORT
+  - COLLISION_RUNTIME_TRAVERSAL
+  - HLOD_STREAMING_PROFILE
+  - TARGET_HARDWARE_PERFORMANCE
+  - FLEET_NATIVE_DELIVERY
+
+claim_status: KEEP
