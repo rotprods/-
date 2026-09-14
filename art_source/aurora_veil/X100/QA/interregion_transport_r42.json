@@ -1,0 +1,66 @@
+{
+  "schema_version": 2,
+  "protocol": "EXOVANT-X100-V2",
+  "world_id": "aurora",
+  "workunit_id": "AUR-X100-INTERREGION-TRANSPORT-001",
+  "remote_project_id": "d6488148-8547-4ffe-b63d-e5fbec3a339c",
+  "remote_revision": 42,
+  "scene_status": "X100_INTERREGION_TRANSPORT_R42",
+  "quality_claim": "REVIEW_TECHNICAL_SYSTEMIC; terrain-supported route engineering proof; vehicle handling/runtime/streaming performance/final art NOT claimed",
+  "vehicle_reference": {
+    "asset": "AUR_PEREGRINO_ROUTE_RECORDER",
+    "dimensions_m": [5.8,2.7,2.4],
+    "route_width_proposal_m": 6.5,
+    "nominal_lateral_margin_each_side_m": 1.9,
+    "turning_radius_authority": "PROPOSAL_UNTIL_FINAL_PEREGRINO_HANDLING_PROFILE"
+  },
+  "construction_rule": {
+    "smoothing": "Chaikin x3 + ~18m samples",
+    "roadway": "fill-only compacted route; high edge bears on terrain +0.08m; low edge crossfall clamped <=3%; berm/skirt returns to terrain; global terrain topology untouched",
+    "material": "AUR_MAT_COMPACTED_ROUTE_R42"
+  },
+  "routes": [
+    {"id":"AUR-ROUTE-CP-001","class":"PRIMARY","length_m":1462.3,"triangles":684,"grade_p95_pct":1.97,"grade_max_pct":2.08,"crossfall_max_pct":1.39,"fill_height_max_m":0.065,"fill_height_p95_m":0.065,"skirt_contact_error_max_m":0.0,"min_exclusion_margin_m":78.3,"nearest_exclusion":"FIELD_B","min_curve_radius_m":1687.5,"stakes":36,"beacons":4,"pull_offs":2,"service_nodes":2},
+    {"id":"AUR-ROUTE-PO-001","class":"PRIMARY","length_m":1807.9,"triangles":852,"grade_p95_pct":5.76,"grade_max_pct":6.76,"crossfall_max_pct":3.0,"fill_height_max_m":0.609,"fill_height_p95_m":0.420,"skirt_contact_error_max_m":0.000001,"min_exclusion_margin_m":68.1,"nearest_exclusion":"AEON_ARENA","min_curve_radius_m":40.9,"stakes":44,"beacons":6,"pull_offs":2,"service_nodes":2},
+    {"id":"AUR-ROUTE-COB-001","class":"SECONDARY_SERVICE_BYPASS","length_m":3110.9,"triangles":1278,"grade_p95_pct":4.50,"grade_max_pct":6.05,"crossfall_max_pct":3.0,"fill_height_max_m":0.648,"fill_height_p95_m":0.445,"skirt_contact_error_max_m":0.000001,"min_exclusion_margin_m":84.9,"nearest_exclusion":"AEON_ARENA","min_curve_radius_m":183.2,"stakes":76,"beacons":10,"pull_offs":4,"service_nodes":4}
+  ],
+  "network_totals": {
+    "route_length_m": 6381.1,
+    "visible_route_meshes": 3,
+    "marker_objects": 192,
+    "edge_stakes": 156,
+    "reused_route_beacons": 20,
+    "pull_off_markers": 8,
+    "reused_service_nodes": 8
+  },
+  "contracts": {
+    "collision_meshes": ["COL_AUR_ROUTE_CAMP_PLAIN_MESH","COL_AUR_ROUTE_PLAIN_ORCHARD_MESH","COL_AUR_ROUTE_CAMP_ORCHARD_BYPASS_MESH"],
+    "collision_scene_users": 0,
+    "hlod_mesh": "AUR_HLOD_ROUTE_NETWORK_L2_MESH",
+    "hlod_scene_users": 0,
+    "runtime": "BLOCKED_EXO_012"
+  },
+  "gates": {
+    "TERRAIN_BVH_AUDIT": "PASS",
+    "ROUTE_EXCLUSION_FIELD_A_B_C_AEON": "PASS_MIN_68.1M_BEYOND_CONSERVATIVE_BUFFERS",
+    "LONGITUDINAL_GRADE": "PASS_TECHNICAL_MAX_6.76PCT",
+    "ENGINEERED_CROSSFALL": "PASS_MAX_3PCT",
+    "FILL_HEIGHT": "PASS_TECHNICAL_MAX_0.648M",
+    "SKIRT_TERRAIN_CONTACT": "PASS_MAX_ERROR_0.000001M",
+    "MARKER_SUPPORT": "PASS_192_OF_192",
+    "COLLISION_CONTRACT_SEPARATION": "PASS_ZERO_SCENE_USERS",
+    "HLOD_CONTRACT_SEPARATION": "PASS_ZERO_SCENE_USERS",
+    "PEREGRINO_HANDLING": "OPEN_FINAL_HANDLING_PROFILE",
+    "ENGINE_TRAVERSAL_STREAMING": "BLOCKED_EXO_012",
+    "TARGET_HARDWARE_PERFORMANCE": "BLOCKED_TARGET_HARDWARE",
+    "HUMAN_GATE_ART": "PENDING"
+  },
+  "visual_evidence": {
+    "macro_workbench_initial": {"artifact":"aurora_x100_r42_interregion_network_structural.png","stddev":0.0016,"gate":"REJECTED_AS_PROOF_LOW_CONTRAST"},
+    "diagnostic_network": {"artifact":"aurora_x100_r42_network_random_structural.png","stddev":0.0016,"gate":"REVIEW_LOW_CONTRAST"},
+    "max_fill_workbench": {"artifact":"aurora_x100_r42_maxfill_structural.png","stddev":0.0210,"gate":"REVIEW"},
+    "max_fill_eevee": {"artifact":"aurora_x100_r42_maxfill_eevee.png","stddev":0.0278,"black_clip":0.0006,"white_clip":0.0,"gate":"REVIEW_MATERIAL_CONTRAST_OPEN"},
+    "max_fill_location": {"route":"CAMP_ORCHARD_BYPASS","sample_index":168,"fill_m":0.648,"center":[849.609,428.438,17.491]}
+  },
+  "truth_boundary": "Technical route geometry, support and exclusion gates pass. Visual/material art direction for the route surface remains open; low-contrast renders are not presented as GATE-ART passes."
+}
