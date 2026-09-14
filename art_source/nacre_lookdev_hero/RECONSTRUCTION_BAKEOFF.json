@@ -1,0 +1,139 @@
+{
+  "schema_version": 1,
+  "bakeoff_id": "NACRE-ARCHIVE-CHAMBER-RECON-BAKEOFF-001",
+  "claim_id": "CLM-NACRE-LOOKDEV-HERO-001",
+  "pilot_asset_id": "NACRE-LOOK-ARCHIVE-CHAMBER-001",
+  "status": "READY_AFTER_FLEET_ACTIVE_AND_TARGET_GATE",
+  "input_pack": "NACRE-LOOK-TARGET-PACK-001",
+  "input_views": ["TARGET_A_3Q_FRONT", "TARGET_B_SIDE", "TARGET_C_REAR", "TARGET_D_TOP"],
+  "input_invariant": "Every candidate must consume the same approved A-D pixels. No model-specific target regeneration is allowed.",
+  "verified_higgsfield_models": [
+    {
+      "candidate": "A",
+      "model_id": "tripo_h3_1_multiview_to_3d",
+      "provider": "Tripo",
+      "input_views": "2-4 ordered images",
+      "geometry_probe": {
+        "geometry_quality": "detailed",
+        "texture": false,
+        "pbr": false,
+        "quad": true,
+        "face_limit": 400000,
+        "auto_size": false,
+        "orientation": "default"
+      },
+      "textured_probe_after_geometry_pass": {
+        "geometry_quality": "detailed",
+        "texture": true,
+        "pbr": true,
+        "texture_quality": "detailed",
+        "quad": true,
+        "face_limit": 400000,
+        "texture_alignment": "original_image"
+      },
+      "note": "Face count is source-capture budget, never runtime budget."
+    },
+    {
+      "candidate": "B",
+      "model_id": "multi_image_to_3d",
+      "provider": "Meshy",
+      "input_views": "1-4 images",
+      "geometry_probe": {
+        "should_texture": false,
+        "should_remesh": true,
+        "topology": "quad",
+        "target_polycount": 200000,
+        "symmetry_mode": "off",
+        "enable_rigging": false,
+        "enable_animation": false
+      },
+      "textured_probe_after_geometry_pass": {
+        "should_texture": true,
+        "enable_pbr": true,
+        "should_remesh": true,
+        "topology": "quad",
+        "target_polycount": 200000,
+        "symmetry_mode": "off"
+      }
+    },
+    {
+      "candidate": "C",
+      "model_id": "hunyuan3d_v3_image_to_3d",
+      "provider": "Tencent",
+      "input_views": "single or multiple image views",
+      "geometry_probe": {
+        "enable_pbr": false,
+        "face_count": 500000,
+        "generate_type": "Geometry",
+        "polygon_type": "triangle"
+      },
+      "textured_probe_after_geometry_pass": {
+        "enable_pbr": true,
+        "face_count": 500000,
+        "generate_type": "Normal",
+        "polygon_type": "triangle"
+      }
+    }
+  ],
+  "diagnostic_only": {
+    "model_id": "sam_3_3d",
+    "provider": "Meta",
+    "purpose": "fast single-view lift used only to diagnose whether the target silhouette is reconstructable; never preferred hero source"
+  },
+  "two_stage_cost_rule": "Run geometry-only/texture-off probes first whenever supported. Do not spend on PBR/texturing for a candidate that fails silhouette/structure gates.",
+  "raw_candidate_score": {
+    "silhouette_multiview_shape_agreement": 30,
+    "structural_manufacturing_growth_causality": 20,
+    "openings_sockets_service_interfaces": 15,
+    "topology_editability_potential": 10,
+    "material_region_alignment": 10,
+    "thickness_scale_plausibility": 5,
+    "hallucinated_floating_geometry_absence": 5,
+    "uv_texture_pbr_transport_potential": 5,
+    "total": 100
+  },
+  "hard_reject": [
+    "primary silhouette materially disagrees with approved targets",
+    "major view contradictions",
+    "bridge sockets/apertures hallucinated, missing or fused",
+    "unrecoverable self-intersections across functional interfaces",
+    "non-manifold fused mass that destroys required maintenance openings",
+    "geometry relies on texture illusion for required structural thickness"
+  ],
+  "candidate_states": [
+    "RAW_RECONSTRUCTION",
+    "BASE_CANDIDATE",
+    "SELECTED_FOR_CLEANUP",
+    "REJECTED",
+    "AAA_CONVERTED"
+  ],
+  "selection_gate": {
+    "minimum_score_for_cleanup_candidate": 70,
+    "minimum_candidates_compared": 2,
+    "raw_mesh_can_be_final": false,
+    "human_review_required": true
+  },
+  "blender_conversion_required": [
+    "metric rescale",
+    "detached island cleanup",
+    "primary silhouette correction",
+    "functional opening/collar reconstruction",
+    "retopology",
+    "real wall thickness where exposed",
+    "UV strategy",
+    "PBR physical-role materials",
+    "causal wear and deposition",
+    "separate collision",
+    "LOD/HLOD evidence decision",
+    "portable GLB export",
+    "target-engine import",
+    "same-camera visual regression",
+    "human GATE-ART"
+  ],
+  "execution_blockers": [
+    "Fleet readback ACTIVE for CLM-NACRE-LOOKDEV-HERO-001",
+    "approved immutable target pack A-D",
+    "3D submission executor/cost path must be resolved before paid jobs"
+  ],
+  "tool_truth": "Higgsfield model catalog has verified these image-to-3D model IDs. No dedicated 3D submission action has yet been confirmed on the currently loaded tool surface; do not invent one."
+}
