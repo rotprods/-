@@ -1,0 +1,95 @@
+{
+  "schema_version": 2,
+  "protocol": "EXOVANT-X100-V2",
+  "world_id": "aurora",
+  "workunit_id": "AUR-X100-TEMPORAL-ARCHIVE-001",
+  "canon_task": "Q_AURORA_M05",
+  "remote_project_id": "d6488148-8547-4ffe-b63d-e5fbec3a339c",
+  "remote_revision": 45,
+  "scene_status": "X100_TEMPORAL_ARCHIVE_R45_SUPPORT_VERIFIED",
+  "quality_claim": "REVIEW_TECHNICAL_SYSTEMIC; physical decision-interface source contract only; canonical choice, runtime/save consequences and final art NOT claimed",
+  "truth_boundary": {
+    "canon_requirement": "decide which temporal records to retain and who may use them",
+    "canon_outcome_selected": false,
+    "default_scene_state": "UNDECIDED_STAGING",
+    "record_content": "UNDEFINED_PRODUCTION_RECORD",
+    "new_factions_or_owners": false,
+    "global_rewind": "FORBIDDEN",
+    "save_mutation": "FORBIDDEN"
+  },
+  "stable_records": [
+    {"record_id":"AUR-REC-001","carrier":"AUR_INT_PROP_CANISTER_0","support":"AUR_INT_ARCHIVE_SHELF_0_0"},
+    {"record_id":"AUR-REC-002","carrier":"AUR_INT_PROP_CANISTER_1","support":"AUR_INT_ARCHIVE_SHELF_0_0"},
+    {"record_id":"AUR-REC-003","carrier":"AUR_INT_PROP_CANISTER_2","support":"AUR_INT_ARCHIVE_SHELF_1_0"},
+    {"record_id":"AUR-REC-004","carrier":"AUR_INT_PROP_CANISTER_3","support":"AUR_INT_ARCHIVE_SHELF_1_0"},
+    {"record_id":"AUR-REC-005","carrier":"AUR_INT_PROP_ROUTE_CART_0","support":"AUR_INT_ARCHIVE_SHELF_0_1"},
+    {"record_id":"AUR-REC-006","carrier":"AUR_INT_PROP_ROUTE_CART_1","support":"AUR_INT_ARCHIVE_SHELF_0_1"},
+    {"record_id":"AUR-REC-007","carrier":"AUR_INT_PROP_ROUTE_CART_2","support":"AUR_INT_ARCHIVE_SHELF_1_1"},
+    {"record_id":"AUR-REC-008","carrier":"AUR_INT_PROP_LOG_SLATE","support":"AUR_INT_ARCHIVE_SHELF_1_2"}
+  ],
+  "profiles": [
+    {"id":"RETAIN_BROAD","retention":"RETAINED","access_scope":"BROAD_UNSPECIFIED","mechanical_read":"open cradle/direct reader access","dims_m":[0.46,0.32,0.78],"triangles":48,"scene_users":0},
+    {"id":"RETAIN_CONTROLLED","retention":"RETAINED","access_scope":"CONTROLLED_UNSPECIFIED","mechanical_read":"lattice custody shutter + lock block","dims_m":[0.46,0.385,0.78],"triangles":108,"scene_users":0},
+    {"id":"RETAIN_SEALED","retention":"RETAINED","access_scope":"NONE_UNTIL_SERVICE_UNSEAL","mechanical_read":"sealed cassette shell","dims_m":[0.46,0.385,0.78],"triangles":36,"scene_users":0},
+    {"id":"WITHDRAWN_RECEIPT","retention":"WITHDRAWN_FROM_ACTIVE_ARCHIVE","access_scope":"NONE_ACTIVE_SLOT","mechanical_read":"blanking plate + provenance token cradle","dims_m":[0.46,0.09,0.78],"triangles":36,"scene_users":0}
+  ],
+  "neutral_staging": {
+    "rear_retention_stops": 8,
+    "support_error_max_m": 0.0,
+    "records_moved_from_r37_positions": false,
+    "selector": "AUR_ARCHIVE_SELECTOR_RAIL",
+    "selector_support": "AUR_INT_WALL_E_2",
+    "selector_wall_overlap_y_m": 0.135,
+    "selector_detents": 4,
+    "selector_geometry_outcome_semantics": "production adapter only"
+  },
+  "interaction_contract": {
+    "mesh_datablocks": [
+      "COL_AUR_ARCHIVE_RACK0_INTERACT_MESH",
+      "COL_AUR_ARCHIVE_RACK1_INTERACT_MESH",
+      "COL_AUR_ARCHIVE_SELECTOR_INTERACT_MESH"
+    ],
+    "scene_users": 0,
+    "runtime": "BLOCKED_EXO_012"
+  },
+  "hooks": [
+    {"id":"AUR_ARCHIVE_AUDIO_HOOK_READER","type":"SPATIAL_AUDIO","content":"UNAUTHORED","scope":"LOCAL_ARCHIVE_ONLY"},
+    {"id":"AUR_ARCHIVE_AUDIO_HOOK_CUSTODY","type":"SPATIAL_AUDIO","content":"UNAUTHORED","scope":"LOCAL_ARCHIVE_ONLY"},
+    {"id":"AUR_ARCHIVE_VFX_HOOK_TEMPORAL_RESIDUE","type":"LOCAL_FX","content":"UNAUTHORED","scope":"LOCAL_ARCHIVE_ONLY"}
+  ],
+  "failure_fix_history": [
+    {"revision":43,"finding":"neutral base collars intersected archive shelves and four collars intruded into the validated west-side maintenance bands; r43 not promoted"},
+    {"revision":44,"fix":"replaced collars with eight shelf-mounted rear retention stops; carriers remained on their original r37 supports; support error became 0m"},
+    {"attempt":"r44-first-fix","finding":"transaction failed after deleting old mesh because result referenced removed StructRNA; no revision was committed"},
+    {"revision":44,"audit_correction":"selector support check targeted WALL_E_1 although selector sits on WALL_E_2; geometry was not moved"},
+    {"revision":45,"fix":"support authority persisted as AUR_INT_WALL_E_2 with 0.135m measured mount overlap; all four detents explicitly supported by selector rail"}
+  ],
+  "gates": {
+    "CANON_BOUNDARY_NO_OUTCOME_SELECTED": "PASS",
+    "STABLE_RECORD_IDS": "PASS_8_UNIQUE",
+    "RECORD_SUPPORT": "PASS_8_OF_8",
+    "NEUTRAL_STOP_SUPPORT": "PASS_8_OF_8",
+    "PROFILE_COUNT": "PASS_4",
+    "PROFILE_MECHANICAL_DIFFERENTIATION": "PASS",
+    "PROFILE_ZERO_SCENE_USERS": "PASS_4_OF_4",
+    "RACK_MAINTENANCE_REGRESSION": "PASS",
+    "CENTRAL_CIRCULATION_REGRESSION": "PASS",
+    "SELECTOR_WALL_SUPPORT": "PASS_WALL_E_2",
+    "SELECTOR_DETENT_SUPPORT": "PASS_4_OF_4",
+    "INTERACTION_CONTRACT_SEPARATION": "PASS_ZERO_SCENE_USERS",
+    "GLOBAL_REWIND": "FORBIDDEN_PASS",
+    "SAVE_MUTATION": "FORBIDDEN_PASS",
+    "ENGINE_RUNTIME": "BLOCKED_EXO_012",
+    "MISSION_CHOICE_MAPPING": "BLOCKED_MISSION_DESIGN_APPROVAL",
+    "READABLE_UI_LOCALIZATION": "OPEN",
+    "HUMAN_GATE_ART": "PENDING"
+  },
+  "visual_evidence": {
+    "neutral_workbench": {"artifact":"aurora_x100_r44_archive_neutral_structural.png","mean":0.4675,"stddev":0.1316,"black_clip":0.0,"white_clip":0.0,"gate":"PASS_STRUCTURAL"},
+    "profile_comparator": {"artifact":"aurora_x100_r44_archive_profiles_structural.png","mean":0.3937,"stddev":0.1458,"black_clip":0.0,"white_clip":0.0,"gate":"PASS_STRUCTURAL","note":"temporary query-only comparator; alternate profiles were not persisted as scene objects"},
+    "neutral_eevee": {"artifact":"aurora_x100_r45_temporal_archive_eevee.png","resolution":[360,216],"mean":0.0630,"stddev":0.0854,"p01":0.0039,"p50":0.0205,"p99":0.3727,"black_clip":0.1197,"white_clip":0.0,"gate":"PASS_TECHNICAL_DARK_EXPOSURE_ART_REVIEW_OPEN"}
+  },
+  "blender_contract": "AUR_TEMPORAL_ARCHIVE_CONTRACT_R43.json",
+  "blender_contract_version": "AUR-ARCHIVE-v3-r45",
+  "conclusion": "Q_AURORA_M05 now has a reversible physical choice-interface foundation with stable record identity and mechanically distinct retention/access adapters. It is eligible for REVIEW_TECHNICAL_SYSTEMIC, not narrative/runtime/final-art completion."
+}
