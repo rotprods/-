@@ -1,0 +1,117 @@
+{
+  "schema_version": 1,
+  "claim_id": "CLM-SYLVA-MACRO-001",
+  "agent_id": "AGENT-SYLVA-MACRO-01",
+  "session_id": "20260912-SYLVA-MACRO-001",
+  "status": "CHECKPOINT_LOCALLY_VALIDATED_BLOCKOUT",
+  "not_claimed": [
+    "final AAA/AAAA art quality",
+    "final planetary scale",
+    "final terrain",
+    "final VESPER asset",
+    "final NPC or ecology assets",
+    "engine import",
+    "gameplay collision",
+    "GPU performance",
+    "human art approval"
+  ],
+  "blender_remote": {
+    "provider": "Higgsfield 3D Jutsu",
+    "project_id": "05dce898-753d-4ff6-a4b0-31757dc868d8",
+    "revision": 3,
+    "blender_version": "5.2.0 LTS",
+    "source_artifact": {
+      "type": "blend",
+      "size_bytes": 1897056,
+      "etag": "ffd2e7ad0ac1f97b5e5908ab3c569394"
+    },
+    "portable_artifact": {
+      "type": "glb",
+      "size_bytes": 1013560,
+      "etag": "d07f51362f8c6c9a29cc3ec03661b0d4"
+    }
+  },
+  "scene_metrics": {
+    "objects": 100,
+    "mesh_objects": 76,
+    "curve_objects": 8,
+    "materials": 8,
+    "triangles_estimate": 15052,
+    "terrain_bounds_m": {
+      "min": [-6000.0, -6000.0, -344.364],
+      "max": [6000.0, 6000.0, 484.509],
+      "size": [12000.0, 12000.0, 828.872]
+    },
+    "primary_root_count": 6,
+    "secondary_root_count": 8,
+    "route_guides": 4,
+    "diagnostic_route_width_m": 6.0,
+    "region_distances_m": {
+      "puerto_to_bosque": 3970.25,
+      "bosque_to_vesper": 3897.1,
+      "puerto_to_vesper": 7842.99
+    }
+  },
+  "canon_guards": {
+    "planet_radius": "UNKNOWN_BLOCKED",
+    "local_12km_envelope": "PROPOSAL",
+    "final_scope_violation_objects": [],
+    "non_namespace_objects": [],
+    "non_unit_scale_objects": []
+  },
+  "portable_export": {
+    "glb_generated": true,
+    "unsupported_light_types_after_r2": [],
+    "camera_clip_end_m_after_r3": 30000.0,
+    "export_log_r3_has_area_light_warning": false
+  },
+  "render_validation": {
+    "note": "Blender Render Result pixel access produced a false-negative all-zero sample. A second validation decoded the actual PNG bytes written by Blender.",
+    "render_result_api_smoke": {
+      "status": "INVALID_AS_VALIDATOR",
+      "observed": "all-zero values despite a nonblank PNG"
+    },
+    "png_byte_smoke_puerto_r3": {
+      "status": "PASS_NONBLANK",
+      "resolution": [160, 90],
+      "file_bytes": 20899,
+      "png_color_type": 6,
+      "bit_depth": 8,
+      "mean_byte": 20.4967,
+      "variance_byte": 254.9406,
+      "min_byte": 0,
+      "max_byte": 249
+    },
+    "human_visual_review": "PENDING",
+    "agent_visual_review": "UNAVAILABLE_IN_CURRENT_CLIENT"
+  },
+  "failed_attempts_preserved": [
+    {
+      "operation_id": "sylva-macro-camera-clip-fix-r3",
+      "status": "TIMED_OUT_NO_COMMIT",
+      "reason": "Four 960x540 renders in one mutation exceeded the 300000 ms worker limit.",
+      "control": "Split geometry/state mutations from render verification; commit clip change separately and use small query smokes."
+    }
+  ],
+  "gates": {
+    "CANON": "PASS_WITH_BLOCKED_PLANET_RADIUS",
+    "ART": "PENDING_HUMAN_VISUAL_REVIEW",
+    "REALISM": "BLOCKOUT_ONLY",
+    "GEOMETRY": "PASS_BLOCKOUT_METRICS",
+    "UV": "NOT_APPLICABLE_TO_MACRO_BLOCKOUT_YET",
+    "MATERIALS": "DIAGNOSTIC_ONLY",
+    "SCALE": "PASS_LOCAL_METRIC_CONTRACT",
+    "PERFORMANCE": "PENDING_TARGET_HARDWARE",
+    "LOD": "INTERFACE_ONLY_NOT_IMPLEMENTED",
+    "COLLISION": "PENDING_ENGINE_RUNTIME",
+    "EXPORT": "PASS_GLB_GENERATED",
+    "ENGINE": "PENDING_RUNTIME_IMPORT",
+    "VISUAL_REGRESSION": "BASELINE_NOT_APPROVED_YET"
+  },
+  "receipts": [
+    "Higgsfield project 05dce898-753d-4ff6-a4b0-31757dc868d8 revision 3",
+    "art_source/worlds/sylva_prime/macro/generate_sylva_macro.py",
+    "art_source/worlds/sylva_prime/macro/WORLD_BIBLE_MACRO.md",
+    "production/claims/CLM-SYLVA-MACRO-001.yaml"
+  ]
+}

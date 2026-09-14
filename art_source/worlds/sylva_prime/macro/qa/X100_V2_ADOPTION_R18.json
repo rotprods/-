@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "claim": "CLM-SYLVA-MACRO-001",
+  "checkpoint": "R18_REV22",
+  "status": "ADOPTED_FOR_NEXT_WORK_SELECTION",
+  "source_main_sha": "8c01136aa14f89e177ff1216d1993d62ea963ad3",
+  "sync_pr": 34,
+  "protocol": {
+    "id": "EXOVANT-X100-V2",
+    "path": "docs/EXOVANT_X100_V2.md",
+    "blob_sha": "42d0dba1731e65b8e67f9e6b67f283aa9b2e7ab5",
+    "config_path": "ops/x100/config.json",
+    "config_blob_sha": "bcba04486c14793f55ca8a59ea26f4fd4b5b68be"
+  },
+  "bootstrap_observed": {
+    "path": "ops/x100/portfolio-wave-001.json",
+    "sylva_strict_score_pct": 0.0,
+    "sylva_known_evidence_geomean_pct": 7.7564,
+    "sylva_evidence_cell_coverage_pct": 13.0952,
+    "measured_cells": 11,
+    "unknown_cells": 73,
+    "receipt_count": 2,
+    "truth": "Historical bootstrap diagnostic derived from open-PR evidence before the owner-local R18 receipt. Not world completion."
+  },
+  "r18_owner_receipt": "art_source/worlds/sylva_prime/macro/x100/X100-SYLVA-MACRO-R18.json",
+  "adopted_rules": [
+    "For the next new world/asset work selection: RESYNC -> X100 spatial build -> Fleet preflight -> X100 coverage audit/gradient -> eligible gap -> claim.",
+    "Fleet remains exclusive ownership/collision authority; X100 ranking cannot bypass an existing claim.",
+    "Do not convert null/unknown evidence into guessed coverage.",
+    "Do not call branch/render/asset count world completion.",
+    "Tier S/A identity-critical future assets follow look-lock/image-target/image-to-3D-base/cleanup/material/LOD-engine/visual-regression unless a documented procedural/manual waiver is better.",
+    "Systemic/support kits remain procedural/manual-first when that produces cleaner reusable geometry.",
+    "After an evidence-producing wave, emit/update owner-local X100 receipt and recompute when tooling is available."
+  ],
+  "not_executed_here": [
+    "ops/x100/x100_spatial.py build",
+    "ops/x100/x100_director.py recomputation including the R18 receipt"
+  ],
+  "reason_not_executed": "This session has repository connector access but no current local checkout/network path suitable for running the newly merged X100 CLI. The receipt is persisted for the next authorized checkout; no fake Director score is produced.",
+  "next_valid_action": "From a current checkout: resync main/fleet, include X100-SYLVA-MACRO-R18.json in receipt aggregation, run X100 spatial/director, then choose only the highest-value eligible unclaimed gap within Fleet rules."
+}

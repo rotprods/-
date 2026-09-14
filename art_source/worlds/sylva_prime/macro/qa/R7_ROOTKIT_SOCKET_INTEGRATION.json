@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "claim_id": "CLM-SYLVA-MACRO-001",
+  "provider_claim": "CLM-SYLVA-PROC-NROOT-001",
+  "primary_scene_revision": 7,
+  "consumer_contract_version": "SYLVA_SOCKET_CONSUMER_V1",
+  "consumer_basis": {
+    "forward": "+X",
+    "up": "+Z",
+    "units": "metres",
+    "scale": [1, 1, 1]
+  },
+  "provider_readonly_audit": {
+    "project_id": "43cf2b06-c47f-4ccd-ac34-76e9a585225a",
+    "provider_revision": 4,
+    "result": "PIVOT_NORMALIZATION_REQUIRED",
+    "pr6_comment_receipt": "5648741376",
+    "sample_origin_to_bounds_center_m": {
+      "SYL_ROOT_A1_STRAIGHT_08M": 13.5515,
+      "SYL_ROOT_A2_CURVE_12M": 10.8163,
+      "SYL_ROOT_A3_RISE_10M": 14.8753,
+      "SYL_ROOT_B1_FORK_TRUNK": 12.0031,
+      "SYL_ROOT_B2_ARCH_14M": 9.0181,
+      "SYL_ROOT_C1_BUTTRESS_07M": 17.5470,
+      "SYL_ROOT_C2_TERRACE_CALLOUS": 0.0,
+      "SYL_ROOT_C3_MEMBRANE_ANCHOR": 15.1663
+    },
+    "interpretation": "Most provider module geometry is offset from object origin because generator vertices are authored in preview/world coordinates. Do not instantiate at macro sockets until provider publishes a per-asset anchor/pivot contract."
+  },
+  "consumer_support_audit": {
+    "status": "BLOCKED_REQUIRES_SOCKET_SUPPORT_PASS",
+    "rows": [
+      {"socket": "SYLVA_SOCKET_BOSQUE_APPROACH_A2", "socket_minus_terrain_m": 176.023, "nearest_owned_geometry_distance_m": 238.484},
+      {"socket": "SYLVA_SOCKET_BOSQUE_FORK_B1", "socket_minus_terrain_m": 120.629, "nearest_owned_geometry_distance_m": 70.171},
+      {"socket": "SYLVA_SOCKET_BOSQUE_RISE_A3", "socket_minus_terrain_m": 186.109, "nearest_owned_geometry_distance_m": 135.329},
+      {"socket": "SYLVA_SOCKET_PUERTO_EXIT_A1", "socket_minus_terrain_m": 264.052, "nearest_owned_geometry_distance_m": 121.034},
+      {"socket": "SYLVA_SOCKET_PUERTO_MEMBRANE_C3", "socket_minus_terrain_m": 319.933, "nearest_owned_geometry_distance_m": 111.182},
+      {"socket": "SYLVA_SOCKET_VESPER_APPROACH_A2", "socket_minus_terrain_m": -52.354, "nearest_owned_geometry_distance_m": 25.846},
+      {"socket": "SYLVA_SOCKET_VESPER_BUTTRESS_C1", "socket_minus_terrain_m": -20.009, "nearest_owned_geometry_distance_m": 181.951},
+      {"socket": "SYLVA_SOCKET_VESPER_MEMBRANE_C3", "socket_minus_terrain_m": 3.131, "nearest_owned_geometry_distance_m": 90.916}
+    ],
+    "note": "Terrain offset alone is not a correctness criterion because some sockets should attach to roots/architecture; explicit support role must be assigned before any snap."
+  },
+  "r7_scene_contract": {
+    "socket_count": 8,
+    "provider_instances_created": 0,
+    "provider_geometry_copied": 0,
+    "provider_pivot_status": "BLOCKED_PROVIDER_NORMALIZATION_REQUIRED",
+    "socket_transform_mutation_allowed_without_provider_contract": false
+  },
+  "gates": {
+    "provider_pivot_contract": "BLOCKED",
+    "consumer_support_assignment": "BLOCKED",
+    "consumer_coordinate_basis": "PASS",
+    "provider_asset_id_mapping": "PASS",
+    "provider_geometry_non_duplication": "PASS",
+    "rootkit_instantiation": "NOT_READY"
+  }
+}

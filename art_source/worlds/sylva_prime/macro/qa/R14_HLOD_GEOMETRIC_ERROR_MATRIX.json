@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "claim_id": "CLM-SYLVA-MACRO-001",
+  "source_revision": 13,
+  "status": "READ_ONLY_GEOMETRIC_STUDY",
+  "source_tile_grid": "16 x SYLVA_TERRAIN_L3_X#Y#; 13x13 vertices/tile; 250 m spacing",
+  "truth_boundary": "Pure bilinear geometric approximation error. No screen-space threshold, LOD distance, renderer budget or target-hardware acceptance is inferred.",
+  "candidate_uniform_sampling": {
+    "500m": {"verts_per_tile": 49, "tris_per_tile": 72},
+    "750m": {"verts_per_tile": 25, "tris_per_tile": 32},
+    "1000m": {"verts_per_tile": 16, "tris_per_tile": 18},
+    "1500m": {"verts_per_tile": 9, "tris_per_tile": 8}
+  },
+  "rows": [
+    {"cell":"X0Y0","relief_m":230.316,"500m":{"max":39.874,"p95":15.835,"rmse":6.513},"750m":{"max":82.573,"p95":28.252,"rmse":12.032},"1000m":{"max":95.304,"p95":44.867,"rmse":17.613},"1500m":{"max":88.682,"p95":72.042,"rmse":30.972}},
+    {"cell":"X1Y0","relief_m":324.796,"500m":{"max":38.594,"p95":7.532,"rmse":5.551},"750m":{"max":44.034,"p95":12.867,"rmse":8.596},"1000m":{"max":70.417,"p95":22.965,"rmse":13.682},"1500m":{"max":50.687,"p95":43.052,"rmse":20.632}},
+    {"cell":"X2Y0","relief_m":239.180,"500m":{"max":41.913,"p95":21.683,"rmse":8.652},"750m":{"max":49.917,"p95":33.047,"rmse":13.543},"1000m":{"max":80.627,"p95":54.964,"rmse":22.557},"1500m":{"max":68.634,"p95":46.742,"rmse":23.392}},
+    {"cell":"X3Y0","relief_m":213.676,"500m":{"max":54.031,"p95":11.670,"rmse":6.605},"750m":{"max":62.648,"p95":19.283,"rmse":10.209},"1000m":{"max":38.821,"p95":20.860,"rmse":10.470},"1500m":{"max":52.432,"p95":37.016,"rmse":18.947}},
+    {"cell":"X0Y1","relief_m":426.764,"500m":{"max":178.358,"p95":33.069,"rmse":18.794},"750m":{"max":163.114,"p95":57.233,"rmse":26.749},"1000m":{"max":142.010,"p95":78.462,"rmse":32.354},"1500m":{"max":326.741,"p95":98.475,"rmse":58.366}},
+    {"cell":"X1Y1","relief_m":508.760,"500m":{"max":310.760,"p95":122.050,"rmse":51.650},"750m":{"max":284.969,"p95":154.859,"rmse":69.174},"1000m":{"max":289.358,"p95":215.603,"rmse":92.148},"1500m":{"max":418.251,"p95":318.975,"rmse":105.539}},
+    {"cell":"X2Y1","relief_m":595.418,"500m":{"max":60.954,"p95":31.223,"rmse":11.886},"750m":{"max":83.554,"p95":52.672,"rmse":20.080},"1000m":{"max":98.694,"p95":67.336,"rmse":26.913},"1500m":{"max":115.226,"p95":83.752,"rmse":35.832}},
+    {"cell":"X3Y1","relief_m":295.021,"500m":{"max":44.840,"p95":15.213,"rmse":7.412},"750m":{"max":51.113,"p95":24.064,"rmse":10.895},"1000m":{"max":71.026,"p95":31.592,"rmse":13.902},"1500m":{"max":50.700,"p95":33.035,"rmse":18.586}},
+    {"cell":"X0Y2","relief_m":226.394,"500m":{"max":48.370,"p95":22.656,"rmse":10.394},"750m":{"max":64.096,"p95":43.214,"rmse":17.577},"1000m":{"max":88.527,"p95":56.600,"rmse":21.116},"1500m":{"max":109.821,"p95":76.898,"rmse":32.924}},
+    {"cell":"X1Y2","relief_m":469.113,"500m":{"max":65.591,"p95":50.011,"rmse":19.227},"750m":{"max":84.988,"p95":56.006,"rmse":24.202},"1000m":{"max":102.190,"p95":75.723,"rmse":30.977},"1500m":{"max":143.711,"p95":98.648,"rmse":49.432}},
+    {"cell":"X2Y2","relief_m":741.896,"500m":{"max":270.666,"p95":100.497,"rmse":47.091},"750m":{"max":283.390,"p95":108.544,"rmse":56.034},"1000m":{"max":226.736,"p95":122.397,"rmse":57.098},"1500m":{"max":295.885,"p95":151.361,"rmse":78.351}},
+    {"cell":"X3Y2","relief_m":590.009,"500m":{"max":195.613,"p95":46.607,"rmse":25.940},"750m":{"max":118.708,"p95":77.999,"rmse":34.414},"1000m":{"max":270.174,"p95":100.011,"rmse":52.432},"1500m":{"max":367.243,"p95":153.835,"rmse":72.209}},
+    {"cell":"X0Y3","relief_m":240.715,"500m":{"max":39.725,"p95":13.892,"rmse":7.236},"750m":{"max":59.058,"p95":30.339,"rmse":12.546},"1000m":{"max":83.915,"p95":53.939,"rmse":20.290},"1500m":{"max":114.211,"p95":75.532,"rmse":29.854}},
+    {"cell":"X1Y3","relief_m":292.379,"500m":{"max":31.923,"p95":10.677,"rmse":4.883},"750m":{"max":43.071,"p95":16.162,"rmse":8.039},"1000m":{"max":76.330,"p95":21.266,"rmse":14.000},"1500m":{"max":93.426,"p95":42.410,"rmse":21.475}},
+    {"cell":"X2Y3","relief_m":173.458,"500m":{"max":41.201,"p95":6.876,"rmse":5.624},"750m":{"max":76.255,"p95":18.226,"rmse":12.041},"1000m":{"max":101.564,"p95":47.181,"rmse":18.753},"1500m":{"max":114.572,"p95":76.158,"rmse":26.940}},
+    {"cell":"X3Y3","relief_m":371.555,"500m":{"max":68.564,"p95":22.948,"rmse":10.463},"750m":{"max":79.194,"p95":62.312,"rmse":19.271},"1000m":{"max":101.564,"p95":67.432,"rmse":23.394},"1500m":{"max":114.572,"p95":56.840,"rmse":27.071}}
+  ],
+  "observations": [
+    "Uniform aggressive decimation is inappropriate for the world: error varies radically between tiles.",
+    "At 500 m sampling, X1Y1 and X2Y2 are feature-critical with p95 vertical error ~122 m and ~100 m; X3Y2/X0Y1 also show large local maxima.",
+    "Several peripheral tiles are much more stable at 500 m sampling, but no acceptance threshold is promoted without screen-space/runtime/hardware evidence.",
+    "R14 should retain a base L3 tile plus explicit corridor/hero overlays and use feature-preserving simplification, not a single global decimation percentage.",
+    "Bosque is a global L2 junction; moving it to reduce streaming complexity would violate world composition."
+  ],
+  "next_gate": "After fleet activation and target-renderer qualification, benchmark candidate feature-aware HLOD proxies per tile in screen-space and measure switching artifacts/performance."
+}

@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "learning_id": "LRN-EXO-20260912-OWNER-ADMISSION",
+  "source_main_commit": "97fb47472a654112779655d4d537851e709f269a",
+  "claim_id": "CLM-SYLVA-MACRO-001",
+  "owner": "AGENT-SYLVA-MACRO-01",
+  "branch": "art/world-sylva-prime-macro-001",
+  "adoption_status": "APPLIED",
+  "action_applied": [
+    "Owner continues producing, recovering and validating only the Sylva macro foundation rather than delegating normal owner work to the integrator.",
+    "Integrator is used only for fleet-registry publication, cross-scope conflicts, shared regression repair and decisions that exceed this claim.",
+    "Provider root-kit defects are returned to PR #6 owner instead of being silently fixed or duplicated in the macro branch.",
+    "Orbital candidate remains untouched until integrator publishes its project ID in the fleet registry.",
+    "The accidental default-branch publication was halted, repaired through PR #21 without force and recorded as an ownership incident before production resumed.",
+    "No extra periodic heartbeat/audit loop will be generated merely to show activity; normal handoff/PR/Linear updates carry owner evidence."
+  ],
+  "evidence": {
+    "primary_blender_project": "05dce898-753d-4ff6-a4b0-31757dc868d8",
+    "primary_revision": 11,
+    "r11_qa": "art_source/worlds/sylva_prime/macro/qa/R11_NAVIGATION_AND_ROOTKIT_INTEGRATION.json",
+    "provider_blocker_pr6_comment": 5648741376,
+    "main_publication_incident": "art_source/worlds/sylva_prime/macro/qa/INCIDENT_MAIN_CROSS_SCOPE_20260912.json",
+    "repair_pr": 21,
+    "main_sync_pr": 22,
+    "branch_compare_after_sync": "55 ahead / 0 behind main@97fb47472a654112779655d4d537851e709f269a",
+    "fleet_readback": "CLM-SYLVA-MACRO-001 reserved/ack:null; primary project only; orbital project absent",
+    "draft_pr": 3,
+    "linear_issue": "ROT-117"
+  },
+  "non_claims": [
+    "This receipt does not prove other agents adopted the learning.",
+    "This receipt does not activate the fleet ACK or orbital project.",
+    "This receipt does not close human art, engine, binary recovery or performance gates."
+  ]
+}

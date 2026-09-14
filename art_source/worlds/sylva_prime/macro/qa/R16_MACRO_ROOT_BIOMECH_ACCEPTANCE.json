@@ -1,0 +1,81 @@
+{
+  "schema_version": 1,
+  "claim_id": "CLM-SYLVA-MACRO-001",
+  "agent_id": "AGENT-SYLVA-MACRO-01",
+  "writer_session": "20260913-SYLVA-R16-WRITER-001",
+  "writer_fence_id": "SYLVA-MACRO-WRITER-EPOCH-4-R16-20260913",
+  "primary_project_id": "05dce898-753d-4ff6-a4b0-31757dc868d8",
+  "art_wave": "R16_MACRO_ROOT_BIOMECH",
+  "accepted_scene_revision": 17,
+  "scene_sequence": 0,
+  "status": "PASS_R16_SOURCE_AND_MEMBERSHIP_RECONCILIATION",
+  "contracts": {
+    "root_taper": "SYLVA_MACRO_ROOT_TAPER_R16",
+    "membership_amendment": "SYLVA_STREAM_MEMBERSHIP_R16_AMENDMENT",
+    "retained_terrain_stream": "SYLVA_TERRAIN_STREAM_R12",
+    "retained_membership_base": "SYLVA_STREAM_MEMBERSHIP_R13",
+    "retained_hierarchy": "SYLVA_STREAM_HIERARCHY_R14",
+    "retained_prefetch": "SYLVA_PREFETCH_POLICY_R15"
+  },
+  "remote_artifacts": {
+    "blend": {"size_bytes": 2856650, "etag": "5fb0cc50f5e21cb8cc0effd556e35c83"},
+    "glb": {"size_bytes": 1220616, "etag": "c7d3b8775c0519470d3ccc34bb392f3e"}
+  },
+  "geometry_fingerprints": {
+    "r15_before": "003760384ade90b7b0b792de6850a2eae90322d22f2ca246f8211395cb3e6224",
+    "r16_after_taper": "747a5b10c7344d5e4b0623354927e98faab8df6f44fced81c5f042350f079a89",
+    "revision17_after_metadata_amendment": "747a5b10c7344d5e4b0623354927e98faab8df6f44fced81c5f042350f079a89",
+    "membership_amendment_geometry_delta": false
+  },
+  "root_profiles": {
+    "SYLVA_ROOT_PRIMARY_R01": {"point_radius_multipliers": [0.75,0.95,1.32,1.05,0.82], "effective_radius_range_m": [36.0,63.36], "load_anchor": "PUERTO@point2", "centerline_coordinates_unchanged": true},
+    "SYLVA_ROOT_PRIMARY_R02": {"point_radius_multipliers": [0.72,0.92,1.30,1.02,0.78], "effective_radius_range_m": [44.64,80.60], "load_anchor": "BOSQUE@point2", "centerline_coordinates_unchanged": true},
+    "SYLVA_ROOT_PRIMARY_R03": {"point_radius_multipliers": [0.70,0.90,1.34,1.04,0.80], "effective_radius_range_m": [50.40,96.48], "load_anchor": "VESPER@point2", "centerline_coordinates_unchanged": true},
+    "SYLVA_ROOT_PRIMARY_R04": {"point_radius_multipliers": [0.78,0.92,1.18,1.08,0.82], "effective_radius_range_m": [28.08,42.48], "load_anchor": "NETWORK_JUNCTION_MIDSPAN", "centerline_coordinates_unchanged": true},
+    "SYLVA_ROOT_PRIMARY_R05": {"point_radius_multipliers": [0.75,0.92,1.20,1.10,0.82], "effective_radius_range_m": [22.50,36.00], "load_anchor": "NETWORK_JUNCTION_MIDSPAN", "centerline_coordinates_unchanged": true},
+    "SYLVA_ROOT_PRIMARY_R06": {"point_radius_multipliers": [0.70,0.82,0.94,1.08,1.28], "effective_radius_range_m": [28.00,51.20], "load_anchor": "VESPER_APPROACH@point4", "centerline_coordinates_unchanged": true}
+  },
+  "spatial_reconciliation": {
+    "audit_operation": "sylva-r16-postcommit-membership-gauntlet-v2",
+    "finding": "R01 evaluated taper bounds crossed Y=0 by ~51.37 m, adding X0Y2/X1Y2 to required residency.",
+    "r01_previous_cells": ["X0Y0","X0Y1","X1Y0","X1Y1"],
+    "r01_current_cells": ["X0Y0","X0Y1","X0Y2","X1Y0","X1Y1","X1Y2"],
+    "amendment_operation": "sylva-r16-membership-amendment-v1",
+    "final_stale_membership_count": 0,
+    "all_six_root_bounds_fully_covered": true
+  },
+  "regression": {
+    "all_control_point_coordinates_match_r15": true,
+    "all_radius_profiles_match_proposal": true,
+    "terrain_render_tiles": 16,
+    "terrain_collision_tiles": 16,
+    "l2_supercells": 4,
+    "l3_cells": 16,
+    "prefetch_state": "RUNTIME_EXPERIMENT_REQUIRED",
+    "prefetch_policy_contract": "SYLVA_PREFETCH_POLICY_R15",
+    "prefetch_approved": false,
+    "route_collision_00_nonmanifold_edges": 0,
+    "route_collision_01_nonmanifold_edges": 0,
+    "route_collision_02_nonmanifold_edges": 0,
+    "route_collision_03_nonmanifold_edges": 0,
+    "all_route_collision_degenerate_faces": 0,
+    "provider_meshes_copied": 0,
+    "pass": true
+  },
+  "known_limits": [
+    "Primary-root cross sections remain circular curve bevel proxies; taper improves macro silhouette but does not constitute final buttress/fiber anatomy.",
+    "No bark, reaction-tissue, callus or hydraulic microstructure was added in R16.",
+    "No new root gameplay collision was generated.",
+    "Human visual/art approval remains pending."
+  ],
+  "operations": {
+    "source_audit": "sylva-r15-macro-root-biomech-audit",
+    "taper_mutation": "sylva-r16-macro-root-taper-v1",
+    "first_post_query_failed_readonly": "sylva-r16-postcommit-membership-gauntlet",
+    "first_post_query_failure": "SplinePoint inspection used unsupported `.w`; no scene mutation",
+    "post_query_corrected": "sylva-r16-postcommit-membership-gauntlet-v2",
+    "membership_amendment": "sylva-r16-membership-amendment-v1",
+    "final_source_gauntlet": "sylva-r16-final-source-gauntlet"
+  },
+  "truth_boundary": "PASS proves bounded R16 source-scene silhouette taper, locked centerlines, reconciled L3 residency and regression gates. It does not prove final organic anatomy, human art approval, native runtime collision, target-hardware performance or exact SHA-bound delivery."
+}

@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "claim_id": "CLM-SYLVA-MACRO-001",
+  "project_id": "05dce898-753d-4ff6-a4b0-31757dc868d8",
+  "revision": 15,
+  "status": "PASS_FILE_BACKED_SIGNAL_ONLY",
+  "camera": "SYLVA_CAM_MasterOverview",
+  "render": {
+    "width": 240,
+    "height": 135,
+    "png_bytes": 35603,
+    "mean_rgb": 0.08543755055762589,
+    "variance_rgb": 0.0017590877267124507,
+    "min_rgb": 0.0,
+    "max_rgb": 0.6745098233222961,
+    "nonblank": true,
+    "artifact_id": "44ee56fb99424905754cdeee0489f589",
+    "artifact_etag": "155e4c4d01abb86057e369b7fb2603da"
+  },
+  "operation_id": "sylva-r15-filebacked-smoke",
+  "method": "Render 240x135 Eevee PNG, reload the saved PNG file inside Blender, sample pixel luminance/variance and publish the file.",
+  "truth_boundary": "This proves a non-empty render signal for the accepted R15 scene/camera only. The signed image could not be visually inspected by this client, so composition, lighting, material quality, intersections/floating and GATE-ART remain unapproved."
+}

@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "claim_id": "CLM-SYLVA-MACRO-001",
+  "project_id": "05dce898-753d-4ff6-a4b0-31757dc868d8",
+  "scene_revision": 17,
+  "status": "PASS_FILE_BACKED_SIGNAL_ONLY",
+  "operation_id": "sylva-r16-regional-render-smoke",
+  "renders": [
+    {"camera":"SYLVA_CAM_Puerto","file":"r16_puerto.png","artifact_id":"124b71f7ff6b472eb97c2a7e4a271929","bytes":49208,"width":256,"height":144,"mean_rgb":0.08250208999827548,"variance_rgb":0.003624990916198503,"max_rgb":0.988235354423523,"nonblank":true},
+    {"camera":"SYLVA_CAM_Bosque","file":"r16_bosque.png","artifact_id":"6fc3cffa46ff252f0a6e193e89634c82","bytes":48550,"width":256,"height":144,"mean_rgb":0.08998711950738214,"variance_rgb":0.005009553773281224,"max_rgb":0.988235354423523,"nonblank":true},
+    {"camera":"SYLVA_CAM_Vesper","file":"r16_vesper.png","artifact_id":"317354ca0c5828fc52a93b4cf7120ad1","bytes":46959,"width":256,"height":144,"mean_rgb":0.07656080274252704,"variance_rgb":0.004329494865160725,"max_rgb":0.917647123336792,"nonblank":true}
+  ],
+  "all_nonblank": true,
+  "inspection_attempt": {
+    "signed_artifact_url_resolved": true,
+    "visual_download_into_local_inspection_runtime": false,
+    "blocker": "Signed provider artifact could not be opened/downloaded through current client security boundary.",
+    "gate_art_promoted": false
+  },
+  "truth_boundary": "Proves non-empty regional render signal at accepted R16 scene revision only. Does not prove framing, lighting, materials, root silhouette quality, intersections/floating or human GATE-ART."
+}

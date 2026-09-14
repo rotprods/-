@@ -1,0 +1,76 @@
+{
+  "schema_version": 1,
+  "claim": "CLM-SYLVA-MACRO-001",
+  "source_revision": 13,
+  "status": "EXPERIMENT_DESIGN_NOT_RUNTIME_APPROVED",
+  "backend": "ENGINE_TBD",
+  "writer_fence": "SYLVA-MACRO-WRITER-EPOCH-2-20260912",
+  "problem": "A fixed current+8 policy can conservatively include up to 72.8% of current spatial objects by membership cardinality. Runtime IO latency, memory, draw cost and pop-in are unknown, so no prefetch policy is yet production-approved.",
+  "geometry_residency_source": "SYLVA_STREAM_MEMBERSHIP_R13",
+  "travel_prefetch_source": "route centerline progression from qa/R14_ROUTE_RESIDENCY_PREFLIGHT.json",
+  "hero_residency_rule": "Contextual L3-only overlay for the approaching/current hero core; L2 coverage never implies full-L2 residency.",
+  "policies": {
+    "P0_CURRENT_ONLY": {
+      "role": "minimum residency baseline / expected pop-risk control",
+      "resident_object_cardinality": {"min": 16, "max": 47, "mean": 32.6, "max_world_fraction": 0.320},
+      "production_default": false
+    },
+    "P1_CURRENT_PLUS_4": {
+      "role": "cardinal-neighbor safety ring",
+      "resident_object_cardinality": {"min": 48, "max": 91, "mean": 70.6, "max_world_fraction": 0.619},
+      "production_default": false
+    },
+    "P2_CURRENT_PLUS_8": {
+      "role": "eight-neighbor upper-safety baseline",
+      "resident_object_cardinality": {"min": 64, "max": 107, "mean": 91.4, "max_world_fraction": 0.728},
+      "production_default": false,
+      "warning": "Do not promote merely because it is spatially conservative; current membership cardinality shows high residency pressure."
+    },
+    "P3_DIRECTIONAL_ROUTE_WINDOW": {
+      "role": "previous/current/next route-cell window plus contextual L3 hero overlay",
+      "resident_object_cardinality_without_extra_hero": {"min": 44, "max": 86, "mean": 65.8, "max_world_fraction": 0.585},
+      "production_default": false,
+      "candidate_priority": "PRIMARY_RUNTIME_CANDIDATE",
+      "reason": "Lower conservative cardinality than current+8 while following authored travel direction. Must prove async-load lead time and reversal safety."
+    }
+  },
+  "route_sequence": ["X0Y1", "X1Y1", "X1Y2", "X2Y2", "X3Y2"],
+  "exact_transition_probes": [
+    {"id": "S-00", "from": "X0Y1", "to": "X1Y1", "point_xyz_m": [-3000, -2000, 345.8], "same_l2": true},
+    {"id": "S-01", "from": "X1Y1", "to": "X1Y2", "point_xyz_m": [-500, 0, 356.1], "same_l2": false},
+    {"id": "S-02", "from": "X1Y2", "to": "X2Y2", "point_xyz_m": [0, 250, 352.2], "same_l2": false},
+    {"id": "S-03", "from": "X2Y2", "to": "X3Y2", "point_xyz_m": [3000, 2000, -72.4], "same_l2": true}
+  ],
+  "lead_time_experiment": {
+    "principle": "Choose prefetch lead from measured artifact load/residency latency and current travel speed; never hardcode a distance before latency is known.",
+    "known_prototype_speeds_m_s": {
+      "foot": 6.0,
+      "guard": 3.0,
+      "generic_vehicle": 20.0
+    },
+    "known_speed_truth": "These are current prototype controller values, not a final Vela de Ceniza specification.",
+    "candidate_lead_times_s": [1, 2, 5, 10],
+    "derived_example_distances_m": {
+      "foot_6m_s": [6, 12, 30, 60],
+      "generic_vehicle_20m_s": [20, 40, 100, 200]
+    },
+    "promotion_rule": "Required lead time must exceed measured p95/p99 load-to-ready latency with explicit safety margin defined by runtime owner."
+  },
+  "hero_contexts": {
+    "PUERTO": {"resident_l3_cells": ["X0Y1", "X1Y1"], "activation": "approaching/current Puerto core only"},
+    "BOSQUE": {"resident_l3_cells": ["X1Y1", "X1Y2", "X2Y1", "X2Y2"], "activation": "approaching/current Bosque core only"},
+    "VESPER": {"resident_l3_cells": ["X2Y2", "X3Y2"], "activation": "approaching/current VESPER core only"}
+  },
+  "required_runtime_measurements": [
+    "artifact/cell load-to-ready latency distribution",
+    "resident object count and memory by cell/policy",
+    "render/collision ready-state skew",
+    "frame-time spikes at S-00..S-03",
+    "reversal/re-entry behavior after unload eligibility",
+    "visible pop/crack/collision snag evidence",
+    "cross-cell asset duplicate/missing instance count",
+    "hero overlay activation/deactivation cost"
+  ],
+  "selection_rule": "Promote the least-resident policy that passes all visual/collision/traversal gates at required movement speeds and measured IO latency. If several pass, choose by measured performance/memory, not policy complexity alone.",
+  "truth": "Experiment design only. No runtime policy is approved by this file."
+}

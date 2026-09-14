@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "block_id": "BLOCK-SYLVA-003",
+  "claim_id": "CLM-SYLVA-MACRO-001",
+  "status": "ENV_BLOCKED",
+  "decision_needed": "Run binary recovery + native import/traversal on a runtime with outbound artifact access and pinned Godot 4.7.2, or on the designated engine host.",
+  "affected_scope": [
+    "recovered .blend/GLB delivery gate",
+    "actual r4 GLB contract validation",
+    "Godot import",
+    "runtime collision",
+    "real-controller traversal",
+    "native receipt tied to exact GLB SHA256"
+  ],
+  "not_affected": [
+    "remote Blender r4 source existence",
+    "remote GLB export existence",
+    "macro geometry QA inside Blender",
+    "offline validator development/self-test",
+    "ownership/claim coordination"
+  ],
+  "observations": {
+    "remote_project_id": "05dce898-753d-4ff6-a4b0-31757dc868d8",
+    "remote_revision": 4,
+    "remote_active_operation": null,
+    "remote_blend": {
+      "resolved": true,
+      "size_bytes": 2097180,
+      "etag": "4470d8530489f327fb2d3c33c31e983d"
+    },
+    "remote_glb": {
+      "resolved": true,
+      "size_bytes": 1074844,
+      "etag": "f793339fd893d9829a84a43d21141054"
+    },
+    "sandbox_godot_binary_present": false,
+    "sandbox_dns_artifact_host": "FAILED: curl exit 6 / Could not resolve host",
+    "artifact_helper": "BLOCKED: signed R2 URL rejected because it cannot be safely pre-opened by web source policy",
+    "repo_pinned_engine": {
+      "version": "4.7.2",
+      "binary": "Godot_v4.7.2-stable_linux.x86_64",
+      "binary_sha256": "8d106cbe6144c2dc7e881d61d2429c1a8a76e6b22ef48bd5e48dcf934953f71e",
+      "archive_sha256": "cadd3204e728a35d3f13adb7fd0d7902636b79f6b95c40c265eb73b6c35329e4",
+      "archive_size": 77860424,
+      "source": "tools/engine.lock.json on repository main"
+    }
+  },
+  "classification": {
+    "asset_failure": false,
+    "engine_failure": false,
+    "environment_failure": true,
+    "retry_policy": "Do not blind-retry in the same network-isolated sandbox. Re-run on a host with artifact/GitHub network access or mounted recovered binaries."
+  },
+  "work_that_can_continue": [
+    "import contract",
+    "offline GLB validator",
+    "manifest/receipt/handoff",
+    "macro Blender edits after fresh ownership preflight",
+    "human review through interactive 3D Jutsu scene"
+  ]
+}

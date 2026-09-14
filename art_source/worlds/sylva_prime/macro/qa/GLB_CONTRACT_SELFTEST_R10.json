@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "claim_id": "CLM-SYLVA-MACRO-001",
+  "contract": "CLM-SYLVA-MACRO-001/R10",
+  "validator_path": "art_source/worlds/sylva_prime/macro/validate_glb_contract_r10.py",
+  "validator_commit": "81d3140178857ffb8a1a372ebb7ba81cbb6dcdee",
+  "validator_blob_sha": "0fd829db91d926da71326fc29fa9ba88efb24dd5",
+  "execution": {
+    "status": "PASS_EQUIVALENT_LOGIC_RUNTIME",
+    "case_count": 10,
+    "passed_count": 10,
+    "cases": {
+      "valid_r10_contract_passes": true,
+      "missing_socket_fails": true,
+      "foreign_namespace_fails": true,
+      "provider_duplication_fails": true,
+      "missing_consumer_contract_fails": true,
+      "missing_navigation_contract_fails": true,
+      "legacy_r4_single_floor_fails": true,
+      "open_route_collision_fails": true,
+      "corrupt_header_fails": true,
+      "sha_mismatch_detected": true
+    }
+  },
+  "truth_boundary": {
+    "exact_versioned_file_download_to_sandbox": "ENV_BLOCKED_NETWORK",
+    "exact_real_r11_glb_validation": "ENV_BLOCKED_BINARY_RECOVERY",
+    "blender_source_route_topology": "PASS_R10",
+    "note": "The same contract/topology logic was executed in the available Python runtime. Do not claim the real r11 GLB passed until recovered bytes are validated with exact SHA-256."
+  }
+}

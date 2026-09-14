@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "incident_id": "INC-SYLVA-MAIN-CROSS-SCOPE-20260912-001",
+  "claim_id": "CLM-SYLVA-MACRO-001",
+  "classification": "OWNERSHIP_PUBLICATION_ERROR_REPAIRED",
+  "root_cause": "Producer-side GitHub update_file call omitted branch; connector wrote STATUS.md to default branch main.",
+  "accidental_main_commit": "70fda70cd2120d38fba94e6a66e554e564c6c471",
+  "accidental_path": "art_source/worlds/sylva_prime/macro/STATUS.md",
+  "accidental_commit_scope": {
+    "files_changed": 1,
+    "additions": 185,
+    "deletions": 0
+  },
+  "legitimate_preceding_main_commit_preserved": "ca224a78c72512770cb599e82977623c4b8aa76d",
+  "repair_branch": "ops/repair-accidental-sylva-status-main",
+  "repair_commit": "9542e3a84ccc838f338ea2194af764ef18ebbee3",
+  "repair_pr": 21,
+  "repair_merge_commit": "5b13d0fcf7d4a32b286d183dddec3d6a846e506d",
+  "repair_method": "normal PR merge; no force push; delete only accidental path",
+  "post_repair_verification": {
+    "main_accidental_path": "NOT_FOUND_404",
+    "legitimate_asset_delivery_hardening_preserved": true
+  },
+  "process_change": [
+    "Every producer update_file/delete_file call must include explicit branch, never rely on default branch.",
+    "After any producer write, compare branch vs main immediately; unexpected main movement is an incident until audited.",
+    "Cross-scope repair uses additive history / PR, never force rewrite.",
+    "Do not continue Blender production while ownership publication integrity is unresolved."
+  ],
+  "status": "CLOSED_REPAIRED"
+}

@@ -1,0 +1,92 @@
+{
+  "schema_version": 1,
+  "receipt_id": "CLM-SYLVA-MACRO-001-R6-TERRAIN-CAUSALITY",
+  "claim_id": "CLM-SYLVA-MACRO-001",
+  "remote_project_id": "05dce898-753d-4ff6-a4b0-31757dc868d8",
+  "revision": 6,
+  "mutation_operation": "sylva-r6-biogeo-macro-terrain",
+  "qa_operation": "sylva-r6-terrain-qa",
+  "render_smoke_operation": "sylva-r6-master-render-smoke",
+  "status": "PASS_BLOCKOUT",
+  "terrain_model": "R6_BIOGEO_CAUSAL_MACRO_V1",
+  "classification": "PROPOSAL_MACRO_TERRAIN_MODEL",
+  "canon_geology_claimed": false,
+  "micro_detail_added": false,
+  "render_terrain": {
+    "vertices": 2401,
+    "faces": 2304,
+    "triangles": 4608,
+    "z_min_m": -310.617,
+    "z_max_m": 519.258,
+    "z_range_m": 829.875
+  },
+  "collision_terrain": {
+    "grid": "33x33",
+    "vertices": 1089,
+    "faces": 1024,
+    "triangles": 2048,
+    "policy": "CUSTOM_LOWRES_HEIGHTFIELD"
+  },
+  "causal_layers": {
+    "structural_root_bearing_ridges": 6,
+    "drainage_corridors_proposal": 2,
+    "route_support_halfwidth_m": 140,
+    "hero_support_samples_m": {
+      "puerto": 335,
+      "bosque": 350,
+      "vesper": -270
+    },
+    "note": "Drainage and root-load terrain response are production hypotheses; no canonical tectonics or waterways were asserted."
+  },
+  "render_collision_consistency": {
+    "common_samples": 289,
+    "max_height_delta_m": 0,
+    "mean_height_delta_m": 0,
+    "pass": true
+  },
+  "terrain_slope_deg": {
+    "median": 4.939,
+    "p90": 14.186,
+    "p95": 20.297,
+    "max": 51.231,
+    "qualification": "MEASURED_NOT_YET_GAMEPLAY_APPROVED"
+  },
+  "macro_route_grades": [
+    {"id": "SYLVA_TRAV_PathGuide_00", "length_m": 1913.113, "vertical_delta_m": 100, "grade_deg": 2.996},
+    {"id": "SYLVA_TRAV_PathGuide_01", "length_m": 2085.402, "vertical_delta_m": -80, "grade_deg": 2.199},
+    {"id": "SYLVA_TRAV_PathGuide_02", "length_m": 1930.026, "vertical_delta_m": -50, "grade_deg": 1.484},
+    {"id": "SYLVA_TRAV_PathGuide_03", "length_m": 1998.85, "vertical_delta_m": -520, "grade_deg": 15.079}
+  ],
+  "regression_guards": {
+    "vesper_terraces": 3,
+    "vesper_connectors": 2,
+    "collision_total": 12,
+    "non_unit_scales": [],
+    "non_namespace_objects": [],
+    "pass": true
+  },
+  "render_smoke": {
+    "camera": "SYLVA_CAM_MasterOverview",
+    "resolution": [320, 180],
+    "png_size_bytes": 90828,
+    "mean_rgb": 0.32489888781636383,
+    "variance_rgb": 0.06410855179253079,
+    "max_rgb": 0.7843137979507446,
+    "nonblank": true,
+    "human_art_approval": "PENDING"
+  },
+  "remote_artifacts": {
+    "blend_size_bytes": 2348647,
+    "blend_etag": "f82350b275ed699a790d7977be3a1ee1",
+    "glb_size_bytes": 1299444,
+    "glb_etag": "896ae5e1b86cc5874f008872c05235a7",
+    "review_png_artifact_id": "8f6c2c0d249577bd9d4e586b6b62145c"
+  },
+  "limitations": [
+    "This is macro topology, not final terrain sculpt or material detail.",
+    "The 12 km local patch remains a reversible production proposal, not physical planet size.",
+    "No human art review has approved the terrain composition.",
+    "Route grade 15.079 degrees on final macro leg requires runtime traversal/camera validation.",
+    "No target-hardware performance or native engine collision has been measured."
+  ]
+}

@@ -1,0 +1,198 @@
+claim_id: CLM-SYLVA-MACRO-001
+agent_id: AGENT-SYLVA-MACRO-01
+session_id: 20260912-SYLVA-MACRO-001
+scope_key: world-sylva/world-macro-terrain-regional-foundation
+world_id: sylva
+world_name: SYLVA PRIME
+domain: world_macro_terrain
+subdomain: regional_foundation
+claim_type: ATOMIC_SUBCLAIM
+status: IN_PROGRESS
+priority: P0
+branch: art/world-sylva-prime-macro-001
+base_branch: main
+main_reconciled_sha: 8c01136aa14f89e177ff1216d1993d62ea963ad3
+main_sync_pr: 34
+fleet_epoch: 1
+fleet_state_observed: ACTIVE_ACK_PUBLISHED
+fleet_ack_comment: 5648367024
+coordination_issue: 7
+linear_issue: ROT-117
+draft_pr: 3
+ready_queue_issue: 27
+last_checkpoint_revision: 22
+accepted_art_wave: R18
+
+north_star: >-
+  Deliver a metre-scale, reproducible SYLVA PRIME macro/regional foundation with causal terrain,
+  physically motivated kilometre-root silhouettes, readable navigation, canonical region/VESPER
+  composition and scalable spatial partitioning, while preserving provider ownership and keeping
+  unresolved runtime/planetary decisions explicit.
+
+owns:
+  - causal km/regional terrain and local metric foundation
+  - Puerto del Injerto / Bosque de las Frases / Camara de VESPER macro composition
+  - terrain-aware macro navigation and route collision interfaces
+  - L3 terrain partition/membership and L2/L3 hierarchy
+  - backend-neutral streaming/residency interfaces
+  - VESPER three-terrace macro encounter layout
+  - kilometre primary-root topology, R16 taper and R18 structural mesh silhouette
+  - root-kit consumer sockets/support mapping
+  - deterministic generators, rollback metadata and QA/import contracts
+  - reversible L0/L1 planet-scale proposals without canon promotion
+
+excludes:
+  - reusable meso neural-root modules owned by CLM-SYLVA-PROC-NROOT-001 / PR 6
+  - final root bark/fiber/reaction-tissue/callus anatomy and root gameplay collision
+  - final VESPER, NPC, fauna, flora, architecture, interiors and vehicle assets
+  - final material/microterrain/foliage polish
+  - gameplay/quests/dialogue/shared runtime state
+  - final HLOD/LOD/performance qualification
+  - global engine decisions and other worlds
+
+canon_facts:
+  galaxy: ANDROMEDA
+  system: Dendra
+  faction: Coro Micelial
+  gravity: '1.12 g (proposal revised in current world data)'
+  temperature_reference: '34 C'
+  regions: [Puerto del Injerto, Bosque de las Frases, Camara de VESPER]
+  boss_arena_rule: 'Three terraces connected by wide roots; vertical movement uses routes/anchors rather than surprise precision jumps.'
+  vehicle: 'Vela de Ceniza con agarres de canopy'
+
+primary_remote:
+  project_id: 05dce898-753d-4ff6-a4b0-31757dc868d8
+  revision: 22
+  scene_sequence: 0
+  build_status: WAVE1P_R18_ALL_PRIMARY_ROOT_XSEC_MESH
+  state: SETTLED_VERIFIED_R18_CHECKPOINT
+  blend_size_bytes: 3312722
+  blend_etag: a1459ad6a5d5ae98f63b50e2613cf3b1
+  glb_size_bytes: 1378988
+  glb_etag: 62d30277f973bbd87bb8c2aa16152c58
+  geometry_fingerprint_sha256: 7b1a4c5c1f16c6b3c1319f3da26315c8d359ce97717272c91aa5910effe00939
+
+scene_contracts:
+  terrain_model: R6_BIOGEO_CAUSAL_MACRO_V1
+  terrain_stream: SYLVA_TERRAIN_STREAM_R12
+  stream_membership_base: SYLVA_STREAM_MEMBERSHIP_R13
+  stream_membership_amendment: SYLVA_STREAM_MEMBERSHIP_R16_AMENDMENT
+  stream_hierarchy: SYLVA_STREAM_HIERARCHY_R14
+  prefetch_policy: SYLVA_PREFETCH_POLICY_R15
+  prefetch_policy_state: RUNTIME_EXPERIMENT_REQUIRED
+  prefetch_policy_approved: false
+  navigation: SYLVA_NAV_R10
+  route_collision: MANIFOLD_RIBBON_R10
+  macro_root_taper: SYLVA_MACRO_ROOT_TAPER_R16
+  macro_root_xsec: SYLVA_MACRO_ROOT_XSEC_R18_ALL
+  socket_consumer: SYLVA_SOCKET_CONSUMER_V1
+  socket_support_map: SYLVA_SOCKET_SUPPORT_MAP_V1
+
+r18_primary_roots:
+  representation: SELF_CONTAINED_MESH
+  count: 6
+  verts_each: 1040
+  faces_each: 1026
+  nonmanifold_edges: 0
+  degenerate_faces: 0
+  source_curve_backup: SERIALIZED_JSON_PER_ASSET
+  missing_stream_memberships: 0
+  helper_scene_objects: 0
+  profiles:
+    R01: {width_factor: 1.10, height_factor: 0.70, region: PUERTO, source_wave: R17_AB_VALIDATED}
+    R02: {width_factor: 1.12, height_factor: 0.70, region: BOSQUE, source_wave: R18_PROMOTION}
+    R03: {width_factor: 1.18, height_factor: 0.66, region: VESPER, source_wave: R17_AB_VALIDATED}
+    R04: {width_factor: 1.08, height_factor: 0.72, region: NETWORK_CROSS, source_wave: R18_PROMOTION}
+    R05: {width_factor: 1.06, height_factor: 0.74, region: NETWORK_CROSS, source_wave: R18_PROMOTION}
+    R06: {width_factor: 1.12, height_factor: 0.68, region: VESPER_APPROACH, source_wave: R18_PROMOTION}
+  r01_conservative_extra_cells: [X0Y2, X1Y2]
+  final_surface_anatomy_claimed: false
+
+world_partition:
+  terrain_render_tiles: 16
+  terrain_collision_tiles: 16
+  terrain_render_seam_max_delta_m: 0
+  terrain_collision_seam_max_delta_m: 0
+  l3_cells: 16
+  l2_supercells: 4
+  hero_residency_granularity: L3_ONLY
+  legacy_monoliths_present: 0
+
+navigation:
+  total_route_length_m: 8898.294
+  route_collision_nonmanifold_edges: 0
+  route_collision_degenerate_faces: 0
+  vesper_terraces: 3
+  vesper_connectors: 2
+  vesper_collision_proxies: 5
+
+rootkit_dependency:
+  provider_claim: CLM-SYLVA-PROC-NROOT-001
+  provider_pr: 6
+  provider_status: BLOCKED_FOR_CONSUMPTION
+  blocking_gates: [valid_manifest, normalized_pivots_anchors, render_collision_anchor_parity, pivot_policy_version]
+  support_assignments: 8
+  provider_instances_created: 0
+  provider_geometry_copied: 0
+
+visual_signal_r18:
+  all_file_backed_nonblank: true
+  puerto_bytes: 49058
+  bosque_bytes: 48652
+  vesper_bytes: 47283
+  human_gate_art: PENDING
+
+hlod_vista:
+  feature_retention_contract: art_source/worlds/sylva_prime/macro/HLOD_FEATURE_RETENTION_R18.json
+  generation_allowed_now: false
+
+x100_v2:
+  adopted_for_next_work_selection: true
+  source_main_sha: 8c01136aa14f89e177ff1216d1993d62ea963ad3
+  protocol_path: docs/EXOVANT_X100_V2.md
+  protocol_blob_sha: 42d0dba1731e65b8e67f9e6b67f283aa9b2e7ab5
+  config_path: ops/x100/config.json
+  config_blob_sha: bcba04486c14793f55ca8a59ea26f4fd4b5b68be
+  owner_receipt: art_source/worlds/sylva_prime/macro/x100/X100-SYLVA-MACRO-R18.json
+  adoption_receipt: art_source/worlds/sylva_prime/macro/qa/X100_V2_ADOPTION_R18.json
+  bootstrap_strict_score_pct: 0.0
+  bootstrap_evidence_cells_measured: 11
+  bootstrap_unknown_cells: 73
+  recompute_with_r18_receipt: PENDING_CURRENT_CHECKOUT
+  world_completion_claimed: false
+
+orbital_scale_candidate:
+  project_id: c796230b-0463-4e17-9446-2e746c5c4933
+  revision: 0
+  status: EMPTY_PENDING_FLEET_REGISTRY
+  mutation_allowed: false
+
+writer_continuity:
+  last_writer_fence_id: SYLVA-MACRO-WRITER-EPOCH-5-R17-XSEC-20260914
+  last_writer_fence_status: CLOSED_ACCEPTED_R18
+
+blocked_by:
+  - exact revision22 binary recovery/SHA/native import is ENV_BLOCKED in current runtime
+  - PR6 provider contract required before module instancing
+  - human R18 art-direction review required before final root surface-anatomy pass
+  - target renderer/hardware required before HLOD/LOD/performance promotion
+  - planet-scale promotion requires explicit decision and orbital registration
+
+dependencies:
+  - CLM-SYLVA-PROC-NROOT-001 provider readiness
+  - artifact-enabled engine runtime
+  - human art-direction review
+
+receipts:
+  r18_acceptance: art_source/worlds/sylva_prime/macro/qa/R18_ALL_PRIMARY_ROOT_XSEC_ACCEPTANCE.json
+  r18_binary_blocker: art_source/worlds/sylva_prime/macro/qa/R18_BINARY_RECOVERY_ENV_BLOCKER.json
+  r18_master_asset_amendment: art_source/worlds/sylva_prime/macro/MASTER_ASSET_LIST_R18_AMENDMENT.json
+  r18_world_readiness: art_source/worlds/sylva_prime/macro/WORLD_PRODUCTION_READINESS_R18.json
+  r18_hlod_features: art_source/worlds/sylva_prime/macro/HLOD_FEATURE_RETENTION_R18.json
+  r18_x100: art_source/worlds/sylva_prime/macro/x100/X100-SYLVA-MACRO-R18.json
+  import_contract: art_source/worlds/sylva_prime/macro/IMPORT_CONTRACT.md
+  validator: art_source/worlds/sylva_prime/macro/validate_glb_contract_r18.py
+  status: art_source/worlds/sylva_prime/macro/STATUS.md
+  handoff: art_source/worlds/sylva_prime/macro/HANDOFF.md
+
+claim_status: KEEP

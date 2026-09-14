@@ -1,0 +1,109 @@
+schema_version: 1
+receipt_id: CLM-SYLVA-MACRO-001-R4
+claim_id: CLM-SYLVA-MACRO-001
+agent_id: AGENT-SYLVA-MACRO-01
+session_id: 20260912-SYLVA-MACRO-001
+world_id: SYLVA-PRIME
+checkpoint: WAVE1B_STREAM_COLLISION_INTERFACES_R4
+status: LOCALLY_VALIDATED_BLOCKOUT
+
+remote_blender:
+  provider: Higgsfield 3D Jutsu
+  project_id: 05dce898-753d-4ff6-a4b0-31757dc868d8
+  blender_version: 5.2.0 LTS
+  revision: 4
+  mutation_operation: sylva-macro-stream-collision-interfaces-r4
+  qa_operation: sylva-macro-qa-r4
+
+artifacts:
+  blend:
+    size_bytes: 2097180
+    etag: 4470d8530489f327fb2d3c33c31e983d
+  glb:
+    size_bytes: 1074844
+    etag: f793339fd893d9829a84a43d21141054
+
+qa_metrics:
+  objects: 136
+  mesh_objects: 84
+  curve_objects: 8
+  triangles_estimate: 15840
+  streaming_cells: 16
+  streaming_grid_pass: true
+  region_envelopes: 3
+  rootkit_sockets: 8
+  socket_contract_pass: true
+  collision_objects: 8
+  collision_metadata_pass: true
+  terrain_collision_vertices: 289
+  terrain_collision_faces: 256
+  non_unit_scales: []
+  non_namespace_objects: []
+  foreign_rootkit_meshes: []
+  scope_violations: []
+
+world_metadata:
+  build_status: WAVE1B_STREAM_COLLISION_INTERFACES_R4
+  local_authored_envelope_m: 12000
+  local_envelope_classification: PROPOSAL
+  streaming_cell_size_m: 3000
+  streaming_cell_classification: PROPOSAL
+  planet_radius: UNKNOWN_BLOCKED
+  provider_rootkit_claim: CLM-SYLVA-PROC-NROOT-001
+  provider_rootkit_meshes_copied: 0
+
+provider_contract:
+  claim_id: CLM-SYLVA-PROC-NROOT-001
+  manifest: production/manifests/sylva/procedural/SYL_NEURAL_ROOT_KIT_001.yaml
+  provider_remote_revision_observed: 4
+  valid_families:
+    - SYL_ROOT_A1_STRAIGHT_08M
+    - SYL_ROOT_A2_CURVE_12M
+    - SYL_ROOT_A3_RISE_10M
+    - SYL_ROOT_B1_FORK
+    - SYL_ROOT_B2_ARCH_14M
+    - SYL_ROOT_C1_BUTTRESS_07M
+    - SYL_ROOT_C2_TERRACE
+    - SYL_ROOT_C3_MEMBRANE_ANCHOR
+  socket_validation: PASS
+  ownership_violation: false
+
+render_signal_validation:
+  previous_render_result_api_validator: INVALID_AS_VALIDATOR
+  reason: direct Render Result pixel read produced false-zero result
+  file_sample_operation: sylva-r3-smoke-file-sample
+  camera: SYLVA_CAM_Puerto
+  resolution: [320, 180]
+  png_size_bytes: 72450
+  mean_rgb_file: 0.07998430055185626
+  variance_rgb_file: 0.003921911096893359
+  min_rgb: 0.0
+  max_rgb: 0.988235354423523
+  nonblank: true
+  human_art_approval: PENDING
+
+scope_guards:
+  final_vesper_owned: false
+  npc_assets_owned: false
+  fauna_assets_owned: false
+  final_architecture_owned: false
+  meso_root_kit_owned: false
+  runtime_gameplay_code_owned: false
+
+technical_gates:
+  canon: PASS_WITH_BLOCKED_PLANET_RADIUS
+  namespace: PASS
+  metric_scale: PASS
+  streaming_interface: PASS_PROPOSAL
+  provider_socket_contract: PASS
+  collision_proxy_presence: PASS_BLOCKOUT
+  export_glb: PASS_REMOTE
+  editable_blend: PASS_REMOTE
+  art: PENDING_HUMAN_REVIEW
+  engine_import: NOT_RUN
+  gameplay_traversal: NOT_RUN
+  runtime_collision: NOT_RUN
+  lod_hlod: INTERFACE_NOT_IMPLEMENTED
+  gpu_performance: BLOCKED_TARGET_HARDWARE
+
+claim_status: KEEP_CHECKPOINT

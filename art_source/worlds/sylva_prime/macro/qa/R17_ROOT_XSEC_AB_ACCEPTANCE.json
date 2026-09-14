@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "claim": "CLM-SYLVA-MACRO-001",
+  "art_wave": "R17",
+  "accepted_scene_revision": 21,
+  "contract": "SYLVA_MACRO_ROOT_XSEC_R17_MESH_AB",
+  "status": "PASS_SOURCE_AB_EXPERIMENT",
+  "targets": {
+    "SYLVA_ROOT_PRIMARY_R01": {"type":"MESH","verts":1040,"faces":1026,"nonmanifold_edges":0,"degenerate_faces":0,"profile":[1.10,0.70],"stream_cells":"X0Y0|X0Y1|X0Y2|X1Y0|X1Y1|X1Y2","source_backup_valid":true,"material":"SYLVA_DIAG_RootFiber"},
+    "SYLVA_ROOT_PRIMARY_R03": {"type":"MESH","verts":1040,"faces":1026,"nonmanifold_edges":0,"degenerate_faces":0,"profile":[1.18,0.66],"stream_cells":"X2Y2|X2Y3|X3Y2|X3Y3","source_backup_valid":true,"material":"SYLVA_DIAG_RootFiber"}
+  },
+  "render_signal": {
+    "PUERTO": {"png_bytes":49091,"mean_rgb":0.08174417,"variance_rgb":0.00377564,"pass_nonblank":true},
+    "VESPER": {"png_bytes":47250,"mean_rgb":0.07425943,"variance_rgb":0.00422835,"pass_nonblank":true},
+    "human_art_approval": "PENDING"
+  },
+  "regressions": {"route_collision_manifold":true,"provider_meshes_copied":0,"helper_objects_required":false},
+  "retained_failures": [
+    {"scene_revision":18,"finding":"Linked custom bevel helper objects leaked into GLB as standalone primitives.","accepted":false},
+    {"scene_revision":19,"finding":"Unlinked bevel objects did not persist across .blend reopen; R01/R03 reopened with bevel_object=null.","accepted":false},
+    {"scene_revision":20,"finding":"Explicit rollback restored accepted R16 circular taper before the self-contained mesh approach.","accepted":true,"role":"safe recovery checkpoint"}
+  ],
+  "accepted_implementation": "Procedurally sampled Bezier centerline + R16 taper -> closed self-contained mesh with parallel-transport frame; source Curve serialized as JSON for rollback.",
+  "promotion_decision": "SOURCE_QA_PASS: allow R18 promotion to R02/R04/R05/R06; human GATE-ART remains required before final-art claim.",
+  "truth": "R17 validates the technical/art representation change at source level and nonblank regional signal only; it is not final human visual approval or native runtime qualification."
+}

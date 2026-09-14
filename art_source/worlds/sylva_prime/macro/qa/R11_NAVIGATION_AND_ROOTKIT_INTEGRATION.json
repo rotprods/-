@@ -1,0 +1,126 @@
+{
+  "schema_version": 1,
+  "claim_id": "CLM-SYLVA-MACRO-001",
+  "primary_project_id": "05dce898-753d-4ff6-a4b0-31757dc868d8",
+  "primary_revision": 11,
+  "state": "VERIFIED_TECHNICAL_CHECKPOINT_NOT_FINAL_ART",
+  "scene": {
+    "objects": 151,
+    "mesh_objects": 91,
+    "curve_objects": 12,
+    "approx_triangles": 19928,
+    "blend_size_bytes": 2382689,
+    "blend_etag": "095b96cc5dfca24bb086ac8b7b315d17",
+    "glb_size_bytes": 1325280,
+    "glb_etag": "5da3def12f2919b530bf6b4fc738a0e9"
+  },
+  "rootkit_integration": {
+    "provider_claim": "CLM-SYLVA-PROC-NROOT-001",
+    "provider_pr": 6,
+    "provider_project": "43cf2b06-c47f-4ccd-ac34-76e9a585225a",
+    "provider_revision_audited_readonly": 4,
+    "consumer_contract": "SYLVA_SOCKET_CONSUMER_V1",
+    "consumer_basis": {"forward": "+X", "up": "+Z", "units": "metres", "scale": [1,1,1]},
+    "support_map": "SYLVA_SOCKET_SUPPORT_MAP_V1",
+    "socket_count": 8,
+    "provider_instances_created": 0,
+    "provider_meshes_copied": 0,
+    "provider_pivot_status": "BLOCKED_PROVIDER_NORMALIZATION_REQUIRED",
+    "provider_blocker_pr6_comment": 5648741376,
+    "provider_origin_to_center_samples_m": {
+      "A1": 13.5515,
+      "A2": 10.8163,
+      "A3": 14.8753,
+      "B1_TRUNK": 12.0031,
+      "B2": 9.0181,
+      "C1": 17.5470,
+      "C2_TERRACE_CALLOUS": 0.0,
+      "C3": 15.1663
+    },
+    "truth": "Provider modules are NOT_READY for deterministic socket placement until PR #6 publishes pivot/anchor normalization and a valid manifest."
+  },
+  "navigation": {
+    "terrain_model": "R6_BIOGEO_CAUSAL_MACRO_V1",
+    "navigation_contract": "SYLVA_NAV_R10",
+    "profile": "BALANCED_FOOT_TERRAIN_AWARE_R10",
+    "solver": "A*_8_NEIGHBOR_SLOPE_WEIGHTED_R10",
+    "hard_max_grade_deg": 22.0,
+    "route_count": 4,
+    "total_length_m": 8898.294,
+    "routes": [
+      {"id": "SYLVA_TRAV_PathGuide_00", "length_m": 1963.093, "max_grade_deg": 18.49, "p95_grade_deg": 18.49, "segments": 6},
+      {"id": "SYLVA_TRAV_PathGuide_01", "length_m": 2382.483, "max_grade_deg": 15.131, "p95_grade_deg": 15.131, "segments": 8},
+      {"id": "SYLVA_TRAV_PathGuide_02", "length_m": 2188.103, "max_grade_deg": 7.285, "p95_grade_deg": 7.285, "segments": 7},
+      {"id": "SYLVA_TRAV_PathGuide_03", "length_m": 2364.615, "max_grade_deg": 20.53, "p95_grade_deg": 20.53, "segments": 8}
+    ],
+    "movement_mode": "UNASSIGNED_BASELINE",
+    "final_route_geometry": false
+  },
+  "route_collision": {
+    "contract": "MANIFOLD_RIBBON_R10",
+    "r9_failure": "Initial terrain-aware collision ribbons exported with Blender/glTF warnings: mesh not valid. r9 is a defective historical checkpoint.",
+    "r10_fix": "Side faces and end caps rebuilt with valid closed topology.",
+    "rows": [
+      {"id": "SYLVA_COL_ROUTE_00", "vertices": 28, "faces": 26, "nonmanifold_edges": 0, "degenerate_faces": 0},
+      {"id": "SYLVA_COL_ROUTE_01", "vertices": 36, "faces": 34, "nonmanifold_edges": 0, "degenerate_faces": 0},
+      {"id": "SYLVA_COL_ROUTE_02", "vertices": 32, "faces": 30, "nonmanifold_edges": 0, "degenerate_faces": 0},
+      {"id": "SYLVA_COL_ROUTE_03", "vertices": 36, "faces": 34, "nonmanifold_edges": 0, "degenerate_faces": 0}
+    ],
+    "r10_export_invalid_mesh_warnings": 0
+  },
+  "scene_regression": {
+    "vesper_terraces": 3,
+    "vesper_connectors": 2,
+    "collision_nodes_total": 12,
+    "streaming_l3_cells": 16,
+    "streaming_region_envelopes": 3,
+    "provider_meshes_copied": 0,
+    "final_scope_violations": 0,
+    "non_namespace_objects": 0,
+    "non_unit_scale_mesh_or_curve_objects": 0,
+    "qa_pass": true
+  },
+  "validator": {
+    "path": "art_source/worlds/sylva_prime/macro/validate_glb_contract_r10.py",
+    "git_commit": "81d3140178857ffb8a1a372ebb7ba81cbb6dcdee",
+    "git_blob_sha": "0fd829db91d926da71326fc29fa9ba88efb24dd5",
+    "logic_selftest_cases": 10,
+    "logic_selftest_passed": 10,
+    "cases": [
+      "valid_r10_contract_passes",
+      "missing_socket_fails",
+      "foreign_namespace_fails",
+      "provider_duplication_fails",
+      "missing_consumer_contract_fails",
+      "missing_navigation_contract_fails",
+      "legacy_r4_single_floor_fails",
+      "open_route_collision_fails",
+      "corrupt_header_fails",
+      "sha_mismatch_detected"
+    ],
+    "exact_real_r11_glb_bytes_validation": "ENV_BLOCKED_BINARY_RECOVERY"
+  },
+  "render_smoke": {
+    "camera": "SYLVA_CAM_MasterOverview",
+    "resolution": [320,180],
+    "artifact_id": "53335fef5b3d1b2a598089e88c1bcc96",
+    "png_bytes": 90993,
+    "mean_rgb": 0.3243926922684962,
+    "variance_rgb": 0.0641132434811686,
+    "max_rgb": 0.7843137979507446,
+    "nonblank": true,
+    "human_visual_approval": "PENDING"
+  },
+  "gates": {
+    "scene_technical_qa": "PASS",
+    "route_collision_source_topology": "PASS",
+    "rootkit_consumer_basis": "PASS",
+    "rootkit_provider_pivot_contract": "BLOCKED",
+    "rootkit_instantiation": "NOT_READY",
+    "exact_glb_sha_validation": "ENV_BLOCKED",
+    "engine_import": "ENV_BLOCKED_NOT_RUN",
+    "runtime_traversal": "NOT_RUN",
+    "human_art": "PENDING",
+    "target_hardware_performance": "PENDING"
+  }
+}

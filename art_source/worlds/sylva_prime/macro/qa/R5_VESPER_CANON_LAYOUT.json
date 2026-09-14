@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "receipt_id": "CLM-SYLVA-MACRO-001-R5-VESPER-CANON-LAYOUT",
+  "claim_id": "CLM-SYLVA-MACRO-001",
+  "remote_project_id": "05dce898-753d-4ff6-a4b0-31757dc868d8",
+  "revision": 5,
+  "mutation_operation": "sylva-r5-vesper-three-terraces",
+  "qa_operation": "sylva-r5-qa",
+  "render_smoke_operation": "sylva-r5-vesper-render-smoke",
+  "status": "PASS_BLOCKOUT",
+  "canon_requirement": "Three terraces connected by wide roots; vertical movement uses routes/anchors, not surprise precision jumps.",
+  "scene_metrics": {
+    "objects": 148,
+    "mesh_objects": 95,
+    "curve_objects": 8,
+    "triangles_estimate": 18240,
+    "terraces": 3,
+    "connectors": 2,
+    "vesper_collision_objects": 5,
+    "collision_total": 12
+  },
+  "terraces": [
+    {"id": "SYLVA_VESPER_Terrace_00_ENTRY", "diameter_m": 116, "z_m": -246},
+    {"id": "SYLVA_VESPER_Terrace_01_MIDDLE", "diameter_m": 124, "z_m": -216},
+    {"id": "SYLVA_VESPER_Terrace_02_UPPER", "diameter_m": 112, "z_m": -184}
+  ],
+  "connectors": [
+    {"id": "SYLVA_VESPER_TerraceConnector_00", "length_m": 142.215, "slope_deg": 12.178, "visual_width_m": 18, "collision_width_m": 16, "precision_jump_required": false},
+    {"id": "SYLVA_VESPER_TerraceConnector_01", "length_m": 145.685, "slope_deg": 12.689, "visual_width_m": 18, "collision_width_m": 16, "precision_jump_required": false}
+  ],
+  "qa": {
+    "obsolete_single_floor_objects": [],
+    "non_unit_scales": [],
+    "non_namespace_objects": [],
+    "foreign_rootkit_meshes": [],
+    "final_vesper_meshes": [],
+    "pass": true
+  },
+  "render_smoke": {
+    "camera": "SYLVA_CAM_Vesper",
+    "resolution": [320, 180],
+    "png_size_bytes": 81344,
+    "mean_rgb": 0.21138091424870287,
+    "variance_rgb": 0.029173016625801428,
+    "max_rgb": 0.5921568870544434,
+    "nonblank": true,
+    "human_art_approval": "PENDING"
+  },
+  "remote_artifacts": {
+    "blend_size_bytes": 2290409,
+    "blend_etag": "2ccbc1ec2ffd854ae83b5cee197d16de",
+    "glb_size_bytes": 1215672,
+    "glb_etag": "9c288dd826d7cbc3331b849dda1590e5",
+    "review_png_artifact_id": "33a52a26511ad4a5e38646eb55cb23a9"
+  },
+  "limitations": [
+    "No final VESPER mesh exists in this claim.",
+    "Connectors are macro layout proxies, not reusable meso root-kit assets.",
+    "No native engine traversal/collision was executed in the network-isolated sandbox.",
+    "Render smoke proves signal only, not art approval."
+  ]
+}

@@ -1,0 +1,89 @@
+{
+  "schema_version": 1,
+  "claim": "CLM-SYLVA-MACRO-001",
+  "remote_project": "05dce898-753d-4ff6-a4b0-31757dc868d8",
+  "validated_revision": 13,
+  "classification": "SOURCE_TECHNICAL_QA_BLOCKOUT",
+  "terrain_stream_contract": "SYLVA_TERRAIN_STREAM_R12",
+  "membership_contract": "SYLVA_STREAM_MEMBERSHIP_R13",
+  "r12": {
+    "render_tiles": 16,
+    "collision_tiles": 16,
+    "tile_size_m": 3000,
+    "render_grid_per_tile": "13x13 @ 250 m",
+    "collision_grid_per_tile": "9x9 @ 375 m",
+    "render_vertices_total": 2704,
+    "render_faces_total": 2304,
+    "collision_vertices_total": 1296,
+    "collision_faces_total": 1024,
+    "render_shared_seam_points": 285,
+    "render_max_seam_delta_m": 0.0,
+    "collision_shared_seam_points": 189,
+    "collision_max_seam_delta_m": 0.0,
+    "monolithic_render_retired": "SYLVA_TERRAIN_Macro12km_PROPOSAL",
+    "monolithic_collision_retired": "SYLVA_COL_TERRAIN_Macro12km_LowRes_PROPOSAL",
+    "tile_parent_errors": 0,
+    "tile_non_unit_scales": 0
+  },
+  "r13": {
+    "assigned_spatial_objects": 147,
+    "outside_local_patch": 0,
+    "cross_cell_objects": 34,
+    "max_cells_per_object": 6,
+    "largest_cross_cell_objects": [
+      {"name": "SYLVA_ROOT_PRIMARY_R04", "cell_count": 6},
+      {"name": "SYLVA_ROOT_PRIMARY_R05", "cell_count": 6},
+      {"name": "SYLVA_BOSQUE_Route0_RootR", "cell_count": 4},
+      {"name": "SYLVA_COL_ROUTE_01", "cell_count": 4},
+      {"name": "SYLVA_ROOT_PRIMARY_R01", "cell_count": 4},
+      {"name": "SYLVA_ROOT_PRIMARY_R02", "cell_count": 4},
+      {"name": "SYLVA_ROOT_PRIMARY_R03", "cell_count": 4},
+      {"name": "SYLVA_ROOT_PRIMARY_R06", "cell_count": 4},
+      {"name": "SYLVA_TRAV_PathGuide_01", "cell_count": 4}
+    ],
+    "cell_member_counts": {
+      "X0Y0": 3,
+      "X0Y1": 35,
+      "X0Y2": 3,
+      "X0Y3": 2,
+      "X1Y0": 4,
+      "X1Y1": 16,
+      "X1Y2": 20,
+      "X1Y3": 2,
+      "X2Y0": 3,
+      "X2Y1": 11,
+      "X2Y2": 45,
+      "X2Y3": 3,
+      "X3Y0": 2,
+      "X3Y1": 3,
+      "X3Y2": 47,
+      "X3Y3": 4
+    }
+  },
+  "regression_checks": {
+    "route_count": 4,
+    "route_collision_manifold": true,
+    "route_collision_degenerate_faces": 0,
+    "vesper_terraces": 3,
+    "vesper_connectors": 2,
+    "rootkit_sockets": 8,
+    "stream_region_envelopes": 3,
+    "provider_meshes_copied": 0,
+    "final_scope_violations": 0,
+    "namespace_violations": 0,
+    "non_unit_scales": 0
+  },
+  "remote_artifacts_revision_13": {
+    "blend_size_bytes": 2777367,
+    "blend_etag": "dcb49cece03e111d066cad486ea77c1d",
+    "glb_size_bytes": 1204308,
+    "glb_etag": "695fc7907b522dc42d8f09f697b3d99a"
+  },
+  "pass": true,
+  "limitations": [
+    "Streaming backend remains ENGINE_TBD.",
+    "HLOD is not implemented or qualified.",
+    "No native engine residency/prefetch test has run.",
+    "Human visual review and target-hardware performance remain separate gates."
+  ]
+}

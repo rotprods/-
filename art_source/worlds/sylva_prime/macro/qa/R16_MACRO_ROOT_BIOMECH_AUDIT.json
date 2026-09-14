@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "claim_id": "CLM-SYLVA-MACRO-001",
+  "source_revision": 15,
+  "status": "READ_ONLY_AUDIT_FAILS_FINAL_MACRO_REALISM",
+  "operation_id": "sylva-r15-macro-root-biomech-audit",
+  "root_count": 6,
+  "findings": {
+    "all_point_radius_profiles_constant": true,
+    "all_roots_circular_bevel_proxy": true,
+    "bevel_resolution": 2,
+    "resolution_u": 2,
+    "nearly_straight_roots_tortuosity_lt_1_03": ["SYLVA_ROOT_PRIMARY_R01", "SYLVA_ROOT_PRIMARY_R04", "SYLVA_ROOT_PRIMARY_R05"],
+    "high_local_turn_roots": {
+      "SYLVA_ROOT_PRIMARY_R02_max_turn_deg": 58.791,
+      "SYLVA_ROOT_PRIMARY_R06_max_turn_deg": 71.625
+    },
+    "truth": "These curves are valid macro topology guides but constant-radius circular tubes fail the production biological-realism contract if promoted unchanged toward final world art."
+  },
+  "roots": [
+    {"id":"R01","object":"SYLVA_ROOT_PRIMARY_R01","base_bevel_radius_m":48,"control_points":5,"point_radii_before":[1,1,1,1,1],"tortuosity":1.01146,"load_anchor":"PUERTO@point2"},
+    {"id":"R02","object":"SYLVA_ROOT_PRIMARY_R02","base_bevel_radius_m":62,"control_points":5,"point_radii_before":[1,1,1,1,1],"tortuosity":1.06778,"load_anchor":"BOSQUE@point2"},
+    {"id":"R03","object":"SYLVA_ROOT_PRIMARY_R03","base_bevel_radius_m":72,"control_points":5,"point_radii_before":[1,1,1,1,1],"tortuosity":1.04295,"load_anchor":"VESPER@point2"},
+    {"id":"R04","object":"SYLVA_ROOT_PRIMARY_R04","base_bevel_radius_m":36,"control_points":5,"point_radii_before":[1,1,1,1,1],"tortuosity":1.00756,"load_anchor":"NETWORK_JUNCTION_MIDSPAN"},
+    {"id":"R05","object":"SYLVA_ROOT_PRIMARY_R05","base_bevel_radius_m":30,"control_points":5,"point_radii_before":[1,1,1,1,1],"tortuosity":1.00410,"load_anchor":"NETWORK_JUNCTION_MIDSPAN"},
+    {"id":"R06","object":"SYLVA_ROOT_PRIMARY_R06","base_bevel_radius_m":40,"control_points":5,"point_radii_before":[1,1,1,1,1],"tortuosity":1.25574,"load_anchor":"VESPER_APPROACH@point4"}
+  ],
+  "r16_recommendation": {
+    "contract": "SYLVA_MACRO_ROOT_TAPER_R16",
+    "allowed_change": "per-Bezier-point radius only + metadata",
+    "forbidden_change": ["control-point positions", "endpoints", "terrain", "routes", "collision", "stream hierarchy", "PR6 provider geometry"],
+    "cross_section_truth": "circular curve bevel remains a macro proxy; final sectional buttress/fiber anatomy requires later specialized art work",
+    "reason": "Introduce load-correlated silhouette taper without invalidating spatial foundations."
+  }
+}

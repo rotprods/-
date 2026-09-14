@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "claim_id": "CLM-SYLVA-MACRO-001",
+  "source_revision": 13,
+  "status": "READ_ONLY_CARDINALITY_STUDY",
+  "spatial_object_count": 147,
+  "route_distance_m": 8898.3,
+  "route_cell_sequence": ["X0Y1", "X1Y1", "X1Y2", "X2Y2", "X3Y2"],
+  "truth_boundary": "Potential resident-object set cardinality from R13 stream-cell membership. Not RAM, VRAM, draw calls, shader cost, IO latency, residency latency or performance measurement.",
+  "policies": {
+    "CURRENT_ONLY": {
+      "resident_min": 16,
+      "resident_max": 47,
+      "resident_mean": 32.6,
+      "max_fraction_of_world_spatial_objects": 0.320
+    },
+    "CURRENT_PLUS_4": {
+      "resident_min": 48,
+      "resident_max": 91,
+      "resident_mean": 70.6,
+      "max_fraction_of_world_spatial_objects": 0.619
+    },
+    "CURRENT_PLUS_8": {
+      "resident_min": 64,
+      "resident_max": 107,
+      "resident_mean": 91.4,
+      "max_fraction_of_world_spatial_objects": 0.728
+    },
+    "ROUTE_WINDOW_PREV_CURRENT_NEXT": {
+      "resident_min": 44,
+      "resident_max": 86,
+      "resident_mean": 65.8,
+      "max_fraction_of_world_spatial_objects": 0.585
+    }
+  },
+  "by_route_cell": {
+    "X0Y1": {"current_only":35,"plus4":48,"plus8":64,"route_window":44},
+    "X1Y1": {"current_only":16,"plus4":65,"plus8":97,"route_window":58},
+    "X1Y2": {"current_only":20,"plus4":62,"plus8":97,"route_window":58},
+    "X2Y2": {"current_only":45,"plus4":91,"plus8":107,"route_window":86},
+    "X3Y2": {"current_only":47,"plus4":87,"plus8":92,"route_window":83}
+  },
+  "hero_overlay_observations": [
+    "A hero residency group must be contextual, not globally always-on. Adding a distant hero group can raise resident sets substantially (e.g. Puerto start + VESPER overlay reached 130 objects in the study).",
+    "At Bosque/X2Y2 the Bosque and VESPER core cells are already contained by current+8; extra hero cells add nothing there, while an unrelated Puerto overlay would add 28 objects.",
+    "Directional route-window cardinality is lower than current+8 but still reaches 86 objects because large roots/routes legitimately cross multiple cells."
+  ],
+  "proposal": {
+    "current_r14_policy": "ADJACENT_8_PLUS_HERO_RESIDENCY_GROUP",
+    "production_approval": "NOT_APPROVED",
+    "candidate_for_runtime_test": "DIRECTIONAL_ROUTE_WINDOW_PLUS_CONTEXTUAL_CURRENT_HERO_GROUP",
+    "fallback_safety_ring": "ENGINE/runtime team may add neighbor cells based on measured IO/residency latency; do not hardcode without test evidence",
+    "reason": "Current+8 loads up to 72.8% of current spatial objects by membership cardinality. Directional window lowers potential resident set while preserving route continuity, but async loading/performance has not been measured."
+  },
+  "next_gate": [
+    "Import exact R13 artifact into qualified runtime.",
+    "Instrument cell enter/leave and object residency.",
+    "Traverse the real 8.9 km route at player and future vehicle speeds.",
+    "Compare current+8, current+4 and directional route-window for pop-in, load stalls, memory and draw cost.",
+    "Trigger only the relevant approaching/current hero residency group; measure prefetch lead time.",
+    "Promote a policy only after runtime + hardware receipts."
+  ]
+}

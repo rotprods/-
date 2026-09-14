@@ -1,0 +1,130 @@
+{
+  "schema_version": 2,
+  "claim": "CLM-SYLVA-MACRO-001",
+  "source_revision": 13,
+  "status": "READY_NOT_EXECUTED_WRITER_FENCED",
+  "writer_fence": "SYLVA-MACRO-WRITER-EPOCH-2-20260912",
+  "execution_precondition": "ops/fleet/registry.json must publish CLM-SYLVA-MACRO-001 as active with current owner ACK; exactly one writer owns primary project for the wave",
+  "contract_proposal": "SYLVA_STREAM_HIERARCHY_R14",
+  "backend": "ENGINE_TBD",
+  "l2_size_m": 6000,
+  "l3_size_m": 3000,
+  "prefetch_policy_proposal": "ADJACENT_8_PLUS_L3_HERO_RESIDENCY_GROUP",
+  "hero_residency_granularity": "L3_ONLY",
+  "l2_hero_semantics": "COVERAGE_METADATA_ONLY_NOT_FULL_RESIDENCY",
+  "center_tie_policy": "HALF_OPEN_BINS_BOUNDARY_TO_POSITIVE_AXIS",
+  "l2_supercells": {
+    "L2_X0Y0": {
+      "center_xy_m": [-3000, -3000],
+      "l3_cells": ["X0Y0", "X0Y1", "X1Y0", "X1Y1"],
+      "unique_spatial_objects_r13": 48,
+      "membership_slots_r13": 58,
+      "neighbors4": ["L2_X0Y1", "L2_X1Y0"],
+      "neighbors8": ["L2_X0Y1", "L2_X1Y0", "L2_X1Y1"]
+    },
+    "L2_X0Y1": {
+      "center_xy_m": [-3000, 3000],
+      "l3_cells": ["X0Y2", "X0Y3", "X1Y2", "X1Y3"],
+      "unique_spatial_objects_r13": 26,
+      "membership_slots_r13": 27,
+      "neighbors4": ["L2_X0Y0", "L2_X1Y1"],
+      "neighbors8": ["L2_X0Y0", "L2_X1Y0", "L2_X1Y1"]
+    },
+    "L2_X1Y0": {
+      "center_xy_m": [3000, -3000],
+      "l3_cells": ["X2Y0", "X2Y1", "X3Y0", "X3Y1"],
+      "unique_spatial_objects_r13": 17,
+      "membership_slots_r13": 19,
+      "neighbors4": ["L2_X0Y0", "L2_X1Y1"],
+      "neighbors8": ["L2_X0Y0", "L2_X0Y1", "L2_X1Y1"]
+    },
+    "L2_X1Y1": {
+      "center_xy_m": [3000, 3000],
+      "l3_cells": ["X2Y2", "X2Y3", "X3Y2", "X3Y3"],
+      "unique_spatial_objects_r13": 87,
+      "membership_slots_r13": 99,
+      "neighbors4": ["L2_X0Y1", "L2_X1Y0"],
+      "neighbors8": ["L2_X0Y0", "L2_X0Y1", "L2_X1Y0"]
+    }
+  },
+  "hero_residency_groups": {
+    "PUERTO": {
+      "center_xyz_m": [-3200, -2200, 330],
+      "authoritative_center_cell": "X0Y1",
+      "core_radius_m_proposal": 550,
+      "resident_l3_cells": ["X0Y1", "X1Y1"],
+      "l2_coverage": ["L2_X0Y0"],
+      "l2_full_residency_implied": false,
+      "region_envelope_radius_m": 1200,
+      "region_envelope_cells": ["X0Y0", "X0Y1", "X1Y0", "X1Y1"],
+      "region_envelope_l2_coverage": ["L2_X0Y0"]
+    },
+    "BOSQUE": {
+      "center_xyz_m": [0, 150, 350],
+      "authoritative_center_cell": "X2Y2",
+      "core_radius_m_proposal": 200,
+      "resident_l3_cells": ["X1Y1", "X1Y2", "X2Y1", "X2Y2"],
+      "l2_coverage": ["L2_X0Y0", "L2_X0Y1", "L2_X1Y0", "L2_X1Y1"],
+      "l2_full_residency_implied": false,
+      "region_envelope_radius_m": 1700,
+      "region_envelope_cells": ["X1Y1", "X1Y2", "X2Y1", "X2Y2"],
+      "region_envelope_l2_coverage": ["L2_X0Y0", "L2_X0Y1", "L2_X1Y0", "L2_X1Y1"],
+      "streaming_hotspot": "GLOBAL_L2_JUNCTION",
+      "design_rule": "Do not move the hero zone and do not force all four L2 supercells into full resolution. Keep only the four explicit L3 hero cells resident/prefetched as the overlay group."
+    },
+    "VESPER": {
+      "center_xyz_m": [3200, 2300, -220],
+      "authoritative_center_cell": "X3Y2",
+      "core_radius_m_proposal": 400,
+      "resident_l3_cells": ["X2Y2", "X3Y2"],
+      "l2_coverage": ["L2_X1Y1"],
+      "l2_full_residency_implied": false,
+      "region_envelope_radius_m": 1200,
+      "region_envelope_cells": ["X2Y2", "X2Y3", "X3Y2", "X3Y3"],
+      "region_envelope_l2_coverage": ["L2_X1Y1"]
+    }
+  },
+  "cross_l2": {
+    "object_count": 19,
+    "four_l2_hotspots": [
+      "SYLVA_BOSQUE_Route0_RootR",
+      "SYLVA_COL_ROUTE_01",
+      "SYLVA_ROOT_PRIMARY_R02",
+      "SYLVA_ROOT_PRIMARY_R04",
+      "SYLVA_ROOT_PRIMARY_R05",
+      "SYLVA_TRAV_PathGuide_01"
+    ],
+    "observation": "Cross-L2 membership is expected for kilometer-scale roots/routes. Do not duplicate source geometry per L2; residency metadata must reference the same authored asset."
+  },
+  "relative_complexity_r13": {
+    "method": "evaluated triangle slots per conservative stream membership; cross-cell assets counted in each resident cell",
+    "unique_visible_triangles_source": 18620,
+    "unique_collision_triangles_source": 2796,
+    "visible_hotspots": [
+      {"cell": "X3Y2", "visible_tri_slots": 5996},
+      {"cell": "X2Y2", "visible_tri_slots": 5956},
+      {"cell": "X0Y1", "visible_tri_slots": 3460},
+      {"cell": "X1Y2", "visible_tri_slots": 1944}
+    ],
+    "l2_visible_tri_slot_rank": [
+      {"l2": "L2_X1Y1", "visible_tri_slots": 12828},
+      {"l2": "L2_X0Y0", "visible_tri_slots": 5788},
+      {"l2": "L2_X0Y1", "visible_tri_slots": 2936},
+      {"l2": "L2_X1Y0", "visible_tri_slots": 2648}
+    ],
+    "truth": "Relative priority only; no hardware budget or performance PASS/FAIL."
+  },
+  "hlod": {
+    "status": "CONTRACT_ONLY_TARGET_BACKEND_PENDING",
+    "priority_from_relative_density": ["L2_X1Y1", "L2_X0Y0", "L2_X0Y1", "L2_X1Y0"],
+    "proposed_ids": [
+      "SYLVA_HLOD_L2_X0Y0",
+      "SYLVA_HLOD_L2_X0Y1",
+      "SYLVA_HLOD_L2_X1Y0",
+      "SYLVA_HLOD_L2_X1Y1"
+    ],
+    "generation_allowed_now": false,
+    "reason": "Target renderer, hardware, switching distance and backend are unresolved."
+  },
+  "truth": "Read-only R13 study. No Blender mutation occurred for R14."
+}

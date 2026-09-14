@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "receipt_id": "CLM-SYLVA-MACRO-001-GLB-CONTRACT-SELFTEST-001",
+  "claim_id": "CLM-SYLVA-MACRO-001",
+  "agent_id": "AGENT-SYLVA-MACRO-01",
+  "validator": "art_source/worlds/sylva_prime/macro/validate_glb_contract.py",
+  "validator_commit": "9d28ec496dc26eca3a6b2648ed415f2bda78b04d",
+  "execution_scope": "synthetic pure-stdlib GLB contract cases in local Python runtime",
+  "status": "PASS",
+  "cases": {
+    "valid_contract_passes": true,
+    "missing_socket_fails": true,
+    "foreign_namespace_fails": true,
+    "provider_duplication_fails": true,
+    "corrupt_header_fails": true,
+    "sha_mismatch_detected": true
+  },
+  "passed": 6,
+  "failed": 0,
+  "limitations": [
+    "This receipt validates the parser and contract logic, not the actual revision-4 GLB bytes.",
+    "Actual r4 binary recovery is separately ENV_BLOCKED in the current sandbox.",
+    "No engine import, collision traversal, art approval or GPU benchmark is implied."
+  ]
+}

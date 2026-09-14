@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "claim": "CLM-SYLVA-MACRO-001",
+  "art_wave": "R18",
+  "accepted_scene_revision": 22,
+  "contract": "SYLVA_MACRO_ROOT_XSEC_R18_ALL",
+  "status": "PASS_SOURCE_TECHNICAL_ART_CHECKPOINT",
+  "geometry_fingerprint_sha256": "7b1a4c5c1f16c6b3c1319f3da26315c8d359ce97717272c91aa5910effe00939",
+  "geometry_record_count": 133,
+  "roots": {
+    "R01": {"asset":"SYLVA_ROOT_PRIMARY_R01","verts":1040,"faces":1026,"profile":[1.10,0.70],"source_wave":"R17_AB_VALIDATED","stream_cells":["X0Y0","X0Y1","X0Y2","X1Y0","X1Y1","X1Y2"],"actual_touched_l3":["X0Y0","X0Y1","X1Y0","X1Y1"],"missing_membership":[],"conservative_extra_membership":["X0Y2","X1Y2"]},
+    "R02": {"asset":"SYLVA_ROOT_PRIMARY_R02","verts":1040,"faces":1026,"profile":[1.12,0.70],"source_wave":"R18_PROMOTION","stream_cells":["X1Y1","X1Y2","X2Y1","X2Y2"],"missing_membership":[]},
+    "R03": {"asset":"SYLVA_ROOT_PRIMARY_R03","verts":1040,"faces":1026,"profile":[1.18,0.66],"source_wave":"R17_AB_VALIDATED","stream_cells":["X2Y2","X2Y3","X3Y2","X3Y3"],"missing_membership":[]},
+    "R04": {"asset":"SYLVA_ROOT_PRIMARY_R04","verts":1040,"faces":1026,"profile":[1.08,0.72],"source_wave":"R18_PROMOTION","stream_cells":["X0Y1","X0Y2","X1Y1","X1Y2","X2Y1","X2Y2"],"missing_membership":[]},
+    "R05": {"asset":"SYLVA_ROOT_PRIMARY_R05","verts":1040,"faces":1026,"profile":[1.06,0.74],"source_wave":"R18_PROMOTION","stream_cells":["X1Y0","X1Y1","X1Y2","X2Y0","X2Y1","X2Y2"],"missing_membership":[]},
+    "R06": {"asset":"SYLVA_ROOT_PRIMARY_R06","verts":1040,"faces":1026,"profile":[1.12,0.68],"source_wave":"R18_PROMOTION","stream_cells":["X2Y1","X2Y2","X3Y1","X3Y2"],"missing_membership":[]}
+  },
+  "all_root_topology": {"nonmanifold_edges":0,"degenerate_faces":0,"source_curve_backup_valid":true,"material":"SYLVA_DIAG_RootFiber","helper_objects_required":false},
+  "regression": {
+    "terrain_render_tiles":16,
+    "terrain_collision_tiles":16,
+    "l3_cells":16,
+    "l2_cells":4,
+    "route_collisions_manifold":true,
+    "vesper_terraces_exact":3,
+    "vesper_connectors_exact":2,
+    "vesper_collisions":5,
+    "provider_meshes_copied":0,
+    "legacy_monoliths_present":0,
+    "namespace_violations":0,
+    "profile_helper_scene_objects":0
+  },
+  "render_signal": {
+    "PUERTO": {"png_bytes":49058,"mean_rgb":0.08175144,"variance_rgb":0.00376456,"max_rgb":0.98823535,"pass_nonblank":true},
+    "BOSQUE": {"png_bytes":48652,"mean_rgb":0.08735001,"variance_rgb":0.00473493,"max_rgb":0.98823535,"pass_nonblank":true},
+    "VESPER": {"png_bytes":47283,"mean_rgb":0.07425939,"variance_rgb":0.00422835,"max_rgb":0.93333340,"pass_nonblank":true},
+    "human_gate_art": "PENDING"
+  },
+  "remote_artifacts": {
+    "blend_size_bytes": 3312722,
+    "blend_etag": "a1459ad6a5d5ae98f63b50e2613cf3b1",
+    "glb_size_bytes": 1378988,
+    "glb_etag": "62d30277f973bbd87bb8c2aa16152c58"
+  },
+  "retained_failures": [
+    "R17 revision18 helper profiles leaked into GLB and were rejected.",
+    "R17 revision19 unlinked helper profiles were orphan-purged on reopen and were rejected.",
+    "Revision20 explicitly restored safe R16 before the self-contained mesh implementation.",
+    "R17 revision21 validated the self-contained approach on R01/R03 before R18 promotion."
+  ],
+  "remaining_art_limits": [
+    "No bark/fiber/reaction-tissue/callus microstructure.",
+    "No dedicated gameplay collision for kilometre-scale roots.",
+    "No human visual approval of silhouette/material/intersections.",
+    "No target-renderer HLOD/performance qualification."
+  ],
+  "truth": "R18 is an accepted source-level technical-art checkpoint, not final world art or native-runtime qualification."
+}

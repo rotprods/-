@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "claim_id": "CLM-SYLVA-MACRO-001",
+  "primary_project_id": "05dce898-753d-4ff6-a4b0-31757dc868d8",
+  "accepted_revision": 22,
+  "accepted_scene_sequence": 0,
+  "writer_fence_epoch": 5,
+  "writer_fence_id": "SYLVA-MACRO-WRITER-EPOCH-5-R17-XSEC-20260914",
+  "owner": "AGENT-SYLVA-MACRO-01",
+  "writer_session": "20260914-SYLVA-R17-XSEC-001",
+  "branch": "art/world-sylva-prime-macro-001",
+  "status": "CLOSED_ACCEPTED_R18",
+  "fleet_activation": {
+    "claim_status": "active",
+    "ack_owner": "AGENT-SYLVA-MACRO-01",
+    "ack_epoch": 1,
+    "registered_project_ids": ["05dce898-753d-4ff6-a4b0-31757dc868d8"],
+    "main_synced_sha": "26ae20f5d1b47d1efa0d54b20124ed93cbc0b43e",
+    "branch_behind_before_wave": 0
+  },
+  "input_checkpoint": {
+    "art_wave": "R16",
+    "scene_revision": 17,
+    "geometry_fingerprint": "747a5b10c7344d5e4b0623354927e98faab8df6f44fced81c5f042350f079a89",
+    "root_taper_contract": "SYLVA_MACRO_ROOT_TAPER_R16",
+    "membership_amendment_contract": "SYLVA_STREAM_MEMBERSHIP_R16_AMENDMENT"
+  },
+  "accepted_output": {
+    "art_wave": "R18",
+    "scene_revision": 22,
+    "geometry_fingerprint": "7b1a4c5c1f16c6b3c1319f3da26315c8d359ce97717272c91aa5910effe00939",
+    "root_section_contract": "SYLVA_MACRO_ROOT_XSEC_R18_ALL",
+    "primary_roots_as_self_contained_meshes": 6,
+    "verts_per_root": 1040,
+    "faces_per_root": 1026,
+    "missing_stream_memberships": 0,
+    "helper_scene_objects": 0,
+    "provider_meshes_copied": 0,
+    "blend_size_bytes": 3312722,
+    "blend_etag": "a1459ad6a5d5ae98f63b50e2613cf3b1",
+    "glb_size_bytes": 1378988,
+    "glb_etag": "62d30277f973bbd87bb8c2aa16152c58",
+    "qa_receipt": "art_source/worlds/sylva_prime/macro/qa/R18_ALL_PRIMARY_ROOT_XSEC_ACCEPTANCE.json"
+  },
+  "retained_failures": [
+    "R17 revision18 custom bevel helper objects leaked into GLB and were rejected.",
+    "R17 revision19 unlinked helper profiles did not survive .blend reopen and were rejected.",
+    "Revision20 explicitly rolled back to accepted R16 before the self-contained mesh route.",
+    "Revision21 validated the self-contained mesh representation on R01/R03 before all-root promotion."
+  ],
+  "mutation_rules": [
+    "Epoch 5 is closed. No additional primary-project mutation is authorized by this fence.",
+    "A future wave requires fresh main/fleet/branch/project readback and a new single-writer epoch.",
+    "Unexpected revision advancement during read-only work freezes mutation until reconciled.",
+    "Every accepted future mutation must persist generator/receipt/handoff before writer transfer."
+  ],
+  "orbital_project": {
+    "project_id": "c796230b-0463-4e17-9446-2e746c5c4933",
+    "revision": 0,
+    "status": "EMPTY_PENDING_FLEET_REGISTRY",
+    "mutation_allowed": false
+  },
+  "truth": "R18 is an accepted source technical-art checkpoint. Human GATE-ART, exact SHA-bound delivery, native runtime and target-hardware qualification remain separate gates."
+}

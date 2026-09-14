@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "claim": "CLM-SYLVA-MACRO-001",
+  "source_revision": 13,
+  "classification": "RELATIVE_COMPLEXITY_ONLY_NO_HARDWARE_BUDGET",
+  "operation_id": "sylva-r13-stream-complexity-study",
+  "method": "Evaluated source triangles assigned to every R13 stream membership. Cross-cell assets are counted in each resident cell, so slot counts are conservative residency upper bounds, not unique world triangle counts.",
+  "unique_source": {
+    "visible_triangles": 18620,
+    "collision_triangles": 2796
+  },
+  "l3_visible_rank": [
+    {"cell": "X3Y2", "visible_tri_slots": 5996, "collision_tri_slots": 592},
+    {"cell": "X2Y2", "visible_tri_slots": 5956, "collision_tri_slots": 416},
+    {"cell": "X0Y1", "visible_tri_slots": 3460, "collision_tri_slots": 192},
+    {"cell": "X1Y2", "visible_tri_slots": 1944, "collision_tri_slots": 348},
+    {"cell": "X2Y1", "visible_tri_slots": 1528, "collision_tri_slots": 196},
+    {"cell": "X1Y1", "visible_tri_slots": 1368, "collision_tri_slots": 248}
+  ],
+  "l2_slot_aggregates": {
+    "L2_X0Y0": {"visible_tri_slots": 5788, "collision_tri_slots": 696, "visible_object_slots": 45, "collision_object_slots": 8},
+    "L2_X0Y1": {"visible_tri_slots": 2936, "collision_tri_slots": 732, "visible_object_slots": 18, "collision_object_slots": 7},
+    "L2_X1Y0": {"visible_tri_slots": 2648, "collision_tri_slots": 580, "visible_object_slots": 14, "collision_object_slots": 5},
+    "L2_X1Y1": {"visible_tri_slots": 12828, "collision_tri_slots": 1264, "visible_object_slots": 76, "collision_object_slots": 14}
+  },
+  "relative_future_hlod_priority": [
+    "L2_X1Y1",
+    "L2_X0Y0",
+    "L2_X0Y1",
+    "L2_X1Y0"
+  ],
+  "hotspot_interpretation": {
+    "X3Y2": "VESPER macro encounter concentration",
+    "X2Y2": "Bosque/VESPER transition + Bosque signal geometry concentration",
+    "X0Y1": "Puerto del Injerto concentration",
+    "L2_X1Y1": "Highest relative residency slot density; first HLOD qualification candidate once backend/hardware are known"
+  },
+  "no_claims": [
+    "No GPU/CPU frame budget inferred.",
+    "No HLOD mesh generation authorized.",
+    "No switching distance inferred.",
+    "No target-hardware PASS/FAIL."
+  ]
+}

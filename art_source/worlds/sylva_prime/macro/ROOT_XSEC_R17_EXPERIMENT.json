@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "claim": "CLM-SYLVA-MACRO-001",
+  "source_revision": 17,
+  "experiment": "SYLVA_MACRO_ROOT_XSEC_R17_AB",
+  "status": "READY_FOR_CONTROLLED_EXECUTION",
+  "targets": {
+    "SYLVA_ROOT_PRIMARY_R01": {
+      "region": "PUERTO",
+      "base_bevel_depth_m": 48.0,
+      "r16_radius_profile": [0.75,0.95,1.32,1.05,0.82],
+      "profile_width_factor": 1.10,
+      "profile_height_factor": 0.70,
+      "profile_family": "BILATERAL_FLATTENED_LOAD_SECTION_V1"
+    },
+    "SYLVA_ROOT_PRIMARY_R03": {
+      "region": "VESPER",
+      "base_bevel_depth_m": 72.0,
+      "r16_radius_profile": [0.70,0.90,1.34,1.04,0.80],
+      "profile_width_factor": 1.18,
+      "profile_height_factor": 0.66,
+      "profile_family": "BILATERAL_FLATTENED_LOAD_SECTION_V1"
+    }
+  },
+  "profile_shape_normalized": [
+    [1.00,0.00],[0.88,0.32],[0.62,0.55],[0.28,0.68],[0.00,0.72],[-0.28,0.68],[-0.62,0.55],[-0.88,0.32],[-1.00,0.00],[-0.92,-0.30],[-0.68,-0.53],[-0.30,-0.65],[0.00,-0.68],[0.30,-0.65],[0.68,-0.53],[0.92,-0.30]
+  ],
+  "invariants": [
+    "Control-point coordinates stay exactly unchanged",
+    "R16 point radii stay unchanged",
+    "Terrain/routes/collision/VESPER/L2-L3 hierarchy remain untouched",
+    "PR6 provider geometry remains absent",
+    "Any bounds-driven membership expansion is reconciled before acceptance"
+  ],
+  "qa": {
+    "evaluated_mesh_nonzero": true,
+    "evaluated_mesh_no_nan": true,
+    "evaluated_mesh_no_degenerate_polygons": true,
+    "bounds_membership_zero_stale": true,
+    "regional_render_signal_required": true,
+    "human_gate_art": "PENDING",
+    "promotion_to_all_six_roots": "ONLY_AFTER_SOURCE_QA_PASS"
+  },
+  "rollback": "Set target curves bevel_mode=ROUND, bevel_object=None, restore bevel_depth 48/72, remove R17 profile objects/collection and metadata."
+}
