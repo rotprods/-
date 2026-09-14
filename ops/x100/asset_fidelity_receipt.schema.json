@@ -1,0 +1,88 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://exovant.local/schemas/asset_fidelity_receipt.schema.json",
+  "title": "EXOVANT Asset Fidelity Receipt",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "asset_id",
+    "world",
+    "claim",
+    "fidelity_before",
+    "fidelity_after",
+    "intended_exposure",
+    "source_route",
+    "provenance"
+  ],
+  "properties": {
+    "asset_id": {"type": "string", "minLength": 1},
+    "world": {"type": "string", "minLength": 1},
+    "claim": {"type": "string", "minLength": 1},
+    "fidelity_before": {
+      "enum": ["BLOCKOUT", "PROXY", "SUPPORT_CANDIDATE", "HERO_CANDIDATE", "HERO_QUALIFIED", "RUNTIME_QUALIFIED", "CINEMATIC_QUALIFIED"]
+    },
+    "fidelity_after": {
+      "enum": ["BLOCKOUT", "PROXY", "SUPPORT_CANDIDATE", "HERO_CANDIDATE", "HERO_QUALIFIED", "RUNTIME_QUALIFIED", "CINEMATIC_QUALIFIED"]
+    },
+    "intended_exposure": {
+      "type": "object",
+      "required": ["role"],
+      "properties": {
+        "role": {"enum": ["hero_closeup", "hero_mid", "support", "systemic", "far_zone", "cinematic_only"]},
+        "min_camera_distance_m": {"type": ["number", "null"], "minimum": 0},
+        "max_camera_distance_m": {"type": ["number", "null"], "minimum": 0},
+        "screen_height_fraction_target": {"type": ["number", "null"], "minimum": 0, "maximum": 1}
+      }
+    },
+    "look_target_refs": {"type": "array", "items": {"type": "string"}},
+    "source_route": {
+      "enum": ["MANUAL_MODEL", "PROCEDURAL_MODEL", "CAD_SOURCE", "PHOTOGRAMMETRY_SCAN", "GAUSSIAN_SPLAT_STATIC", "MULTIVIEW_IMAGE_TO_3D", "SINGLE_IMAGE_TO_3D", "HYBRID_RECONSTRUCTION"]
+    },
+    "provider_model_version": {"type": ["string", "null"]},
+    "source_master_ref": {"type": ["string", "null"]},
+    "runtime_derivative_ref": {"type": ["string", "null"]},
+    "cinematic_derivative_ref": {"type": ["string", "null"]},
+    "provenance": {},
+    "source_rebuild_or_structural_upgrade": {"oneOf": [{"type": "boolean"}, {"type": "string"}, {"type": "object"}]},
+    "raw_reconstruction_final": {"type": "boolean"},
+    "hero_gate": {
+      "type": "object",
+      "properties": {
+        "silhouette": {},
+        "proportion": {},
+        "construction_logic": {},
+        "semantic_part_separation": {},
+        "material_domain_readiness": {},
+        "uv_bake_readiness": {},
+        "closeup_stress": {}
+      }
+    },
+    "runtime": {
+      "type": "object",
+      "properties": {
+        "engine_import": {},
+        "collision": {},
+        "lod_or_screen_space_policy": {},
+        "profile_receipt": {}
+      }
+    },
+    "cinematic": {
+      "type": "object",
+      "properties": {
+        "representative_frame_review": {},
+        "render_receipt": {}
+      }
+    },
+    "human_gate_art": {},
+    "claims_aaa": {"type": "boolean"},
+    "proxy_polish_debt": {
+      "type": "object",
+      "properties": {
+        "detected": {"type": "boolean"},
+        "salvageable_work": {"type": "array", "items": {"type": "string"}},
+        "invalidated_work": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "open_failures": {"type": "array", "items": {"type": "string"}}
+  }
+}

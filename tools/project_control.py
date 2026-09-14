@@ -27,6 +27,28 @@ def validate_graph(graph):
     if len(set(edge_ids))!=len(edge_ids):errors.append('duplicate edge IDs')
     if set(ids)-linked:errors.append('orphan nodes')
     return errors
+def validate_asset_fidelity_receipts(root):
+    """Validate only receipts that opt into the canonical asset-fidelity filename contract.
+
+    Existing historical world receipts are not retroactively reinterpreted. New owners opt in by
+    persisting `asset-fidelity*.json` beneath production/receipts; those receipts then fail closed.
+    """
+    errors=[]
+    sys.path.insert(0,str(root/'tools'))
+    try:
+        from aaa_asset_gate import validate
+    except (ImportError, OSError) as exc:
+        return ['asset fidelity validator unavailable: '+str(exc)]
+    base=root/'production'/'receipts'
+    if not base.exists(): return errors
+    for path in sorted(base.rglob('asset-fidelity*.json')):
+        try:
+            result=validate(json.loads(path.read_text()))
+        except (OSError,ValueError,TypeError,KeyError,json.JSONDecodeError) as exc:
+            errors.append('asset fidelity receipt unreadable '+str(path.relative_to(root))+': '+str(exc));continue
+        if not result.get('passed'):
+            errors.append('asset fidelity receipt failed '+str(path.relative_to(root))+': '+'; '.join(result.get('errors',[])))
+    return errors
 def refresh(root):
     files={str(p.relative_to(root)):digest(p) for p in tracked_files(root) if p.name!='MANIFEST.json'}
     (root/'MANIFEST.json').write_text(json.dumps({'algorithm':'sha256','files':files},indent=2)+'\n')
@@ -53,6 +75,7 @@ def check(root):
     from aprende_lifecycle import SessionLifecycle
     problems+=LearningHub(root/'learning/hub').audit()
     problems+=SessionLifecycle(root/'learning/hub').audit_receipts()
+    problems+=validate_asset_fidelity_receipts(root)
     data=json.loads((root/'design/EXOVANT_DATA.json').read_text())
     for collection in ['worlds','quests','weapons','vehicles','assets']:
         ids=[x['id'] for x in data[collection]]
