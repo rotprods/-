@@ -2,11 +2,11 @@
 
 Claim: `CLM-W04-WORLD-UMBRA-001`  
 Owner: `AGENT-UMBRA-04`  
-Truth state: `X100_PRODUCTION_WORLD_37.54_PERCENT / NOT FINAL AAAA`
+Truth state: `X100_PRODUCTION_WORLD_40.86_PERCENT / NOT FINAL AAAA`
 
 ## Definition of Done policy
 
-A task is `DONE` only when the intended artifact exists, task-specific validation passes, evidence/source are persisted, and no blocked dependency is substituted with invention. `DONE_*_FOUNDATION` means the systemic language exists and has technical evidence; it does **not** waive UV/PBR/collision/LOD/runtime/human-art gates.
+A task is `DONE` only when the intended artifact exists, task-specific validation passes, evidence/source are persisted, and no blocked dependency is substituted with invention. `DONE_*_FOUNDATION` means systemic language and evidence exist; it does **not** waive UV/PBR/collision/LOD/runtime/human-art gates.
 
 | ID | Status | Deliverable / DoD |
 |---|---|---|
@@ -36,22 +36,24 @@ A task is `DONE` only when the intended artifact exists, task-specific validatio
 | W04/FLEET/024 | DONE | Registry reads UMBRA active, owner AGENT-UMBRA-04, epoch 1. |
 | W04/GEN/025 | DONE | Wave-2 independent replay semantic PASS. |
 | W04/CUSTODY/026 | BLOCKED_TRANSPORT | MR-EXO-001 durable provider-independent `.blend`/GLB/dependency custody unresolved. |
-| W04/CI/027 | WAIT_MANUAL_GAUNTLET | Automatic Gauntlet triggers are cost-quarantined on main; refresh exact MANIFEST after batched X100 persistence, then run one bounded manual Gauntlet. |
+| W04/CI/027 | WAIT_MANUAL_GAUNTLET | Automatic Gauntlet triggers are cost-quarantined; refresh exact MANIFEST after batched X100 persistence, then run one bounded manual Gauntlet. |
 | W04/X100/028 | DONE_CONTROLPLANE | `WORLD_DENSITY_X100` graph, multiplicative score and priority queue persisted. |
 | W04/X100/029 | DONE_FOUNDATION | Service ecosystem: 10 semantic families × S/M/L × SERVICED/USED/FIELD_REPAIRED; 90 prefab roots. |
 | W04/X100/030 | DONE_FOUNDATION | Three functional service yards: caravan repair, reflector maintenance, refuge logistics. |
 | W04/X100/031 | DONE_FOUNDATION | 60 family-specific DAMAGED/ABANDONED roots; no random destruction/grunge. |
 | W04/X100/032 | DONE_FOUNDATION | 10 architectural interface families × 3 sizes × 3 fabrication variants; 0.2 m modular contract. |
-| W04/X100/033 | PARTIAL_PERSISTENCE | 10 L5 microdetail families exist in Blender with causal placement metadata, but exact generator/receipt is not yet versioned; do not call reproducible until closed. |
-| W04/X100/034 | DONE_FOUNDATION | Site-history integration: 31 linked prefabs across refuge, reflector 02/03, M03 archive and caravan repair; ERA_0/ERA_1/ERA_2 encoded; 31/31 roots at +0.04 m terrain datum. |
-| W04/X100/035 | IN_PROGRESS | Habitation/culture/interior systemic family wave: survival-domestic objects and interior sockets derived from Sin Sol constraints. |
-| W04/X100/036 | TODO | Post-macro-wave direct visual/readability Gauntlet; turn visible defects into bounded tasks. |
+| W04/X100/033 | PARTIAL_PERSISTENCE | 10 L5 microdetail families exist in Blender with causal placement metadata, but exact generator/receipt is not yet versioned. |
+| W04/X100/034 | DONE_FOUNDATION | Site-history integration: 31 linked prefabs across 5 real sites; ERA_0/ERA_1/ERA_2 encoded; 31/31 at +0.04 m. |
+| W04/X100/035 | DONE_FOUNDATION | Habitation/culture: 10 daily-survival families × S/M/L × SERVICED/LIVED_IN/FIELD_REPAIRED = 90 roots; source + receipt persisted. |
+| W04/X100/036 | REVIEW | Eevee review artifact exists; pixel/human art PASS not claimed because independent image inspection is unavailable in-session. |
 | W04/X100/037 | TODO | Persist/reconstruct exact microdetail generator and receipt from authoritative scene/library metadata. |
-| W04/X100/038 | TODO | Expand site integration from 5 clusters to M01/M02/M04 and additional caravan/refuge interiors without blocking traversal. |
+| W04/X100/038 | TODO | Expand purposeful site integration to M01/M02/M04 and additional caravan/refuge contexts without blocking traversal. |
+| W04/X100/039 | DONE_FOUNDATION | Habitation annex QA correction: detected solid refuge blockout; moved 12 domestic roots into visible leeward annex + 20 reused architectural roots; 32/32 contact PASS at +0.03 m. |
+| W04/X100/040 | NEXT | Traversal/settlement systemic grammar linking yards, refuge annex and quest cells with sheltered checkpoints, loading interfaces, thermal refuge markers and state variants. |
 
 ## Current completeness
 
-Multiplicative estimator: **37.54% — PRODUCTION WORLD**. This is not AAAA completion; ecology and L0 remain deliberately low because canon is missing rather than being filled with invention.
+Multiplicative estimator: **40.86% — PRODUCTION WORLD**. Ecology and L0 remain deliberately low because canon is absent rather than being replaced with invented content.
 
 ## Hard blockers
 
@@ -64,9 +66,9 @@ Multiplicative estimator: **37.54% — PRODUCTION WORLD**. This is not AAAA comp
 
 ## Next execution order
 
-1. `W04/X100/035` habitation/culture/interior system.
+1. `W04/X100/040` traversal/settlement systemic grammar.
 2. `W04/X100/037` exact microdetail persistence.
 3. `W04/X100/038` purposeful additional site integration.
-4. `W04/X100/036` + `W04/ACCESS/018` direct image/readability review.
+4. `W04/X100/036` + `W04/ACCESS/018` direct image/readability review when pixel transport is available.
 5. Refresh exact root `MANIFEST.json`, then one cost-bounded manual Gauntlet under quarantine.
 6. Coordinate runtime import/collision/profile before locking material/LOD budgets.
