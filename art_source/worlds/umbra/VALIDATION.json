@@ -1,109 +1,129 @@
 {
-  "schema": "exovant.umbra.validation.v2",
+  "schema": "exovant.umbra.validation.v4",
   "claim": "CLM-W04-WORLD-UMBRA-001",
   "owner": "AGENT-UMBRA-04",
   "branch": "art/world-umbra-001",
-  "truth_state": "WAVE1_PRODUCTION_FOUNDATION_REPRODUCIBLE_NOT_FINAL_AAAA",
+  "truth_state": "X100_PRODUCTION_WORLD_40_86_PERCENT_NOT_FINAL_AAAA",
   "coordination": {
     "role": "WORLD_OWNER",
     "owner_ack_comment": "https://github.com/rotprods/-/issues/7#issuecomment-5648349781",
-    "registry_readback": "RESERVED_ACK_NULL_PENDING_INTEGRATOR",
+    "registry_readback": "ACTIVE_OWNER_AGENT_UMBRA_04_EPOCH_1_AT_LAST_READBACK",
     "linear": "ROT-119",
     "pr": 16,
-    "last_reconciled_main": "b74bd7072a7b2c68c4453402fbffe9d20bfb4de0",
-    "reconciliation_merge": "4678d0ddf6d74cce663ceb39ddbd205a30aa91da",
-    "previous_reconciliation_merge": "bfff105fb5e46d31e064a22f33053e43b132df19",
+    "last_reconciled_main": "26ae20f5d1b47d1efa0d54b20124ed93cbc0b43e",
+    "reconciliation_merge": "8ee7d335754400f2b4847dfc966ced7dfdbf7815",
     "no_force_update": true,
+    "ci_policy": "MANUAL_COST_QUARANTINE_WORKFLOW_DISPATCH_ONLY",
     "custody_contract": "MR-EXO-001"
   },
-  "wave0": {
-    "project_id": "7ab99682-8777-4143-8ae0-1fbb178ccafb",
-    "revision": 1,
-    "objects": 96,
-    "meshes": 85,
-    "materials": 9,
-    "evaluated_triangles": 12204,
-    "blend_bytes": 1584746,
-    "glb_bytes": 819168,
-    "clean_replay": "PASS_SEMANTIC",
-    "objective_visual_gauntlet": {
-      "contact": "FAIL",
-      "framing": "FAIL",
-      "findings": [
-        "ten caravan tracks floated approximately 2.43 to 5.80 m",
-        "reflector/windbreak/refuge foundations had terrain penetration/floating errors up to approximately 3.62 m",
-        "delivery camera excluded reflector 03, caravan 00 and NOCTIL destination ring"
-      ]
-    }
+  "verified_history": {
+    "wave1": "PASS_PRIMARY_AND_INDEPENDENT_REPLAY",
+    "wave2": "PASS_PRIMARY_AND_INDEPENDENT_REPLAY",
+    "x100_independent_replay": "PENDING_BATCH_REPLAY"
   },
-  "wave1": {
+  "x100": {
+    "completeness_percent": 40.86,
+    "classification": "PRODUCTION_WORLD",
+    "scoring": "GEOMETRIC_MEAN_MULTIPLICATIVE_DIMENSIONS",
     "primary_project_id": "7ab99682-8777-4143-8ae0-1fbb178ccafb",
-    "primary_revision": 2,
-    "primary_scene_sequence": 0,
-    "replay_project_id": "7f33ae14-540c-4af5-8131-1490465fe6cc",
-    "replay_revision": 2,
-    "checkpoint": "WAVE1_CONTACT_REFLECTOR_CARAVAN_001",
-    "objects": 407,
-    "meshes": 395,
-    "materials": 9,
-    "evaluated_triangles": 35028,
-    "wave1_named_objects": 310,
+    "primary_revision": 15,
+    "checkpoint": "X100_HABITATION_ANNEX_QA_FIXED_001",
+    "objects": 4871,
+    "mesh_objects": 4329,
+    "materials": 13,
     "bad_object_scales": 0,
     "zero_dimension_meshes": 0,
-    "primary_blend": {"bytes": 4134586, "etag": "5581ef232d24e37ea589dffe4514eb78"},
-    "primary_glb": {"bytes": 2474196, "etag": "0d351e8a81781acb64cf69db0134e39f"},
-    "replay_blend": {"bytes": 4134586, "etag": "0df978c83f34ff7fdd07463f11ca7ab0"},
-    "replay_glb": {"bytes": 2474196, "etag": "b421bd12c2b6337751cf3f869f5e1b4a"},
-    "contact_threshold_abs_m": 0.25,
-    "contact_gate": "PASS_ALL_CHECKED_WITHIN_THRESHOLD",
-    "delivery_camera": {"location_m": [80, -1150, 250], "lens_mm": 38, "required_anchors_fully_inside": true},
-    "semantic_clean_replay": "PASS_EXACT_COUNTS_CONTACTS_CAMERA_AND_GLB_SIZE",
-    "binary_etag_equality_required": false
+    "blend": {"bytes": 15793297, "etag": "40a130a848aae5e92040d315a0214d41"},
+    "glb": {"bytes": 4566312, "etag": "4ad0ffd268d88aef562677d87ae09fde"},
+    "service_ecosystem": {
+      "families": 10,
+      "library_roots": 90,
+      "status": "DONE_FOUNDATION"
+    },
+    "service_yards": {
+      "count": 3,
+      "status": "DONE_FOUNDATION"
+    },
+    "damage_abandonment": {
+      "roots": 60,
+      "status": "DONE_FOUNDATION_CAUSAL_FAILURES"
+    },
+    "architecture_interface": {
+      "families": 10,
+      "variants": "S_M_L_X_STANDARD_WIND_SHIELDED_FIELD_MODIFIED",
+      "status": "DONE_FOUNDATION"
+    },
+    "microdetail": {
+      "families": 10,
+      "scene_status": "AUTHORITATIVE_LIBRARY_EXISTS",
+      "persistence": "PARTIAL_GENERATOR_RECEIPT_PENDING",
+      "placement": "RULE_DRIVEN_NEVER_RANDOM_SCATTER"
+    },
+    "site_history": {
+      "clusters": 5,
+      "integrated_roots": 31,
+      "temporal_contract": "ERA_0_ORIGINAL__ERA_1_MODIFICATION__ERA_2_CURRENT_DAMAGE_REPAIR",
+      "terrain_contact": "PASS_31_OF_31_PLUS_0.04M"
+    },
+    "habitation_culture": {
+      "families": 10,
+      "library_roots": 90,
+      "states": "SERVICED_LIVED_IN_FIELD_REPAIRED",
+      "sizes": "S_M_L",
+      "library_contact": "PASS_90_OF_90_PLUS_0.03M",
+      "status": "DONE_FOUNDATION"
+    },
+    "habitation_annex": {
+      "domestic_roots": 12,
+      "architecture_roots": 20,
+      "terrain_contact": "PASS_32_OF_32_PLUS_0.03M",
+      "refuge_blockout_defect": "DETECTED_CLOSED_8_VERTEX_6_FACE_SOLID",
+      "correction": "DOMESTIC_COMPOSITION_RELOCATED_OUTSIDE_SOLID_TO_VISIBLE_LEEWARD_ANNEX",
+      "status": "DONE_FOUNDATION"
+    }
+  },
+  "qa": {
+    "real_ground_interface_audit": "PASS_45_CHECKED_0_FAILURES_GT_0.35M",
+    "object_scale": "PASS_0_BAD",
+    "zero_dimension": "PASS_0_BAD",
+    "site_history_contact": "PASS",
+    "habitation_library_contact": "PASS",
+    "habitation_annex_contact": "PASS",
+    "direct_pixel_art_inspection": "REVIEW_NOT_CLAIMED",
+    "review_artifact_id": "21c57b605bb5715b889c8394f4214cc9",
+    "review_camera": "TOO_TIGHT_FOR_EXTREME_CANOPY_BAYS",
+    "human_art_review": "PENDING"
+  },
+  "epistemic_blocks": {
+    "planet_physical_scale": "BLOCKED_CANON",
+    "native_ecology": "BLOCKED_CANON_DO_NOT_INVENT_GENERIC_ALIEN_SPECIES",
+    "noctil_final_design": "BLOCKED_SPEC",
+    "final_uv_pbr_texel": "BLOCKED_RUNTIME_TARGET",
+    "lod_hlod_collision": "BLOCKED_RUNTIME_TARGET_AND_INTEGRATION",
+    "umbra_runtime_import_profile": "BLOCKED_INTEGRATION_OWNER",
+    "provider_independent_binary_custody": "BLOCKED_MR_EXO_001"
   },
   "ci": {
-    "last_completed_green_baseline_head": "498f5de4ef991be7d768b613f2cd09a7df4be7c9",
-    "baseline_run_id": 34720234976,
-    "python_tests": "PASS_82_OF_82",
-    "project_control_check": "PASS",
-    "godot_version": "4.7.2",
-    "native_gates": {"import": "PASS", "state-tests": "PASS", "world-tests": "PASS", "input-tests": "PASS", "smoke": "PASS"},
-    "failed_wave1_manifest_run_id": 34721974747,
-    "failed_wave1_manifest_reason": "THREE_TRANSCRIPTION_ERRORS_IN_SHA256_VALUES_ONLY",
-    "failed_wave1_unit_tests": "PASS_82_OF_82",
-    "post_resync_status": "PENDING_FINAL_MANIFEST_AND_CI_AT_TIME_OF_THIS_FILE",
-    "note": "Post-resync CI is tracked externally on PR #16 / Linear ROT-119 after final MANIFEST refresh so this file does not self-invalidate the generated manifest."
-  },
-  "custody": {
-    "provider_source": "HIGGSFIELD_REMOTE_PROJECTS_EXIST",
-    "provider_independent_checkpoint": "BLOCKED_NOT_YET_RECOVERED",
-    "required": ["blend", "glb", "dependencies", "stable_locator", "sha256", "bytes", "versioned_receipt"],
-    "final_delivery_gate": "BLOCKED_MR_EXO_001"
+    "last_green_pre_x100_run": 34722479426,
+    "last_green_pre_x100_tests": "PASS_85_OF_85",
+    "last_green_pre_x100_native_gates": "PASS_IMPORT_STATE_WORLD_INPUT_SMOKE",
+    "automatic_triggers": "DISABLED_BY_COST_QUARANTINE",
+    "post_x100_manifest": "PENDING_EXACT_REFRESH",
+    "post_x100_manual_gauntlet": "PENDING_AFTER_BATCH_AND_MANIFEST"
   },
   "gates": {
     "canon_separation": "PASS",
-    "claim_collision": "PASS_RESERVED_TO_THIS_OWNER",
-    "fleet_owner_ack_published": "PASS",
-    "fleet_registry_ack_readback": "PENDING_INTEGRATOR",
-    "branch_reconciled_to_main": "PASS_AT_B74BD707_MERGE_4678D0D",
+    "claim_collision": "PASS_ACTIVE_WORLD_OWNER_AT_LAST_READBACK",
+    "fleet_owner_ack": "PASS_ADMITTED",
     "metric_scale": "PASS",
-    "object_scale": "PASS",
-    "zero_dimension": "PASS",
-    "editable_blend_remote": "PASS",
-    "portable_glb_remote": "PASS",
-    "provider_independent_binary_custody": "BLOCKED",
-    "wave0_clean_replay": "PASS",
-    "wave1_clean_replay": "PASS",
-    "terrain_contact": "PASS_WAVE1_CHECKED_SET",
-    "delivery_framing": "PASS_OBJECTIVE_PROJECTION",
-    "direct_pixel_art_inspection": "REVIEW_NOT_CLAIMED",
-    "human_art_review": "PENDING",
-    "final_uv_pbr": "PENDING",
-    "lod_hlod": "PENDING_TARGET_CONTRACT",
-    "collision": "PENDING",
-    "umbra_runtime_import": "BLOCKED_INTEGRATION_OWNER",
-    "gpu_performance": "BLOCKED_TARGET_HARDWARE",
-    "planet_physical_scale": "BLOCKED_CANON",
-    "noctil_final_design": "BLOCKED_SPEC"
+    "x100_structural_qa": "PASS_LOCAL_OBJECT_CONTACT_DEGENERACY_GATES",
+    "x100_source_persistence": "PASS_EXCEPT_MICRODETAIL_EXACT_GENERATOR_RECEIPT",
+    "x100_independent_replay": "PENDING",
+    "post_x100_repo_continuity": "PENDING_MANIFEST",
+    "post_x100_native_gauntlet": "PENDING_MANUAL_DISPATCH",
+    "direct_pixel_art": "REVIEW_NOT_CLAIMED",
+    "provider_independent_custody": "BLOCKED",
+    "final_family_dod": "NOT_MET_UV_COLLISION_LOD_ENGINE_VISUAL_GATES_OPEN"
   },
-  "overall": "REPRODUCIBLE_WAVE1_PRODUCTION_FOUNDATION_WITH_OPEN_CUSTODY_ART_RUNTIME_AND_CANON_GATES"
+  "overall": "X100_PRODUCTION_WORLD_40_86_PERCENT_WITH_STRONG_SYSTEMIC_FOUNDATIONS_AND_OPEN_REPLAY_CI_ART_RUNTIME_CUSTODY_CANON_GATES"
 }
