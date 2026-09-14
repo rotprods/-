@@ -6,7 +6,7 @@ session_id: ART-LEVIATHAN-001-20260912T2123+0200
 branch: art/world-leviathan-001
 status: IN_PROGRESS
 claim_status: KEEP
-last_checkpoint: BLENDER_R18_CREATURE_HOSTILE_WAVE_OPTIMIZED_AND_COLD_REPLAYED
+last_checkpoint: BLENDER_R18_CREATURE_HOSTILE_WAVE_OPTIMIZED_COLD_REPLAYED_X100_V2_ADOPTED
 
 remote:
   primary:
@@ -30,21 +30,44 @@ remote:
     cold_revision: 1
 
 fleet:
-  latest_main_observed: 26ae20f5d1b47d1efa0d54b20124ed93cbc0b43e
+  latest_main_observed: 8c01136aa14f89e177ff1216d1993d62ea963ad3
   registry_generation_observed: 8
   registry_state: reserved
   epoch: 1
   integrator_transition_to_active: pending
-  automatic_gauntlet_triggers: QUARANTINED_ON_MAIN_26ae20f5
+  automatic_gauntlet_triggers: MANUAL_ONLY_WORKFLOW_DISPATCH
+  gauntlet_main_workflow_sha: d7526df3126c9f96dba2ddf4c5d20cf881b7ff9d
   producer_ack_comment: https://github.com/rotprods/-/issues/7#issuecomment-5648464282
   producer_ack_delta_jardines: https://github.com/rotprods/-/issues/7#issuecomment-5648515712
   producer_ack_delta_soma: https://github.com/rotprods/-/issues/7#issuecomment-5648567162
   producer_ack_delta_traversal: https://github.com/rotprods/-/issues/7#issuecomment-5652845017
   producer_ack_delta_pbr_lab: https://github.com/rotprods/-/issues/7#issuecomment-5652950795
+  producer_ack_delta_ecology_adversaries: https://github.com/rotprods/-/issues/7#issuecomment-5662374347
   ci_manifest_integrator_request: https://github.com/rotprods/-/issues/7#issuecomment-5648779529
   note: >-
-    Do not self-promote registry. Do not spend a manual Gauntlet run until exact merge-tree
-    MANIFEST reconciliation is performed; automatic triggers are quarantined to control CI cost.
+    Do not self-promote registry. Gauntlet remains explicit workflow_dispatch/manual-only on current
+    main, so producer commits do not automatically spend Actions minutes. Do not request a manual
+    run until exact merge-tree MANIFEST reconciliation is performed.
+
+x100:
+  protocol: EXOVANT-X100-V2
+  basis_main: 8c01136aa14f89e177ff1216d1993d62ea963ad3
+  audit: art_source/worlds/leviathan/X100_AUDIT.json
+  audit_status: MEASUREMENT_REQUIRED
+  fidelity_waivers: art_source/worlds/leviathan/X100_FIDELITY_WAIVERS.json
+  numeric_world_score_claimed: false
+  reason: >-
+    Asset counts are not converted into arbitrary completeness percentages. Evidence is mapped to
+    the 14 X100 dimensions and null coverage is preserved until one consistent cross-world rubric
+    exists. L0/L1/L5 remain incomplete, so density gate cannot pass.
+  scale_coverage: {L0: false, L1: false, L2: true, L3: true, L4: true, L5: false}
+  high_value_owned_gaps_pending_global_ranking:
+    - Comuna del Pulso culture/manufacturing DNA plus reusable support kit
+    - Puerto/Jardines medical-maintenance props and systemic placement kit
+    - causal damage/repair/cicatrization state system
+    - environmental storytelling state kit
+    - ecology relationship/effects graph beyond species silhouettes
+    - audio-hook and lighting-language specification
 
 metrics:
   first_10_task_completion:
@@ -162,20 +185,6 @@ priority_state:
   P0_open: [W10/TECH/007, W10/QA/010]
   P1_open: [W10/REGION/004, W10/REGION/005, W10/REGION/006, W10/MAT/008, W10/ECO/009]
 
-completed_or_advanced:
-  - deterministic world foundation and 3/3 region representative stages
-  - exact 58m SOMA environment interface with evaluated radius 28.3m < 29m
-  - Puerto graft/suture/valve representative microset
-  - Jardines channel/algae/gardener representative microset
-  - continuous stable traversal ribbon + SOMA ingress
-  - canonical visual-surface cold replay and structural instancing optimizer
-  - portable PBR calibration lab with deterministic packed textures and GLB embedding
-  - evidence-bound engine-neutral LOD candidate policy
-  - all four canonical ecology species now have representative coverage
-  - Ballena de linfa and Polinizador have independently replayed functional anatomy
-  - all three canonical adversaries now replace legacy capsule proxies with independently replayed functional interfaces
-  - post-creature optimizer reduces duplicated source meshes without changing audited surfaces
-
 blocked:
   - {id: LEV-BLK-001, decision: physical planet radius/diameter, impacts: [L0, L1, orbital representation]}
   - {id: LEV-BLK-002, decision: final production engine, impacts: [final export profile, LOD/HLOD, streaming]}
@@ -193,7 +202,7 @@ resolved_blockers:
   - {id: LEV-BLK-009, former_problem: durable generated texture persistence in remote Blender, resolution: deterministic direct RGBA8 PNG encoder -> FILE image -> pack -> external path removal; cold replay fingerprint matched}
 
 risks:
-  - direct pixel-level art approval is still unavailable; representative anatomy is not final art
+  - direct pixel-level art approval remains unavailable despite successful r18 close-up render generation; signed artifact transport still blocks visual inspection
   - new ecology/adversary sockets are interfaces only; no armatures, animation, hit/hurt volumes, AI or gameplay bindings exist
   - Fagocito representative envelope intentionally differs from the historical non-canon capsule and needs future art/gameplay review
   - final SOMA anatomy/rig remains blocked
@@ -204,12 +213,14 @@ risks:
   - fleet registry generation 8 still shows LEVIATHAN reserved/ack:null
 
 next:
+  - run X100/global director ranking only after LEVIATHAN coverage receives a consistent measurable rubric; do not invent completeness score
+  - prioritize owned systemic/support gaps with high reuse and low collision risk under X100
   - integrator to reconcile producer ACK plus new ecology/adversary IDs and auxiliary projects in fleet registry
   - exact merge-tree MANIFEST refresh before any meaningful manual Gauntlet spend
-  - direct art review of representative ecology/adversary silhouettes and material lab
+  - direct art review of representative ecology/adversary silhouettes and PBR calibration before finalization
   - define character/NPC production only when canon/art direction is sufficient; do not invent Oru Tess/Anja Piel/Faro-3 anatomy
   - no world-master PBR propagation until direct art + engine validation exists
   - runtime import/traversal/material smoke tests when exact export bytes and qualified engine coexist
   - resolve/ADR L0 planetary scale before orbital representation
 
-last_heartbeat: 2026-09-14T12:10:00+02:00
+last_heartbeat: 2026-09-14T11:37:00+02:00
