@@ -1,0 +1,46 @@
+workunit_id: AUR-X100-HLOD-HIERARCHY-001
+parent_claim: CLM-AURORA-WORLD-001
+owner: AGENT-02-AURORA
+branch: art/world-aurora-veil-001
+world_id: aurora
+status: IN_PROGRESS
+protocol: EXOVANT-X100-V2
+scope_key: aurora/optimization/hlod-hierarchy
+priority: P0_V2_BOTTLENECK
+remote_project_id: d6488148-8547-4ffe-b63d-e5fbec3a339c
+remote_base_revision: 37
+north_star: >-
+  Add a reversible world-side HLOD/proxy hierarchy that measurably reduces object/triangle complexity for Campamento, Observatorio/annex and Plain mission sites while preserving silhouette envelopes and never pretending to be engine-qualified before EXO-012.
+includes:
+  - deterministic HLOD groups for Camp systemic district, Camp history overlays, observatory+annex and Plain mission sites
+  - HLOD1 and coarse HLOD2 source mesh datablocks with zero scene users by default
+  - stable group IDs, source bounds, source object/triangle counts and reduction ratios
+  - metadata contracts for switching distance classes without engine-specific APIs
+  - no render/export pollution from hidden contract geometry
+  - Blender-side complexity profile and QA receipt
+excludes:
+  - engine-specific HLOD implementation
+  - target hardware frame-time claims
+  - AEON model/content changes
+  - antelope content changes
+  - global streaming framework
+  - other worlds
+quality_rules:
+  - preserve group world-space silhouette envelope within declared tolerance
+  - no decimate-percentage shortcut presented as production solution
+  - HLOD proxies must be semantically grouped, not one planet mesh
+  - source geometry remains untouched
+  - contract geometry stays out of default exchange GLB until runtime adapter exists
+  - every reduction claim needs measured source/proxy counts
+family_dod:
+  - >= 4 HLOD groups
+  - each group has HLOD1 + HLOD2 contract
+  - source/proxy world-space bbox evidence
+  - object-count and triangle-count reduction measured
+  - zero scene users for contract proxy datablocks or otherwise explicit export exclusion
+  - technical render/query evidence of bounds
+  - generator + QA receipt persisted
+  - engine/hardware gates remain BLOCKED, not faked
+blocked_by:
+  - EXO-012 for runtime switching/import
+  - target hardware for empirical performance
