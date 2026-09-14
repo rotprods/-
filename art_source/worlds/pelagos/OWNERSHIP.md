@@ -36,16 +36,25 @@ Other world agents should select different world IDs and use `art_source/worlds/
 - Hidden-technical-object QA rule learned: stale `matrix_world` can read origin while `hide_viewport=True`; compose `parent.matrix_world @ matrix_parent_inverse @ matrix_basis` or force depsgraph update before classifying transform drift.
 - Source + receipt persisted. Visual artifacts exist; semantic GATE-ART remains pending because signed artifact host could not be pixel-inspected in current execution environment.
 
+### `PEL/MKT/MACH-X100-003`
+- Mercado settlement machinery / utility-spine systemic foundation.
+- Build checkpoint: rev. 35; final structurally verified checkpoint: **rev. 36**.
+- 9 functional families × 3 capacity variants × 4 causal service states = 108 direct / ≥432 cardinal-yaw configurations.
+- Physical roots 9; grounded 9; bay overflow 0; physical overlaps 0; UV/material/scale debt 0.
+- UtilityRiser maintenance defect found at rev. 35 (~1.06–1.08 m); HOIST + MANIF physical/LOD/collision roots moved 0.25 m west. Final minimum UtilityRiser clearance **1.316 m**; interior-cell minimum clearance **3.625 m**.
+- Source + receipt persisted.
+- Remaining gates: semantic GATE-ART, engine/runtime fluid/pressure/control/audio bindings, production LOD/HLOD thresholds and target-GPU qualification.
+
 ## Active claim — `/EXOVANT-X100`
-- Claim ID: `PEL/MKT/MACH-X100-003`
-- Scope: settlement machinery / utility-spine systemic family for Mercado de Boyas. No vehicle internals and no boss apparatus.
-- Why now: X100 rerank at Blender rev. 34 found **settlement machinery objects = 0**, while L3 interior is no longer zero. This is the next multiplicative bottleneck.
-- Planned semantic families: drainage/bilge pump; service filtration skid; ballast/buoyancy transfer unit; mooring tension winch; overload/storm-release unit; pressure/equalization manifold; acoustic relay/conditioning cabinet; fluid heat-exchange skid; service hoist.
-- Epistemic rule: these are engineering proposals derived from canonical marine constraints (wet/dry cycling, drainage, buoyancy, mooring, acoustic systems, corrosion, maintainability), not irreversible lore. Exact energy source/control technology remains unspecified.
-- Variation grammar: 9 families × 3 capacity variants × 4 causal service states = 108 direct family configurations before orientation/placement grammar.
-- Placement target: utility gallery west of the new service/listening cell, inside/adjacent to existing CommandShell service network and near `ServiceChannel_05` / UtilityRiser, while preserving bridge corridors and player clearance.
-- DoD: stable IDs, meter-scale dimensions, service input/output sockets, maintenance access, causal wear/repair/decommission states, UV0/materials/clean transforms, collision/query policy, LOD/HLOD strategy, deterministic generator, >100 configuration grammar, structural QA, visual evidence, receipt.
-- Engine gate: runtime fluid simulation, interactive controls, power semantics, audio behavior, physics, HLOD thresholds and GPU qualification remain `BLOCKED/PENDING` until production-engine decision.
+- Claim ID: `PEL/ECO/SESSILE-X100-004`
+- Scope: reversible producer/filter/decomposer sessile ecological guilds for the mnemonic reef / Coro and selected quiet wet infrastructure surfaces. This claim does **not** replace or retcon canonical Medusa mnémica, Anguila de vidrio, Bóvido de arrecife or Coral escriba.
+- Why now: X100 coverage after architecture + machinery still leaves producer/decomposer sessile ecology near zero, making the ecology graph trophically incomplete.
+- Epistemic rule: detailed Pelagos trophic chain, reproduction cycles and population densities remain `UNKNOWN` in the World Bible. New guilds are therefore **PROPOSAL ecological functions**, not irreversible species canon.
+- Planned functional families: current-facing filter fan; photic ribbon producer; detritus/decomposer mat; mineral-tube chemo/decomposer colony; calcifying nursery crust; infrastructure fouling/filter cluster; organic-decay biofilm; sponge-like current biofilter; lee-zone detritus aggregation patch.
+- Variation grammar target: 9 functional families × 3 morphology/exposure variants × 4 causal ecological states = 108 direct configurations before orientation/substrate/current/depth placement grammar.
+- Placement contract: substrate-, slope-, light-, current- and disturbance-aware. Growth must remain causal: exposed/current-facing filter geometry, photic producers on light-access surfaces, detritus in lee zones, fouling at persistent wet interfaces, decomposers near organic/mineral resource evidence. No random scatter/grunge ecology.
+- DoD: stable IDs, metre-scale bounds, ecological role, substrate/depth/current constraints, variants/states, UV/materials/transforms, soft/no-collision policy unless gameplay requires otherwise, LOD strategy, deterministic placement grammar, traversal-clearance QA, receipt and reproducible generator.
+- Engine gate: population simulation, spawning, acoustic behavior, ecological persistence/save-state, streaming/HLOD thresholds and target-GPU qualification remain `BLOCKED/PENDING` until engine/gameplay authority.
 
 ## Current status
-`X100_PRODUCTION_ACTIVE`: current wave closes the settlement-machinery zero without inventing decorative sci-fi machinery.
+`X100_PRODUCTION_ACTIVE`: machinery is structurally closed; current wave is repairing the near-zero producer/decomposer layer without inventing a complete trophic canon.
