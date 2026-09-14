@@ -1,0 +1,69 @@
+workunit_id: AUR-X100-PLAIN-STORY-SITES-001
+parent_claim: CLM-AURORA-WORLD-001
+owner: AGENT-02-AURORA
+branch: art/world-aurora-veil-001
+world_id: aurora
+region_id: AUR_R02_REPETITION_PLAIN
+status: CLAIMED
+protocol: EXOVANT-X100-v1
+scope_key: aurora/plain/accident-rescue-story-sites
+priority: P1_MISSION_ENVIRONMENT
+created_at: 2026-09-14T11:40:30+02:00
+remote_project_id: d6488148-8547-4ffe-b63d-e5fbec3a339c
+remote_base_revision: 31
+
+north_star: >-
+  Turn Q_AURORA_M02 and Q_AURORA_M03 into physically readable environmental sites: one accident echo set and one rescue-window site, each with stable geometry, local temporal state variants and before/during/after consequences that teach the player the world's bounded time rules without text.
+
+canon_basis:
+  - Llanura de las Repeticiones contains overlapping local events.
+  - Q_AURORA_M02 requires delayed footprints, an accident echo set and readable repetition field.
+  - Q_AURORA_M03 requires two access-window structures and rescue-site states.
+  - Aurora temporal effects are local/bounded; global rewind is forbidden.
+
+includes:
+  - accident site base geometry and debris family
+  - accident PRE_EVENT / ECHO_ACTIVE / AFTERMATH states
+  - rescue site with two physically distinct access-window structures
+  - rescue CLOSED / OPEN_WINDOW / COLLAPSED_OR_MISSED states
+  - causal debris, repair/emergency equipment and route evidence
+  - local collision/clearance proxies and temporal authority metadata
+  - LOD contracts for repeated debris/support families
+  - deterministic placement away from antelope proof and field cores
+  - generator, QA receipt and handoff
+
+excludes:
+  - antelope family and footprint implementation
+  - global temporal runtime/save mutation
+  - new missions or story outcomes
+  - NPC hero modeling
+  - AEON content
+  - terrain topology changes
+  - engine-specific runtime before EXO-012
+
+quality_rules:
+  - no random wreckage; every debris piece maps to an identifiable failed assembly
+  - before/during/after states must preserve common stable asset IDs
+  - access windows must be readable through geometry/clearance, not only color
+  - accident and rescue spaces must remain traversable at player scale where intended
+  - temporal state swaps stay local to each site
+
+family_dod:
+  - accident site with >= 3 authored states
+  - rescue site with >= 3 authored states and 2 access-window structures
+  - >= 8 reusable debris/support/emergency module families total
+  - collision/clearance contracts separated from render geometry
+  - stable state IDs and local temporal metadata
+  - GLB export smoke pass
+  - structural + Eevee technical evidence
+  - generator + QA persisted
+  - HUMAN GATE-ART remains separate
+
+blocked_by:
+  - gameplay scripting/audio integration
+  - EXO-012 engine import
+  - target hardware performance
+  - human art approval
+
+stop_condition: >-
+  Remain CLAIMED until Camp history workunit closes; then execute if remote revision is still collision-free.
