@@ -1,17 +1,22 @@
 {
-  "schema": "exovant.umbra.validation.v4",
+  "schema": "exovant.umbra.validation.v5",
   "claim": "CLM-W04-WORLD-UMBRA-001",
   "owner": "AGENT-UMBRA-04",
   "branch": "art/world-umbra-001",
-  "truth_state": "X100_PRODUCTION_WORLD_40_86_PERCENT_NOT_FINAL_AAAA",
+  "truth_state": "X100_PRODUCTION_WORLD_42_41_PERCENT_LOCAL_DIAGNOSTIC_NOT_FINAL_AAAA",
   "coordination": {
     "role": "WORLD_OWNER",
+    "registry_status_at_last_readback": "ACTIVE",
+    "registry_owner": "AGENT-UMBRA-04",
+    "registry_epoch": 1,
     "owner_ack_comment": "https://github.com/rotprods/-/issues/7#issuecomment-5648349781",
-    "registry_readback": "ACTIVE_OWNER_AGENT_UMBRA_04_EPOCH_1_AT_LAST_READBACK",
     "linear": "ROT-119",
     "pr": 16,
-    "last_reconciled_main": "26ae20f5d1b47d1efa0d54b20124ed93cbc0b43e",
-    "reconciliation_merge": "8ee7d335754400f2b4847dfc966ced7dfdbf7815",
+    "global_x100_main": "8c01136aa14f89e177ff1216d1993d62ea963ad3",
+    "global_x100_opportunity": "UMBRA-X100-SYSTEMIC-DENSITY",
+    "global_portfolio_rank": 3,
+    "global_dominant_dimension": "material_causality",
+    "reconciliation_merge": "b622f0694b1f14bc2d1a0a3324d5ca13c5569d72",
     "no_force_update": true,
     "ci_policy": "MANUAL_COST_QUARANTINE_WORKFLOW_DISPATCH_ONLY",
     "custody_contract": "MR-EXO-001"
@@ -19,67 +24,77 @@
   "verified_history": {
     "wave1": "PASS_PRIMARY_AND_INDEPENDENT_REPLAY",
     "wave2": "PASS_PRIMARY_AND_INDEPENDENT_REPLAY",
+    "wave2_exact_upgrade_source_in_repo": "MISSING_RECONSTRUCTION_DEBT",
     "x100_independent_replay": "PENDING_BATCH_REPLAY"
   },
   "x100": {
-    "completeness_percent": 40.86,
-    "classification": "PRODUCTION_WORLD",
-    "scoring": "GEOMETRIC_MEAN_MULTIPLICATIVE_DIMENSIONS",
+    "local_diagnostic_percent": 42.41,
+    "local_classification": "PRODUCTION_WORLD",
+    "global_strict_score_relation": "SEPARATE_AUTHORITY_DO_NOT_CONFLATE",
     "primary_project_id": "7ab99682-8777-4143-8ae0-1fbb178ccafb",
-    "primary_revision": 15,
-    "checkpoint": "X100_HABITATION_ANNEX_QA_FIXED_001",
+    "primary_revision": 16,
+    "checkpoint": "X100_MATERIAL_CAUSALITY_FOUNDATION_001",
     "objects": 4871,
     "mesh_objects": 4329,
-    "materials": 13,
+    "mesh_datablocks": 788,
+    "materials": 37,
+    "shared_mesh_datablocks": 608,
     "bad_object_scales": 0,
     "zero_dimension_meshes": 0,
-    "blend": {"bytes": 15793297, "etag": "40a130a848aae5e92040d315a0214d41"},
-    "glb": {"bytes": 4566312, "etag": "4ad0ffd268d88aef562677d87ae09fde"},
-    "service_ecosystem": {
-      "families": 10,
-      "library_roots": 90,
-      "status": "DONE_FOUNDATION"
-    },
-    "service_yards": {
-      "count": 3,
-      "status": "DONE_FOUNDATION"
-    },
-    "damage_abandonment": {
-      "roots": 60,
-      "status": "DONE_FOUNDATION_CAUSAL_FAILURES"
-    },
-    "architecture_interface": {
-      "families": 10,
-      "variants": "S_M_L_X_STANDARD_WIND_SHIELDED_FIELD_MODIFIED",
-      "status": "DONE_FOUNDATION"
-    },
+    "blend": {"bytes": 16468932, "etag": "95b4818e0a8858e2ac37c4794bdc177a"},
+    "glb": {"bytes": 4649568, "etag": "140b38ad798295ba71f2bfa75e61ad1c"},
+    "service_ecosystem": {"families": 10, "library_roots": 90, "status": "PASS_FOUNDATION"},
+    "service_yards": {"count": 3, "status": "PASS_FOUNDATION"},
+    "damage_abandonment": {"roots": 60, "status": "PASS_CAUSAL_FOUNDATION"},
+    "architecture_interface": {"families": 10, "status": "PASS_FOUNDATION"},
     "microdetail": {
       "families": 10,
       "scene_status": "AUTHORITATIVE_LIBRARY_EXISTS",
-      "persistence": "PARTIAL_GENERATOR_RECEIPT_PENDING",
-      "placement": "RULE_DRIVEN_NEVER_RANDOM_SCATTER"
+      "placement": "RULE_DRIVEN_NEVER_RANDOM_SCATTER",
+      "repo_reproducibility": "PENDING_EXACT_GENERATOR_RECEIPT"
     },
     "site_history": {
       "clusters": 5,
       "integrated_roots": 31,
-      "temporal_contract": "ERA_0_ORIGINAL__ERA_1_MODIFICATION__ERA_2_CURRENT_DAMAGE_REPAIR",
-      "terrain_contact": "PASS_31_OF_31_PLUS_0.04M"
+      "terrain_contact": "PASS_31_OF_31_PLUS_0.04M",
+      "temporal_contract": "ERA0_ORIGINAL__ERA1_MODIFICATION__ERA2_CURRENT_DAMAGE_REPAIR"
     },
     "habitation_culture": {
       "families": 10,
       "library_roots": 90,
-      "states": "SERVICED_LIVED_IN_FIELD_REPAIRED",
-      "sizes": "S_M_L",
       "library_contact": "PASS_90_OF_90_PLUS_0.03M",
-      "status": "DONE_FOUNDATION"
+      "status": "PASS_FOUNDATION"
     },
     "habitation_annex": {
       "domestic_roots": 12,
       "architecture_roots": 20,
       "terrain_contact": "PASS_32_OF_32_PLUS_0.03M",
-      "refuge_blockout_defect": "DETECTED_CLOSED_8_VERTEX_6_FACE_SOLID",
-      "correction": "DOMESTIC_COMPOSITION_RELOCATED_OUTSIDE_SOLID_TO_VISIBLE_LEEWARD_ANNEX",
-      "status": "DONE_FOUNDATION"
+      "detected_defect": "REFUGE_BASE_IS_CLOSED_8_VERTEX_6_FACE_BLOCKOUT_SOLID",
+      "correction": "RELOCATED_TO_VISIBLE_LEEWARD_ANNEX",
+      "status": "PASS_FOUNDATION"
+    },
+    "material_causality": {
+      "status": "PASS_PORTABLE_FOUNDATION_NOT_FINAL_PBR",
+      "base_roles": 6,
+      "state_variants": 24,
+      "site_assignments": 485,
+      "states": ["COLD_ABRADED", "THERMAL_CYCLED", "SERVICE_RENEWED", "FIELD_REPAIRED"],
+      "assignments_by_state": {
+        "COLD_ABRADED": 61,
+        "THERMAL_CYCLED": 84,
+        "SERVICE_RENEWED": 58,
+        "FIELD_REPAIRED": 282
+      },
+      "assignments_by_role": {
+        "METAL": 219,
+        "FABRIC": 38,
+        "IVORY_REPAIR": 191,
+        "THERMAL_COPPER": 11,
+        "GASKET": 18,
+        "THERMAL_CERAMIC": 8
+      },
+      "mesh_sharing_preserved": true,
+      "final_directional_masks_uv_pbr": "PENDING_RUNTIME_TARGET"
     }
   },
   "qa": {
@@ -89,9 +104,9 @@
     "site_history_contact": "PASS",
     "habitation_library_contact": "PASS",
     "habitation_annex_contact": "PASS",
+    "material_causality_assignment": "PASS_SEMANTIC_ROOT_RULES",
     "direct_pixel_art_inspection": "REVIEW_NOT_CLAIMED",
     "review_artifact_id": "21c57b605bb5715b889c8394f4214cc9",
-    "review_camera": "TOO_TIGHT_FOR_EXTREME_CANOPY_BAYS",
     "human_art_review": "PENDING"
   },
   "epistemic_blocks": {
@@ -109,21 +124,24 @@
     "last_green_pre_x100_native_gates": "PASS_IMPORT_STATE_WORLD_INPUT_SMOKE",
     "automatic_triggers": "DISABLED_BY_COST_QUARANTINE",
     "post_x100_manifest": "PENDING_EXACT_REFRESH",
-    "post_x100_manual_gauntlet": "PENDING_AFTER_BATCH_AND_MANIFEST"
+    "manifest_note": "Do not hand-author guessed SHA256 values. Exact checkout/project_control refresh transport is not currently available in this session.",
+    "post_x100_manual_gauntlet": "PENDING_AFTER_EXACT_MANIFEST"
   },
   "gates": {
     "canon_separation": "PASS",
     "claim_collision": "PASS_ACTIVE_WORLD_OWNER_AT_LAST_READBACK",
     "fleet_owner_ack": "PASS_ADMITTED",
+    "global_x100_director_alignment": "PASS_RANK3_MATERIAL_CAUSALITY_WAVE_EXECUTED",
     "metric_scale": "PASS",
     "x100_structural_qa": "PASS_LOCAL_OBJECT_CONTACT_DEGENERACY_GATES",
-    "x100_source_persistence": "PASS_EXCEPT_MICRODETAIL_EXACT_GENERATOR_RECEIPT",
+    "material_causality_foundation": "PASS",
+    "x100_source_persistence": "PARTIAL_MICRODETAIL_AND_WAVE2_EXACT_SOURCE_DEBT",
     "x100_independent_replay": "PENDING",
-    "post_x100_repo_continuity": "PENDING_MANIFEST",
+    "post_x100_repo_continuity": "PENDING_EXACT_MANIFEST",
     "post_x100_native_gauntlet": "PENDING_MANUAL_DISPATCH",
     "direct_pixel_art": "REVIEW_NOT_CLAIMED",
     "provider_independent_custody": "BLOCKED",
-    "final_family_dod": "NOT_MET_UV_COLLISION_LOD_ENGINE_VISUAL_GATES_OPEN"
+    "family_complete": "NOT_MET_UV_COLLISION_LOD_ENGINE_VISUAL_GATES_OPEN"
   },
-  "overall": "X100_PRODUCTION_WORLD_40_86_PERCENT_WITH_STRONG_SYSTEMIC_FOUNDATIONS_AND_OPEN_REPLAY_CI_ART_RUNTIME_CUSTODY_CANON_GATES"
+  "overall": "X100_R16_MATERIAL_CAUSALITY_PRODUCTION_WORLD_FOUNDATION_WITH_OPEN_REPLAY_MANIFEST_CI_ART_RUNTIME_CUSTODY_AND_CANON_GATES"
 }
