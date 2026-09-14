@@ -1,0 +1,46 @@
+{
+  "schema_version": 2,
+  "world": "elysium",
+  "owner": "ART-ELYSIUM-001",
+  "remote_revision": 25,
+  "estimate_kind": "HEURISTIC_GEOMETRIC_MEAN_NOT_CANON",
+  "world_completeness_estimate": 0.486,
+  "classification": "PRODUCTION_WORLD",
+  "dimensions": {
+    "macro_world": {"score": 0.42, "evidence": "R21 reversible L1/L2 regional topology, 17 planning cells, HLOD skyline/transit/mirror/colony proxies; total habitat envelope remains unresolved"},
+    "meso_architecture": {"score": 0.55, "evidence": "Avenida modular grammar, hero threshold/vestibule, EDEN arena systems, R19 four assembled domestic rooms"},
+    "micro_assets": {"score": 0.50, "evidence": "R22 ten cultural families plus canonical story props, domestic service/furniture and hero construction detail"},
+    "ecology": {"score": 0.52, "evidence": "R20 maintenance-root systemic family plus R23 all three remaining canonical synthetic ecology agents with sockets/LOD/envelopes"},
+    "civilization": {"score": 0.56, "evidence": "construction/manufacturing grammar, R19 ancient-profile domestic system, R22 culture/story object layer"},
+    "gameplay": {"score": 0.36, "evidence": "EDEN spatial/motion/collision candidates, code-derived player clearances and R24 adversary reach/collision contracts; native import/traversal still transport-blocked"},
+    "material_causality": {"score": 0.62, "evidence": "layered wall construction, causal joints/repairs, packed tileable PBR candidate maps, metric UV and localized wear"},
+    "variation": {"score": 0.72, "evidence": "R19 domestic combinatorics, R20 ecology infrastructure states/routes, R22 cultural states and constrained contextual variants"},
+    "temporal_states": {"score": 0.52, "evidence": "domestic/cultural/root/adversary causal state contracts; world-history coverage still not universal"},
+    "storytelling": {"score": 0.54, "evidence": "human repair traces, La taza rota, preference audit, consent evidence, climate choice and state witnesses"},
+    "audio_visual_language": {"score": 0.38, "evidence": "R25 eight physically anchored audio-source families, three world states, region zones and four portable light families; runtime audio mixer absent"},
+    "optimization": {"score": 0.48, "evidence": "shared meshes, portable PBR candidates, collision separation, multiple LOD candidate families and HLOD planning"},
+    "reusability": {"score": 0.80, "evidence": "modular architecture plus R19/R20/R21/R22/R23/R24 systemic family contracts and placement rules"},
+    "qa": {"score": 0.46, "evidence": "metric/structural/contact/render audits and prior repository Gauntlet PASS; current R21-R25 batch still awaiting manifest refresh/CI and engine readback"}
+  },
+  "current_hard_block": {
+    "gate": "ENGINE_IMPORT",
+    "classification": "BLOCKED_BY_TRANSPORT_RUNTIME",
+    "evidence": "signed remote GLB exists but local execution environment cannot resolve the storage host DNS; do not burn repeated CI solely as transfer bridge"
+  },
+  "highest_value_gaps": [
+    {"rank": 1, "domain": "gameplay_engine", "reason": "multiplicative low score; target-runtime import/traversal remains blocked by transport in current VM"},
+    {"rank": 2, "domain": "canonical_npcs", "reason": "El Jardinero, Noa Cero and Elías Ret remain unmodeled; human base anatomy requires qualified source to avoid sculpt slop"},
+    {"rank": 3, "domain": "transport", "reason": "Tranvía custodio still proxy-level; production vehicle family can improve gameplay, civilization, microdetail and reusability"},
+    {"rank": 4, "domain": "temporal_world_history", "reason": "ERA0/ERA1/ERA2 needs broader spatial propagation beyond current story/domestic samples"},
+    {"rank": 5, "domain": "qa_art", "reason": "no direct GATE-ART/human close-mid-far review and no engine readback for latest systemic expansion"}
+  ],
+  "x100_systemic_receipts": {
+    "domestic_r19": {"credible_lower_bound": 19200, "full_bound": 115200},
+    "maintenance_root_r20": {"credible_configurations": 144},
+    "macro_r21": {"canonical_regions": 3, "planning_streaming_cells": 17},
+    "culture_r22": {"families": 10, "variants": 3, "states": 4, "configuration_floor": 120},
+    "synthetic_ecology_r23": {"species": 3, "functional_states": 3, "conditions": 3, "region_contexts": 3, "contextual_configurations": 81},
+    "adversaries_r24": {"archetypes": 3, "states": 3, "region_contexts": 3, "contextual_configurations": 27},
+    "sensory_r25": {"source_families": 8, "world_states": 3, "region_contexts": 3, "contextual_hook_combinations": 72}
+  }
+}

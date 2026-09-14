@@ -1,0 +1,105 @@
+{
+  "schema_version": 1,
+  "receipt_id": "ART-ELYSIUM-001-MATERIAL-R6",
+  "world": "elysium",
+  "world_name": "ELYSIUM NULL",
+  "status": "LOOKDEV_CANDIDATE_VISUAL_APPROVAL_PENDING",
+  "remote_scene": {
+    "project_id": "00152eea-2da0-40ec-8666-78d6764c718f",
+    "revision": 6,
+    "operation_id": "ART-ELYSIUM-001.r6-white-material-proof",
+    "blender": "5.2.0 LTS"
+  },
+  "candidate_materials": {
+    "C01": {
+      "material": "MAT_Elysium_WHITE_C01_SinteredCeramic",
+      "base_color": [0.78,0.79,0.785],
+      "metallic": 0.0,
+      "roughness": 0.34,
+      "coat_weight": 0.06,
+      "coat_roughness": 0.12,
+      "manufacturing_hypothesis": "sintered aluminosilicate ceramic facing",
+      "role": "dominant maintained exterior/interior facing",
+      "recommendation": "PRIMARY_CANDIDATE_PENDING_REVIEW"
+    },
+    "C02": {
+      "material": "MAT_Elysium_WHITE_C02_MineralComposite",
+      "base_color": [0.66,0.675,0.68],
+      "metallic": 0.0,
+      "roughness": 0.52,
+      "coat_weight": 0.0,
+      "manufacturing_hypothesis": "mineral-filled structural composite",
+      "role": "load-bearing/recessed matte body",
+      "recommendation": "SECONDARY_STRUCTURAL_CANDIDATE"
+    },
+    "C03": {
+      "material": "MAT_Elysium_WHITE_C03_ServiceGlaze",
+      "base_color": [0.83,0.835,0.825],
+      "metallic": 0.0,
+      "roughness": 0.22,
+      "coat_weight": 0.14,
+      "coat_roughness": 0.08,
+      "manufacturing_hypothesis": "maintained ceramic glaze / hygienic service surface",
+      "role": "rare touched/service surfaces, not universal envelope",
+      "recommendation": "ACCENT_ONLY_CANDIDATE"
+    }
+  },
+  "construction_hypothesis": {
+    "total_panel_system_thickness_m": 0.24,
+    "ceramic_face_m": 0.012,
+    "mineral_core_m": 0.18,
+    "metal_backer_m": 0.004,
+    "joint_reveal_m": 0.016,
+    "epistemic": "PROPOSAL"
+  },
+  "proof_geometry": {
+    "candidate_panel_dimensions_m": [2.4,0.24,3.0],
+    "proof_collection_objects": 17,
+    "light_camera_collection_objects": 6,
+    "cameras": {
+      "CAM_MAT_CLOSE": {"lens_mm":70,"location_m":[88,-96,2.4]},
+      "CAM_MAT_MID": {"lens_mm":55,"location_m":[90,-103,4.2]},
+      "CAM_MAT_FAR": {"lens_mm":48,"location_m":[91,-115,7.2]}
+    }
+  },
+  "remote_artifacts": {
+    "blend": {"size_bytes":3424296,"etag":"a20e80769a9a200abcfd8f27406a1cfe"},
+    "glb": {"size_bytes":3355212,"etag":"ff8895eebbfca8eb84998357d01cf58d"},
+    "close": {"artifact_id":"0334173f0a79b93ee93ccce06f620b97","size_bytes":506911,"resolution":[960,540]},
+    "mid": {"artifact_id":"89e63ab2e721798392f9aeb5ba7840c7","size_bytes":516120,"resolution":[960,540]},
+    "far": {"artifact_id":"e7a6c54641ea26ee4f4da24a1d24b46c","size_bytes":515207,"resolution":[960,540]}
+  },
+  "objective_render_range_qa": {
+    "operation_id": "ART-ELYSIUM-001.r6-render-range-qa",
+    "result": "INCONCLUSIVE",
+    "close": "NO_PIXEL_BUFFER",
+    "mid": "NO_PIXEL_BUFFER",
+    "far": "NO_PIXEL_BUFFER",
+    "interpretation": "The query worker did not expose readable Render Result pixels. This is preserved as an unqualified QA attempt, not a visual pass."
+  },
+  "gates": {
+    "material_parameters": "PASS_STRUCTURAL",
+    "panel_dimensions": "PASS_STRUCTURAL",
+    "cutaway_dimensions": "PASS_STRUCTURAL",
+    "joint_dimension": "PASS_STRUCTURAL",
+    "portable_principled_shader": "PASS",
+    "external_texture_dependency": "NONE",
+    "editable_source": "PASS_REMOTE",
+    "portable_glb": "PASS_REMOTE",
+    "render_artifact_generation": "PASS",
+    "direct_visual_review": "PENDING",
+    "target_engine_translation": "PENDING",
+    "texture_memory_cost": "PENDING",
+    "gate_art": "PENDING"
+  },
+  "non_claims": [
+    "Numeric PBR values are proposals, not certified physical measurements or immutable canon.",
+    "Generated renders are not GATE-ART approval.",
+    "C01/C02/C03 have not been propagated across the full world.",
+    "No target-engine material or GPU performance qualification was performed."
+  ],
+  "sources": [
+    "art_source/worlds/elysium_null/MATERIAL_SYSTEM.md",
+    "art_source/worlds/elysium_null/scripts/add_white_material_proof.py"
+  ]
+}

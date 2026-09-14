@@ -1,0 +1,110 @@
+{
+  "schema_version": 1,
+  "world_id": "elysium",
+  "world_name": "ELYSIUM NULL",
+  "owner": "ART-ELYSIUM-001",
+  "branch": "art/world-elysium-null-001",
+  "status": "FOUNDATION_WAVE_0",
+  "source_base_sha": "4c2fa044080004609ea6df45f34b2a784536507a",
+  "remote_blender": {
+    "provider": "Higgsfield 3D Jutsu",
+    "project_id": "00152eea-2da0-40ec-8666-78d6764c718f",
+    "validated_revision": 1,
+    "blender": "5.2.0 LTS",
+    "units": "METRIC_1BU_1M"
+  },
+  "epistemic_contract": {
+    "canon_sources": [
+      "design/EXOVANT_DATA.json",
+      "design/EXOVANT_BIBLIA.md",
+      "_project_intelligence/PLAN.json",
+      "docs/ART_PRODUCTION.md"
+    ],
+    "rule": "Generated dimensions, visuals and production choices not present in canon are PROPOSAL until reviewed."
+  },
+  "coverage": {
+    "macro_world": "IN_PROGRESS",
+    "regions": "IN_PROGRESS",
+    "architecture": "BLOCKOUT",
+    "interiors": "TODO",
+    "transport": "BLOCKOUT",
+    "materials": "BLOCKOUT",
+    "vegetation": "BLOCKOUT",
+    "ecology": "TODO",
+    "npcs": "TODO",
+    "enemies": "TODO",
+    "boss": "BLOCKOUT",
+    "props_storytelling": "BLOCKOUT",
+    "collision": "TODO",
+    "lod_streaming": "TODO",
+    "engine_integration": "TODO",
+    "art_review": "TODO",
+    "performance": "TODO"
+  },
+  "assets": [
+    {"id":"ELYS-WORLD-001","category":"world","name":"Habitat macro shell","priority":"P0","tier":"D","status":"TODO","epistemic":"PROPOSAL_REQUIRED","dod":"Physical/topological envelope chosen without pretending Elysium is a natural planet; streaming hierarchy documented."},
+    {"id":"ELYS-WORLD-002","category":"world","name":"Alba Nula artificial-source lighting rig","priority":"P1","tier":"B","status":"BLOCKOUT","epistemic":"MIXED","dod":"Artificial luminary direction produces stable gameplay readability and has an engine-equivalent lighting test."},
+    {"id":"ELYS-WORLD-003","category":"world","name":"Maintenance mirror vista system","priority":"P2","tier":"D","status":"TODO","epistemic":"CANON_CONCEPT","dod":"Vista assets preserve canonical mirror/reserve-colony read with low-cost distant representation."},
+
+    {"id":"ELYS-LVL-AVN-001","category":"level","name":"Avenida del Recibimiento master route","priority":"P0","tier":"A","status":"BLOCKOUT","epistemic":"MIXED","dod":"Playable route communicates flawless services/absence; main/alternate circulation readable; scale validated in engine."},
+    {"id":"ELYS-LVL-AVN-002","category":"level","name":"Reception transit gates","priority":"P1","tier":"B","status":"BLOCKOUT","epistemic":"PROPOSAL","dod":"Modular gate family has real dimensions, pivots, collision and route-clearance test."},
+    {"id":"ELYS-LVL-AVN-003","category":"level","name":"Reception service interfaces","priority":"P1","tier":"B","status":"TODO","epistemic":"PROPOSAL","dod":"Service stations show hospitality functions without generic UI clutter; interaction envelopes defined."},
+    {"id":"ELYS-LVL-CAS-001","category":"level","name":"Casas sin Desgaste district shell","priority":"P0","tier":"A","status":"TODO","epistemic":"CANON_CONCEPT","dod":"District supports obsolete-profile personalization and route progression without relying on palette-only variation."},
+    {"id":"ELYS-LVL-CAS-002","category":"level","name":"Domestic profile archetype A","priority":"P1","tier":"A","status":"TODO","epistemic":"PROPOSAL","dod":"Complete room kit and prop logic tied to one frozen preference profile; physically buildable and reusable."},
+    {"id":"ELYS-LVL-CAS-003","category":"level","name":"Domestic profile archetype B","priority":"P2","tier":"B","status":"TODO","epistemic":"PROPOSAL","dod":"Meaningfully different preference logic using the same construction system; no cosmetic-only reskin."},
+    {"id":"ELYS-LVL-EDN-001","category":"level","name":"Jardín de EDEN 48 m arena","priority":"P0","tier":"S","status":"BLOCKOUT","epistemic":"CANON_SIZE","dod":"Exactly 48 m diameter; state variants preserve guaranteed corridors; collision/nav/combat camera tested."},
+    {"id":"ELYS-LVL-EDN-002","category":"level","name":"EDEN movable garden module family","priority":"P0","tier":"A","status":"BLOCKOUT","epistemic":"MIXED","dod":"At least 3 stateable modules with preview/target transforms, collision policy and readable telegraph envelopes."},
+    {"id":"ELYS-LVL-EDN-003","category":"level","name":"EDEN control-center threshold","priority":"P1","tier":"A","status":"TODO","epistemic":"PROPOSAL","dod":"Transition makes arena/control function legible and contains no accidental combat choke."},
+
+    {"id":"ELYS-ARCH-001","category":"architecture","name":"White arcology structural core kit","priority":"P0","tier":"A","status":"BLOCKOUT","epistemic":"PROPOSAL","dod":"Grid/pivots/snapping documented; massing, access and structural logic validated with a multi-module building."},
+    {"id":"ELYS-ARCH-002","category":"architecture","name":"White envelope panel family","priority":"P0","tier":"A","status":"TODO","epistemic":"PROPOSAL","dod":"Panel system uses controlled seams/reveals and real construction thickness; no decorative panel noise."},
+    {"id":"ELYS-ARCH-003","category":"architecture","name":"Service-spine family","priority":"P1","tier":"B","status":"BLOCKOUT","epistemic":"PROPOSAL","dod":"Maintenance access, routing and material interfaces are physically plausible and reusable."},
+    {"id":"ELYS-ARCH-004","category":"architecture","name":"Canopy / sheltered arrival family","priority":"P1","tier":"B","status":"BLOCKOUT","epistemic":"PROPOSAL","dod":"Human/weather function is clear; supports modular spans and collision."},
+    {"id":"ELYS-ARCH-005","category":"architecture","name":"Bridge / elevated circulation family","priority":"P1","tier":"B","status":"BLOCKOUT","epistemic":"PROPOSAL","dod":"Clear structural support, guard safety and player traversal dimensions; LOD strategy included."},
+    {"id":"ELYS-ARCH-006","category":"architecture","name":"Maintenance hatch / access family","priority":"P1","tier":"B","status":"TODO","epistemic":"PROPOSAL","dod":"Functional access sizes, hinges/seals and service zones; consistent across arcology kits."},
+    {"id":"ELYS-ARCH-007","category":"architecture","name":"Domestic wall-floor-ceiling kit","priority":"P0","tier":"A","status":"TODO","epistemic":"PROPOSAL","dod":"Complete interior kit with corners/transitions/doors, lighting recesses and profile-variant sockets."},
+
+    {"id":"ELYS-MAT-001","category":"material","name":"White ceramic/mineral envelope","priority":"P0","tier":"A","status":"BLOCKOUT","epistemic":"PROPOSAL","dod":"PBR material calibrated under target lighting; close/mid/far read avoids toy-plastic response."},
+    {"id":"ELYS-MAT-002","category":"material","name":"Satin structural metal","priority":"P1","tier":"B","status":"BLOCKOUT","epistemic":"PROPOSAL","dod":"Manufacturing/wear logic documented and calibrated."},
+    {"id":"ELYS-MAT-003","category":"material","name":"Dark service recess material","priority":"P1","tier":"B","status":"BLOCKOUT","epistemic":"PROPOSAL","dod":"Supports depth/readability without turning world into black-white generic sci-fi."},
+    {"id":"ELYS-MAT-004","category":"material","name":"Designed vegetation material family","priority":"P1","tier":"A","status":"BLOCKOUT","epistemic":"PROPOSAL","dod":"Leaf/bark/maintenance interfaces support species variants and engine foliage requirements."},
+    {"id":"ELYS-MAT-005","category":"material","name":"Human repair / anomaly material family","priority":"P1","tier":"A","status":"BLOCKOUT","epistemic":"PROPOSAL","dod":"Rare repair materials remain high-information and use causal wear, not decorative contrast."},
+
+    {"id":"ELYS-VEG-001","category":"vegetation","name":"Repeated garden bed kit","priority":"P0","tier":"A","status":"BLOCKOUT","epistemic":"CANON_CONCEPT","dod":"Garden modules repeat intentionally; irrigation/nutrient/service access exists; instancing strategy defined."},
+    {"id":"ELYS-VEG-002","category":"vegetation","name":"Identical flower system","priority":"P1","tier":"B","status":"TODO","epistemic":"PROPOSAL","dod":"Variation is deliberately bounded and detectable by pollen automata; LOD/impostor strategy included."},
+    {"id":"ELYS-VEG-003","category":"vegetation","name":"Raíz de mantenimiento","priority":"P1","tier":"A","status":"TODO","epistemic":"CANON_CONCEPT","dod":"Synthetic support root has clear biological/service role and repeatable attachment interfaces."},
+
+    {"id":"ELYS-ECO-001","category":"ecology","name":"Autómata de polen","priority":"P1","tier":"A","status":"TODO","epistemic":"CANON","dod":"Production model supports variation-detection behavior, animation interfaces, LOD and readable maintenance function."},
+    {"id":"ELYS-ECO-002","category":"ecology","name":"Ave de porcelana","priority":"P1","tier":"A","status":"TODO","epistemic":"CANON","dod":"Flight/perch anatomy and route-guidance function readable; rig and LOD interfaces complete."},
+    {"id":"ELYS-ECO-003","category":"ecology","name":"Mariposa de índice","priority":"P2","tier":"B","status":"TODO","epistemic":"CANON","dod":"Small-scale asset remains readable through motion/material cue; swarm/LOD cost documented."},
+    {"id":"ELYS-ECO-004","category":"ecology","name":"Raíz de mantenimiento ecosystem set","priority":"P1","tier":"B","status":"TODO","epistemic":"CANON","dod":"Modular synthetic-root ecology integrates with garden/architecture service zones."},
+
+    {"id":"ELYS-NPC-001","category":"npc","name":"El Jardinero","priority":"P0","tier":"S","status":"TODO","epistemic":"CANON","dod":"Hero character model/rig/wardrobe communicates hospitable control; close/mid/far silhouette approved."},
+    {"id":"ELYS-NPC-002","category":"npc","name":"Noa Cero","priority":"P0","tier":"S","status":"TODO","epistemic":"CANON","dod":"Hero character embodies chosen imperfection through causal wardrobe/repair/body-storytelling, not generic grime."},
+    {"id":"ELYS-NPC-003","category":"npc","name":"Elías Ret","priority":"P1","tier":"A","status":"TODO","epistemic":"CANON","dod":"Archived technician visual state and technical role are readable; rig/LOD/materials complete."},
+
+    {"id":"ELYS-EN-001","category":"enemy","name":"Custodio de comodidad","priority":"P0","tier":"A","status":"TODO","epistemic":"CANON","dod":"Service-first silhouette, correction/immobilization tool, rig, anticipation poses, LOD and hit interfaces complete."},
+    {"id":"ELYS-EN-002","category":"enemy","name":"Podador blanco","priority":"P0","tier":"A","status":"TODO","epistemic":"CANON","dod":"Pruning function and cover-removal tool physically legible; attack/readability and collision interfaces complete."},
+    {"id":"ELYS-EN-003","category":"enemy","name":"Doble doméstico","priority":"P1","tier":"A","status":"TODO","epistemic":"CANON","dod":"Modular mimic system can reproduce bounded player-preference cues without cloning protected/external IP."},
+
+    {"id":"ELYS-BOSS-001","category":"boss","name":"EDEN hero body","priority":"P0","tier":"S","status":"BLOCKOUT","epistemic":"CANON_NAME_PROPOSAL_FORM","dod":"Unique silhouette, physically supported articulation, readable service/correction tools, production topology and rig interfaces."},
+    {"id":"ELYS-BOSS-002","category":"boss","name":"EDEN Poda perfecta arm system","priority":"P0","tier":"S","status":"TODO","epistemic":"CANON_ATTACK","dod":"Geometry/rig supports 0.9 s alignment telegraph and lateral-height response with no clipping."},
+    {"id":"ELYS-BOSS-003","category":"boss","name":"EDEN Reubicación arena system","priority":"P0","tier":"A","status":"BLOCKOUT","epistemic":"CANON_ATTACK","dod":"Modules expose destination preview and final transforms; 1.5 s telegraph spatially readable."},
+    {"id":"ELYS-BOSS-004","category":"boss","name":"EDEN Abrazo de servicio interface","priority":"P0","tier":"S","status":"TODO","epistemic":"CANON_ATTACK","dod":"Hands/service manipulators support 1.1 s telegraph and imperfect-object line-break interaction."},
+
+    {"id":"ELYS-VEH-001","category":"vehicle","name":"Tranvía custodio","priority":"P1","tier":"A","status":"BLOCKOUT","epistemic":"CANON","dod":"Production vehicle has dimensions, access, propulsion/guideway logic, reprogrammable route interface, collision and LOD."},
+    {"id":"ELYS-INF-001","category":"infrastructure","name":"Custodian tram guideway","priority":"P1","tier":"B","status":"BLOCKOUT","epistemic":"PROPOSAL","dod":"Guideway connects route, vehicle and maintenance logic; spline/grid/export strategy documented."},
+    {"id":"ELYS-INF-002","category":"infrastructure","name":"Garden nutrient/service network","priority":"P1","tier":"B","status":"TODO","epistemic":"PROPOSAL","dod":"Hidden/visible service hierarchy explains maintained ecology and supports environmental storytelling."},
+
+    {"id":"ELYS-PROP-001","category":"prop","name":"Repaired bench anomaly","priority":"P1","tier":"A","status":"BLOCKOUT","epistemic":"PROPOSAL","dod":"One physically plausible repaired public object demonstrates localized human trace and survives close camera review."},
+    {"id":"ELYS-PROP-002","category":"prop","name":"La taza rota hero prop","priority":"P1","tier":"A","status":"TODO","epistemic":"CANON_SIDE_STORY","dod":"Broken/repaired cup communicates continued relationship through repair method and placement; narrative provenance documented."},
+    {"id":"ELYS-PROP-003","category":"prop","name":"Preference-audit terminal","priority":"P0","tier":"A","status":"TODO","epistemic":"CANON_SYSTEM_PROPOSAL_FORM","dod":"Physical interaction object distinguishes current desire, old record and system assumption without text-only dependency."},
+    {"id":"ELYS-PROP-004","category":"prop","name":"Open-window climate control assembly","priority":"P1","tier":"A","status":"TODO","epistemic":"CANON_SIDE_STORY","dod":"Window/HVAC mechanism can visibly permit an uncomfortable climate choice; state change survives save/load integration later."},
+    {"id":"ELYS-PROP-005","category":"prop","name":"Archived consent evidence set","priority":"P0","tier":"A","status":"TODO","epistemic":"CANON_MISSION","dod":"Evidence props have stable IDs, readable physical provenance and support M03/M04 consequences."},
+
+    {"id":"ELYS-QA-001","category":"technical","name":"Collision proxy pass","priority":"P0","tier":"NA","status":"TODO","epistemic":"PRODUCTION","dod":"Separate collision assets exist for representative route, architecture, tram and EDEN modules; traversal test passes."},
+    {"id":"ELYS-QA-002","category":"technical","name":"LOD/HLOD/streaming policy","priority":"P0","tier":"NA","status":"TODO","epistemic":"PRODUCTION","dod":"Policy matched to chosen engine/hardware; close/mid/far transitions and memory cost measured."},
+    {"id":"ELYS-QA-003","category":"technical","name":"Engine import profile","priority":"P0","tier":"NA","status":"TODO","epistemic":"PRODUCTION","dod":"GLB/source import is reproducible with scale, materials, pivots and naming intact."},
+    {"id":"ELYS-QA-004","category":"technical","name":"GATE-ART review package","priority":"P1","tier":"NA","status":"TODO","epistemic":"PRODUCTION","dod":"Same close/mid/far cameras reviewed in engine with explicit pass/fail notes from creative authority."}
+  ]
+}
