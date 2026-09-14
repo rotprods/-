@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "claim": "CLM-SYLVA-MACRO-001",
+  "source_scene_revision": 22,
+  "source_geometry_fingerprint": "7b1a4c5c1f16c6b3c1319f3da26315c8d359ce97717272c91aa5910effe00939",
+  "status": "CONTRACT_ONLY_NO_HLOD_GEOMETRY",
+  "backend": "ENGINE_TBD",
+  "target_hardware": "UNKNOWN",
+  "purpose": "Protect authored silhouette/traversal/hero features during later feature-aware vista/HLOD generation. This file does not approve distances, triangle budgets, screen-space thresholds or a renderer implementation.",
+  "protected_feature_classes": {
+    "PRIMARY_ROOT_SILHOUETTES": {
+      "asset_ids": ["SYLVA_ROOT_PRIMARY_R01","SYLVA_ROOT_PRIMARY_R02","SYLVA_ROOT_PRIMARY_R03","SYLVA_ROOT_PRIMARY_R04","SYLVA_ROOT_PRIMARY_R05","SYLVA_ROOT_PRIMARY_R06"],
+      "source_contract": "SYLVA_MACRO_ROOT_XSEC_R18_ALL",
+      "rules": [
+        "Preserve centerline endpoint relation and skyline turning points.",
+        "Preserve R16 load-correlated taper trend and R18 non-circular load-bearing silhouette.",
+        "Do not collapse a primary root into a circular tube proxy in a nearer representation.",
+        "Cross-L2 roots reference one authored source; do not duplicate ownership geometry."
+      ]
+    },
+    "HERO_CORES": {
+      "PUERTO": {"center_m":[-3200,-2200,330],"radius_m_proposal":550,"resident_l3":["X0Y1","X1Y1"],"must_preserve":["living arch silhouette","graft enclave massing","approach root relationship"]},
+      "BOSQUE": {"center_m":[0,150,350],"radius_m_proposal":200,"resident_l3":["X1Y1","X1Y2","X2Y1","X2Y2"],"must_preserve":["phrase landmark silhouette","central junction readability","four-L2 junction composition"]},
+      "VESPER": {"center_m":[3200,2300,-220],"radius_m_proposal":400,"resident_l3":["X2Y2","X3Y2"],"must_preserve":["three terrace silhouette","two connector roots","depression/forest-city relationship"]}
+    },
+    "TRAVERSAL": {
+      "route_contract":"SYLVA_NAV_R10",
+      "route_ids":["SYLVA_TRAV_PathGuide_00","SYLVA_TRAV_PathGuide_01","SYLVA_TRAV_PathGuide_02","SYLVA_TRAV_PathGuide_03"],
+      "rules":["Do not alter gameplay collision source.","Near/mid vista representations must preserve visible support under route corridors.","No HLOD proxy becomes authoritative navigation/collision geometry."]
+    },
+    "TERRAIN_SEAMS": {
+      "source_contract":"SYLVA_TERRAIN_STREAM_R12",
+      "rules":["Neighbor representation boundaries require crack-free stitching/skirt policy.","Keep authoritative L3 boundaries compatible with source tile edge coordinates."]
+    }
+  },
+  "qualification_required_before_any_hlod_promotion": [
+    "exact source asset set and revision receipt",
+    "world-space deviation by protected feature class",
+    "screen-space silhouette error at declared cameras/distances",
+    "transition popping/crossfade in selected renderer",
+    "resident draw calls/triangles/VRAM/shader cost on declared hardware",
+    "native traversal while representations switch",
+    "human vista/landmark art review"
+  ],
+  "uniform_percent_decimation": "REJECTED_BY_R14_GEOMETRIC_ERROR_STUDY",
+  "generation_allowed_now": false
+}
