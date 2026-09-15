@@ -1,0 +1,78 @@
+{
+  "schema_version": 1,
+  "receipt_id": "R10_MATERIAL_CONSUMER_PILOT",
+  "world_id": "khepri",
+  "claim_id": "CLM-KHEPRI-WMACRO-001",
+  "master_project_id": "040f0c45-83a7-483c-9ee7-1e31c640a587",
+  "master_revision": 10,
+  "cold_project_id": "4c01fdbb-7093-4229-9a49-8237583280bc",
+  "cold_uv_revision": 7,
+  "uv0": {
+    "contract": "KHP_OPTICAL_UV0_HANDOFF_V1",
+    "meshes": 18,
+    "meters_per_repeat": 4.0,
+    "geometry_sha256_before_after": "41cb03864b03a907c8691de33843f874f1796ba67b0dc02980ad5af9fc60cf86",
+    "uv_sha256_master_cold": "13532b5bb722e7293e5248e061d6e30192a8cf21c21c355abd89095ea26a9c8e",
+    "master_cold_match": true,
+    "geometry_unchanged": true
+  },
+  "material_pilot": {
+    "contract": "KHP_HELIOSTAT_MATERIAL_PILOT_V1",
+    "material_library_source_revision": 4,
+    "resolution": "128_CALIBRATION_ONLY",
+    "bronze": "KHP_MAT_BRONZE_SYNOD_001::service_clean::cast_structural::architectural",
+    "mirror": "KHP_MAT_MIRROR_OPTICAL_001::calibrated::broad_reflector::architectural",
+    "lod0_slot_replacements": 9,
+    "geometry_uv_sha256_before_after": "32274b915360ebcc3a9c1f9fb0f9ee79e2847986b48e6566d81c176b17e35824",
+    "source_texture_hashes_verified": true,
+    "lod1_lod2_binding": "DEFERRED_RUNTIME_LOD_SWITCHING_NOT_QUALIFIED"
+  },
+  "exact_artifacts": {
+    "glb": {
+      "bytes": 590844,
+      "sha256": "240154331d5514cbcc9d4d454ed944032f5f24458c522348b9105caa52fc01c4",
+      "persistent_media_id": "f6f51455-0742-4233-97c2-9306fe7b7127"
+    },
+    "blend": {
+      "bytes": 2350870,
+      "sha256": "95622989e554ffd843c67a06efa502934dda91ce8602045a2405ffcf7314baba",
+      "persistent_media_id": "40d8e353-e509-43bd-9a36-2132cd427ac8"
+    }
+  },
+  "runtime": {
+    "godot": "4.7.2.stable.official.ed1daf0bf",
+    "passed": true,
+    "nodes": 229,
+    "mesh_instances": 219,
+    "masts": 107,
+    "panels": 107,
+    "unique_mast_mesh_resources": 3,
+    "unique_panel_mesh_resources": 3,
+    "pilot_materials": 2,
+    "pilot_material_texture_roles_complete": true,
+    "bad_materials": 0,
+    "instancing_preserved": true,
+    "fleet_delivery": "PASS_CANDIDATE_RECOVERED_WITH_NATIVE_RECEIPT",
+    "native_receipt_sha256": "34df327c3b3df504f959cc175782a78af6600086f4af797ce8919694c07baf1d"
+  },
+  "visual": {
+    "overview": "CONDITIONAL_MATERIAL_TOO_DISTANT",
+    "closeup_in_current_world": "FAIL_FINAL_ART_READABILITY",
+    "uv_catastrophe": false,
+    "uv_stretch_or_seams": false,
+    "specular_clipping": false,
+    "lighting_context_diagnosis": "CURRENT_WORLD_HAS_SINGLE_SUN_AND_NEAR_BLACK_UNQUALIFIED_SKY_REFLECTION_CONTEXT",
+    "tier_d_geometry": true,
+    "human_art_gate": "PENDING"
+  },
+  "technical_gate": "PASS",
+  "final_art_gate": "FAIL_PENDING_DOWNSTREAM_LOOKDEV_CONTEXT",
+  "nonclaims": [
+    "final close-range heliostat geometry",
+    "final KHEPRI atmosphere/sky/reflection environment",
+    "final texture resolution",
+    "target hardware performance",
+    "runtime LOD switching",
+    "human final-art approval"
+  ]
+}
