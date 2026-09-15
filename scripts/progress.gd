@@ -1,7 +1,17 @@
 extends RefCounted
 ## Authoritative persistent campaign state. Presentation never grants rewards.
-const VERSION := 1
+## v2 preserves the Terra campaign fields and adds a bounded per-world state namespace.
+const VERSION := 2
+const LEGACY_VERSION := 1
 const VALID_FLAGS := ["met_ines", "water", "archive", "atlas", "resolved"]
+const MAX_WORLDS := 64
+const MAX_WORLD_ID := 64
+const MAX_WORLD_SCHEMA := 160
+const MAX_TREE_DEPTH := 8
+const MAX_CONTAINER_ITEMS := 4096
+const MAX_STRING := 4096
+const WORLD_ID_CHARS := "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_-"
+
 var flags: Dictionary = {}
 var rewards: Array = []
 var memories: int = 0
@@ -10,6 +20,7 @@ var valves: Array = [0, 0, 0]
 var checkpoint: Array = [0.0, 1.0, 18.0]
 var echo: Array = []
 var echo_value: int = 0
+var worlds: Dictionary = {}
 
 func grant(id: String, value: int) -> bool:
 	if id in rewards or value < 0:
@@ -54,10 +65,28 @@ func recover_echo() -> int:
 	echo = []
 	return value
 
+func set_world_state(world_id: String, state: Dictionary) -> bool:
+	if not world_state_valid(world_id, state):
+		return false
+	worlds[world_id] = state.duplicate(true)
+	return true
+
+func get_world_state(world_id: String) -> Dictionary:
+	if not worlds.has(world_id):
+		return {}
+	return (worlds[world_id] as Dictionary).duplicate(true)
+
+func clear_world_state(world_id: String) -> bool:
+	if not worlds.has(world_id):
+		return false
+	worlds.erase(world_id)
+	return true
+
 func snapshot() -> Dictionary:
 	return {"version":VERSION, "flags":flags.duplicate(), "rewards":rewards.duplicate(),
 		"memories":memories, "choice":choice, "valves":valves.duplicate(),
-		"checkpoint":checkpoint.duplicate(), "echo":echo.duplicate(), "echo_value":echo_value}
+		"checkpoint":checkpoint.duplicate(), "echo":echo.duplicate(), "echo_value":echo_value,
+		"worlds":worlds.duplicate(true)}
 
 static func position_valid(v: Variant, empty_allowed: bool = false) -> bool:
 	if not v is Array:
@@ -71,9 +100,61 @@ static func position_valid(v: Variant, empty_allowed: bool = false) -> bool:
 			return false
 	return true
 
-static func validate(d: Variant) -> bool:
-	if not d is Dictionary or d.get("version") != VERSION:
+static func _world_id_valid(world_id: String) -> bool:
+	if world_id.is_empty() or world_id.length() > MAX_WORLD_ID:
 		return false
+	for i in range(world_id.length()):
+		if WORLD_ID_CHARS.find(world_id.substr(i, 1)) < 0:
+			return false
+	return true
+
+static func _json_tree_valid(value: Variant, depth: int = 0) -> bool:
+	if depth > MAX_TREE_DEPTH:
+		return false
+	if value == null or value is bool:
+		return true
+	if value is int:
+		return absf(float(value)) <= 9000000000000000.0
+	if value is float:
+		return is_finite(value) and absf(value) <= 1000000000000.0
+	if value is String:
+		return value.length() <= MAX_STRING
+	if value is Array:
+		if value.size() > MAX_CONTAINER_ITEMS:
+			return false
+		for item in value:
+			if not _json_tree_valid(item, depth + 1):
+				return false
+		return true
+	if value is Dictionary:
+		if value.size() > MAX_CONTAINER_ITEMS:
+			return false
+		for key in value:
+			if not key is String or key.is_empty() or key.length() > 160:
+				return false
+			if not _json_tree_valid(value[key], depth + 1):
+				return false
+		return true
+	return false
+
+static func world_state_valid(world_id: String, state: Variant) -> bool:
+	if not _world_id_valid(world_id) or not state is Dictionary:
+		return false
+	if state.get("world_id") != world_id:
+		return false
+	if not state.get("schema") is String or state.schema.is_empty() or state.schema.length() > MAX_WORLD_SCHEMA:
+		return false
+	for key in ["version", "source_revision"]:
+		var n: Variant = state.get(key)
+		if not (n is int or n is float) or not is_finite(float(n)) or float(n) != floorf(float(n)):
+			return false
+		if n < 0 or n > 1000000000:
+			return false
+	if int(state.version) < 1:
+		return false
+	return _json_tree_valid(state)
+
+static func _base_valid(d: Dictionary) -> bool:
 	if not d.get("flags") is Dictionary or not d.get("rewards") is Array:
 		return false
 	if not d.get("choice") is String or d.choice not in ["", "cogobierno", "industria"]:
@@ -104,17 +185,51 @@ static func validate(d: Variant) -> bool:
 		seen[r] = true
 	return position_valid(d.get("checkpoint")) and position_valid(d.get("echo"), true)
 
-func restore(d: Dictionary) -> bool:
-	if not validate(d):
+static func _legacy_v1_valid(d: Variant) -> bool:
+	return d is Dictionary and d.get("version") == LEGACY_VERSION and _base_valid(d)
+
+static func validate(d: Variant) -> bool:
+	if not d is Dictionary or d.get("version") != VERSION or not _base_valid(d):
 		return false
-	flags = d.flags.duplicate()
-	rewards = d.rewards.duplicate()
-	memories = int(d.memories)
-	choice = d.choice
-	valves = d.valves.duplicate()
-	checkpoint = d.checkpoint.duplicate()
-	echo = d.echo.duplicate()
-	echo_value = int(d.echo_value)
+	if not d.get("worlds") is Dictionary or d.worlds.size() > MAX_WORLDS:
+		return false
+	for world_id in d.worlds:
+		if not world_id is String or not world_state_valid(world_id, d.worlds[world_id]):
+			return false
+	return true
+
+static func migrate(d: Variant) -> Dictionary:
+	if validate(d):
+		return (d as Dictionary).duplicate(true)
+	if not _legacy_v1_valid(d):
+		return {}
+	var old: Dictionary = d
+	return {
+		"version":VERSION,
+		"flags":old.flags.duplicate(),
+		"rewards":old.rewards.duplicate(),
+		"memories":int(old.memories),
+		"choice":old.choice,
+		"valves":old.valves.duplicate(),
+		"checkpoint":old.checkpoint.duplicate(),
+		"echo":old.echo.duplicate(),
+		"echo_value":int(old.echo_value),
+		"worlds":{},
+	}
+
+func restore(d: Dictionary) -> bool:
+	var normalized := migrate(d)
+	if normalized.is_empty():
+		return false
+	flags = normalized.flags.duplicate()
+	rewards = normalized.rewards.duplicate()
+	memories = int(normalized.memories)
+	choice = normalized.choice
+	valves = normalized.valves.duplicate()
+	checkpoint = normalized.checkpoint.duplicate()
+	echo = normalized.echo.duplicate()
+	echo_value = int(normalized.echo_value)
+	worlds = normalized.worlds.duplicate(true)
 	return true
 
 func objective() -> String:
@@ -124,4 +239,3 @@ func objective() -> String:
 	if not flags.get("atlas", false): return "DESPERTAR A ATLAS · Aísla el protocolo del custodio"
 	if choice == "": return "EL DERECHO A REGRESAR · Decide el futuro de la costa"
 	return "TERRA · " + choice.to_upper() + " · Regresa al portal del Reliquario"
-
