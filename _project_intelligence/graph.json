@@ -4643,7 +4643,7 @@
       "type": "workunit",
       "label": "CLM-KHEPRI-MATERIALS-001 / AGENT-KHEPRI-MATERIALS-001",
       "epistemic": "proposal",
-      "status": "reserved",
+      "status": "active",
       "provenance": "ops/fleet/registry.json",
       "artifact_path": "ops/fleet/registry.json"
     }

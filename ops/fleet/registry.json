@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generation": 11,
+  "generation": 12,
   "base_main": "196ef814fdc845ec797979906d01dc25009217c7",
   "authority": "Published latest main only. Local transactions are proposals until normal ref update/readback. Cooperative guard, not provider ACL.",
   "coordination_issue": "https://github.com/rotprods/-/issues/7",
@@ -857,8 +857,12 @@
       "branch": "art/khepri-materials-001",
       "role": "world",
       "epoch": 1,
-      "status": "reserved",
-      "ack": null,
+      "status": "active",
+      "ack": {
+        "owner": "AGENT-KHEPRI-MATERIALS-001",
+        "epoch": 1,
+        "evidence_ref": "https://github.com/rotprods/-/issues/7#issuecomment-5683065997"
+      },
       "paths": [
         "production/claims/CLM-KHEPRI-MATERIALS-001.yaml",
         "production/worlds/khepri/materials/",
