@@ -5,8 +5,10 @@ branch: art/nacre-lookdev-hero-001
 role: ATOMIC_SUBCLAIM
 world_id: nacre
 facet: art/lookdev-hero
-status: RESERVATION_PROPOSAL
-fleet_epoch_requested: 1
+status: ACTIVE
+fleet_epoch: 1
+fleet_main_sha: 2db9e3baf6ea5daa0440a11bdb26728a8a5f9d20
+fleet_ack_evidence: https://github.com/rotprods/-/issues/7#issuecomment-5662212641
 base_main_sha: 8c01136aa14f89e177ff1216d1993d62ea963ad3
 x100_opportunity: NACRE-AAA-LOOKDEV-TO-MESH
 owned_paths:
@@ -35,7 +37,7 @@ excludes:
   - global STATE/PLAN/MANIFEST/fleet registry ownership
 collision_notes:
   - Existing Nacre macro claim owns art/macro-foundation only; this claim uses sibling facet art/lookdev-hero and disjoint paths/asset IDs.
-  - No existing Nacre lookdev/hero branch or open PR was observed immediately before reservation.
+  - Fleet CAS/collision validation passed and PR #43 merged the claim ACTIVE on main.
 ready_when:
   - fleet reservation published and read back from current main
   - canon references and negative art contract persisted
