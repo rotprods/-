@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generation": 8,
+  "generation": 10,
   "base_main": "196ef814fdc845ec797979906d01dc25009217c7",
   "authority": "Published latest main only. Local transactions are proposals until normal ref update/readback. Cooperative guard, not provider ACL.",
   "coordination_issue": "https://github.com/rotprods/-/issues/7",
@@ -793,6 +793,60 @@
       "acceptance_pending": [
         "owner ACK of executable normalized registry",
         "provider project mapping"
+      ],
+      "worker_status": "UNKNOWN"
+    },
+    {
+      "id": "CLM-NACRE-LOOKDEV-HERO-001",
+      "owner": "AGENT-NACRE-LOOKDEV-01",
+      "owner_identity_confirmed": true,
+      "branch": "art/nacre-lookdev-hero-001",
+      "role": "world",
+      "epoch": 1,
+      "status": "active",
+      "ack": {
+        "owner": "AGENT-NACRE-LOOKDEV-01",
+        "epoch": 1,
+        "evidence_ref": "https://github.com/rotprods/-/issues/7#issuecomment-5662212641"
+      },
+      "paths": [
+        "production/claims/CLM-NACRE-LOOKDEV-HERO-001.yaml",
+        "art_source/nacre_lookdev_hero/"
+      ],
+      "scopes": [
+        {
+          "world": "nacre",
+          "facet": "art/lookdev-hero"
+        }
+      ],
+      "project_ids": [],
+      "asset_ids": [
+        "NACRE-LOOK-ARCHIVE-CHAMBER-001",
+        "NACRE-LOOK-SHELL-SURFACE-001",
+        "NACRE-LOOK-BRIDGE-IDENTITY-001",
+        "NACRE-LOOK-MATERIAL-DNA-001",
+        "NACRE-LOOK-TARGET-PACK-001"
+      ],
+      "evidence_refs": [
+        "https://github.com/rotprods/-/issues/7#issuecomment-5662212641",
+        "https://github.com/rotprods/-/pull/33"
+      ],
+      "reservation_basis": "X100 Director rank #1; sibling facet/path/asset collision audit passed against the registry read by this transaction.",
+      "includes": [
+        "Nacre look-lock target pack",
+        "archive-chamber hero identity lookdev",
+        "shell/mineral/nacre surface identity",
+        "bridge/docking identity",
+        "image-grounded reconstruction candidates",
+        "cleanup/retopo/PBR/engine/visual-regression contracts"
+      ],
+      "excludes": [
+        "CLM-NACRE-WORLD-MACRO-001 geometry/source",
+        "planetary scale decisions",
+        "MNEMOS final model/rig",
+        "characters/fauna/vehicles",
+        "gameplay/runtime",
+        "global STATE/PLAN/MANIFEST authority"
       ],
       "worker_status": "UNKNOWN"
     }
