@@ -1,0 +1,86 @@
+{
+  "schema_version": 1,
+  "claim_id": "CLM-NACRE-LOOKDEV-HERO-001",
+  "asset_id": "NACRE-LOOK-TARGET-PACK-001",
+  "pilot_family": "NACRE-LOOK-ARCHIVE-CHAMBER-001",
+  "truth_state": "MULTIVIEW_CANDIDATE__HUMAN_GATE_OPEN",
+  "promotion_rule": "These images are preproduction lookdev references only. They are not geometry, not a final asset, and must not be used to claim GATE-ART pass without human review.",
+  "identity_element": {
+    "id": "fa973079-15b8-4648-a602-e1adb4e96655",
+    "name": "nacre-archive-chamber-a",
+    "category": "prop",
+    "status": "completed"
+  },
+  "targets": [
+    {
+      "id": "TARGET_A_3Q_FRONT",
+      "job_id": "165810de-cdb8-40ee-8340-c13cd3eddcf0",
+      "requested_model": "nano_banana_pro",
+      "effective_model": "nano_banana_2",
+      "width": 2048,
+      "height": 2048,
+      "raw_url": "https://d8j0ntlcm91z4.cloudfront.net/user_2zv0ZwTLslDi8yQhQ13R8PX7SVU/hf_20260914_135441_165810de-cdb8-40ee-8340-c13cd3eddcf0.png",
+      "role": "identity_lock_and_three_quarter_front",
+      "visual_review": "HUMAN_GATE_OPEN"
+    },
+    {
+      "id": "TARGET_B_SIDE",
+      "job_id": "3b988b0b-89c0-411c-bb12-294a8ab09b09",
+      "requested_model": "nano_banana_2",
+      "effective_model": "nano_banana_flash",
+      "width": 2048,
+      "height": 2048,
+      "raw_url": "https://d8j0ntlcm91z4.cloudfront.net/user_2zv0ZwTLslDi8yQhQ13R8PX7SVU/hf_20260915_144928_3b988b0b-89c0-411c-bb12-294a8ab09b09.png",
+      "role": "near_orthographic_left_side",
+      "visual_review": "HUMAN_GATE_OPEN"
+    },
+    {
+      "id": "TARGET_C_REAR",
+      "job_id": "3db84e38-bcb6-4ed4-bf2b-59fe0de706e6",
+      "requested_model": "nano_banana_2",
+      "effective_model": "nano_banana_flash",
+      "width": 2048,
+      "height": 2048,
+      "raw_url": "https://d8j0ntlcm91z4.cloudfront.net/user_2zv0ZwTLslDi8yQhQ13R8PX7SVU/hf_20260915_144929_3db84e38-bcb6-4ed4-bf2b-59fe0de706e6.png",
+      "role": "rear_service_three_quarter",
+      "visual_review": "HUMAN_GATE_OPEN"
+    },
+    {
+      "id": "TARGET_D_TOP",
+      "job_id": "7d6e08d7-c9d0-4c25-bc07-0e10f05c28b0",
+      "requested_model": "nano_banana_2",
+      "effective_model": "nano_banana_flash",
+      "width": 2048,
+      "height": 2048,
+      "raw_url": "https://d8j0ntlcm91z4.cloudfront.net/user_2zv0ZwTLslDi8yQhQ13R8PX7SVU/hf_20260915_144928_7d6e08d7-c9d0-4c25-bc07-0e10f05c28b0.png",
+      "role": "high_top_near_orthographic",
+      "visual_review": "HUMAN_GATE_OPEN"
+    }
+  ],
+  "provider_observations": [
+    "TARGET_A requested nano_banana_pro but completed as nano_banana_2.",
+    "TARGET_B/C/D requested nano_banana_2 but completed as nano_banana_flash.",
+    "nano_banana_flash was not discoverable by models_search after completion; record effective job metadata rather than inventing a public catalog contract."
+  ],
+  "cost": {
+    "preflight_nano_banana_2_2k_per_image_credits": 2,
+    "generated_targets_count": 4,
+    "exact_billed_cost": "UNVERIFIED",
+    "note": "Do not infer exact spend from preflight because provider fallbacks changed the effective model."
+  },
+  "reconstruction_gate": {
+    "status": "ENV_BLOCKED_3D_SUBMIT_SURFACE",
+    "catalog_candidates": [
+      "tripo_h3_1_multiview_to_3d",
+      "multi_image_to_3d",
+      "hunyuan3d_v3_image_to_3d"
+    ],
+    "reason": "The connected Higgsfield tool surface exposes 3D model discovery and 3D Jutsu editing/import, but no verified generic image-to-3D generation submit action. No reconstruction job has been fabricated."
+  },
+  "next": [
+    "Human/art-direction inspect A-D for silhouette/material/structural consistency.",
+    "If accepted, freeze A-D inputs and execute at least two identical-input 3D reconstruction candidates when a real submit surface is available.",
+    "If the submit surface remains unavailable, use a separate Blender hero project as a manual/procedural reference reconstruction and label it MANUAL_REFERENCE_BUILD, not image-to-3D output.",
+    "Do not generate E/F or promote geometry until the look identity is accepted."
+  ]
+}
