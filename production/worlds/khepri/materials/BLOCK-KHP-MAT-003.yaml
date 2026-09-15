@@ -1,0 +1,62 @@
+block_id: BLOCK-KHP-MAT-003
+decision_needed: qualified_world_reflection_and_close_range_heliostat_lookdev_context
+affected_scope: KHP/MAT/014-final-art
+status: BLOCKED_CROSS_SCOPE_LOOKDEV
+priority: P1
+material_owner_claim: CLM-KHEPRI-MATERIALS-001
+geometry_owner_claim: CLM-KHEPRI-WMACRO-001
+consumer_asset: KHP_WM_HELIOSTAT_FOOTPRINTS
+observed_world_revision: 10
+observed_render_context:
+  lights:
+    - KHP_WM_LIGHT_SAHRA_KEY
+  sun_energy: 3.2
+  world_color: [0.012, 0.008, 0.005]
+  world_nodes: true
+  atmosphere_or_sky_model: NOT_QUALIFIED
+technical_material_evidence:
+  bronze:
+    material: KHP_MAT_BRONZE_SYNOD_001__SERVICE_CLEAN
+    metallic_mean: 0.8196
+    roughness_range: [0.2510, 0.3412]
+    basecolor_texture: connected
+    normal_texture: connected
+  mirror:
+    material: KHP_MAT_MIRROR_OPTICAL_001__CALIBRATED
+    metallic_mean: 0.9412
+    roughness: 0.0745
+    basecolor_texture: connected
+    normal_texture: connected
+  gltf_godot_import: PASS
+  uv0: PASS
+  instancing_preserved: true
+visual_evidence:
+  macro_overview: CONDITIONAL_MATERIAL_TOO_DISTANT
+  closeup_in_current_world: FAIL_FINAL_ART_READABILITY
+  diagnostic_reflection_rig: CONDITIONAL_LIGHTING_CAUSE_SUPPORTED
+  uv_stretch_or_seam_catastrophe: false
+  specular_clipping: false
+why_blocking: >-
+  The first real material consumer is a Tier-D macro support heliostat built from extremely simple proxy geometry.
+  The current world master also lacks a qualified atmosphere/sky/reflection environment, so low-roughness metallic
+  materials have little useful context to reflect. Machine/runtime gates prove the material data is present and correct,
+  but final artistic readability cannot be approved from this consumer/context without distorting the material merely
+  to compensate for missing downstream lookdev.
+required_downstream_interfaces:
+  - qualified KHEPRI sky / long-range lighting or equivalent reflection-readability environment
+  - close-range heliostat architecture / hero-support geometry if final material judgement is required
+  - final human art review in representative gameplay/cinematic context
+work_that_can_continue:
+  - machine-readable World Compiler ArtKit
+  - application recipes and context rules
+  - non-final calibration/material QA
+  - additional consumers whose geometry/lookdev context is already qualified
+forbidden_shortcuts:
+  - brighten bronze arbitrarily to fake readability
+  - raise mirror roughness or emissive without physical/canon cause
+  - bake fake reflections into base color
+  - call Tier-D blockout consumer final material proof
+  - close HUMAN_GATE_ART from AI QA
+resolution_condition: >-
+  Representative close-range or final-support geometry plus qualified KHEPRI reflection/lighting context shows Bronze and
+  Mirror identities without UV/material regressions, and human art review accepts the result.
