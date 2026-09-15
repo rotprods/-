@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://exovant.invalid/schemas/world/world-manifest.schema.json",
+  "title": "EXOVANT World Compilation Manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "stable_id", "root_seed", "compiler_version", "module_versions", "ruleset_versions", "dataset_versions", "artkit_versions", "manual_patchset_version"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "stable_id": {"type": "string", "pattern": "^exo:[a-z0-9][a-z0-9:_-]*$"},
+    "parent_id": {"type": ["string", "null"]},
+    "root_seed": {"type": "string", "minLength": 1},
+    "compiler_version": {"type": "string", "minLength": 1},
+    "module_versions": {"$ref": "#/$defs/versionMap"},
+    "ruleset_versions": {"$ref": "#/$defs/versionMap"},
+    "dataset_versions": {"$ref": "#/$defs/versionMap"},
+    "artkit_versions": {"$ref": "#/$defs/versionMap"},
+    "manual_patchset_version": {"type": "string", "minLength": 1},
+    "manual_overrides": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/override"},
+      "default": []
+    },
+    "generation_targets": {
+      "type": "array",
+      "items": {"type": "string", "minLength": 1},
+      "uniqueItems": true,
+      "default": []
+    },
+    "input_digest": {"$ref": "#/$defs/digest"},
+    "output_digest": {"$ref": "#/$defs/digest"}
+  },
+  "$defs": {
+    "versionMap": {
+      "type": "object",
+      "additionalProperties": {"type": "string", "minLength": 1}
+    },
+    "digest": {
+      "type": ["string", "null"],
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "override": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["op", "target_id", "version"],
+      "properties": {
+        "op": {"enum": ["LOCK", "PATCH", "OVERRIDE", "EXCLUDE"]},
+        "target_id": {"type": "string", "minLength": 1},
+        "version": {"type": "string", "minLength": 1},
+        "source": {"type": ["string", "null"]}
+      }
+    }
+  }
+}
