@@ -1,9 +1,10 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "claim_id": "CLM-KHEPRI-MATERIALS-001",
   "owner": "AGENT-KHEPRI-MATERIALS-001",
   "branch": "art/khepri-materials-001",
   "epoch": 1,
+  "desired_registry_status_after_reserve": "reserved",
   "desired_registry_status_after_ack": "active",
   "role": "world",
   "scope": {"world": "khepri", "facet": "art/materials-surface-library"},
@@ -25,26 +26,37 @@
     "KHP_MAT_MINERAL_DESERT_001"
   ],
   "includes": [
-    "KHEPRI-specific causal material library",
-    "BaseColor/metallic-roughness/Normal/source StateMask contracts",
-    "deterministic calibration source",
-    "139-row material application matrix",
-    "GLB/Godot material portability QA",
-    "material receipts and handoff"
+    "KHEPRI causal material library",
+    "systemic material recipes",
+    "World Compiler material ArtKit",
+    "GLB/Godot material QA",
+    "consumer binding specifications and receipts"
   ],
   "excludes": [
+    "geometry ownership",
     "final Glass Sea architecture",
-    "terrain/geology ownership",
-    "NPC/fauna/vehicles",
+    "terrain/geology",
+    "characters/fauna/vehicles",
     "gameplay/collision",
-    "global/shared material libraries",
-    "canon/story mutation",
+    "cross-world material library",
     "human final-art approval",
-    "other worlds"
+    "target-hardware budget claims"
   ],
-  "technical_receipt": "production/worlds/khepri/materials/receipts/R4_SYSTEMIC_MATERIAL_FOUNDATION.json",
-  "application_receipt": "production/worlds/khepri/materials/receipts/APPLICATION_MATRIX_V1.json",
-  "branch_preflight_receipt": "production/worlds/khepri/materials/receipts/PREFLIGHT_BRANCH_R4.json",
-  "promotion_note": "Foundation is technically qualified but main registry serialization must be performed by the integrator together with graph/MANIFEST regeneration. Owner ACK must occur only after published reserved readback.",
+  "current_preflight": {
+    "main_commit": "2db9e3baf6ea5daa0440a11bdb26728a8a5f9d20",
+    "input_registry_generation": 10,
+    "input_registry_digest": "cfb6b4bd7ef4c490e131479bfca3692ae954f7dc9610123c756c52bf08de00a0",
+    "reserve_transition": "PASS_NO_COLLISIONS",
+    "output_registry_generation": 11,
+    "output_registry_digest": "7140bf7139929831758fdd487a008ebcbb50bc0f4b6f3e7126591eed5ebd0764",
+    "note": "These digests are a CAS receipt only. If main moves before serialization, recompute from fresh main rather than applying stale output."
+  },
+  "technical_receipts": [
+    "production/worlds/khepri/materials/receipts/R4_SYSTEMIC_MATERIAL_FOUNDATION.json",
+    "production/worlds/khepri/materials/receipts/APPLICATION_MATRIX_V1.json",
+    "production/worlds/khepri/materials/receipts/HELIOSTAT_R10_CONSUMER_PILOT.json",
+    "production/worlds/khepri/materials/receipts/WORLD_COMPILER_ARTKIT_V1.json"
+  ],
+  "promotion_note": "Foundation, first real consumer and World Compiler bridge are technically qualified. Main registry serialization must remain a serialized integrator transaction with graph/MANIFEST regeneration. Owner ACK epoch 1 occurs only after published reserved readback.",
   "ready_for_integrator": true
 }
