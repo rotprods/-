@@ -1,163 +1,132 @@
-# KHEPRI World Macro — recoverable handoff / X100 checkpoint
+# KHEPRI World Macro — recoverable handoff / R10 X100 checkpoint
 
 AGENT: `AGENT-KHEPRI-WMACRO-001`  
-SESSION: `SESSION-20260912-KHEPRI-001`  
 CLAIM: `CLM-KHEPRI-WMACRO-001`  
 BRANCH: `art/world-khepri-001`  
 PR: `#8` draft  
-X100: **ACTIVE**  
-MASTER 3D PROJECT: `040f0c45-83a7-483c-9ee7-1e31c640a587` rev `8`  
-COLD PROJECT: `4c01fdbb-7093-4229-9a49-8237583280bc` rev `6`  
 CLAIM STATUS: **KEEP / REVIEW**  
-FAMILY STATUS: `KHP_WM_HELIOSTAT_FOOTPRINTS = SYSTEMIC_MACRO_COMPLETE`
+MASTER 3D PROJECT: `040f0c45-83a7-483c-9ee7-1e31c640a587` rev **10**  
+COLD PROJECT: `4c01fdbb-7093-4229-9a49-8237583280bc` UV rev **7**  
+FAMILY: `KHP_WM_HELIOSTAT_FOOTPRINTS = SYSTEMIC_MACRO_COMPLETE`
 
-## NORTH STAR
-KHEPRI world-macro is a deterministic metre-scale foundation with stable cross-domain route/tile/export interfaces. `/EXOVANT-X100` now governs expansion: maximize credible world depth per hour through systemic families, causal state variation and procedural recombination, never random clutter or AI slop.
+## North Star
+Maintain KHEPRI as a deterministic metre-scale world foundation with stable cross-domain interfaces. `/EXOVANT-X100` expands depth through systemic families, causal states and procedural recombination without random clutter, duplicated ownership or false AAAA claims.
 
-## CURRENT TRUTH
-This claim is **not KHEPRI complete** and is not final AAAA art. It now contains a technically qualified macro foundation plus one production-grade systemic support family. Final Glass Sea architecture, PBR material library, production geology, collision, runtime LOD thresholds/HLOD, characters, props, vehicles and final hero landmarks remain separate ownership leaves.
+## Current truth
+The macro claim is technically mature but **not final art and not KHEPRI complete**. It owns macro terrain/interfaces and the systemic optical support family. Final close-range heliostat architecture, sky/atmosphere, PBR texture budgets, collision, characters, ecology, vehicles and hero landmarks remain separate domains.
 
-## R8 HEAD — EXACT ARTIFACTS
-- Objects: `228`
-- Mesh datablocks: `22` (10 scene meshes + 12 source-only LOD meshes)
-- Materials: `5`
-- Route curve: `1`
-- Whole-scene GLB: `577,744 B`
-- GLB SHA256: `c9c698734061e481b94347c88d7c076b19c60261c8402548fb8ca1079d7d3579`
-- Editable BLEND: `2,198,165 B`
-- BLEND SHA256: `b2f3e2f8ff90f28a5485dc019efcfa5913def0dbbcfb5e39d883d3c469a25337`
-- Persistent GLB media: `1bed7b1f-0e0a-4cd3-b61b-a62f950b4ff5`
-- Persistent BLEND media: `0988f832-71ab-4c21-9c1e-ecbe3cd08bcb`
-- `fleet_control.py delivery`: PASS `candidate_recovered_with_native_receipt`
+## Foundation retained
+- terrain: 6.4 × 4.8 km local tangent cell;
+- terrain runtime mesh: 4,941 vertices / 9,600 tris;
+- terrain custom-normal contract: `KHP_GLOBAL_GRADIENT_NORMAL_V1`;
+- terrain route: 576 points, target clearance 7 m, zero below-terrain samples;
+- optical field: 107 masts + 107 panels, 3 structural scale families;
+- systemic configuration space: 432 valid layouts/state/density/corridor combinations;
+- LOD source: LOD0/1/2, 12 source-only reduced meshes;
+- Godot import/resource sharing previously qualified.
 
-## TERRAIN / ROUTE FOUNDATION
-Terrain remains 6.4 km × 4.8 km local tangent authoring cell using `KHP_TERRAIN_V1`.
+## R9 — material UV0 interface
+Geometry owner explicitly closed the material UV blocker.
 
-R6 shading/export optimization:
-- flat export positions `19,200` → seam-safe custom-normal export `4,941`;
-- terrain export `520,508 B` → `178,288 B`;
-- whole-scene GLB `822,272 B` → `480,312 B` before X100 density;
-- 9,600 terrain tris unchanged;
-- custom global normal error max ~`0.0368°`;
-- master/cold terrain-normal SHA `ab7b0b20e8f305b2d30504fdf44d6b233f870d960f4b9774ff87ef1504c1b856`.
+Contract: `KHP_OPTICAL_UV0_HANDOFF_V1`
 
-Route remains deterministic terrain-conforming QA interface:
-- 576 points / 575 segments;
-- 7 m target clearance, audited `6.9963…7.0043 m`;
-- zero below-terrain samples;
-- anchor order SHADE → GLASS_SEA → CRUCIBLE → RAKHET passes containment/ordering gate.
+- 18 optical meshes covered: LOD0 + LOD1 + LOD2, mast/panel × compact/standard/wide;
+- UV layer: `UVMap`;
+- deterministic dominant-axis object-space mapping;
+- 4 metres per texture repeat;
+- overlap intentionally allowed for tileable materials;
+- unique hero/story masks require a separate future UV interface;
+- geometry semantic SHA unchanged before/after:
+  `41cb03864b03a907c8691de33843f874f1796ba67b0dc02980ad5af9fc60cf86`;
+- UV SHA master/cold exact match:
+  `13532b5bb722e7293e5248e061d6e30192a8cf21c21c355abd89095ea26a9c8e`.
 
-## X100 OPTICAL FIELD FAMILY
-Tool: `art_source/khepri/world_macro/expand_optical_field_x100.py`  
-Contract: `KHP_OPTICAL_FIELD_X100_V1`
+Source: `art_source/khepri/world_macro/add_optical_uv0_handoff.py`  
+Contract doc: `production/worlds/khepri/world_macro/MATERIAL_UV_HANDOFF.md`
 
-Implemented configuration axes:
-- 4 layouts: staggered bands / aligned lattice / diagonal bands / radial fan;
-- 3 densities: sparse / production / dense;
-- 3 maintenance corridor patterns: dual NS / single NS / cross;
-- 4 state profiles: operational / maintenance cycle / damage proxy / abandonment proxy;
-- 3 scale mixes: balanced / compact bias / standard bias.
+## R10 — first real KHEPRI material consumer
+The macro world now consumes the real KHEPRI material system at calibration resolution.
 
-Actual configuration space: **432**. Cold pure-contract audit proves every configuration non-empty, with `44…185` placements. This is a real combinatorial system, not a declared multiplier.
+Contract: `KHP_HELIOSTAT_MATERIAL_PILOT_V1`
 
-Representative macrocell R7/R8:
-- 107 masts + 107 panels;
-- 93 operational + 14 maintenance-cycle assemblies;
-- scale family: compact / standard / wide;
-- 3 shared mast LOD0 meshes + 3 shared panel LOD0 meshes;
-- route clearance min ~144.714 m;
-- anchor clearance min ~269.916 m;
-- pair spacing min ~438.462 m;
-- max accepted terrain slope ~10.794°;
-- mast/terrain contact error about `−7.13…+8.61 μm`;
-- topology has zero degenerate faces/edges.
+Bindings on visible LOD0 family meshes:
 
-R7 master/cold semantic fingerprint:
-`01420ed366a7f8443a084332036604c47324d50900ae2033ea4d42059440d1fa`
+- mast + structural panel parts → `KHP_MAT_BRONZE_SYNOD_001::service_clean::cast_structural::architectural`;
+- optical face → `KHP_MAT_MIRROR_OPTICAL_001::calibrated::broad_reflector::architectural`.
 
-### State causality
-Machine gate is authority:
-- operational: normal tracking proxy;
-- maintenance: panel stowed at 72°;
-- damaged proxy: panel 3 m lower + off-axis rotation;
-- abandoned proxy: mast remains, panel absent.
+The exact texture bytes were regenerated with the material-library R4 deterministic compiler and hash-checked against R4 before any slot mutation.
 
-No random grunge is used. AI state-gallery review says all four states are visually distinct; where its abandoned interpretation conflicted with structure, machine truth overrides vision. Damage/abandonment modes are **proposal QA modes**, not canon events.
+Nine material slots were changed. Geometry + UV semantic SHA remained identical before/after binding:
+`32274b915360ebcc3a9c1f9fb0f9ee79e2847986b48e6566d81c176b17e35824`.
 
-### Density QA
-AI overview density gate PASS, supplemental only:
-- infrastructure read: yes;
-- route legible: yes;
-- controlled variation: yes;
-- clutter fail: no;
-- floating: no;
-- repetition risk: low.
+LOD1/LOD2 have UV0 but remain source-only and retain their previous material slots until runtime LOD switching is qualified.
 
-Minor follow-up suggestions only: future dense districts may open wider corridor breaks and strengthen route emphasis at cluster crossings. No current blocking defect.
+## Exact R10 artifacts
 
-## X100 LOD SOURCE FAMILY
-Tool: `art_source/khepri/world_macro/add_optical_lods_x100.py`  
-Contract: `KHP_OPTICAL_LOD_X100_V1`
+GLB:
+- 590,844 B;
+- SHA256 `240154331d5514cbcc9d4d454ed944032f5f24458c522348b9105caa52fc01c4`;
+- persistent media `f6f51455-0742-4233-97c2-9306fe7b7127`.
 
-For compact/standard/wide × mast/panel:
-- LOD0: 24 verts / 18 polys;
-- LOD1: 16 verts / 12 polys;
-- LOD2: 8 verts / 6 polys.
+BLEND:
+- 2,350,870 B;
+- SHA256 `95622989e554ffd843c67a06efa502934dda91ce8602045a2405ffcf7314baba`;
+- persistent media `40d8e353-e509-43bd-9a36-2132cd427ac8`.
 
-12 LOD1/LOD2 source meshes are retained through Blender `fake_user`, with **zero object users**. They remain editable source truth and are not instanced in the representative GLB. Script idempotence explicitly distinguishes `fake_user` from object instancing.
+`fleet_control.py delivery` passes for these exact hashes with native receipt SHA:
+`34df327c3b3df504f959cc175782a78af6600086f4af797ce8919694c07baf1d`.
 
-Master/cold LOD fingerprint:
-`1c67430d580cae109fa50dfab73e6747304e87b5b3c9bba99e65fa6fe4e80101`
+## Godot R10
+Godot `4.7.2.stable.official.ed1daf0bf` exact GLB import PASS:
 
-Runtime LOD distance thresholds and HLOD remain downstream technical-art ownership; collision remains downstream gameplay ownership.
-
-## GODOT NATIVE R8
-Engine: `Godot 4.7.2.stable.official.ed1daf0bf`
-
-R8 exact GLB native import:
-- 229 nodes;
+- 229 runtime nodes;
 - 219 MeshInstance3D;
 - 107 masts / 107 panels;
 - 3 unique mast Mesh resources / 3 unique panel Mesh resources;
-- 224 stable authored asset IDs / 0 duplicates;
-- terrain 4,941 verts / 4,941 normals / 9,600 tris;
-- `KHP_OPTICAL_LOD_X100_V1` metadata survives;
-- `configuration_count=432` survives;
-- LOD manifest metadata survives.
+- Bronze + Mirror keep BaseColor/Metallic/Roughness/Normal textures;
+- 0 pilot material failures;
+- instancing remains preserved.
 
-This proves import/resource sharing and metadata integrity, **not target-hardware performance**.
+## Visual truth
+Do not confuse technical material integration with final art.
 
-## BINARY DELIVERY
-Technical transport blocker is closed for the current head:
-- exact R8 bytes recovered and SHA-bound;
-- persistent project media exists;
-- Godot native import passes;
-- fleet delivery passes.
+AI QA on R10:
+- overview: infrastructure/route remain legible, but material identity is too distant to judge;
+- close-up in current world: **final-art readability FAIL**;
+- no UV catastrophe, no visible seam/stretching failure, no specular clipping;
+- machine diagnosis: Bronze ≈0.82 metallic / roughness 0.25–0.34; Mirror ≈0.94 metallic / roughness 0.075, all texture roles connected;
+- current world has one Sun and a near-black, unqualified sky/reflection context;
+- consumer geometry is Tier-D macro support, not close-range production architecture.
 
-Remaining corporate Git LFS archival is a storage-policy follow-up, not an asset-loss or execution blocker. Do not push `.blend`/`.glb` as ordinary Git blobs; `.gitattributes` marks them binary/LFS.
+Therefore the correct blocker is downstream lookdev/consumer quality, **not broken material transport**. Do not brighten materials arbitrarily or bake fake reflections into BaseColor to make this proxy look finished.
 
-## VISUAL / HUMAN GATE
-Machine + AI density/scale evidence exists. `HUMAN_GATE_ART` remains the only blocking review gate in this claim. Do not promote blockout/support materials to final AAAA art without explicit human/pixel review.
+Receipt: `production/worlds/khepri/world_macro/receipts/R10_MATERIAL_CONSUMER_PILOT.json`.
 
-## CI / FINOPS
-Last exact auto-Gauntlet green before cost quarantine: head `8022197e…`, run `34722654514` SUCCESS. Current `main` changed GitHub Actions to `workflow_dispatch` only for cost control. Therefore new branch/document waves require local combined checkout + `project_control` + tests + `fleet guard-git`; do not spend Actions unless a meaningful promotion gate requires it.
+## Canon / ownership boundary
+- canonical named regions: Ciudad de los Toldos, Mar de Cristal, Crisol de RAKHET;
+- documented biota: Escarabajo heliostato, Zorro de vidrio, Serpiente de cable, Liquen de prisma;
+- documented vehicle: Helioperegrino;
+- final ecology, characters, vehicle geometry and regional architecture remain unclaimed by this macro cell;
+- proposed radius remains proposal, not canon.
 
-## CANON BOUNDARY / RECOVERY
-- KHEPRI: Sahra / Andrómeda / Sínodo de Bronce / 0.63 g / 71 °C reference authored area / solar-glass desert + heliostats / RA-KHET.
-- Proposed radius 5,224 km remains reversible ADR, not canon.
-- Canonical named surface regions recovered: **Ciudad de los Toldos**, **Mar de Cristal**, **Crisol de RAKHET**. Exact map/boundaries remain unknown.
-- Canonical biota recovered: **Escarabajo heliostato**, **Zorro de vidrio**, **Serpiente de cable**, **Liquen de prisma**. These unblock future ecology ownership; the complete trophic web, distributions, rigs and gameplay remain unclaimed/proposal territory.
-- Canonical local vehicle recovered: **Helioperegrino**. Broader transport hierarchy remains unknown/unclaimed.
-- Named NPC/adversary anchors are documented in `WORLD_BIBLE.md`; final character production remains unclaimed.
-- Canon recovery receipt: `production/worlds/khepri/world_macro/receipts/R8_X100_CANON_RECOVERY.json`.
-- X100 damage/abandonment states are systemic proposal modes, not story canon.
+## Open blockers
+1. `HUMAN_GATE_ART` — no AI/machine gate can close it.
+2. Qualified KHEPRI sky/reflection/lookdev context for final reflective-material judgement.
+3. Close-range heliostat geometry if the optical family is ever promoted above Tier-D macro support.
 
-## NEXT EXECUTION
-1. RESYNC coverage/fleet and preserve generated MANIFEST through the serialized integrator transaction; no Actions dispatch for docs-only reconciliation.
-2. Highest systemic multiplier remains `GLOBAL_KHEPRI/materials_surface_library`.
-3. Reservation proposal `CLM-KHEPRI-MATERIALS-001` has passed offline fleet CAS/collision validation but is **not yet published in main**. Until `reserved → owner ACK → active` is observable, material work is limited to pre-claim scratch contracts; no repo/provider/material mutation.
-4. Canon recovery also changes ecology/vehicle coverage from false `BLOCKED` to `TODO/UNCLAIMED`; future agents may claim those domains, but this macro agent does not own them.
-5. Do **not** broaden `CLM-KHEPRI-WMACRO-001` into final materials/architecture/ecology/characters/collision ownership.
+## Downstream / non-blocking
+- final texture resolution and target-hardware memory budgets;
+- runtime LOD thresholds/HLOD;
+- production collision/navmesh;
+- corporate Git LFS archival policy.
+
+## Next actions
+1. Keep R10 as the exact technical material-consumer proof.
+2. Let `CLM-KHEPRI-MATERIALS-001` own material grammar/library work; macro only supplies geometry interfaces.
+3. Create/claim a dedicated KHEPRI atmosphere/sky or close-range heliostat lookdev leaf before final material-art promotion.
+4. Continue `/EXOVANT-X100` on the next unclaimed world domain rather than increasing detail randomly in this claim.
 
 CLAIM STATUS: **KEEP / REVIEW**  
-FAMILY STATUS: **SYSTEMIC_MACRO_COMPLETE**
+FAMILY STATUS: **SYSTEMIC_MACRO_COMPLETE**  
+MATERIAL CONSUMER TECHNICAL STATUS: **PASS**  
+FINAL ART STATUS: **BLOCKED / HUMAN + DOWNSTREAM LOOKDEV**
