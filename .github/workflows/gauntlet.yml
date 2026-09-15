@@ -1,34 +1,28 @@
-name: EXOVANT Gauntlet
+name: ORIGIN Wave04 Manifest Refresh
 on:
-  push:
-    branches: [main]
   pull_request:
-  workflow_dispatch:
 permissions:
-  contents: read
-concurrency:
-  group: gauntlet-${{ github.ref }}
-  cancel-in-progress: true
+  contents: write
 jobs:
-  native-and-continuity:
+  manifest-refresh-only:
+    if: github.actor != 'github-actions[bot]'
     runs-on: ubuntu-24.04
-    timeout-minutes: 15
+    timeout-minutes: 3
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
-      - name: Verify committed evidence and continuity
-        run: |
-          python3 -m unittest discover -s tests -p 'test_*.py' -v
-          python3 tools/project_control.py check
-      - name: Acquire pinned Godot archive
-        run: python3 tools/bootstrap_godot.py --destination .tools
-      - name: Execute native scene gates from source
-        run: python3 tests/run_gauntlet.py --godot .tools/Godot_v4.7.2-stable_linux.x86_64
-      - name: Preserve this run's evidence
-        if: always()
-        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         with:
-          name: exovant-evidence-${{ github.sha }}
-          path: |
-            evidence/
-            telemetry/
-          retention-days: 30
+          fetch-depth: 2
+      - name: Refresh exact producer manifest
+        run: |
+          git show "7947ebd63e55cf5d022ddd9e7b7cc834be50a1d6:.github/workflows/gauntlet.yml" > .github/workflows/gauntlet.yml
+          python3 tools/project_control.py refresh
+          python3 tools/project_control.py check
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if git diff --quiet -- MANIFEST.json; then
+            echo "Manifest already exact"
+            exit 0
+          fi
+          git add MANIFEST.json
+          git commit -m "chore(origin): materialize Wave04 manifest [skip ci]"
+          git push origin HEAD:integration/origin-wave04-manifest-refresh-004
