@@ -1,0 +1,157 @@
+{
+  "schema": "exovant.remote-blender-evidence.v1",
+  "project": "EXOVANT 2950",
+  "world": "VANTA",
+  "project_id": "c82188b1-afdc-43f2-828a-5f0e98291f83",
+  "project_url": "https://higgsfield.ai/3d-jutsu/c82188b1-afdc-43f2-828a-5f0e98291f83",
+  "blender_version": "5.2.0 LTS",
+  "base_revision": 2,
+  "operations": [
+    {
+      "operation_id": "vanta-cp4-microset-002",
+      "type": "mutation",
+      "status": "succeeded",
+      "revision_before": 2,
+      "revision_after": 3,
+      "result": {
+        "cp4_objects": 173,
+        "asset_counts": {
+          "VAN_KIT_CRANE_A": 77,
+          "VAN_KIT_MAG_ANCHOR_A": 19,
+          "VAN_KIT_DRYDOCK_RIB_A": 35,
+          "VAN_KIT_STORM_SHELTER_A": 31,
+          "VAN_CAL_BOARD": 11
+        },
+        "collision_count": 7,
+        "lod_count": 4,
+        "total_objects": 568
+      },
+      "blend": {
+        "size_bytes": 6202289,
+        "etag": "98e19338c29fbf9f5d061735ba229c21"
+      },
+      "glb": {
+        "size_bytes": 4382328,
+        "etag": "8ceb5655ec26a9992b382344c4e3e2d6"
+      }
+    },
+    {
+      "operation_id": "vanta-cp4-render-proof-001",
+      "type": "query_render_batch",
+      "status": "timed_out",
+      "error_code": "EXECUTION_TIMEOUT",
+      "truth": "Three-view render batch exceeded the 300000 ms query limit. Scene revision remained 3; this is not classified as a geometry failure."
+    },
+    {
+      "operation_id": "vanta-cp4-crane-proof-001",
+      "type": "query_render_isolated",
+      "status": "succeeded",
+      "revision": 3,
+      "artifact": {
+        "name": "vanta_cp4_crane_proof.png",
+        "artifact_id": "c09519f9702b54ce7595e7803f0a35a5",
+        "resolution": [640, 480],
+        "size_bytes": 248546,
+        "etag": "d6e3cf08e11d9729c49569f6baea7374"
+      },
+      "truth": "Render artifact exists. Structural render execution passed; direct aesthetic/pixel review remains open in this client."
+    },
+    {
+      "operation_id": "vanta-cp4-snapkit-001",
+      "type": "mutation",
+      "status": "succeeded",
+      "revision_before": 3,
+      "revision_after": 4,
+      "result": {
+        "module_count": 12,
+        "socket_count": 48,
+        "collision_modules": 12,
+        "lod_modules": 12,
+        "grid_m": 4.0,
+        "total_objects": 711
+      },
+      "blend": {
+        "size_bytes": 7046134,
+        "etag": "7617263dce0f383746d5411614908b17"
+      },
+      "glb": {
+        "size_bytes": 4842424,
+        "etag": "0ed964937085dafbcb717b35aacc5163"
+      }
+    },
+    {
+      "operation_id": "vanta-cp4-structural-qa-001",
+      "type": "query_validation",
+      "status": "succeeded",
+      "revision": 4,
+      "result": {
+        "validated_asset_ids": 16,
+        "failures": [],
+        "socket_total": 48,
+        "socket_per_module": 4,
+        "suffix_drift": []
+      },
+      "truth": "All four representative microset assets and all twelve snap modules have render geometry, separate collision, an LOD1 proxy, exactly one root, applied mesh scale and non-empty material assignment."
+    },
+    {
+      "operation_id": "vanta-rev4-audit-001",
+      "type": "query_audit",
+      "status": "succeeded",
+      "revision": 4,
+      "result": {
+        "objects": 711,
+        "meshes": 618,
+        "materials": 18,
+        "collections": 21,
+        "cameras": 9,
+        "lights": 9,
+        "cp4_objects": 315,
+        "cp4_roles": {
+          "collision": 19,
+          "LOD1_PROXY": 16,
+          "render": 206,
+          "calibration": 10,
+          "root": 16,
+          "snap_socket": 48
+        }
+      }
+    }
+  ],
+  "cp4_assets": {
+    "representative_microset": [
+      "VAN_KIT_CRANE_A",
+      "VAN_KIT_MAG_ANCHOR_A",
+      "VAN_KIT_DRYDOCK_RIB_A",
+      "VAN_KIT_STORM_SHELTER_A"
+    ],
+    "snap_modules": [
+      "VAN_MOD_FLOOR_4M_A",
+      "VAN_MOD_WALL_SOLID_4M_A",
+      "VAN_MOD_WALL_SERVICE_4M_A",
+      "VAN_MOD_RAIL_4M_A",
+      "VAN_MOD_PIPE_TRAY_4M_A",
+      "VAN_MOD_BRACE_4M_A",
+      "VAN_MOD_STAIR_4M_A",
+      "VAN_MOD_ROOF_4M_A",
+      "VAN_MOD_PILLAR_4M_A",
+      "VAN_MOD_DOOR_4M_A",
+      "VAN_MOD_MAG_RAIL_4M_A",
+      "VAN_MOD_BULKHEAD_8M_A"
+    ],
+    "snap_grid_m": 4.0
+  },
+  "truth": {
+    "cp4_geometry_implemented": true,
+    "cp4_structural_qa_pass": true,
+    "editable_source_exists": true,
+    "portable_glb_exists": true,
+    "render_artifact_exists": true,
+    "visual_aesthetic_pass": false,
+    "engine_snap_import_qualified": false,
+    "collision_playtest_qualified": false,
+    "performance_qualified": false,
+    "final_pbr_texture_system_complete": false,
+    "final_art_claim": false
+  },
+  "next_gate": "CP5 material/trim/decal calibration plus engine import and close/mid/far review of the CP4 vertical slice before mass propagation."
+}

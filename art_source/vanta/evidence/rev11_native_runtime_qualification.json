@@ -1,0 +1,134 @@
+{
+  "schema": "exovant.vanta.rev11-native-runtime-qualification.v1",
+  "world": "VANTA",
+  "remote_source": {
+    "project_id": "c82188b1-afdc-43f2-828a-5f0e98291f83",
+    "revision": 11,
+    "operation_id": "vanta-rev11-dedup-qa-traversal-spine-003",
+    "blender_version": "5.2.0 LTS",
+    "blend": {
+      "bytes": 10162134,
+      "sha256": "3e60d536e7a38220935775fde9f2505f12adbf42451dcdbcaa87d9054645d899",
+      "etag": "12c55a03e326a0a3e4df352875d065dc"
+    },
+    "glb": {
+      "bytes": 8823976,
+      "sha256": "a3ebb39f54d41e732c2ee343961cba43d85a2ced8a36c9d35306142443c36536",
+      "etag": "86720d1b76c01894746cbded53510bc6"
+    }
+  },
+  "native_structure": {
+    "engine": "Godot 4.7.2-stable (official)",
+    "artifact_sha256": "a3ebb39f54d41e732c2ee343961cba43d85a2ced8a36c9d35306142443c36536",
+    "mesh_instances": 692,
+    "unique_mesh_resources": 605,
+    "mesh_surfaces": 692,
+    "unique_material_resources": 36,
+    "static_bodies": 21,
+    "collision_shapes": 21,
+    "route_body_found": true,
+    "interpretation": "Rev11 source datablock sharing survives native Godot import as observable mesh-resource sharing. This is not HLOD or target-GPU performance qualification."
+  },
+  "qa_route_native_traversal": {
+    "engine": "Godot 4.7.2-stable (official)",
+    "artifact_sha256": "a3ebb39f54d41e732c2ee343961cba43d85a2ced8a36c9d35306142443c36536",
+    "route_body": "COL_VAN_QA_ROUTE_SPINE",
+    "shape_class": "ConcavePolygonShape3D",
+    "bounds_position": [-5000.0, -3.0, -1556.0],
+    "bounds_size": [10200.0, 24.0, 12.0],
+    "diagnostic_speed_mps": 180.0,
+    "frames": 3397,
+    "floor_frames": 3519,
+    "air_frames": 4,
+    "reached_target": true,
+    "travel_ratio": 0.9999265272264227,
+    "route_length_tested_m": 10198.001953125,
+    "max_abs_height_error_m": 0.0945854187011719,
+    "max_abs_z_drift_m": 0.0001220703125,
+    "final_position": [5199.2509765625, 21.9000072479248, -1549.99987792969],
+    "passed": true,
+    "scope": "Accelerated diagnostic CharacterBody3D continuity/precision test on QA-only 10.2 km route. This does not qualify gameplay feel, authored final route art, interactions, combat or GPU performance."
+  },
+  "light_transport_calibration": {
+    "reference": "Blender isolated CP5 neutral board using the authored key/fill, black world and calibration camera",
+    "camera_geometry_alignment_from_previous_gate": {
+      "silhouette_iou": 0.98481187435,
+      "exact_mask_pixel_agreement": 0.9950347222,
+      "status": "PASS"
+    },
+    "physical_4pi_trial": {
+      "mapping": "Omni lumens = imported glTF candela * 4*pi; light_energy = 1",
+      "fill_candela": 47.7464828491211,
+      "fill_lumens": 600.0,
+      "key_candela": 95.4929656982422,
+      "key_lumens": 1200.0,
+      "blender_mean_rgb": [0.0887041538953781, 0.0460304878652096, 0.0284369420260191],
+      "godot_mean_rgb": [0.136660739779472, 0.107040531933308, 0.103188812732697],
+      "luma_corr": 0.4872456245353024,
+      "gradient_corr": 0.4122347571892191,
+      "edge_iou": 0.3501701240259028,
+      "luma_ssim_like": 0.3936177603198355,
+      "rgb_mae": 0.086330734193325,
+      "rgb_rmse": 0.124243997037411,
+      "passed": false
+    },
+    "physical_4pi_plus_agx_trial": {
+      "mapping": "same 4*pi physical mapping plus Godot TONE_MAPPER_AGX",
+      "blender_mean_rgb": [0.0887041538953781, 0.0460304878652096, 0.0284369420260191],
+      "godot_mean_rgb": [0.112522542476654, 0.0829013511538506, 0.0774742066860199],
+      "luma_corr": 0.446289004545441,
+      "gradient_corr": 0.417094012615142,
+      "edge_iou": 0.3513344252818191,
+      "luma_ssim_like": 0.4117593101437931,
+      "rgb_mae": 0.0713569149374962,
+      "rgb_rmse": 0.118696495890617,
+      "passed": false
+    },
+    "physical_agx_key_fill_grid": {
+      "grid": "7x7 key/fill flux scales: 0.25,0.4,0.63,1.0,1.6,2.5,4.0",
+      "tested_combinations": 49,
+      "acceptance": "luma_corr >= 0.75 and gradient_corr >= 0.65 and edge_iou >= 0.35",
+      "pass_any": false,
+      "minimum_rgb_mae": {
+        "key_scale": 1.0,
+        "fill_scale": 0.25,
+        "rgb_mae": 0.0588790997862816,
+        "luma_corr": 0.500782104706184,
+        "gradient_corr": 0.401092934177849,
+        "edge_iou": 0.345364330151374,
+        "luma_ssim_like": 0.520920578264672
+      },
+      "maximum_luma_corr": {
+        "key_scale": 4.0,
+        "fill_scale": 1.0,
+        "luma_corr": 0.561121501880258,
+        "gradient_corr": 0.367294740126288,
+        "edge_iou": 0.329778045596063,
+        "rgb_mae": 0.143986225128174,
+        "luma_ssim_like": 0.279483441989051
+      },
+      "conclusion": "No simple physical key/fill scalar calibration can close the Blender-to-Godot shaded-equivalence gate. The remaining mismatch must be investigated at renderer BRDF, attenuation/radius, color-management/look, or engine-specific shading level rather than by mutating CP5 textures."
+    },
+    "discarded_trial": "An initial 2*pi trial was detected as a harness mistake before persistence and is not an accepted adapter result.",
+    "truth": "STANDARDS_AWARE_4PI_ADAPTER_TESTED_AND_FAILED; SIMPLE_FLUX_CALIBRATION_INSUFFICIENT"
+  },
+  "truth": {
+    "rev11_binary_checkpoint_recoverable": true,
+    "rev11_native_structure_import_pass": true,
+    "rev11_native_route_characterbody_pass": true,
+    "rev11_route_is_final_level_art": false,
+    "source_mesh_sharing_survives_native_import": true,
+    "runtime_hlod_qualified": false,
+    "light_4pi_adapter_qualified": false,
+    "simple_light_scalar_calibration_sufficient": false,
+    "photometric_equivalence_pass": false,
+    "human_visual_approval": false,
+    "target_gpu_performance_pass": false
+  },
+  "next": [
+    "do not alter the repaired CP5 texture payload to compensate for the renderer mismatch",
+    "investigate point-light radius/attenuation and Blender AgX look versus Godot shading/color-management as the next visual-portability variables",
+    "run target-GPU frame-time/draw-call/VRAM/residency qualification on the Mac or declared production hardware",
+    "replace QA traversal spine with authored route only after art review; the kilometre-scale physics/precision risk is now bounded and qualified"
+  ]
+}

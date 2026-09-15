@@ -1,0 +1,124 @@
+{
+  "schema": "exovant.vanta.rev11-dedup-route-visual-portability.v1",
+  "world": "VANTA",
+  "recorded_at": "2026-09-13T11:08:00Z",
+  "remote_source": {
+    "project_id": "c82188b1-afdc-43f2-828a-5f0e98291f83",
+    "revision": 11,
+    "operation_id": "vanta-rev11-dedup-qa-traversal-spine-003",
+    "blender_version": "5.2.0 LTS",
+    "blend": {
+      "size_bytes": 10162134,
+      "etag": "12c55a03e326a0a3e4df352875d065dc"
+    },
+    "glb": {
+      "size_bytes": 8823976,
+      "etag": "86720d1b76c01894746cbded53510bc6"
+    }
+  },
+  "lossless_dedup": {
+    "guard": "local geometry + topology + smoothing + material slot identity + UV contents + sharp_face; editor selection attributes ignored; hero/asymmetry-sensitive families excluded",
+    "used_mesh_datablocks_before": 635,
+    "used_mesh_datablocks_after": 414,
+    "linked_objects": 255,
+    "dedup_groups": 33,
+    "removed_mesh_datablocks": 223,
+    "largest_linked_families": {
+      "iron_sleepers": 44,
+      "crane_braces": 28,
+      "modular_stair_steps": 20,
+      "ring_hull_ribs": 18,
+      "crane_ladder_rungs": 14,
+      "route_pylons": 11
+    },
+    "explicit_exclusions": [
+      "terrain cells",
+      "FERRUM hero geometry",
+      "DRAV hero vehicle geometry",
+      "cross-semantic collision/LOD coupling",
+      "any mesh with shape keys or unsupported semantic attributes"
+    ],
+    "truth": "SOURCE_DATABLOCK_DEDUP_VALIDATED; runtime draw-call/HLOD/performance impact not yet qualified"
+  },
+  "qa_traversal_spine": {
+    "status": "QA_ONLY_NOT_LEVEL_ART",
+    "purpose": "diagnose kilometre-scale collision/traversal and coordinate precision without claiming final authored route",
+    "length_m": 10200,
+    "width_m": 12,
+    "sample_step_m": 50,
+    "sample_count": 205,
+    "vertices": 410,
+    "quads": 204,
+    "max_slope_deg": 4.573921259900861,
+    "visual_object": "QA_VAN_ROUTE_SPINE",
+    "collision_object": "COL_VAN_QA_ROUTE_SPINE_colonly",
+    "colonly_nodes_total_after_add": 21,
+    "route_profile_z_m": [13, -3, 9, 21],
+    "transition_policy": "200 m linear ramps across macro terrain steps",
+    "pylon_base_z_m": [13, 5, -3, -3, -3, 3, 9, 9, 9, 15, 21],
+    "native_characterbody_traversal": "PENDING_MANUAL_CANARY_DUE_CI_COST_QUARANTINE"
+  },
+  "glb_precommit_validation": {
+    "temporary_export_bytes": 8695732,
+    "meshes": 626,
+    "nodes": 807,
+    "materials": 20,
+    "images": 13,
+    "colonly_nodes": 21,
+    "qa_visual_present": true,
+    "qa_collision_present": true
+  },
+  "visual_portability": {
+    "texture_payload_transport": "PASS_FROM_REV10",
+    "camera_and_geometry_alignment": {
+      "test": "three CP5 swatches, white unlit, black background, same imported camera",
+      "silhouette_iou": 0.98481187435,
+      "exact_mask_pixel_agreement": 0.9950347222,
+      "blender_bbox_px": [34, 66, 605, 243],
+      "godot_bbox_px": [35, 66, 604, 242],
+      "truth": "PASS"
+    },
+    "controlled_shaded_equivalence": {
+      "resolution": [640, 360],
+      "luminance_correlation": 0.66896,
+      "gradient_correlation": 0.37206,
+      "edge_iou_top15pct": 0.3644,
+      "global_luma_ssim_like": 0.37419,
+      "raw_rgb_mae": 0.25074,
+      "tone_matched_rgb_mae": 0.07029,
+      "truth": "FAIL_NOT_PHOTOMETRICALLY_EQUIVALENT"
+    },
+    "isolated_neutral_lighting": {
+      "blender_mean_rgb_normalized": [0.088704, 0.04603, 0.028437],
+      "godot_legacy_mean_rgb_normalized": [0.252833, 0.211565, 0.197525],
+      "godot_physical_units_mean_rgb_normalized": [0.7594, 0.7510, 0.7222],
+      "finding": "enabling Godot physical light units without post-import conversion worsens the mismatch"
+    },
+    "light_transport_observation": {
+      "blender_point_power_key": 1200,
+      "blender_point_power_fill": 600,
+      "gltf_point_intensity_key": 95.49297,
+      "gltf_point_intensity_fill": 47.74648,
+      "observed_mapping": "gltf_intensity approximately blender_power / (4*pi)",
+      "godot_default_import": "the glTF intensity values appear as Light3D.light_energy while physical-unit intensity remains at its default",
+      "known_upstream_issue": "https://github.com/godotengine/godot/issues/73624",
+      "truth": "LIGHT_UNIT_PORTABILITY_BLOCKER; do not compensate by altering PBR texture payloads"
+    }
+  },
+  "ci_runtime_gate": {
+    "main_commit": "26ae20f5d1b47d1efa0d54b20124ed93cbc0b43e",
+    "policy": "automatic gauntlet triggers quarantined; workflow_dispatch only",
+    "connector_can_dispatch": false,
+    "decision": "do not bypass cost quarantine with a synthetic pull_request trigger",
+    "classification": "ENV_BLOCKED_BY_MANUAL_CI_PROMOTION_POLICY",
+    "native_route_traversal_claim": false
+  },
+  "open_gates": [
+    "manual Godot 4.7.2 canary for the new 10.2 km _colonly spine",
+    "standards-aware post-import light normalization validation",
+    "human visual/art-direction approval",
+    "target GPU frame-time/draw-call/VRAM/texture-residency measurement",
+    "HLOD qualification beyond source datablock dedup",
+    "replacement of QA traversal spine with authored final traversal"
+  ]
+}

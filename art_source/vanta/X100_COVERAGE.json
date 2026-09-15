@@ -1,0 +1,152 @@
+{
+  "schema": "exovant.vanta.x100-coverage.v2",
+  "world": "VANTA",
+  "protocol": "WORLD_DENSITY_X100_v1",
+  "score_model": "geometric_mean_of_14_normalized_production_dimensions",
+  "heuristic_not_canon": true,
+  "source_revision": 26,
+  "world_completeness": 0.2996391470665515,
+  "world_completeness_percent": 29.9639,
+  "threshold_band": "PLAYABLE_FOUNDATION",
+  "scores": {
+    "MACRO_WORLD": 0.28,
+    "MESO_ARCHITECTURE": 0.2,
+    "MICRO_ASSETS": 0.24,
+    "ECOLOGY": 0.32,
+    "CIVILIZATION": 0.32,
+    "GAMEPLAY": 0.2,
+    "MATERIAL_CAUSALITY": 0.22,
+    "VARIATION": 0.34,
+    "TEMPORAL_STATES": 0.36,
+    "STORYTELLING": 0.34,
+    "AUDIO_VISUAL_LANGUAGE": 0.24,
+    "OPTIMIZATION": 0.36,
+    "REUSABILITY": 0.45,
+    "QA": 0.48
+  },
+  "score_evidence": {
+    "MACRO_WORLD": "24×24 km district proxy and three regions; planetary/final topology still open.",
+    "MESO_ARCHITECTURE": "Puerto/Lluvia/Anillo blockout plus CP4/culture systems; ecology now inhabits existing Iron Rain infrastructure, but final authored interiors/routes remain sparse.",
+    "MICRO_ASSETS": "36 culture variants + 333 justified hardness details + 12 ecology variants + trace families.",
+    "ECOLOGY": "Four causal species, 12 S/M/L variants, 36 state deltas, four trace families, three in-world habitats, 10 placements, native collision and all-scale motion.",
+    "CIVILIZATION": "Five Worker Life tableaux encode maintenance, rest, medicine, strike control and charging.",
+    "GAMEPLAY": "Clearance/collision/traversal receipts plus ecology affordance contracts; ecology AI and final interactions remain source-only/open.",
+    "MATERIAL_CAUSALITY": "Culture causal states + ecology traces; photometric portability and richer ecology material states remain open.",
+    "VARIATION": "Culture S/M/L×states×assemblies plus ecology S/M/L×states/traces and habitat recombination.",
+    "TEMPORAL_STATES": "Culture five-state system + three-era geometry; ecology 36 state-delta sources.",
+    "STORYTELLING": "Worker repair/strike history plus ecology chains that alter salvage, route surfaces and maintenance-material signals.",
+    "AUDIO_VISUAL_LANGUAGE": "Ten ecology audio event hooks plus established VANTA material/field language; runtime audio implementation remains open.",
+    "OPTIMIZATION": "Culture LOD1/LOD2/HLOD runtime tier canary; ecology 4076→444→168 tris and clean selected structural export.",
+    "REUSABILITY": "Culture shared meshes/tableaux plus ecology source→placement bindings, retarget contract and deterministic clean exporter.",
+    "QA": "Godot culture physics/LOD canaries plus ecology 10/10 collision/raycast and 10/10 placement runtime-motion qualification; human art/GPU remain open."
+  },
+  "active_claims": {
+    "culture": {
+      "id": "CLM-VANTA-X100-CULTURE-001",
+      "status": "SYSTEMIC_MICROENV_RUNTIME_LOD_QUALIFIED_VISUAL_GPU_OPEN"
+    },
+    "ecology": {
+      "id": "CLM-VANTA-X100-ECOLOGY-001",
+      "coordination_comment": 5665190121,
+      "prefix": "VAN_X100_ECO_",
+      "status": "REPRESENTATIVE_ECOSYSTEM_NATIVE_COLLISION_AND_ALLSCALE_MOTION_QUALIFIED_CLEAN_REIMPORT_ART_GPU_OPEN"
+    }
+  },
+  "culture": {
+    "source_revision": 19,
+    "families": 12,
+    "source_variants": 36,
+    "states_per_variant": 5,
+    "hardness_details": 333,
+    "tableaux": 5,
+    "placements": 40,
+    "linked_parts": 675,
+    "credible_configurations_floor_per_tableau": 810000,
+    "lod_runtime_canary": {
+      "godot": "4.7.2",
+      "distance_m": {
+        "LOD0": 5,
+        "LOD1": 30,
+        "LOD2": 70,
+        "HLOD": 120
+      },
+      "mesh_counts": {
+        "LOD0": 141,
+        "LOD1": 19,
+        "LOD2": 8,
+        "HLOD": 1
+      },
+      "hlod_textured_surfaces": "1/1",
+      "gpu_target_qualified": false
+    }
+  },
+  "ecology": {
+    "source_revision": 26,
+    "species": 4,
+    "source_variants": 12,
+    "state_delta_sources": 36,
+    "trace_families": 4,
+    "tableaux": 3,
+    "organism_placements": 10,
+    "lod": {
+      "source_triangles": 4076,
+      "lod1_triangles": 444,
+      "lod2_triangles": 168
+    },
+    "godot_provider_canary": {
+      "artifact_revision": 25,
+      "static_bodies": 10,
+      "collision_shapes": 10,
+      "ray_hits": 10,
+      "dynamic_animations": 54,
+      "animation_tracks": 4266,
+      "placements_with_runtime_motion": 10
+    },
+    "clean_selected_structural": {
+      "glb_bytes": 554804,
+      "glb_sha256": "ffbaf45b158001dcc2e376b5b3f2606d8d4739dcc39bfb39a88009627d9926a7",
+      "colonly_nodes": 10,
+      "authoring_source_nodes": 0,
+      "lod_source_nodes": 0,
+      "editor_hook_nodes": 0,
+      "godot_reimport_pass": false
+    },
+    "audio_hooks": 10,
+    "affordance_hooks_source_only": 3,
+    "qa_cameras": 9
+  },
+  "lowest_value_gaps": [
+    {
+      "dimension": "MESO_ARCHITECTURE",
+      "score": 0.2,
+      "action": "Connect validated systems to authored industrial interiors/routes instead of adding more random families."
+    },
+    {
+      "dimension": "GAMEPLAY",
+      "score": 0.2,
+      "action": "Implement one representative ecology affordance and navigation/combat interaction after clean delivery and art review."
+    }
+  ],
+  "truth": {
+    "playable_foundation_band": true,
+    "ecology_causal_slice_source_pass": true,
+    "ecology_native_collision_pass": true,
+    "ecology_native_allscale_motion_pass": true,
+    "clean_ecology_delivery_structural_pass": true,
+    "clean_ecology_delivery_native_reimport_pass": false,
+    "culture_runtime_lod_switching_qualified": true,
+    "culture_hlod_atlas_source_qualified": true,
+    "human_visual_approval": false,
+    "target_gpu_performance_qualified": false,
+    "final_ecology_ai_gameplay": false,
+    "aaa_aaaa_complete": false
+  },
+  "open_gates": [
+    "native Godot reimport of the clean selected ecology GLB",
+    "human close/mid/far VANTA culture and ecology art-direction approval",
+    "photometric light-transport calibration",
+    "target GPU frame time, draw calls, texture residency and VRAM",
+    "final ecology AI/gameplay implementation",
+    "authored regional propagation beyond representative QA/tableau slices"
+  ]
+}
