@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "claim_id": "CLM-NACRE-LOOKDEV-HERO-001",
+  "observed_at": "2026-09-14T11:38:00+02:00",
+  "status": "READ_ONLY_PREFLIGHT_COMPLETE__ZERO_CREDITS_SPENT",
+  "higgsfield_balance": {
+    "credits": 5705.88,
+    "subscription_plan_type": "creator",
+    "free_trial_unlim_available": false,
+    "relevant_free_3d_generations": 0
+  },
+  "look_target_model": {
+    "model_id": "nano_banana_pro",
+    "provider": "Google",
+    "verified_output_type": "image",
+    "verified_resolutions": ["1k", "2k", "4k"],
+    "verified_aspect_ratios_include": ["16:9", "1:1", "4:3", "3:2"],
+    "target_resolution": "2k",
+    "target_aspect_ratio": "16:9",
+    "observed_cost_per_image_credits": 2,
+    "target_A_cost_credits": 2,
+    "full_A_to_F_nominal_cost_credits_if_rate_constant": 12,
+    "cost_note": "12 is arithmetic projection only. Re-run estimator if model, resolution, count or pricing changes."
+  },
+  "verified_3d_models": [
+    "tripo_h3_1_multiview_to_3d",
+    "multi_image_to_3d",
+    "hunyuan3d_v3_image_to_3d",
+    "sam_3_3d"
+  ],
+  "executor_status": {
+    "catalog_capability_verified": true,
+    "dedicated_3d_submit_action_confirmed_on_loaded_tool_surface": false,
+    "rule": "Do not claim a reconstruction was submitted until an actual execution action returns a job/receipt. Model availability is not execution."
+  },
+  "spend_gate": {
+    "fleet_active_required": true,
+    "target_A_first": true,
+    "full_multiview_pack_should_not_be_generated_before_A_art_direction_pass": true,
+    "pbr_3d_stage_only_after_geometry_candidate_pass": true
+  }
+}

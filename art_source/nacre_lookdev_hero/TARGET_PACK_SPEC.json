@@ -1,0 +1,115 @@
+{
+  "schema_version": 1,
+  "pack_id": "NACRE-LOOK-TARGET-PACK-001",
+  "claim_id": "CLM-NACRE-LOOKDEV-HERO-001",
+  "world_id": "nacre",
+  "pilot_asset_id": "NACRE-LOOK-ARCHIVE-CHAMBER-001",
+  "status": "SPEC_READY__NO_GENERATION_BEFORE_FLEET_ACTIVE",
+  "canon_refs": [
+    "design/EXOVANT_BIBLIA.md",
+    "design/EXOVANT_DATA.json"
+  ],
+  "identity_contract": {
+    "documented": [
+      "cities grow inside kilometre-scale mineral shells",
+      "lives are preserved in pearls and biographies are traded",
+      "Canteras de Concha libraries grow by mineral strata",
+      "Archivo de MNEMOS uses spherical archive rooms connected by bridges",
+      "reference gravity 0.26 g"
+    ],
+    "proposal_visual_dna": [
+      "pressure-grown spherical mineral vault",
+      "layered shell cross-section and growth strata",
+      "bounded nacre iridescence rather than chrome plastic",
+      "functional bridge/docking collars and service access",
+      "repair and archive retrofit history visible as geometry"
+    ],
+    "forbidden": [
+      "random greeble",
+      "generic sci-fi panel soup",
+      "blanket translucency",
+      "unmotivated emissive strips",
+      "uniform scratches or edge wear",
+      "unsupported floating structure",
+      "view-to-view aperture drift",
+      "perfect symmetry without growth logic",
+      "scale ambiguity",
+      "occluded reconstruction interfaces"
+    ]
+  },
+  "shared_subject_lock": {
+    "subject_slug": "nacre_archive_chamber_pilot_a",
+    "state": "ERA_2_CURRENT_MAINTAINED",
+    "major_openings": 3,
+    "bridge_socket_count": 3,
+    "service_hatch_count": 2,
+    "symmetry": "broken_radial_growth__not_perfect",
+    "scale_status": "PROPOSAL_FOR_LOOKDEV_ONLY",
+    "diameter_m_proposal": 48.0,
+    "wall_thickness_m_proposal": 1.6,
+    "bridge_socket_clear_width_m_proposal": 4.5,
+    "scale_witness_m": 1.8,
+    "note": "Dimensions are reversible lookdev witnesses and must never be promoted to planetary/world canon without ADR."
+  },
+  "generation_master_prompt": "One exact identity-critical architectural module from EXOVANT 2950 world NACRE: a pressure-grown spherical archive chamber nested inside a kilometre-scale mineral shell culture. The chamber is a physically plausible layered mineral composite, not metal-plastic sci-fi. Primary mass is a thick spherical vault with broken radial growth, visible laminar shell strata, three fixed bridge docking collars, two fixed maintenance hatches, functional load transfer ribs and repair seams. Outer mineral is matte, porous and compression-marked; inner nacre is subtly iridescent only where layered mineral orientation justifies it. Dark structural collars reveal assembly, maintenance access and load paths. Three historical layers are readable: original grown mineral structure, later archive retrofit, current repair/deposition/biological trace. No logos, no text, no random greebles, no generic panel soup, no blanket glass, no arbitrary neon, no floating elements, no uniform scratches. Preserve exactly the same apertures, socket count, seam topology, thickness language and material assignments across every reconstruction view. AAA cinematic realism, physically based materials, measured scale, neutral readable lighting, geometry-first visual truth.",
+  "views": [
+    {
+      "id": "TARGET_A_3Q_FRONT",
+      "purpose": "hero + reconstruction",
+      "camera": "three-quarter front, 35-50mm equivalent, full asset in frame",
+      "requirements": ["all three bridge sockets readable", "one 1.8m witness clear of silhouette", "no depth of field", "neutral contextual floor"],
+      "reconstruction_input": true
+    },
+    {
+      "id": "TARGET_B_SIDE",
+      "purpose": "reconstruction",
+      "camera": "near-orthographic side elevation",
+      "requirements": ["wall thickness readable", "service hatches readable", "same geometry/state as A"],
+      "reconstruction_input": true
+    },
+    {
+      "id": "TARGET_C_REAR",
+      "purpose": "reconstruction",
+      "camera": "rear/service-side three-quarter or near elevation",
+      "requirements": ["docking collar construction visible", "maintenance access visible", "same geometry/state as A"],
+      "reconstruction_input": true
+    },
+    {
+      "id": "TARGET_D_TOP",
+      "purpose": "reconstruction",
+      "camera": "top/high orthographic",
+      "requirements": ["major openings and all sockets visible", "no perspective exaggeration", "same geometry/state as A"],
+      "reconstruction_input": true
+    },
+    {
+      "id": "TARGET_E_MATERIAL_MACRO",
+      "purpose": "material truth",
+      "camera": "macro close-up with millimetre/centimetre scale cue",
+      "requirements": ["layered mineral anatomy", "bounded nacre thin-layer response", "deposition/repair causality"],
+      "reconstruction_input": false
+    },
+    {
+      "id": "TARGET_F_DOCK_DETAIL",
+      "purpose": "manufacturing and maintenance truth",
+      "camera": "close functional detail of one bridge collar",
+      "requirements": ["load transfer", "fastening/locking mechanism", "service clearance", "wear only at causal contact zones"],
+      "reconstruction_input": false
+    }
+  ],
+  "consistency_gates": {
+    "major_openings_exact": true,
+    "bridge_socket_count_exact": true,
+    "service_hatch_count_exact": true,
+    "material_regions_consistent": true,
+    "growth_seams_consistent": true,
+    "same_temporal_state": true,
+    "same_scale": true,
+    "no_view_specific_hallucinated_parts": true
+  },
+  "approval_gate": {
+    "gate_id": "NACRE_LOOK_TARGET_GATE_A",
+    "required_for_reconstruction": true,
+    "human_gate_required": true,
+    "machine_checks_are_advisory": true
+  }
+}
