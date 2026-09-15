@@ -68,7 +68,7 @@ func recover_echo() -> int:
 func set_world_state(world_id: String, state: Dictionary) -> bool:
 	if not world_state_valid(world_id, state):
 		return false
-	worlds[world_id] = state.duplicate(true)
+	worlds[world_id] = _canonical_world_state(state)
 	return true
 
 func get_world_state(world_id: String) -> Dictionary:
@@ -83,10 +83,18 @@ func clear_world_state(world_id: String) -> bool:
 	return true
 
 func snapshot() -> Dictionary:
-	return {"version":VERSION, "flags":flags.duplicate(), "rewards":rewards.duplicate(),
-		"memories":memories, "choice":choice, "valves":valves.duplicate(),
-		"checkpoint":checkpoint.duplicate(), "echo":echo.duplicate(), "echo_value":echo_value,
-		"worlds":worlds.duplicate(true)}
+	return _canonical_current({
+		"version":VERSION,
+		"flags":flags,
+		"rewards":rewards,
+		"memories":memories,
+		"choice":choice,
+		"valves":valves,
+		"checkpoint":checkpoint,
+		"echo":echo,
+		"echo_value":echo_value,
+		"worlds":worlds,
+	})
 
 static func position_valid(v: Variant, empty_allowed: bool = false) -> bool:
 	if not v is Array:
@@ -198,24 +206,60 @@ static func validate(d: Variant) -> bool:
 			return false
 	return true
 
+static func _canonical_world_state(state: Dictionary) -> Dictionary:
+	var out := state.duplicate(true)
+	out["version"] = int(state.version)
+	out["source_revision"] = int(state.source_revision)
+	return out
+
+static func _canonical_position(values: Array) -> Array:
+	var out: Array = []
+	for value in values:
+		out.append(float(value))
+	return out
+
+static func _canonical_valves(values: Array) -> Array:
+	var out: Array = []
+	for value in values:
+		out.append(int(value))
+	return out
+
+static func _canonical_current(d: Dictionary) -> Dictionary:
+	var normalized_worlds := {}
+	var input_worlds: Dictionary = d.get("worlds", {})
+	for world_id in input_worlds:
+		normalized_worlds[world_id] = _canonical_world_state(input_worlds[world_id])
+	return {
+		"version":VERSION,
+		"flags":d.flags.duplicate(),
+		"rewards":d.rewards.duplicate(),
+		"memories":int(d.memories),
+		"choice":d.choice,
+		"valves":_canonical_valves(d.valves),
+		"checkpoint":_canonical_position(d.checkpoint),
+		"echo":[] if d.echo.is_empty() else _canonical_position(d.echo),
+		"echo_value":int(d.echo_value),
+		"worlds":normalized_worlds,
+	}
+
 static func migrate(d: Variant) -> Dictionary:
 	if validate(d):
-		return (d as Dictionary).duplicate(true)
+		return _canonical_current(d)
 	if not _legacy_v1_valid(d):
 		return {}
 	var old: Dictionary = d
-	return {
+	return _canonical_current({
 		"version":VERSION,
-		"flags":old.flags.duplicate(),
-		"rewards":old.rewards.duplicate(),
-		"memories":int(old.memories),
+		"flags":old.flags,
+		"rewards":old.rewards,
+		"memories":old.memories,
 		"choice":old.choice,
-		"valves":old.valves.duplicate(),
-		"checkpoint":old.checkpoint.duplicate(),
-		"echo":old.echo.duplicate(),
-		"echo_value":int(old.echo_value),
+		"valves":old.valves,
+		"checkpoint":old.checkpoint,
+		"echo":old.echo,
+		"echo_value":old.echo_value,
 		"worlds":{},
-	}
+	})
 
 func restore(d: Dictionary) -> bool:
 	var normalized := migrate(d)
