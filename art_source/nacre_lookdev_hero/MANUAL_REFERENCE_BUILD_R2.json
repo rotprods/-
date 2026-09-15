@@ -1,0 +1,155 @@
+{
+  "schema_version": 1,
+  "claim_id": "CLM-NACRE-LOOKDEV-HERO-001",
+  "asset_id": "NACRE-LOOK-ARCHIVE-CHAMBER-001",
+  "truth_state": "MANUAL_REFERENCE_BUILD__TECHNICALLY_QUALIFIED__HUMAN_GATE_OPEN",
+  "explicit_non_claim": "This is not Tripo, Meshy, Hunyuan, SAM or other image-to-3D output. It is a manual/procedural Blender reference build created because the connected client had model discovery but no verified generic 3D submit action.",
+  "fleet": {
+    "status": "active",
+    "epoch": 1,
+    "main_merge_sha": "2db9e3baf6ea5daa0440a11bdb26728a8a5f9d20",
+    "coordination_issue": "https://github.com/rotprods/-/issues/7#issuecomment-5662212641",
+    "integrator_pr": "https://github.com/rotprods/-/pull/43"
+  },
+  "visual_target_pack": {
+    "status": "MULTIVIEW_CANDIDATE__HUMAN_GATE_OPEN",
+    "identity_element": "fa973079-15b8-4648-a602-e1adb4e96655",
+    "jobs": [
+      "165810de-cdb8-40ee-8340-c13cd3eddcf0",
+      "3b988b0b-89c0-411c-bb12-294a8ab09b09",
+      "3db84e38-bcb6-4ed4-bf2b-59fe0de706e6",
+      "7d6e08d7-c9d0-4c25-bc07-0e10f05c28b0"
+    ],
+    "receipt": "art_source/nacre_lookdev_hero/TARGET_PACK_RECEIPT.json"
+  },
+  "primary": {
+    "project_id": "732aba1b-8490-4ee5-94f3-3caa69590f82",
+    "project_url": "https://higgsfield.ai/3d-jutsu/732aba1b-8490-4ee5-94f3-3caa69590f82",
+    "revision": 2,
+    "blender": "5.2.0 LTS",
+    "blend": {
+      "bytes": 3108359,
+      "etag": "2d526ee062985291a79ef85b83728a0c"
+    },
+    "glb": {
+      "bytes": 2206408,
+      "etag": "afabe1487071bf4bc9777917a29054d0"
+    },
+    "semantic_sha256": "704ab6cff6fff63aff966db7f959260f9e312dedf7d56b5c50e24aa319144036",
+    "semantic_payload_bytes": 20463,
+    "tracked_objects": 69
+  },
+  "cold_replay": {
+    "project_id": "39d31b99-3975-4f3e-9281-6f8a3e60415f",
+    "project_url": "https://higgsfield.ai/3d-jutsu/39d31b99-3975-4f3e-9281-6f8a3e60415f",
+    "initial_revision": 1,
+    "initial_semantic_sha256": "d5693b7ea4d6e91154129b095afe5ea8c6048bde528e99817a8366b16857bea5",
+    "initial_result": "FAIL_EXPECTED_IDENTITY",
+    "initial_root_cause": "Blender 5.2 boolean sequence appended one unused trailing NULL material slot to NACRE_HERO_ARCHIVE_SHELL. The other 68 tracked objects matched the primary exactly.",
+    "source_fix": "build_manual_reference_r2.py::normalize_shell_material_slots",
+    "qualified_revision": 2,
+    "blend": {
+      "bytes": 3108359,
+      "etag": "51b74dc24b41627d49f245d532aae565"
+    },
+    "glb": {
+      "bytes": 2206408,
+      "etag": "bf3654dfeda333b72b46b8cdc387343f"
+    },
+    "semantic_sha256": "704ab6cff6fff63aff966db7f959260f9e312dedf7d56b5c50e24aa319144036",
+    "semantic_payload_bytes": 20463,
+    "tracked_objects": 69,
+    "matches_primary": true,
+    "note": "Serialized bytes/etags are not the equivalence criterion. Semantic scene identity is."
+  },
+  "geometry_contract": {
+    "proposal_diameter_m": 48.0,
+    "nominal_wall_thickness_m": 1.6,
+    "objects": 76,
+    "meshes": 46,
+    "curves": 23,
+    "shell_vertices": 12378,
+    "shell_polygons": 12270,
+    "shell_radial_min_m": 22.3814,
+    "shell_radial_max_m": 24.0001,
+    "real_openings": 3,
+    "dock_axis_first_shell_hit_m": [54.3838, 54.3864, 54.3904],
+    "control_axis_first_shell_hit_m": 8.0071,
+    "dock_load_rings": 3,
+    "dock_inner_lips": 3,
+    "load_transfer_ribs": 12,
+    "service_hatches": 2,
+    "growth_strata": 11,
+    "repair_patches": 6,
+    "bounded_biological_traces": 5,
+    "human_scale_witness_m": 1.8,
+    "shell_floor_gap_m": 0.0,
+    "nonunit_mesh_scales": 0,
+    "degenerate_meshes": 0,
+    "qa_pass": true
+  },
+  "negative_evidence_and_repairs": [
+    {
+      "revision": 1,
+      "defects": [
+        "Human witness measured 1.725 m despite a 1.8 m label.",
+        "Context plane was zero-thickness and shell sat 0.05 m above it.",
+        "Shell retained an unused third material slot."
+      ],
+      "repair_revision": 2
+    },
+    {
+      "cold_replay_revision": 1,
+      "defect": "Generator omitted the primary R2 trailing-material-slot normalization.",
+      "repair": "Versioned normalize_shell_material_slots; replay revision 2 matches primary semantic SHA exactly."
+    }
+  ],
+  "review_renders": [
+    {
+      "view": "A_3Q_FRONT",
+      "artifact_id": "754f29fe75ccba2a3935854f6ffe23fb",
+      "bytes": 442836,
+      "etag": "5d5fb1eda79882a9455ccf2c71628432",
+      "resolution": [640, 640]
+    },
+    {
+      "view": "B_SIDE",
+      "artifact_id": "67c752b53a93e64a123e01d1cf35caf4",
+      "bytes": 469820,
+      "etag": "fab88342dbc5ebb4c865f9e4db7e243b",
+      "resolution": [640, 640]
+    },
+    {
+      "view": "C_REAR",
+      "artifact_id": "23f9453e71ed90681a54eeec628a4c5d",
+      "bytes": 438485,
+      "etag": "0c7ed6e35422805bf0517238c0bf2ccf",
+      "resolution": [640, 640]
+    },
+    {
+      "view": "D_TOP",
+      "artifact_id": "f8918be6253a198cc0c582097b4b52f9",
+      "bytes": 468491,
+      "etag": "34854042f3578f249efd8c518c01ccac",
+      "resolution": [640, 640]
+    }
+  ],
+  "source": {
+    "generator": "art_source/nacre_lookdev_hero/build_manual_reference_r2.py",
+    "target_pack_spec": "art_source/nacre_lookdev_hero/TARGET_PACK_SPEC.json",
+    "target_pack_receipt": "art_source/nacre_lookdev_hero/TARGET_PACK_RECEIPT.json",
+    "reconstruction_bakeoff": "art_source/nacre_lookdev_hero/RECONSTRUCTION_BAKEOFF.json"
+  },
+  "open_gates": [
+    "HUMAN_GATE_ART: visual identity/material/composition acceptance",
+    "TARGET_E material macro and TARGET_F docking/manufacturing close-up intentionally deferred until look-lock acceptance",
+    "real image-to-3D submit surface for Tripo/Meshy/Hunyuan bake-off",
+    "final cleanup/retopology rather than reference-blockout topology",
+    "UV0/UV2 and authored production PBR maps/texel-density policy",
+    "collision and LOD strategy for shipping asset",
+    "target-engine import and same-camera visual regression",
+    "target-hardware performance",
+    "provider-independent recovered .blend/GLB SHA256 delivery receipt"
+  ],
+  "definition": "Technically qualified, semantically reproducible MANUAL_REFERENCE_BUILD. Not final AAA art, not a shipping asset, not image-to-3D output."
+}
