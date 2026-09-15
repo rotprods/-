@@ -24,11 +24,15 @@ This namespace turns the Pelagos rev44 art handoff into an engine-facing contrac
 
 ## Truth boundary
 
-Current truth is `IMPLEMENTED_EXECUTABLE_SOURCE_NOT_PELAGOS_NATIVE_QUALIFIED`.
+Current truth is `ENGINE_CONTRACT_QUALIFIED__GLB_NATIVE_PENDING`.
 
-A contract-only PASS proves schema, IDs, state grammar and in-memory state roundtrip. It does **not** prove that the rev44 GLB imports, that its node names survive Godot import, or that collision/navigation/performance/art gates pass.
+The adapter itself has been executed successfully under the repository-pinned **Godot 4.7.2** binary. Workflow run `34986408898` passed the static manifest gate and **19/19 Pelagos contract-only assertions**, including 56-family/47-stateful/224-node invariants, fail-closed interaction policy, state transitions, corrupt-state rejection, exact snapshot/restore and namespaced campaign-v2 projection.
 
-Native qualification requires the exact rev44 GLB at:
+Repository Gauntlet run `34986218171` also passed **85/85 Python tests**, `project_control.py check`, pinned Godot bootstrap and the existing native import/state/world/input/smoke gates on head `7c52e05fca1496106d37d23dc1a88e130686ef42`.
+
+These passes qualify the **engine contract and GDScript implementation**. They do **not** prove that the Pelagos rev44 GLB imports, that all 224 required names survive Godot's GLB import, or that collision/navigation/performance/art gates pass. Those claims remain deliberately blocked.
+
+Native Pelagos qualification requires the exact rev44 GLB at:
 
 `runtime/pelagos/assets/pelagos_world_rev44.glb`
 
