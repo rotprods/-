@@ -1,0 +1,70 @@
+name: EXOVANT Fleet Reserve — KHEPRI Materials One Shot
+on:
+  push:
+    branches:
+      - ops/fleet-reserve-khepri-materials-001
+permissions:
+  contents: write
+concurrency:
+  group: fleet-reserve-khepri-materials-001
+  cancel-in-progress: false
+jobs:
+  reserve-and-reproject:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          fetch-depth: 0
+      - name: Reserve claim with Fleet CAS
+        run: |
+          python3 - <<'PY'
+          import importlib.util, json, pathlib
+          root=pathlib.Path('.')
+          spec=importlib.util.spec_from_file_location('fleet_control',root/'tools/fleet_control.py')
+          fleet=importlib.util.module_from_spec(spec); spec.loader.exec_module(fleet)
+          path=root/'ops/fleet/registry.json'; registry=json.loads(path.read_text())
+          cid='CLM-KHEPRI-MATERIALS-001'
+          existing=next((c for c in registry['claims'] if c['id']==cid),None)
+          claim={
+            'id':cid,
+            'owner':'AGENT-KHEPRI-MATERIALS-001',
+            'owner_identity_confirmed':True,
+            'branch':'art/khepri-materials-001',
+            'role':'world','epoch':1,'status':'reserved','ack':None,
+            'paths':['production/claims/CLM-KHEPRI-MATERIALS-001.yaml','production/worlds/khepri/materials/','art_source/khepri/materials/'],
+            'scopes':[{'world':'khepri','facet':'art/materials-surface-library'}],
+            'project_ids':['d2bdc087-55ff-481e-93c5-e66bdfd57d8d','67d5c61f-29f2-426b-b6ba-77549f15b452'],
+            'asset_ids':['KHP_MAT_GLASS_SOLAR_001','KHP_MAT_MIRROR_OPTICAL_001','KHP_MAT_BRONZE_SYNOD_001','KHP_MAT_CERAMIC_SCORCHED_001','KHP_MAT_FABRIC_SHADE_001','KHP_MAT_MINERAL_DESERT_001'],
+            'evidence_refs':['https://github.com/rotprods/-/issues/7#issuecomment-5655314816','https://github.com/rotprods/-/issues/7#issuecomment-5665375595','https://github.com/rotprods/-/pull/37'],
+            'reservation_basis':'Existing X100 materials producer supplied REGISTRY_HANDOFF.json; fresh CAS/collision validation is performed by this transaction.',
+            'includes':['KHEPRI causal material library','systemic material recipes','World Compiler material ArtKit','GLB/Godot material QA','consumer binding specifications and receipts'],
+            'excludes':['geometry ownership','final Glass Sea architecture','terrain/geology','characters/fauna/vehicles','gameplay/collision','cross-world material library','human final-art approval','target-hardware budget claims'],
+            'worker_status':'UNKNOWN'
+          }
+          if existing is None:
+            before=fleet.digest(registry)
+            registry=fleet.transition(registry,{'action':'reserve','expected_digest':before,'claim':claim})
+            print(json.dumps({'before':before,'reserved':fleet.digest(registry),'generation':registry['generation']}))
+          else:
+            if existing.get('owner')!=claim['owner'] or existing.get('epoch')!=1 or existing.get('status')!='reserved':
+              raise SystemExit('existing claim is not expected reserved owner/epoch')
+            print(json.dumps({'idempotent':True,'reserved':fleet.digest(registry),'generation':registry['generation']}))
+          path.write_text(json.dumps(registry,ensure_ascii=False,indent=2)+'\n')
+          PY
+          python3 tools/fleet_control.py validate
+      - name: Rebuild graph and continuity manifest
+        run: |
+          python3 tools/graphify_project.py
+          python3 tools/project_control.py refresh
+          python3 tools/project_control.py check
+      - name: Persist reserve and remove one-shot workflow
+        run: |
+          git config user.name 'EXOVANT Fleet Integrator'
+          git config user.email '261643698+rotprods@users.noreply.github.com'
+          git rm .github/workflows/khepri-materials-reserve-once.yml
+          git add ops/fleet/registry.json _project_intelligence/graph.json MANIFEST.json
+          git diff --cached --check
+          git commit -m 'ops(fleet): reserve KHEPRI materials claim [skip ci]'
+          git push origin HEAD:ops/fleet-reserve-khepri-materials-001
