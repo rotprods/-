@@ -1,0 +1,56 @@
+name: EXOVANT Fleet Activate — KHEPRI Materials One Shot
+on:
+  push:
+    branches:
+      - ops/fleet-activate-khepri-materials-001
+permissions:
+  contents: write
+concurrency:
+  group: fleet-activate-khepri-materials-001
+  cancel-in-progress: false
+jobs:
+  activate-and-reproject:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          fetch-depth: 0
+      - name: Activate claim with Fleet CAS
+        run: |
+          python3 - <<'PY'
+          import importlib.util, json, pathlib
+          root=pathlib.Path('.')
+          spec=importlib.util.spec_from_file_location('fleet_control',root/'tools/fleet_control.py')
+          fleet=importlib.util.module_from_spec(spec); spec.loader.exec_module(fleet)
+          path=root/'ops/fleet/registry.json'; registry=json.loads(path.read_text())
+          cid='CLM-KHEPRI-MATERIALS-001'; owner='AGENT-KHEPRI-MATERIALS-001'; epoch=1
+          current=next((c for c in registry['claims'] if c['id']==cid),None)
+          if current is None: raise SystemExit('claim missing')
+          if current.get('owner')!=owner or current.get('epoch')!=epoch: raise SystemExit('owner/epoch mismatch')
+          if current.get('status')=='reserved':
+            before=fleet.digest(registry)
+            registry=fleet.transition(registry,{'action':'ack','expected_digest':before,'claim_id':cid,'owner':owner,'epoch':epoch,'evidence_ref':'https://github.com/rotprods/-/issues/7#issuecomment-5683065997'})
+            print(json.dumps({'before':before,'active':fleet.digest(registry),'generation':registry['generation']}))
+          elif current.get('status')=='active':
+            print(json.dumps({'idempotent':True,'active':fleet.digest(registry),'generation':registry['generation']}))
+          else:
+            raise SystemExit('claim is neither reserved nor active')
+          path.write_text(json.dumps(registry,ensure_ascii=False,indent=2)+'\n')
+          PY
+          python3 tools/fleet_control.py validate
+      - name: Rebuild graph and continuity manifest
+        run: |
+          python3 tools/graphify_project.py
+          python3 tools/project_control.py refresh
+          python3 tools/project_control.py check
+      - name: Persist activation and remove one-shot workflow
+        run: |
+          git config user.name 'EXOVANT Fleet Integrator'
+          git config user.email '261643698+rotprods@users.noreply.github.com'
+          git rm .github/workflows/khepri-materials-activate-once.yml
+          git add ops/fleet/registry.json _project_intelligence/graph.json MANIFEST.json
+          git diff --cached --check
+          git commit -m 'ops(fleet): activate KHEPRI materials claim [skip ci]'
+          git push origin HEAD:ops/fleet-activate-khepri-materials-001
