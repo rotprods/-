@@ -122,11 +122,11 @@ func validate_contract(data: Dictionary) -> String:
 	if data.get("approved_interactions", []) != []:
 		return "interaction allowlist must remain empty"
 	var authority: Dictionary = data.get("authority", {})
-	if authority.get("manifest_patterns_are_explicit") is not bool or not authority.manifest_patterns_are_explicit:
+	if not authority.get("manifest_patterns_are_explicit") is bool or not authority.manifest_patterns_are_explicit:
 		return "manifest pattern authority missing"
-	if authority.get("prefix_inference_forbidden") is not bool or not authority.prefix_inference_forbidden:
+	if not authority.get("prefix_inference_forbidden") is bool or not authority.prefix_inference_forbidden:
 		return "prefix inference prohibition missing"
-	if authority.get("visible_mesh_collision_inference_forbidden") is not bool or not authority.visible_mesh_collision_inference_forbidden:
+	if not authority.get("visible_mesh_collision_inference_forbidden") is bool or not authority.visible_mesh_collision_inference_forbidden:
 		return "collision inference prohibition missing"
 	return ""
 
