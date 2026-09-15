@@ -1,0 +1,44 @@
+{
+  "claim_id": "CLM-KHEPRI-WMACRO-001",
+  "world_id": "khepri",
+  "master_project_id": "040f0c45-83a7-483c-9ee7-1e31c640a587",
+  "master_revision": 3,
+  "validator_operation": "khepri.validator.r3",
+  "passed": true,
+  "overview": {
+    "lens_mm": 32.0,
+    "clip_end_m": 12000.0,
+    "all_route_anchors_in_frame": true,
+    "all_route_anchors_within_clip": true,
+    "farthest_anchor_distance_m": 8095.8
+  },
+  "gameplay": {
+    "lens_mm": 38.0,
+    "clip_end_m": 8000.0,
+    "human_guide_height_m": 1.85,
+    "human_guide_distance_on_view_axis_m": 30.0,
+    "human_guide_ndc_bbox": [0.4896, 0.6030, 0.5105, 0.7206],
+    "human_guide_projected_height_px_at_720p": 84.7
+  },
+  "structural": {
+    "objects": 77,
+    "meshes": 6,
+    "materials": 5,
+    "curves": 1,
+    "vertices": 5697,
+    "triangles": 11092,
+    "duplicate_object_names": 0,
+    "duplicate_asset_ids": 0,
+    "nonfinite_transforms": 0,
+    "negative_scales": 0,
+    "nonunit_mesh_scales": 0
+  },
+  "reproducibility": {
+    "cold_project_id": "4c01fdbb-7093-4229-9a49-8237583280bc",
+    "cold_optimized_revision": 2,
+    "semantic_sha256_both": "7d80db30181cde1bded58d357384095c07cce0d2ca65e1b728b841aa93b252ca",
+    "blend_bytes_both": 1357838,
+    "glb_bytes_both": 703040
+  },
+  "nonclaims": ["human artistic approval", "engine import", "GPU performance", "full KHEPRI completion"]
+}

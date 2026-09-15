@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "receipt_id": "R8_X100_CANON_RECOVERY",
+  "world_id": "khepri",
+  "claim_id": "CLM-KHEPRI-WMACRO-001",
+  "source": {
+    "path": "design/EXOVANT_BIBLIA.md",
+    "main_commit": "26ae20f5d1b47d1efa0d54b20124ed93cbc0b43e",
+    "section": "06. KHEPRI — RA-KHET, sol encadenado"
+  },
+  "corrected_false_unknowns": {
+    "regions": [
+      "Ciudad de los Toldos",
+      "Mar de Cristal",
+      "Crisol de RAKHET"
+    ],
+    "biota": {
+      "Escarabajo heliostato": "orienta su caparazón para regular calor",
+      "Zorro de vidrio": "refracta su contorno sin volverse invisible",
+      "Serpiente de cable": "vive entre colectores enfriados",
+      "Liquen de prisma": "fija minerales en áreas de luz dispersa"
+    },
+    "vehicle": "Helioperegrino — moto de vela solar de superficie",
+    "npcs": [
+      "Hermana Asha",
+      "Qadir Noé",
+      "Yal de la Sombra"
+    ],
+    "adversaries": [
+      "Penitente heliostático",
+      "Saboteador de lente",
+      "Escarabajo colosal"
+    ]
+  },
+  "coverage_effect": {
+    "vegetation": "BLOCKED -> TODO/UNCLAIMED",
+    "fauna_wildlife": "BLOCKED -> TODO/UNCLAIMED",
+    "vehicles": "TODO now has documented local anchor"
+  },
+  "nonclaims": [
+    "complete trophic web",
+    "final creature morphology/rig/gameplay",
+    "final transport hierarchy",
+    "ecology ownership",
+    "character ownership"
+  ],
+  "passed": true
+}

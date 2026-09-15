@@ -1,0 +1,29 @@
+{
+  "claim_id": "CLM-KHEPRI-WMACRO-001",
+  "world_id": "khepri",
+  "master_project_id": "040f0c45-83a7-483c-9ee7-1e31c640a587",
+  "source_revision": 4,
+  "operation": "khepri.heliostat.contact.audit.r4",
+  "passed": true,
+  "count": 32,
+  "mast_ground_contact_error_m": {
+    "min": -0.000004,
+    "max": 0.000004,
+    "mean_abs": 0.000001
+  },
+  "panel_center_above_mast_top_m": {
+    "min": 6.0,
+    "max": 6.0,
+    "mean": 6.0
+  },
+  "pairwise_mast_spacing_m": {
+    "min": 490.0,
+    "median": 1470.0,
+    "max": 3865.669
+  },
+  "shared_meshes": {
+    "masts": 1,
+    "panels": 1
+  },
+  "boundary": "Macro footprint/contact audit only. Final foundations, mechanics, shadowing and maintenance clearances remain downstream architecture/technical-art scope."
+}

@@ -1,0 +1,88 @@
+{
+  "schema_version": 2,
+  "project": "EXOVANT 2950",
+  "world_id": "khepri",
+  "claim_id": "CLM-KHEPRI-WMACRO-001",
+  "status": "LOCALLY_VALIDATED_BLOCKOUT",
+  "master_project_id": "040f0c45-83a7-483c-9ee7-1e31c640a587",
+  "master_revision": 3,
+  "scene_sequence": 0,
+  "validated_at": "2026-09-12T21:38:15Z",
+  "validator_operation": "khepri.validator.r3",
+  "structural_and_machine_visual_pass": true,
+  "checks": {
+    "required_objects_present": true,
+    "metric_units": true,
+    "duplicate_object_names_zero": true,
+    "duplicate_asset_ids_zero": true,
+    "nonfinite_transforms_zero": true,
+    "negative_scale_zero": true,
+    "nonunit_mesh_scale_zero": true,
+    "terrain_xy_exact": true,
+    "human_scale_exact": true,
+    "heliostat_panels_instanced": true,
+    "heliostat_masts_instanced": true,
+    "claim_metadata_matches": true,
+    "world_metadata_matches": true,
+    "overview_lens_contract": true,
+    "overview_clip_contract": true,
+    "overview_all_route_anchors_in_frame": true,
+    "overview_all_route_anchors_within_clip": true,
+    "gameplay_clip_contract": true,
+    "human_guide_visible_in_gameplay_camera": true,
+    "human_guide_readable_projected_scale": true,
+    "semantic_cold_rebuild": true
+  },
+  "metrics": {
+    "objects": 77,
+    "mesh_datablocks": 6,
+    "materials": 5,
+    "curves": 1,
+    "unique_mesh_vertices": 5697,
+    "unique_mesh_triangles": 11092,
+    "terrain_dimensions_m": [6400.0, 4800.0, 228.805],
+    "human_guide_height_m": 1.85,
+    "overview_camera": {
+      "lens_mm": 32.0,
+      "clip_end_m": 12000.0,
+      "anchors": {
+        "KHP_WM_ROUTE_SHADE": {"ndc": [0.0692, 0.3707, 4650.6699], "distance_m": 5182.04},
+        "KHP_WM_ROUTE_GLASS_SEA": {"ndc": [0.4568, 0.4214, 5384.5415], "distance_m": 5397.55},
+        "KHP_WM_ROUTE_CRUCIBLE": {"ndc": [0.6752, 0.5525, 6239.9146], "distance_m": 6363.34},
+        "KHP_WM_ROUTE_RAKHET": {"ndc": [0.6208, 0.6512, 7986.2783], "distance_m": 8095.8}
+      }
+    },
+    "gameplay_camera": {
+      "lens_mm": 38.0,
+      "clip_end_m": 8000.0,
+      "human_guide_ndc_bbox": [0.4896, 0.603, 0.5105, 0.7206],
+      "human_guide_projected_height_px_at_720p": 84.7
+    },
+    "semantic_sha256": "7d80db30181cde1bded58d357384095c07cce0d2ca65e1b728b841aa93b252ca"
+  },
+  "artifacts": {
+    "blend": {"revision": 3, "bytes": 1357838, "etag": "3ffea751fa6b48b11fb86d80507c016a"},
+    "glb": {"revision": 3, "bytes": 703040, "etag": "06690127aa85172b5caa64f98c1441ab"}
+  },
+  "defects_fixed_this_wave": [
+    "Default 1000 m camera clip range invalid for kilometre-scale macro scene",
+    "Human scale guide outside gameplay validation frame"
+  ],
+  "open_gates": [
+    "HUMAN_VISUAL_REVIEW",
+    "BINARY_PERSISTENCE_TRANSPORT",
+    "PRODUCER_BRANCH_RECONCILIATION_AND_CI",
+    "ENGINE_IMPORT_COLLISION_AND_STREAMING",
+    "TARGET_GPU_PERFORMANCE"
+  ],
+  "explicit_nonclaims": [
+    "human artistic approval",
+    "final PBR material approval",
+    "engine integration",
+    "collision approval",
+    "target GPU performance",
+    "AAA/AAAA finish",
+    "final planet radius canon",
+    "full KHEPRI completion"
+  ]
+}

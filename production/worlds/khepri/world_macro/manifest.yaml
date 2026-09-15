@@ -1,0 +1,246 @@
+schema_version: 3
+world_id: khepri
+scope: world_macro/planetary_foundation
+claim_id: CLM-KHEPRI-WMACRO-001
+agent_id: AGENT-KHEPRI-WMACRO-001
+status: REVIEW
+x100_protocol: ACTIVE
+blender_project_id: 040f0c45-83a7-483c-9ee7-1e31c640a587
+blender_revision: 8
+cold_project_id: 4c01fdbb-7093-4229-9a49-8237583280bc
+cold_revision: 6
+
+canon_boundary:
+  gravity_g: 0.63
+  temperature_reference_c: 71.0
+  planet_radius_m_proposal: 5224000.0
+  planet_radius_status: KHP_ADR_001_PROPOSAL_NOT_CANON
+  coordinate_contract: local_tangent_cell_xyz_metres_blender_z_up
+  damage_abandonment_states: PROPOSAL_QA_NOT_STORY_CANON
+
+source_pipeline:
+  generator: art_source/khepri/world_macro/generate_khepri_world_macro.py
+  optimizer: art_source/khepri/world_macro/optimize_khepri_world_macro.py
+  route_refiner: art_source/khepri/world_macro/refine_route_r4.py
+  validator: art_source/khepri/world_macro/validate_khepri_world_macro.py
+  semantic_fingerprint: art_source/khepri/world_macro/fingerprint_khepri_world_macro.py
+  split_exporter: art_source/khepri/world_macro/export_stream_units.py
+  terrain_tiling_contract: art_source/khepri/world_macro/terrain_tile_contract.py
+  terrain_global_normals: art_source/khepri/world_macro/apply_terrain_global_normals.py
+  x100_optical_field: art_source/khepri/world_macro/expand_optical_field_x100.py
+  x100_optical_lods: art_source/khepri/world_macro/add_optical_lods_x100.py
+
+provider_artifacts_r8:
+  editable_blend:
+    status: PERSISTED_SHA_BOUND_NATIVE_RECEIPT_PASS
+    bytes: 2198165
+    sha256: b2f3e2f8ff90f28a5485dc019efcfa5913def0dbbcfb5e39d883d3c469a25337
+    persistent_media_id: 0988f832-71ab-4c21-9c1e-ecbe3cd08bcb
+  whole_scene_glb:
+    status: PERSISTED_SHA_BOUND_GODOT_IMPORT_PASS
+    bytes: 577744
+    sha256: c9c698734061e481b94347c88d7c076b19c60261c8402548fb8ca1079d7d3579
+    persistent_media_id: 1bed7b1f-0e0a-4cd3-b61b-a62f950b4ff5
+  fleet_delivery: PASS_CANDIDATE_RECOVERED_WITH_NATIVE_RECEIPT
+  corporate_git_lfs_archive: DEFERRED_POLICY_NONBLOCKING
+
+assets:
+  - asset_id: KHP_WM_PLANET_META
+    region: GLOBAL_KHEPRI
+    category: world_macro
+    subcategory: planetary_metadata
+    quality_tier: D
+    priority: P0
+    owner: AGENT-KHEPRI-WMACRO-001
+    status: REVIEW
+    blender_object: KHP_WM_PLANET_META
+    export_contract: GLB_extras_metadata
+    collision_policy: none
+    qa_status: STRUCTURAL_PASS
+
+  - asset_id: KHP_WM_ORBITAL_PROXY
+    region: GLOBAL_KHEPRI
+    category: world_macro
+    subcategory: orbital_representation
+    quality_tier: D
+    priority: P0
+    owner: AGENT-KHEPRI-WMACRO-001
+    status: REVIEW
+    blender_object: KHP_WM_L1_ORBITAL_PROXY_1_TO_20000
+    display_radius_m: 261.2
+    physical_radius_m_proposal: 5224000.0
+    export_contract: L1_ORBITAL_CENTERED_STANDALONE_GLB
+    authoring_preview_offset_blender_xyz_m: [0.0, 0.0, -1100.0]
+    export_origin_policy: remove_preview_offset_temporarily_then_restore
+    collision_policy: none
+    lod_policy: downstream
+    qa_status: STRUCTURAL_AND_SPLIT_EXPORT_PASS_ART_PENDING
+
+  - asset_id: KHP_WM_TERRAIN_A
+    region: MACROCELL_A
+    category: terrain
+    subcategory: macro_elevation
+    quality_tier: D
+    priority: P0
+    owner: AGENT-KHEPRI-WMACRO-001
+    status: REVIEW
+    blender_object: KHP_WM_L2_MACROCELL_A_TERRAIN
+    dimensions_m: [6400.0, 4800.0, 228.805]
+    grid: [81, 61]
+    grid_spacing_m: [80.0, 80.0]
+    height_model_version: KHP_TERRAIN_V1
+    shading_contract: SMOOTH_CUSTOM_GLOBAL
+    normal_contract: KHP_GLOBAL_GRADIENT_NORMAL_V1
+    source_vertices: 4941
+    runtime_vertices: 4941
+    runtime_triangles: 9600
+    terrain_normal_master_cold_sha256: ab7b0b20e8f305b2d30504fdf44d6b233f870d960f4b9774ff87ef1504c1b856
+    export_contract: L2_MACROCELL_LOCAL_TANGENT_GLB
+    collision_policy: separate_future_gameplay_claim
+    qa_status: STRUCTURAL_TOPOLOGY_TILING_NORMALS_PASS_ART_PENDING
+
+  - asset_id: KHP_WM_HELIOSTAT_FOOTPRINTS
+    region: MACROCELL_A
+    category: infrastructure_support
+    subcategory: optical_field_systemic_footprints
+    quality_tier: D
+    priority: P1
+    owner: AGENT-KHEPRI-WMACRO-001
+    status: SYSTEMIC_MACRO_COMPLETE
+    contract: KHP_OPTICAL_FIELD_X100_V1
+    default_count: 107
+    default_states: {operational: 93, maintenance: 14}
+    configuration_count: 432
+    all_configuration_instance_range: [44, 185]
+    scale_variants: [compact, standard, wide]
+    layouts: [staggered_bands, aligned_lattice, diagonal_bands, radial_fan]
+    corridor_patterns: [dual_ns, single_ns, cross]
+    supported_state_profiles: [operational, maintenance_cycle, damage_proxy, abandonment_proxy]
+    unique_lod0_mast_meshes: 3
+    unique_lod0_panel_meshes: 3
+    ground_contact_error_m: [-0.00000713, 0.00000861]
+    min_pairwise_spacing_m: 438.462
+    min_route_clearance_m: 144.714
+    min_anchor_clearance_m: 269.916
+    max_slope_deg: 10.794
+    x100_master_cold_scene_sha256: 01420ed366a7f8443a084332036604c47324d50900ae2033ea4d42059440d1fa
+    lod_contract: KHP_OPTICAL_LOD_X100_V1
+    lod_levels: [LOD0, LOD1, LOD2]
+    lod_source_meshes: 12
+    lod_family_vertices: {LOD0: 24, LOD1: 16, LOD2: 8}
+    lod_family_polygons: {LOD0: 18, LOD1: 12, LOD2: 6}
+    lod_master_cold_sha256: 1c67430d580cae109fa50dfab73e6747304e87b5b3c9bba99e65fa6fe4e80101
+    runtime_lod_thresholds: downstream_technical_art
+    hlod: downstream_technical_art
+    collision_policy: downstream_gameplay
+    final_pbr_materials: downstream_material_library
+    optical_physics: downstream_domain
+    ai_density_gate: PASS
+    state_causality_gate: PASS
+    qa_status: SYSTEMIC_MACRO_COMPLETE_HUMAN_FINAL_ART_NOT_CLAIMED
+
+  - asset_id: KHP_WM_ROUTE_INTERFACES
+    region: MACROCELL_A
+    category: technical_integration
+    subcategory: route_anchors_and_qa_guide
+    quality_tier: D
+    priority: P0
+    owner: AGENT-KHEPRI-WMACRO-001
+    status: REVIEW
+    anchors: [KHP_WM_ROUTE_SHADE, KHP_WM_ROUTE_GLASS_SEA, KHP_WM_ROUTE_CRUCIBLE, KHP_WM_ROUTE_RAKHET]
+    qa_route_object: KHP_WM_ROUTE_GUIDE_ONLY
+    route_points: 576
+    route_segments: 575
+    target_clearance_m: 7.0
+    audited_clearance_m: [6.9963, 7.0043]
+    below_terrain_samples: 0
+    anchor_order_containment: PASS
+    export_contract: "anchors included in L2; QA route curve excluded from L2 package"
+    collision_policy: none
+    qa_status: INTERFACE_CLEARANCE_PASS_ART_PENDING
+
+measured_scene_metrics_r8:
+  objects: 228
+  mesh_datablocks: 22
+  materials: 5
+  curves: 1
+  optical_masts: 107
+  optical_panels: 107
+  optical_lod0_scene_meshes: 6
+  optical_source_lod_meshes: 12
+  route_points: 576
+  route_segments: 575
+  human_guide_height_m: 1.85
+
+runtime_r8:
+  engine: Godot 4.7.2.stable.official.ed1daf0bf
+  native_import: PASS
+  nodes: 229
+  mesh_instances: 219
+  masts: 107
+  panels: 107
+  unique_mast_mesh_resources: 3
+  unique_panel_mesh_resources: 3
+  authored_asset_ids: 224
+  duplicate_asset_ids: 0
+  terrain_vertices: 4941
+  terrain_normals: 4941
+  terrain_triangles: 9600
+  lod_contract_survived: true
+  configuration_count_survived: 432
+  lod_manifest_survived: true
+
+reproducibility:
+  x100_master_cold_scene_match: true
+  x100_scene_sha256: 01420ed366a7f8443a084332036604c47324d50900ae2033ea4d42059440d1fa
+  lod_master_cold_match: true
+  lod_sha256: 1c67430d580cae109fa50dfab73e6747304e87b5b3c9bba99e65fa6fe4e80101
+  current_blend_size_master_cold_match: true
+  current_glb_size_master_cold_match: true
+  gltf_determinism_policy: normalized_structure_plus_semantic_fingerprint_not_binary_identity
+
+visual_density_r8:
+  ai_review: PASS_SUPPLEMENTAL
+  infrastructure_read: true
+  route_legible: true
+  controlled_variation: true
+  clutter_fail: false
+  obvious_floating: false
+  repetition_risk: LOW
+  human_art_gate: PENDING
+
+state_system:
+  machine_gate: PASS
+  ai_legibility_gate: PASS_SUPPLEMENTAL
+  operational: normal_tracking_proxy
+  maintenance: panel_stowed_72_deg
+  damaged_proxy: panel_lowered_3m_and_off_axis
+  abandoned_proxy: mast_remains_panel_absent
+  random_grunge: false
+
+ci:
+  last_exact_actions_green_head: 8022197ec42eae9764d3dab2fcda311d8acad5e2
+  last_exact_actions_green_run: 34722654514
+  current_policy: MANUAL_WORKFLOW_DISPATCH_ONLY_COST_QUARANTINE
+
+open_gates:
+  - HUMAN_GATE_ART
+
+nonblocking_followups:
+  - CORPORATE_GIT_LFS_ARCHIVE_POLICY
+  - RUNTIME_LOD_THRESHOLDS_AND_HLOD
+  - PRODUCTION_COLLISION
+  - FINAL_PBR_MATERIAL_LIBRARY
+
+nonclaims:
+  - complete_KHEPRI_world
+  - final_Glass_Sea_architecture
+  - final_game_ready_budget
+  - final_collision_or_navmesh
+  - final_UV_PBR_material_library
+  - final_terrain_geology
+  - final_planet_curvature_or_radius_canon
+  - runtime_LOD_thresholds_or_HLOD
+  - target_hardware_GPU_performance
+  - human_artistic_approval
+  - AAA_or_AAAA_completion

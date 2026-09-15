@@ -1,0 +1,90 @@
+claim_id: CLM-KHEPRI-WMACRO-001
+agent_id: AGENT-KHEPRI-WMACRO-001
+session_id: SESSION-20260912-KHEPRI-001
+scope_key: khepri/world-macro/planetary-foundation
+world_id: khepri
+region_id: GLOBAL_KHEPRI
+category: world_macro
+subdomain: planetary_foundation
+status: REVIEW
+priority: P0
+includes:
+  - planet-scale representation contract (L0/L1 only)
+  - coordinate and local-tangent-cell convention proposal for Khepri art production
+  - macro terrain blockout for one representative production cell
+  - macro landmarks and traversal anchors required to validate scale
+  - world-macro asset manifest and QA evidence for this scope
+excludes:
+  - final regional terrain sculpt
+  - settlement architecture kits
+  - interiors
+  - final materials/textures
+  - characters/NPC production
+  - fauna production
+  - vehicles
+  - RA-KHET final boss model/rig/animation
+  - gameplay systems
+  - edits to canonical design/EXOVANT_DATA.json
+  - edits to global STATE/PLAN unless reconciled by the project single-writer workflow
+branch: art/world-khepri-001
+base_branch: main
+base_sha_at_claim: 4c2fa044080004609ea6df45f34b2a784536507a
+latest_main_observed: 196ef814fdc845ec797979906d01dc25009217c7
+blender_project_id: 040f0c45-83a7-483c-9ee7-1e31c640a587
+blender_revision: 2
+blender_project_name: "EXOVANT 2950 — KHEPRI World Master — ART-KHEPRI-001"
+pipeline:
+  method_status: PIPELINE_METHOD_NOT_FOUND
+  searched_aliases: ["Flu In", "Flow In", "flu-in", "flow-in"]
+  verified_method: "Higgsfield 3D Jutsu + Blender 5.2.0 LTS + bpy + editable .blend + GLB + validation evidence"
+  evidence:
+    - docs/ART_PRODUCTION.md
+    - docs/studio/exovant/INTEGRATION.md@rotprods/game-dev-mcp-hub
+canon_inputs:
+  - AGENTS.md
+  - _project_intelligence/STATE.json
+  - _project_intelligence/PLAN.json
+  - HANDOFF.md
+  - MEMORY.md
+  - design/EXOVANT_BIBLIA.md
+  - design/EXOVANT_DATA.json
+  - docs/ART_PRODUCTION.md
+dependencies:
+  - EXO-017 Andromeda chapters (future campaign integration)
+  - INFRA-005-FLEET-001 manifest/continuity reconciliation
+blocked_by:
+  - BINARY_PERSISTENCE_TRANSPORT
+  - HUMAN_VISUAL_REVIEW
+  - GLOBAL_CI_MANIFEST_RECONCILIATION
+blockers:
+  BINARY_PERSISTENCE_TRANSPORT:
+    decision_needed: "Choose/enable a provider-to-repository binary transfer path for final .blend/GLB persistence."
+    affected_scope: "source artifact archival; not current Blender revision validity"
+    why_blocking: "3D Jutsu serves verified binaries but this runtime cannot resolve the signed object-store host into the GitHub connector."
+    options:
+      - "Persist via a runtime that can download the 3D Jutsu artifact and push Git LFS/binary to the branch."
+      - "Keep provider revision+etag as interim source receipt and import binaries during integration."
+    recommended_option: "Use a controlled integration worker with Git credentials/LFS and preserve revision+etag before upload."
+    reversibility: high
+    work_that_can_continue: "all documentation, blockout QA, downstream interface claims"
+  HUMAN_VISUAL_REVIEW:
+    decision_needed: "Review the interactive scene / render framing for art-direction approval."
+    affected_scope: "GATE-ART only"
+    why_blocking: "Agent runtime cannot fetch the signed PNG artifacts for vision inspection due network isolation."
+    options:
+      - "Human review through 3D Jutsu interactive preview."
+      - "Repeat visual audit in an agent/runtime with artifact image access."
+    recommended_option: "Human review now; machine visual regression later when artifact transport is available."
+    reversibility: high
+    work_that_can_continue: "parallel KHEPRI domain claims using published interfaces"
+  GLOBAL_CI_MANIFEST_RECONCILIATION:
+    decision_needed: "Restore green main and define one shard-compatible manifest reconciliation path for concurrent producers."
+    affected_scope: "repository continuity / all world-art PRs"
+    why_blocking: "PR #8 run 34715183868 and main@196ef814 run 34715278567 both fail Verify committed evidence and continuity before Godot; project_control.py uses a monolithic MANIFEST.json hotspot."
+    owner: "INFRA-005-FLEET-001 / global integrator via issue #7"
+    recommended_option: "Integrator repairs main first and owns manifest strategy; KHEPRI must not independently race on MANIFEST.json."
+    reversibility: medium
+    work_that_can_continue: "Blender/art review and downstream sharded production; no merge-ready claim"
+created_at: "2026-09-12T19:20:00Z"
+last_heartbeat: "2026-09-12T19:52:00Z"
+claim_status_note: "Structural blockout/provider export validated at Blender revision 2. Keep claim in REVIEW until visual, binary persistence and global CI continuity are reconciled or explicitly waived."

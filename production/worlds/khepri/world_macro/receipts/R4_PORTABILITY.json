@@ -1,0 +1,18 @@
+{
+  "claim_id": "CLM-KHEPRI-WMACRO-001",
+  "world_id": "khepri",
+  "master_project_id": "040f0c45-83a7-483c-9ee7-1e31c640a587",
+  "source_revision": 4,
+  "operation": "khepri.portability.audit.r4",
+  "portable_blockout_pass": true,
+  "materials": 5,
+  "material_node_policy": "Principled BSDF + Material Output only",
+  "nonportable_material_nodes": [],
+  "images": 0,
+  "external_unpacked_images": [],
+  "absolute_image_paths": [],
+  "lights": [{"name": "KHP_WM_LIGHT_SAHRA_KEY", "type": "SUN", "energy": 3.2}],
+  "unsupported_light_types": [],
+  "unused_datablocks": {"meshes": [], "curves": [], "materials": [], "cameras": [], "lights": []},
+  "boundary": "Portable blockout audit only. Final PBR calibration, texture memory, engine shader equivalence and artistic approval remain outside this pass."
+}

@@ -1,0 +1,54 @@
+{
+  "claim_id": "CLM-KHEPRI-WMACRO-001",
+  "world_id": "khepri",
+  "height_model_version": "KHP_TERRAIN_V1",
+  "tool": "art_source/khepri/world_macro/terrain_tile_contract.py",
+  "cold_readback_branch_head": "47b9359f98004a84b5660101baacd50d45e20636",
+  "cold_readback_pass": true,
+  "cell_size_m": [6400.0, 4800.0],
+  "grid": [81, 61],
+  "grid_spacing_m": [80.0, 80.0],
+  "seam_audit": {
+    "directions": ["E", "W", "N", "S"],
+    "max_global_coordinate_error_m": 0.0,
+    "max_height_error_m": 0.0,
+    "max_normal_angle_error_deg": 0.0000014787793334710982,
+    "passed": true
+  },
+  "master_model_sync": {
+    "project_id": "040f0c45-83a7-483c-9ee7-1e31c640a587",
+    "revision": 4,
+    "operation": "khepri.terrain.model-sync.audit.r4",
+    "terrain_object": "KHP_WM_L2_MACROCELL_A_TERRAIN",
+    "vertices_checked": 4941,
+    "max_height_error_m": 0.000007556913914186225,
+    "mean_abs_height_error_m": 0.0000008080384375650228,
+    "mesh_position_sha256": "c366b379ab4375a84e6225a0de89d32edf9bbfc647d2c7b1cdacf9371930c78b",
+    "tolerance_m": 0.0001,
+    "passed": true,
+    "interpretation": "Micrometre-scale residual is consistent with mesh float precision; no authored terrain drift detected."
+  },
+  "tile_contract": {
+    "height_evaluation_frame": "global tangent-grid XY metres",
+    "mesh_storage_frame": "tile-local XY metres",
+    "tile_origin": "metadata/composition transform, not baked into local mesh vertices",
+    "future_smooth_normal_source": "global central-difference gradient to avoid border-normal seams"
+  },
+  "curvature_context": {
+    "planet_radius_m": 5224000.0,
+    "planet_radius_status": "KHP-ADR-001_PROPOSAL_NOT_CANON",
+    "half_cell_diagonal_m": 4000.0,
+    "flat_cell_corner_sagitta_m_proposal": 1.5313937924802303,
+    "gate": "NOT_FINAL_PLANET_CURVATURE_APPROVAL"
+  },
+  "checks": {
+    "uniform_80m_grid": true,
+    "neighbor_coordinates_match": true,
+    "neighbor_heights_match": true,
+    "global_normals_match": true,
+    "master_height_model_matches": true,
+    "vertices_remain_local": true
+  },
+  "passed": true,
+  "boundary": "Authoring continuity proof only. It does not canonize planet radius, choose final engine tile size, bend L2 tiles onto a sphere, implement origin rebasing/world partition, or certify collision/navmesh/HLOD."
+}

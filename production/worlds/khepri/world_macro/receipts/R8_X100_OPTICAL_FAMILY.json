@@ -1,0 +1,117 @@
+{
+  "schema_version": 1,
+  "receipt_id": "R8_X100_OPTICAL_FAMILY",
+  "world_id": "khepri",
+  "claim_id": "CLM-KHEPRI-WMACRO-001",
+  "family_asset_id": "KHP_WM_HELIOSTAT_FOOTPRINTS",
+  "status": "SYSTEMIC_MACRO_COMPLETE",
+  "x100_contract": "KHP_OPTICAL_FIELD_X100_V1",
+  "lod_contract": "KHP_OPTICAL_LOD_X100_V1",
+  "master_project_id": "040f0c45-83a7-483c-9ee7-1e31c640a587",
+  "master_revision": 8,
+  "cold_project_id": "4c01fdbb-7093-4229-9a49-8237583280bc",
+  "cold_revision": 6,
+  "configuration_space": {
+    "count": 432,
+    "all_config_instance_range": [44, 185],
+    "default_instances": 107,
+    "layouts": ["staggered_bands", "aligned_lattice", "diagonal_bands", "radial_fan"],
+    "densities": ["sparse", "production", "dense"],
+    "corridors": ["dual_ns", "single_ns", "cross"],
+    "state_profiles": ["operational", "maintenance_cycle", "damage_proxy", "abandonment_proxy"],
+    "scale_mixes": ["balanced", "compact_bias", "standard_bias"]
+  },
+  "default_scene": {
+    "masts": 107,
+    "panels": 107,
+    "states": {"operational": 93, "maintenance": 14},
+    "scale_variants": ["compact", "standard", "wide"],
+    "unique_mast_lod0_meshes": 3,
+    "unique_panel_lod0_meshes": 3,
+    "min_route_clearance_m": 144.714,
+    "min_anchor_clearance_m": 269.916,
+    "min_pair_spacing_m": 438.462,
+    "max_slope_deg": 10.794,
+    "ground_contact_error_m": [-0.00000713, 0.00000861]
+  },
+  "state_causality": {
+    "machine_gate": "PASS",
+    "ai_legibility_gate": "PASS_SUPPLEMENTAL",
+    "random_grunge": false,
+    "operational": "panel_tracking_proxy",
+    "maintenance": "panel_stowed_72_deg",
+    "damaged_proxy": "panel_lowered_3m_and_off_axis",
+    "abandoned_proxy": "mast_remains_panel_absent",
+    "canon_boundary": "damage_and_abandonment_are_proposal_QA_modes"
+  },
+  "lod_source": {
+    "levels": [0, 1, 2],
+    "source_meshes": 12,
+    "vertices": {"LOD0": 24, "LOD1": 16, "LOD2": 8},
+    "polygons": {"LOD0": 18, "LOD1": 12, "LOD2": 6},
+    "object_users": 0,
+    "fake_user_persistence": true,
+    "master_cold_sha256": "1c67430d580cae109fa50dfab73e6747304e87b5b3c9bba99e65fa6fe4e80101",
+    "runtime_thresholds": "DOWNSTREAM_TECH_ART",
+    "hlod": "DOWNSTREAM_TECH_ART"
+  },
+  "reproducibility": {
+    "master_cold_x100_scene_sha256": "01420ed366a7f8443a084332036604c47324d50900ae2033ea4d42059440d1fa",
+    "blend_size_match": true,
+    "glb_size_match": true
+  },
+  "artifacts_r8": {
+    "glb": {
+      "bytes": 577744,
+      "sha256": "c9c698734061e481b94347c88d7c076b19c60261c8402548fb8ca1079d7d3579",
+      "persistent_media_id": "1bed7b1f-0e0a-4cd3-b61b-a62f950b4ff5"
+    },
+    "blend": {
+      "bytes": 2198165,
+      "sha256": "b2f3e2f8ff90f28a5485dc019efcfa5913def0dbbcfb5e39d883d3c469a25337",
+      "persistent_media_id": "0988f832-71ab-4c21-9c1e-ecbe3cd08bcb"
+    },
+    "fleet_delivery": "PASS_CANDIDATE_RECOVERED_WITH_NATIVE_RECEIPT"
+  },
+  "godot_r8": {
+    "engine": "4.7.2.stable.official.ed1daf0bf",
+    "passed": true,
+    "nodes": 229,
+    "mesh_instances": 219,
+    "masts": 107,
+    "panels": 107,
+    "unique_mast_mesh_resources": 3,
+    "unique_panel_mesh_resources": 3,
+    "asset_ids": 224,
+    "duplicate_asset_ids": 0,
+    "terrain_vertices": 4941,
+    "terrain_normals": 4941,
+    "terrain_triangles": 9600,
+    "lod_contract_survived": true,
+    "configuration_count_survived": 432,
+    "lod_manifest_survived": true
+  },
+  "visual_density": {
+    "ai_review": "PASS_SUPPLEMENTAL",
+    "infrastructure_read": true,
+    "route_legible": true,
+    "controlled_variation": true,
+    "clutter_fail": false,
+    "obvious_floating": false,
+    "repetition_risk": "LOW",
+    "human_art_gate": "PENDING"
+  },
+  "nonclaims": [
+    "final_Glass_Sea_architecture",
+    "final_close_range_heliostat_art",
+    "final_PBR_material_library",
+    "production_collision",
+    "runtime_LOD_thresholds_or_HLOD",
+    "optical_physics_solution",
+    "target_hardware_performance",
+    "human_art_approval",
+    "complete_KHEPRI_world",
+    "AAA_or_AAAA_completion"
+  ],
+  "passed": true
+}

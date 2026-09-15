@@ -1,0 +1,274 @@
+snapshot_at: "2026-09-13T18:36:00Z"
+world_id: khepri
+branch_context: art/world-khepri-001
+x100_protocol: ACTIVE
+canon_recovery_2026_09_13: "design/EXOVANT_BIBLIA.md confirms named regions, four biota species, named NPC/adversary anchors and Helioperegrino; ecology is no longer blocked for lack of species canon."
+note: >-
+  Branch-local coverage snapshot for coordination. DONE/SYSTEMIC_MACRO_COMPLETE applies only
+  to the named family and never means the full KHEPRI world or downstream close-range domain is done.
+coverage:
+  - region_id: GLOBAL_KHEPRI
+    category: world_macro
+    asset_family: planetary_foundation
+    priority: P0
+    status: REVIEW
+    owner: AGENT-KHEPRI-WMACRO-001
+    claim: CLM-KHEPRI-WMACRO-001
+    dependency: KHP-ADR-001
+    art_status: BLOCKOUT_AI_DENSITY_QA_PASS_HUMAN_GATE_PENDING
+    modeling_status: STRUCTURALLY_VALIDATED_X100_MACRO_SUPPORT
+    material_status: BLOCKOUT_ONLY
+    optimization_status: TERRAIN_NORMALS_AND_SYSTEMIC_INSTANCING_PASS
+    integration_status: GODOT_NATIVE_IMPORT_PASS
+    qa_status: TECHNICAL_PASS_HUMAN_ART_PENDING
+
+  - region_id: MACROCELL_A
+    category: infrastructure_support
+    asset_family: optical_field_systemic_footprints
+    priority: P1
+    status: DONE
+    owner: AGENT-KHEPRI-WMACRO-001
+    claim: CLM-KHEPRI-WMACRO-001
+    dependency: world_macro/planetary_foundation
+    art_status: SYSTEMIC_MACRO_COMPLETE_BLOCKOUT_VISUAL
+    modeling_status: SYSTEMIC_MACRO_COMPLETE
+    material_status: BLOCKOUT_ROLES_ONLY_DOWNSTREAM_PBR_REQUIRED
+    optimization_status: INSTANCING_LOD_SOURCE_PASS
+    integration_status: GODOT_NATIVE_IMPORT_PASS
+    qa_status: STATE_CAUSALITY_DENSITY_CONTACT_REPRODUCIBILITY_PASS
+    configuration_count: 432
+    default_instances: 107
+    variants: [compact, standard, wide]
+    states: [operational, maintenance, damaged_proxy, abandoned_proxy]
+    lod_levels: [LOD0, LOD1, LOD2]
+    nonclaims: [final_glass_sea_architecture, production_collision, runtime_lod_thresholds, HLOD, final_PBR, optical_physics, human_art_approval]
+
+  - region_id: GLOBAL_KHEPRI
+    category: terrain_geology
+    asset_family: final_planetary_geology_and_tiles
+    priority: P0
+    status: TODO
+    owner: UNCLAIMED
+    claim: null
+    dependency: world_macro/planetary_foundation
+    art_status: NOT_STARTED
+    modeling_status: NOT_STARTED
+    material_status: NOT_STARTED
+    optimization_status: NOT_STARTED
+    integration_status: NOT_STARTED
+    qa_status: NOT_STARTED
+
+  - region_id: GLOBAL_KHEPRI
+    category: biome_composition
+    asset_family: biome_systems
+    priority: P1
+    status: TODO
+    owner: UNCLAIMED
+    claim: null
+    dependency: terrain_geology
+    art_status: NOT_STARTED
+    modeling_status: NOT_STARTED
+    material_status: NOT_STARTED
+    optimization_status: NOT_STARTED
+    integration_status: NOT_STARTED
+    qa_status: NOT_STARTED
+
+  - region_id: SHADE_DISTRICT_FUNCTIONAL
+    category: architecture
+    asset_family: communal_shade_and_habitation
+    priority: P1
+    status: TODO
+    owner: UNCLAIMED
+    claim: null
+    dependency: KHP_WM_ROUTE_SHADE
+    art_status: NOT_STARTED
+    modeling_status: NOT_STARTED
+    material_status: NOT_STARTED
+    optimization_status: NOT_STARTED
+    integration_status: NOT_STARTED
+    qa_status: NOT_STARTED
+
+  - region_id: GLASS_SEA_FUNCTIONAL
+    category: infrastructure
+    asset_family: reflectors_subterranean_crossing
+    priority: P1
+    status: TODO
+    owner: UNCLAIMED
+    claim: null
+    dependency: KHP_WM_ROUTE_GLASS_SEA
+    art_status: NOT_STARTED
+    modeling_status: NOT_STARTED
+    material_status: NOT_STARTED
+    optimization_status: NOT_STARTED
+    integration_status: NOT_STARTED
+    qa_status: NOT_STARTED
+    note: X100 macro optical footprints are support/proxy only and do not claim this final domain.
+
+  - region_id: CRUCIBLE_FUNCTIONAL
+    category: industrial_architecture
+    asset_family: crucible_energy_debt_infrastructure
+    priority: P1
+    status: TODO
+    owner: UNCLAIMED
+    claim: null
+    dependency: KHP_WM_ROUTE_CRUCIBLE
+    art_status: NOT_STARTED
+    modeling_status: NOT_STARTED
+    material_status: NOT_STARTED
+    optimization_status: NOT_STARTED
+    integration_status: NOT_STARTED
+    qa_status: NOT_STARTED
+
+  - region_id: RAKHET_FUNCTIONAL
+    category: megastructures_hero_landmarks
+    asset_family: rakhet_arena_and_solar_nodes
+    priority: P1
+    status: TODO
+    owner: UNCLAIMED
+    claim: null
+    dependency: KHP_WM_ROUTE_RAKHET
+    art_status: NOT_STARTED
+    modeling_status: NOT_STARTED
+    material_status: NOT_STARTED
+    optimization_status: NOT_STARTED
+    integration_status: NOT_STARTED
+    qa_status: NOT_STARTED
+
+  - region_id: GLOBAL_KHEPRI
+    category: materials_surface_library
+    asset_family: glass_bronze_scorched_ceramic_mirror_fabric_mineral
+    priority: P1
+    status: TODO
+    owner: UNCLAIMED
+    claim: null
+    dependency: world_bible_art_direction
+    art_status: NOT_STARTED
+    modeling_status: N_A
+    material_status: NOT_STARTED
+    optimization_status: NOT_STARTED
+    integration_status: NOT_STARTED
+    qa_status: NOT_STARTED
+
+  - region_id: GLOBAL_KHEPRI
+    category: vegetation
+    asset_family: prism_lichen_flora_system
+    priority: P2
+    status: TODO
+    owner: UNCLAIMED
+    claim: null
+    dependency: documented_prism_lichen_biome_distribution_contract
+    documented_species: [liquen_de_prisma]
+    documented_function: "fija minerales en áreas de luz dispersa"
+    art_status: NOT_STARTED
+    modeling_status: NOT_STARTED
+    material_status: NOT_STARTED
+    optimization_status: NOT_STARTED
+    integration_status: NOT_STARTED
+    qa_status: NOT_STARTED
+
+  - region_id: GLOBAL_KHEPRI
+    category: fauna_wildlife
+    asset_family: documented_khepri_fauna_system
+    priority: P2
+    status: TODO
+    owner: UNCLAIMED
+    claim: null
+    dependency: documented_species_behavior_plus_future_ecology_graph
+    documented_species: [escarabajo_heliostato, zorro_de_vidrio, serpiente_de_cable, escarabajo_colosal]
+    art_status: NOT_STARTED
+    modeling_status: NOT_STARTED
+    material_status: NOT_STARTED
+    optimization_status: NOT_STARTED
+    integration_status: NOT_STARTED
+    qa_status: NOT_STARTED
+
+  - region_id: GLOBAL_KHEPRI
+    category: humanoid_characters
+    asset_family: sinodo_population_and_quest_npcs
+    priority: P1
+    status: TODO
+    owner: UNCLAIMED
+    claim: null
+    dependency: character_canon_recovery
+    art_status: NOT_STARTED
+    modeling_status: NOT_STARTED
+    material_status: NOT_STARTED
+    optimization_status: NOT_STARTED
+    integration_status: NOT_STARTED
+    qa_status: NOT_STARTED
+
+  - region_id: RAKHET_FUNCTIONAL
+    category: industrial_machinery_robotics
+    asset_family: RA_KHET_FINAL
+    priority: P1
+    status: TODO
+    owner: UNCLAIMED
+    claim: null
+    dependency: boss_design_and_gameplay_contract
+    art_status: NOT_STARTED
+    modeling_status: NOT_STARTED
+    material_status: NOT_STARTED
+    optimization_status: NOT_STARTED
+    integration_status: NOT_STARTED
+    qa_status: NOT_STARTED
+
+  - region_id: GLOBAL_KHEPRI
+    category: wardrobe_equipment
+    asset_family: population_equipment
+    priority: P2
+    status: TODO
+    owner: UNCLAIMED
+    claim: null
+    dependency: character_art_direction
+    art_status: NOT_STARTED
+    modeling_status: NOT_STARTED
+    material_status: NOT_STARTED
+    optimization_status: NOT_STARTED
+    integration_status: NOT_STARTED
+    qa_status: NOT_STARTED
+
+  - region_id: GLOBAL_KHEPRI
+    category: vehicles
+    asset_family: helioperegrino_and_unresolved_transport
+    priority: P2
+    status: TODO
+    owner: UNCLAIMED
+    claim: null
+    dependency: documented_helioperegrino_plus_unresolved_transport_hierarchy
+    documented_vehicle: "Helioperegrino — moto de vela solar de superficie"
+    art_status: NOT_STARTED
+    modeling_status: NOT_STARTED
+    material_status: NOT_STARTED
+    optimization_status: NOT_STARTED
+    integration_status: NOT_STARTED
+    qa_status: NOT_STARTED
+
+  - region_id: GLOBAL_KHEPRI
+    category: props_set_dressing
+    asset_family: optical_maintenance_market_debt_storytelling
+    priority: P2
+    status: TODO
+    owner: UNCLAIMED
+    claim: null
+    dependency: architecture_and_material_kits
+    art_status: NOT_STARTED
+    modeling_status: NOT_STARTED
+    material_status: NOT_STARTED
+    optimization_status: NOT_STARTED
+    integration_status: NOT_STARTED
+    qa_status: NOT_STARTED
+
+  - region_id: GLOBA_KHEPRI
+    category: technical_art
+    asset_family: lod_collision_streaming_export_qa
+    priority: P0
+    status: TODO
+    owner: UNCLAIMED
+    claim: null
+    dependency: production_engine_qualification
+    art_status: N_A
+    modeling_status: N_A
+    material_status: N_A
+    optimization_status: PARTIAL_SOURCE_LOD_AND_SPLIT_EXPORT_PROVEN
+    integration_status: PARTIAL_GODOT_IMPORT_PROVEN
+    qa_status: RUNTIME_THRESHOLDS_COLLISION_HLOD_TARGET_PERF_NOT_STARTED

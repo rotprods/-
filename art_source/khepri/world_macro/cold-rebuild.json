@@ -1,0 +1,95 @@
+{
+  "schema_version": 2,
+  "project": "EXOVANT 2950",
+  "world_id": "khepri",
+  "claim_id": "CLM-KHEPRI-WMACRO-001",
+  "gate": "KHP-WM-COLD-REBUILD",
+  "passed": true,
+  "truth_state": "LOCALLY_VALIDATED_SEMANTIC_REPRODUCIBILITY",
+  "latest_executed_at": "2026-09-12T21:40:14Z",
+  "source": {
+    "generator_path": "art_source/khepri/world_macro/generate_khepri_world_macro.py",
+    "generator_git_blob_r3": "b28a39c5ea09ec80c17d23bad2e8533a07605c3e",
+    "optimizer_path": "art_source/khepri/world_macro/optimize_khepri_world_macro.py",
+    "optimizer_git_blob": "9c9984d1a47c0b125550aa44f6f8320b77ac4cea",
+    "validator_git_blob_r3": "19e6abd5d0fadff35565bb102b26c73d99d608ff",
+    "fingerprint_path": "art_source/khepri/world_macro/fingerprint_khepri_world_macro.py"
+  },
+  "waves": [
+    {
+      "id": "R2_BASELINE",
+      "master_project_id": "040f0c45-83a7-483c-9ee7-1e31c640a587",
+      "master_revision": 2,
+      "cold_project_id": "d13625de-15d1-440b-8345-2c9fbc27d69e",
+      "cold_revision": 2,
+      "semantic_sha256_both": "127b35919b9c385ecabd3143942afe498c108e0e753066ab420c1bc323a40771",
+      "blend_bytes_both": 1357562,
+      "glb_bytes_both": 702900,
+      "status": "PASS",
+      "note": "Index-sensitive hash differed only on UV-sphere vertex ordering; vertex multiset and face geometry were identical."
+    },
+    {
+      "id": "R3_CAMERA_CONTRACT",
+      "defects_from_r2": [
+        "overview and gameplay cameras had default clip_end=1000 m despite kilometre-scale targets",
+        "1.85 m human QA guide was outside gameplay camera frame"
+      ],
+      "fix": {
+        "overview_lens_mm": 32.0,
+        "overview_clip_end_m": 12000.0,
+        "gameplay_lens_mm": 38.0,
+        "gameplay_clip_end_m": 8000.0,
+        "human_guide_distance_on_view_axis_m": 30.0,
+        "human_guide_projected_height_px_at_720p": 84.7
+      },
+      "master": {
+        "project_id": "040f0c45-83a7-483c-9ee7-1e31c640a587",
+        "revision": 3,
+        "blend_bytes": 1357838,
+        "blend_etag": "3ffea751fa6b48b11fb86d80507c016a",
+        "glb_bytes": 703040,
+        "glb_etag": "06690127aa85172b5caa64f98c1441ab",
+        "semantic_sha256": "7d80db30181cde1bded58d357384095c07cce0d2ca65e1b728b841aa93b252ca",
+        "validator_operation": "khepri.validator.r3",
+        "validator_passed": true
+      },
+      "cold_rebuild": {
+        "project_id": "4c01fdbb-7093-4229-9a49-8237583280bc",
+        "generator_revision": 1,
+        "optimized_revision": 2,
+        "blend_bytes": 1357838,
+        "blend_etag": "9bbb06a9843366cce582c0d1134d4638",
+        "glb_bytes": 703040,
+        "glb_etag": "6c7ce6799c884fb1e06ae06930104314",
+        "semantic_sha256": "7d80db30181cde1bded58d357384095c07cce0d2ca65e1b728b841aa93b252ca"
+      },
+      "acceptance": {
+        "semantic_hash_equal": true,
+        "artifact_sizes_equal": true,
+        "all_overview_route_anchors_in_frame": true,
+        "all_overview_route_anchors_within_clip": true,
+        "human_scale_guide_in_gameplay_frame": true,
+        "human_scale_guide_readable_size": true
+      },
+      "status": "PASS"
+    }
+  ],
+  "adversarial_fingerprint_policy": {
+    "canonicalizes_mesh_vertex_index_order": true,
+    "still_checks_actual_vertex_coordinates": true,
+    "still_checks_face_geometry": true,
+    "checks_object_transforms": true,
+    "checks_material_roles": true,
+    "checks_scene_metadata": true,
+    "checks_camera_lens_and_clip_ranges": true,
+    "binary_identity_required": false
+  },
+  "non_claims": [
+    "No binary-identical .blend serialization claim",
+    "No binary-identical GLB serialization claim",
+    "No human GATE-ART approval",
+    "No runtime engine import/traversal approval",
+    "No target-GPU performance qualification",
+    "No final KHEPRI world completion"
+  ]
+}
