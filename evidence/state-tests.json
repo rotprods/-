@@ -1,6 +1,7 @@
 {
   "engine": "4.7.2-stable (official)",
   "failed": 0,
-  "passed": 26,
-  "suite": "state_and_recovery"
+  "passed": 48,
+  "schema": 2,
+  "suite": "state_and_recovery_v2"
 }

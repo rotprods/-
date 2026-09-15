@@ -13,17 +13,39 @@ PASS Death preserves quest and drops memories
 PASS Echo can be claimed once
 PASS Atlas completion
 PASS Outcome cannot be overwritten
-PASS Snapshot satisfies schema
+PASS Snapshot satisfies current v2 schema
+PASS Fresh v2 snapshot has empty world namespace
+PASS Legacy v1 is not silently accepted as current schema
+PASS Legacy v1 migrates to valid v2
+PASS Legacy migration preserves every Terra field
+PASS Progress.restore cold-migrates legacy v1
+PASS Revision-bound Pelagos world envelope validates
+PASS World state accepted into v2 namespace
+PASS World state roundtrips exactly
+PASS World state getter returns deep copy
+PASS World state setter stores deep copy
+PASS Mismatched world id rejected
+PASS Negative world revision rejected
+PASS Non-finite nested world data rejected
+PASS Unsafe world identifiers rejected
+PASS Snapshot with world namespace satisfies v2 schema
 PASS Negative balance rejected
 PASS Duplicated reward ledger rejected
 PASS Infinite checkpoint rejected
 PASS Broken dependency graph rejected
-PASS Unknown save version rejected
-PASS Write verified save
+PASS Unknown save version rejected by validation and migration
+PASS Corrupt nested world envelope rejects whole save
+PASS SaveStore accepts valid legacy payload for canonical migration
+PASS SaveStore physically writes canonical v2, never v1
+PASS Legacy storage roundtrip returns canonical v2
+PASS Write verified v2 save
 PASS Cold restore preserves choices and rewards
+PASS Cold restore preserves namespaced world state
 PASS Second write preserves backup
 PASS Corrupt main restores previous healthy generation
+PASS Backup recovery remains migrated/current and preserves world namespace
 PASS Repair never overwrites healthy backup with corruption
 PASS Invalid save never replaces healthy save
 PASS Interrupted temporary write ignored
-{"engine":"4.7.2-stable (official)","failed":0,"passed":26,"suite":"state_and_recovery"}
+PASS Interrupted write leaves current schema intact
+{"engine":"4.7.2-stable (official)","failed":0,"passed":48,"schema":2,"suite":"state_and_recovery_v2"}
