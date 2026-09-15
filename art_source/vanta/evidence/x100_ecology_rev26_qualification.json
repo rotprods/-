@@ -1,0 +1,179 @@
+{
+  "schema": "exovant.vanta.x100.ecology-rev26-qualification.v1",
+  "world": "VANTA",
+  "claim": {
+    "id": "CLM-VANTA-X100-ECOLOGY-001",
+    "coordination_issue": 7,
+    "coordination_comment": 5665190121,
+    "prefix": "VAN_X100_ECO_"
+  },
+  "source": {
+    "project_id": "c82188b1-afdc-43f2-828a-5f0e98291f83",
+    "revision": 26,
+    "blender": "5.2.0 LTS",
+    "blend_bytes": 22120321,
+    "blend_sha256": "47b7a8feeba5874d5f08ac518dd430cfe9327bd6d49697c7a33fa43e7cd2f836",
+    "provider_glb_bytes": 14482968,
+    "provider_glb_sha256": "0b3a320dfe6f105c07147a6030c8f4b92ca8b3c38a954004177e32b8d1c35ae2",
+    "provider_preview_is_runtime_authority": false
+  },
+  "ecosystem": {
+    "species": [
+      "BACTERIA_SLAG",
+      "LITHOPHAGE",
+      "FILINGS_RAY",
+      "RIVET_CROW"
+    ],
+    "source_variants": 12,
+    "sizes_per_species": 3,
+    "state_delta_sources": 36,
+    "trace_families": 4,
+    "tableaux": [
+      "ECO_TBL_SLAG_NURSERY",
+      "ECO_TBL_FILINGS_CORRIDOR",
+      "ECO_TBL_RIVET_ROOST"
+    ],
+    "tableau_organism_placements": 10,
+    "influence_volumes": 10,
+    "causal_chains": {
+      "SLAG_NURSERY": [
+        "slag_heat",
+        "bacteria_growth",
+        "lithophage_grazing",
+        "magnetic_nodule_deposition"
+      ],
+      "FILINGS_CORRIDOR": [
+        "field_alignment",
+        "ray_filings_wake",
+        "lithophage_graze_channel",
+        "route_surface_change"
+      ],
+      "RIVET_ROOST": [
+        "scrap_carrion",
+        "rivet_scavenging",
+        "fastener_nest",
+        "maintenance_material_loss"
+      ]
+    }
+  },
+  "motion": {
+    "frame_range": [
+      1,
+      97
+    ],
+    "fps": 24,
+    "m_source_actions": 24,
+    "m_dynamic_actions": 22,
+    "sl_retarget_actions": 36,
+    "sl_dynamic_actions": 32,
+    "retarget_contract": "sampled_delta_scale_v1",
+    "animated_tableau_placements": 10,
+    "blender_loop_seam_source_qa": true
+  },
+  "lod": {
+    "source_triangles": 4076,
+    "lod1_triangles": 444,
+    "lod2_triangles": 168,
+    "lod1_ratio": 0.10893,
+    "lod2_ratio": 0.041217,
+    "tableau_runtime_colliders": 10
+  },
+  "godot_provider_canary": {
+    "artifact_revision": 25,
+    "provider_glb_sha256": "c752d53367fc02b7b2e13f6bf4a2cabb3c7a6dba1fd1de3d6489d0fdbd6df1a8",
+    "engine": "4.7.2-stable official ed1daf0bf",
+    "static_bodies": 10,
+    "collision_shapes": 10,
+    "raycasts": 10,
+    "ray_hits": 10,
+    "dynamic_tableau_animations": 54,
+    "animation_tracks": 4266,
+    "placements_with_animation_targets": 10,
+    "placements_with_runtime_transform_change": 10,
+    "collision_pass": true,
+    "allscale_motion_import_pass": true,
+    "allscale_motion_runtime_pass": true,
+    "target_gpu_available": false
+  },
+  "rev26_source_hooks": {
+    "audio_hooks": 10,
+    "affordance_hooks": 3,
+    "affordance_implemented_gameplay": false,
+    "qa_cameras": 9,
+    "status": "EMPIRICALLY_QUALIFIED_TABLEAU_COLLISION_AND_ALLSCALE_MOTION_HOOKS_SOURCE_READY"
+  },
+  "source_renders": {
+    "human_art_approval": false,
+    "artifacts": [
+      {
+        "habitat": "SLAG_NURSERY",
+        "artifact_id": "c4b0d91382b80f444023a3ccb9ce9ebd",
+        "bytes": 196195,
+        "resolution": [
+          640,
+          360
+        ]
+      },
+      {
+        "habitat": "FILINGS_CORRIDOR",
+        "artifact_id": "b86930b176924da04dcf30642a73a15f",
+        "bytes": 118520,
+        "resolution": [
+          640,
+          360
+        ]
+      },
+      {
+        "habitat": "RIVET_ROOST",
+        "artifact_id": "d3ffdba4f1fb8d1aea05018aa9e7203e",
+        "bytes": 205683,
+        "resolution": [
+          640,
+          360
+        ]
+      }
+    ]
+  },
+  "clean_selected_delivery_structural": {
+    "source_revision": 26,
+    "blender": "5.2.0 LTS",
+    "glb_bytes": 554804,
+    "glb_sha256": "ffbaf45b158001dcc2e376b5b3f2606d8d4739dcc39bfb39a88009627d9926a7",
+    "selected_objects": 223,
+    "nodes": 223,
+    "meshes": 144,
+    "materials": 9,
+    "images": 0,
+    "animations": 60,
+    "animation_channels": 133,
+    "colonly_nodes": 10,
+    "authoring_source_nodes": 0,
+    "lod_source_nodes": 0,
+    "editor_hook_nodes": 0,
+    "godot_reimport_pass": false,
+    "godot_reimport_status": "OPEN_SANDBOX_RECYCLED_AFTER_STRUCTURAL_EXPORT"
+  },
+  "truth": {
+    "causal_ecology_source_pass": true,
+    "stateful_species_source_pass": true,
+    "tableau_in_world_pass": true,
+    "tableau_collision_source_pass": true,
+    "provider_native_collision_pass": true,
+    "provider_native_allscale_motion_pass": true,
+    "audio_hook_source_pass": true,
+    "affordance_hook_source_pass": true,
+    "clean_selected_delivery_structural_pass": true,
+    "clean_selected_delivery_native_reimport_pass": false,
+    "human_visual_art_approval": false,
+    "final_ai_gameplay": false,
+    "target_gpu_performance": false,
+    "aaa_aaaa_complete": false
+  },
+  "open_gates": [
+    "clean selected ecology GLB native Godot reimport",
+    "human close/mid/far ecology art-direction review",
+    "final gameplay AI and interaction implementation for source-only affordance hooks",
+    "target GPU frame time, draw calls, VRAM and residency",
+    "final authored regional propagation beyond the three representative habitats"
+  ]
+}

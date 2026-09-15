@@ -4,185 +4,185 @@
 **World:** VANTA / FERRUM  
 **Producer:** `AGENT-VANTA-WORLD-01`  
 **Branch:** `art/world-vanta-001`  
-**Atomic claim:** `CLM-VANTA-X100-CULTURE-001`  
-**Latest remote source:** Blender rev18
+**Active claims:** `CLM-VANTA-X100-CULTURE-001` + `CLM-VANTA-X100-ECOLOGY-001`  
+**Latest remote source:** Blender rev26
 
-X100 is a production algorithm, not a quality label. After the rev14–18 production wave, the evidence-linked multiplicative planning heuristic is **22.49% → PLAYABLE FOUNDATION**. This is not an AAA/AAAA claim.
+X100 is a production algorithm, not a quality label. The evidence-linked 14-dimensional geometric-mean heuristic is now **29.96% → PLAYABLE FOUNDATION**. This remains explicitly non-canon and is not an AAA/AAAA claim.
 
 ## North Star
 
-VANTA must read as a high-gravity worker shipyard whose labor culture, repair economy, magnetic industry, scarcity, cold climate and political history can be inferred from geometry before text is read. Density comes from **function × history × state × recombination**, never random clutter, uniform grunge or meaningless greeble.
+VANTA must read as a high-gravity worker shipyard whose labor culture, repair economy, magnetic industry, scarcity and ecology can be inferred from geometry and systemic consequences before exposition. Density must come from **function × history × state × recombination × ecology × gameplay**, never random clutter.
 
-## Multiplicative completeness
+## Coverage
 
-Fourteen normalized production dimensions are combined by geometric mean. Scores are planning heuristics tied to receipts, not canon or marketing claims. Ecology remains the lowest dimension and therefore prevents a false high-completeness label.
-
-| Dimension | Score | Rev18 evidence / blocker |
+| Dimension | Score | Rev26 evidence / blocker |
 |---|---:|---|
-| Macro world | 0.28 | 24×24 km district proxy and three regions; final topology open |
-| Meso architecture | 0.20 | Puerto/Lluvia/Anillo blockout + CP4 kit + culture tableaux; final interiors sparse |
-| Micro assets | 0.22 | 36 culture variants + 333 functional hardness details; world-wide prop breadth still incomplete |
-| Ecology | 0.03 | canonical species remain targets/proxies; causal ecosystem absent |
-| Civilization | 0.32 | five Worker Life microenvironments now encode labor, repair, medicine, storage, strike and charging culture |
-| Gameplay | 0.16 | 1.8 m service corridors + native tableau collision; final authored interactions open |
-| Material causality | 0.20 | causal source states survive; photometric portability remains open |
-| Variation | 0.30 | S/M/L × five states × placement recombination; many non-culture categories remain flat |
-| Temporal states | 0.34 | five state layers plus simultaneous three-era tableau geometry |
-| Storytelling | 0.30 | 25 causal history pieces across five tableaux; broader region storytelling open |
-| Audio/visual language | 0.16 | causal audio hooks specified; runtime implementation sparse |
-| Optimization | 0.30 | real LOD1, 36 real LOD2, five HLOD source meshes; target GPU and material bake open |
-| Reusability | 0.40 | 675 linked placement parts share existing mesh datablocks; 810k conservative configs/tableau |
-| QA | 0.38 | AABB clearance, UV/silhouette, clean delivery and native Godot physics receipts pass; human art/GPU open |
+| Macro world | 0.28 | 24×24 km district proxy and three regions; planetary/final topology open |
+| Meso architecture | 0.20 | validated kits/tableaux inhabit Puerto and Lluvia; final authored interiors/routes sparse |
+| Micro assets | 0.24 | culture family + ecology family + functional details/traces |
+| Ecology | 0.32 | 4 causal species, 12 variants, 36 state deltas, 4 traces, 3 habitats, native motion/collision |
+| Civilization | 0.32 | 5 Worker Life tableaux express labor/repair/medicine/strike/charging |
+| Gameplay | 0.20 | traversal/collision receipts and ecology affordance contracts; final AI/interactions open |
+| Material causality | 0.22 | causal culture states + ecology traces; photometric portability open |
+| Variation | 0.34 | state/scale/tableau recombination across culture and ecology |
+| Temporal states | 0.36 | five culture states + three eras + ecology state deltas |
+| Storytelling | 0.34 | repair/strike history + ecology impacts on routes/salvage/maintenance |
+| Audio/visual language | 0.24 | 10 ecology audio hooks; runtime audio still open |
+| Optimization | 0.36 | culture LOD/HLOD runtime canary + ecology LOD reductions + clean exporter |
+| Reusability | 0.45 | shared datablocks, systemic tableaux, source→placement bindings and deterministic exporter |
+| QA | 0.48 | native Godot collision/motion/LOD receipts; human art and target GPU remain open |
 
-## Worker Life / Maintenance Culture — rev18 state
+Current lowest dimensions are **MESO_ARCHITECTURE and GAMEPLAY (0.20)**, but the active ecology claim still has quality gates and remains the immediate owner of its representative slice.
 
-The claim still reserves twelve causal families under `VAN_X100_CULT_*`: LOCKER, BENCH, TOOLBOARD, PARTSBIN, MEDKIT, WELDCART, BATTERY, RATION, STRIKE, LIGHT, SERVICE and TEXTILE.
+## Worker Life / Maintenance Culture
 
-Each family retains `S/M/L` variants and the five causal states `pristine / used / damaged / repaired / abandoned`, giving **36 source variants × 5 states = 180 state configurations** before placement context. The four non-pristine states are real source delta geometry, not metadata-only labels.
+The culture system remains twelve families under `VAN_X100_CULT_*`, each with S/M/L variants and five causal states.
 
-### Manufacturing hardness — PASS 1
+Key qualified evidence through rev19:
 
-Rev14 upgraded the family from clean blockout to functional manufacturing language:
+- 36 source variants × five states;
+- 165 structurally beveled parts;
+- 333 justified functional details;
+- 36 maintenance clearances;
+- five systemic tableaux;
+- 40 placements / 675 linked instance parts;
+- 1.8 m corridor: nine blockers discovered and repaired, zero remaining;
+- 25 three-era story objects;
+- real LOD1 + LOD2;
+- five tableau HLOD sources.
 
-- 165 structural parts receive controlled edge treatment;
-- 333 functional detail objects add hinges, bolts, latches, gussets, collars, service guards, cable hardware and other justified assembly detail;
-- 36 maintenance/access clearance volumes are tied to a 1.78 m player reference;
-- no random decorative greeble contract was introduced;
-- UV and below-deck regression checks pass.
+### HLOD P1 found and repaired
 
-This is `HARDNESS_PASS_1`, not final hero-detail approval.
+Adversarial rev18 audit found all five HLOD proxies near global origin due a bad parent/inverse relationship. Rev19 repaired this by detaching HLOD proxies and applying explicit world transforms.
 
-## Real LOD hierarchy
+Rev19 additionally provides:
 
-Rev15 replaced 36 envelope placeholders with family-aware LOD1 silhouettes. At that checkpoint LOD1 measured 1,068 triangles against 26,400 selected LOD0 visual triangles, ratio **4.05%**, with silhouette and UV gates passing.
+- one packed 1024² HLOD palette atlas;
+- `M_VAN_X100_HLOD_ATLAS_A` with a single texture node;
+- per-asset LOD distance-band metadata;
+- persistent Maintenance Bay CLOSE/MID/FAR QA cameras.
 
-Rev18 adds a second real reduction layer:
+Native Godot 4.7.2 tier canary:
 
-- 36 LOD2 convex-hull silhouettes;
-- active rev18 LOD0: **16,332 tris**;
-- LOD2 total: **840 tris**;
-- ratio: **5.14%**, below the 10% source target;
-- silhouette failures: 0;
-- UV failures: 0;
-- five tableau-level HLOD source meshes, 904 triangles total.
+- 5 m → LOD0, 141 meshes;
+- 30 m → LOD1, 19 meshes;
+- 70 m → LOD2, 8 meshes;
+- 120 m → HLOD, 1 mesh;
+- HLOD textured surfaces: 1/1.
 
-**Truth boundary:** HLOD material bake/atlas and runtime LOD switching distances are still open. A source HLOD is not a qualified shipping HLOD by itself.
+This qualifies tier switching mechanics in the representative culture slice. Pop quality and target-GPU performance remain open.
 
-## Systemic placement multiplier
+## Ecology ×100
 
-Rev16 proves that the family can produce places rather than a catalog. Five QA microenvironments were assembled:
+Canonical species are no longer only proxy targets. See `ECOLOGY_X100.md`.
 
-1. Maintenance Bay;
-2. Locker / Rest Alcove;
-3. Medic Corner;
-4. Strike Checkpoint;
-5. Charging Station.
+Representative Lluvia de Hierro ecosystem:
 
-Measured source result:
+- Bacteria de escoria — decomposer/resource biofilm;
+- Litófago magnético — primary consumer / ferrous grazer;
+- Raya de limaduras — field-following secondary consumer/redistributor;
+- Cuervo de remache — scavenger/nest builder.
 
-- 40 asset placements;
-- 675 linked instance parts;
-- every placement part shares the existing source mesh datablock;
-- all 12 families are represented;
-- no mass duplication of bespoke placement meshes.
+Current source:
 
-A conservative combinatorial floor per tableau is **810,000 credible configurations**, calculated only from four optional support slots × three size choices × five causal states. It intentionally excludes rotations and cross-tableau recombination.
+- 4 species × S/M/L = 12 variants;
+- 36 ecology state-delta sources;
+- four trace families;
+- three in-world habitats;
+- ten organism placements;
+- ten influence-volume source contracts;
+- ten in-world runtime colliders;
+- LOD0/source 4,076 tris → LOD1 444 → LOD2 168.
 
-## Player scale and clearance
+### In-world causal habitats
 
-The first world-space AABB review found **9 real blockers** inside the 1.8 m primary service corridor. They were not ignored. Rev17 re-laid all nine placements and repeated the gate:
+1. **Slag Nursery**  
+   `slag_heat → bacteria_growth → lithophage_grazing → magnetic_nodule_deposition`
 
-- corridor width: 1.8 m;
-- initial blockers: 9;
-- repaired: 9;
-- remaining blockers: 0.
+2. **Filings Corridor**  
+   `field_alignment → ray_filings_wake → lithophage_graze_channel → route_surface_change`
 
-The clearance receipt is a source-space gameplay-readability gate, not a complete movement/combat playtest.
+3. **Rivet Roost**  
+   `scrap_carrion → rivet_scavenging → fastener_nest → maintenance_material_loss`
 
-## World history as geometry
+### All-scale motion
 
-Every tableau now carries three times simultaneously:
+The ecology source uses 1–97 @24 fps loops.
 
-- `ERA0`: original standardized shipyard mounting rails;
-- `ERA1`: reclaimed worker field-repair plates;
-- `ERA2`: current worker-controlled safe-zone / strike routing markers.
+- M source: 24 actions / 22 dynamic;
+- S/L sampled retarget: 36 actions / 32 dynamic;
+- dynamic total: **54**;
+- all ten in-world placements receive motion.
 
-Across the five tableaux this adds 25 causal story objects. Their role is to expose construction, repair and political use, not decorative noise. Each tableau also stores placement rules and audio hooks such as tool impacts, transformer hum, chain rattle and PA/work signals.
+Exact rev25 provider-artifact Godot 4.7.2 canary:
 
-## Source vs runtime contract
+- 10 `StaticBody3D`;
+- 10 non-null `CollisionShape3D`;
+- 10/10 physical ray hits;
+- 54 ecology animations with runtime transform change;
+- 4,266 animation tracks;
+- 10/10 placements targeted;
+- 10/10 placements visibly change transform in runtime state.
 
-The rich `.blend` deliberately contains state, LOD and HLOD source. Provider `preview.glb` is therefore **not** runtime authority.
+This is empirical motion/collision transport. It is **not** creature AI.
 
-Runtime delivery uses selected export and must prove that only intended content ships. The rev18 Maintenance Bay selected delivery passes:
+### Audio / affordance integration surfaces
 
-- 165 selected objects / nodes;
-- 95 meshes;
-- 8 materials;
-- 9 images;
-- exactly 9 `_colonly` nodes;
-- 5 story nodes;
-- deck + aisle present;
-- **0 LOD source nodes**;
-- **0 editor clearance nodes**;
-- GLB: 2,727,596 B;
-- SHA256 `38ee9e2ded3bd46122c155375912cb77caf12f7cf013f3bb1fa27e09b97291a2`.
+Rev26 adds ten source-only audio hooks and three source-only ecology affordance hooks. `implemented_gameplay=false` remains deliberate.
 
-Exact rev18 source `.blend` SHA256: `26e4e6238fd6136cb3830b0a568ce132a194e1bb16b361d6362a2b1fdc7f6a86`.
+Examples:
 
-## Native engine qualification
+- biofilm density → salvage quality/lithophage presence;
+- magnetic alignment → ray wake reveals safe field line;
+- fastener-nest density → repair-material availability signal.
 
-The Maintenance Bay GLB was exported with exact official Blender 5.2.0 LTS and imported into official Godot 4.7.2 stable (`ed1daf0bf`) without GitHub Actions.
+These are integration contracts, not completed gameplay.
 
-Native physics result:
+## Source versus runtime
 
-- `StaticBody3D`: **9**;
-- non-null `CollisionShape3D`: **9**;
-- `MeshInstance3D`: **148**;
-- physical raycasts: **9/9 hit**;
-- hits cover the eight placed assets plus the tableau deck exactly.
+Rich Blender source is not a shipping bundle.
 
-This empirically qualifies the selected delivery's collision import and bounded physical reachability. It does **not** select Godot as final engine or qualify target-GPU performance.
+Versioned exporters:
 
-Runtime image capture on the headless CPU path exceeded the render time limit. That negative evidence is preserved and **no runtime visual PASS is claimed**.
+- `pipeline/export_x100_delivery.py` — Worker Life;
+- `pipeline/export_x100_ecology_delivery.py` — ecology.
 
-## Evidence bundle
+Latest rev26 clean ecology structural proof:
 
-`EXOVANT_VANTA_X100_REV18_MAINTENANCE_RUNTIME.zip`
+- 554,804 B;
+- SHA256 `ffbaf45b158001dcc2e376b5b3f2606d8d4739dcc39bfb39a88009627d9926a7`;
+- 223 nodes / 144 meshes / 9 materials;
+- 60 animation records / 133 channels;
+- 10 `_colonly` nodes;
+- 0 authoring source nodes;
+- 0 LOD source nodes;
+- 0 editor-hook nodes.
 
-- bundle SHA256 `9c6ff8c92d34b750b66a5c15b06664fe1fb25af014ea3607cdd4800974118fef`;
-- qualification receipt SHA256 `39dbd2c1c5822ffab0993017a773c946af2d574a1403bab39b868c3dc08d8254`;
-- persistent media ID `d1b87a41-5955-487b-9edb-d4cf9a3d0130`.
+The sandbox recycled before this clean GLB could be re-imported into Godot. Therefore clean-bundle native reimport remains OPEN. The exact larger provider artifact is the current empirical native-runtime authority.
 
-Canonical machine-readable receipt: `evidence/x100_worker_life_rev18_qualification.json`.
+## Exact rev26 source checkpoint
 
-## Current truth boundary — `FAMILY_COMPLETE = false`
+- `.blend`: 22,120,321 B;
+- `.blend` SHA256 `47b7a8feeba5874d5f08ac518dd430cfe9327bd6d49697c7a33fa43e7cd2f836`;
+- provider GLB: 14,482,968 B;
+- provider GLB SHA256 `0b3a320dfe6f105c07147a6030c8f4b92ca8b3c38a954004177e32b8d1c35ae2`.
 
-Qualified in this wave:
+Provider preview is source/evidence transport, not shipping authority.
 
-- manufacturing hardness pass 1;
-- real LOD1 source;
-- five systemic placement tableaux;
-- 1.8 m player-clearance source gate;
-- simultaneous three-era physical storytelling;
-- real LOD2 source;
-- HLOD source geometry;
-- clean selected Maintenance Bay delivery;
-- native Godot collision import and 9/9 ray coverage.
+## Visual QA
 
-Still open:
+Persistent CLOSE/MID/FAR cameras exist for each ecology habitat. Rev26 Eevee MID renders executed for all three. This establishes render execution only; **human art-direction approval remains false**.
 
-- human visual/art-direction approval at close/mid/far views;
-- richer material-state differentiation and photometric portability;
-- runtime LOD switching distances / pop assessment;
-- HLOD material bake/atlas and engine transport;
-- target-GPU frame time, draw calls, VRAM and residency;
-- final authored Puerto placement beyond QA staging;
-- world-wide propagation to architecture, machinery, ecology and remaining categories.
+## Open gates
+
+- clean selected ecology GLB native Godot reimport;
+- human close/mid/far visual/art review;
+- photometric Blender↔runtime light calibration;
+- final ecology AI and gameplay interactions;
+- target GPU frame time / draw calls / residency / VRAM;
+- authored final Puerto/Lluvia placement beyond representative slices;
+- global registry/integration reconciliation.
 
 ## Next multiplicative move
 
-Do **not** respond to this advance by adding random culture props. Close the remaining family gates above; then the lowest multiplicative dimension is **ECOLOGY (0.03)**, so the next atomic X100 claim should build a causal VANTA ecology slice (`resource → consumer → predator/scavenger → decomposer`) tied physically into terrain, scrap, architecture, sound and gameplay.
-
-Permanent loop:
-
-`coverage gap → atomic claim → family → hardness → states → systemic assemblies → player clearance → history geometry → LOD/HLOD → selected delivery → engine QA → visual/hardware QA → coverage update → next gap`.
+Do not increase species count merely to inflate inventory. Close the ecology clean-delivery/art/gameplay gates, then attack the new multiplicative bottleneck: **MESO_ARCHITECTURE × GAMEPLAY**. The next strong claim should integrate these validated culture/ecology systems into an authored industrial route/interior where magnetism, ecology and worker infrastructure jointly modify traversal.

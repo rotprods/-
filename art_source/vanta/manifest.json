@@ -1,14 +1,17 @@
 {
-  "schema": "exovant.world-art-cell.v1",
+  "schema": "exovant.world-art-cell.v2",
   "project": "EXOVANT 2950",
   "world": "VANTA",
   "ownership": {
     "branch": "art/world-vanta-001",
     "linear_issue": "ROT-114",
     "scope": "VANTA art/modeling only",
-    "normalized_owner_requested": "AGENT-VANTA-WORLD-01",
-    "normalized_claim_requested": "CLM-VANTA-WORLD-001",
+    "producer": "AGENT-VANTA-WORLD-01",
+    "world_claim_requested": "CLM-VANTA-WORLD-001",
     "coordination_ack_comment": 5649136007,
+    "culture_claim": "CLM-VANTA-X100-CULTURE-001",
+    "ecology_claim": "CLM-VANTA-X100-ECOLOGY-001",
+    "ecology_claim_comment": 5665190121,
     "main_registry_reconciliation": "PENDING"
   },
   "canon": {
@@ -18,186 +21,203 @@
   },
   "production_proposals": {
     "planet_radius_m": 7600000,
-    "authored_district_m": [24000, 24000],
-    "streaming_cell_m": [4000, 4000],
+    "authored_district_m": [
+      24000,
+      24000
+    ],
+    "streaming_cell_m": [
+      4000,
+      4000
+    ],
     "snap_grid_m": 4,
     "ferrum_height_m": 30
   },
   "remote_source": {
     "project_id": "c82188b1-afdc-43f2-828a-5f0e98291f83",
     "blender_version": "5.2.0 LTS",
-    "revision": 11,
+    "revision": 26,
     "scene_sequence": 0,
     "active_operation": null,
     "blend": {
-      "size_bytes": 10162134,
-      "etag": "12c55a03e326a0a3e4df352875d065dc",
-      "sha256": null,
-      "sha256_status": "PENDING_PERMITTED_BINARY_RECOVERY"
+      "size_bytes": 22120321,
+      "sha256": "47b7a8feeba5874d5f08ac518dd430cfe9327bd6d49697c7a33fa43e7cd2f836",
+      "etag": "feb5005510df287b2575c4597ace25d4"
     },
-    "glb": {
-      "size_bytes": 8823976,
-      "etag": "86720d1b76c01894746cbded53510bc6",
-      "sha256": null,
-      "sha256_status": "PENDING_PERMITTED_BINARY_RECOVERY",
-      "precommit_structural_export": {
-        "meshes": 626,
-        "nodes": 807,
-        "materials": 20,
-        "images": 13,
-        "colonly_nodes": 21,
-        "qa_route_visual_present": true,
-        "qa_route_collision_present": true
-      }
-    },
-    "previous_exact_checkpoint": {
-      "revision": 10,
-      "blend_sha256": "128979e51a507d97792ef3c15aaf9de20369e21589b60a9d13fe4d0d262d1466",
-      "glb_sha256": "934450fab1d9eff9dff0dc62971682a692d5f04d4d72871b9f274e6240c7e171"
+    "provider_glb": {
+      "size_bytes": 14482968,
+      "sha256": "0b3a320dfe6f105c07147a6030c8f4b92ca8b3c38a954004177e32b8d1c35ae2",
+      "etag": "f51d83aec005f534d11c351bcf53a35b",
+      "runtime_authority": false
     }
   },
   "registry": {
-    "target_rows": 327,
+    "legacy_target_rows": 327,
     "rows_are_completion_claims": false,
     "generator": "art_source/vanta/pipeline/generate_asset_registry.py",
-    "mass_propagation_allowed": false
+    "mass_propagation_allowed": false,
+    "x100_protocol": "WORLD_DENSITY_X100_v1"
   },
   "cp4": {
-    "status": "REV11_SOURCE_QA_ROUTE_VALIDATED_REV10_BOUNDED_RUNTIME_TRAVERSAL_QUALIFIED",
+    "status": "DEDUP_ROUTE_AND_BOUNDED_RUNTIME_TRAVERSAL_QUALIFIED",
     "snap_modules": 12,
     "snap_sockets": 48,
     "parent_children_fixed_rev5": 205,
     "test_yard_seam_checks": 7,
     "test_yard_max_gap_m": 0,
-    "rev10_runtime_static_bodies": 20,
-    "rev10_runtime_collision_shapes": 20,
-    "rev10_floor_raycast_pass": true,
-    "rev10_characterbody_traversal_pass": true,
-    "rev10_characterbody_floor_frames": 323,
-    "rev10_characterbody_travel_ratio": 0.969267592149354,
-    "rev11_lossless_dedup": {
-      "used_mesh_datablocks_before": 635,
-      "used_mesh_datablocks_after": 414,
-      "linked_objects": 255,
-      "dedup_groups": 33,
-      "removed_mesh_datablocks": 223,
-      "runtime_drawcall_claim": false
-    },
-    "rev11_qa_route": {
-      "status": "QA_ONLY_NOT_LEVEL_ART",
-      "length_m": 10200,
-      "width_m": 12,
-      "sample_step_m": 50,
-      "vertices": 410,
-      "quads": 204,
-      "max_slope_deg": 4.573921259900861,
-      "collision_object": "COL_VAN_QA_ROUTE_SPINE_colonly",
-      "total_colonly_structural_nodes": 21,
-      "native_characterbody_canary": "PENDING_MANUAL_CI_PROMOTION",
-      "full_player_traversal_qualified": false
-    }
+    "godot_static_bodies_rev10": 20,
+    "godot_collision_shapes_rev10": 20,
+    "characterbody_floor_frames": 323,
+    "characterbody_travel_ratio": 0.969267592149354,
+    "rev11_qa_route_length_m": 10200,
+    "rev11_qa_route_width_m": 12,
+    "rev11_route_raycast_samples": 205,
+    "rev11_route_raycast_hits": 205
   },
   "cp5": {
-    "status": "TEXTURE_PAYLOAD_AND_GROSS_ROLE_TRANSPORT_QUALIFIED_PHOTOMETRIC_EQUIVALENCE_BLOCKED",
-    "payload_qualification_revision": 10,
+    "status": "TEXTURE_PAYLOAD_AND_GROSS_ROLE_TRANSPORT_QUALIFIED_PHOTOMETRIC_EQUIVALENCE_OPEN",
     "packed_images": 13,
     "textured_cp4_meshes": 147,
     "uv_missing": 0,
-    "godot_visual_surfaces_rev10": 691,
-    "godot_bound_material_surfaces_rev10": 691,
-    "revision9_all_13_payloads_black_defect": true,
+    "revision9_black_payload_defect": true,
     "revision10_payload_repaired": true,
-    "source_to_embedded_png_roundtrip_pass": true,
     "godot_gross_color_roles_pass": true,
-    "godot_required_materials_missing": 0,
-    "camera_geometry_alignment": {
-      "three_swatch_silhouette_iou": 0.98481187435,
-      "exact_mask_pixel_agreement": 0.9950347222,
-      "status": "PASS"
+    "camera_geometry_alignment_iou": 0.98481187435,
+    "controlled_shaded_equivalence_status": "FAIL",
+    "light_transport_status": "BLOCKED_ADAPTER_CALIBRATION_PENDING",
+    "adapter_contract": "art_source/vanta/pipeline/GODOT_LIGHT_TRANSPORT_CONTRACT.md"
+  },
+  "x100_culture": {
+    "latest_source_revision": 19,
+    "claim": "CLM-VANTA-X100-CULTURE-001",
+    "families": 12,
+    "source_variants": 36,
+    "states_per_variant": 5,
+    "hardness_details": 333,
+    "tableaux": 5,
+    "placements": 40,
+    "linked_parts": 675,
+    "lod": {
+      "lod1_triangles_checkpoint": 1068,
+      "lod2_triangles": 840,
+      "active_lod0_triangles_rev18": 16332,
+      "hlod_tableaux": 5,
+      "hlod_triangles_total": 904,
+      "hlod_spatial_fix_revision": 19,
+      "hlod_atlas": "T_VAN_X100_HLOD_PALETTE_A_BC"
     },
-    "controlled_shaded_equivalence": {
-      "luminance_correlation": 0.66896,
-      "gradient_correlation": 0.37206,
-      "edge_iou_top15pct": 0.3644,
-      "global_luma_ssim_like": 0.37419,
-      "raw_rgb_mae": 0.25074,
-      "tone_matched_rgb_mae": 0.07029,
-      "status": "FAIL"
+    "godot_lod_canary": {
+      "engine": "4.7.2",
+      "distance_m": {
+        "LOD0": 5,
+        "LOD1": 30,
+        "LOD2": 70,
+        "HLOD": 120
+      },
+      "mesh_counts": {
+        "LOD0": 141,
+        "LOD1": 19,
+        "LOD2": 8,
+        "HLOD": 1
+      },
+      "hlod_textured_surfaces": "1/1",
+      "gpu_target_qualified": false
+    }
+  },
+  "x100_ecology": {
+    "latest_source_revision": 26,
+    "claim": "CLM-VANTA-X100-ECOLOGY-001",
+    "species": 4,
+    "source_variants": 12,
+    "state_delta_sources": 36,
+    "trace_families": 4,
+    "tableaux": 3,
+    "organism_placements": 10,
+    "influence_volumes": 10,
+    "audio_hooks": 10,
+    "affordance_hooks_source_only": 3,
+    "qa_cameras": 9,
+    "lod": {
+      "source_triangles": 4076,
+      "lod1_triangles": 444,
+      "lod2_triangles": 168
     },
-    "light_transport": {
-      "status": "BLOCKED_ADAPTER_CALIBRATION_PENDING",
-      "blender_key_power": 1200,
-      "gltf_key_intensity": 95.49297,
-      "blender_fill_power": 600,
-      "gltf_fill_intensity": 47.74648,
-      "observed_point_mapping": "gltf_candela ~= blender_power/(4*pi)",
-      "physical_units_flag_alone_pass": false,
-      "adapter_contract": "art_source/vanta/pipeline/GODOT_LIGHT_TRANSPORT_CONTRACT.md"
+    "godot_provider_canary": {
+      "artifact_revision": 25,
+      "provider_glb_sha256": "c752d53367fc02b7b2e13f6bf4a2cabb3c7a6dba1fd1de3d6489d0fdbd6df1a8",
+      "engine": "4.7.2",
+      "static_bodies": 10,
+      "collision_shapes": 10,
+      "ray_hits": 10,
+      "dynamic_animations": 54,
+      "animation_tracks": 4266,
+      "placements_with_runtime_motion": 10,
+      "pass": true
     },
-    "final_visual_art_approval": false,
-    "photometric_equivalence_pass": false,
-    "target_hardware_performance_pass": false
+    "clean_selected_structural": {
+      "glb_bytes": 554804,
+      "glb_sha256": "ffbaf45b158001dcc2e376b5b3f2606d8d4739dcc39bfb39a88009627d9926a7",
+      "nodes": 223,
+      "meshes": 144,
+      "materials": 9,
+      "animations": 60,
+      "animation_channels": 133,
+      "colonly_nodes": 10,
+      "authoring_source_nodes": 0,
+      "lod_source_nodes": 0,
+      "editor_hook_nodes": 0,
+      "godot_reimport_pass": false,
+      "status": "STRUCTURAL_PASS_NATIVE_REIMPORT_OPEN"
+    }
   },
   "engine_qualification": {
-    "runtime": "Godot 4.7.2-stable (official)",
+    "runtime": "Godot 4.7.2-stable official",
     "runtime_is_final_engine_selection": false,
-    "latest_native_exact_artifact_revision": 10,
-    "rev10_glb_sha256": "934450fab1d9eff9dff0dc62971682a692d5f04d4d72871b9f274e6240c7e171",
-    "rev10_actions_run_id": 34722670811,
-    "rev10_actions_job_id": 103631274506,
-    "native_import_pass": true,
-    "static_collision_pass": true,
-    "gross_material_role_transport_pass": true,
-    "bounded_characterbody_traversal_pass": true,
-    "rev11_native_route_canary": false,
-    "rev11_native_route_blocker": "ENV_BLOCKED_BY_MANUAL_CI_PROMOTION_POLICY",
-    "ci_policy_main_commit": "26ae20f5d1b47d1efa0d54b20124ed93cbc0b43e",
+    "culture_collision_pass": true,
+    "culture_bounded_traversal_pass": true,
+    "culture_lod_switching_pass": true,
+    "ecology_provider_collision_pass": true,
+    "ecology_provider_allscale_motion_pass": true,
+    "ecology_clean_selected_reimport_pass": false,
     "target_hardware_performance_pass": false
+  },
+  "coverage": {
+    "model": "geometric_mean_14_dimensions",
+    "heuristic_not_canon": true,
+    "percent": 29.9639,
+    "band": "PLAYABLE_FOUNDATION",
+    "file": "art_source/vanta/X100_COVERAGE.json"
   },
   "evidence": {
     "cp4": "art_source/vanta/CP4_STATUS.md",
     "cp5": "art_source/vanta/CP5_STATUS.md",
-    "godot_rev9": "art_source/vanta/evidence/godot_rev9_native_qualification.json",
-    "remote_rev8": "art_source/vanta/evidence/remote_blender_rev8.json",
-    "rev10_texture_engine": "art_source/vanta/evidence/rev10_texture_engine_qualification.json",
-    "rev11_dedup_route_visual_portability": "art_source/vanta/evidence/rev11_dedup_route_visual_portability.json",
-    "light_transport_contract": "art_source/vanta/pipeline/GODOT_LIGHT_TRANSPORT_CONTRACT.md"
-  },
-  "checkpoints": {
-    "CP0": "RESERVATION_PRESERVED_NORMALIZED_OWNER_ACK_PENDING_MAIN_RECONCILIATION",
-    "CP1": "DOCUMENTED_REVIEW_OPEN",
-    "CP2": "IMPLEMENTED_GEOMETRY_REVIEW_OPEN",
-    "CP3": "IMPLEMENTED_GEOMETRY_REVIEW_OPEN",
-    "CP4": "REV11_QA_ROUTE_SOURCE_VALIDATED_REV10_BOUNDED_GODOT_TRAVERSAL_QUALIFIED_REV11_NATIVE_CANARY_PENDING",
-    "CP5": "PAYLOAD_ROLE_TRANSPORT_QUALIFIED_LIGHT_PORTABILITY_BLOCKER_PHOTOMETRIC_AND_PERF_OPEN",
-    "CP6": "OPEN",
-    "CP7": "OPEN",
-    "CP8": "OPEN",
-    "CP9": "OPEN",
-    "CP10": "OPEN",
-    "CP11": "OPEN",
-    "CP12": "OPEN"
+    "x100_density": "art_source/vanta/X100_WORLD_DENSITY.md",
+    "x100_ecology": "art_source/vanta/ECOLOGY_X100.md",
+    "culture_rev18": "art_source/vanta/evidence/x100_worker_life_rev18_qualification.json",
+    "ecology_rev26": "art_source/vanta/evidence/x100_ecology_rev26_qualification.json",
+    "culture_exporter": "art_source/vanta/pipeline/export_x100_delivery.py",
+    "ecology_exporter": "art_source/vanta/pipeline/export_x100_ecology_delivery.py"
   },
   "truth": {
     "visual_aesthetic_pass": false,
     "photometric_equivalence_pass": false,
-    "camera_geometry_alignment_pass": true,
-    "cp5_texture_payload_transport_qualified": true,
-    "bounded_cp4_characterbody_traversal_qualified": true,
-    "rev11_qa_route_source_validated": true,
-    "rev11_qa_route_native_traversal_qualified": false,
-    "source_datablock_dedup_validated": true,
-    "runtime_hlod_instancing_qualified": false,
-    "performance_qualified": false,
+    "culture_runtime_lod_switching_qualified": true,
+    "culture_hlod_atlas_source_qualified": true,
+    "ecology_causal_slice_qualified": true,
+    "ecology_native_collision_qualified": true,
+    "ecology_native_allscale_motion_qualified": true,
+    "ecology_clean_selected_structural_pass": true,
+    "ecology_clean_selected_native_reimport_pass": false,
+    "final_ecology_ai_gameplay": false,
+    "target_gpu_performance_qualified": false,
     "final_engine_selected": false,
     "aaa_aaaa_complete": false
   },
   "next": [
-    "execute the exact committed rev11 10.2 km Godot CharacterBody canary only through an allowed manual CI promotion or equivalent authorized native environment",
-    "qualify the standards-aware point-light runtime adapter on the neutral CP5 board; do not compensate by mutating PBR textures",
-    "perform human visual/art-direction review after light transport calibration",
-    "measure frame time, draw calls, texture residency and VRAM on declared target GPU hardware",
-    "replace the QA traversal spine with authored final route only after kilometre-scale physics/precision is qualified",
-    "propagate beyond the representative slice only after visual, runtime and hardware gates pass"
+    "native Godot reimport of clean selected ecology GLB generated by versioned exporter",
+    "human close/mid/far culture and ecology art review",
+    "photometric light adapter qualification",
+    "implement one representative ecology affordance in an authored traversal/interior slice",
+    "measure target GPU frame time/draw calls/VRAM/residency",
+    "recompute X100 coverage before expanding inventory"
   ]
 }
