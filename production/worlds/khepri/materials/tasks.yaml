@@ -1,0 +1,49 @@
+claim_id: CLM-KHEPRI-MATERIALS-001
+owner: AGENT-KHEPRI-MATERIALS-001
+world_id: khepri
+protocol: EXOVANT-X100
+north_star: causal_material_depth_per_authored_source
+foundation_status: SYSTEMIC_MATERIAL_FOUNDATION_COMPLETE
+
+tasks:
+  - {id: KHP/MAT/001, priority: P0, status: DONE, objective: "Recover material canon and forbidden drift.", dod_result: CANON_BOUNDARY_PASS}
+  - {id: KHP/MAT/002, priority: P0, status: DONE, objective: "Compile family/state/finish/scale grammar and reject contradictory combinations.", dod_result: "139_VALID_APPLICATIONS_SHA_18ce236b"}
+  - {id: KHP/MAT/003, priority: P0, status: DONE, objective: "Build standalone deterministic 24-cell Blender Material Lab.", dod_result: "24_MATERIALS_96_PACKED_MAPS_48_SAMPLES"}
+  - {id: KHP/MAT/004, priority: P0, status: DONE, objective: "Run texture/channel/UV/material-node technical QA.", dod_result: "96_PACKED_0_EXTERNAL_SOURCE_PATHS_CHANNELS_PASS"}
+  - {id: KHP/MAT/005, priority: P1, status: DONE, objective: "Render and review material legibility under grazing/curved response.", dod_result: "R3_AI_VISUAL_GATE_PASS_NO_GRUNGE_NO_PLASTIC_CGI"}
+  - {id: KHP/MAT/006, priority: P0, status: DONE, objective: "Prove independent cold rebuild determinism.", dod_result: "IMAGES_EXACT_MATERIAL_GRAPH_EXACT_SAMPLE_SEMANTICS_EXACT"}
+  - {id: KHP/MAT/007, priority: P0, status: DONE, objective: "Export self-contained GLB and parse texture/material contracts.", dod_result: "72_EMBEDDED_CONNECTED_TEXTURES_0_EXTERNAL_URIS_1_SAMPLER"}
+  - {id: KHP/MAT/008, priority: P0, status: DONE, objective: "Import exact GLB in Godot and read back materials/textures/scalars.", dod_result: GODOT_4_7_2_NATIVE_READBACK_PASS}
+  - {id: KHP/MAT/009, priority: P0, status: DONE, objective: "Persist exact BLEND/GLB with SHA-bound delivery evidence.", dod_result: "PERSISTED_MEDIA_CONFIRMED_GLBSHA_c855b873_BLENDSHA_e9d5f1fe"}
+  - {id: KHP/MAT/010, priority: P1, status: BLOCKED, objective: "Promote branch from provisional authoring to registry-reconciled producer claim.", blocker: MAIN_REGISTRY_ACTIVE_ACK, dod_result: MAIN_REGISTRY_RESERVED_ACK_ACTIVE_PENDING}
+  - {id: KHP/MAT/011, priority: P1, status: DONE, objective: "Publish explicit downstream material-consumer interface.", dod_result: HELIOSTAT_CONSUMER_INTERFACE_AND_SLOT_MAPPING_READY}
+  - {id: KHP/MAT/012, priority: P1, status: DONE, objective: "Codify production application matrix across family/state/finish/scale.", dod_result: "139_ROWS_5_FILTERED_SHA_18ce236b"}
+  - {id: KHP/MAT/013, priority: P1, status: BLOCKED, objective: "Qualify production-resolution source tiers, mip policy and memory budgets against target hardware.", blocker: BLOCK-KHP-MAT-001, dod: "TARGET_HARDWARE_BOUND_TEXTURE_BUDGET_AND_RESOLUTION_TIERS"}
+  - {id: KHP/MAT/014, priority: P1, status: BLOCKED, objective: "Pilot one real KHEPRI downstream consumer without taking geometry ownership.", blockers: [MAIN_REGISTRY_ACTIVE_ACK, BLOCK-KHP-MAT-002], dod: "ONE_CONSUMER_INTEGRATION_WITH_BEFORE_AFTER_RUNTIME_RECEIPT"}
+  - {id: KHP/MAT/015, priority: P2, status: NOT_READY, objective: "Author final-resolution family source textures after KHP/MAT/013 locks budgets.", dependency: [KHP/MAT/013], dod: "PRODUCTION_RESOLUTION_SOURCE_PASS_PER_FAMILY"}
+
+foundation_metrics:
+  family_coverage_percent: 100
+  causal_state_coverage_percent: 100
+  calibration_system_percent: 100
+  production_resolution_art_percent: 0
+  portability_percent: 100
+  cold_rebuild_percent: 100
+  human_final_art_percent: 0
+
+open_gates:
+  blocking_promotion:
+    - MAIN_REGISTRY_ACTIVE_ACK
+  blocking_final_resolution:
+    - BLOCK-KHP-MAT-001_TARGET_HARDWARE_TEXTURE_BUDGET
+  blocking_consumer_pilot:
+    - BLOCK-KHP-MAT-002_HELIOSTAT_UV0_HANDOFF
+  downstream:
+    - HUMAN_ART_GATE_BEFORE_FINAL
+
+stop_conditions:
+  - ownership_conflict
+  - canon_required_for_irreversible_material_physics
+  - significant_unauthorized_cost
+  - destructive_existing_work
+  - demonstrated_technical_block

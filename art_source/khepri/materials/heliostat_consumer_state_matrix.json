@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "contract": "KHP_HELIOSTAT_CONSUMER_STATE_MATRIX_V1",
+  "world_id": "khepri",
+  "consumer_asset": "KHP_WM_HELIOSTAT_FOOTPRINTS",
+  "source_project_id": "040f0c45-83a7-483c-9ee7-1e31c640a587",
+  "source_revision": 10,
+  "metadata_sha256": "10f8a55ecbada301c8c0b392f3731cd6283c328e4e5d98dde044fbd291f4600b",
+  "objects": 214,
+  "role_state_totals": {
+    "heliostat_footprint_mast": {"operational": 93, "maintenance": 14},
+    "heliostat_footprint_panel": {"operational": 93, "maintenance": 14}
+  },
+  "groups": [
+    {"role":"heliostat_footprint_mast","state":"maintenance","variant":"compact","count":3},
+    {"role":"heliostat_footprint_mast","state":"maintenance","variant":"standard","count":9},
+    {"role":"heliostat_footprint_mast","state":"maintenance","variant":"wide","count":2},
+    {"role":"heliostat_footprint_mast","state":"operational","variant":"compact","count":19},
+    {"role":"heliostat_footprint_mast","state":"operational","variant":"standard","count":55},
+    {"role":"heliostat_footprint_mast","state":"operational","variant":"wide","count":19},
+    {"role":"heliostat_footprint_panel","state":"maintenance","variant":"compact","count":3},
+    {"role":"heliostat_footprint_panel","state":"maintenance","variant":"standard","count":9},
+    {"role":"heliostat_footprint_panel","state":"maintenance","variant":"wide","count":2},
+    {"role":"heliostat_footprint_panel","state":"operational","variant":"compact","count":19},
+    {"role":"heliostat_footprint_panel","state":"operational","variant":"standard","count":55},
+    {"role":"heliostat_footprint_panel","state":"operational","variant":"wide","count":19}
+  ],
+  "boundary": "Aggregate snapshot of authored consumer metadata. Does not transfer geometry ownership or prescribe runtime representation."
+}

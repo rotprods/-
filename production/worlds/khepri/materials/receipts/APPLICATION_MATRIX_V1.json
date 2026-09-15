@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "receipt_id": "APPLICATION_MATRIX_V1",
+  "contract": "KHP_MATERIAL_APPLICATION_MATRIX_X100_V1",
+  "claim_id": "CLM-KHEPRI-MATERIALS-001",
+  "valid_rows": 139,
+  "invalid_filtered": 5,
+  "per_family": {
+    "solar_glass": 23,
+    "mirror_optical": 23,
+    "bronze_synod": 23,
+    "ceramic_scorched": 24,
+    "fabric_shade": 23,
+    "mineral_dark": 23
+  },
+  "scales": ["hero_insert", "prop_machine", "architectural"],
+  "matrix_sha256": "18ce236b8983a08d5128364382a13d320caa2ac477307f612e8c1f4f5dd740fa",
+  "checks": {
+    "valid_count_139": true,
+    "unique_application_ids": true,
+    "six_families": true,
+    "every_family_ge_20": true,
+    "all_states_causal": true,
+    "three_scales": true
+  },
+  "source": "art_source/khepri/materials/compile_application_matrix.py",
+  "boundary": "Authoring application contract only; authoring px/m values are provisional and runtime budgets require target-hardware qualification.",
+  "passed": true
+}

@@ -1,0 +1,103 @@
+{
+  "schema_version": 1,
+  "contract": "KHP_MATERIAL_WORLD_ARTKIT_X100_V1",
+  "world_id": "khepri",
+  "civilization": "sinodo_de_bronce",
+  "faction": "sinodo_de_bronce",
+  "generator_inputs": {
+    "material_matrix_contract": "KHP_MATERIAL_APPLICATION_MATRIX_X100_V1",
+    "recipe_contract": "KHP_MATERIAL_RECIPE_X100_V1",
+    "library_contract": "KHP_MATERIAL_PRODUCTION_X100_V1",
+    "artkit_version": "KHP_MAT_ARTKIT_001"
+  },
+  "global_rules": {
+    "art_pillars": ["optics_are_infrastructure", "heat_has_consequences", "sacred_maintenance", "crystal_and_shadow", "rights_are_spatial"],
+    "forbidden": ["random_grunge", "uniform_edge_wear", "generic_cyberpunk_neon", "egyptian_iconography_shortcut", "decorative_mirror_without_optical_role", "unmotivated_emission", "atmospheric_corrosion_without_canon"],
+    "portable_texture_roles": ["base_color", "metallic_roughness", "normal"],
+    "source_only_roles": ["causal_state_mask"],
+    "runtime_budget_status": "BLOCKED_TARGET_HARDWARE_QUALIFICATION",
+    "human_art_status": "PENDING"
+  },
+  "families": {
+    "solar_glass": {
+      "asset_id": "KHP_MAT_GLASS_SOLAR_001",
+      "category": "material_family",
+      "style_tags": ["solar_glass", "vitrified", "optical", "thermal"],
+      "semantic_roles": ["vitrified_substrate", "optical_prism_grade", "energy_routing_surface"],
+      "allowed_contexts": ["mar_de_cristal", "optical_infrastructure", "prism_system", "hero_optic", "architectural_panel", "prop_insert"],
+      "forbidden_contexts": ["generic_decorative_glass", "unrelated_worlds"],
+      "manufacturing_language": ["cast_vitrified", "precision_polished"],
+      "causal_states": ["calibrated", "service_worn", "thermal_cycled", "repair_laminated"],
+      "environment_response": ["thermal_cycle", "service_contact", "laminated_repair"],
+      "performance_class": "support_to_hero"
+    },
+    "mirror_optical": {
+      "asset_id": "KHP_MAT_MIRROR_OPTICAL_001",
+      "category": "material_family",
+      "style_tags": ["mirror", "reflector", "optical", "energy_routing"],
+      "semantic_roles": ["heliostat_reflector", "beam_routing", "access_rights_interface"],
+      "allowed_contexts": ["heliostat_field", "mar_de_cristal", "beam_node", "optical_machine", "architectural_panel"],
+      "forbidden_contexts": ["decorative_mirror", "unrelated_worlds"],
+      "manufacturing_language": ["broad_reflector", "precision_optic"],
+      "causal_states": ["calibrated", "maintenance_cleaning", "service_microabrasion", "repair_recoated"],
+      "environment_response": ["service_microabrasion", "cleaning", "recoating"],
+      "performance_class": "support_to_hero"
+    },
+    "bronze_synod": {
+      "asset_id": "KHP_MAT_BRONZE_SYNOD_001",
+      "category": "material_family",
+      "style_tags": ["bronze", "structural", "mechanical", "sacred_maintenance"],
+      "semantic_roles": ["structure", "mechanical_service_part", "repair_history_carrier"],
+      "allowed_contexts": ["heliostat_structure", "synod_machine", "maintenance_access", "workshop", "crisol_de_rakhet", "architectural_structure"],
+      "forbidden_contexts": ["random_ornament", "unrelated_worlds"],
+      "manufacturing_language": ["cast_structural", "machined_service"],
+      "causal_states": ["service_clean", "contact_polished", "heat_affected_local", "field_repaired"],
+      "environment_response": ["contact_wear", "local_heat", "field_repair"],
+      "performance_class": "systemic_support"
+    },
+    "ceramic_scorched": {
+      "asset_id": "KHP_MAT_CERAMIC_SCORCHED_001",
+      "category": "material_family",
+      "style_tags": ["ceramic", "thermal_shield", "scorched", "repairable"],
+      "semantic_roles": ["thermal_shield", "heat_barrier", "replaceable_protection"],
+      "allowed_contexts": ["thermal_zone", "crisol_de_rakhet", "machine_shield", "architecture_heat_barrier"],
+      "forbidden_contexts": ["generic_pottery", "unrelated_worlds"],
+      "manufacturing_language": ["pressed_tile", "cast_shell"],
+      "causal_states": ["intact", "heat_cycled", "stress_chipped", "patch_replaced"],
+      "environment_response": ["heat_cycle", "mechanical_stress", "patch_replacement"],
+      "performance_class": "systemic_support"
+    },
+    "fabric_shade": {
+      "asset_id": "KHP_MAT_FABRIC_SHADE_001",
+      "category": "material_family",
+      "style_tags": ["fabric", "shade", "tensioned", "communal"],
+      "semantic_roles": ["communal_shade", "tension_membrane", "thermal_comfort_infrastructure"],
+      "allowed_contexts": ["ciudad_de_los_toldos", "shade_district", "awning", "equipment_cover"],
+      "forbidden_contexts": ["ornamental_drape_only", "unrelated_worlds"],
+      "manufacturing_language": ["woven_dense", "laminated_cloth"],
+      "causal_states": ["taut_service", "handled_worn", "solar_aged", "stitched_repair"],
+      "environment_response": ["handling", "solar_age", "stitched_repair"],
+      "performance_class": "systemic_support"
+    },
+    "mineral_dark": {
+      "asset_id": "KHP_MAT_MINERAL_DESERT_001",
+      "category": "material_family",
+      "style_tags": ["dark_mineral", "thermal_mass", "walkway", "contrast"],
+      "semantic_roles": ["thermal_mass", "walkway_surface", "structural_base", "dark_contrast_mass"],
+      "allowed_contexts": ["desert_mass", "walkway", "structure_base", "crisol_de_rakhet", "architectural_mass"],
+      "forbidden_contexts": ["invented_geology_claim", "unrelated_worlds"],
+      "manufacturing_language": ["rough_mass", "cut_plate"],
+      "causal_states": ["cut_clean", "foot_traffic_worn", "thermal_fissure_proxy", "mechanical_patch"],
+      "environment_response": ["foot_traffic", "thermal_fissure_proxy", "mechanical_patch"],
+      "performance_class": "systemic_support"
+    }
+  },
+  "provenance": {
+    "world_bible": "production/worlds/khepri/WORLD_BIBLE.md",
+    "canon_source": "design/EXOVANT_BIBLIA.md",
+    "world_systems_master": "docs/research/world-generation/EXOVANT_WORLD_SYSTEMS_MASTER_2026-09-14.md",
+    "matrix_compiler": "art_source/khepri/materials/compile_application_matrix.py",
+    "recipe_compiler": "art_source/khepri/materials/compile_material_recipe.py"
+  },
+  "nonclaims": ["final_texture_resolution", "target_hardware_memory_budget", "atmospheric_chemistry", "final_glass_sea_physical_medium", "cross_world_shared_material_library", "human_final_art_approval"]
+}

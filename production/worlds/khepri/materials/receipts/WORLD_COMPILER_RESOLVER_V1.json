@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "receipt_id": "WORLD_COMPILER_RESOLVER_V1",
+  "world_id": "khepri",
+  "claim_id": "CLM-KHEPRI-MATERIALS-001",
+  "claim_status": "PROVISIONAL_USER_AUTHORIZED_PENDING_REGISTRY",
+  "contract": "KHP_MATERIAL_WORLD_ARTKIT_RESOLVER_V1",
+  "artkit_contract": "KHP_MATERIAL_WORLD_ARTKIT_X100_V1",
+  "artkit_sha256": "c39e634c584ac01befeca61d74f3f1d87ab311f864f15a42098bdc837fe7584f",
+  "source": "art_source/khepri/materials/resolve_world_material_request.py",
+  "basic_audit": {
+    "passed": true,
+    "audit_sha256": "178c4db24cc9a76fd8dee65146b4e4a87fe74eb5e1040c43df775086d1005e7a",
+    "cases": {
+      "heliostat_bronze": "RESOLVED_EXACT",
+      "heliostat_mirror": "RESOLVED_EXACT",
+      "decorative_mirror": "REJECTED_FORBIDDEN_CONTEXT",
+      "cross_world_vanta": "REJECTED_WORLD_MISMATCH",
+      "underspecified_crucible": "AMBIGUOUS_AUTHORED_SELECTOR_REQUIRED"
+    }
+  },
+  "exhaustive_audit": {
+    "applications": 139,
+    "exact_roundtrip": 139,
+    "wrong_resolution": 0,
+    "ambiguous_valid_application": 0,
+    "rejected_valid_application": 0,
+    "forbidden_context_cases": 12,
+    "forbidden_context_failures": 0,
+    "audit_sha256": "92bd3b05c19204a167e150d6fa5edcd40dd56c45c4399c00db7d75de6559fbd0"
+  },
+  "fail_closed_rules": [
+    "WORLD_MISMATCH rejects",
+    "UNKNOWN_SEMANTIC_ROLE rejects",
+    "FORBIDDEN_CONTEXT rejects",
+    "NO_VALID_APPLICATION rejects",
+    "multiple authored candidates return AMBIGUOUS instead of random selection"
+  ],
+  "passed": true,
+  "boundary": "Resolver selects or rejects authored material applications only; placement, story state and runtime representation remain separate systems."
+}

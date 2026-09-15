@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "receipt_id": "WORLD_COMPILER_ARTKIT_V1",
+  "world_id": "khepri",
+  "claim_id": "CLM-KHEPRI-MATERIALS-001",
+  "claim_status": "PROVISIONAL_USER_AUTHORIZED_PENDING_REGISTRY",
+  "contract": "KHP_MATERIAL_WORLD_ARTKIT_X100_V1",
+  "artkit_version": "KHP_MAT_ARTKIT_001",
+  "compiler": "art_source/khepri/materials/compile_world_artkit.py",
+  "source": "art_source/khepri/materials/world_artkit_source.json",
+  "inputs": {
+    "application_matrix": "KHP_MATERIAL_APPLICATION_MATRIX_X100_V1",
+    "material_recipe": "KHP_MATERIAL_RECIPE_X100_V1",
+    "material_library": "KHP_MATERIAL_PRODUCTION_X100_V1"
+  },
+  "results": {
+    "families": 6,
+    "applications": 139,
+    "invalid_combinations_filtered": 5,
+    "matrix_sha256": "18ce236b8983a08d5128364382a13d320caa2ac477307f612e8c1f4f5dd740fa",
+    "application_ids_sha256": "96d7e9406116e0556b68fc1199ec77c255d19d6ea36a151f5be284bd20176165",
+    "artkit_sha256": "c39e634c584ac01befeca61d74f3f1d87ab311f864f15a42098bdc837fe7584f",
+    "context_compatibility_counts": {
+      "heliostat_field": 23,
+      "mar_de_cristal": 46,
+      "ciudad_de_los_toldos": 23,
+      "crisol_de_rakhet": 70
+    }
+  },
+  "checks": {
+    "six_families": true,
+    "applications_139": true,
+    "unique_application_ids": true,
+    "all_families_resolve": true,
+    "all_have_context_rules": true,
+    "all_have_semantic_roles": true,
+    "all_portable_outputs_non_emissive": true,
+    "runtime_budget_remains_blocked": true,
+    "human_art_gate_remains_open": true
+  },
+  "passed": true,
+  "boundary": "Machine-readable authored ArtKit bridge only; placement logic, target-hardware budgets and final human art approval remain separate gates."
+}

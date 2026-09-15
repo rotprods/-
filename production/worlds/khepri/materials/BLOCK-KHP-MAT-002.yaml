@@ -1,0 +1,54 @@
+block_id: BLOCK-KHP-MAT-002
+decision_needed: heliostat_uv0_geometry_owner_handoff
+affected_scope: KHP/MAT/014
+status: RESOLVED
+priority: P1
+consumer_asset: KHP_WM_HELIOSTAT_FOOTPRINTS
+geometry_owner_claim: CLM-KHEPRI-WMACRO-001
+material_owner_claim: CLM-KHEPRI-MATERIALS-001
+resolved_at: "2026-09-15T15:00:00Z"
+resolution_contract: KHP_OPTICAL_UV0_HANDOFF_V1
+observed_project: 040f0c45-83a7-483c-9ee7-1e31c640a587
+master_revision_after_handoff: 9
+cold_project: 4c01fdbb-7093-4229-9a49-8237583280bc
+cold_revision_after_handoff: 7
+uv_layer: UVMap
+uv_policy:
+  projection: dominant_polygon_axis_object_space
+  meters_per_repeat: 4.0
+  uv_units_per_meter: 0.25
+  overlap: INTENTIONAL_TILEABLE_OBJECT_SPACE
+  wrap: REPEAT
+  hero_unique_masks: SEPARATE_FUTURE_UV_CLAIM
+mesh_coverage:
+  lod0_meshes: 6
+  lod1_meshes: 6
+  lod2_meshes: 6
+  total_meshes: 18
+evidence:
+  geometry_sha256_before_after: 41cb03864b03a907c8691de33843f874f1796ba67b0dc02980ad5af9fc60cf86
+  uv_sha256_master_cold: 13532b5bb722e7293e5248e061d6e30192a8cf21c21c355abd89095ea26a9c8e
+  geometry_unchanged: true
+  material_slots_unchanged_during_uv_handoff: true
+  master_cold_uv_match: true
+handoff_doc: production/worlds/khepri/world_macro/MATERIAL_UV_HANDOFF.md
+source_tool: art_source/khepri/world_macro/add_optical_uv0_handoff.py
+pilot_after_unblock:
+  status: TECHNICAL_PASS_VISUAL_CONTEXT_CONDITIONAL
+  world_revision: 10
+  contract: KHP_HELIOSTAT_MATERIAL_PILOT_V1
+  bronze_application: KHP_MAT_BRONZE_SYNOD_001::service_clean::cast_structural::architectural
+  mirror_application: KHP_MAT_MIRROR_OPTICAL_001::calibrated::broad_reflector::architectural
+  lod0_material_slot_replacements: 9
+  geometry_uv_sha_before_after: 32274b915360ebcc3a9c1f9fb0f9ee79e2847986b48e6566d81c176b17e35824
+  godot_native_import: PASS
+  runtime_instancing_preserved: true
+  fleet_delivery: PASS
+remaining_boundaries:
+  - LOD1_LOD2_RUNTIME_SWITCHING_NOT_QUALIFIED
+  - UNIQUE_PER_INSTANCE_STORY_MASKS_NEED_SEPARATE_NONOVERLAPPING_UV_INTERFACE
+  - TARGET_HARDWARE_TEXTURE_BUDGET_NOT_QUALIFIED
+  - HUMAN_FINAL_ART_APPROVAL_PENDING
+resolution_note: >-
+  Geometry ownership handoff is complete. The material agent may consume UV0 for tileable family-base
+  applications without editing geometry. This does not transfer geometry ownership or authorize unique hero UVs.

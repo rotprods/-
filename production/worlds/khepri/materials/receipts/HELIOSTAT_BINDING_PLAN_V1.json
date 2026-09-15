@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "receipt_id": "HELIOSTAT_BINDING_PLAN_V1",
+  "world_id": "khepri",
+  "claim_id": "CLM-KHEPRI-MATERIALS-001",
+  "contract": "KHP_HELIOSTAT_MATERIAL_BINDING_PLAN_V1",
+  "consumer_contract": "KHP_HELIOSTAT_CONSUMER_STATE_MATRIX_V1",
+  "consumer_asset": "KHP_WM_HELIOSTAT_FOOTPRINTS",
+  "consumer_project_id": "040f0c45-83a7-483c-9ee7-1e31c640a587",
+  "consumer_revision": 10,
+  "consumer_metadata_sha256": "10f8a55ecbada301c8c0b392f3731cd6283c328e4e5d98dde044fbd291f4600b",
+  "objects": 214,
+  "groups": 12,
+  "state_totals": {
+    "masts": {"operational": 93, "maintenance": 14},
+    "panels": {"operational": 93, "maintenance": 14}
+  },
+  "binding_policy": {
+    "mast_operational": "KHP_MAT_BRONZE_SYNOD_001::service_clean::cast_structural::architectural",
+    "mast_maintenance": "KHP_MAT_BRONZE_SYNOD_001::service_clean::cast_structural::architectural",
+    "panel_operational_optical": "KHP_MAT_MIRROR_OPTICAL_001::calibrated::broad_reflector::architectural",
+    "panel_maintenance_optical": "KHP_MAT_MIRROR_OPTICAL_001::maintenance_cleaning::broad_reflector::architectural",
+    "panel_structural": "KHP_MAT_BRONZE_SYNOD_001::service_clean::cast_structural::architectural"
+  },
+  "runtime_representation": {
+    "current_optical_mesh_resources": 6,
+    "preferred_if_engine_supports_instance_material_override": 6,
+    "portable_gltf_state_split_fallback": 9,
+    "fallback_resource_increase": 3,
+    "fallback_multiplier": 1.5,
+    "object_count_unchanged": 214,
+    "note": "State causality can be represented without per-instance mesh explosion. Final choice requires engine/target qualification."
+  },
+  "audit": {
+    "plan_sha256": "ca709806dbb4463a6088b49effdeffa4946638bd64e17091b4778c66fb7efeea",
+    "combined_resolver_binding_sha256": "7c2385b33868e789071b80f70086ec1df243427908362bd67a977da7d3a71591",
+    "objects_214": true,
+    "twelve_groups": true,
+    "three_variants": true,
+    "two_states": true,
+    "two_roles": true,
+    "maintenance_panel_uses_cleaning_state": true,
+    "operational_panel_uses_calibrated_state": true,
+    "mast_material_state_invariant": true,
+    "portable_fallback_nine_resources": true
+  },
+  "passed": true,
+  "nonclaims": [
+    "final engine instance-material-override capability",
+    "target-hardware performance",
+    "runtime LOD state switching",
+    "final close-range material art"
+  ]
+}

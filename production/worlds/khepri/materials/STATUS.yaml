@@ -1,0 +1,133 @@
+status: REVIEW
+foundation_status: SYSTEMIC_MATERIAL_FOUNDATION_COMPLETE
+consumer_status: FIRST_REAL_CONSUMER_TECHNICAL_PASS
+world_compiler_bridge_status: PASS
+world_id: khepri
+claim_id: CLM-KHEPRI-MATERIALS-001
+owner: AGENT-KHEPRI-MATERIALS-001
+branch: art/khepri-materials-001
+protocol: EXOVANT-X100
+registry_status: PROVISIONAL_USER_AUTHORIZED_PENDING_MAIN_REGISTRY
+last_checkpoint: "2026-09-15T15:18:00Z"
+
+projects:
+  material_master: {id: d2bdc087-55ff-481e-93c5-e66bdfd57d8d, revision: 4}
+  material_cold: {id: 67d5c61f-29f2-426b-b6ba-77549f15b452, revision: 2}
+  world_consumer: {id: 040f0c45-83a7-483c-9ee7-1e31c640a587, revision: 10}
+  world_cold_uv: {id: 4c01fdbb-7093-4229-9a49-8237583280bc, revision: 7}
+
+contracts:
+  material_identity: KHP_MATERIAL_PRODUCTION_X100_V1
+  material_recipe: KHP_MATERIAL_RECIPE_X100_V1
+  application_matrix: KHP_MATERIAL_APPLICATION_MATRIX_X100_V1
+  world_artkit: KHP_MATERIAL_WORLD_ARTKIT_X100_V1
+  uv_handoff: KHP_OPTICAL_UV0_HANDOFF_V1
+  consumer_pilot: KHP_HELIOSTAT_MATERIAL_PILOT_V1
+  valid_application_count: 139
+  invalid_combinations_filtered: 5
+
+material_foundation:
+  families: 6
+  causal_state_materials: 24
+  calibration_sample_meshes: 48
+  packed_source_maps: 96
+  connected_export_maps: 72
+  source_only_state_masks: 24
+  family_coverage_percent: 100
+  calibration_system_percent: 100
+  production_resolution_art_percent: 0
+  godot_portability_percent: 100
+  human_final_art_percent: 0
+  image_manifest_sha256: e7aa1d9652a163819077920ed4fb1cf03d234b586333340c26c369e437d00a93
+  material_graph_sha256: 77c3fa2bbf1afb678784690123ec5545b2ab14de0788153b1910b159258c814e
+  sample_semantic_sha256: 34f1e9a37c079c5db0104ae0ec226d76d2c6741be6f4b030a9f3304e819bbb29
+  exact_master_cold_reproducibility: PASS
+
+material_library_r4:
+  glb_bytes: 5286408
+  glb_sha256: c855b873c3ef7627b48d60cf0db365b9fd192f4c6f6a59b6b79860dca993ab08
+  blend_bytes: 3304936
+  blend_sha256: e9d5f1fef3d8a9f4ef5f0c35e9605e81b3a0bec865379818d086defb7c8d797a
+  persistent_glb_media_id: 973ce04a-2268-41e0-bedc-34ee3c5e8aac
+  persistent_blend_media_id: 7a3c278a-0721-4293-b83b-07c720d64cae
+  godot_native_readback: PASS
+  visual_ai_calibration_gate: PASS_SUPPLEMENTAL
+
+uv0_handoff:
+  status: RESOLVED
+  blocker: BLOCK-KHP-MAT-002
+  mesh_count: 18
+  layer: UVMap
+  meters_per_repeat: 4.0
+  geometry_sha256: 41cb03864b03a907c8691de33843f874f1796ba67b0dc02980ad5af9fc60cf86
+  uv_sha256_master_cold: 13532b5bb722e7293e5248e061d6e30192a8cf21c21c355abd89095ea26a9c8e
+  geometry_unchanged: true
+
+heliostat_consumer_r10:
+  technical_gate: PASS
+  final_art_gate: BLOCKED_DOWNSTREAM_LOOKDEV
+  bronze_application: KHP_MAT_BRONZE_SYNOD_001::service_clean::cast_structural::architectural
+  mirror_application: KHP_MAT_MIRROR_OPTICAL_001::calibrated::broad_reflector::architectural
+  lod0_slot_replacements: 9
+  glb_bytes: 590844
+  glb_sha256: 240154331d5514cbcc9d4d454ed944032f5f24458c522348b9105caa52fc01c4
+  blend_bytes: 2350870
+  blend_sha256: 95622989e554ffd843c67a06efa502934dda91ce8602045a2405ffcf7314baba
+  persistent_glb_media_id: f6f51455-0742-4233-97c2-9306fe7b7127
+  persistent_blend_media_id: 40d8e353-e509-43bd-9a36-2132cd427ac8
+  godot_engine: 4.7.2.stable.official.ed1daf0bf
+  godot_native_import: PASS
+  runtime_instancing_preserved: true
+  pilot_material_texture_roles: PASS
+  fleet_delivery: PASS_CANDIDATE_RECOVERED_WITH_NATIVE_RECEIPT
+  receipt: production/worlds/khepri/materials/receipts/HELIOSTAT_R10_CONSUMER_PILOT.json
+
+world_compiler_artkit:
+  contract: KHP_MATERIAL_WORLD_ARTKIT_X100_V1
+  artkit_version: KHP_MAT_ARTKIT_001
+  families: 6
+  applications: 139
+  matrix_sha256: 18ce236b8983a08d5128364382a13d320caa2ac477307f612e8c1f4f5dd740fa
+  application_ids_sha256: 96d7e9406116e0556b68fc1199ec77c255d19d6ea36a151f5be284bd20176165
+  artkit_sha256: c39e634c584ac01befeca61d74f3f1d87ab311f864f15a42098bdc837fe7584f
+  compiler: art_source/khepri/materials/compile_world_artkit.py
+  source: art_source/khepri/materials/world_artkit_source.json
+  receipt: production/worlds/khepri/materials/receipts/WORLD_COMPILER_ARTKIT_V1.json
+  passed: true
+
+visual_truth:
+  library_calibration_ai: PASS_SUPPLEMENTAL
+  consumer_overview: CONDITIONAL_TOO_DISTANT_FOR_MATERIAL_IDENTITY
+  consumer_closeup: FAIL_FINAL_ART_READABILITY
+  uv_catastrophe: false
+  plastic_cgi_on_tier_d_consumer: true
+  root_cause: TIER_D_PROXY_GEOMETRY_PLUS_UNQUALIFIED_SKY_REFLECTION_CONTEXT
+  blocker: BLOCK-KHP-MAT-003
+  human_art_gate: PENDING
+
+source_authority:
+  identity: art_source/khepri/materials/compile_material_library.py
+  presentation: art_source/khepri/materials/present_material_lab.py
+  orchestrator: art_source/khepri/materials/build_material_lab.py
+  application_matrix: art_source/khepri/materials/compile_application_matrix.py
+  recipe: art_source/khepri/materials/compile_material_recipe.py
+  world_artkit: art_source/khepri/materials/compile_world_artkit.py
+
+blocking_for_promotion:
+  - MAIN_REGISTRY_RESERVED_ACK_ACTIVE
+  - HUMAN_ART_GATE
+  - QUALIFIED_WORLD_REFLECTION_OR_CLOSE_RANGE_CONSUMER_CONTEXT
+
+nonblocking_downstream:
+  - TARGET_HARDWARE_TEXTURE_MEMORY_BUDGET
+  - FINAL_RESOLUTION_TEXTURE_ART
+  - RUNTIME_LOD_SWITCHING
+  - GLASS_SEA_PHYSICAL_MEDIUM_CANON
+  - ATMOSPHERIC_CHEMISTRY_CANON
+
+next:
+  - reconcile CLM-KHEPRI-MATERIALS-001 into published main registry and ACK epoch 1
+  - keep R10 as technical consumer proof; do not alter material values merely to compensate for Tier-D geometry or unqualified sky
+  - coordinate a qualified KHEPRI atmosphere/reflection or close-range heliostat lookdev consumer before final-art promotion
+  - expose the ArtKit to future World Compiler placement/generation work through semantic application requests, not filenames
+  - qualify production texture tiers only on representative target hardware

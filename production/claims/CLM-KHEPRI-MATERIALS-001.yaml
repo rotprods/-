@@ -1,0 +1,103 @@
+schema_version: 1
+claim_id: CLM-KHEPRI-MATERIALS-001
+world_id: khepri
+owner: AGENT-KHEPRI-MATERIALS-001
+branch: art/khepri-materials-001
+role: world
+facet: art/materials-surface-library
+epoch: 1
+status: PROVISIONAL_USER_AUTHORIZED_PENDING_MAIN_REGISTRY
+foundation_status: SYSTEMIC_MATERIAL_FOUNDATION_COMPLETE
+coordination_issue: https://github.com/rotprods/-/issues/7
+reservation_request_comments: [5655314816, 5655328680]
+parent_context_commit: 23cbfbb5223593fdafc3afcc9da2df804851f439
+user_override_at: "2026-09-14T09:40:00Z"
+user_override_reason: >-
+  User explicitly ordered continuation of all next work after the normal integrator reservation remained unpublished overnight.
+  Authoring may proceed only inside this isolated branch/projects and exact paths; promotion/integration remains gated on registry reconciliation.
+
+owned_paths:
+  - production/claims/CLM-KHEPRI-MATERIALS-001.yaml
+  - production/worlds/khepri/materials/
+  - art_source/khepri/materials/
+
+project_ids:
+  master_material_lab: d2bdc087-55ff-481e-93c5-e66bdfd57d8d
+  cold_rebuild: 67d5c61f-29f2-426b-b6ba-77549f15b452
+
+asset_family_ids:
+  - KHP_MAT_GLASS_SOLAR_001
+  - KHP_MAT_MIRROR_OPTICAL_001
+  - KHP_MAT_BRONZE_SYNOD_001
+  - KHP_MAT_CERAMIC_SCORCHED_001
+  - KHP_MAT_FABRIC_SHADE_001
+  - KHP_MAT_MINERAL_DESERT_001
+
+north_star: >-
+  Build a KHEPRI-specific causal material system that multiplies credible L3-L5 world depth through
+  manufacturing, use, heat, maintenance and repair rather than random grunge, while remaining reproducible,
+  portable, engine-verifiable and clearly separated from final geology/architecture ownership.
+
+includes:
+  - causal PBR material families and controlled state variants
+  - BaseColor / metallic-roughness / Normal / causal state masks
+  - deterministic texture-generation source and seeds
+  - UV/test geometry and calibration scene
+  - packed/embedded source textures where practical
+  - GLB export and Godot material/readback QA
+  - family/state/finish/scale combinatorial grammar
+  - receipts, hashes, visual calibration evidence and handoff
+
+excludes:
+  - final Glass Sea architecture or final interpretation of its physical medium
+  - terrain/geology ownership
+  - fauna/NPC/vehicle modeling
+  - gameplay, collision or navmesh
+  - global/shared cross-world material libraries
+  - atmospheric oxidation/weather chemistry while KHEPRI atmosphere is unknown
+  - canon/story mutation
+  - human final-art approval
+  - target-hardware runtime texture budget until hardware gate
+
+canon_inputs:
+  material_language: [solar_glass, optical_mirror, bronze, scorched_ceramic, shade_fabric, dark_mineral]
+  reference_temperature_c: 71.0
+  principles:
+    - optics_are_infrastructure_not_decoration
+    - heat_has_material_and_architectural_consequences
+    - sacred_maintenance_and_repair
+    - crystal_plus_shadow
+    - no_unmotivated_emission
+
+verified_checkpoint:
+  master_revision: 4
+  cold_revision: 2
+  material_families: 6
+  causal_material_states: 24
+  valid_applications: 139
+  packed_source_maps: 96
+  glb_connected_textures: 72
+  image_manifest_sha256: e7aa1d9652a163819077920ed4fb1cf03d234b586333340c26c369e437d00a93
+  material_graph_sha256: 77c3fa2bbf1afb678784690123ec5545b2ab14de0788153b1910b159258c814e
+  sample_semantic_sha256: 34f1e9a37c079c5db0104ae0ec226d76d2c6741be6f4b030a9f3304e819bbb29
+  application_matrix_sha256: 18ce236b8983a08d5128364382a13d320caa2ac477307f612e8c1f4f5dd740fa
+  glb_sha256: c855b873c3ef7627b48d60cf0db365b9fd192f4c6f6a59b6b79860dca993ab08
+  blend_sha256: e9d5f1fef3d8a9f4ef5f0c35e9605e81b3a0bec865379818d086defb7c8d797a
+  godot_native_readback: PASS
+  ai_visual_calibration: PASS_SUPPLEMENTAL
+  persistent_glb_media_id: 973ce04a-2268-41e0-bedc-34ee3c5e8aac
+  persistent_blend_media_id: 7a3c278a-0721-4293-b83b-07c720d64cae
+  receipt: production/worlds/khepri/materials/receipts/R4_SYSTEMIC_MATERIAL_FOUNDATION.json
+
+promotion_gates:
+  completed:
+    - deterministic_rebuild
+    - packed_texture_integrity
+    - gltf_portability
+    - godot_native_readback
+    - material_causality_QA
+    - visual_calibration_QA
+  pending:
+    - main_registry_reserved_ack_active
+    - human_art_gate_before_final
+    - target_hardware_texture_budget_before_final_resolution

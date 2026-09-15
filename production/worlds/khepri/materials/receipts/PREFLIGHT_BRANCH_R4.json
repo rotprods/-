@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "receipt_id": "PREFLIGHT_BRANCH_R4",
+  "claim_id": "CLM-KHEPRI-MATERIALS-001",
+  "branch_head_observed_before_claim_refresh": "b9944f6d0f1b050fa6ded102dbdb7adf30d8f8ef",
+  "base_context_commit": "23cbfbb5223593fdafc3afcc9da2df804851f439",
+  "python_tests": {"passed": 85, "failed": 0},
+  "project_control": "PASS_AFTER_LOCAL_MANIFEST_REFRESH",
+  "python_source_compile": "PASS",
+  "application_matrix": {
+    "passed": true,
+    "rows": 139,
+    "sha256": "18ce236b8983a08d5128364382a13d320caa2ac477307f612e8c1f4f5dd740fa"
+  },
+  "scope_fence": {
+    "changed_paths": 12,
+    "bad_paths": [],
+    "allowed": [
+      "production/claims/CLM-KHEPRI-MATERIALS-001.yaml",
+      "production/worlds/khepri/materials/",
+      "art_source/khepri/materials/"
+    ],
+    "passed": true
+  },
+  "generated_manifest": {
+    "published_by_world_writer": false,
+    "local_sha256": "c6ff91c94f13cf1d0bfc07e8eb7be4e2feee5168e7f26ca96db8f89d038fbd81",
+    "bytes": 31573,
+    "reason": "Global projection is integrator-owned and must be serialized with registry/main state."
+  },
+  "github_actions_dispatched": false,
+  "finops_reason": "Gauntlet remains workflow_dispatch-only; local gates are sufficient for this branch checkpoint.",
+  "passed": true
+}
