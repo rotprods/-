@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generation": 10,
+  "generation": 11,
   "base_main": "196ef814fdc845ec797979906d01dc25009217c7",
   "authority": "Published latest main only. Local transactions are proposals until normal ref update/readback. Cooperative guard, not provider ACL.",
   "coordination_issue": "https://github.com/rotprods/-/issues/7",
@@ -847,6 +847,63 @@
         "characters/fauna/vehicles",
         "gameplay/runtime",
         "global STATE/PLAN/MANIFEST authority"
+      ],
+      "worker_status": "UNKNOWN"
+    },
+    {
+      "id": "CLM-KHEPRI-MATERIALS-001",
+      "owner": "AGENT-KHEPRI-MATERIALS-001",
+      "owner_identity_confirmed": true,
+      "branch": "art/khepri-materials-001",
+      "role": "world",
+      "epoch": 1,
+      "status": "reserved",
+      "ack": null,
+      "paths": [
+        "production/claims/CLM-KHEPRI-MATERIALS-001.yaml",
+        "production/worlds/khepri/materials/",
+        "art_source/khepri/materials/"
+      ],
+      "scopes": [
+        {
+          "world": "khepri",
+          "facet": "art/materials-surface-library"
+        }
+      ],
+      "project_ids": [
+        "d2bdc087-55ff-481e-93c5-e66bdfd57d8d",
+        "67d5c61f-29f2-426b-b6ba-77549f15b452"
+      ],
+      "asset_ids": [
+        "KHP_MAT_GLASS_SOLAR_001",
+        "KHP_MAT_MIRROR_OPTICAL_001",
+        "KHP_MAT_BRONZE_SYNOD_001",
+        "KHP_MAT_CERAMIC_SCORCHED_001",
+        "KHP_MAT_FABRIC_SHADE_001",
+        "KHP_MAT_MINERAL_DESERT_001"
+      ],
+      "evidence_refs": [
+        "https://github.com/rotprods/-/issues/7#issuecomment-5655314816",
+        "https://github.com/rotprods/-/issues/7#issuecomment-5665375595",
+        "https://github.com/rotprods/-/pull/37"
+      ],
+      "reservation_basis": "Existing X100 materials producer supplied REGISTRY_HANDOFF.json; fresh CAS/collision validation is performed by this transaction.",
+      "includes": [
+        "KHEPRI causal material library",
+        "systemic material recipes",
+        "World Compiler material ArtKit",
+        "GLB/Godot material QA",
+        "consumer binding specifications and receipts"
+      ],
+      "excludes": [
+        "geometry ownership",
+        "final Glass Sea architecture",
+        "terrain/geology",
+        "characters/fauna/vehicles",
+        "gameplay/collision",
+        "cross-world material library",
+        "human final-art approval",
+        "target-hardware budget claims"
       ],
       "worker_status": "UNKNOWN"
     }

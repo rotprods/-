@@ -4637,6 +4637,15 @@
       "status": "active",
       "provenance": "ops/fleet/registry.json",
       "artifact_path": "ops/fleet/registry.json"
+    },
+    {
+      "id": "claim:CLM-KHEPRI-MATERIALS-001",
+      "type": "workunit",
+      "label": "CLM-KHEPRI-MATERIALS-001 / AGENT-KHEPRI-MATERIALS-001",
+      "epistemic": "proposal",
+      "status": "reserved",
+      "provenance": "ops/fleet/registry.json",
+      "artifact_path": "ops/fleet/registry.json"
     }
   ],
   "edges": [
@@ -8412,6 +8421,18 @@
       "id": "claim:CLM-NACRE-LOOKDEV-HERO-001::BOUNDS_WORK_ON::world:nacre",
       "source": "claim:CLM-NACRE-LOOKDEV-HERO-001",
       "target": "world:nacre",
+      "type": "BOUNDS_WORK_ON"
+    },
+    {
+      "id": "fleet-registry::RECORDS::claim:CLM-KHEPRI-MATERIALS-001",
+      "source": "fleet-registry",
+      "target": "claim:CLM-KHEPRI-MATERIALS-001",
+      "type": "RECORDS"
+    },
+    {
+      "id": "claim:CLM-KHEPRI-MATERIALS-001::BOUNDS_WORK_ON::world:khepri",
+      "source": "claim:CLM-KHEPRI-MATERIALS-001",
+      "target": "world:khepri",
       "type": "BOUNDS_WORK_ON"
     }
   ],
