@@ -74,6 +74,18 @@ def sun(name,rot,energy,angle):
     d=bpy.data.lights.new(name+'_DATA','SUN'); d.energy=energy; d.angle=math.radians(angle); o=bpy.data.objects.new(name,d); bpy.context.collection.objects.link(o); o.rotation_euler=tuple(math.radians(x) for x in rot); return o
 
 
+def normalize_shell_material_slots(shell):
+    """Boolean operations can append an unused NULL material slot in Blender 5.2.
+
+    Remove only unreferenced trailing slots beyond the explicit outer/inner pair so a cold
+    rebuild matches the qualified primary scene semantically and exports without phantom roles.
+    """
+    used={p.material_index for p in shell.data.polygons}
+    for idx in reversed(range(len(shell.data.materials))):
+        if idx >= 2 and idx not in used:
+            shell.data.materials.pop(index=idx)
+
+
 def build():
     bpy.ops.object.select_all(action='SELECT'); bpy.ops.object.delete(use_global=False)
     sc=bpy.context.scene; sc.unit_settings.system='METRIC'; sc.unit_settings.scale_length=1.0; sc.render.engine='BLENDER_EEVEE'; sc.render.resolution_x=960; sc.render.resolution_y=960; sc.render.resolution_percentage=100; sc.render.image_settings.file_format='PNG'; ensure_world()
@@ -105,6 +117,7 @@ def build():
             for j in range(12):
                 a=(j/11)*math.radians(25); d=(n*math.cos(a)+t*math.sin(a)).normalized(); pts.append(d*24.28)
             r=curve(f'NACRE_DOCK_{label}_LOAD_RIB_{ri:02d}',pts,0.34,dark); r['function']='dock_load_transfer'; r['era']='ERA_1_ARCHIVE_RETROFIT'
+    normalize_shell_material_slots(shell)
 
     for label,n,w,h in [('A',sdir(126,18),2.9,3.5),('B',sdir(-154,-12),2.5,3.0)]:
         c=n*24.12; p=box('NACRE_SERVICE_HATCH_'+label,c,(w,h,0.22),n,repair,0.10); p['count_contract']='EXACTLY_TWO'; p['era']='ERA_2_CURRENT_MAINTENANCE'; t1,t2=tangents(n)
