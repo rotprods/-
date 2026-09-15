@@ -1,0 +1,20 @@
+name: Pelagos contract qualify temp
+on:
+  push:
+    branches: [runtime/pelagos-godot-adapter-001]
+permissions:
+  contents: read
+jobs:
+  pelagos-contract:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - name: Acquire pinned Godot
+        run: python3 tools/bootstrap_godot.py --destination .tools
+      - name: Static Pelagos manifest gate
+        run: python3 runtime/pelagos/validate_manifest.py
+      - name: Godot Pelagos contract-only smoke
+        run: |
+          .tools/Godot_v4.7.2-stable_linux.x86_64 --headless --path . \
+            --script res://runtime/pelagos/pelagos_runtime_smoke.gd -- --contract-only
