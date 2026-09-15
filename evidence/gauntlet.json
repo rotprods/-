@@ -1,7 +1,7 @@
 {
-  "run_id": "native-20260912T221735006072Z",
-  "executed_at": "2026-09-12T22:17:51.245811+00:00",
-  "source_digest": "acbed8e7cae41b340562637ce4833bda7b2f3fe4a33357d5f5a4df9b4fc4d67c",
+  "run_id": "native-20260915T152618805136Z",
+  "executed_at": "2026-09-15T15:26:36.554815+00:00",
+  "source_digest": "d0e4493731b8ca97d68ae5a992930cda1992e6ed241012592c70bd0dfdefafdc",
   "gates": [
     {
       "gate": "import",
