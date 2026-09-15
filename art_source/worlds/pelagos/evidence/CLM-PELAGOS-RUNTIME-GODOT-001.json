@@ -31,7 +31,37 @@
     "contract-only/native Godot smoke harness"
   ],
   "evidence": {
-    "static_manifest_gate": "PASS locally: families=56 stateful=47 required_nodes=224 revision=44",
+    "static_manifest_gate": "PASS: PELAGOS_RUNTIME_MANIFEST_PASS families=56 stateful=47 required_nodes=224 revision=44",
+    "godot_contract_only": {
+      "status": "PASS",
+      "engine": "Godot 4.7.2.stable.official.ed1daf0bf",
+      "workflow_run_id": 34986408898,
+      "head_under_test": "9d350643fd9cc16a255ba8eb397599b192eec8fe",
+      "assertions_passed": 19,
+      "coverage": [
+        "manifest contract load",
+        "47 stateful family records",
+        "9 machinery families",
+        "224 required native node keys",
+        "47 initialized runtime states",
+        "empty interaction allowlist denies requests",
+        "collision request emits policy only",
+        "valid state transition",
+        "unknown state rejection with last-valid preservation",
+        "world-state snapshot validation",
+        "corrupt payload rejection",
+        "snapshot roundtrip restore",
+        "namespaced campaign-v2 projection without global schema mutation"
+      ]
+    },
+    "repository_gauntlet": {
+      "status": "PASS",
+      "workflow_run_id": 34986218171,
+      "head": "7c52e05fca1496106d37d23dc1a88e130686ef42",
+      "python_tests": "85/85 PASS",
+      "project_control": "PASS",
+      "godot_native_project_gates": "import/state-tests/world-tests/input-tests/smoke PASS"
+    },
     "native_glb_import": "BLOCKED_PENDING_EXACT_REV44_BINARY",
     "campaign_save_integration": "BLOCKED_PENDING_PROGRESS_V2_MIGRATION"
   },
@@ -48,6 +78,6 @@
     "Unreal production engine decision",
     "GATE-ART"
   ],
-  "truth_state": "IMPLEMENTED_EXECUTABLE_SOURCE_NOT_PELAGOS_NATIVE_QUALIFIED",
-  "next_gate": "recover exact rev44 GLB into runtime/pelagos/assets and execute native smoke"
+  "truth_state": "ENGINE_CONTRACT_QUALIFIED__GLB_NATIVE_PENDING",
+  "next_gate": "recover exact rev44 GLB into runtime/pelagos/assets and execute native import/node/state-swap smoke"
 }
