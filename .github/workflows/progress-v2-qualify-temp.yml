@@ -1,18 +1,29 @@
-name: Progress v2 qualify temp
+name: Progress v2 finalize temp
 on:
   push:
     branches: [runtime/progress-world-state-v2-001]
 permissions:
-  contents: read
+  contents: write
 jobs:
-  state-v2:
+  finalize-state-v2:
     runs-on: ubuntu-24.04
     timeout-minutes: 8
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
-      - name: Acquire pinned Godot
-        run: python3 tools/bootstrap_godot.py --destination .tools
-      - name: Execute state v2 migration/recovery suite
+        with:
+          ref: runtime/progress-world-state-v2-001
+      - name: Acquire pinned Godot and requalify exact candidate
         run: |
+          python3 tools/bootstrap_godot.py --destination .tools
           .tools/Godot_v4.7.2-stable_linux.x86_64 --headless --path . \
             --script res://tests/test_state.gd
+      - name: Self-remove, refresh continuity and commit candidate
+        run: |
+          rm .github/workflows/progress-v2-qualify-temp.yml
+          python3 tools/project_control.py refresh
+          python3 tools/project_control.py check
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add scripts/progress.gd scripts/save_store.gd tests/test_state.gd MANIFEST.json .github/workflows/progress-v2-qualify-temp.yml
+          git commit -m "runtime(state): qualify campaign world-state v2"
+          git push origin HEAD:runtime/progress-world-state-v2-001
