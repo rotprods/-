@@ -1,230 +1,299 @@
-"""Optional Linux CPU-render capture with strict freshness/error validation."""
+"""Fail-closed Linux CPU capture; requires Xvfb, xkbcomp and Mesa.
+
+This verifies the capture transport, not art, performance or normal gameplay.
+The existing game's --capture still repositions the player. Evidence is kept
+per invocation; no engine/gameplay source or existing log is overwritten.
+"""
 from pathlib import Path
 import argparse
-import contextlib
+from contextlib import contextmanager
+import datetime
 import fcntl
+import hashlib
 import json
+import math
 import os
+import re
 import secrets
+import shutil
 import signal
 import socket
+import stat
 import struct
 import subprocess
+import sys
 import tempfile
 import time
 import zlib
 
-ERROR_TOKENS = ("SCRIPT ERROR", "ERROR:")
-CAPTURE_MARKER = "CAPTURE_SAVED"
-PNG_SIGNATURE = b"\x89PNG\r\n\x1a\n"
+
+class CaptureError(RuntimeError):
+    """The invocation did not produce qualified capture evidence."""
 
 
-def _read_png(path: Path) -> dict:
-    """Validate PNG framing/chunks/CRCs without depending on Pillow."""
-    data = path.read_bytes()
-    if not data.startswith(PNG_SIGNATURE):
-        raise RuntimeError("Capture is not a PNG")
-    offset = len(PNG_SIGNATURE)
-    chunks = []
-    saw_ihdr = False
-    saw_iend = False
-    while offset < len(data):
-        if offset + 12 > len(data):
-            raise RuntimeError("Capture PNG has truncated chunk header")
-        length = struct.unpack(">I", data[offset:offset + 4])[0]
-        kind = data[offset + 4:offset + 8]
-        end = offset + 12 + length
-        if end > len(data):
-            raise RuntimeError("Capture PNG has truncated chunk payload")
-        payload = data[offset + 8:offset + 8 + length]
-        expected = struct.unpack(">I", data[offset + 8 + length:end])[0]
-        actual = zlib.crc32(kind + payload) & 0xFFFFFFFF
-        if expected != actual:
-            raise RuntimeError("Capture PNG CRC mismatch")
-        if not chunks and kind != b"IHDR":
-            raise RuntimeError("Capture PNG first chunk is not IHDR")
-        if kind == b"IHDR":
-            if saw_ihdr or length != 13:
-                raise RuntimeError("Capture PNG invalid IHDR")
-            saw_ihdr = True
-        if kind == b"IEND":
-            if saw_iend or length != 0:
-                raise RuntimeError("Capture PNG invalid IEND")
-            saw_iend = True
-            if end != len(data):
-                raise RuntimeError("Capture PNG contains trailing data")
-        chunks.append(kind.decode("ascii", errors="replace"))
-        offset = end
-    if not saw_ihdr or not saw_iend:
-        raise RuntimeError("Capture PNG missing required chunks")
-    return {"bytes": len(data), "chunks": chunks}
+def stop_owned(process, grace=1.0):
+    """Stop only the process group created by our start_new_session=True.
 
-
-def _kill_process_group(proc: subprocess.Popen, grace: float = 2.0) -> None:
-    if proc.poll() is not None:
-        return
+    Kill remaining descendants even when their parent already exited. Never
+    use pkill, a display's PID, or a process inferred from a stale receipt.
+    """
     try:
-        os.killpg(proc.pid, signal.SIGTERM)
+        os.killpg(process.pid, signal.SIGTERM)
     except ProcessLookupError:
-        return
-    try:
-        proc.wait(timeout=grace)
-        return
-    except subprocess.TimeoutExpired:
         pass
     try:
-        os.killpg(proc.pid, signal.SIGKILL)
-    except ProcessLookupError:
-        return
-    proc.wait(timeout=grace)
-
-
-def _wait_for_display(server: subprocess.Popen, port: int, attempts: int = 50) -> None:
-    for _ in range(attempts):
-        if server.poll() is not None:
-            raise RuntimeError("Virtual display failed; inspect attempt display.log")
+        process.wait(timeout=grace)
+    except subprocess.TimeoutExpired:
+        pass
+    finally:
         try:
-            with socket.create_connection(("127.0.0.1", port), .1):
-                return
-        except OSError:
-            time.sleep(.1)
-    raise RuntimeError("Virtual display did not become reachable")
+            os.killpg(process.pid, signal.SIGKILL)
+        except ProcessLookupError:
+            pass
+        process.wait(timeout=grace)
 
 
-def _snapshot(path: Path):
-    if not path.exists():
-        return None
-    stat = path.stat()
-    return {
-        "bytes": path.read_bytes(),
-        "inode": stat.st_ino,
-        "mtime_ns": stat.st_mtime_ns,
-        "size": stat.st_size,
-    }
-
-
-def _restore(path: Path, previous) -> None:
-    if previous is None:
-        path.unlink(missing_ok=True)
-        return
-    path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_bytes(previous["bytes"])
-    os.utime(path, ns=(previous["mtime_ns"], previous["mtime_ns"]))
-
-
-def _validate_run(run: subprocess.CompletedProcess, log_text: str, image: Path,
-                  previous, started_ns: int) -> dict:
-    if run.returncode:
-        raise RuntimeError(f"Render failed with exit {run.returncode}")
-    for token in ERROR_TOKENS:
-        if token in log_text:
-            raise RuntimeError(f"Render log contains fatal token: {token}")
-    marker_count = log_text.count(CAPTURE_MARKER)
-    if marker_count != 1:
-        raise RuntimeError(f"Expected exactly one {CAPTURE_MARKER}, got {marker_count}")
-    if not image.is_file():
-        raise RuntimeError("Capture marker emitted but runtime.png is absent")
-    stat = image.stat()
-    if stat.st_mtime_ns < started_ns:
-        raise RuntimeError("runtime.png predates this capture attempt")
-    if previous is not None and stat.st_ino == previous["inode"]:
-        raise RuntimeError("runtime.png reused the previous inode")
-    png = _read_png(image)
-    return {
-        "passed": True,
-        "returncode": run.returncode,
-        "marker_count": marker_count,
-        "image_mtime_ns": stat.st_mtime_ns,
-        "image_inode": stat.st_ino,
-        "png": png,
-    }
-
-
-def capture(args) -> Path:
-    root = Path(__file__).resolve().parents[1]
-    evidence = root / "evidence"
-    evidence.mkdir(exist_ok=True)
-    image = evidence / "runtime.png"
-    previous = _snapshot(image)
-    lock_path = evidence / ".capture_visual.lock"
-    lock_file = lock_path.open("a+")
+@contextmanager
+def writer_lock(root):
+    """Cooperative capture-only lock, not a studio/Fleet authorization."""
+    folder = root / '.tools'
+    folder.mkdir(exist_ok=True)
+    fd = os.open(folder / 'capture.lock', os.O_CREAT | os.O_RDWR | os.O_NOFOLLOW, 0o600)
     try:
         try:
-            fcntl.flock(lock_file.fileno(), fcntl.LOCK_EX | fcntl.LOCK_NB)
+            fcntl.flock(fd, fcntl.LOCK_EX | fcntl.LOCK_NB)
         except BlockingIOError as exc:
-            raise RuntimeError("Another capture_visual attempt owns the local capture lock") from exc
-        attempt = evidence / "capture-attempts" / f"{time.time_ns()}-{os.getpid()}"
-        attempt.mkdir(parents=True, exist_ok=False)
-        display_log_path = attempt / "display.log"
-        render_log_path = attempt / "visual-run.log"
-        receipt_path = attempt / "receipt.json"
-        env = os.environ.copy()
-        if args.xlibs:
-            env["LD_LIBRARY_PATH"] = str(Path(args.xlibs).resolve())
-        display = 100 + os.getpid() % 400
-        env["DISPLAY"] = f"127.0.0.1:{display}"
-        env["LIBGL_ALWAYS_SOFTWARE"] = "1"
-        server = None
-        started_ns = time.time_ns()
-        receipt = {"passed": False, "started_ns": started_ns, "display": display}
-        try:
-            with tempfile.TemporaryDirectory(prefix="exovant-display-") as tmp:
-                auth = Path(tmp) / "authority"
-                fields = [b"", str(display).encode(), b"MIT-MAGIC-COOKIE-1", secrets.token_bytes(16)]
-                auth.write_bytes(struct.pack(">H", 65535) + b"".join(struct.pack(">H", len(x)) + x for x in fields))
-                auth.chmod(0o600)
-                with display_log_path.open("w") as display_log:
-                    server = subprocess.Popen(
-                        [args.xvfb, f":{display}", "-screen", "0", "1280x720x24", "-nolisten", "unix",
-                         "-nolisten", "local", "-listen", "tcp", "-auth", str(auth)],
-                        env=env, stdout=display_log, stderr=display_log, start_new_session=True)
-                    _wait_for_display(server, 6000 + display)
-                    cmd = [str(Path(args.godot).resolve()), "--path", str(root), "--rendering-method",
-                           "gl_compatibility", "--audio-driver", "Dummy", "--", "--capture"]
-                    try:
-                        run = subprocess.run(cmd, env=env, capture_output=True, text=True,
-                                             timeout=args.timeout, start_new_session=True)
-                    except subprocess.TimeoutExpired as exc:
-                        output = (exc.stdout or "") + (exc.stderr or "")
-                        render_log_path.write_text(output if isinstance(output, str) else output.decode(errors="replace"))
-                        raise RuntimeError(f"Render timed out after {args.timeout}s") from exc
-                    log_text = (run.stdout or "") + (run.stderr or "")
-                    render_log_path.write_text(log_text)
-                    receipt.update(_validate_run(run, log_text, image, previous, started_ns))
-                    attempt_image = attempt / "runtime.png"
-                    attempt_image.write_bytes(image.read_bytes())
-                    receipt["attempt_image"] = str(attempt_image.relative_to(root))
-                    receipt["render_log"] = str(render_log_path.relative_to(root))
-                    receipt["display_log"] = str(display_log_path.relative_to(root))
-                    receipt_path.write_text(json.dumps(receipt, indent=2) + "\n")
-                    # Compatibility logs are copied only after a successful, validated attempt.
-                    (evidence / "visual-run.log").write_text(log_text)
-                    (evidence / "display.log").write_text(display_log_path.read_text())
-                    print("Captured:", image)
-                    return image
-        except Exception as exc:
-            receipt["error"] = str(exc)
-            with contextlib.suppress(Exception):
-                receipt_path.write_text(json.dumps(receipt, indent=2) + "\n")
-            _restore(image, previous)
-            raise
-        finally:
-            if server is not None:
-                _kill_process_group(server)
+            raise CaptureError('another capture owns this checkout') from exc
+        yield
     finally:
-        with contextlib.suppress(Exception):
-            fcntl.flock(lock_file.fileno(), fcntl.LOCK_UN)
-        lock_file.close()
+        # Keep the inode: unlinking a flock file creates split-brain locks.
+        os.close(fd)
 
 
-def parse_args(argv=None):
-    p = argparse.ArgumentParser()
-    p.add_argument("--godot", required=True)
-    p.add_argument("--xvfb", default="Xvfb")
-    p.add_argument("--xlibs", default="")
-    p.add_argument("--timeout", type=float, default=90)
-    return p.parse_args(argv)
+@contextmanager
+def virtual_display(xvfb, env, log_path, timeout):
+    display = 100 + os.getpid() % 400
+    port = 6000 + display
+    # Do not attach to, terminate, or take over an already listening display.
+    try:
+        with socket.create_connection(('127.0.0.1', port), .1):
+            raise CaptureError('selected display is occupied; no takeover attempted')
+    except OSError:
+        pass
+    with tempfile.TemporaryDirectory(prefix='exovant-display-') as tmp:
+        auth = Path(tmp) / 'authority'
+        fields = [b'', str(display).encode(), b'MIT-MAGIC-COOKIE-1', secrets.token_bytes(16)]
+        auth.write_bytes(struct.pack('>H', 65535) + b''.join(
+            struct.pack('>H', len(x)) + x for x in fields))
+        auth.chmod(0o600)
+        env = dict(env, DISPLAY=f'127.0.0.1:{display}', XAUTHORITY=str(auth))
+        with log_path.open('w') as log:
+            server = subprocess.Popen([
+                xvfb, f':{display}', '-screen', '0', '1280x720x24',
+                '-nolisten', 'unix', '-nolisten', 'local', '-listen', 'tcp',
+                '-auth', str(auth)], env=env, stdout=log, stderr=log,
+                start_new_session=True)
+            try:
+                deadline = time.monotonic() + timeout
+                while True:
+                    if server.poll() is not None:
+                        raise CaptureError('virtual display exited before readiness')
+                    try:
+                        with socket.create_connection(('127.0.0.1', port), .1):
+                            if server.poll() is not None:
+                                raise CaptureError('virtual display exited during readiness')
+                            break
+                    except OSError:
+                        if time.monotonic() >= deadline:
+                            raise CaptureError('virtual display readiness timeout')
+                        time.sleep(.05)
+                yield env
+            finally:
+                stop_owned(server)
 
 
-if __name__ == "__main__":
-    capture(parse_args())
+def png_metadata(path):
+    """Check the PNG container/CRCs; this is not raster or visual approval."""
+    if path.is_symlink() or not path.is_file():
+        raise CaptureError('PNG missing or not a regular file')
+    if path.stat().st_size > 32 * 1024 * 1024:
+        raise CaptureError('PNG exceeds the 32 MiB capture limit')
+    data = path.read_bytes()
+    if not data.startswith(b'\x89PNG\r\n\x1a\n'):
+        raise CaptureError('invalid PNG signature')
+    pos, chunks, idat_size = 8, [], 0
+    width = height = 0
+    while pos < len(data):
+        if len(data) - pos < 12:
+            raise CaptureError('truncated PNG chunk')
+        size = struct.unpack_from('>I', data, pos)[0]
+        kind = data[pos + 4:pos + 8]
+        end = pos + 12 + size
+        if end > len(data):
+            raise CaptureError('truncated PNG payload')
+        payload = data[pos + 8:pos + 8 + size]
+        crc = struct.unpack_from('>I', data, pos + 8 + size)[0]
+        if zlib.crc32(kind + payload) & 0xffffffff != crc:
+            raise CaptureError('PNG CRC mismatch')
+        if not chunks and kind != b'IHDR':
+            raise CaptureError('PNG IHDR must be first')
+        if kind == b'IHDR':
+            if chunks or size != 13:
+                raise CaptureError('invalid or repeated PNG IHDR')
+            width, height = struct.unpack_from('>II', payload)
+            if not width or not height:
+                raise CaptureError('empty PNG dimensions')
+        elif kind == b'IDAT':
+            idat_size += size
+        elif kind == b'IEND':
+            if size or end != len(data) or not idat_size:
+                raise CaptureError('invalid PNG end or missing image data')
+        chunks.append(kind)
+        pos = end
+    if not chunks or chunks[-1] != b'IEND':
+        raise CaptureError('PNG IEND missing')
+    return {'width': width, 'height': height, 'bytes': len(data),
+            'sha256': hashlib.sha256(data).hexdigest(),
+            'validation': 'container_crc_only_not_visual_approval'}
+
+
+def validate_capture(log, image, returncode, started_ns, previous_identity=None):
+    if returncode != 0:
+        raise CaptureError(f'engine exit code {returncode}')
+    clean = re.sub(r'\x1b\[[0-?]*[ -/]*[@-~]', '', log)
+    if re.search(r'^\s*(?:SCRIPT ERROR|ERROR|FATAL(?: ERROR)?)(?::|\s*$)', clean, re.M):
+        raise CaptureError('engine reported a fatal/error diagnostic')
+    if clean.splitlines().count('CAPTURE_SAVED') != 1:
+        raise CaptureError('expected exactly one CAPTURE_SAVED marker')
+    if image.is_symlink() or not image.is_file():
+        raise CaptureError('current invocation produced no regular PNG')
+    info = image.stat()
+    if info.st_mtime_ns < started_ns:
+        raise CaptureError('PNG predates this engine invocation')
+    if previous_identity == (info.st_dev, info.st_ino):
+        raise CaptureError('PNG reuses the previous evidence inode')
+    return png_metadata(image)
+
+
+def copy_atomic(source, target):
+    fd, name = tempfile.mkstemp(prefix='.capture-copy-', dir=target.parent)
+    os.close(fd)
+    try:
+        shutil.copy2(source, name)
+        os.replace(name, target)
+    finally:
+        Path(name).unlink(missing_ok=True)
+
+
+def restore_snapshot(data, metadata, target):
+    """Restore the original bytes/metadata even after a hard-link replay."""
+    fd, name = tempfile.mkstemp(prefix='.capture-snapshot-', dir=target.parent)
+    try:
+        with os.fdopen(fd, 'wb') as out:
+            out.write(data)
+        os.chmod(name, stat.S_IMODE(metadata.st_mode))
+        os.utime(name, ns=(metadata.st_atime_ns, metadata.st_mtime_ns))
+        os.replace(name, target)
+    finally:
+        Path(name).unlink(missing_ok=True)
+
+
+def capture(root, godot, xvfb='Xvfb', xlibs='', timeout=90, display_timeout=5):
+    root = Path(root).resolve()
+    for value in (timeout, display_timeout):
+        if not math.isfinite(value) or value <= 0:
+            raise CaptureError('timeouts must be finite and positive')
+    env = dict(os.environ, LIBGL_ALWAYS_SOFTWARE='1')
+    if xlibs:
+        env['LD_LIBRARY_PATH'] = str(Path(xlibs).resolve())
+    with writer_lock(root):
+        evidence = root / 'evidence'
+        evidence.mkdir(exist_ok=True)
+        runtime = evidence / 'runtime.png'
+        if runtime.is_symlink() or (runtime.exists() and not runtime.is_file()):
+            raise CaptureError('refusing non-regular existing runtime.png')
+        captures = evidence / 'captures'
+        captures.mkdir(exist_ok=True)
+        run_dir = Path(tempfile.mkdtemp(prefix='capture-', dir=captures))
+        previous = run_dir / 'previous-runtime.png'
+        image = run_dir / 'runtime.png'
+        log_path = run_dir / 'visual-run.log'
+        receipt = {'status': 'failed', 'passed': False,
+                   'scope': 'CPU capture transport; game --capture repositions player',
+                   'runner_sha256': hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
+                   'executed_at': datetime.datetime.now(datetime.timezone.utc).isoformat(),
+                   'returncode': None, 'timed_out': False,
+                   'evidence_directory': str(run_dir.relative_to(root)),
+                   'art_approval': False, 'normal_playthrough': False}
+        previous_identity = None
+        previous_data = None
+        old = None
+        if runtime.exists():
+            old = runtime.stat()
+            if old.st_size > 32 * 1024 * 1024:
+                raise CaptureError('previous PNG exceeds safe snapshot limit; untouched')
+            previous_data = runtime.read_bytes()
+            receipt['previous_sha256'] = hashlib.sha256(previous_data).hexdigest()
+            previous_identity = (old.st_dev, old.st_ino)
+            runtime.rename(previous)
+        try:
+            with virtual_display(xvfb, env, run_dir / 'display.log', display_timeout) as child_env:
+                started_ns = time.time_ns()
+                receipt['engine_started_ns'] = started_ns
+                with log_path.open('w') as out:
+                    process = subprocess.Popen([
+                        str(Path(godot).resolve()), '--path', str(root),
+                        '--rendering-method', 'gl_compatibility', '--audio-driver', 'Dummy',
+                        '--', '--capture'], env=child_env, stdout=out, stderr=out,
+                        start_new_session=True)
+                    try:
+                        receipt['returncode'] = process.wait(timeout=timeout)
+                    except subprocess.TimeoutExpired as exc:
+                        receipt['timed_out'] = True
+                        raise CaptureError('engine capture timeout') from exc
+                    finally:
+                        stop_owned(process)
+                receipt['image'] = validate_capture(
+                    log_path.read_text(errors='replace'), runtime,
+                    receipt['returncode'], started_ns, previous_identity)
+            receipt.update(status='passed', passed=True)
+        except BaseException as exc:
+            receipt['error'] = f'{type(exc).__name__}: {exc}'
+            if isinstance(exc, (KeyboardInterrupt, SystemExit)):
+                raise
+            raise CaptureError(f'{receipt["error"]}; evidence: {run_dir}') from exc
+        finally:
+            # Each artifact is moved only after our engine group has stopped.
+            # Failed attempts remain inspectable; prior evidence is restored.
+            if runtime.exists() or runtime.is_symlink():
+                runtime.rename(image)
+            if previous_data is not None:
+                restore_snapshot(previous_data, old, previous)
+            if receipt['passed'] and image.is_file() and not image.is_symlink():
+                copy_atomic(image, runtime)
+            elif previous.exists():
+                copy_atomic(previous, runtime)
+            (run_dir / 'receipt.json').write_text(json.dumps(receipt, indent=2) + '\n')
+        return run_dir
+
+
+def main(argv=None):
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--godot', required=True)
+    parser.add_argument('--xvfb', default='Xvfb')
+    parser.add_argument('--xlibs', default='')
+    parser.add_argument('--timeout', type=float, default=90)
+    parser.add_argument('--display-timeout', type=float, default=5)
+    args = parser.parse_args(argv)
+    try:
+        directory = capture(Path(__file__).resolve().parents[1], **vars(args))
+    except (CaptureError, OSError) as exc:
+        print(f'Capture failed: {exc}', file=sys.stderr)
+        return 1
+    print('Captured:', directory / 'runtime.png')
+    print('Receipt:', directory / 'receipt.json')
+    return 0
+
+
+if __name__ == '__main__':
+    raise SystemExit(main())
