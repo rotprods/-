@@ -1,0 +1,137 @@
+{
+  "receipt_id": "X100-NACRE-LOOKDEV-HERO-R2",
+  "world_id": "nacre",
+  "claim_id": "CLM-NACRE-LOOKDEV-HERO-001",
+  "branch": "art/nacre-lookdev-hero-001",
+  "authority": "Lower-bound evidence from technically qualified manual-reference R2 only. Does not promote human art, image-to-3D, engine, UV/PBR or performance gates.",
+  "evidence": [
+    {
+      "dimension": "meso_architecture",
+      "cell": "interiors",
+      "maturity": "implemented",
+      "evidence_refs": ["art_source/nacre_lookdev_hero/MANUAL_REFERENCE_BUILD_R2.json"]
+    },
+    {
+      "dimension": "meso_architecture",
+      "cell": "utilities_infrastructure",
+      "maturity": "locally_validated",
+      "evidence_refs": ["art_source/nacre_lookdev_hero/MANUAL_REFERENCE_BUILD_R2.json"]
+    },
+    {
+      "dimension": "civilization",
+      "cell": "manufacturing",
+      "maturity": "implemented",
+      "evidence_refs": ["art_source/nacre_lookdev_hero/LOOKDEV_TO_MESH_CONTRACT.md", "art_source/nacre_lookdev_hero/MANUAL_REFERENCE_BUILD_R2.json"]
+    },
+    {
+      "dimension": "civilization",
+      "cell": "construction",
+      "maturity": "locally_validated",
+      "evidence_refs": ["art_source/nacre_lookdev_hero/MANUAL_REFERENCE_BUILD_R2.json"]
+    },
+    {
+      "dimension": "civilization",
+      "cell": "repair_maintenance",
+      "maturity": "locally_validated",
+      "evidence_refs": ["art_source/nacre_lookdev_hero/MANUAL_REFERENCE_BUILD_R2.json"]
+    },
+    {
+      "dimension": "material_causality",
+      "cell": "material_families",
+      "maturity": "implemented",
+      "evidence_refs": ["art_source/nacre_lookdev_hero/MANUAL_REFERENCE_BUILD_R2.json"]
+    },
+    {
+      "dimension": "material_causality",
+      "cell": "manufacturing_response",
+      "maturity": "locally_validated",
+      "evidence_refs": ["art_source/nacre_lookdev_hero/MANUAL_REFERENCE_BUILD_R2.json"]
+    },
+    {
+      "dimension": "material_causality",
+      "cell": "repair",
+      "maturity": "locally_validated",
+      "evidence_refs": ["art_source/nacre_lookdev_hero/MANUAL_REFERENCE_BUILD_R2.json"]
+    },
+    {
+      "dimension": "variation",
+      "cell": "temporal",
+      "maturity": "implemented",
+      "evidence_refs": ["art_source/nacre_lookdev_hero/MANUAL_REFERENCE_BUILD_R2.json"]
+    },
+    {
+      "dimension": "temporal_states",
+      "cell": "era_0_original",
+      "maturity": "locally_validated",
+      "evidence_refs": ["art_source/nacre_lookdev_hero/MANUAL_REFERENCE_BUILD_R2.json"]
+    },
+    {
+      "dimension": "temporal_states",
+      "cell": "era_1_modification",
+      "maturity": "locally_validated",
+      "evidence_refs": ["art_source/nacre_lookdev_hero/MANUAL_REFERENCE_BUILD_R2.json"]
+    },
+    {
+      "dimension": "temporal_states",
+      "cell": "era_2_current",
+      "maturity": "locally_validated",
+      "evidence_refs": ["art_source/nacre_lookdev_hero/MANUAL_REFERENCE_BUILD_R2.json"]
+    },
+    {
+      "dimension": "storytelling",
+      "cell": "current_state",
+      "maturity": "implemented",
+      "evidence_refs": ["art_source/nacre_lookdev_hero/MANUAL_REFERENCE_BUILD_R2.json"]
+    },
+    {
+      "dimension": "storytelling",
+      "cell": "past_state",
+      "maturity": "implemented",
+      "evidence_refs": ["art_source/nacre_lookdev_hero/MANUAL_REFERENCE_BUILD_R2.json"]
+    },
+    {
+      "dimension": "storytelling",
+      "cell": "repair_evidence",
+      "maturity": "locally_validated",
+      "evidence_refs": ["art_source/nacre_lookdev_hero/MANUAL_REFERENCE_BUILD_R2.json"]
+    },
+    {
+      "dimension": "reusability",
+      "cell": "procedural_generators",
+      "maturity": "empirically_qualified",
+      "evidence_refs": ["art_source/nacre_lookdev_hero/build_manual_reference_r2.py", "art_source/nacre_lookdev_hero/MANUAL_REFERENCE_BUILD_R2.json"]
+    },
+    {
+      "dimension": "qa",
+      "cell": "canon",
+      "maturity": "locally_validated",
+      "evidence_refs": ["art_source/nacre_lookdev_hero/LOOKDEV_TO_MESH_CONTRACT.md", "art_source/nacre_lookdev_hero/MANUAL_REFERENCE_BUILD_R2.json"]
+    },
+    {
+      "dimension": "qa",
+      "cell": "realism",
+      "maturity": "locally_validated",
+      "evidence_refs": ["art_source/nacre_lookdev_hero/MANUAL_REFERENCE_BUILD_R2.json"]
+    },
+    {
+      "dimension": "qa",
+      "cell": "geometry_uv_material",
+      "maturity": "implemented",
+      "evidence_refs": ["art_source/nacre_lookdev_hero/MANUAL_REFERENCE_BUILD_R2.json"],
+      "note": "Only geometry and material-role foundation are implemented; UV/PBR production remains open. Maturity deliberately capped at implemented."
+    }
+  ],
+  "explicit_unknown_or_open": [
+    "qa/art",
+    "qa/engine_runtime",
+    "qa/visual_regression_human",
+    "optimization/*",
+    "gameplay/*",
+    "material_causality/wear",
+    "material_causality/weathering",
+    "material_causality/damage",
+    "UV/PBR production",
+    "image-to-3D reconstruction bakeoff",
+    "target-hardware performance"
+  ]
+}
