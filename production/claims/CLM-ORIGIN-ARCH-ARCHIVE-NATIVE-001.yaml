@@ -1,0 +1,107 @@
+claim_id: CLM-ORIGIN-ARCH-ARCHIVE-NATIVE-001
+parent_claim: CLM-ORIGIN-WORLD-001
+agent_id: AGENT-ORIGIN-WORLD-01
+claim_type: ATOMIC_SUBCLAIM
+scope_key: world-origin/archive/native-traversal-wave04
+world_id: origin
+region_id: ARCHIVO-DE-LA-PRIMERA-HERIDA
+category: architecture_runtime_qualification
+status: IN_PROGRESS
+truth_state: authored_traversable_candidate_pending_private_native_transport
+priority: P0
+branch: art/world-origin-001
+created_at: 2026-09-15T16:49:00+02:00
+last_heartbeat: 2026-09-15T16:58:00+02:00
+
+north_star: >-
+  Qualify all four stable Archivo assemblies with the exact imported GLB in Godot 4.7.2,
+  using authored assembly collision and a real 0.38 m radius / 1.85 m CharacterBody capsule.
+  Promote dimensions only from measured native traversal evidence; never from Blender clearance alone.
+
+stable_assembly_ids:
+  - ORG_ARC_ASM_WITNESS_GALLERY_A
+  - ORG_ARC_ASM_VAULT_JUNCTION_A
+  - ORG_ARC_ASM_MEMORY_NAVE_A
+  - ORG_ARC_ASM_SCAR_THRESHOLD_A
+
+wave04_blender:
+  project_id: 9bff5b6c-35a5-4db9-92de-4008a0fc3f4e
+  revision: 7
+  blend_size_bytes: 10459681
+  blend_etag: 7bbc8e9a10b2781933716fcef0eb7c8a
+  glb_size_bytes: 3752376
+  glb_etag: 42851e33885cf79a6167b0891e3ecd39
+  qa_operation: origin-archive-wave4-qa-20260915-010
+  qa_result: PASS
+
+corrective_findings:
+  - rev6 assemblies preserved module roots but repeated module translation inside child-local transforms, displacing rotated modules diagonally
+  - rev6 Witness/Memory/Scar walkable collider gaps were 5.701-19.581 m; Vault had only an overlapping center floor pair
+  - source floor and threshold collision proxies were closed boxes with side walls
+  - source rib/vault proxies were solid invisible boxes despite visibly open architectural frames
+  - persisted Wave02 generator did not reproduce the remote rev6 assembly recipe/state exactly
+
+wave04_repairs:
+  - child mesh transform now equals source_parent_inverse @ source_child_world, with zero repeated module placement
+  - floor/threshold proxies converted to upward top-only collision surfaces
+  - rib wall proxies rebuilt from actual pier + lintel visual bounds
+  - vault frame proxies rebuilt from actual jamb + header visual bounds
+  - all four assemblies rebuilt as continuous 4.3 m main-deck systems
+  - core shells moved to off-axis alcoves where required so circulation is not blocked
+  - stable assembly IDs retained; layouts remain proposal
+
+blender_qa:
+  witness:
+    modules: 45
+    meshes: 260
+    colliders: 45
+    walkable_colliders: 29
+    max_nearest_walkable_gap_m: 0
+  vault:
+    modules: 51
+    meshes: 295
+    colliders: 51
+    walkable_colliders: 39
+    max_nearest_walkable_gap_m: 0
+  memory_nave:
+    modules: 55
+    meshes: 314
+    colliders: 55
+    walkable_colliders: 32
+    max_nearest_walkable_gap_m: 0
+  scar_threshold:
+    modules: 28
+    meshes: 163
+    colliders: 28
+    walkable_colliders: 22
+    max_nearest_walkable_gap_m: 0
+  transform_errors: 0
+  source_mesh_count: 94
+  lod1_count: 94
+  lod2_count: 94
+
+native_gate_contract:
+  engine: Godot 4.7.2 stable official
+  capsule_radius_m: 0.38
+  capsule_height_m: 1.85
+  require_all_assemblies: true
+  minimum_connected_span_ratio: 0.70
+  route_discovery: authored collision support + capsule clearance + graph connectivity
+  native_characterbody_required: true
+
+blocking_boundary: >-
+  Exact rev7 GLB transport to the GitHub runner is currently blocked by connector boundaries:
+  Higgsfield exposes a short-lived signed R2 bearer URL, while this GitHub connector exposes no
+  workflow_dispatch payload or secret mutation and Drive accepts only connector file_uri objects.
+  The signed bearer must not be committed or posted publicly. Test harness is prepared on the
+  scratch evidence branch, but native PASS is not claimed until a private binary transport exists.
+
+excludes:
+  - Corazon de EXOVANT
+  - final boss
+  - other worlds
+  - final texture library
+  - target-hardware performance
+  - final canonization of assembly spacing
+
+claim_status: KEEP_IN_PROGRESS

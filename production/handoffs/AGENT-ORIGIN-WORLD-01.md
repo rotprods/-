@@ -10,144 +10,152 @@ PROTOCOL: `/EXOVANT-X100`
 
 ## NORTH STAR
 
-Own ORIGIN art/modeling at world level while keeping every advancement recoverable through atomic claims, deterministic generators, stable asset IDs, receipts and adversarial QA. Prefer systemic reuse, native evidence, physically correct collision and causal world depth over raw prop count.
+Own ORIGIN art/modeling at world level while keeping every advancement recoverable through atomic claims, deterministic generators, stable IDs, receipts and adversarial QA. Prefer systemic reuse, native evidence, physically correct collision and causal world depth over raw asset count.
 
 ## CURRENT TRUTH STATE
 
-`EMPIRICALLY_QUALIFIED_NATIVE_IMPORT_AND_ATRIO_TRAVERSAL / SYSTEM_CANDIDATE`
+`ATRIO_NATIVE_QUALIFIED / ARCHIVE_REV7_TRAVERSABLE_BLENDER_CANDIDATE / ARCHIVE_NATIVE_PENDING_PRIVATE_TRANSPORT`
 
-This is stronger than the prior surrogate state. Do not regress to surrogate-only validation unless a future revision invalidates the real native receipt.
+Do not regress Atrio to surrogate evidence. Do not promote Archive rev7 to native PASS until the prepared Godot gate consumes the exact rev7 GLB through a private transport.
 
 ## ACTIVE / KEEP CLAIMS
 
-- `CLM-ORIGIN-MEGA-ATRIO-001` — Atrio 70 m three-ring structural grammar.
-- `CLM-ORIGIN-INFRA-ATRIO-SERVICE-001` — 19 service-infrastructure assets.
-- `CLM-ORIGIN-CULT-ORGANISM-001` — 17 El Organismo cultural-memory assets.
-- `CLM-ORIGIN-ARCH-ARCHIVE-001` — 21 Archivo structural assets + 21 proxies.
-- `CLM-ORIGIN-TECH-LOD-WAVE01-001` — LOD0/1/2 for all 57 Wave-01 assets.
-- `CLM-ORIGIN-ARCH-ARCHIVE-GRAMMAR-001` — four deterministic Archive assemblies.
+- `CLM-ORIGIN-MEGA-ATRIO-001` — real imported Atrio traversal PASS.
+- `CLM-ORIGIN-INFRA-ATRIO-SERVICE-001` — 19 service assets.
+- `CLM-ORIGIN-CULT-ORGANISM-001` — 17 cultural-memory assets.
+- `CLM-ORIGIN-ARCH-ARCHIVE-001` — 21 Archivo source assets + source proxies.
+- `CLM-ORIGIN-TECH-LOD-WAVE01-001` — authored LOD0/1/2 for all 57 Wave01 assets.
+- `CLM-ORIGIN-ARCH-ARCHIVE-GRAMMAR-001` — four stable Archivo assemblies.
+- `CLM-ORIGIN-ARCH-ARCHIVE-NATIVE-001` — Wave04 exact native assembly traversal, in progress.
+- `CLM-ORIGIN-TECH-RUNTIME-LOD-001` — Wave04 runtime LOD selection, in progress.
 
-Boss/Corazón remains explicitly excluded.
+Boss/Corazón and all other worlds remain excluded.
 
-## CURRENT REMOTE PROJECTS
+## ATRIO — QUALIFIED BASELINE
 
-### Atrio
-Project: `6e64cd59-f1f6-461f-850c-737d098f1723`  
-Current qualified revision: **8**
+Project `6e64cd59-f1f6-461f-850c-737d098f1723`, qualified revision **8**.
 
-Wave inventory:
-- canonical 70 m / three-ring Atrio structural grammar.
-- 19 service + 17 cultural-memory X100 assets.
-- 148 source meshes plus 148 LOD1 + 148 LOD2 meshes.
-- 19 total collision proxies.
+- 70 m canonical three-ring envelope.
+- 19 service + 17 cultural-memory assets.
+- 148 source + 148 LOD1 + 148 LOD2 meshes.
+- 19 collision proxies.
+- exact rev8 GLB SHA256 `13ce97f29928befa6efdd70a3f428ffd053883ca3eb9159c2d9366bd74966f8d`.
+- Godot 4.7.2 run `34831105389` / job `103934408512` SUCCESS.
+- real imported `COL_*` → real `StaticBody3D` trimesh.
+- CharacterBody r=.38/h=1.85: r=11 landing PASS, r=37 landing PASS, radial traversal final/max r=`38.028427 m`, 400 floor frames, failures `[]`.
 
-LOD evidence:
-- LOD0 evaluated: 29,328 tris.
-- LOD1: 14,544 = 49.59%.
-- LOD2: 7,966 = 27.16%.
-- UV/material/transform/silhouette QA PASS.
+Learning retained: closed ring collision created an invisible wall at x=19.220577 m and stopped rev6 traversal at r≈19.0647. Top-only rev7 was rejected for reversed winding; rev8 +Z top-only passed the unchanged native test.
 
-Rev8 collision correction:
-- 9/9 ring proxies are now top-only walkable surfaces.
-- 18 polygons / 38 verts per ring proxy.
-- upward normals (`min normal_z >= 0.99999994`).
-- zero horizontal ring hits at capsule-foot z=4.32 m.
-- visual geometry, bridges, nodes and LOD geometry were not modified.
-- collision semantics: `walkable_top_surface_only_upward_v3`.
+## ARCHIVO — WAVE04 CURRENT BASELINE
 
-Rev8 artifact:
-- GLB 6,866,000 B
-- etag `de3984397e1c5c4b768aa62deb95f648`
-- SHA256 `13ce97f29928befa6efdd70a3f428ffd053883ca3eb9159c2d9366bd74966f8d`
-- Blend 8,463,819 B / etag `9bb9acfeac51397a3d54c64b81f0c074`
+Project `9bff5b6c-35a5-4db9-92de-4008a0fc3f4e`.  
+Current corrective revision: **7**.
 
-Deterministic rebuild:
-1. `art_source/worlds/origin/atrio/origin_atrio.py`
-2. `art_source/worlds/origin/atrio/origin_atrio_collision_rev8.py`
-3. `art_source/worlds/origin/atrio/origin_atrio_x100_wave1.py`
-4. `art_source/worlds/origin/tech/origin_lod_x100_wave2.py`
-
-### Archivo de la Primera Herida
-Project: `9bff5b6c-35a5-4db9-92de-4008a0fc3f4e`  
-Current qualified revision: `6`
-
-- 21 stable structural assets / 8 families / 21 proxies.
+Source system remains:
+- 21 stable assets / 8 families.
 - 94 source meshes + 94 LOD1 + 94 LOD2.
-- LOD0 16,880 / LOD1 8,688 / LOD2 4,610 tris.
-- one LOD2 7.9 cm silhouette regression was rejected and selectively reverted.
-- four stable assemblies, 67 module instances, 367 linked mesh instances.
-- source mesh-data duplication 0.
-- player lateral clearance proposal margins 2.64–4.24 m.
-- GLB 5,171,380 B / etag `e25633728494203865bd76b858723960`.
-- SHA256 `7d1ca1c5b04207f490a0ccfdae3fccec32c3b0d06d880d8ad364096cdeb57493`.
+- authored triangle evidence LOD0 16,880 / LOD1 8,688 / LOD2 4,610.
 
-## REAL GODOT QUALIFICATION — PASS
+### Why rev6 was rejected for traversal
 
-Canonical receipt:
-`production/receipts/origin/ORIGIN-REAL-GLB-GODOT-001.yaml`
+Fresh 2026-09-15 inspection found:
+- Witness floor gaps 7.075 m and max nearest walkable gap 19.581 m.
+- Memory Nave gap 7.766 m.
+- Scar Threshold gaps 5.701–7.959 m.
+- Vault only had an overlapping center floor pair, not a meaningful through-route.
+- child instances repeated module translation inside child-local transforms; rotated modules shifted diagonally.
+- floor/threshold collision was closed-box, producing invisible side walls.
+- rib/vault collision was a solid box although visible frames were open.
+- persisted Wave02 grammar source was not equivalent to the remote rev6 assembly state.
 
-Evidence:
-- scratch evidence PR #32, intentionally NO-MERGE.
-- final canary commit `194ee4fe3c04318bf2fab4eb62de72b97eb1b322`.
-- GitHub Actions run `34831105389` / run #377.
-- job `103934408512`.
-- Godot `4.7.2-stable (official)` / hash `ed1daf0bf001b61586d9930840f2f1394092c079`.
-- conclusion: **SUCCESS**.
+These were treated as production defects, not as reasons to lower the native gate.
 
-Native import readback:
-- Atrio: 613 nodes / 570 meshes / 570 material slots / 19 collision meshes / 148 LOD1 / 148 LOD2.
-- Archivo: 804 nodes / 703 meshes / 703 material slots / 94 LOD1 / 94 LOD2 / 4 assembly IDs.
-- both GLBs load as PackedScene.
+### Rev7 corrective build
 
-Real Atrio physics:
-- 19 imported `COL_*` meshes converted into real `StaticBody3D` trimesh collision.
-- CharacterBody capsule radius 0.38 m / height 1.85 m.
-- inner landing r=11 m: PASS, 136 floor frames.
-- outer landing r=37 m: PASS, 136 floor frames.
-- radial traversal r=11 → r=37: PASS; final/max radius `38.028427 m`.
-- traversal floor frames 400; minimum Y `5.0342946 m`.
-- `physics_pass=true`; failures `[]`.
+Mutation `origin-archive-wave4-traversable-grammar-rebuild-009`.
 
-## CAUSAL DEFECT CHAIN — DO NOT LOSE THIS LEARNING
+Collision semantic repairs:
+- Floor Spine A/B + Threshold A/B → one upward top-only collision quad.
+- Rib Wall A/B/C → open-frame collider from visual two piers + lintel.
+- Vault Frame A/B/C → open-frame collider from visual two jambs + header.
+- no source visual or LOD visual geometry changed.
 
-Rev6 already imported correctly, but real CharacterBody traversal failed at `r≈19.0647 m`.
+Instancing repair:
+`child.matrix_local = source_parent.matrix_world.inverted_safe() @ source_child.matrix_world`.
+This removes repeated module placement from child-local transforms.
 
-Blender horizontal ray audit identified `COL_ORG_ATR_RING_A70_SEG_00` exposing an internal vertical wall at `x=19.220577 m` with horizontal normal. The ring proxies were closed solids, so visually open bridge/ring interfaces contained invisible collision walls.
+Stable assemblies rebuilt as continuous 4.3 m main-deck systems:
+- `ORG_ARC_ASM_WITNESS_GALLERY_A`
+- `ORG_ARC_ASM_VAULT_JUNCTION_A`
+- `ORG_ARC_ASM_MEMORY_NAVE_A`
+- `ORG_ARC_ASM_SCAR_THRESHOLD_A`
 
-- rev7 removed side/bottom walls → top-only ring collision.
-- adversarial QA rejected rev7 because winding was downward.
-- rev8 reversed winding upward and passed Blender QA.
-- the **same native canary** then passed without weakening the physics acceptance criteria.
+Blocking core shells were moved into side alcoves where needed. All layout remains `PROPOSAL_UNTIL_GODOT`.
 
-This establishes a strong defect→fix→native-readback chain.
+### Rev7 QA
 
-## PROVEN NOW
+Operation `origin-archive-wave4-qa-20260915-010` = **PASS**.
 
-- exact Atrio rev8 GLB imports natively in Godot 4.7.2.
-- exact Archivo rev6 GLB imports natively in Godot 4.7.2.
-- stable ORIGIN naming/material/LOD/assembly structure survives import.
-- real imported Atrio collision can be converted to physics bodies.
-- real CharacterBody Atrio traversal passes across ring/bridge interfaces.
-- 57 stable Wave-01 assets have actual LOD1/LOD2 geometry.
-- four Archivo assemblies reuse linked source mesh data.
+- Witness: 45 modules / 260 meshes / 45 colliders / 29 walkable / max nearest gap 0 m.
+- Vault: 51 / 295 / 51 / 39 / gap 0 m.
+- Memory Nave: 55 / 314 / 55 / 32 / gap 0 m.
+- Scar Threshold: 28 / 163 / 28 / 22 / gap 0 m.
+- transform errors 0.
+- source meshes 94; LOD1 94; LOD2 94.
+- floor/threshold normals +Z.
+- main deck clear width metadata 4.3 m.
+- narrow passage metadata Witness 2.0 m; others 2.75 m.
 
-## STILL NOT PROVEN
+Rev7 artifacts:
+- Blend 10,459,681 B / etag `7bbc8e9a10b2781933716fcef0eb7c8a`.
+- GLB 3,752,376 B / etag `42851e33885cf79a6167b0891e3ecd39`.
+- smaller GLB is observed but is **not** a runtime-performance claim.
 
-- merged gameplay/runtime integration of these GLBs.
-- CharacterBody traversal through Archive assemblies.
-- engine runtime LOD switching, HLOD or packed file-size/frame-time savings.
-- local/variable-gravity gameplay on imported Atrio.
-- final causal texture sets.
-- target-hardware performance.
-- human `GATE-ART`.
+Canonical Wave04 rebuild source:
+`art_source/worlds/origin/archive/origin_archive_traversable_x100_wave4.py`.
 
-Do not claim final AAAA+, final game-ready performance or final Archive dimensions before those gates pass.
+Blender receipt:
+`production/receipts/origin/ORIGIN-ARCHIVE-WAVE04-BLENDER-QA.yaml`.
+
+## PREPARED NATIVE + RUNTIME LOD GATE
+
+Reusable Godot 4.7.2 harness:
+`art_source/worlds/origin/runtime/origin_archive_native_lod_validate.gd`.
+
+Archive gate requires all 4 assemblies to:
+- use exact imported `__COL_` meshes as trimesh `StaticBody3D` collision;
+- discover valid floor nodes via support normal + capsule clearance;
+- build a connected route graph with midpoint support checks;
+- span >=70% of the walkable dominant axis;
+- traverse with a real CharacterBody capsule r=.38/h=1.85 without falls/stalls.
+
+Runtime LOD gate requires:
+- exactly 94 deterministic source↔LOD1↔LOD2 groups;
+- exactly one visible tier per group;
+- near/mid/far switches exercised;
+- triangle counts read from imported Godot mesh surfaces;
+- LOD1 <65% and LOD2 <40% of LOD0;
+- source collision mesh count unchanged across visual switches.
+
+This would prove visual tier switching and geometry reduction only. It would **not** prove residency, packed memory, HLOD, streaming, FPS or target-GPU gains.
+
+## CURRENT BLOCKER — SECURITY/TRANSPORT, NOT ASSET
+
+Higgsfield returns the exact rev7 GLB through a short-lived signed R2 bearer URL. This GitHub connection exposes no workflow-dispatch payload or secret mutation surface, and Google Drive upload accepts only a connector `file_uri` rather than a URL. The GLB connector response does not expose a `file_uri`.
+
+Therefore the bearer has **not** been persisted into GitHub history. The native Wave04 test is prepared but has not been executed against rev7. Do not claim native Archive PASS from Blender QA.
+
+Scratch evidence branch:
+`integration/origin-archive-native-lod-002`.
+Harness blob SHA:
+`48cf97b4eab094e364761a928c6bc13df8edc164`.
 
 ## NEXT P0
 
-1. Native Archive assembly CharacterBody traversal using exact imported rev6 geometry; use measurements to promote/reject proposal dimensions.
-2. Engine runtime LOD switching + packing/HLOD proof on real imports.
-3. Then local-gravity gameplay qualification and causal-texture finishing.
+1. Establish a private binary bridge for the exact rev7 GLB and run the prepared Archive native + runtime LOD canary unchanged.
+2. If PASS, implement runtime packing/HLOD/residency rather than merely hidden resident tiers.
+3. Then qualify local/variable gravity on real Atrio import.
+4. Causal texture finishing, phenomena/ecology, human `GATE-ART`, target hardware.
 
 WORLD CLAIM STATUS: **KEEP**  
 ALL LISTED ATOMIC CLAIMS: **KEEP / IN_PROGRESS**

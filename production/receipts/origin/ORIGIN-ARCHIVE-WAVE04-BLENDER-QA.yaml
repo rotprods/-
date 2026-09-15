@@ -1,0 +1,96 @@
+receipt_id: ORIGIN-ARCHIVE-WAVE04-BLENDER-QA
+claim_id: CLM-ORIGIN-ARCH-ARCHIVE-NATIVE-001
+date: 2026-09-15
+truth_state: BLENDER_TRAVERSABLE_CANDIDATE_PASS_NATIVE_PENDING
+
+project:
+  id: 9bff5b6c-35a5-4db9-92de-4008a0fc3f4e
+  blender_version: 5.2 LTS
+  revision_before: 6
+  revision_after: 7
+  mutation_operation: origin-archive-wave4-traversable-grammar-rebuild-009
+  qa_operation: origin-archive-wave4-qa-20260915-010
+
+artifacts:
+  blend:
+    size_bytes: 10459681
+    etag: 7bbc8e9a10b2781933716fcef0eb7c8a
+  glb:
+    size_bytes: 3752376
+    etag: 42851e33885cf79a6167b0891e3ecd39
+    sha256: PENDING_PRIVATE_NATIVE_TRANSPORT
+
+pre_repair_findings:
+  rev6_witness_max_nearest_walkable_gap_m: 19.581
+  rev6_witness_floor_gap_m: 7.075
+  rev6_memory_nave_gap_m: 7.766
+  rev6_scar_gap_range_m: [5.701, 7.959]
+  rev6_vault_meaningful_route: false
+  repeated_child_module_translation: true
+  closed_floor_sidewall_collision: true
+  solid_invisible_rib_vault_collision: true
+  persisted_generator_remote_state_mismatch: true
+
+repair_contract:
+  - preserve all source visual and authored LOD geometry
+  - preserve the four stable assembly IDs
+  - correct child mesh transforms into source-asset-local space
+  - use top-only upward floor/threshold collision
+  - use open-frame rib/vault collision derived from visible load-bearing parts
+  - rebuild assemblies with continuous 4.3 m main decks
+  - keep all spacing/layout dimensions PROPOSAL_UNTIL_GODOT
+
+qa:
+  pass: true
+  transform_errors: 0
+  source_mesh_count: 94
+  lod1_mesh_count: 94
+  lod2_mesh_count: 94
+  floor_threshold_polygons_each: 1
+  floor_threshold_min_normal_z: 1.0
+  rib_vault_proxy_polygons_each: 18
+  witness:
+    modules: 45
+    meshes: 260
+    colliders: 45
+    walkable_colliders: 29
+    max_nearest_walkable_gap_m: 0
+    main_deck_clear_width_m: 4.3
+    narrow_passage_width_m: 2.0
+  vault_junction:
+    modules: 51
+    meshes: 295
+    colliders: 51
+    walkable_colliders: 39
+    max_nearest_walkable_gap_m: 0
+    main_deck_clear_width_m: 4.3
+    narrow_passage_width_m: 2.75
+  memory_nave:
+    modules: 55
+    meshes: 314
+    colliders: 55
+    walkable_colliders: 32
+    max_nearest_walkable_gap_m: 0
+    main_deck_clear_width_m: 4.3
+    narrow_passage_width_m: 2.75
+  scar_threshold:
+    modules: 28
+    meshes: 163
+    colliders: 28
+    walkable_colliders: 22
+    max_nearest_walkable_gap_m: 0
+    main_deck_clear_width_m: 4.3
+    narrow_passage_width_m: 2.75
+
+native_status:
+  archive_characterbody: PENDING_PRIVATE_GLB_TRANSPORT
+  runtime_lod_switching: PENDING_PRIVATE_GLB_TRANSPORT
+  harness_ready: true
+  scratch_branch: integration/origin-archive-native-lod-002
+  harness_blob_sha: 48cf97b4eab094e364761a928c6bc13df8edc164
+  security_rule: DO_NOT_PERSIST_SHORT_LIVED_R2_BEARER_URL
+
+conclusion: >-
+  Rev7 is a materially stronger Archive candidate than rev6 and passes deterministic Blender
+  geometry/collision/continuity QA. This receipt is not a native Godot traversal PASS and must not
+  be used to canonize proposal dimensions or claim runtime performance.

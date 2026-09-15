@@ -1,0 +1,68 @@
+claim_id: CLM-ORIGIN-TECH-RUNTIME-LOD-001
+parent_claim: CLM-ORIGIN-WORLD-001
+agent_id: AGENT-ORIGIN-WORLD-01
+claim_type: ATOMIC_SUBCLAIM
+scope_key: world-origin/archive/runtime-lod-wave04
+world_id: origin
+region_id: ARCHIVO-DE-LA-PRIMERA-HERIDA
+category: runtime_lod
+status: IN_PROGRESS
+truth_state: runtime_test_harness_ready_pending_private_glb_transport
+priority: P0
+branch: art/world-origin-001
+created_at: 2026-09-15T16:49:00+02:00
+last_heartbeat: 2026-09-15T16:58:00+02:00
+
+north_star: >-
+  Turn the 94 authored Archive LOD0/LOD1/LOD2 mesh triplets into an engine-qualified runtime
+  selection system, proving deterministic mapping, one-visible-tier semantics and measured
+  imported triangle reduction without falsely claiming memory residency, HLOD, FPS or GPU savings.
+
+source_claim: CLM-ORIGIN-TECH-LOD-WAVE01-001
+expected_groups: 94
+name_contract:
+  lod0: SOURCE_OBJECT_NAME
+  lod1: LOD1__SOURCE_OBJECT_NAME
+  lod2: LOD2__SOURCE_OBJECT_NAME
+
+authored_geometry_evidence:
+  lod0_triangles_blender: 16880
+  lod1_triangles_blender: 8688
+  lod2_triangles_blender: 4610
+  lod1_ratio_blender: 0.5147
+  lod2_ratio_blender: 0.2731
+  source_mesh_count: 94
+  lod1_mesh_count: 94
+  lod2_mesh_count: 94
+
+runtime_gate_contract:
+  engine: Godot 4.7.2 stable official
+  require_group_count: 94
+  require_exactly_one_visible_tier_per_group: true
+  require_lod1_ratio_below: 0.65
+  require_lod2_ratio_below: 0.40
+  require_collision_independent_of_visual_tier: true
+  near_tier: LOD0
+  mid_tier: LOD1
+  far_tier: LOD2
+  measure_triangles_from_imported_mesh_surfaces: true
+
+test_harness:
+  scratch_branch: integration/origin-archive-native-lod-002
+  scratch_path: tests/origin_archive_native_lod_validate.gd
+  blob_sha: 48cf97b4eab094e364761a928c6bc13df8edc164
+  status: READY_NOT_EXECUTED_AGAINST_REV7
+
+blocking_boundary: >-
+  Same private rev7 GLB transport boundary as CLM-ORIGIN-ARCH-ARCHIVE-NATIVE-001.
+  Do not embed the 15-minute R2 signed bearer in public GitHub history.
+
+not_claimed:
+  - runtime memory residency reduction
+  - packed file size caused by switching
+  - HLOD
+  - streaming
+  - FPS gain
+  - target GPU gain
+
+claim_status: KEEP_IN_PROGRESS
