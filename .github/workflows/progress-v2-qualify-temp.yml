@@ -7,16 +7,15 @@ permissions:
 jobs:
   finalize-state-v2:
     runs-on: ubuntu-24.04
-    timeout-minutes: 8
+    timeout-minutes: 12
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
           ref: runtime/progress-world-state-v2-001
-      - name: Acquire pinned Godot and requalify exact candidate
+      - name: Acquire pinned Godot and run full native Gauntlet
         run: |
           python3 tools/bootstrap_godot.py --destination .tools
-          .tools/Godot_v4.7.2-stable_linux.x86_64 --headless --path . \
-            --script res://tests/test_state.gd
+          python3 tests/run_gauntlet.py --godot .tools/Godot_v4.7.2-stable_linux.x86_64
       - name: Self-remove, refresh continuity and commit candidate
         run: |
           rm .github/workflows/progress-v2-qualify-temp.yml
@@ -24,6 +23,6 @@ jobs:
           python3 tools/project_control.py check
           git config user.name github-actions[bot]
           git config user.email 41898282+github-actions[bot]@users.noreply.github.com
-          git add scripts/progress.gd scripts/save_store.gd tests/test_state.gd MANIFEST.json .github/workflows/progress-v2-qualify-temp.yml
+          git add scripts/progress.gd scripts/save_store.gd tests/test_state.gd evidence telemetry/tool_calls.jsonl MANIFEST.json .github/workflows/progress-v2-qualify-temp.yml
           git commit -m "runtime(state): qualify campaign world-state v2"
           git push origin HEAD:runtime/progress-world-state-v2-001
