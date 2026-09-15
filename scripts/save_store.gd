@@ -17,7 +17,9 @@ func read_valid(file_path: String) -> Dictionary:
 	if envelope.payload.sha256_text() != envelope.sha256: return {}
 	if parser.parse(envelope.payload) != OK: return {}
 	var d: Variant = parser.data
-	return d if Progress.validate(d) else {}
+	# Read boundary is the only legacy admission point. Valid v1 payloads are
+	# returned already migrated to the current schema; malformed/unknown versions fail closed.
+	return Progress.migrate(d)
 
 func load_game() -> Dictionary:
 	var d := read_valid(path)
@@ -26,10 +28,13 @@ func load_game() -> Dictionary:
 
 func save_game(d: Dictionary) -> bool:
 	last_error = ""
-	if not Progress.validate(d):
+	# Always write one canonical current schema. A valid legacy payload may be supplied
+	# by recovery tooling, but it is migrated before hashing or touching the main save.
+	var normalized := Progress.migrate(d)
+	if normalized.is_empty():
 		last_error = "Estado no válido; guardado conservado"
 		return false
-	var payload := JSON.stringify(d)
+	var payload := JSON.stringify(normalized)
 	var f := FileAccess.open(path + ".tmp", FileAccess.WRITE)
 	if f == null:
 		last_error = "No se puede escribir el guardado"
